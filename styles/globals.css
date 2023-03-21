@@ -1,3 +1,72 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "helvetica_neue";
+  font-weight: 200;
+  src:
+    url("../fonts/helvetica-neue-thin.woff2") format("woff2"),
+    url("../fonts/helvetica-neue-thin.woff") format("woff"),
+    url("../fonts/helvetica-neue-thin.ttf") format("truetype");
+  font-display: swap
+}
+
+@font-face {
+  font-family: "helvetica_neue";
+  font-weight: 200;
+  src:
+    url("../fonts/helvetica-neue-thin-italic.woff2") format("woff2"),
+    url("../fonts/helvetica-neue-thin-italic.woff") format("woff"),
+    url("../fonts/helvetica-neue-thin-italic.ttf") format("truetype");
+  font-display: swap;
+  font-style: italic
+}
+
+@font-face {
+  font-family: "helvetica_neue";
+  font-weight: 300;
+  src:
+    url("../fonts//helvetic-neue-light.woff2") format("woff2"),
+    url("../fonts/helvetica-neue-light.woff") format("woff"),
+    url("../fonts/helvetica-neue-light.ttf") format("truetype");
+  font-display: swap
+}
+
+@font-face {
+  font-family: "helvetica_neue";
+  font-weight: 300;
+  src:
+    url("../fonts/helvetica-neue-light-italic.woff2") format("woff2"),
+    url("../fonts/helvetica-neue-light-italic.woff") format("woff"),
+    url("../fonts/helvetica-neue-light-italic.ttf") format("truetype");
+  font-display: swap;
+  font-style: italic
+}
+
+@layer base {
+  * {
+    font-family: "helvetica_neue";
+    color: #222222
+  }
+
+  h1,
+  h2 {
+    font-weight: 200;
+    font-size: 2.25rem;
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 300;
+    font-size: 1.5rem;
+  }
+
+  p,
+  ul {
+    font-size: 1.125rem;
+    font-weight: 200;
+  }
+}
