@@ -18,11 +18,16 @@ module.exports = {
       link: "#0000EE",
     },
     fontSize: {
-      smaller: "1rem",
+      smallest: "0.938rem",
+      smaller: "1.063rem",
       paragraph: "1.125rem",
       larger: "1.25rem",
       subheading: "1.5rem",
       heading: "2.25rem",
+    },
+    fontWeight: {
+      thin: "200",
+      light: "300",
     },
     screens: {
       phoneSmall: "425px",

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 import mobileMenuList from "../data/navigation/mobile-menu.json";
+import desktopMenuList from "../data/navigation/desktop-menu.json";
 
 import logo from "public/carevita-logo.png";
 import menuIcon from "public/icons/menu-icon.svg";
@@ -15,16 +16,18 @@ interface Props {
 
 const Header = ({ cssClasses }: Props) => {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const [toggleHomeSubmenu, setToggleHomeSubmenu] = useState(false);
+  const [toggleSchoolSubmenu, setToggleSchoolSubmenu] = useState(false);
 
   return (
-    <header className={`${cssClasses}`}>
+    <header className={`w-full  bg-blue ${cssClasses}`}>
       {/* mobile nav */}
-      <div className="fixed w-full flex justify-between items-center px-5 py-4 border-b-2 border-black drop-shadow-md bg-white">
+      <div className="fixed w-full flex justify-between items-center px-6 py-4 border-b-2 border-black drop-shadow-md bg-white tablet:hidden">
         <Link href="/" className="p-2 -m-2">
           <Image src={logo} alt="CareVita logo" className="w-20 h-auto" />
         </Link>
         <button className="p-2 -m-2" onClick={() => setToggleMenu(true)}>
-          <Image src={menuIcon} alt="Menu icon" className="w-10 h-auto" />
+          <Image src={menuIcon} alt="Menu icon" className="w-11 h-auto mt-1" />
         </button>
       </div>
       {toggleMenu && (
@@ -54,11 +57,105 @@ const Header = ({ cssClasses }: Props) => {
             <Image
               src={closeIcon}
               alt="Close menu icon"
-              className="w-10 h-auto"
+              className="w-11 h-auto mr-1"
             />
           </button>
         </nav>
       )}
+
+      {/* desktop navigation */}
+      <div className="hidden tablet:block fixed px-10 py-4 border-b-2 w-full border-black drop-shadow-md bg-white ">
+        <div className="flex w-full justify-between items-end max-w-[1400px] mx-auto">
+          <Link href="/" className="p-2 -m-2">
+            <Image src={logo} alt="CareVita logo" className="w-20 h-auto" />
+          </Link>
+          <nav>
+            <ul className="flex gap-6">
+              {desktopMenuList.map(
+                ({ title, url, schoolSubmenu, homeSubmenu }, index) => (
+                  <li
+                    key={index}
+                    onMouseEnter={
+                      (schoolSubmenu &&
+                        (() => {
+                          setToggleSchoolSubmenu(!toggleSchoolSubmenu);
+                        })) ||
+                      (homeSubmenu &&
+                        (() => {
+                          setToggleHomeSubmenu(!toggleHomeSubmenu);
+                        }))
+                    }
+                    onMouseLeave={
+                      (schoolSubmenu &&
+                        (() => {
+                          setToggleSchoolSubmenu(!toggleSchoolSubmenu);
+                        })) ||
+                      (homeSubmenu &&
+                        (() => {
+                          setToggleHomeSubmenu(!toggleHomeSubmenu);
+                        }))
+                    }
+                  >
+                    <Link
+                      href={url}
+                      className={`${
+                        index < 2 &&
+                        "hover:underline underline-offset-8 decoration-green decoration-2"
+                      } ${
+                        index > 3 &&
+                        "hover:underline underline-offset-8 decoration-green decoration-2"
+                      }`}
+                    >
+                      {title}
+                    </Link>
+
+                    {homeSubmenu && toggleHomeSubmenu && (
+                      <ul className="fixed bg-white p-6 border-2 border-t-0 border-black -translate-x-[60px] rounded-b-xl flex flex-col gap-2 drop-shadow-md">
+                        {/* while blocks to hide borders */}
+                        <div className="w-3 bg-white h-4 absolute -translate-x-8 -translate-y-6"></div>
+                        <div className="w-3 bg-white h-4 absolute translate-x-[170px] -translate-y-6"></div>
+
+                        {homeSubmenu.map(({ title, url, location }, index) => (
+                          <li key={index} className="flex flex-col gap-0.5">
+                            <Link
+                              href={url}
+                              className="font-light text-smaller hover:underline underline-offset-[5px] decoration-green decoration-2"
+                            >
+                              {title}
+                            </Link>
+                            <p className="text-smallest">{location}</p>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    {schoolSubmenu && toggleSchoolSubmenu && (
+                      <ul className="fixed bg-white p-6 border-2 border-t-0 border-black -translate-x-8 rounded-b-xl flex flex-col gap-2 drop-shadow-md">
+                        {/* while blocks to hide borders */}
+                        <div className="w-3 bg-white h-4 absolute -translate-x-8 -translate-y-6"></div>
+                        <div className="w-3 bg-white h-4 absolute translate-x-[120px] -translate-y-6"></div>
+
+                        {schoolSubmenu.map(
+                          ({ title, url, location }, index) => (
+                            <li key={index} className="flex flex-col gap-0.5">
+                              <Link
+                                href={url}
+                                className=" font-light text-smaller hover:underline underline-offset-[5px] decoration-green decoration-2"
+                              >
+                                {title}
+                              </Link>
+                              <p className="text-smallest">{location}</p>
+                            </li>
+                          )
+                        )}
+                      </ul>
+                    )}
+                  </li>
+                )
+              )}
+            </ul>
+          </nav>
+        </div>
+      </div>
     </header>
   );
 };
