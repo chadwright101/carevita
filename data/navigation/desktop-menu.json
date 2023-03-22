@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Home",
+    "url": "/"
+  },
+  {
+    "title": "Services",
+    "url": "/"
+  },
+  {
+    "title": "Our Homes",
+    "url": "/",
+    "homeSubmenu": [
+      {
+        "title": "The Crescent Lodge",
+        "location": "Plettenberg Bay, WC",
+        "url": "/"
+      },
+      {
+        "title": "Eastlands Estate",
+        "location": "Benoni, GP",
+        "url": "/"
+      },
+      {
+        "title": "Serenpark Centre",
+        "location": "Pretoria, GP",
+        "url": "/"
+      }
+    ]
+  },
+  {
+    "title": "Our Schools",
+    "url": "/",
+    "schoolSubmenu": [
+      {
+        "title": "Coming Soon",
+        "location": "",
+        "url": "#"
+      }
+    ]
+  },
+  {
+    "title": "Blog",
+    "url": "/"
+  },
+  {
+    "title": "Contact",
+    "url": "/"
+  }
+]
