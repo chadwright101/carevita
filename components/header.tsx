@@ -19,9 +19,9 @@ const Header = ({ cssClasses }: Props) => {
   const [toggleSchoolSubmenu, setToggleSchoolSubmenu] = useState(false);
 
   return (
-    <header className={`w-full sticky top-0 bg-blue ${cssClasses}`}>
+    <header className={`w-full sticky h-auto top-0 z-10 ${cssClasses}`}>
       {/* mobile nav */}
-      <div className=" w-full flex justify-between items-center px-6 py-4 border-b-2 border-black drop-shadow-md bg-white tablet:hidden">
+      <div className="w-full flex justify-between items-center px-6 py-4 border-b-2 border-black drop-shadow-md bg-white tabletLarge:hidden">
         <Link href="/" className="p-2 -m-2">
           <Image
             src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/carevita-logo.png"
@@ -68,7 +68,7 @@ const Header = ({ cssClasses }: Props) => {
       )}
 
       {/* desktop navigation */}
-      <div className="hidden tablet:block px-10 py-4 border-b-2 w-full border-black drop-shadow-md bg-white ">
+      <div className="hidden tabletLarge:block px-12 py-4 border-b-2 w-full border-black drop-shadow-md bg-white ">
         <div className="flex w-full justify-between items-end max-w-[1400px] mx-auto">
           <Link href="/" className="p-2 -m-2">
             <Image

@@ -8,8 +8,9 @@ interface Props {
 const Layout = ({ children }: Props) => {
   return (
     <>
-      <Header />
-      <div className="px-5">{children}</div>
+      <div className="px-6 tablet:px-12">
+        <div className="max-w-[1400px] tablet:mx-auto">{children}</div>
+      </div>
     </>
   );
 };
