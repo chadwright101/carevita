@@ -20,9 +20,9 @@ const Header = ({ cssClasses }: Props) => {
   const [toggleSchoolSubmenu, setToggleSchoolSubmenu] = useState(false);
 
   return (
-    <header className={`w-full  bg-blue ${cssClasses}`}>
+    <header className={`w-full sticky top-0 bg-blue ${cssClasses}`}>
       {/* mobile nav */}
-      <div className="fixed w-full flex justify-between items-center px-6 py-4 border-b-2 border-black drop-shadow-md bg-white tablet:hidden">
+      <div className=" w-full flex justify-between items-center px-6 py-4 border-b-2 border-black drop-shadow-md bg-white tablet:hidden">
         <Link href="/" className="p-2 -m-2">
           <Image src={logo} alt="CareVita logo" className="w-20 h-auto" />
         </Link>
