@@ -68,6 +68,9 @@
   ul {
     font-size: 1.125rem;
     font-weight: 200;
+  }
+
+  p {
     text-align: justify;
   }
 }
