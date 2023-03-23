@@ -37,8 +37,8 @@ const About = ({ cssClasses }: Props) => {
         <p>
           Our core values determine our company culture and priorities, it
           supports our vision of who we are and why we do what we do. They are
-          the essence or DNA of our company's identity – our principles, beliefs
-          and philosophies.
+          the essence or DNA of our company&apos;s identity – our principles,
+          beliefs and philosophies.
         </p>
       </main>
       <div className="grid gap-10 place-items-center tablet:grid-cols-2 tablet:gap-6 desktop:gap-10 desktop:grid-cols-1 desktop:grid-rows-[280px_280px] overflow-hidden">
