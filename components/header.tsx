@@ -6,7 +6,6 @@ import { useState } from "react";
 import mobileMenuList from "../data/navigation/mobile-menu.json";
 import desktopMenuList from "../data/navigation/desktop-menu.json";
 
-import logo from "public/carevita-logo.png";
 import menuIcon from "public/icons/menu-icon.svg";
 import closeIcon from "public/icons/close-icon.svg";
 
@@ -20,11 +19,16 @@ const Header = ({ cssClasses }: Props) => {
   const [toggleSchoolSubmenu, setToggleSchoolSubmenu] = useState(false);
 
   return (
-    <header className={`w-full  bg-blue ${cssClasses}`}>
+    <header className={`w-full sticky h-auto top-0 z-10 ${cssClasses}`}>
       {/* mobile nav */}
-      <div className="fixed w-full flex justify-between items-center px-6 py-4 border-b-2 border-black drop-shadow-md bg-white tablet:hidden">
+      <div className="w-full flex justify-between items-center px-6 py-4 border-b-2 border-black drop-shadow-md bg-white tabletLarge:hidden">
         <Link href="/" className="p-2 -m-2">
-          <Image src={logo} alt="CareVita logo" className="w-20 h-auto" />
+          <Image
+            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/carevita-logo.png"
+            alt="CareVita logo"
+            width={80}
+            height={120}
+          />
         </Link>
         <button className="p-2 -m-2" onClick={() => setToggleMenu(true)}>
           <Image src={menuIcon} alt="Menu icon" className="w-11 h-auto mt-1" />
@@ -64,10 +68,15 @@ const Header = ({ cssClasses }: Props) => {
       )}
 
       {/* desktop navigation */}
-      <div className="hidden tablet:block fixed px-10 py-4 border-b-2 w-full border-black drop-shadow-md bg-white ">
+      <div className="hidden tabletLarge:block px-12 py-4 border-b-2 w-full border-black drop-shadow-md bg-white ">
         <div className="flex w-full justify-between items-end max-w-[1400px] mx-auto">
           <Link href="/" className="p-2 -m-2">
-            <Image src={logo} alt="CareVita logo" className="w-20 h-auto" />
+            <Image
+              src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/carevita-logo.png"
+              alt="CareVita logo"
+              width={80}
+              height={120}
+            />
           </Link>
           <nav>
             <ul className="flex gap-6">
