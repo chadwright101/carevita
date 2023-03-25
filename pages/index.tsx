@@ -3,6 +3,7 @@ import About from "@/components/home/about";
 import Layout from "@/components/layout";
 import Header from "@/components/header";
 import Services from "@/components/home/services";
+import OurHomes from "@/components/home/our-homes";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <Layout>
         <About cssClasses="my-16" />
         <Services />
+        <OurHomes cssClasses="my-16" />
       </Layout>
     </>
   );
