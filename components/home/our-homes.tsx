@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import Button from "../button";
+
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 import "@splidejs/react-splide/css";
@@ -13,15 +15,15 @@ interface Props {
 
 const OurHomes = ({ cssClasses }: Props) => {
   return (
-    <section className={`${cssClasses}`}>
+    <section className={`flex flex-col ${cssClasses}`}>
       <Heading variant={headingVariant.sectionHeading}>Our Homes</Heading>
       <Splide
         options={{
           pagination: true,
           autoplay: true,
           type: "loop",
-          speed: 1500,
-          interval: 5500,
+          speed: 2000,
+          interval: 6500,
           breakpoints: {
             900: {
               pagination: false,
@@ -45,6 +47,10 @@ const OurHomes = ({ cssClasses }: Props) => {
           </SplideSlide>
         ))}
       </Splide>
+      <Button
+        url="our-homes"
+        cssClasses="mt-10 mx-auto tabletLarge:mx-0 desktop:mx-auto desktop:mt-0 desktop:-translate-y-[540px] desktop:translate-x-[490px]"
+      />
     </section>
   );
 };
