@@ -22,7 +22,7 @@ const Header = ({ cssClasses }: Props) => {
     <header className={`w-full sticky h-auto top-0 z-10 ${cssClasses}`}>
       {/* mobile nav */}
       <div className="w-full flex justify-between items-center px-6 py-4 border-b-2 border-black drop-shadow-md bg-white tabletLarge:hidden">
-        <Link href="/" className="p-2 -m-2">
+        <Link href="/" className="p-4 -m-4">
           <Image
             src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/carevita-logo.png"
             alt="CareVita logo"
