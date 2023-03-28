@@ -5,13 +5,18 @@ import menuList from "../data/navigation/desktop-menu.json";
 
 interface Props {
   cssClasses?: string;
+  border?: boolean;
 }
 
-const Footer = ({ cssClasses }: Props) => {
+const Footer = ({ cssClasses, border }: Props) => {
   return (
     <footer className={`${cssClasses}`}>
       {/* mobile view */}
-      <div className="w-full flex flex-col gap-4 items-center px-12 pt-10 pb-6 bg-white tabletLarge:border-t border-black">
+      <div
+        className={`w-full flex flex-col gap-4 items-center px-6 pt-10 pb-6 bg-white ${
+          border && "tabletLarge:border-t border-black tablet:mt-10"
+        } tablet:px-12`}
+      >
         <div className="w-full max-w-[1400px] flex justify-center tabletLarge:justify-between items-center">
           <nav className="hidden tabletLarge:flex">
             <ul>
