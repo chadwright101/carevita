@@ -1,4 +1,5 @@
 import css from "styled-jsx/css";
+import ContactForm from "../contact-form";
 import Heading, { headingVariant } from "../heading";
 
 interface Props {
@@ -15,10 +16,8 @@ const Contact = ({ cssClasses }: Props) => {
         >
           Contact
         </Heading>
-        <p className="text-white">
-          Please select which facility you&nbsp;d like to get in touch with...
-        </p>
       </div>
+      <ContactForm />
     </section>
   );
 };

@@ -12,21 +12,55 @@ interface Props {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   backgroundColour?: string;
   textColour?: string;
+  mobileHomesForm?: boolean;
+  formBack?: boolean;
 }
 
-const Button = ({ children, form, cssClasses, url, onClick }: Props) => {
+const Button = ({
+  children,
+  form,
+  cssClasses,
+  url,
+  onClick,
+  mobileHomesForm,
+  formBack,
+}: Props) => {
   if (form) {
     return (
       <button
-        className={`bg-green text-white hover:bg-lightGreen ${cssClasses}`}
+        className={`bg-green text-larger text-white px-6 py-4 flex gap-6 items-center ${cssClasses}`}
         type="submit"
       >
-        <Link href={url!}>{children || "Next"}</Link>
+        {children || "Next"}
         <Image
-          src="/icons/arrow_forward.svg"
+          src="/icons/arrow_forward-white.svg"
           alt="Arrow icon"
-          width={16}
-          height={16}
+          width={20}
+          height={20}
+        ></Image>
+      </button>
+    );
+  } else if (formBack) {
+    return (
+      <button
+        className={`bg-lightGreen text-larger text-white px-6 py-4 ${cssClasses}`}
+        onClick={onClick}
+      >
+        {children}
+      </button>
+    );
+  } else if (mobileHomesForm) {
+    return (
+      <button
+        className={`bg-white text-larger text-blue px-6 py-4 flex gap-4 justify-between items-center w-full ${cssClasses}`}
+        onClick={onClick}
+      >
+        {children}
+        <Image
+          src="/icons/arrow_forward-blue.svg"
+          alt="Arrow icon"
+          width={32}
+          height={32}
         ></Image>
       </button>
     );
