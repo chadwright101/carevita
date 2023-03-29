@@ -2,8 +2,6 @@ import { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import arrow from "../public/icons/arrow_forward.svg";
-
 interface Props {
   children?: ReactNode;
   form?: boolean;
@@ -14,6 +12,8 @@ interface Props {
   textColour?: string;
   mobileHomesForm?: boolean;
   formBack?: boolean;
+  extendedTitle?: string;
+  location?: string;
 }
 
 const Button = ({
@@ -24,6 +24,8 @@ const Button = ({
   onClick,
   mobileHomesForm,
   formBack,
+  extendedTitle,
+  location,
 }: Props) => {
   if (form) {
     return (
@@ -52,10 +54,13 @@ const Button = ({
   } else if (mobileHomesForm) {
     return (
       <button
-        className={`bg-white text-larger text-blue px-6 py-4 flex gap-4 justify-between items-center w-full ${cssClasses}`}
+        className={`bg-white text-larger px-6 py-4 flex gap-4 justify-between items-center w-full ${cssClasses}`}
         onClick={onClick}
       >
-        {children}
+        <span className="text-blue flex flex-col">
+          {extendedTitle}
+          <span className="text-blue text-paragraph font-thin">{location}</span>
+        </span>
         <Image
           src="/icons/arrow_forward-blue.svg"
           alt="Arrow icon"

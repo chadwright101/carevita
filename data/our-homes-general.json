@@ -1,0 +1,20 @@
+{
+  "Crescent": {
+    "title": "The Crescent Lodge",
+    "extendedTitle": "The Crescent Retirement Lodge",
+    "location": "Plettenberg Bay, WC",
+    "url": "/"
+  },
+  "Eastlands": {
+    "title": "Eastlands Estate",
+    "extendedTitle": "Eastlands Mature Lifestyle Estate",
+    "location": "Benoni, GP",
+    "url": "/"
+  },
+  "Serenepark": {
+    "title": "Serenepark Centre",
+    "extendedTitle": "Serenepark Retirement Centre",
+    "location": "Pretoria, GP",
+    "url": "/"
+  }
+}
