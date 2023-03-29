@@ -8,7 +8,7 @@ interface Props {
 
 const Contact = ({ cssClasses }: Props) => {
   return (
-    <section className={`px-6 tablet:px-12 py-10 bg-blue ${cssClasses}`}>
+    <section className={`px-6 tablet:px-12 pt-10 pb-12 bg-blue ${cssClasses}`}>
       <div className="w-full max-w-[1400px] mx-auto">
         <Heading
           variant={headingVariant.sectionHeading}

@@ -119,7 +119,7 @@ const Header = ({ cssClasses }: Props) => {
                     </Link>
 
                     {homeSubmenu && toggleHomeSubmenu && (
-                      <ul className="fixed bg-white p-6 border-2 border-t-0 border-black -translate-x-[60px] rounded-b-xl flex flex-col gap-2 drop-shadow-md">
+                      <ul className="fixed bg-white p-6 border border-t-0 border-black -translate-x-[59px] rounded-b-xl flex flex-col gap-2 drop-shadow-md">
                         {/* while blocks to hide borders */}
                         <div className="w-3 bg-white h-4 absolute -translate-x-8 -translate-y-6"></div>
                         <div className="w-3 bg-white h-4 absolute translate-x-[170px] -translate-y-6"></div>
@@ -138,7 +138,7 @@ const Header = ({ cssClasses }: Props) => {
                       </ul>
                     )}
                     {schoolSubmenu && toggleSchoolSubmenu && (
-                      <ul className="fixed bg-white p-6 border-2 border-t-0 border-black -translate-x-8 rounded-b-xl flex flex-col gap-2 drop-shadow-md">
+                      <ul className="fixed bg-white p-6 border border-t-0 border-black -translate-x-8 rounded-b-xl flex flex-col gap-2 drop-shadow-md">
                         {/* while blocks to hide borders */}
                         <div className="w-3 bg-white h-4 absolute -translate-x-8 -translate-y-6"></div>
                         <div className="w-3 bg-white h-4 absolute translate-x-[120px] -translate-y-6"></div>

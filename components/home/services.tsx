@@ -26,8 +26,8 @@ const Services = ({ cssClasses }: Props) => {
               Nursing Services
             </Heading>
             <p className="col-span-full">
-              CareVita&apos;s main priority is to provide professional nursing
-              care to our client&apos;s facilities. Adhering to all legal
+              CareVita&#39;s main priority is to provide professional nursing
+              care to our client&#39;s facilities. Adhering to all legal
               requirements, we manage not only the employees and their training
               but also ensuring that the facility is fully compliant according
               to industry standards. Nursing audits are held regularly, giving
@@ -60,10 +60,10 @@ const Services = ({ cssClasses }: Props) => {
             </Heading>
             <p className="col-span-full">
               Our Cleaning, Laundry and Gardening Services are offered to our
-              Developers, Retirement Estates and NPO&apos;s in support of the
+              Developers, Retirement Estates and NPO&#39;s in support of the
               Nursing or Catering Services we provide. We manage these services
               with strict rules in terms of quality of work, end results, care
-              for resident&apos;s property, quality controls and schedules. Part
+              for resident&#39;s property, quality controls and schedules. Part
               of our services is also to assess and minimize our Environmental
               Impact in terms of the chemicals we use and our water and
               electricity consumption.

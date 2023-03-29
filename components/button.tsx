@@ -11,9 +11,11 @@ interface Props {
   backgroundColour?: string;
   textColour?: string;
   mobileHomesForm?: boolean;
+  desktopHomesForm?: boolean;
   formBack?: boolean;
   extendedTitle?: string;
   location?: string;
+  arrowCssClasses?: string;
 }
 
 const Button = ({
@@ -23,17 +25,19 @@ const Button = ({
   url,
   onClick,
   mobileHomesForm,
+  desktopHomesForm,
   formBack,
   extendedTitle,
   location,
+  arrowCssClasses,
 }: Props) => {
   if (form) {
     return (
       <button
-        className={`bg-green text-larger text-white px-6 py-4 flex gap-6 items-center ${cssClasses}`}
+        className={`bg-green text-larger text-white px-6 py-4 flex gap-6 items-center tabletLarge:hover:bg-lightGreen ${cssClasses}`}
         type="submit"
       >
-        {children || "Next"}
+        {children}
         <Image
           src="/icons/arrow_forward-white.svg"
           alt="Arrow icon"
@@ -67,6 +71,29 @@ const Button = ({
           width={32}
           height={32}
         ></Image>
+      </button>
+    );
+  } else if (desktopHomesForm) {
+    return (
+      <button
+        className="text-larger flex flex-col gap-5 w-full"
+        onClick={onClick}
+      >
+        <div className="flex flex-col gap-2">
+          <div className={`${cssClasses}`}>
+            <h4 className="text-white text-larger flex flex-col">
+              {extendedTitle}
+            </h4>
+            <p className="text-white text-smaller font-thin">{location}</p>
+          </div>
+          <Image
+            src="/icons/arrow_drop_down.svg"
+            alt="Arrow icon"
+            width={23}
+            height={23}
+            className={`place-self-center mt-3 ${arrowCssClasses}`}
+          />
+        </div>
       </button>
     );
   } else {

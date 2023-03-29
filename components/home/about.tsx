@@ -20,8 +20,8 @@ const About = ({ cssClasses }: Props) => {
           as our clients and employees.
         </p>
         <p>
-          Servicing from NPO&nbsp;s to Retirement Estates, we have a solid set
-          of core values that serves as the foundation of everything we do,
+          Servicing from NPO&#39;s to Retirement Estates, we have a solid set of
+          core values that serves as the foundation of everything we do,
           particularly when it comes to the main aspects of our business:
         </p>
         <ul className="list-disc ml-6">
@@ -37,7 +37,7 @@ const About = ({ cssClasses }: Props) => {
         <p>
           Our core values determine our company culture and priorities, it
           supports our vision of who we are and why we do what we do. They are
-          the essence or DNA of our company&apos;s identity – our principles,
+          the essence or DNA of our company&#39;s identity – our principles,
           beliefs and philosophies.
         </p>
       </main>
