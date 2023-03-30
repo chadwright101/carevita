@@ -19,7 +19,6 @@ const OurHomes = () => {
           {homeList.map(
             (
               {
-                title,
                 extendedTitle,
                 description,
                 location,
@@ -29,7 +28,7 @@ const OurHomes = () => {
               },
               index
             ) => (
-              <div>
+              <div key={index}>
                 <HomeItem
                   heroImageUrl={image}
                   heroImageAlt={imageAlt}
