@@ -696,27 +696,27 @@ const ContactForm = ({ cssClasses }: Props) => {
             </div>
           </div>
         )}
-        <ul className="mt-10 pt-10 border-t border-white flex flex-col gap-2">
-          <li className="grid grid-cols-[160px_1fr]">
-            <p className="text-white font-light">General enquiries:</p>
-            <Link
-              href="mailto:info@carevita.co.za"
-              className="text-white hover:underline underline-offset-4 decoration-1"
-            >
-              info@carevita.co.za
-            </Link>
-          </li>
-          <li className="grid grid-cols-[160px_1fr]">
-            <p className="text-white font-light">Account queries:</p>
-            <Link
-              href="mailto:accounts@carevita.co.za"
-              className="text-white hover:underline underline-offset-4 decoration-1"
-            >
-              accounts@carevita.co.za
-            </Link>
-          </li>
-        </ul>
       </div>
+      <ul className="mt-10 pt-10 border-t border-white flex flex-col gap-6 max-w-[1400px] mx-auto tabletLarge:gap-2">
+        <li className="grid grid-cols-[160px_1fr]">
+          <p className="text-white font-light">General enquiries:</p>
+          <Link
+            href="mailto:info@carevita.co.za"
+            className="text-white tabletLarge:hover:underline underline-offset-4 decoration-1 w-[170px] p-2 -m-2 tabletLarge:w-[140px] tabletLarge:p-0 tabletLarge:m-0"
+          >
+            info@carevita.co.za
+          </Link>
+        </li>
+        <li className="grid grid-cols-[160px_1fr]">
+          <p className="text-white font-light">Account queries:</p>
+          <Link
+            href="mailto:accounts@carevita.co.za"
+            className="text-white tabletLarge:hover:underline underline-offset-4 decoration-1 w-[210px] p-2 -m-2 tabletLarge:w-[182px] tabletLarge:p-0 tabletLarge:m-0"
+          >
+            accounts@carevita.co.za
+          </Link>
+        </li>
+      </ul>
     </div>
   );
 };

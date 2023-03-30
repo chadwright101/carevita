@@ -1,6 +1,5 @@
-import css from "styled-jsx/css";
-import ContactForm from "../contact-form";
-import Heading, { headingVariant } from "../heading";
+import ContactForm from "./contact-form";
+import Heading, { headingVariant } from "./heading";
 
 interface Props {
   cssClasses?: string;
