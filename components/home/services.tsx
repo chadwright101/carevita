@@ -11,13 +11,13 @@ const Services = ({ cssClasses }: Props) => {
       <Heading variant={headingVariant.sectionHeading}>Services</Heading>
       <div className="flex flex-col gap-20">
         <div className="grid grid-cols-1 gap-10 place-items-center tablet:place-items-start tabletLarge:grid-cols-2 tabletLarge:grid-rows-[150px_150px] desktopSmall:grid-rows-[125px_125px] desktop:grid-rows-[100px_100px]">
-          <div className="tabletLarge:grid grid-cols-8 tabletLarge:order-2">
+          <div className="tablet:grid grid-cols-11 tabletLarge:grid-cols-8 tabletLarge:order-2">
             <Image
               src="/icons/ecg_heart.svg"
               alt=""
               width={70}
               height={70}
-              className="mb-6 mx-auto tablet:mx-0 tabletLarge:w-10 tabletLarge:h-auto"
+              className="mb-6 mx-auto tablet:mx-0 tablet:w-10 tablet:h-auto"
             />
             <Heading
               variant={headingVariant.subheading}
@@ -44,13 +44,13 @@ const Services = ({ cssClasses }: Props) => {
           />
         </div>
         <div className="grid grid-cols-1 gap-10 place-items-center tablet:place-items-start tabletLarge:grid-cols-2 tabletLarge:grid-rows-[150px_150px] desktopSmall:grid-rows-[125px_125px] desktop:grid-rows-[100px_100px]">
-          <div className="tabletLarge:grid grid-cols-8 tabletLarge:order-2">
+          <div className="tablet:grid grid-cols-11 tabletLarge:grid-cols-8 tabletLarge:order-2">
             <Image
               src="/icons/bathtub.svg"
               alt=""
               width={70}
               height={70}
-              className="mb-6 mx-auto tablet:mx-0 tabletLarge:w-10 tabletLarge:h-auto"
+              className="mb-6 mx-auto tablet:mx-0 tablet:w-10 tablet:h-auto"
             />
             <Heading
               variant={headingVariant.subheading}
@@ -78,13 +78,13 @@ const Services = ({ cssClasses }: Props) => {
           />
         </div>
         <div className="grid grid-cols-1 gap-10 place-items-center tablet:place-items-start tabletLarge:grid-cols-2 tabletLarge:grid-rows-[150px_150px] desktopSmall:grid-rows-[125px_125px] desktop:grid-rows-[100px_100px]">
-          <div className="tabletLarge:grid grid-cols-8 tabletLarge:order-2">
+          <div className="tablet:grid grid-cols-11 tabletLarge:grid-cols-8 tabletLarge:order-2">
             <Image
               src="/icons/local_dining.svg"
               alt=""
               width={70}
               height={70}
-              className="mb-6 mx-auto tablet:mx-0 tabletLarge:w-10 tabletLarge:h-auto"
+              className="mb-6 mx-auto tablet:mx-0 tablet:w-10 tablet:h-auto"
             />
             <Heading
               variant={headingVariant.subheading}
