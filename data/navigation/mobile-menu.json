@@ -5,15 +5,15 @@
   },
   {
     "title": "Services",
-    "url": "/"
+    "url": "#services"
   },
   {
     "title": "Our Homes",
-    "url": "/"
+    "url": "our-homes"
   },
   {
     "title": "Our Schools",
-    "url": "/"
+    "url": "#"
   },
   {
     "title": "Blog",
@@ -21,6 +21,6 @@
   },
   {
     "title": "Contact",
-    "url": "/"
+    "url": "#contact"
   }
 ]

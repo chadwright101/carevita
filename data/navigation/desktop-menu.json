@@ -5,24 +5,27 @@
   },
   {
     "title": "Services",
-    "url": "/"
+    "url": "#services"
   },
   {
     "title": "Our Homes",
-    "url": "/",
+    "url": "our-homes",
     "homeSubmenu": [
       {
         "title": "The Crescent Lodge",
+        "extendedTitle": "The Crescent Retirement Lodge",
         "location": "Plettenberg Bay, WC",
         "url": "/"
       },
       {
         "title": "Eastlands Estate",
+        "extendedTitle": "Eastlands Mature Lifestyle Estate",
         "location": "Benoni, GP",
         "url": "/"
       },
       {
-        "title": "Serenpark Centre",
+        "title": "Serenepark Centre",
+        "extendedTitle": "Serenepark Retirement Centre",
         "location": "Pretoria, GP",
         "url": "/"
       }
@@ -30,7 +33,7 @@
   },
   {
     "title": "Our Schools",
-    "url": "/",
+    "url": "#",
     "schoolSubmenu": [
       {
         "title": "Coming Soon",
@@ -45,6 +48,6 @@
   },
   {
     "title": "Contact",
-    "url": "/"
+    "url": "#contact"
   }
 ]

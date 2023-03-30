@@ -1,0 +1,23 @@
+{
+  "Crescent": {
+    "title": "The Crescent Lodge",
+    "extendedTitle": "The Crescent Retirement Lodge",
+    "location": "Plettenberg Bay, WC",
+    "email": "jumireej@carevita.co.za",
+    "phone": "044 533 1234"
+  },
+  "Eastlands": {
+    "title": "Eastlands Estate",
+    "extendedTitle": "Eastlands Mature Lifestyle Estate",
+    "location": "Benoni, GP",
+    "email": "eastlands@carevita.co.za",
+    "phone": "1234567890"
+  },
+  "Serenepark": {
+    "title": "Serenepark Centre",
+    "extendedTitle": "Serenepark Retirement Centre",
+    "location": "Pretoria, GP",
+    "email": "serenepark@carevita.co.za",
+    "phone": "1234567890"
+  }
+}

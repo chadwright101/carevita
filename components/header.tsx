@@ -22,7 +22,7 @@ const Header = ({ cssClasses }: Props) => {
     <header className={`w-full sticky h-auto top-0 z-10 ${cssClasses}`}>
       {/* mobile nav */}
       <div className="w-full flex justify-between items-center px-6 py-4 border-b-2 border-black drop-shadow-md bg-white tabletLarge:hidden">
-        <Link href="/" className="p-2 -m-2">
+        <Link href="/" className="p-4 -m-4">
           <Image
             src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/carevita-logo.png"
             alt="CareVita logo"
@@ -119,7 +119,7 @@ const Header = ({ cssClasses }: Props) => {
                     </Link>
 
                     {homeSubmenu && toggleHomeSubmenu && (
-                      <ul className="fixed bg-white p-6 border-2 border-t-0 border-black -translate-x-[60px] rounded-b-xl flex flex-col gap-2 drop-shadow-md">
+                      <ul className="fixed bg-white p-6 border border-t-0 border-black -translate-x-[59px] rounded-b-xl flex flex-col gap-2 drop-shadow-md">
                         {/* while blocks to hide borders */}
                         <div className="w-3 bg-white h-4 absolute -translate-x-8 -translate-y-6"></div>
                         <div className="w-3 bg-white h-4 absolute translate-x-[170px] -translate-y-6"></div>
@@ -138,7 +138,7 @@ const Header = ({ cssClasses }: Props) => {
                       </ul>
                     )}
                     {schoolSubmenu && toggleSchoolSubmenu && (
-                      <ul className="fixed bg-white p-6 border-2 border-t-0 border-black -translate-x-8 rounded-b-xl flex flex-col gap-2 drop-shadow-md">
+                      <ul className="fixed bg-white p-6 border border-t-0 border-black -translate-x-8 rounded-b-xl flex flex-col gap-2 drop-shadow-md">
                         {/* while blocks to hide borders */}
                         <div className="w-3 bg-white h-4 absolute -translate-x-8 -translate-y-6"></div>
                         <div className="w-3 bg-white h-4 absolute translate-x-[120px] -translate-y-6"></div>
