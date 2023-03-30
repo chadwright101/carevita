@@ -1,0 +1,29 @@
+[
+  {
+    "title": "The Crescent Lodge",
+    "extendedTitle": "The Crescent Retirement Lodge",
+    "location": "Plettenberg Bay, Western Cape",
+    "image": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/Crescent.jpeg",
+    "imageAlt": "",
+    "description": "Nam ut lacus lacinia, condimentum risus non, vulputate ligula. Duis id massa ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque ac diam ipsum. In non nulla sapien. Cras ac mi mi. Cras finibus diam quis elementum tempus. Donec faucibus sagittis dolor efficitur mollis. Morbi tincidunt nisl in condimentum mattis. Aliquam quam velit, feugiat in diam in, pulvinar bibendum orci. Praesent fringilla elit sit amet ultrices volutpat.",
+    "homePage": "#"
+  },
+  {
+    "title": "Eastlands Estate",
+    "extendedTitle": "Eastlands Mature Lifestyle Estate",
+    "location": "Benoni, Gauteng",
+    "image": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/Eastlands.jpg",
+    "imageAlt": "",
+    "description": "Vivamus molestie condimentum nibh nec tincidunt. Sed suscipit neque ut elit rhoncus, sit amet feugiat est gravida. Donec et dolor sit amet libero eleifend tempor vitae vel dolor. Vivamus in lacinia nulla. Suspendisse sit amet luctus ipsum. Donec molestie gravida viverra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris nisi metus, fringilla sit amet metus ac, viverra fringilla ante. Integer sit amet dapibus neque.",
+    "homePage": "#"
+  },
+  {
+    "title": "Serenepark Centre",
+    "extendedTitle": "Serenepark Retirement Centre",
+    "location": "Pretoria, Gauteng",
+    "image": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/Serenepark.jpeg",
+    "imageAlt": "",
+    "description": "Phasellus accumsan auctor tortor, vitae euismod nulla hendrerit sed. Praesent euismod laoreet imperdiet. Pellentesque finibus odio non justo bibendum, nec viverra odio ultricies. Pellentesque risus odio, pellentesque quis magna ut, fermentum ornare metus. Nullam interdum erat lacinia malesuada luctus. Curabitur ut tempus urna. Fusce tempor augue velit, eu semper mauris efficitur a. Donec ultricies tortor eget tempor bibendum. Integer eget augue augue.",
+    "homePage": "#"
+  }
+]
