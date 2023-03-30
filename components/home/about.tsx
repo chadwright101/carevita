@@ -51,7 +51,7 @@ const About = ({ cssClasses }: Props) => {
             className="w-full h-full object-cover"
           />
           <Image
-            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/_MG_9890.jpg "
+            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/_MG_9890.jpg"
             alt=""
             width={900}
             height={450}
