@@ -14,9 +14,17 @@ const Home = () => {
       <Hero />
       <Layout>
         <About cssClasses="my-16" />
+        <div
+          id="services"
+          className="-translate-y-36 tablet:-translate-y-40 desktop:-translate-y-36"
+        ></div>
         <Services />
         <OurHomes cssClasses="my-16" />
       </Layout>
+      <div
+        id="contact"
+        className="-translate-y-36 tablet:-translate-y-36 desktop:-translate-y-32"
+      ></div>
       <Contact />
       <Footer />
     </>
