@@ -39,6 +39,8 @@ const ContactForm = ({ cssClasses }: Props) => {
                 cssClasses="text-left"
                 extendedTitle={homeList.Crescent.extendedTitle}
                 location={homeList.Crescent.location}
+                homeIconUrl="/icons/beach-blue.svg"
+                homeIconAlt="Beach umbrella icon"
               />
             </>
           )}
@@ -149,6 +151,8 @@ const ContactForm = ({ cssClasses }: Props) => {
               cssClasses="text-left"
               extendedTitle={homeList.Eastlands.extendedTitle}
               location={homeList.Eastlands.location}
+              homeIconUrl="/icons/flower-blue.svg"
+              homeIconAlt="Flower icon"
             />
           )}
 
@@ -258,6 +262,8 @@ const ContactForm = ({ cssClasses }: Props) => {
               cssClasses="text-left"
               extendedTitle={homeList.Serenepark.extendedTitle}
               location={homeList.Serenepark.location}
+              homeIconUrl="/icons/leaves-blue.svg"
+              homeIconAlt="Leaves icon"
             />
           )}
 
@@ -361,7 +367,6 @@ const ContactForm = ({ cssClasses }: Props) => {
         </p>
         <div className="grid grid-cols-3">
           {/* the crescent */}
-
           <Button
             desktopHomesForm
             onClick={() => {
@@ -379,6 +384,8 @@ const ContactForm = ({ cssClasses }: Props) => {
             arrowCssClasses={classNames("", {
               hidden: !showCrescent,
             })}
+            homeIconUrl="/icons/beach-white.svg"
+            homeIconAlt="Beach umbrella icon"
           />
 
           {/* eastlands */}
@@ -399,6 +406,8 @@ const ContactForm = ({ cssClasses }: Props) => {
             arrowCssClasses={classNames("", {
               hidden: !showEastlands,
             })}
+            homeIconUrl="/icons/flower-white.svg"
+            homeIconAlt="Flower icon"
           />
 
           {/* serenepark */}
@@ -419,6 +428,8 @@ const ContactForm = ({ cssClasses }: Props) => {
             arrowCssClasses={classNames("", {
               hidden: !showSerenePark,
             })}
+            homeIconUrl="/icons/leaves-white.svg"
+            homeIconAlt="Leaves icon"
           />
         </div>
         {showCrescent && (

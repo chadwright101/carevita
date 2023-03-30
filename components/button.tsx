@@ -16,6 +16,8 @@ interface Props {
   extendedTitle?: string;
   location?: string;
   arrowCssClasses?: string;
+  homeIconUrl?: any;
+  homeIconAlt?: any;
 }
 
 const Button = ({
@@ -30,6 +32,8 @@ const Button = ({
   extendedTitle,
   location,
   arrowCssClasses,
+  homeIconUrl,
+  homeIconAlt,
 }: Props) => {
   if (form) {
     return (
@@ -61,16 +65,22 @@ const Button = ({
         className={`bg-white text-larger px-6 py-4 flex gap-4 justify-between items-center w-full ${cssClasses}`}
         onClick={onClick}
       >
-        <span className="text-blue flex flex-col">
-          {extendedTitle}
-          <span className="text-blue text-paragraph font-thin">{location}</span>
-        </span>
+        <div className="flex items-center gap-4">
+          <Image src={homeIconUrl} alt={homeIconAlt} width={50} height={50} />
+          <span className="text-blue flex flex-col">
+            {extendedTitle}
+            <span className="text-blue text-paragraph font-thin">
+              {location}
+            </span>
+          </span>
+        </div>
         <Image
           src="/icons/arrow_forward-blue.svg"
           alt="Arrow icon"
           width={32}
           height={32}
-        ></Image>
+          className="min-w-[32px] h-auto"
+        />
       </button>
     );
   } else if (desktopHomesForm) {
@@ -80,11 +90,20 @@ const Button = ({
         onClick={onClick}
       >
         <div className="flex flex-col gap-2">
-          <div className={`${cssClasses}`}>
-            <h4 className="text-white text-larger flex flex-col">
-              {extendedTitle}
-            </h4>
-            <p className="text-white text-smaller font-thin">{location}</p>
+          <div className={`flex gap-3 items-center ${cssClasses}`}>
+            <Image
+              src={homeIconUrl}
+              alt={homeIconAlt}
+              width={50}
+              height={50}
+              className="-translate-x-[4px]"
+            />
+            <div>
+              <h4 className="text-white text-larger flex flex-col">
+                {extendedTitle}
+              </h4>
+              <p className="text-white text-smaller font-thin">{location}</p>
+            </div>
           </div>
           <Image
             src="/icons/arrow_drop_down.svg"
