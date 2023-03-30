@@ -30,7 +30,7 @@ const HomeItem = ({
         >
           {heading}
         </Heading>
-        <h3 className="font-thin text-smaller text-center tablet:text-left">
+        <h3 className="font-thin text-paragraph text-center tablet:text-left">
           {location}
         </h3>
       </div>

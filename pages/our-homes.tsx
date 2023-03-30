@@ -33,7 +33,7 @@ const OurHomes = () => {
                 <HomeItem
                   heroImageUrl={image}
                   heroImageAlt={imageAlt}
-                  heading={title}
+                  heading={extendedTitle}
                   location={location}
                   paragraph={description}
                   buttonUrl={homePage}
