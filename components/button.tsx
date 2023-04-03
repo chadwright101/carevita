@@ -118,7 +118,7 @@ const Button = ({
   } else {
     return (
       <button
-        className={`px-12 py-2.5 text-subheading bg-blue text-white drop-shadow-md tablet:hover:bg-green tablet:px-10 tablet:py-1.5 ${cssClasses}`}
+        className={`px-12 py-2.5 text-subheading bg-green text-white drop-shadow-md tablet:hover:bg-lightGreen tablet:px-10 tablet:py-1.5 ${cssClasses}`}
       >
         <Link href={url!}>{children || "View More"}</Link>
       </button>
