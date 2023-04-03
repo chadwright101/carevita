@@ -49,7 +49,7 @@ const OurHomes = ({ cssClasses }: Props) => {
       </Splide>
       <Button
         url="our-homes"
-        cssClasses="mt-10 mx-auto tabletLarge:mx-0 desktop:mx-auto desktop:mt-0 desktop:-translate-y-[540px] desktop:translate-x-[490px]"
+        cssClasses="mt-10 mx-auto tabletLarge:mx-0 desktop:mx-auto desktop:mt-0 desktop:-translate-y-[540px] desktop:translate-x-[500px]"
       />
     </section>
   );
