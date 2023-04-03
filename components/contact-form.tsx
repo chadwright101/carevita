@@ -697,9 +697,11 @@ const ContactForm = ({ cssClasses }: Props) => {
           </div>
         )}
       </div>
-      <ul className="mt-10 pt-10 border-t border-white flex flex-col gap-6 max-w-[1400px] mx-auto tabletLarge:gap-2">
-        <li className="grid grid-cols-[160px_1fr]">
-          <p className="text-white font-light">General enquiries:</p>
+      <ul className="mt-10 pt-10 border-t border-white flex flex-col gap-8 phone:gap-6 max-w-[1400px] mx-auto tabletLarge:gap-2">
+        <li className="grid grid-cols-1 gap-2 text-larger place-items-center phone:place-items-start phone:gap-0 phone:grid-cols-[165px_1fr] desktopSmall:text-paragraph">
+          <p className="text-white text-center font-light text-larger desktopSmall:text-paragraph">
+            General enquiries:
+          </p>
           <Link
             href="mailto:info@carevita.co.za"
             className="text-white tabletLarge:hover:underline underline-offset-4 decoration-1 w-[170px] p-2 -m-2 tabletLarge:w-[140px] tabletLarge:p-0 tabletLarge:m-0"
@@ -707,8 +709,10 @@ const ContactForm = ({ cssClasses }: Props) => {
             info@carevita.co.za
           </Link>
         </li>
-        <li className="grid grid-cols-[160px_1fr]">
-          <p className="text-white font-light">Account queries:</p>
+        <li className="grid grid-cols-1 gap-2 text-larger place-items-center phone:place-items-start phone:gap-0 phone:grid-cols-[165px_1fr] desktopSmall:text-paragraph">
+          <p className="text-white text-center font-light text-larger desktopSmall:text-paragraph">
+            Account queries:
+          </p>
           <Link
             href="mailto:accounts@carevita.co.za"
             className="text-white tabletLarge:hover:underline underline-offset-4 decoration-1 w-[210px] p-2 -m-2 tabletLarge:w-[182px] tabletLarge:p-0 tabletLarge:m-0"
