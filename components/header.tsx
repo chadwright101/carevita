@@ -5,6 +5,9 @@ import { useState } from "react";
 
 import mobileMenuList from "../data/navigation/mobile-menu.json";
 import desktopMenuList from "../data/navigation/desktop-menu.json";
+import useScrollPosition from "./utils/scroll-position";
+
+import classNames from "classnames";
 
 import menuIcon from "public/icons/menu-icon.svg";
 import closeIcon from "public/icons/close-icon.svg";
@@ -18,6 +21,8 @@ const Header = ({ cssClasses }: Props) => {
   const [toggleHomeSubmenu, setToggleHomeSubmenu] = useState(false);
   const [toggleSchoolSubmenu, setToggleSchoolSubmenu] = useState(false);
 
+  const scrollPosition = useScrollPosition();
+
   return (
     <header className={`w-full sticky h-auto top-0 z-10 ${cssClasses}`}>
       {/* mobile nav */}
@@ -28,6 +33,9 @@ const Header = ({ cssClasses }: Props) => {
             alt="CareVita logo"
             width={80}
             height={120}
+            className={classNames("transition-all", {
+              "w-[64px] h-auto": scrollPosition > 100,
+            })}
           />
         </Link>
         <button className="p-2 -m-2" onClick={() => setToggleMenu(true)}>
@@ -76,6 +84,9 @@ const Header = ({ cssClasses }: Props) => {
               alt="CareVita logo"
               width={80}
               height={120}
+              className={classNames("transition-all", {
+                "w-14 h-auto": scrollPosition > 100,
+              })}
             />
           </Link>
           <nav>
