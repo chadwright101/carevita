@@ -33,7 +33,7 @@ const Header = ({ cssClasses }: Props) => {
             width={80}
             height={120}
             className={classNames("transition-all", {
-              "w-[64px] h-auto": scrollPosition > 100,
+              "w-[64px] h-auto": scrollPosition > 0,
             })}
           />
         </Link>
@@ -84,7 +84,7 @@ const Header = ({ cssClasses }: Props) => {
               width={80}
               height={120}
               className={classNames("transition-all", {
-                "w-14 h-auto": scrollPosition > 100,
+                "w-14 h-auto": scrollPosition > 0,
               })}
             />
           </Link>

@@ -26,7 +26,7 @@ const HomeItem = ({
       <div className="flex flex-col gap-1">
         <Heading
           variant={headingVariant.subheading}
-          cssClasses="-mb-0 tablet:-mb-0 desktop:-mb-0"
+          cssClasses="-mb-0.5 tablet:-mb-0.5 desktop:-mb-0.5"
         >
           {heading}
         </Heading>
