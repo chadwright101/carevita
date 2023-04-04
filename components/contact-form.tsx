@@ -6,7 +6,7 @@ import Button from "./button";
 
 import classNames from "classnames";
 
-import homeList from "../data/our-homes-general.json";
+import homeList from "../data/general-homes-data.json";
 
 interface Props {
   cssClasses?: string;
@@ -37,8 +37,8 @@ const ContactForm = ({ cssClasses }: Props) => {
                 mobileHomesForm
                 onClick={() => setShowCrescent(!showCrescent)}
                 cssClasses="text-left"
-                extendedTitle={homeList.Crescent.extendedTitle}
-                location={homeList.Crescent.location}
+                extendedTitle={homeList.homes.Crescent.extendedTitle}
+                location={homeList.homes.Crescent.location}
                 homeIconUrl="/icons/beach-blue.svg"
                 homeIconAlt="Beach umbrella icon"
               />
@@ -49,10 +49,10 @@ const ContactForm = ({ cssClasses }: Props) => {
             <div className="flex flex-col gap-6 fixed top-0 h-screen w-full bg-blue z-20 pt-10 px-6 tablet:relative tablet:h-auto tablet:pt-0 tablet:z-0">
               <div className="flex flex-col">
                 <h4 className="text-white text-center font-light tablet:text-left">
-                  {homeList.Crescent.title}
+                  {homeList.homes.Crescent.title}
                 </h4>
                 <p className="text-white text-center tablet:text-left">
-                  {homeList.Crescent.location}
+                  {homeList.homes.Crescent.location}
                 </p>
               </div>
               <ul className="flex flex-col gap-2 mt-4">
@@ -62,7 +62,7 @@ const ContactForm = ({ cssClasses }: Props) => {
                     href="mailto:jumireej@carevita.co.za"
                     className="text-white text-larger"
                   >
-                    {homeList.Crescent.email}
+                    {homeList.homes.Crescent.email}
                   </Link>
                 </li>
                 <li className="grid grid-cols-[80px_1fr]">
@@ -71,7 +71,7 @@ const ContactForm = ({ cssClasses }: Props) => {
                     href="tel:+27445331234"
                     className="text-white text-larger"
                   >
-                    {homeList.Crescent.phone}
+                    {homeList.homes.Crescent.phone}
                   </Link>
                 </li>
               </ul>
@@ -149,8 +149,8 @@ const ContactForm = ({ cssClasses }: Props) => {
               mobileHomesForm
               onClick={() => setShowEastlands(!showEastlands)}
               cssClasses="text-left"
-              extendedTitle={homeList.Eastlands.extendedTitle}
-              location={homeList.Eastlands.location}
+              extendedTitle={homeList.homes.Eastlands.extendedTitle}
+              location={homeList.homes.Eastlands.location}
               homeIconUrl="/icons/flower-blue.svg"
               homeIconAlt="Flower icon"
             />
@@ -160,10 +160,10 @@ const ContactForm = ({ cssClasses }: Props) => {
             <div className="flex flex-col gap-6 fixed top-0 h-screen w-full bg-blue z-20 pt-10 px-6 tablet:relative tablet:h-auto tablet:pt-0 tablet:z-0">
               <div className="flex flex-col">
                 <h4 className="text-white text-center font-light tablet:text-left">
-                  {homeList.Eastlands.title}
+                  {homeList.homes.Eastlands.title}
                 </h4>
                 <p className="text-white text-center tablet:text-left">
-                  {homeList.Eastlands.location}
+                  {homeList.homes.Eastlands.location}
                 </p>
               </div>
               <ul className="flex flex-col gap-2 mt-4">
@@ -173,7 +173,7 @@ const ContactForm = ({ cssClasses }: Props) => {
                     href="mailto:eastlands@carevita.co.za"
                     className="text-white text-larger"
                   >
-                    {homeList.Eastlands.email}
+                    {homeList.homes.Eastlands.email}
                   </Link>
                 </li>
                 <li className="grid grid-cols-[80px_1fr]">
@@ -182,7 +182,7 @@ const ContactForm = ({ cssClasses }: Props) => {
                     href="tel:1234567890"
                     className="text-white text-larger"
                   >
-                    {homeList.Eastlands.phone}
+                    {homeList.homes.Eastlands.phone}
                   </Link>
                 </li>
               </ul>
@@ -260,8 +260,8 @@ const ContactForm = ({ cssClasses }: Props) => {
               mobileHomesForm
               onClick={() => setShowSerenePark(!showSerenePark)}
               cssClasses="text-left"
-              extendedTitle={homeList.Serenepark.extendedTitle}
-              location={homeList.Serenepark.location}
+              extendedTitle={homeList.homes.Serenepark.extendedTitle}
+              location={homeList.homes.Serenepark.location}
               homeIconUrl="/icons/leaves-blue.svg"
               homeIconAlt="Leaves icon"
             />
@@ -271,10 +271,10 @@ const ContactForm = ({ cssClasses }: Props) => {
             <div className="flex flex-col gap-6 fixed top-0 h-screen w-full bg-blue z-20 pt-10 px-6 tablet:relative tablet:h-auto tablet:pt-0 tablet:z-0">
               <div className="flex flex-col">
                 <h4 className="text-white text-center font-light tablet:text-left">
-                  {homeList.Serenepark.title}
+                  {homeList.homes.Serenepark.title}
                 </h4>
                 <p className="text-white text-center tablet:text-left">
-                  {homeList.Serenepark.location}
+                  {homeList.homes.Serenepark.location}
                 </p>
               </div>
               <ul className="flex flex-col gap-2 mt-4">
@@ -284,7 +284,7 @@ const ContactForm = ({ cssClasses }: Props) => {
                     href="mailto:serenepark@carevita.co.za"
                     className="text-white text-larger"
                   >
-                    {homeList.Serenepark.email}
+                    {homeList.homes.Serenepark.email}
                   </Link>
                 </li>
                 <li className="grid grid-cols-[80px_1fr]">
@@ -293,7 +293,7 @@ const ContactForm = ({ cssClasses }: Props) => {
                     href="tel:1234567890"
                     className="text-white text-larger"
                   >
-                    {homeList.Serenepark.phone}
+                    {homeList.homes.Serenepark.phone}
                   </Link>
                 </li>
               </ul>
@@ -374,8 +374,8 @@ const ContactForm = ({ cssClasses }: Props) => {
               setShowEastlands(false);
               setShowSerenePark(false);
             }}
-            extendedTitle={homeList.Crescent.extendedTitle}
-            location={homeList.Crescent.location}
+            extendedTitle={homeList.homes.Crescent.extendedTitle}
+            location={homeList.homes.Crescent.location}
             cssClasses={classNames("", {
               "hover:border-b-2 border-white pb-2 -mb-2 hover:-mb-[10px]":
                 !showCrescent,
@@ -396,8 +396,8 @@ const ContactForm = ({ cssClasses }: Props) => {
               setShowEastlands(true);
               setShowSerenePark(false);
             }}
-            extendedTitle={homeList.Eastlands.extendedTitle}
-            location={homeList.Eastlands.location}
+            extendedTitle={homeList.homes.Eastlands.extendedTitle}
+            location={homeList.homes.Eastlands.location}
             cssClasses={classNames("", {
               "hover:border-b-2 border-white pb-2 -mb-2 hover:-mb-[10px]":
                 !showEastlands,
@@ -418,8 +418,8 @@ const ContactForm = ({ cssClasses }: Props) => {
               setShowEastlands(false);
               setShowSerenePark(true);
             }}
-            extendedTitle={homeList.Serenepark.extendedTitle}
-            location={homeList.Serenepark.location}
+            extendedTitle={homeList.homes.Serenepark.extendedTitle}
+            location={homeList.homes.Serenepark.location}
             cssClasses={classNames("", {
               "hover:border-b-2 border-white pb-2 -mb-2 hover:-mb-[10px]":
                 !showSerenePark,
@@ -442,7 +442,7 @@ const ContactForm = ({ cssClasses }: Props) => {
                     href="mailto:jumireej@carevita.co.za"
                     className="text-white text-larger hover:underline underline-offset-4 decoration-1"
                   >
-                    {homeList.Crescent.email}
+                    {homeList.homes.Crescent.email}
                   </Link>
                 </li>
                 <li className="grid grid-cols-[80px_1fr]">
@@ -451,7 +451,7 @@ const ContactForm = ({ cssClasses }: Props) => {
                     href="tel:+27445331234"
                     className="text-white text-larger"
                   >
-                    {homeList.Crescent.phone}
+                    {homeList.homes.Crescent.phone}
                   </Link>
                 </li>
               </ul>
@@ -530,7 +530,7 @@ const ContactForm = ({ cssClasses }: Props) => {
                     href="mailto:eastlands@carevita.co.za"
                     className="text-white text-larger hover:underline underline-offset-4 decoration-1"
                   >
-                    {homeList.Eastlands.email}
+                    {homeList.homes.Eastlands.email}
                   </Link>
                 </li>
                 <li className="grid grid-cols-[80px_1fr]">
@@ -539,7 +539,7 @@ const ContactForm = ({ cssClasses }: Props) => {
                     href="tel:1234567890"
                     className="text-white text-larger"
                   >
-                    {homeList.Eastlands.phone}
+                    {homeList.homes.Eastlands.phone}
                   </Link>
                 </li>
               </ul>
@@ -618,7 +618,7 @@ const ContactForm = ({ cssClasses }: Props) => {
                     href="mailto:serenepark@carevita.co.za"
                     className="text-white text-larger hover:underline underline-offset-4 decoration-1"
                   >
-                    {homeList.Serenepark.email}
+                    {homeList.homes.Serenepark.email}
                   </Link>
                 </li>
                 <li className="grid grid-cols-[80px_1fr]">
@@ -627,7 +627,7 @@ const ContactForm = ({ cssClasses }: Props) => {
                     href="tel:1234567890"
                     className="text-white text-larger"
                   >
-                    {homeList.Serenepark.phone}
+                    {homeList.homes.Serenepark.phone}
                   </Link>
                 </li>
               </ul>

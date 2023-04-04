@@ -5,7 +5,7 @@ import Heading, { headingVariant } from "@/components/heading";
 import Layout from "@/components/layout";
 import Contact from "@/components/contact";
 
-import homeList from "../data/our-homes-array.json";
+import homeList from "../data/general-homes-data.json";
 
 const OurHomes = () => {
   return (
@@ -16,7 +16,7 @@ const OurHomes = () => {
           Our homes
         </Heading>
         <main className="grid tabletLarge:grid-cols-2 tabletLarge:gap-10 desktop:grid-cols-3">
-          {homeList.map(
+          {homeList.arrayForMap.map(
             (
               {
                 extendedTitle,
@@ -37,7 +37,7 @@ const OurHomes = () => {
                   paragraph={description}
                   buttonUrl={homePage}
                 />
-                {index < homeList.length - 1 && (
+                {index < homeList.arrayForMap.length - 1 && (
                   <hr className="my-16 tablet:text-white tablet:my-10 desktop:my-5" />
                 )}
               </div>

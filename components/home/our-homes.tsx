@@ -6,7 +6,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 import "@splidejs/react-splide/css";
 
-import ourHomeList from "../../data/our-homes-slider.json";
+import ourHomeList from "../../data/sliders/home-page-our-homes-slider.json";
 import Heading, { headingVariant } from "../heading";
 
 interface Props {
