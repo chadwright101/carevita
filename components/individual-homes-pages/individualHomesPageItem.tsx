@@ -9,7 +9,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 import "@splidejs/react-splide/css";
 import Layout from "../layout";
-import CrescentMap from "../utils/crescent-map";
+import CrescentMap from "../maps/crescent-map";
 
 interface Props {
   homeList: {
