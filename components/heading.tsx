@@ -16,7 +16,7 @@ const Heading = ({ cssClasses, children, variant }: Props) => {
   if (variant === headingVariant.pageHeading) {
     return (
       <h1
-        className={`text-heading text-center mb-8 tablet:mb-14 desktop:mb-10 tablet:text-left ${cssClasses}`}
+        className={`text-heading text-center mb-8 mt-10 tablet:mb-14 desktop:mb-10 tablet:text-left ${cssClasses}`}
       >
         {children}
       </h1>

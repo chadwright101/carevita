@@ -5,16 +5,14 @@ import Heading, { headingVariant } from "@/components/heading";
 import Layout from "@/components/layout";
 import Contact from "@/components/contact";
 
-import homeList from "../data/general-homes-data.json";
+import homeList from "../../data/carevita-data.json";
 
 const OurHomes = () => {
   return (
     <>
       <Header />
       <Layout>
-        <Heading variant={headingVariant.pageHeading} cssClasses="mt-10">
-          Our homes
-        </Heading>
+        <Heading variant={headingVariant.pageHeading}>Our homes</Heading>
         <main className="grid tabletLarge:grid-cols-2 tabletLarge:gap-10 desktop:grid-cols-3">
           {homeList.ourHomesPage.map(
             (
@@ -24,7 +22,7 @@ const OurHomes = () => {
                 location,
                 image,
                 imageAlt,
-                homePage,
+                homesPageUrl,
               },
               index
             ) => (
@@ -35,7 +33,7 @@ const OurHomes = () => {
                   heading={extendedTitle}
                   location={location}
                   paragraph={description}
-                  buttonUrl={homePage}
+                  buttonUrl={homesPageUrl}
                 />
                 {index < homeList.ourHomesPage.length - 1 && (
                   <hr className="my-16 tablet:text-white tablet:my-10 desktop:my-5" />
