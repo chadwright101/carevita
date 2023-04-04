@@ -6,7 +6,7 @@ interface Props {
 
 const CrescentMap = ({ cssClasses }: Props) => {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || null,
   });
   if (!isLoaded) return <div>Loading...</div>;
   return <Map cssClasses={cssClasses} />;
