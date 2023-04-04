@@ -6,7 +6,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 import "@splidejs/react-splide/css";
 
-import ourHomeList from "../../data/sliders/home-page-our-homes-slider.json";
+import sliderList from "../../data/carevita-data.json";
 import Heading, { headingVariant } from "../heading";
 
 interface Props {
@@ -32,20 +32,22 @@ const OurHomes = ({ cssClasses }: Props) => {
           drag: false,
         }}
       >
-        {ourHomeList.map(({ url, alt, position }, index) => (
-          <SplideSlide
-            key={index}
-            className="h-[300px] w-full tablet:h-[400px] tabletLarge:h-[500px] desktopSmall:h-[575px] desktop:h-[615px]"
-          >
-            <Image
-              src={url}
-              alt={alt}
-              width={1400}
-              height={1000}
-              className={`object-cover h-full w-full ${position}`}
-            />
-          </SplideSlide>
-        ))}
+        {sliderList.ourHomesSliderHomePage.map(
+          ({ url, alt, position }, index) => (
+            <SplideSlide
+              key={index}
+              className="h-[300px] w-full tablet:h-[400px] tabletLarge:h-[500px] desktopSmall:h-[575px] desktop:h-[615px]"
+            >
+              <Image
+                src={url}
+                alt={alt}
+                width={1400}
+                height={1000}
+                className={`object-cover h-full w-full ${position}`}
+              />
+            </SplideSlide>
+          )
+        )}
       </Splide>
       <Button
         url="our-homes"

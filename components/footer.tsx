@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import menuList from "../data/navigation/menu-list.json";
+import menuList from "../data/carevita-data.json";
 
 interface Props {
   cssClasses?: string;
@@ -20,7 +20,7 @@ const Footer = ({ cssClasses, border }: Props) => {
         <div className="w-full max-w-[1400px] flex justify-center tabletLarge:justify-between items-center">
           <nav className="hidden tabletLarge:flex">
             <ul>
-              {menuList.desktop.map(({ title, url }, index) => (
+              {menuList.navigation.desktop.map(({ title, url }, index) => (
                 <li key={index}>
                   <Link href={url} className=" hover:font-light">
                     {title}

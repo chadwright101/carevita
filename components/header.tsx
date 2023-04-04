@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { useState } from "react";
 
-import menuList from "../data/navigation/menu-list.json";
+import menuList from "../data/carevita-data.json";
 import useScrollPosition from "./utils/scroll-position";
 
 import classNames from "classnames";
@@ -44,7 +44,7 @@ const Header = ({ cssClasses }: Props) => {
       {toggleMenu && (
         <nav className="fixed top-0 h-screen w-full bg-blue pt-8 px-5">
           <ul className="mt-10 flex flex-col gap-4">
-            {menuList.mobile.map(({ title, url }, index) => (
+            {menuList.navigation.mobile.map(({ title, url }, index) => (
               <>
                 <li key={index}>
                   <Link
@@ -55,7 +55,7 @@ const Header = ({ cssClasses }: Props) => {
                     {title}
                   </Link>
                 </li>
-                {index < menuList.mobile.length - 1 && (
+                {index < menuList.navigation.mobile.length - 1 && (
                   <hr className="px-5 text-white" />
                 )}
               </>
@@ -90,7 +90,7 @@ const Header = ({ cssClasses }: Props) => {
           </Link>
           <nav>
             <ul className="flex gap-6">
-              {menuList.desktop.map(
+              {menuList.navigation.desktop.map(
                 ({ title, url, schoolSubmenu, homeSubmenu }, index) => (
                   <li
                     key={index}

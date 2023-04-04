@@ -16,7 +16,7 @@ const OurHomes = () => {
           Our homes
         </Heading>
         <main className="grid tabletLarge:grid-cols-2 tabletLarge:gap-10 desktop:grid-cols-3">
-          {homeList.arrayForMap.map(
+          {homeList.ourHomesPage.map(
             (
               {
                 extendedTitle,
@@ -37,7 +37,7 @@ const OurHomes = () => {
                   paragraph={description}
                   buttonUrl={homePage}
                 />
-                {index < homeList.arrayForMap.length - 1 && (
+                {index < homeList.ourHomesPage.length - 1 && (
                   <hr className="my-16 tablet:text-white tablet:my-10 desktop:my-5" />
                 )}
               </div>
