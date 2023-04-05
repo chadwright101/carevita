@@ -42,7 +42,7 @@ const About = ({ cssClasses }: Props) => {
             beliefs and philosophies.
           </p>
         </div>
-        <div className="grid gap-10 mt-6 grid-rows-2 tabletLarge:grid-cols-2 tablet:grid-rows-1 desktop:grid-cols-1 desktop:grid-rows-[300px_300px]">
+        <div className="grid gap-10 mt-6 tablet:grid-rows-[400px_400px] tabletLarge:grid-cols-2 tabletLarge:grid-rows-1 desktop:grid-cols-1 desktop:grid-rows-[300px_300px]">
           <Image
             src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/_MG_9874.jpg"
             alt=""
