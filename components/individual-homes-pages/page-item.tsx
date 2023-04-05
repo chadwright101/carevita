@@ -45,13 +45,8 @@ const PageItem = ({
   return (
     <>
       <Layout>
-        <Heading
-          variant={headingVariant.pageHeading}
-          cssClasses="mb-0.5 tablet:mb-0.5 desktop:mb-0.5"
-        >
-          {pageHeading}
-        </Heading>
-        <h3 className="text-paragraph font-thin text-center mt-2 mb-16 tablet:text-left tablet:mb-8 tabletLarge:mb-6">
+        <Heading variant={headingVariant.pageHeading}>{pageHeading}</Heading>
+        <h3 className="text-paragraph font-thin text-center mb-16 tablet:text-left tablet:mb-8 tabletLarge:mb-6 -mt-6 tablet:-mt-12 tabletLarge:-mt-12 desktop:-mt-8">
           {location}
         </h3>
       </Layout>

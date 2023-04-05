@@ -40,7 +40,7 @@ const Button = ({
   if (form) {
     return (
       <button
-        className={`bg-green text-larger text-white px-6 py-4 flex gap-6 items-center tabletLarge:hover:bg-lightGreen ${cssClasses}`}
+        className={`bg-green text-subheading font-thin text-white px-6 py-2.5 flex gap-6 items-center tabletLarge:hover:bg-lightGreen ${cssClasses}`}
         type="submit"
       >
         {children}
@@ -55,7 +55,7 @@ const Button = ({
   } else if (formBack) {
     return (
       <button
-        className={`bg-lightGreen text-larger text-white px-6 py-4 ${cssClasses}`}
+        className={`bg-lightGreen text-subheading font-thin text-white px-6 py-2.5 ${cssClasses}`}
         onClick={onClick}
       >
         {children}
@@ -64,7 +64,7 @@ const Button = ({
   } else if (formNext) {
     return (
       <button
-        className={`bg-green text-larger text-white px-6 py-4 flex gap-6 items-center tabletLarge:hover:bg-lightGreen ${cssClasses}`}
+        className={`bg-green text-subheading font-thin text-white px-6 py-2.5 flex gap-6 items-center tabletLarge:hover:bg-lightGreen ${cssClasses}`}
         onClick={onClick}
       >
         Next
@@ -134,10 +134,13 @@ const Button = ({
     );
   } else {
     return (
-      <button
-        className={`px-12 py-2.5 text-subheading bg-green text-white drop-shadow-md tablet:hover:bg-lightGreen tablet:px-10 tablet:py-1.5 ${cssClasses}`}
-      >
-        <Link href={url!}>{children || "View More"}</Link>
+      <button className={` ${cssClasses}`}>
+        <Link
+          href={url!}
+          className="px-12 py-2.5 text-subheading font-thin bg-green text-white drop-shadow-md tabletLarge:hover:bg-lightGreen tablet:px-10"
+        >
+          {children || "View More"}
+        </Link>
       </button>
     );
   }

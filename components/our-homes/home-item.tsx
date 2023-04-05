@@ -25,7 +25,7 @@ const HomeItem = ({
     <article className={`flex flex-col gap-10 ${cssClasses}`}>
       <div className="flex flex-col">
         <Heading variant={headingVariant.subheading}>{heading}</Heading>
-        <h3 className="font-thin text-paragraph -mt-6 text-center tablet:text-left">
+        <h3 className="font-thin text-paragraph -mt-6 tablet:-mt-4 desktop:-mt-7 text-center tablet:text-left">
           {location}
         </h3>
       </div>
@@ -34,7 +34,7 @@ const HomeItem = ({
         alt={heroImageAlt}
         width={1000}
         height={750}
-        className="object-cover h-[300px] tablet:h-[380px] tabletLarge:h-[280px] desktop:h-[250px]"
+        className="object-cover h-[225px] phone:h-[300px] tablet:h-[380px] tabletLarge:h-[280px] desktop:h-[250px]"
       />
       <p>{paragraph}</p>
       <Button url={buttonUrl} cssClasses="mx-auto"></Button>

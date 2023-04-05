@@ -388,9 +388,8 @@ const ContactForm = ({
               }}
               extendedTitle={homeList.basicHomesData.Crescent.extendedTitle}
               location={homeList.basicHomesData.Crescent.location}
-              cssClasses={classNames("", {
-                "hover:border-b-2 border-white pb-2 -mb-2 hover:-mb-[10px]":
-                  !showCrescent,
+              cssClasses={classNames("transition-all", {
+                "hover:scale-105 hover:-mb-[10px]": !showCrescent,
                 "border-b-2 border-white pb-2 -mb-[10px]": showCrescent,
               })}
               arrowCssClasses={classNames("", {
@@ -410,9 +409,8 @@ const ContactForm = ({
               }}
               extendedTitle={homeList.basicHomesData.Eastlands.extendedTitle}
               location={homeList.basicHomesData.Eastlands.location}
-              cssClasses={classNames("", {
-                "hover:border-b-2 border-white pb-2 -mb-2 hover:-mb-[10px]":
-                  !showEastlands,
+              cssClasses={classNames("transition-all", {
+                "hover:scale-105 hover:-mb-[10px]": !showEastlands,
                 "border-b-2 border-white pb-2 -mb-[10px]": showEastlands,
               })}
               arrowCssClasses={classNames("", {
@@ -432,9 +430,8 @@ const ContactForm = ({
               }}
               extendedTitle={homeList.basicHomesData.Serenepark.extendedTitle}
               location={homeList.basicHomesData.Serenepark.location}
-              cssClasses={classNames("", {
-                "hover:border-b-2 border-white pb-2 -mb-2 hover:-mb-[10px]":
-                  !showSerenePark,
+              cssClasses={classNames("transition-all", {
+                "hover:scale-105 hover:-mb-[10px]": !showSerenePark,
                 "border-b-2 border-white pb-2 -mb-[10px]": showSerenePark,
               })}
               arrowCssClasses={classNames("", {
