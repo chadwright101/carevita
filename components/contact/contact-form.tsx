@@ -7,7 +7,7 @@ import Button from "../button";
 import classNames from "classnames";
 
 import homeList from "../../data/carevita-data.json";
-import ContactFormCrescentPage from "./contact-form-crescent-page";
+import ContactFormCrescentPage from "../individual-homes-pages/components/contact-form-crescent-page";
 
 interface Props {
   cssClasses?: string;
@@ -34,11 +34,7 @@ const ContactForm = ({
         {/* mobile view */}
         <div className="desktop:hidden">
           {/* the crescent form */}
-          <div
-            className={classNames("mt-10 max-w-[1400px] mx-auto", {
-              "-ml-6": showCrescent,
-            })}
-          >
+          <div className="mt-10 max-w-[1400px] mx-auto">
             {!showCrescent && !showEastlands && !showSerenePark && (
               <>
                 <p className="text-white mb-8">
@@ -58,7 +54,7 @@ const ContactForm = ({
             )}
 
             {showCrescent && (
-              <div className="flex flex-col gap-6 fixed top-0 h-screen w-full bg-blue z-20 pt-10 px-6 tablet:relative tablet:h-auto tablet:pt-0 tablet:z-0">
+              <div className="flex flex-col gap-6">
                 <div className="flex flex-col">
                   <h4 className="text-white text-center font-light tablet:text-left">
                     {homeList.basicHomesData.Crescent.title}
@@ -155,11 +151,7 @@ const ContactForm = ({
 
           {/* eastlands form */}
 
-          <div
-            className={classNames("mt-10 max-w-[1400px] mx-auto", {
-              "-ml-6": showEastlands,
-            })}
-          >
+          <div className="mt-10 max-w-[1400px] mx-auto">
             {!showCrescent && !showEastlands && !showSerenePark && (
               <Button
                 mobileHomesForm
@@ -173,7 +165,7 @@ const ContactForm = ({
             )}
 
             {showEastlands && (
-              <div className="flex flex-col gap-6 fixed top-0 h-screen w-full bg-blue z-20 pt-10 px-6 tablet:relative tablet:h-auto tablet:pt-0 tablet:z-0">
+              <div className="flex flex-col gap-6">
                 <div className="flex flex-col">
                   <h4 className="text-white text-center font-light tablet:text-left">
                     {homeList.basicHomesData.Eastlands.title}
@@ -270,11 +262,7 @@ const ContactForm = ({
 
           {/* serenepark form form */}
 
-          <div
-            className={classNames("mt-10 max-w-[1400px] mx-auto", {
-              "-ml-6": showSerenePark,
-            })}
-          >
+          <div className="mt-10 max-w-[1400px] mx-auto">
             {!showCrescent && !showEastlands && !showSerenePark && (
               <Button
                 mobileHomesForm
@@ -288,7 +276,7 @@ const ContactForm = ({
             )}
 
             {showSerenePark && (
-              <div className="flex flex-col gap-6 fixed top-0 h-screen w-full bg-blue z-20 pt-10 px-6 tablet:relative tablet:h-auto tablet:pt-0 tablet:z-0">
+              <div className="flex flex-col gap-6">
                 <div className="flex flex-col">
                   <h4 className="text-white text-center font-light tablet:text-left">
                     {homeList.basicHomesData.Serenepark.title}
