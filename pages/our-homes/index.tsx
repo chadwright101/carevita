@@ -3,7 +3,7 @@ import Footer from "@/components/footer";
 import HomeItem from "@/components/our-homes/home-item";
 import Heading, { headingVariant } from "@/components/heading";
 import Layout from "@/components/layout";
-import Contact from "@/components/contact";
+import Contact from "@/components/contact/contact";
 
 import homeList from "../../data/carevita-data.json";
 

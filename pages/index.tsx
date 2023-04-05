@@ -5,7 +5,7 @@ import Header from "@/components/header";
 import Services from "@/components/home/services";
 import OurHomes from "@/components/home/our-homes";
 import Footer from "@/components/footer";
-import Contact from "@/components/contact";
+import Contact from "@/components/contact/contact";
 
 const Home = () => {
   return (

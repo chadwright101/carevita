@@ -13,6 +13,7 @@ interface Props {
   mobileHomesForm?: boolean;
   desktopHomesForm?: boolean;
   formBack?: boolean;
+  formNext?: boolean;
   extendedTitle?: string;
   location?: string;
   arrowCssClasses?: string;
@@ -29,6 +30,7 @@ const Button = ({
   mobileHomesForm,
   desktopHomesForm,
   formBack,
+  formNext,
   extendedTitle,
   location,
   arrowCssClasses,
@@ -57,6 +59,21 @@ const Button = ({
         onClick={onClick}
       >
         {children}
+      </button>
+    );
+  } else if (formNext) {
+    return (
+      <button
+        className={`bg-green text-larger text-white px-6 py-4 flex gap-6 items-center tabletLarge:hover:bg-lightGreen ${cssClasses}`}
+        onClick={onClick}
+      >
+        Next
+        <Image
+          src="/icons/arrow_forward-white.svg"
+          alt="Arrow icon"
+          width={20}
+          height={20}
+        />
       </button>
     );
   } else if (mobileHomesForm) {
