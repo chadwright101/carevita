@@ -3,8 +3,10 @@ import Link from "next/link";
 
 import { useState } from "react";
 
-import mobileMenuList from "../data/navigation/mobile-menu.json";
-import desktopMenuList from "../data/navigation/desktop-menu.json";
+import menuList from "../data/carevita-data.json";
+import useScrollPosition from "./utils/scroll-position";
+
+import classNames from "classnames";
 
 import menuIcon from "public/icons/menu-icon.svg";
 import closeIcon from "public/icons/close-icon.svg";
@@ -18,6 +20,8 @@ const Header = ({ cssClasses }: Props) => {
   const [toggleHomeSubmenu, setToggleHomeSubmenu] = useState(false);
   const [toggleSchoolSubmenu, setToggleSchoolSubmenu] = useState(false);
 
+  const scrollPosition = useScrollPosition();
+
   return (
     <header className={`w-full sticky h-auto top-0 z-10 ${cssClasses}`}>
       {/* mobile nav */}
@@ -28,6 +32,9 @@ const Header = ({ cssClasses }: Props) => {
             alt="CareVita logo"
             width={80}
             height={120}
+            className={classNames("transition-all", {
+              "w-[64px] h-auto": scrollPosition > 0,
+            })}
           />
         </Link>
         <button className="p-2 -m-2" onClick={() => setToggleMenu(true)}>
@@ -37,7 +44,7 @@ const Header = ({ cssClasses }: Props) => {
       {toggleMenu && (
         <nav className="fixed top-0 h-screen w-full bg-blue pt-8 px-5">
           <ul className="mt-10 flex flex-col gap-4">
-            {mobileMenuList.map(({ title, url }, index) => (
+            {menuList.navigation.mobile.map(({ title, url }, index) => (
               <>
                 <li key={index}>
                   <Link
@@ -48,7 +55,7 @@ const Header = ({ cssClasses }: Props) => {
                     {title}
                   </Link>
                 </li>
-                {index < mobileMenuList.length - 1 && (
+                {index < menuList.navigation.mobile.length - 1 && (
                   <hr className="px-5 text-white" />
                 )}
               </>
@@ -76,11 +83,14 @@ const Header = ({ cssClasses }: Props) => {
               alt="CareVita logo"
               width={80}
               height={120}
+              className={classNames("transition-all", {
+                "w-14 h-auto": scrollPosition > 0,
+              })}
             />
           </Link>
           <nav>
             <ul className="flex gap-6">
-              {desktopMenuList.map(
+              {menuList.navigation.desktop.map(
                 ({ title, url, schoolSubmenu, homeSubmenu }, index) => (
                   <li
                     key={index}
@@ -119,7 +129,7 @@ const Header = ({ cssClasses }: Props) => {
                     </Link>
 
                     {homeSubmenu && toggleHomeSubmenu && (
-                      <ul className="fixed bg-white p-6 border border-t-0 border-black -translate-x-[59px] rounded-b-xl flex flex-col gap-2 drop-shadow-md">
+                      <ul className="absolute bg-white p-6 border border-t-0 border-black -translate-x-[59px] rounded-b-xl flex flex-col gap-2 drop-shadow-md">
                         {/* while blocks to hide borders */}
                         <div className="w-3 bg-white h-4 absolute -translate-x-8 -translate-y-6"></div>
                         <div className="w-3 bg-white h-4 absolute translate-x-[170px] -translate-y-6"></div>
@@ -138,7 +148,7 @@ const Header = ({ cssClasses }: Props) => {
                       </ul>
                     )}
                     {schoolSubmenu && toggleSchoolSubmenu && (
-                      <ul className="fixed bg-white p-6 border border-t-0 border-black -translate-x-8 rounded-b-xl flex flex-col gap-2 drop-shadow-md">
+                      <ul className="absolute bg-white p-6 border border-t-0 border-black -translate-x-8 rounded-b-xl flex flex-col gap-2 drop-shadow-md">
                         {/* while blocks to hide borders */}
                         <div className="w-3 bg-white h-4 absolute -translate-x-8 -translate-y-6"></div>
                         <div className="w-3 bg-white h-4 absolute translate-x-[120px] -translate-y-6"></div>

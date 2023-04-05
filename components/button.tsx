@@ -13,6 +13,7 @@ interface Props {
   mobileHomesForm?: boolean;
   desktopHomesForm?: boolean;
   formBack?: boolean;
+  formNext?: boolean;
   extendedTitle?: string;
   location?: string;
   arrowCssClasses?: string;
@@ -29,6 +30,7 @@ const Button = ({
   mobileHomesForm,
   desktopHomesForm,
   formBack,
+  formNext,
   extendedTitle,
   location,
   arrowCssClasses,
@@ -38,7 +40,7 @@ const Button = ({
   if (form) {
     return (
       <button
-        className={`bg-green text-larger text-white px-6 py-4 flex gap-6 items-center tabletLarge:hover:bg-lightGreen ${cssClasses}`}
+        className={`bg-green text-subheading font-thin text-white px-6 py-2.5 flex gap-6 items-center tabletLarge:hover:bg-lightGreen ${cssClasses}`}
         type="submit"
       >
         {children}
@@ -53,10 +55,25 @@ const Button = ({
   } else if (formBack) {
     return (
       <button
-        className={`bg-lightGreen text-larger text-white px-6 py-4 ${cssClasses}`}
+        className={`bg-lightGreen text-subheading font-thin text-white px-6 py-2.5 ${cssClasses}`}
         onClick={onClick}
       >
         {children}
+      </button>
+    );
+  } else if (formNext) {
+    return (
+      <button
+        className={`bg-green text-subheading font-thin text-white px-6 py-2.5 flex gap-6 items-center tabletLarge:hover:bg-lightGreen ${cssClasses}`}
+        onClick={onClick}
+      >
+        Next
+        <Image
+          src="/icons/arrow_forward-white.svg"
+          alt="Arrow icon"
+          width={20}
+          height={20}
+        />
       </button>
     );
   } else if (mobileHomesForm) {
@@ -117,10 +134,13 @@ const Button = ({
     );
   } else {
     return (
-      <button
-        className={`px-12 py-2.5 text-subheading rounded-[22px] bg-blue text-white drop-shadow-md border-lightGreen border-[2px] tablet:hover:bg-green tablet:px-10 tablet:py-1.5 tablet:rounded-[20px] ${cssClasses}`}
-      >
-        <Link href={url!}>{children || "View More"}</Link>
+      <button className={` ${cssClasses}`}>
+        <Link
+          href={url!}
+          className="px-12 py-2.5 text-subheading font-thin bg-green text-white drop-shadow-md tabletLarge:hover:bg-lightGreen tablet:px-10"
+        >
+          {children || "View More"}
+        </Link>
       </button>
     );
   }

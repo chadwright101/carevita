@@ -3,20 +3,18 @@ import Footer from "@/components/footer";
 import HomeItem from "@/components/our-homes/home-item";
 import Heading, { headingVariant } from "@/components/heading";
 import Layout from "@/components/layout";
-import Contact from "@/components/contact";
+import Contact from "@/components/contact/contact";
 
-import homeList from "../data/our-homes-array.json";
+import homeList from "../../data/carevita-data.json";
 
 const OurHomes = () => {
   return (
     <>
       <Header />
       <Layout>
-        <Heading variant={headingVariant.pageHeading} cssClasses="mt-10">
-          Our homes
-        </Heading>
+        <Heading variant={headingVariant.pageHeading}>Our homes</Heading>
         <main className="grid tabletLarge:grid-cols-2 tabletLarge:gap-10 desktop:grid-cols-3">
-          {homeList.map(
+          {homeList.ourHomesPage.map(
             (
               {
                 extendedTitle,
@@ -24,7 +22,7 @@ const OurHomes = () => {
                 location,
                 image,
                 imageAlt,
-                homePage,
+                homesPageUrl,
               },
               index
             ) => (
@@ -35,9 +33,9 @@ const OurHomes = () => {
                   heading={extendedTitle}
                   location={location}
                   paragraph={description}
-                  buttonUrl={homePage}
+                  buttonUrl={homesPageUrl}
                 />
-                {index < homeList.length - 1 && (
+                {index < homeList.ourHomesPage.length - 1 && (
                   <hr className="my-16 tablet:text-white tablet:my-10 desktop:my-5" />
                 )}
               </div>
