@@ -1,13 +1,13 @@
 import { useState } from "react";
 import Link from "next/link";
 
-import Button from "../button";
+import Button from "../../button";
 
 interface Props {
   cssClasses?: string;
 }
 
-import homeList from "../../data/carevita-data.json";
+import homeList from "../../../data/carevita-data.json";
 
 const ContactFormCrescentPage = ({ cssClasses }: Props) => {
   const [showCrescent, setShowCrescent] = useState(false);
@@ -39,8 +39,11 @@ const ContactFormCrescentPage = ({ cssClasses }: Props) => {
           </li>
         </ul>
         <p className="text-white">
-          Please fill out the form below, and we&#39;ll be in touch with you
-          ASAP...
+          Please fill out the form below, and our staff from{" "}
+          <span className="font-light text-white">
+            The Crescent Retirement Lodge
+          </span>{" "}
+          will be in touch with you ASAP...
         </p>
         <form action="" method="POST" className="flex flex-col gap-10">
           <div className="flex flex-col gap-3">

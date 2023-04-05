@@ -7,7 +7,7 @@ interface Props {
 const Layout = ({ children }: Props) => {
   return (
     <>
-      <div className="px-6 tablet:px-12">
+      <div className="px-6 tabletLarge:px-12">
         <div className="max-w-[1400px] tablet:mx-auto">{children}</div>
       </div>
     </>
