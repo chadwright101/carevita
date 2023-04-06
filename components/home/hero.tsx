@@ -9,7 +9,7 @@ const Hero = ({ cssClasses }: Props) => {
         autoPlay
         muted
         loop
-        className="w-full h-screen tabletLarge:h-[600px] object-cover"
+        className="w-full h-screen tabletLarge:h-[600px] object-cover desktop:max-w-[1400px] mx-auto"
       >
         <source src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/video.mp4" />
       </video>
