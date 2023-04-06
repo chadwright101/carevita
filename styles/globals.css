@@ -74,3 +74,71 @@
     text-align: justify;
   }
 }
+
+@layer utilities {
+
+  .splide__slide {
+    opacity: 0.75;
+  }
+
+  .splide__slide.is-active {
+    opacity: 1;
+  }
+
+  .splide__arrow {
+    -ms-flex-align: center;
+    align-items: center;
+    background: #fff;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    display: -ms-flexbox;
+    display: flex;
+    height: 3em;
+    -ms-flex-pack: center;
+    justify-content: center;
+    opacity: 0.75;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3em;
+    z-index: 1
+  }
+
+  .splide__arrow svg {
+    fill: #000;
+    height: 1.4em;
+    width: 1.4em
+  }
+
+  .splide__arrow:hover:not(:disabled) {
+    background-color: #94C36A;
+  }
+
+  .splide__arrow:disabled {
+    opacity: .3
+  }
+
+  .splide__arrow:focus-visible {
+    outline: 3px solid #0bf;
+    outline-offset: 3px
+  }
+
+  .splide__arrow--prev {
+    left: 1em
+  }
+
+  .splide__arrow--prev svg {
+    transform: scaleX(-1)
+  }
+
+  .splide__arrow--next {
+    right: 1em
+  }
+
+  .splide.is-focus-in .splide__arrow:focus {
+    outline: 3px solid #0bf;
+    outline-offset: 3px
+  }
+}

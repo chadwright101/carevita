@@ -1,5 +1,5 @@
 import Heading, { headingVariant } from "../heading";
-import FacilitesCatering from "./components/facilities-catering";
+import FacilitiesCatering from "./components/facilities-catering";
 import MeetTheTeam from "./components/meet-the-team";
 import PageItemGallerySlider from "./components/sliders/page-item-gallery-slider";
 import PageItemHeroSlider from "./components/sliders/page-item-hero-slider";
@@ -54,7 +54,7 @@ const PageItem = ({
       <Layout>
         <main>
           <div className="flex flex-col gap-16 mt-16">
-            <FacilitesCatering facilities={facilities} catering={catering} />
+            <FacilitiesCatering facilities={facilities} catering={catering} />
             <MeetTheTeam meetTheTeam={meetTheTeam} />
           </div>
         </main>
