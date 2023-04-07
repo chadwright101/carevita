@@ -2,9 +2,9 @@ import Image from "next/image";
 
 import Button from "../button";
 
-import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 
-import "@splidejs/react-splide/css";
+import "@splidejs/react-splide/css/core";
 
 import sliderList from "../../data/carevita-data.json";
 import Heading, { headingVariant } from "../heading";
@@ -19,17 +19,13 @@ const OurHomes = ({ cssClasses }: Props) => {
       <Heading variant={headingVariant.sectionHeading}>Our Homes</Heading>
       <Splide
         options={{
-          pagination: true,
+          pagination: false,
           autoplay: true,
-          type: "loop",
-          speed: 2000,
-          interval: 6500,
-          breakpoints: {
-            900: {
-              pagination: false,
-            },
-          },
+          type: "fade",
+          rewind: true,
+          interval: 4000,
           drag: false,
+          arrows: true,
         }}
       >
         {sliderList.ourHomesSliderHomePage.map(

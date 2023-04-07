@@ -74,3 +74,18 @@
     text-align: justify;
   }
 }
+
+@layer utilities {
+
+  .splide__slide {
+    @apply opacity-75 blur-[0.75px]
+  }
+
+  .splide__slide.is-active {
+    @apply blur-0 opacity-100
+  }
+
+  .splide__slide:hover {
+    @apply blur-0 opacity-80 scale-105 transition-all duration-300 ease-in-out
+  }
+}

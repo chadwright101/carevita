@@ -10,31 +10,53 @@ interface Props {
 import homeList from "../../../data/carevita-data.json";
 
 const ContactFormCrescentPage = ({ cssClasses }: Props) => {
-  const [showCrescent, setShowCrescent] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
+  const [showEmail, setShowEmail] = useState(false);
+  const [showPhone, setShowPhone] = useState(false);
   return (
     <div className={`${cssClasses}`}>
       <div className="mt-10 max-w-[1400px] mx-auto flex flex-col gap-8">
         <ul className="flex flex-col gap-6 mt-4 tablet:gap-4 desktop:gap-2">
           <li className="grid grid-cols-[80px_1fr]">
             <p className="text-white text-larger font-light">Email:</p>
-            <div className="place-items-start">
-              <Link
-                href="mailto:jumireej@carevita.co.za"
-                className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0"
-              >
-                {homeList.basicHomesData.Crescent.email}
-              </Link>
+            <div className="place-items-start mr-auto">
+              {!showEmail && (
+                <p
+                  className="text-larger font-thin italic text-white  underline-offset-8 decoration-1 tabletLarge:hover:underline tabletLarge:cursor-pointer"
+                  onClick={() => setShowEmail(true)}
+                >
+                  Show email address
+                </p>
+              )}
+              {showEmail && (
+                <Link
+                  href="mailto:jumireej@carevita.co.za"
+                  className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0 tabletLarge:hover:underline underline-offset-8 decoration-1"
+                >
+                  {homeList.basicHomesData.Crescent.email}
+                </Link>
+              )}
             </div>
           </li>
           <li className="grid grid-cols-[80px_1fr]">
             <p className="text-white text-larger font-light">Phone:</p>
-            <div className="place-items-start">
-              <Link
-                href="tel:+27445331234"
-                className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0"
-              >
-                {homeList.basicHomesData.Crescent.phone}
-              </Link>
+            <div className="place-items-start mr-auto">
+              {!showPhone && (
+                <p
+                  className="text-larger font-thin italic text-white  underline-offset-8 decoration-1 tabletLarge:hover:underline tabletLarge:cursor-pointer"
+                  onClick={() => setShowPhone(true)}
+                >
+                  Show phone number
+                </p>
+              )}
+              {showPhone && (
+                <Link
+                  href="tel:+27445331234"
+                  className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0"
+                >
+                  {homeList.basicHomesData.Crescent.phone}
+                </Link>
+              )}
             </div>
           </li>
         </ul>
@@ -59,7 +81,7 @@ const ContactFormCrescentPage = ({ cssClasses }: Props) => {
               className="pl-2 py-1.5"
             />
           </div>
-          {showCrescent && (
+          {showMessage && (
             <>
               <div className="flex flex-col gap-3">
                 <label
@@ -95,20 +117,20 @@ const ContactFormCrescentPage = ({ cssClasses }: Props) => {
               </div>
             </>
           )}
-          {showCrescent && (
+          {showMessage && (
             <Button
               form
-              onClick={() => setShowCrescent(false)}
+              onClick={() => setShowMessage(false)}
               cssClasses="mr-auto"
             >
               Submit
             </Button>
           )}
         </form>
-        {!showCrescent && (
+        {!showMessage && (
           <Button
             formNext
-            onClick={() => setShowCrescent(true)}
+            onClick={() => setShowMessage(true)}
             cssClasses="mr-auto"
           />
         )}
