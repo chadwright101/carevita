@@ -1,9 +1,9 @@
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 
-import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
 
-import "@splidejs/react-splide/css/core";
+import "@splidejs/react-splide/css";
 
 const PageItemGallerySlider = ({ imageList }) => {
   const slider1 = useRef();
@@ -27,68 +27,65 @@ const PageItemGallerySlider = ({ imageList }) => {
           interval: 6500,
           autoplay: true,
         }}
-        hasTrack={false}
       >
-        <SplideTrack>
-          {imageList.map(({ url, alt }, index) => (
-            <SplideSlide
-              key={index}
-              className="h-[250px] phone:h-[325px] tablet:h-[450px] tabletLarge:h-[525px] desktop:h-[600px]"
+        {imageList.map(({ url, alt }, index) => (
+          <SplideSlide
+            key={index}
+            className="h-[250px] phone:h-[325px] tablet:h-[450px] tabletLarge:h-[525px] desktop:h-[600px]"
+          >
+            <Image
+              src={url}
+              alt={alt}
+              width={1400}
+              height={1000}
+              className="object-cover h-full w-full"
+            />
+          </SplideSlide>
+        ))}
+        <div className="splide__arrows splide__arrows--ltr">
+          <button type="button" className="splide__arrow splide__arrow--next">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 40 40"
+              width="40"
+              height="40"
+              focusable="false"
             >
-              <Image
-                src={url}
-                alt={alt}
-                width={1400}
-                height={1000}
-                className="object-cover h-full w-full"
-              />
-            </SplideSlide>
-          ))}
-          <div className="splide__arrows splide__arrows--ltr">
-            <button type="button" className="splide__arrow splide__arrow--next">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 40 40"
-                width="40"
-                height="40"
-                focusable="false"
-              >
-                <path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path>
-              </svg>
-            </button>
-            <button type="button" className="splide__arrow splide__arrow--prev">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 40 40"
-                width="40"
-                height="40"
-                focusable="false"
-              >
-                <path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path>
-              </svg>
-            </button>
-          </div>
-        </SplideTrack>
+              <path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path>
+            </svg>
+          </button>
+          <button type="button" className="splide__arrow splide__arrow--prev">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 40 40"
+              width="40"
+              height="40"
+              focusable="false"
+            >
+              <path d="m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z"></path>
+            </svg>
+          </button>
+        </div>
       </Splide>
       <Splide
         options={{
           type: "slide",
           rewind: true,
           pagination: false,
-          fixedWidth: 200,
-          fixedHeight: 90,
+          fixedWidth: 190,
+          fixedHeight: 110,
           cover: true,
           focus: "center",
           arrows: false,
           snap: true,
         }}
         ref={(slider) => (slider2.current = slider)}
-        className="hidden desktopSmall:block"
+        className="hidden border-y-[6px] border-black border-opacity-90 desktopSmall:block"
       >
         {imageList.map(({ url, alt }, index) => (
           <SplideSlide
             key={index}
-            className="h-[90px] splide__slide splide__slide.is-active"
+            className="h-[110px] splide__slide splide__slide.is-active"
           >
             <div className="w-full bg-white h-full flex justify-center overflow-hidden">
               <Image
@@ -96,7 +93,8 @@ const PageItemGallerySlider = ({ imageList }) => {
                 alt={alt}
                 width={200}
                 height={200}
-                className="object-cover h-full w-full"
+                className="object-cover h-full w-full cursor-pointer"
+                onClick={() => slider1.current.go(index)}
               />
             </div>
           </SplideSlide>

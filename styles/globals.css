@@ -78,46 +78,14 @@
 @layer utilities {
 
   .splide__slide {
-    opacity: 0.75;
+    @apply opacity-75 blur-[0.75px]
   }
 
   .splide__slide.is-active {
-    opacity: 1;
+    @apply blur-0 opacity-100
   }
 
-  .splide__arrow svg {
-    fill: #000;
-    height: 1.4em;
-    width: 1.4em
-  }
-
-  .splide__arrow:hover:not(:disabled) {
-    background-color: #94C36A;
-  }
-
-  .splide__arrow:disabled {
-    opacity: .3
-  }
-
-  .splide__arrow:focus-visible {
-    outline: 3px solid #0bf;
-    outline-offset: 3px
-  }
-
-  .splide__arrow--prev {
-    left: 1em
-  }
-
-  .splide__arrow--prev svg {
-    transform: scaleX(-1)
-  }
-
-  .splide__arrow--next {
-    right: 1em
-  }
-
-  .splide.is-focus-in .splide__arrow:focus {
-    outline: 3px solid #0bf;
-    outline-offset: 3px
+  .splide__slide:hover {
+    @apply blur-0 opacity-80 scale-105 transition-all duration-300 ease-in-out
   }
 }
