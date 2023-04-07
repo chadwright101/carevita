@@ -25,6 +25,8 @@ const ContactForm = ({
   const [showCrescent, setShowCrescent] = useState(false);
   const [showEastlands, setShowEastlands] = useState(false);
   const [showSerenePark, setShowSerenePark] = useState(false);
+  const [showAccountsEmail, setShowAccountsEmail] = useState(false);
+  const [showGeneralEmail, setShowGeneralEmail] = useState(false);
 
   if (crescent) {
     return <ContactFormCrescentPage />;
@@ -711,23 +713,43 @@ const ContactForm = ({
             <p className="text-white text-center font-light text-larger desktopSmall:text-paragraph">
               General enquiries:
             </p>
-            <Link
-              href="mailto:info@carevita.co.za"
-              className="text-white tabletLarge:hover:underline underline-offset-4 decoration-1 w-[170px] p-2 -m-2 tabletLarge:w-[140px] tabletLarge:p-0 tabletLarge:m-0"
-            >
-              info@carevita.co.za
-            </Link>
+            {!showGeneralEmail && (
+              <p
+                className="text-larger font-thin italic text-white  underline-offset-8 decoration-1 tabletLarge:hover:underline tabletLarge:cursor-pointer"
+                onClick={() => setShowGeneralEmail(true)}
+              >
+                Show email address
+              </p>
+            )}
+            {showGeneralEmail && (
+              <Link
+                href="mailto:info@carevita.co.za"
+                className="text-white tabletLarge:hover:underline underline-offset-4 decoration-1 w-[170px] p-2 -m-2 tabletLarge:w-[140px] tabletLarge:p-0 tabletLarge:m-0"
+              >
+                info@carevita.co.za
+              </Link>
+            )}
           </li>
           <li className="grid grid-cols-1 gap-2 text-larger place-items-center phone:place-items-start phone:gap-0 phone:grid-cols-[165px_1fr] desktopSmall:text-paragraph">
             <p className="text-white text-center font-light text-larger desktopSmall:text-paragraph">
               Account queries:
             </p>
-            <Link
-              href="mailto:accounts@carevita.co.za"
-              className="text-white tabletLarge:hover:underline underline-offset-4 decoration-1 w-[210px] p-2 -m-2 tabletLarge:w-[182px] tabletLarge:p-0 tabletLarge:m-0"
-            >
-              accounts@carevita.co.za
-            </Link>
+            {!showAccountsEmail && (
+              <p
+                className="text-larger font-thin italic text-white  underline-offset-8 decoration-1 tabletLarge:hover:underline tabletLarge:cursor-pointer"
+                onClick={() => setShowAccountsEmail(true)}
+              >
+                Show email address
+              </p>
+            )}
+            {showAccountsEmail && (
+              <Link
+                href="mailto:accounts@carevita.co.za"
+                className="text-white tabletLarge:hover:underline underline-offset-4 decoration-1 w-[210px] p-2 -m-2 tabletLarge:w-[182px] tabletLarge:p-0 tabletLarge:m-0"
+              >
+                accounts@carevita.co.za
+              </Link>
+            )}
           </li>
         </ul>
       </div>
