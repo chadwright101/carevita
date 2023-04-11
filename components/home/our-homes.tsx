@@ -24,8 +24,12 @@ const OurHomes = ({ cssClasses }: Props) => {
           type: "fade",
           rewind: true,
           interval: 4000,
-          drag: false,
-          arrows: true,
+          dragMinThreshold: 10,
+          breakpoints: {
+            900: {
+              arrows: false,
+            },
+          },
         }}
       >
         {sliderList.ourHomesSliderHomePage.map(
