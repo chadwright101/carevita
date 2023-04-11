@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import menuList from "../data/carevita-data.json";
+import menuList from "../data/navigation-data.json";
 
 interface Props {
   cssClasses?: string;

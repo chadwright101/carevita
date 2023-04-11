@@ -2,25 +2,28 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+import ContactFormCrescentPage from "../pages/individual-homes-pages/components/contact/contact-form-crescent-page";
+import ContactFormEastlandsPage from "../pages/individual-homes-pages/components/contact/contact-form-eastlands";
 import Button from "../button";
 
 import classNames from "classnames";
 
-import homeList from "../../data/carevita-data.json";
-import ContactFormCrescentPage from "../individual-homes-pages/components/contact-form-crescent-page";
+import theCrescentList from "../../data/the-crescent-extended-data.json";
+import eastlandsList from "../../data/eastlands-extended-data.json";
+import sereneParkList from "../../data/serene-park-extended-data.json";
 
 interface Props {
   cssClasses?: string;
   crescent?: boolean;
   eastlands?: boolean;
-  serenepark?: boolean;
+  serenePark?: boolean;
 }
 
 const ContactForm = ({
   cssClasses,
   crescent,
   eastlands,
-  serenepark,
+  serenePark,
 }: Props) => {
   const [showCrescent, setShowCrescent] = useState(false);
   const [showEastlands, setShowEastlands] = useState(false);
@@ -30,6 +33,8 @@ const ContactForm = ({
 
   if (crescent) {
     return <ContactFormCrescentPage />;
+  } else if (eastlands) {
+    return <ContactFormEastlandsPage />;
   } else {
     return (
       <div className={`${cssClasses}`}>
@@ -47,8 +52,8 @@ const ContactForm = ({
                   mobileHomesForm
                   onClick={() => setShowCrescent(!showCrescent)}
                   cssClasses="text-left"
-                  extendedTitle={homeList.basicHomesData.Crescent.extendedTitle}
-                  location={homeList.basicHomesData.Crescent.location}
+                  extendedTitle={theCrescentList.extendedTitle}
+                  location={theCrescentList.location}
                   homeIconUrl="/icons/beach-blue.svg"
                   homeIconAlt="Beach umbrella icon"
                 />
@@ -59,10 +64,10 @@ const ContactForm = ({
               <div className="flex flex-col gap-6">
                 <div className="flex flex-col">
                   <h4 className="text-white text-center font-light tablet:text-left">
-                    {homeList.basicHomesData.Crescent.title}
+                    {theCrescentList.title}
                   </h4>
                   <p className="text-white text-center tablet:text-left">
-                    {homeList.basicHomesData.Crescent.location}
+                    {theCrescentList.location}
                   </p>
                 </div>
                 <ul className="flex flex-col gap-6 mt-4 tablet:gap-4 desktop:gap-2">
@@ -73,7 +78,7 @@ const ContactForm = ({
                         href="mailto:jumireej@carevita.co.za"
                         className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0"
                       >
-                        {homeList.basicHomesData.Crescent.email}
+                        {theCrescentList.email}
                       </Link>
                     </div>
                   </li>
@@ -84,7 +89,7 @@ const ContactForm = ({
                         href="tel:+27445331234"
                         className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0"
                       >
-                        {homeList.basicHomesData.Crescent.phone}
+                        {theCrescentList.phone}
                       </Link>
                     </div>
                   </li>
@@ -159,8 +164,8 @@ const ContactForm = ({
                 mobileHomesForm
                 onClick={() => setShowEastlands(!showEastlands)}
                 cssClasses="text-left"
-                extendedTitle={homeList.basicHomesData.Eastlands.extendedTitle}
-                location={homeList.basicHomesData.Eastlands.location}
+                extendedTitle={eastlandsList.extendedTitle}
+                location={eastlandsList.location}
                 homeIconUrl="/icons/flower-blue.svg"
                 homeIconAlt="Flower icon"
               />
@@ -170,10 +175,10 @@ const ContactForm = ({
               <div className="flex flex-col gap-6">
                 <div className="flex flex-col">
                   <h4 className="text-white text-center font-light tablet:text-left">
-                    {homeList.basicHomesData.Eastlands.title}
+                    {eastlandsList.title}
                   </h4>
                   <p className="text-white text-center tablet:text-left">
-                    {homeList.basicHomesData.Eastlands.location}
+                    {eastlandsList.location}
                   </p>
                 </div>
                 <ul className="flex flex-col gap-6 mt-4 tablet:gap-4 desktop:gap-2">
@@ -184,7 +189,7 @@ const ContactForm = ({
                         href="mailto:eastlands@carevita.co.za"
                         className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0"
                       >
-                        {homeList.basicHomesData.Eastlands.email}
+                        {eastlandsList.email}
                       </Link>
                     </div>
                   </li>
@@ -195,7 +200,7 @@ const ContactForm = ({
                         href="tel:1234567890"
                         className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0"
                       >
-                        {homeList.basicHomesData.Eastlands.phone}
+                        {eastlandsList.phone}
                       </Link>
                     </div>
                   </li>
@@ -270,8 +275,8 @@ const ContactForm = ({
                 mobileHomesForm
                 onClick={() => setShowSerenePark(!showSerenePark)}
                 cssClasses="text-left"
-                extendedTitle={homeList.basicHomesData.Serenepark.extendedTitle}
-                location={homeList.basicHomesData.Serenepark.location}
+                extendedTitle={sereneParkList.extendedTitle}
+                location={sereneParkList.location}
                 homeIconUrl="/icons/leaves-blue.svg"
                 homeIconAlt="Leaves icon"
               />
@@ -281,10 +286,10 @@ const ContactForm = ({
               <div className="flex flex-col gap-6">
                 <div className="flex flex-col">
                   <h4 className="text-white text-center font-light tablet:text-left">
-                    {homeList.basicHomesData.Serenepark.title}
+                    {sereneParkList.title}
                   </h4>
                   <p className="text-white text-center tablet:text-left">
-                    {homeList.basicHomesData.Serenepark.location}
+                    {sereneParkList.location}
                   </p>
                 </div>
                 <ul className="flex flex-col  gap-6 mt-4 tablet:gap-4 desktop:gap-2">
@@ -295,7 +300,7 @@ const ContactForm = ({
                         href="mailto:serenepark@carevita.co.za"
                         className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0"
                       >
-                        {homeList.basicHomesData.Serenepark.email}
+                        {sereneParkList.email}
                       </Link>
                     </div>
                   </li>
@@ -306,7 +311,7 @@ const ContactForm = ({
                         href="tel:1234567890"
                         className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0"
                       >
-                        {homeList.basicHomesData.Serenepark.phone}
+                        {sereneParkList.phone}
                       </Link>
                     </div>
                   </li>
@@ -388,8 +393,8 @@ const ContactForm = ({
                 setShowEastlands(false);
                 setShowSerenePark(false);
               }}
-              extendedTitle={homeList.basicHomesData.Crescent.extendedTitle}
-              location={homeList.basicHomesData.Crescent.location}
+              extendedTitle={theCrescentList.extendedTitle}
+              location={theCrescentList.location}
               cssClasses={classNames("transition-all", {
                 "hover:scale-105 hover:-mb-[10px]": !showCrescent,
                 "border-b-2 border-white pb-2 -mb-[10px]": showCrescent,
@@ -409,8 +414,8 @@ const ContactForm = ({
                 setShowEastlands(true);
                 setShowSerenePark(false);
               }}
-              extendedTitle={homeList.basicHomesData.Eastlands.extendedTitle}
-              location={homeList.basicHomesData.Eastlands.location}
+              extendedTitle={eastlandsList.extendedTitle}
+              location={eastlandsList.location}
               cssClasses={classNames("transition-all", {
                 "hover:scale-105 hover:-mb-[10px]": !showEastlands,
                 "border-b-2 border-white pb-2 -mb-[10px]": showEastlands,
@@ -430,8 +435,8 @@ const ContactForm = ({
                 setShowEastlands(false);
                 setShowSerenePark(true);
               }}
-              extendedTitle={homeList.basicHomesData.Serenepark.extendedTitle}
-              location={homeList.basicHomesData.Serenepark.location}
+              extendedTitle={sereneParkList.extendedTitle}
+              location={sereneParkList.location}
               cssClasses={classNames("transition-all", {
                 "hover:scale-105 hover:-mb-[10px]": !showSerenePark,
                 "border-b-2 border-white pb-2 -mb-[10px]": showSerenePark,
@@ -453,7 +458,7 @@ const ContactForm = ({
                       href="mailto:jumireej@carevita.co.za"
                       className="text-white text-larger hover:underline underline-offset-4 decoration-1"
                     >
-                      {homeList.basicHomesData.Crescent.email}
+                      {theCrescentList.email}
                     </Link>
                   </li>
                   <li className="grid grid-cols-[80px_1fr]">
@@ -462,7 +467,7 @@ const ContactForm = ({
                       href="tel:+27445331234"
                       className="text-white text-larger"
                     >
-                      {homeList.basicHomesData.Crescent.phone}
+                      {theCrescentList.phone}
                     </Link>
                   </li>
                 </ul>
@@ -541,7 +546,7 @@ const ContactForm = ({
                       href="mailto:eastlands@carevita.co.za"
                       className="text-white text-larger hover:underline underline-offset-4 decoration-1"
                     >
-                      {homeList.basicHomesData.Eastlands.email}
+                      {eastlandsList.email}
                     </Link>
                   </li>
                   <li className="grid grid-cols-[80px_1fr]">
@@ -550,7 +555,7 @@ const ContactForm = ({
                       href="tel:1234567890"
                       className="text-white text-larger"
                     >
-                      {homeList.basicHomesData.Eastlands.phone}
+                      {eastlandsList.phone}
                     </Link>
                   </li>
                 </ul>
@@ -629,7 +634,7 @@ const ContactForm = ({
                       href="mailto:serenepark@carevita.co.za"
                       className="text-white text-larger hover:underline underline-offset-4 decoration-1"
                     >
-                      {homeList.basicHomesData.Serenepark.email}
+                      {sereneParkList.email}
                     </Link>
                   </li>
                   <li className="grid grid-cols-[80px_1fr]">
@@ -638,7 +643,7 @@ const ContactForm = ({
                       href="tel:1234567890"
                       className="text-white text-larger"
                     >
-                      {homeList.basicHomesData.Serenepark.phone}
+                      {sereneParkList.phone}
                     </Link>
                   </li>
                 </ul>
@@ -715,7 +720,7 @@ const ContactForm = ({
             </p>
             {!showGeneralEmail && (
               <p
-                className="text-larger font-thin italic text-white  underline-offset-8 decoration-1 tabletLarge:hover:underline tabletLarge:cursor-pointer"
+                className="text-larger font-thin italic text-white  underline-offset-8 decoration-1 tabletLarge:hover:underline tabletLarge:cursor-pointer desktopSmall:text-paragraph"
                 onClick={() => setShowGeneralEmail(true)}
               >
                 Show email address
@@ -736,7 +741,7 @@ const ContactForm = ({
             </p>
             {!showAccountsEmail && (
               <p
-                className="text-larger font-thin italic text-white  underline-offset-8 decoration-1 tabletLarge:hover:underline tabletLarge:cursor-pointer"
+                className="text-larger font-thin italic text-white  underline-offset-8 decoration-1 tabletLarge:hover:underline tabletLarge:cursor-pointer desktopSmall:text-paragraph"
                 onClick={() => setShowAccountsEmail(true)}
               >
                 Show email address
