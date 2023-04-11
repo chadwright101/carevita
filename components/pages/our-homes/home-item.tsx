@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Button from "../button";
-import Heading, { headingVariant } from "../heading";
+import Button from "../../button";
+import Heading, { headingVariant } from "../../heading";
 
 interface Props {
   cssClasses?: string;

@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import Heading, { headingVariant } from "../../heading";
+import Heading, { headingVariant } from "../../../heading";
 
 interface Props {
   catering: {

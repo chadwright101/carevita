@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { useState } from "react";
 
-import menuList from "../data/carevita-data.json";
+import menuList from "../data/navigation-data.json";
 import useScrollPosition from "./utils/scroll-position";
 
 import classNames from "classnames";

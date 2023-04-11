@@ -1,9 +1,9 @@
-import Hero from "@/components/home/hero";
-import About from "@/components/home/about";
+import Hero from "@/components/pages/home/hero";
+import About from "@/components/pages/home/about";
 import Layout from "@/components/layout";
 import Header from "@/components/header";
-import Services from "@/components/home/services";
-import OurHomes from "@/components/home/our-homes";
+import Services from "@/components/pages/home/services";
+import OurHomes from "@/components/pages/home/our-homes";
 import Footer from "@/components/footer";
 import Contact from "@/components/contact/contact";
 

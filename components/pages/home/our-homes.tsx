@@ -1,13 +1,13 @@
 import Image from "next/image";
 
-import Button from "../button";
+import Button from "../../button";
 
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 
 import "@splidejs/react-splide/css/core";
 
-import sliderList from "../../data/carevita-data.json";
-import Heading, { headingVariant } from "../heading";
+import sliderList from "../../../data/home-page-our-homes-data.json";
+import Heading, { headingVariant } from "../../heading";
 
 interface Props {
   cssClasses?: string;
@@ -24,8 +24,12 @@ const OurHomes = ({ cssClasses }: Props) => {
           type: "fade",
           rewind: true,
           interval: 4000,
-          drag: false,
-          arrows: true,
+          dragMinThreshold: 10,
+          breakpoints: {
+            900: {
+              arrows: false,
+            },
+          },
         }}
       >
         {sliderList.ourHomesSliderHomePage.map(

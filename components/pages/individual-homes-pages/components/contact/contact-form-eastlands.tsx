@@ -1,15 +1,15 @@
 import { useState } from "react";
 import Link from "next/link";
 
-import Button from "../../button";
+import Button from "../../../../button";
 
 interface Props {
   cssClasses?: string;
 }
 
-import homeList from "../../../data/carevita-data.json";
+import homeList from "../../../../../data/eastlands-extended-data.json";
 
-const ContactFormCrescentPage = ({ cssClasses }: Props) => {
+const ContactFormEastlandsPage = ({ cssClasses }: Props) => {
   const [showMessage, setShowMessage] = useState(false);
   const [showEmail, setShowEmail] = useState(false);
   const [showPhone, setShowPhone] = useState(false);
@@ -33,7 +33,7 @@ const ContactFormCrescentPage = ({ cssClasses }: Props) => {
                   href="mailto:jumireej@carevita.co.za"
                   className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0 tabletLarge:hover:underline underline-offset-8 decoration-1"
                 >
-                  {homeList.basicHomesData.Crescent.email}
+                  {homeList.email}
                 </Link>
               )}
             </div>
@@ -54,7 +54,7 @@ const ContactFormCrescentPage = ({ cssClasses }: Props) => {
                   href="tel:+27445331234"
                   className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0"
                 >
-                  {homeList.basicHomesData.Crescent.phone}
+                  {homeList.phone}
                 </Link>
               )}
             </div>
@@ -63,7 +63,7 @@ const ContactFormCrescentPage = ({ cssClasses }: Props) => {
         <p className="text-white">
           Please fill out the form below, and our staff from{" "}
           <span className="font-light text-white">
-            The Crescent Retirement Lodge
+            {homeList.extendedTitle}
           </span>{" "}
           will be in touch with you ASAP...
         </p>
@@ -139,4 +139,4 @@ const ContactFormCrescentPage = ({ cssClasses }: Props) => {
   );
 };
 
-export default ContactFormCrescentPage;
+export default ContactFormEastlandsPage;

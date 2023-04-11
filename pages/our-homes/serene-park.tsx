@@ -3,14 +3,14 @@ import Image from "next/image";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import IndividualHomesPageItem from "@/components/pages/individual-homes-pages/page-item";
-import CrescentMap from "@/components/pages/individual-homes-pages/components/maps/crescent-map";
+import EastlandsMap from "@/components/pages/individual-homes-pages/components/maps/serene-park-map";
 import Heading, { headingVariant } from "@/components/heading";
 import ContactForm from "@/components/contact/contact-form";
 import Layout from "@/components/layout";
 
-import pageList from "../../data/the-crescent-extended-data.json";
+import pageList from "../../data/serene-park-extended-data.json";
 
-const TheCrescent = () => {
+const Eastlands = () => {
   return (
     <>
       <Header />
@@ -24,7 +24,7 @@ const TheCrescent = () => {
             height={400}
             className="object-cover w-full hidden h-[500px] desktopSmall:block"
           />
-          <CrescentMap cssClasses="w-full h-[400px] tabletLarge:h-[500px]" />
+          <EastlandsMap cssClasses="w-full h-[400px] tabletLarge:h-[500px]" />
         </div>
       </Layout>
       <section className="px-6 tabletLarge:px-12 pt-10 pb-12 bg-blue mt-16">
@@ -35,7 +35,7 @@ const TheCrescent = () => {
           >
             Contact
           </Heading>
-          <ContactForm crescent />
+          <ContactForm serenePark />
         </div>
       </section>
       <Footer />
@@ -43,4 +43,4 @@ const TheCrescent = () => {
   );
 };
 
-export default TheCrescent;
+export default Eastlands;

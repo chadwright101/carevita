@@ -1,4 +1,4 @@
-import Heading, { headingVariant } from "../heading";
+import Heading, { headingVariant } from "../../heading";
 import FacilitiesCatering from "./components/facilities-catering";
 import MeetTheTeam from "./components/meet-the-team";
 import PageItemGallerySlider from "./components/sliders/page-item-gallery-slider";
@@ -7,8 +7,8 @@ import Layout from "@/components/layout";
 
 interface Props {
   homeList: {
-    pageHeading: string;
-    location: string;
+    extendedTitle: string;
+    extendedLocation: string;
     heroSlider: Array<{ url: string; alt: string }>;
     facilities: { list: Array<string>; image: { url: string; alt: string } };
     catering: {
@@ -32,8 +32,8 @@ interface Props {
 
 const PageItem = ({
   homeList: {
-    pageHeading,
-    location,
+    extendedTitle,
+    extendedLocation,
     heroSlider,
     facilities,
     catering,
@@ -45,9 +45,9 @@ const PageItem = ({
   return (
     <>
       <Layout>
-        <Heading variant={headingVariant.pageHeading}>{pageHeading}</Heading>
+        <Heading variant={headingVariant.pageHeading}>{extendedTitle}</Heading>
         <h3 className="text-paragraph font-thin text-center mb-16 tablet:text-left tablet:mb-8 tabletLarge:mb-6 -mt-6 tablet:-mt-12 tabletLarge:-mt-12 desktop:-mt-8">
-          {location}
+          {extendedLocation}
         </h3>
       </Layout>
       <PageItemHeroSlider imageList={heroSlider} />
