@@ -20,7 +20,7 @@
       "image": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/Eastlands.jpg",
       "imageAlt": "",
       "description": "Vivamus molestie condimentum nibh nec tincidunt. Sed suscipit neque ut elit rhoncus, sit amet feugiat est gravida. Donec et dolor sit amet libero eleifend tempor vitae vel dolor. Vivamus in lacinia nulla. Suspendisse sit amet luctus ipsum. Donec molestie gravida viverra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris nisi metus, fringilla sit amet metus ac, viverra fringilla ante. Integer sit amet dapibus neque.",
-      "homesPageUrl": "#",
+      "homesPageUrl": "our-homes/eastlands",
       "email": "eastlands@carevita.co.za",
       "phone": "1234567890"
     },
@@ -32,7 +32,7 @@
       "image": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/Serenepark.jpeg",
       "imageAlt": "",
       "description": "Phasellus accumsan auctor tortor, vitae euismod nulla hendrerit sed. Praesent euismod laoreet imperdiet. Pellentesque finibus odio non justo bibendum, nec viverra odio ultricies. Pellentesque risus odio, pellentesque quis magna ut, fermentum ornare metus. Nullam interdum erat lacinia malesuada luctus. Curabitur ut tempus urna. Fusce tempor augue velit, eu semper mauris efficitur a. Donec ultricies tortor eget tempor bibendum. Integer eget augue augue.",
-      "homesPageUrl": "#",
+      "homesPageUrl": "our-homes/serene-park",
       "email": "serenepark@carevita.co.za",
       "phone": "1234567890"
     }
