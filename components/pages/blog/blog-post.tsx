@@ -39,7 +39,7 @@ const BlogPost = ({ cssClasses, data }: Props) => {
               index < data.length - 1 && "mb-14"
             }`}
           >
-            <div className={`${index * 2 && "order-2"}`}>
+            <div className={`${index * 2 && "desktopSmall:order-2"}`}>
               <div className="flex flex-col gap-2 items-center tablet:items-start">
                 <Heading
                   variant={headingVariant.subheading}
@@ -66,7 +66,7 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                 src={url}
                 alt={alt}
                 width={1000}
-                height={600}
+                height={1000}
                 className="object-cover h-full w-full"
               />
             </div>
