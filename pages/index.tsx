@@ -19,8 +19,8 @@ const Home = () => {
           className="-translate-y-36 tablet:-translate-y-40 desktop:-translate-y-36"
         ></div>
         <Services />
-        <OurHomes cssClasses="my-16" />
       </Layout>
+      <OurHomes cssClasses="my-16" />
       <div
         id="contact"
         className="-translate-y-36 tablet:-translate-y-36 desktop:-translate-y-32"

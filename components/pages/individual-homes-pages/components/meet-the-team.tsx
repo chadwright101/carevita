@@ -35,6 +35,7 @@ const MeetTheTeam = ({ meetTheTeam }: Props) => {
                 height={400}
                 className="object-cover w-[325px] h-[325px] desktop:w-full"
               />
+
               <ul className="flex flex-col gap-4">
                 <li className="text-center text-larger">{teamMember}</li>
                 <li>{bio}</li>
