@@ -78,7 +78,7 @@
 @layer utilities {
 
   .splide__slide {
-    @apply opacity-80 p-1
+    @apply opacity-80
   }
 
   .splide__slide.is-active {

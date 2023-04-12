@@ -74,7 +74,7 @@ const PageItemGallerySlider = ({ imageList }) => {
                 alt={alt}
                 width={200}
                 height={200}
-                className="object-cover h-full w-full cursor-pointer"
+                className="object-cover h-full w-full cursor-pointer px-1 pt-2"
                 onClick={() => slider1.current.go(index)}
               />
             </div>
