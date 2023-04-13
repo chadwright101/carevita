@@ -12,7 +12,7 @@ interface Props {
       url: string;
       alt: string;
     };
-    image2?: {
+    image2: {
       url: string;
       alt: string;
     };
@@ -55,7 +55,7 @@ const BlogPost = ({ cssClasses, data }: Props) => {
           >
             <div
               className={`w-full desktop:h-[550px] ${
-                image2! && !gallerySlider && "desktop:grid grid-rows-2 gap-10"
+                image2 && !gallerySlider && "desktop:grid grid-rows-2 gap-10"
               } ${index % 2 && "desktop:order-2"}`}
             >
               {!gallerySlider && (
@@ -67,10 +67,10 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                   className="object-cover h-full w-full"
                 />
               )}
-              {image2! && !gallerySlider && (
+              {image2 && !gallerySlider && (
                 <Image
-                  src={image2!.url}
-                  alt={image2!.alt}
+                  src={image2!.url!}
+                  alt={image2!.alt!}
                   width={1000}
                   height={1000}
                   className="object-cover h-full w-full hidden desktop:block"
@@ -100,11 +100,11 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                 <p>{paragraph3}</p>
               </div>
             </div>
-            {image2! && !gallerySlider && (
+            {image2 && !gallerySlider && (
               <div className="w-full h-full desktop:hidden">
                 <Image
-                  src={image2!.url}
-                  alt={image2!.alt}
+                  src={image2!.url!}
+                  alt={image2!.alt!}
                   width={1000}
                   height={1000}
                   className="object-cover h-full w-full"
