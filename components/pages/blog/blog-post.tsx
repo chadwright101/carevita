@@ -12,9 +12,9 @@ interface Props {
       url: string;
       alt: string;
     };
-    image2: {
-      url: any;
-      alt: any;
+    image2?: {
+      url: string;
+      alt: string;
     };
     gallerySlider?: boolean;
     galleryList?: Array<{ url: string; alt: string }>;
@@ -46,7 +46,7 @@ const BlogPost = ({ cssClasses, data }: Props) => {
           <div
             key={index}
             className={`grid gap-10 ${
-              image2
+              image2!
                 ? "phone:grid-rows-[300px_1fr_300px] tablet:grid-rows-[400px_1fr_400px] tabletLarge:grid-rows-[450px_1fr_450px] desktop:grid-rows-1"
                 : "phone:grid-rows-[300px_1fr] tablet:grid-rows-[400px_1fr] tabletLarge:grid-rows-[450px_1fr] desktop:grid-rows-1"
             } desktop:grid-cols-2 border-b border-black pb-14 ${
@@ -55,7 +55,7 @@ const BlogPost = ({ cssClasses, data }: Props) => {
           >
             <div
               className={`w-full desktop:h-[550px] ${
-                image2 && !gallerySlider && "desktop:grid grid-rows-2 gap-10"
+                image2! && !gallerySlider && "desktop:grid grid-rows-2 gap-10"
               } ${index % 2 && "desktop:order-2"}`}
             >
               {!gallerySlider && (
@@ -67,10 +67,10 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                   className="object-cover h-full w-full"
                 />
               )}
-              {image2 && !gallerySlider && (
+              {image2! && !gallerySlider && (
                 <Image
-                  src={image2.url}
-                  alt={image2.alt}
+                  src={image2!.url}
+                  alt={image2!.alt}
                   width={1000}
                   height={1000}
                   className="object-cover h-full w-full hidden desktop:block"
@@ -100,11 +100,11 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                 <p>{paragraph3}</p>
               </div>
             </div>
-            {image2 && !gallerySlider && (
+            {image2! && !gallerySlider && (
               <div className="w-full h-full desktop:hidden">
                 <Image
-                  src={image2.url}
-                  alt={image2.alt}
+                  src={image2!.url}
+                  alt={image2!.alt}
                   width={1000}
                   height={1000}
                   className="object-cover h-full w-full"
