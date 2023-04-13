@@ -16,7 +16,6 @@ interface Props {
       url: string;
       alt: string;
     };
-    gallerySlider?: boolean;
     galleryList?: Array<{ url: string; alt: string }>;
     paragraph1: string;
     paragraph2?: string;
@@ -39,7 +38,6 @@ const BlogPost = ({ cssClasses, data }: Props) => {
             paragraph2,
             paragraph3,
             galleryList,
-            gallerySlider,
           },
           index
         ) => (
@@ -55,10 +53,10 @@ const BlogPost = ({ cssClasses, data }: Props) => {
           >
             <div
               className={`w-full desktop:h-[550px] ${
-                image2 && !gallerySlider && "desktop:grid grid-rows-2 gap-10"
+                image2 && !galleryList && "desktop:grid grid-rows-2 gap-10"
               } ${index % 2 && "desktop:order-2"}`}
             >
-              {!gallerySlider && (
+              {!galleryList && (
                 <Image
                   src={image1.url}
                   alt={image1.alt}
@@ -67,7 +65,7 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                   className="object-cover h-full w-full"
                 />
               )}
-              {/* {image2 && !gallerySlider && (
+              {image2 && !galleryList && (
                 <Image
                   src={image2.url}
                   alt={image2.alt}
@@ -75,8 +73,8 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                   height={1000}
                   className="object-cover h-full w-full hidden desktop:block"
                 />
-              )} */}
-              {gallerySlider && <BlogPostSlider galleryList={galleryList} />}
+              )}
+              {galleryList && <BlogPostSlider galleryList={galleryList} />}
             </div>
             <div>
               <div className="flex flex-col gap-2 items-center tablet:items-start">
@@ -100,7 +98,7 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                 <p>{paragraph3}</p>
               </div>
             </div>
-            {/* {image2 && !gallerySlider && (
+            {image2 && !galleryList && (
               <div className="w-full h-full desktop:hidden">
                 <Image
                   src={image2.url}
@@ -110,7 +108,7 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                   className="object-cover h-full w-full"
                 />
               </div>
-            )} */}
+            )}
           </div>
         )
       )}
