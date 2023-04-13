@@ -67,15 +67,15 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                   className="object-cover h-full w-full"
                 />
               )}
-              {image2 && !gallerySlider && (
+              {/* {image2 && !gallerySlider && (
                 <Image
-                  src={image2!.url!}
-                  alt={image2!.alt!}
+                  src={image2.url}
+                  alt={image2.alt}
                   width={1000}
                   height={1000}
                   className="object-cover h-full w-full hidden desktop:block"
                 />
-              )}
+              )} */}
               {gallerySlider && <BlogPostSlider galleryList={galleryList} />}
             </div>
             <div>
@@ -100,17 +100,17 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                 <p>{paragraph3}</p>
               </div>
             </div>
-            {image2 && !gallerySlider && (
+            {/* {image2 && !gallerySlider && (
               <div className="w-full h-full desktop:hidden">
                 <Image
-                  src={image2!.url!}
-                  alt={image2!.alt!}
+                  src={image2.url}
+                  alt={image2.alt}
                   width={1000}
                   height={1000}
                   className="object-cover h-full w-full"
                 />
               </div>
-            )}
+            )} */}
           </div>
         )
       )}
