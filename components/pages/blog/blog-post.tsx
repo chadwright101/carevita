@@ -103,8 +103,8 @@ const BlogPost = ({ cssClasses, data }: Props) => {
             {image2 && !gallerySlider && (
               <div className="w-full h-full desktop:hidden">
                 <Image
-                  src={image2.url}
-                  alt={image2.alt}
+                  src={image2.url!}
+                  alt={image2.alt!}
                   width={1000}
                   height={1000}
                   className="object-cover h-full w-full"
