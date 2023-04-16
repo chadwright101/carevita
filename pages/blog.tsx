@@ -8,32 +8,20 @@ import client from "@/components/utils/client";
 
 import { gql } from "@apollo/client";
 
+export interface BlogData {
+  paragraph1: string;
+  paragraph2: string;
+  paragraph3: string;
+  title: string;
+  image1?: {
+    mediaItemUrl: string;
+  };
+  galleryList: Array<string>;
+}
+
 interface Props {
   BlogPosts?: Array<{
-    blog: {
-      paragraph1: string;
-      paragraph2: string;
-      paragraph3: string;
-      title: string;
-      image1: {
-        mediaItemUrl: string;
-      };
-      galleryImage1: {
-        mediaItemUrl: string;
-      };
-      galleryImage2: {
-        mediaItemUrl: string;
-      };
-      galleryImage3: {
-        mediaItemUrl: string;
-      };
-      galleryImage4: {
-        mediaItemUrl: string;
-      };
-      galleryImage5: {
-        mediaItemUrl: string;
-      };
-    };
+    blog: BlogData;
     id: string;
     date: string;
     author: {
@@ -104,8 +92,23 @@ export async function getStaticProps() {
     `,
   });
 
+  const finalContent = {
+    BlogPosts: data.posts.nodes.map((node: any) => ({
+      ...node,
+      blog: {
+        ...node.blog,
+        galleryList: [
+          node.blog.galleryImage1?.mediaItemUrl,
+          node.blog.galleryImage2?.mediaItemUrl,
+          node.blog.galleryImage3?.mediaItemUrl,
+          node.blog.galleryImage4?.mediaItemUrl,
+        ].filter((item) => item !== undefined),
+      },
+    })),
+  };
+
   return {
-    props: { BlogPosts: data.posts.nodes },
+    props: finalContent,
     revalidate: 15,
   };
 }

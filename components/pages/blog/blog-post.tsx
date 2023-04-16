@@ -1,4 +1,6 @@
+import { useState } from "react";
 import Heading, { headingVariant } from "@/components/heading";
+import { BlogData } from "@/pages/blog";
 import Image from "next/image";
 import BlogPostSlider from "./blog-post-slider";
 import useScrollPosition from "../../utils/scroll-position";
@@ -6,30 +8,7 @@ import useScrollPosition from "../../utils/scroll-position";
 interface Props {
   cssClasses?: string;
   data?: Array<{
-    blog: {
-      paragraph1: string;
-      paragraph2: string;
-      paragraph3: string;
-      title: string;
-      image1: {
-        mediaItemUrl: string;
-      };
-      galleryImage1: {
-        mediaItemUrl: string;
-      };
-      galleryImage2: {
-        mediaItemUrl: string;
-      };
-      galleryImage3: {
-        mediaItemUrl: string;
-      };
-      galleryImage4: {
-        mediaItemUrl: string;
-      };
-      galleryImage5: {
-        mediaItemUrl: string;
-      };
-    };
+    blog: BlogData;
     id: string;
     date: string;
     author: {
@@ -42,6 +21,7 @@ interface Props {
 
 const BlogPost = ({ cssClasses, data }: Props) => {
   const scrollPosition = useScrollPosition();
+
   return (
     <article className={`${cssClasses}`}>
       {data?.map(
@@ -53,11 +33,7 @@ const BlogPost = ({ cssClasses, data }: Props) => {
               paragraph2,
               paragraph3,
               image1,
-              galleryImage1,
-              galleryImage2,
-              galleryImage3,
-              galleryImage4,
-              galleryImage5,
+              galleryList,
             },
 
             id,
@@ -68,13 +44,6 @@ const BlogPost = ({ cssClasses, data }: Props) => {
           },
           index
         ) => {
-          const galleryList = [
-            galleryImage1.mediaItemUrl,
-            galleryImage2.mediaItemUrl,
-            galleryImage3.mediaItemUrl,
-            galleryImage4.mediaItemUrl,
-            galleryImage5.mediaItemUrl,
-          ];
           return (
             <div
               key={id}
@@ -87,7 +56,7 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                   index % 2 && "desktop:order-2"
                 }`}
               >
-                {!galleryList && (
+                {!galleryList && image1 && (
                   <Image
                     src={image1?.mediaItemUrl}
                     alt={title}
@@ -125,7 +94,7 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                     index % 2 && "desktop:order-2"
                   }`}
                 >
-                  {!galleryList && (
+                  {!galleryList && image1 && (
                     <Image
                       src={image1?.mediaItemUrl}
                       alt={title}
