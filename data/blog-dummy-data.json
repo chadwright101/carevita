@@ -4,11 +4,7 @@
     "date": "13/04/23",
     "postedBy": "The Crescent Lodge",
     "image1": {
-      "src": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/_MG_9874.jpg",
-      "alt": ""
-    },
-    "image2": {
-      "src": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/IMG_9675.jpg",
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/_MG_9874.jpg",
       "alt": ""
     },
     "paragraph1": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim velit neque similique quidem veniam facere amet dolorum modi. Labore delectus deserunt repellendus laudantium dignissimos voluptate animi deleniti nisi aliquam. Exercitationem consequuntur, quidem, dicta esse ipsam eum earum vitae sit ad necessitatibus praesentium perferendis vero. Praesentium modi facilis quibusdam beatae velit.",
@@ -20,7 +16,7 @@
     "date": "11/11/22",
     "postedBy": "Eastlands Retirement Centre",
     "image1": {
-      "src": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/IMG_9675.jpg",
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/IMG_9675.jpg",
       "alt": ""
     },
     "paragraph1": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur earum ea consectetur tempora numquam vitae enim eaque maiores ullam! Eligendi, maiores. Sed iusto reprehenderit, sint quasi necessitatibus nihil quibusdam ullam.",
@@ -31,6 +27,10 @@
     "heading": "A happy day",
     "date": "12/01/21",
     "postedBy": "Serene Park",
+    "image1": {
+      "url": "",
+      "alt": ""
+    },
     "galleryList": [
       {
         "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/Serenepark.jpeg",

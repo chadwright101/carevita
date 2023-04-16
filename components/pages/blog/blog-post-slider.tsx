@@ -5,7 +5,7 @@ import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css/core";
 
 interface Props {
-  galleryList?: Array<{ url: string; alt: string }>;
+  galleryList?: string[];
 }
 
 const BlogPostSlider = ({ galleryList }: Props) => {
@@ -61,14 +61,14 @@ const BlogPostSlider = ({ galleryList }: Props) => {
         </button>
       </div>
       <SplideTrack>
-        {galleryList!.map(({ url, alt }, index) => (
+        {galleryList!.map((item, index) => (
           <SplideSlide
             key={index}
             className="h-[200px] phone:h-[300px] tablet:h-[400px] tabletLarge:h-[450px] desktop:h-[550px]"
           >
             <Image
-              src={url}
-              alt={alt}
+              src={item}
+              alt=""
               width={1400}
               height={1000}
               className="object-cover h-full w-full"

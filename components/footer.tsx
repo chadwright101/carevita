@@ -34,6 +34,7 @@ const Footer = ({ cssClasses, border }: Props) => {
             alt="CareVita logo"
             width={120}
             height={100}
+            className="w-[120px] h-auto"
           />
         </div>
         <p className="tabletLarge:text-[16px]">
