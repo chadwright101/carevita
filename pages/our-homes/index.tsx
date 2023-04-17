@@ -4,10 +4,12 @@ import HomeItem from "@/components/pages/our-homes/home-item";
 import Heading, { headingVariant } from "@/components/heading";
 import Layout from "@/components/layout";
 import Contact from "@/components/contact/contact";
+import useScrollPosition from "@/components/utils/scroll-position";
 
 import homeList from "../../data/home-page-our-homes-data.json";
 
 const OurHomes = () => {
+  const scrollPosition = useScrollPosition();
   return (
     <>
       <Header />

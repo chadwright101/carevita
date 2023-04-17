@@ -1,7 +1,5 @@
 import Image from "next/image";
 
-import useScrollPosition from "../../utils/scroll-position";
-
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 
 import "@splidejs/react-splide/css/core";
@@ -11,7 +9,6 @@ interface Props {
 }
 
 const BlogPostSlider = ({ galleryList }: Props) => {
-  const scrollPosition = useScrollPosition();
   return (
     <Splide
       options={{
@@ -75,9 +72,7 @@ const BlogPostSlider = ({ galleryList }: Props) => {
               width={1400}
               height={1000}
               className="object-cover h-full w-full"
-              loading={`${
-                index === 0 && scrollPosition < 1000 ? "eager" : "lazy"
-              }`}
+              priority
             />
           </SplideSlide>
         ))}

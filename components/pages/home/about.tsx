@@ -49,6 +49,7 @@ const About = ({ cssClasses }: Props) => {
             width={900}
             height={450}
             className="w-full h-full object-cover"
+            priority
           />
           <Image
             src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/_MG_9890.jpg"
@@ -56,6 +57,7 @@ const About = ({ cssClasses }: Props) => {
             width={900}
             height={450}
             className="w-full h-full object-cover"
+            priority
           />
         </div>
       </main>

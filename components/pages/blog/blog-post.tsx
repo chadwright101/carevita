@@ -2,7 +2,6 @@ import Image from "next/image";
 import Heading, { headingVariant } from "@/components/heading";
 import { blogData } from "@/pages/blog";
 import BlogPostSlider from "./blog-post-slider";
-import useScrollPosition from "../../utils/scroll-position";
 
 interface Props {
   cssClasses?: string;
@@ -19,8 +18,6 @@ interface Props {
 }
 
 const BlogPost = ({ cssClasses, data }: Props) => {
-  const scrollPosition = useScrollPosition();
-
   return (
     <article className={`${cssClasses}`}>
       {data?.map(
@@ -63,7 +60,7 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                     width={1000}
                     height={1000}
                     className="object-cover h-full w-full"
-                    loading={`${scrollPosition < 1000 ? "eager" : "lazy"}`}
+                    priority
                   />
                 )}
                 {galleryList && !image1 && (
@@ -104,7 +101,7 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                       width={1000}
                       height={1000}
                       className="object-cover h-full w-full"
-                      loading={`${scrollPosition < 1000 ? "eager" : "lazy"}`}
+                      priority
                     />
                   )}
                   {galleryList && !image1 && (

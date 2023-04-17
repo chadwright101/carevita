@@ -14,7 +14,7 @@ const PageItemHeroSlider = ({ imageList }: Props) => {
       options={{
         autoplay: true,
         type: "fade",
-        interval: 4000,
+        interval: 5000,
         rewind: true,
         dragMinThreshold: 10,
         breakpoints: {
@@ -72,6 +72,7 @@ const PageItemHeroSlider = ({ imageList }: Props) => {
               width={1400}
               height={1000}
               className="object-cover h-full w-full"
+              priority
             />
           </SplideSlide>
         ))}

@@ -21,6 +21,7 @@ const FacilitesCatering = ({ catering, facilities }: Props) => {
             width={50}
             height={50}
             className="mb-6 mx-auto tablet:mx-0 tablet:w-10 tablet:h-auto"
+            priority
           />
           <Heading
             variant={headingVariant.subheading}
@@ -52,6 +53,7 @@ const FacilitesCatering = ({ catering, facilities }: Props) => {
             width={50}
             height={50}
             className="mb-6 mx-auto tablet:mx-0 tablet:w-10 tablet:h-auto"
+            priority
           />
           <Heading variant={headingVariant.subheading}>Catering</Heading>
         </div>

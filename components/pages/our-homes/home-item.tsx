@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import Button from "../../button";
 import Heading, { headingVariant } from "../../heading";
 
@@ -35,6 +36,7 @@ const HomeItem = ({
         width={1000}
         height={750}
         className="object-cover h-[225px] phone:h-[300px] tablet:h-[380px] tabletLarge:h-[280px] desktop:h-[250px]"
+        priority
       />
       <p>{paragraph}</p>
       <Button url={buttonUrl} cssClasses="mx-auto"></Button>
