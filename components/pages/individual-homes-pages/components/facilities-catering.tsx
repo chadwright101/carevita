@@ -14,7 +14,22 @@ const FacilitesCatering = ({ catering, facilities }: Props) => {
   return (
     <div className="grid gap-16 tabletLarge:grid-cols-2 tabletLarge:gap-10">
       <div>
-        <Heading variant={headingVariant.subheading}>Facilities</Heading>
+        <div className="tablet:grid grid-cols-12 tabletLarge:grid-cols-11 desktop:grid-cols-8">
+          <Image
+            src="/icons/walker.svg"
+            alt=""
+            width={50}
+            height={50}
+            className="mb-6 mx-auto tablet:mx-0 tablet:w-10 tablet:h-auto"
+            priority
+          />
+          <Heading
+            variant={headingVariant.subheading}
+            cssClasses="col-span-5 tabletLarge:ml-4 desktopSmall:ml-0 desktop:-translate-x-6"
+          >
+            Facilities
+          </Heading>
+        </div>
         <article className="flex flex-col gap-10">
           <ul className="list-disc ml-10">
             {facilities.list.map((item, index) => (
@@ -31,7 +46,17 @@ const FacilitesCatering = ({ catering, facilities }: Props) => {
         </article>
       </div>
       <div>
-        <Heading variant={headingVariant.subheading}>Catering</Heading>
+        <div className="tablet:grid grid-cols-12 tabletLarge:grid-cols-8 desktopSmall:grid-cols-10 desktop:grid-cols-12">
+          <Image
+            src="/icons/catering.svg"
+            alt=""
+            width={50}
+            height={50}
+            className="mb-6 mx-auto tablet:mx-0 tablet:w-10 tablet:h-auto"
+            priority
+          />
+          <Heading variant={headingVariant.subheading}>Catering</Heading>
+        </div>
         <div className="flex flex-col gap-10">
           <article>
             <p className="mb-4">{catering.paragraphs[0]}</p>

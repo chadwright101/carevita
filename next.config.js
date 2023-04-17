@@ -13,6 +13,12 @@ module.exports = {
         port: "",
         pathname: "/carevita/**",
       },
+      {
+        protocol: "http",
+        hostname: "wordpress.carevita.co.za",
+        port: "",
+        pathname: "/wp-content/**",
+      },
     ],
   },
 };

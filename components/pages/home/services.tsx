@@ -13,7 +13,7 @@ const Services = ({ cssClasses }: Props) => {
         <div className="grid grid-cols-1 grid-rows-[1fr_280px] tablet:grid-rows-[1fr_350px] gap-10 place-items-center tablet:place-items-start tabletLarge:grid-cols-2 tabletLarge:grid-rows-[150px_150px] desktopSmall:grid-rows-[125px_125px] desktop:grid-rows-[100px_100px]">
           <div className="tablet:grid grid-cols-11 tabletLarge:grid-cols-8 tabletLarge:order-2">
             <Image
-              src="/icons/ecg_heart.svg"
+              src="/icons/ecg-heart.svg"
               alt=""
               width={50}
               height={50}

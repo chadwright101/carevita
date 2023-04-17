@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-
 import { useState } from "react";
 
 import menuList from "../data/navigation-data.json";
@@ -33,8 +32,10 @@ const Header = ({ cssClasses }: Props) => {
             width={80}
             height={120}
             className={classNames("transition-all", {
+              "w-[80px] h-auto": scrollPosition === 0,
               "w-[64px] h-auto": scrollPosition > 0,
             })}
+            priority
           />
         </Link>
         <button className="p-2 -m-2" onClick={() => setToggleMenu(true)}>
@@ -84,8 +85,10 @@ const Header = ({ cssClasses }: Props) => {
               width={80}
               height={120}
               className={classNames("transition-all", {
+                "w-[80px] h-auto": scrollPosition === 0,
                 "w-14 h-auto": scrollPosition > 0,
               })}
+              priority
             />
           </Link>
           <nav>

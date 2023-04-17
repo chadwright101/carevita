@@ -5,16 +5,16 @@ import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css/core";
 
 interface Props {
-  imageList: Array<{ url: string; alt: string }>;
+  galleryList?: string[];
 }
 
-const PageItemHeroSlider = ({ imageList }: Props) => {
+const BlogPostSlider = ({ galleryList }: Props) => {
   return (
     <Splide
       options={{
         autoplay: true,
         type: "fade",
-        interval: 5000,
+        interval: 4000,
         rewind: true,
         dragMinThreshold: 10,
         breakpoints: {
@@ -61,14 +61,14 @@ const PageItemHeroSlider = ({ imageList }: Props) => {
         </button>
       </div>
       <SplideTrack>
-        {imageList.map(({ url, alt }, index) => (
+        {galleryList!.map((item, index) => (
           <SplideSlide
             key={index}
-            className="h-[250px] phone:h-[325px] tablet:h-[450px] tabletLarge:h-[525px] desktop:h-[600px]"
+            className="h-[300px] phone:h-[350px] tablet:h-[450px] tabletLarge:h-[500px] desktopSmall:h-[600px] desktop:h-[550px]"
           >
             <Image
-              src={url}
-              alt={alt}
+              src={item}
+              alt=""
               width={1400}
               height={1000}
               className="object-cover h-full w-full"
@@ -81,4 +81,4 @@ const PageItemHeroSlider = ({ imageList }: Props) => {
   );
 };
 
-export default PageItemHeroSlider;
+export default BlogPostSlider;
