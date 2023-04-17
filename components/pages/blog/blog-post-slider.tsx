@@ -64,7 +64,7 @@ const BlogPostSlider = ({ galleryList }: Props) => {
         {galleryList!.map((item, index) => (
           <SplideSlide
             key={index}
-            className="h-[200px] phone:h-[300px] tablet:h-[400px] tabletLarge:h-[450px] desktop:h-[550px]"
+            className="h-[300px] phone:h-[350px] tablet:h-[450px] tabletLarge:h-[500px] desktopSmall:h-[600px] desktop:h-[550px]"
           >
             <Image
               src={item}
