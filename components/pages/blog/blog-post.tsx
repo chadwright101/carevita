@@ -77,7 +77,7 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                   </Heading>
                   <p>Posted on {date}</p>
                   <p>
-                    By{" "}
+                    by{" "}
                     <span className="text-link italic font-light">
                       {postedBy}
                     </span>
