@@ -1,14 +1,13 @@
-import { useState } from "react";
-import Heading, { headingVariant } from "@/components/heading";
-import { BlogData } from "@/pages/blog";
 import Image from "next/image";
+import Heading, { headingVariant } from "@/components/heading";
+import { blogData } from "@/pages/blog";
 import BlogPostSlider from "./blog-post-slider";
 import useScrollPosition from "../../utils/scroll-position";
 
 interface Props {
   cssClasses?: string;
   data?: Array<{
-    blog: BlogData;
+    blog: blogData;
     id: string;
     date: string;
     author: {
@@ -51,12 +50,13 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                 index < data.length - 1 && "mb-14"
               }`}
             >
+              {/* Desktop view */}
               <div
                 className={`w-full desktop:h-[550px] hidden desktop:block ${
                   index % 2 && "desktop:order-2"
                 }`}
               >
-                {!galleryList && image1 && (
+                {image1 && (
                   <Image
                     src={image1?.mediaItemUrl}
                     alt={title}
@@ -66,7 +66,9 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                     loading={`${scrollPosition < 1000 ? "eager" : "lazy"}`}
                   />
                 )}
-                {galleryList && <BlogPostSlider galleryList={galleryList} />}
+                {galleryList && !image1 && (
+                  <BlogPostSlider galleryList={galleryList} />
+                )}
               </div>
               <div>
                 <div className="flex flex-col gap-2 items-center tablet:items-start">
@@ -94,7 +96,8 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                     index % 2 && "desktop:order-2"
                   }`}
                 >
-                  {!galleryList && image1 && (
+                  {/* Mobile view */}
+                  {image1 && (
                     <Image
                       src={image1?.mediaItemUrl}
                       alt={title}
@@ -104,7 +107,9 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                       loading={`${scrollPosition < 1000 ? "eager" : "lazy"}`}
                     />
                   )}
-                  {galleryList && <BlogPostSlider galleryList={galleryList} />}
+                  {galleryList && !image1 && (
+                    <BlogPostSlider galleryList={galleryList} />
+                  )}
                 </div>
               </div>
               <div className="flex flex-col gap-4 desktop:hidden">

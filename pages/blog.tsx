@@ -8,7 +8,7 @@ import client from "@/components/utils/client";
 
 import { gql } from "@apollo/client";
 
-export interface BlogData {
+export interface blogData {
   paragraph1: string;
   paragraph2: string;
   paragraph3: string;
@@ -20,8 +20,8 @@ export interface BlogData {
 }
 
 interface Props {
-  BlogPosts?: Array<{
-    blog: BlogData;
+  blogPosts?: Array<{
+    blog: blogData;
     id: string;
     date: string;
     author: {
@@ -32,7 +32,7 @@ interface Props {
   }>;
 }
 
-const Blog = ({ BlogPosts }: Props) => {
+const Blog = ({ blogPosts }: Props) => {
   return (
     <>
       <Header />
@@ -40,7 +40,7 @@ const Blog = ({ BlogPosts }: Props) => {
         <Heading variant={headingVariant.pageHeading} cssClasses="mb-14">
           Blog
         </Heading>
-        <BlogPost data={BlogPosts} />
+        <BlogPost data={blogPosts} />
       </Layout>
       <Footer />
     </>
@@ -93,7 +93,7 @@ export async function getStaticProps() {
   });
 
   const finalContent = {
-    BlogPosts: data.posts.nodes.map((node: any) => ({
+    blogPosts: data.posts.nodes.map((node: any) => ({
       ...node,
       blog: {
         ...node.blog,
