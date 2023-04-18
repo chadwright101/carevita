@@ -102,10 +102,7 @@ const Button = ({
     );
   } else if (desktopHomesForm) {
     return (
-      <button
-        className="text-larger flex flex-col gap-5 w-full"
-        onClick={onClick}
-      >
+      <button className="text-larger flex flex-col" onClick={onClick}>
         <div className="flex flex-col gap-2">
           <div className={`flex gap-3 items-center ${cssClasses}`}>
             <Image
@@ -134,7 +131,7 @@ const Button = ({
     );
   } else {
     return (
-      <button className={` ${cssClasses}`}>
+      <button className={`mx-auto ${cssClasses}`}>
         <Link
           href={url!}
           className="px-12 py-2.5 text-subheading font-thin bg-green text-white drop-shadow-md tabletLarge:hover:bg-lightGreen tablet:px-10"

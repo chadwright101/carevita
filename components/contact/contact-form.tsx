@@ -714,7 +714,7 @@ const ContactForm = ({
           )}
         </div>
         <ul className="mt-10 pt-10 border-t border-white flex flex-col gap-8 phone:gap-6 max-w-[1400px] mx-auto tabletLarge:gap-2">
-          <li className="grid grid-cols-1 gap-2 text-larger place-items-center phone:place-items-start phone:gap-0 phone:grid-cols-[165px_1fr] desktopSmall:text-paragraph">
+          <li className="grid grid-cols-1 gap-2 text-larger place-items-center phone:place-items-start phone:gap-0 phone:grid-cols-[175px_1fr] desktopSmall:text-paragraph desktop:grid-cols-[165px_1fr]">
             <p className="text-white text-center font-light text-larger desktopSmall:text-paragraph">
               General enquiries:
             </p>
@@ -729,13 +729,13 @@ const ContactForm = ({
             {showGeneralEmail && (
               <Link
                 href="mailto:info@carevita.co.za"
-                className="text-white tabletLarge:hover:underline underline-offset-4 decoration-1 w-[170px] p-2 -m-2 tabletLarge:w-[140px] tabletLarge:p-0 tabletLarge:m-0"
+                className="text-white tabletLarge:hover:underline underline-offset-4 decoration-1 w-auto p-2 -m-2 tabletLarge:w-[140px] tabletLarge:p-0 tabletLarge:m-0"
               >
                 info@carevita.co.za
               </Link>
             )}
           </li>
-          <li className="grid grid-cols-1 gap-2 text-larger place-items-center phone:place-items-start phone:gap-0 phone:grid-cols-[165px_1fr] desktopSmall:text-paragraph">
+          <li className="grid grid-cols-1 gap-2 text-larger place-items-center phone:place-items-start phone:gap-0 phone:grid-cols-[175px_1fr] desktopSmall:text-paragraph desktop:grid-cols-[165px_1fr]">
             <p className="text-white text-center font-light text-larger desktopSmall:text-paragraph">
               Account queries:
             </p>
@@ -750,7 +750,7 @@ const ContactForm = ({
             {showAccountsEmail && (
               <Link
                 href="mailto:accounts@carevita.co.za"
-                className="text-white tabletLarge:hover:underline underline-offset-4 decoration-1 w-[210px] p-2 -m-2 tabletLarge:w-[182px] tabletLarge:p-0 tabletLarge:m-0"
+                className="text-white tabletLarge:hover:underline underline-offset-4 decoration-1 w-auto p-2 -m-2 tabletLarge:w-[182px] tabletLarge:p-0 tabletLarge:m-0"
               >
                 accounts@carevita.co.za
               </Link>

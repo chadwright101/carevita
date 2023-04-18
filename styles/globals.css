@@ -6,9 +6,9 @@
   font-family: "helvetica_neue";
   font-weight: 200;
   src:
-    url("../fonts/helvetica-neue-thin.woff2") format("woff2"),
-    url("../fonts/helvetica-neue-thin.woff") format("woff"),
-    url("../fonts/helvetica-neue-thin.ttf") format("truetype");
+    url("../fonts/helvetica-neue-light.woff2") format("woff2"),
+    url("../fonts/helvetica-neue-light.woff") format("woff"),
+    url("../fonts/helvetica-neue-light.ttf") format("truetype");
   font-display: swap
 }
 
@@ -16,9 +16,9 @@
   font-family: "helvetica_neue";
   font-weight: 200;
   src:
-    url("../fonts/helvetica-neue-thin-italic.woff2") format("woff2"),
-    url("../fonts/helvetica-neue-thin-italic.woff") format("woff"),
-    url("../fonts/helvetica-neue-thin-italic.ttf") format("truetype");
+    url("../fonts/helvetica-neue-light-italic.woff2") format("woff2"),
+    url("../fonts/helvetica-neue-light-italic.woff") format("woff"),
+    url("../fonts/helvetica-neue-light-italic.ttf") format("truetype");
   font-display: swap;
   font-style: italic
 }
@@ -27,9 +27,9 @@
   font-family: "helvetica_neue";
   font-weight: 300;
   src:
-    url("../fonts//helvetic-neue-light.woff2") format("woff2"),
-    url("../fonts/helvetica-neue-light.woff") format("woff"),
-    url("../fonts/helvetica-neue-light.ttf") format("truetype");
+    url("../fonts//helvetic-neue.woff2") format("woff2"),
+    url("../fonts//helvetic-neue.woff") format("woff"),
+    url("../fonts//helvetic-neue.ttf") format("woff");
   font-display: swap
 }
 
@@ -37,9 +37,9 @@
   font-family: "helvetica_neue";
   font-weight: 300;
   src:
-    url("../fonts/helvetica-neue-light-italic.woff2") format("woff2"),
-    url("../fonts/helvetica-neue-light-italic.woff") format("woff"),
-    url("../fonts/helvetica-neue-light-italic.ttf") format("truetype");
+    url("../fonts/helvetic-neue-italic.woff2") format("woff2"),
+    url("../fonts/helvetic-neue-italic.woff") format("woff"),
+    url("../fonts/helvetic-neue-italic.ttf") format("truetype");
   font-display: swap;
   font-style: italic
 }
