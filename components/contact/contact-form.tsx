@@ -729,7 +729,7 @@ const ContactForm = ({
             {showGeneralEmail && (
               <Link
                 href="mailto:info@carevita.co.za"
-                className="text-white tabletLarge:hover:underline underline-offset-4 decoration-1 w-[170px] p-2 -m-2 tabletLarge:w-[140px] tabletLarge:p-0 tabletLarge:m-0"
+                className="text-white tabletLarge:hover:underline underline-offset-4 decoration-1 w-auto p-2 -m-2 tabletLarge:w-[140px] tabletLarge:p-0 tabletLarge:m-0"
               >
                 info@carevita.co.za
               </Link>
@@ -750,7 +750,7 @@ const ContactForm = ({
             {showAccountsEmail && (
               <Link
                 href="mailto:accounts@carevita.co.za"
-                className="text-white tabletLarge:hover:underline underline-offset-4 decoration-1 w-[210px] p-2 -m-2 tabletLarge:w-[182px] tabletLarge:p-0 tabletLarge:m-0"
+                className="text-white tabletLarge:hover:underline underline-offset-4 decoration-1 w-auto p-2 -m-2 tabletLarge:w-[182px] tabletLarge:p-0 tabletLarge:m-0"
               >
                 accounts@carevita.co.za
               </Link>

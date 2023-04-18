@@ -51,7 +51,7 @@ const Header = ({ cssClasses }: Props) => {
                   <Link
                     href={url}
                     onClick={() => setToggleMenu(false)}
-                    className="text-white text-subheading p-3 -m-3"
+                    className="text-white text-subheading p-4 -m-4"
                   >
                     {title}
                   </Link>
