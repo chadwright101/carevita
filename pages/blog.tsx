@@ -10,8 +10,6 @@ import { gql } from "@apollo/client";
 
 export interface blogData {
   paragraph1: string;
-  paragraph2: string;
-  paragraph3: string;
   title: string;
   image1?: {
     mediaItemUrl: string;
@@ -57,8 +55,6 @@ export async function getStaticProps() {
           nodes {
             blog {
               paragraph1
-              paragraph2
-              paragraph3
               title
               image1 {
                 mediaItemUrl

@@ -3,6 +3,8 @@ import Heading, { headingVariant } from "@/components/heading";
 import { blogData } from "@/pages/blog";
 import BlogPostSlider from "./blog-post-slider";
 
+import parse from "html-react-parser";
+
 interface Props {
   cssClasses?: string;
   data?: Array<{
@@ -23,14 +25,7 @@ const BlogPost = ({ cssClasses, data }: Props) => {
       {data?.map(
         (
           {
-            blog: {
-              title,
-              paragraph1,
-              paragraph2,
-              paragraph3,
-              image1,
-              galleryList,
-            },
+            blog: { title, paragraph1, image1, galleryList },
 
             id,
             date,
@@ -75,18 +70,16 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                   >
                     {title}
                   </Heading>
-                  <p>Posted on {date}</p>
                   <p>
-                    by{" "}
-                    <span className="text-link italic font-light">
-                      {postedBy}
-                    </span>
+                    Posted on {date.substring(8, 10)}/{date.substring(5, 7)}/
+                    {date.substring(0, 4)}
+                  </p>
+                  <p>
+                    by <span className="italic font-light">{postedBy}</span>
                   </p>
                 </div>
                 <div className="flex-col gap-4 mt-10 hidden desktop:flex">
-                  <p>{paragraph1}</p>
-                  {paragraph2 && <p>{paragraph2}</p>}
-                  {paragraph3 && <p>{paragraph3}</p>}
+                  <p>{parse(`${paragraph1}`)}</p>
                 </div>
                 <div
                   className={`w-full mt-10 h-[300px] phone:h-[350px] tablet:h-[450px] tabletLarge:h-[500px] desktopSmall:h-[600px] desktop:h-[550px] desktop:hidden ${
@@ -110,9 +103,7 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                 </div>
               </div>
               <div className="flex flex-col gap-4 desktop:hidden">
-                <p>{paragraph1}</p>
-                {paragraph2 && <p>{paragraph2}</p>}
-                {paragraph3 && <p>{paragraph3}</p>}
+                <p>{parse(`${paragraph1}`)}</p>
               </div>
             </div>
           );
