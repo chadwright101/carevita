@@ -59,7 +59,7 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                   />
                 )}
                 {galleryList && !image1 && (
-                  <BlogPostSlider galleryList={galleryList} />
+                  <BlogPostSlider galleryList={galleryList} alt={title} />
                 )}
               </div>
               <div>
@@ -98,7 +98,7 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                     />
                   )}
                   {galleryList && !image1 && (
-                    <BlogPostSlider galleryList={galleryList} />
+                    <BlogPostSlider galleryList={galleryList} alt={title} />
                   )}
                 </div>
               </div>

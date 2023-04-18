@@ -5,10 +5,11 @@ import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css/core";
 
 interface Props {
-  imageList: Array<{ url: string; alt: string }>;
+  imageList: Array<{ url: string }>;
+  homeName: string;
 }
 
-const PageItemHeroSlider = ({ imageList }: Props) => {
+const PageItemHeroSlider = ({ imageList, homeName }: Props) => {
   return (
     <Splide
       options={{
@@ -61,14 +62,14 @@ const PageItemHeroSlider = ({ imageList }: Props) => {
         </button>
       </div>
       <SplideTrack>
-        {imageList.map(({ url, alt }, index) => (
+        {imageList.map(({ url }, index) => (
           <SplideSlide
             key={index}
             className="h-[250px] phone:h-[325px] tablet:h-[450px] tabletLarge:h-[525px] desktop:h-[600px]"
           >
             <Image
               src={url}
-              alt={alt}
+              alt={`${homeName}`}
               width={1400}
               height={1000}
               className="object-cover h-full w-full"

@@ -9,23 +9,22 @@ interface Props {
   homeList: {
     extendedTitle: string;
     extendedLocation: string;
-    heroSlider: Array<{ url: string; alt: string }>;
-    facilities: { list: Array<string>; image: { url: string; alt: string } };
+    heroSlider: Array<{ url: string }>;
+    facilities: { list: Array<string>; image: { url: string } };
     catering: {
       paragraphs: Array<string>;
-      image: { url: string; alt: string };
+      image: { url: string };
     };
     meetTheTeam: {
       paragraph: string;
       images: Array<{
         position: string;
         url: string;
-        alt: string;
         teamMember: string;
         bio: string;
       }>;
     };
-    gallerySlider: Array<{ url: string; alt: string }>;
+    gallerySlider: Array<{ url: string }>;
     locationDetail: { description: string[]; imageUrl?: string };
   };
 }
@@ -50,17 +49,24 @@ const PageItem = ({
           {extendedLocation}
         </h3>
       </Layout>
-      <PageItemHeroSlider imageList={heroSlider} />
+      <PageItemHeroSlider imageList={heroSlider} homeName={extendedTitle} />
       <Layout>
         <main>
           <div className="flex flex-col gap-16 mt-16">
-            <FacilitiesCatering facilities={facilities} catering={catering} />
-            <MeetTheTeam meetTheTeam={meetTheTeam} />
+            <FacilitiesCatering
+              facilities={facilities}
+              catering={catering}
+              homeName={extendedTitle}
+            />
+            <MeetTheTeam meetTheTeam={meetTheTeam} homeName={extendedTitle} />
           </div>
         </main>
         <article className="my-16">
           <Heading variant={headingVariant.subheading}>Gallery</Heading>
-          <PageItemGallerySlider imageList={gallerySlider} />
+          <PageItemGallerySlider
+            imageList={gallerySlider}
+            homeName={extendedTitle}
+          />
         </article>
         <article>
           <Heading variant={headingVariant.subheading}>Location</Heading>

@@ -19,7 +19,7 @@ const TheCrescent = () => {
         <div className="desktopSmall:grid grid-cols-2 gap-10  mt-10">
           <Image
             src={pageList.locationDetail.image.url}
-            alt={pageList.locationDetail.image.alt}
+            alt={pageList.extendedTitle}
             width={700}
             height={400}
             className="object-cover w-full hidden h-[500px] desktopSmall:block"
