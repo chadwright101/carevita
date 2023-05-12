@@ -65,7 +65,7 @@ const PageItemHeroSlider = ({ imageList, homeName }: Props) => {
         {imageList.map(({ url }, index) => (
           <SplideSlide
             key={index}
-            className="h-[250px] phone:h-[325px] tablet:h-[450px] tabletLarge:h-[525px] desktop:h-[600px]"
+            className="h-[250px] phone:h-[325px] tablet:h-[450px] tabletLarge:h-[525px] desktop:h-[700px]"
           >
             <Image
               src={url}

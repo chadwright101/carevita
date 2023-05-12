@@ -31,7 +31,7 @@ const Header = ({ cssClasses }: Props) => {
             alt="CareVita logo"
             width={80}
             height={120}
-            className={classNames("transition-all", {
+            className={classNames("ease-in-out duration-300 delay-[10ms]", {
               "w-[80px] h-auto": scrollPosition === 0,
               "w-[64px] h-auto": scrollPosition > 0,
             })}
