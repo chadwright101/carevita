@@ -19,11 +19,8 @@ const MeetTheTeam = ({ meetTheTeam, homeName }: Props) => {
       <Heading variant={headingVariant.subheading}>Meet the team</Heading>
       <div className="flex flex-col items-center tablet:grid grid-cols-2 desktopSmall:flex desktopSmall:flex-row tabletLarge:flex-wrap justify-around gap-x-8 gap-y-10 desktop:gap-y-16 mt-16 tabletLarge:mt-10 desktop:justify-center">
         {meetTheTeam.images.map(({ position, url, teamMember }, index) => (
-          <div>
-            <article
-              key={index}
-              className="flex flex-col items-center gap-8 max-w-[375px] tabletLarge:gap-6 desktop:max-w-full"
-            >
+          <div key={index}>
+            <article className="flex flex-col items-center gap-8 max-w-[375px] tabletLarge:gap-6 desktop:max-w-full">
               <h4 className="text-larger text-center">{position}</h4>
               <Image
                 src={url}
