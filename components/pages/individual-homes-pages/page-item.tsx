@@ -1,5 +1,5 @@
 import Heading, { headingVariant } from "../../heading";
-import FacilitiesCatering from "./components/facilities-catering";
+import About from "./components/about";
 import MeetTheTeam from "./components/meet-the-team";
 import PageItemGallerySlider from "./components/sliders/page-item-gallery-slider";
 import PageItemHeroSlider from "./components/sliders/page-item-hero-slider";
@@ -10,22 +10,25 @@ interface Props {
     extendedTitle: string;
     extendedLocation: string;
     heroSlider: Array<{ url: string }>;
-    facilities: { list: Array<string>; image: { url: string } };
-    catering: {
+    whatWeOffer: {
+      list: Array<string>;
+      image: { url: string };
+      pampering?: Array<string>;
+      weeklyActivities: Array<string>;
+    };
+    about: {
       paragraphs: Array<string>;
       image: { url: string };
     };
     meetTheTeam: {
-      paragraph: string;
       images: Array<{
         position: string;
         url: string;
         teamMember: string;
-        bio: string;
       }>;
     };
     gallerySlider: Array<{ url: string }>;
-    locationDetail: { description: string[]; imageUrl?: string };
+    locationDetail: { description?: string[]; imageUrl?: string };
   };
 }
 
@@ -34,8 +37,8 @@ const PageItem = ({
     extendedTitle,
     extendedLocation,
     heroSlider,
-    facilities,
-    catering,
+    whatWeOffer,
+    about,
     meetTheTeam,
     gallerySlider,
     locationDetail,
@@ -53,9 +56,9 @@ const PageItem = ({
       <Layout>
         <main>
           <div className="flex flex-col gap-16 mt-16">
-            <FacilitiesCatering
-              facilities={facilities}
-              catering={catering}
+            <About
+              whatWeOffer={whatWeOffer}
+              about={about}
               homeName={extendedTitle}
             />
             <MeetTheTeam meetTheTeam={meetTheTeam} homeName={extendedTitle} />
@@ -70,7 +73,7 @@ const PageItem = ({
         </article>
         <article>
           <Heading variant={headingVariant.subheading}>Location</Heading>
-          <p>{locationDetail.description}</p>
+          {locationDetail.description && <p>{locationDetail.description}</p>}
         </article>
       </Layout>
     </>
