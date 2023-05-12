@@ -11,7 +11,7 @@ const Hero = ({ cssClasses }: Props) => {
         loop
         className="w-full h-screen tabletLarge:h-[600px] object-cover desktop:max-w-[1400px] mx-auto"
       >
-        <source src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/video.mp4" />
+        <source src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/home-page/the-crescent-test.mp4" />
       </video>
     </section>
   );

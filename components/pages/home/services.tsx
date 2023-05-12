@@ -10,7 +10,7 @@ const Services = ({ cssClasses }: Props) => {
     <article className={`${cssClasses}`}>
       <Heading variant={headingVariant.sectionHeading}>Services</Heading>
       <div className="flex flex-col gap-20 tablet:gap-14 desktopSmall:gap-10">
-        <div className="grid grid-cols-1 grid-rows-[1fr_280px] tablet:grid-rows-[1fr_350px] gap-10 place-items-center tablet:place-items-start tabletLarge:grid-cols-2 tabletLarge:grid-rows-[150px_150px] desktopSmall:grid-rows-[125px_125px] desktop:grid-rows-[100px_100px]">
+        <div className="grid grid-cols-1 grid-rows-[1fr_280px] tablet:grid-rows-[1fr_350px] gap-10 place-items-center tablet:place-items-start tabletLarge:grid-cols-2 tabletLarge:grid-rows-[150px_150px] desktopSmall:grid-rows-[125px_125px] desktop:grid-cols-[1.5fr_2fr]">
           <div className="tablet:grid grid-cols-11 tabletLarge:grid-cols-8 tabletLarge:order-2">
             <Image
               src="/icons/ecg-heart.svg"
@@ -43,7 +43,7 @@ const Services = ({ cssClasses }: Props) => {
             className="object-cover w-full h-full tabletLarge:row-span-2"
           />
         </div>
-        <div className="grid grid-cols-1 grid-rows-[1fr_280px] tablet:grid-rows-[1fr_350px] gap-10 place-items-center tablet:place-items-start tabletLarge:grid-cols-2 tabletLarge:grid-rows-[150px_150px] desktopSmall:grid-rows-[125px_125px] desktop:grid-rows-[100px_100px]">
+        <div className="grid grid-cols-1 grid-rows-[1fr_280px] tablet:grid-rows-[1fr_350px] gap-10 place-items-center tablet:place-items-start tabletLarge:grid-cols-2 tabletLarge:grid-rows-[150px_150px] desktopSmall:grid-rows-[125px_125px] desktop:grid-cols-[1.5fr_2fr]">
           <div className="tablet:grid grid-cols-11 tabletLarge:grid-cols-8 tabletLarge:order-2">
             <Image
               src="/icons/bathtub.svg"
@@ -70,14 +70,14 @@ const Services = ({ cssClasses }: Props) => {
             </p>
           </div>
           <Image
-            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/Eastlands.jpg"
+            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/home-page/9U7A6457.jpg"
             alt=""
             width={900}
             height={700}
             className="object-cover w-full h-full tabletLarge:row-span-2"
           />
         </div>
-        <div className="grid grid-cols-1 grid-rows-[1fr_280px] tablet:grid-rows-[1fr_350px] gap-10 place-items-center tablet:place-items-start tabletLarge:grid-cols-2 tabletLarge:grid-rows-[150px_150px] desktopSmall:grid-rows-[125px_125px] desktop:grid-rows-[100px_100px]">
+        <div className="grid grid-cols-1 grid-rows-[1fr_280px] tablet:grid-rows-[1fr_350px] gap-10 place-items-center tablet:place-items-start tabletLarge:grid-cols-2 tabletLarge:grid-rows-[150px_150px] desktopSmall:grid-rows-[125px_125px] desktop:grid-cols-[1.5fr_2fr]">
           <div className="tablet:grid grid-cols-11 tabletLarge:grid-cols-8 tabletLarge:order-2">
             <Image
               src="/icons/local_dining.svg"
@@ -102,7 +102,7 @@ const Services = ({ cssClasses }: Props) => {
             </p>
           </div>
           <Image
-            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/Serenepark.jpeg"
+            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/home-page/9U7A6417.jpg"
             alt=""
             width={900}
             height={600}

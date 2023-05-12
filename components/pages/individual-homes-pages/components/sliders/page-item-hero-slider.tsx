@@ -73,7 +73,7 @@ const PageItemHeroSlider = ({ imageList, homeName }: Props) => {
               width={1400}
               height={1000}
               className="object-cover h-full w-full"
-              priority
+              loading={index < 2 ? "eager" : "lazy"}
             />
           </SplideSlide>
         ))}

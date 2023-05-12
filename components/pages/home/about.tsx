@@ -8,7 +8,7 @@ interface Props {
 const About = ({ cssClasses }: Props) => {
   return (
     <div className={`${cssClasses}`}>
-      <main className="grid desktop:grid-cols-2 gap-10">
+      <main className="grid desktop:grid-cols-[1fr_550px] gap-10">
         <div className="flex flex-col gap-4">
           <Heading variant={headingVariant.sectionHeading}>About</Heading>
           <p>
@@ -44,7 +44,7 @@ const About = ({ cssClasses }: Props) => {
         </div>
         <div className="grid grid-rows-2 gap-10 mt-6 tablet:grid-rows-[400px_400px] tabletLarge:grid-cols-2 tabletLarge:grid-rows-1 desktop:grid-cols-1 desktop:grid-rows-[300px_300px]">
           <Image
-            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/_MG_9874.jpg"
+            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/home-page/9U7A6242.jpg"
             alt=""
             width={900}
             height={450}
@@ -52,7 +52,7 @@ const About = ({ cssClasses }: Props) => {
             priority
           />
           <Image
-            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/_MG_9890.jpg"
+            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/home-page/9U7A6543.jpg"
             alt=""
             width={900}
             height={450}

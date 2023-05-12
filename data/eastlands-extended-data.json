@@ -7,23 +7,23 @@
   "phone": "1234567890",
   "heroSlider": [
     {
-      "url": "/the-crescent/sliders/hero/9U7A6120.jpg"
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/hero/9U7A6120.jpg"
     },
     {
-      "url": "/the-crescent/sliders/hero/9U7A6201-HDR.jpg"
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/hero/9U7A6201-HDR.jpg"
     },
 
     {
-      "url": "/the-crescent/sliders/hero/9U7A6283.jpg"
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/hero/9U7A6283.jpg"
     },
     {
-      "url": "/the-crescent/sliders/hero/9U7A6627.jpg"
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/hero/9U7A6627.jpg"
     },
     {
-      "url": "/the-crescent/sliders/hero/9U7A6384.jpg"
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/hero/9U7A6384.jpg"
     },
     {
-      "url": "/the-crescent/sliders/hero/DJI_0961.JPG"
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/hero/DJI_0961.jpg"
     }
   ],
   "whatWeOffer": {
@@ -55,7 +55,7 @@
       "Swimming laps in the indoor heated pool"
     ],
     "image": {
-      "url": "/the-crescent/about/9U7A6374.jpg"
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/about/9U7A6374.jpg"
     }
   },
   "about": {
@@ -64,111 +64,111 @@
       "The healthcare centre offers en-suite independent and dependant accommodation as well as frail care facilities designed to assist with the residents' care.",
       "Eastlands offers a full service to residents including all meals, snacks, laundry, cleaning, nursing and any medication management required. Daily activities include swimming laps in the heated indoor pool and an outdoor pool, lap pool, bowling green and Jukskei field, gym and beauty salon. The beautifully styled library, restaurant, weekly shuttle to shops and the high security offered by the estate will ensure residents are pampered daily.",
       "Bingo, bridge, quiz, weekly church services and specifically designed games to stimulate an ageing mind take place daily to ensure residents are well entertained.",
-      "Our care team is comprised of qualified nurses and care workers, while the in-house physiotherapist and general practitioner take care of all the residents' health needs, while all our meals are made in-house with each resident's dietary requirements taken into account.",
+      "Our care team is comprised of qualified nurses and care workers, while the in-house physiotherapist and general practitioner take care of all the residents' health needs. All our meals are made in-house with each resident's dietary requirements taken into account.",
       "Eastlands is truly an icon in Gauteng where residents experience a warm homely home in their golden years."
     ],
     "image": {
-      "url": "/the-crescent/about/9U7A6167.jpg"
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/about/9U7A6167.jpg"
     }
   },
   "meetTheTeam": {
     "images": [
       {
         "position": "Facility manager",
-        "url": "/the-crescent/staff/9U7A6010.jpg",
+        "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/staff/9U7A6010.jpg",
         "teamMember": "Jumiree Jansen"
       },
       {
         "position": "Head Staff Nurse",
-        "url": "/the-crescent/staff/9U7A6032.jpg",
+        "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/staff/9U7A6032.jpg",
         "teamMember": "Emelio Phekula"
       },
       {
         "position": "Staff Nurse",
-        "url": "/the-crescent/staff/9U7A6631.jpg",
+        "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/staff/9U7A6631.jpg",
         "teamMember": "Pamela Knepscheld"
       },
       {
         "position": "Head Chef",
-        "url": "/the-crescent/staff/9U7A6004.jpg",
+        "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/staff/9U7A6004.jpg",
         "teamMember": "Clayton Van Wyk"
       },
       {
         "position": "Supervisor",
-        "url": "/the-crescent/staff/9U7A6039.jpg",
+        "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/staff/9U7A6039.jpg",
         "teamMember": "Jennifer September"
       }
     ]
   },
   "gallerySlider": [
     {
-      "url": "/the-crescent/sliders/hero/DJI_0961.JPG"
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/hero/DJI_0961.jpg"
     },
     {
-      "url": "/the-crescent/sliders/gallery/9U7A6582.jpg"
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6582.jpg"
     },
     {
-      "url": "/the-crescent/sliders/gallery/9U7A6627.jpg"
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6627.jpg"
     },
     {
-      "url": "/the-crescent/sliders/gallery/9U7A6242.jpg"
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6242.jpg"
     },
     {
-      "url": "/the-crescent/sliders/gallery/staff-combined.jpg"
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/staff-combined.jpg"
     },
     {
-      "url": "/the-crescent/sliders/gallery/9U7A6120.jpg"
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6120.jpg"
     },
     {
-      "url": "/the-crescent/sliders/gallery/9U7A6145.jpg"
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6145.jpg"
     },
     {
-      "url": "/the-crescent/sliders/gallery/9U7A6189-HDR.jpg"
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6189-HDR.jpg"
     },
     {
-      "url": "/the-crescent/sliders/gallery/9U7A6201-HDR.jpg"
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6201-HDR.jpg"
     },
     {
-      "url": "/the-crescent/sliders/gallery/9U7A6209-HDR.jpg"
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6209-HDR.jpg"
     },
     {
-      "url": "/the-crescent/sliders/gallery/9U7A6229-HDR.jpg"
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6229-HDR.jpg"
     },
     {
-      "url": "/the-crescent/sliders/gallery/9U7A6221-HDR-Edit.jpg"
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6221-HDR-Edit.jpg"
     },
     {
-      "url": "/the-crescent/sliders/gallery/9U7A6382.jpg"
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6382.jpg"
     },
     {
-      "url": "/the-crescent/sliders/gallery/9U7A6417.jpg"
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6417.jpg"
     },
     {
-      "url": "/the-crescent/sliders/gallery/9U7A6466.jpg"
-    },
-
-    {
-      "url": "/the-crescent/sliders/gallery/9U7A6293-HDR.jpg"
-    },
-    {
-      "url": "/the-crescent/sliders/gallery/9U7A6301-HDR.jpg"
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6466.jpg"
     },
 
     {
-      "url": "/the-crescent/sliders/gallery/9U7A6331-HDR-Edit.jpg"
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6293-HDR.jpg"
     },
     {
-      "url": "/the-crescent/sliders/gallery/9U7A6355-HDR-Edit.jpg"
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6301-HDR.jpg"
     },
 
     {
-      "url": "/the-crescent/sliders/gallery/9U7A6471-HDR.jpg"
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6331-HDR-Edit.jpg"
+    },
+    {
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6355-HDR-Edit.jpg"
+    },
+
+    {
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6471-HDR.jpg"
     }
   ],
   "locationDetail": {
     "description": [""],
     "image": {
-      "url": "/the-crescent/sliders/hero/DJI_0961.JPG"
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/hero/DJI_0961.jpg"
     }
   }
 }
