@@ -25,7 +25,7 @@ const BlogPost = ({ cssClasses, data }: Props) => {
       {data?.map(
         (
           {
-            blog: { title, paragraph1, image1, galleryList },
+            blog: { title, paragraph1, image1, galleryList, videoUrl },
 
             id,
             date,
@@ -48,6 +48,9 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                   index % 2 && "desktop:order-2"
                 }`}
               >
+                {videoUrl && (
+                  <video src={videoUrl} className="w-auto h-full" controls />
+                )}
                 {image1 && (
                   <Image
                     src={image1?.mediaItemUrl}
@@ -87,6 +90,13 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                   }`}
                 >
                   {/* Mobile view */}
+                  {videoUrl && (
+                    <video
+                      src={videoUrl}
+                      className="w-auto h-full mx-auto tablet:mx-0"
+                      controls
+                    />
+                  )}
                   {image1 && (
                     <Image
                       src={image1?.mediaItemUrl}
