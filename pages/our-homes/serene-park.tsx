@@ -23,6 +23,7 @@ const Eastlands = () => {
             width={700}
             height={400}
             className="object-cover w-full hidden h-[500px] desktopSmall:block"
+            quality={50}
           />
           <EastlandsMap cssClasses="w-full h-[400px] tabletLarge:h-[500px]" />
         </div>

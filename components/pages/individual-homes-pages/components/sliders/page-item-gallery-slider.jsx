@@ -45,6 +45,7 @@ const PageItemGallerySlider = ({ imageList, homeName }) => {
               height={1000}
               className="object-cover h-full w-full"
               loading={index < 1 ? "eager" : "lazy"}
+              quality={50}
             />
           </SplideSlide>
         ))}
@@ -78,6 +79,7 @@ const PageItemGallerySlider = ({ imageList, homeName }) => {
                 className="object-cover h-full w-full cursor-pointer px-1 pt-2"
                 onClick={() => slider1.current.go(index)}
                 loading={index < 1 ? "eager" : "lazy"}
+                quality={50}
               />
             </div>
           </SplideSlide>

@@ -38,8 +38,8 @@ const About = ({ cssClasses }: Props) => {
           <p>
             Our core values determine our company culture and priorities, it
             supports our vision of who we are and why we do what we do. They are
-            the essence or DNA of our company&#39;s identity – our principles,
-            beliefs and philosophies.
+            the essence or DNA of our company&#39;s identity &#8211; our
+            principles, beliefs and philosophies.
           </p>
         </div>
         <div className="grid grid-rows-2 gap-10 mt-6 tablet:grid-rows-[400px_400px] tabletLarge:grid-cols-2 tabletLarge:grid-rows-1 desktop:grid-cols-1 desktop:grid-rows-[300px_300px]">
@@ -50,6 +50,7 @@ const About = ({ cssClasses }: Props) => {
             height={450}
             className="w-full h-full object-cover"
             priority
+            quality={50}
           />
           <Image
             src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/home-page/9U7A6543.jpg"
@@ -58,6 +59,7 @@ const About = ({ cssClasses }: Props) => {
             height={450}
             className="w-full h-full object-cover"
             priority
+            quality={50}
           />
         </div>
       </main>

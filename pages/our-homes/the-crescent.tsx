@@ -23,6 +23,7 @@ const TheCrescent = () => {
             width={700}
             height={400}
             className="object-cover w-full hidden h-[500px] desktopSmall:block"
+            quality={50}
           />
           <CrescentMap cssClasses="w-full h-[400px] tabletLarge:h-[500px]" />
         </div>

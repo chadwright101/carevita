@@ -28,6 +28,7 @@ const MeetTheTeam = ({ meetTheTeam, homeName }: Props) => {
                 width={400}
                 height={400}
                 className="object-cover w-[325px] h-[400px] desktop:w-[400px] desktop:h-[500px]"
+                quality={50}
               />
               <p className="text-center text-larger">{teamMember}</p>
             </article>

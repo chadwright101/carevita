@@ -2,8 +2,6 @@ import Image from "next/image";
 
 import Heading, { headingVariant } from "../../../heading";
 
-import classNames from "classnames";
-
 interface Props {
   about: {
     paragraphs: Array<string>;
@@ -49,6 +47,7 @@ const About = ({ about, whatWeOffer, homeName }: Props) => {
             width={1000}
             height={750}
             className="object-cover h-[250px] phone:h-[275px] tablet:h-[400px] tabletLarge:hidden"
+            quality={50}
           />
         </div>
       </div>
@@ -92,6 +91,7 @@ const About = ({ about, whatWeOffer, homeName }: Props) => {
             width={1000}
             height={750}
             className="object-cover h-[250px] phone:h-[275px] tablet:h-[400px] tabletLarge:hidden"
+            quality={50}
           />
         </div>
       </div>
@@ -102,6 +102,7 @@ const About = ({ about, whatWeOffer, homeName }: Props) => {
         width={1000}
         height={750}
         className="hidden object-cover h-[300px] tabletLarge:block desktop:h-[375px]"
+        quality={50}
       />
       <Image
         src={whatWeOffer.image.url}
@@ -109,6 +110,7 @@ const About = ({ about, whatWeOffer, homeName }: Props) => {
         width={1000}
         height={750}
         className="hidden object-cover h-[300px] desktop:h-[375px] tabletLarge:block"
+        quality={50}
       />
     </div>
   );

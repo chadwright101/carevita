@@ -37,6 +37,7 @@ const HomeItem = ({
         height={750}
         className="object-cover h-[225px] phone:h-[300px] tablet:h-[380px] tabletLarge:h-[280px] desktop:h-[250px]"
         priority
+        quality={50}
       />
       <p>{paragraph}</p>
       <Button url={buttonUrl} cssClasses="mx-auto"></Button>

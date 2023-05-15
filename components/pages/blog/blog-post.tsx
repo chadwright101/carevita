@@ -58,7 +58,8 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                     width={1000}
                     height={1000}
                     className="object-cover h-full w-full"
-                    priority
+                    loading={index < 2 ? "eager" : "lazy"}
+                    quality={50}
                   />
                 )}
                 {galleryList && !image1 && (
@@ -104,7 +105,8 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                       width={1000}
                       height={1000}
                       className="object-cover h-full w-full"
-                      priority
+                      loading={index < 1 ? "eager" : "lazy"}
+                      quality={50}
                     />
                   )}
                   {galleryList && !image1 && (
