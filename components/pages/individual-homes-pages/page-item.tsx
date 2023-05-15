@@ -1,5 +1,5 @@
 import Heading, { headingVariant } from "../../heading";
-import FacilitiesCatering from "./components/facilities-catering";
+import About from "./components/about";
 import MeetTheTeam from "./components/meet-the-team";
 import PageItemGallerySlider from "./components/sliders/page-item-gallery-slider";
 import PageItemHeroSlider from "./components/sliders/page-item-hero-slider";
@@ -9,24 +9,26 @@ interface Props {
   homeList: {
     extendedTitle: string;
     extendedLocation: string;
-    heroSlider: Array<{ url: string; alt: string }>;
-    facilities: { list: Array<string>; image: { url: string; alt: string } };
-    catering: {
+    heroSlider: Array<{ url: string }>;
+    whatWeOffer: {
+      list: Array<string>;
+      image: { url: string };
+      pampering?: Array<string>;
+      weeklyActivities: Array<string>;
+    };
+    about: {
       paragraphs: Array<string>;
-      image: { url: string; alt: string };
+      image: { url: string };
     };
     meetTheTeam: {
-      paragraph: string;
       images: Array<{
         position: string;
         url: string;
-        alt: string;
         teamMember: string;
-        bio: string;
       }>;
     };
-    gallerySlider: Array<{ url: string; alt: string }>;
-    locationDetail: { description: string[]; imageUrl?: string };
+    gallerySlider: Array<{ url: string }>;
+    locationDetail: { description?: string[]; imageUrl?: string };
   };
 }
 
@@ -35,8 +37,8 @@ const PageItem = ({
     extendedTitle,
     extendedLocation,
     heroSlider,
-    facilities,
-    catering,
+    whatWeOffer,
+    about,
     meetTheTeam,
     gallerySlider,
     locationDetail,
@@ -50,21 +52,28 @@ const PageItem = ({
           {extendedLocation}
         </h3>
       </Layout>
-      <PageItemHeroSlider imageList={heroSlider} />
+      <PageItemHeroSlider imageList={heroSlider} homeName={extendedTitle} />
       <Layout>
         <main>
           <div className="flex flex-col gap-16 mt-16">
-            <FacilitiesCatering facilities={facilities} catering={catering} />
-            <MeetTheTeam meetTheTeam={meetTheTeam} />
+            <About
+              whatWeOffer={whatWeOffer}
+              about={about}
+              homeName={extendedTitle}
+            />
+            <MeetTheTeam meetTheTeam={meetTheTeam} homeName={extendedTitle} />
           </div>
         </main>
         <article className="my-16">
           <Heading variant={headingVariant.subheading}>Gallery</Heading>
-          <PageItemGallerySlider imageList={gallerySlider} />
+          <PageItemGallerySlider
+            imageList={gallerySlider}
+            homeName={extendedTitle}
+          />
         </article>
         <article>
           <Heading variant={headingVariant.subheading}>Location</Heading>
-          <p>{locationDetail.description}</p>
+          {locationDetail.description && <p>{locationDetail.description}</p>}
         </article>
       </Layout>
     </>

@@ -9,7 +9,7 @@ interface Props {
 
 import homeList from "../../../../../data/serene-park-extended-data.json";
 
-const ContactFormCrescentPage = ({ cssClasses }: Props) => {
+const ContactFormSereneParkPage = ({ cssClasses }: Props) => {
   const [showMessage, setShowMessage] = useState(false);
   const [showEmail, setShowEmail] = useState(false);
   const [showPhone, setShowPhone] = useState(false);
@@ -139,4 +139,4 @@ const ContactFormCrescentPage = ({ cssClasses }: Props) => {
   );
 };
 
-export default ContactFormCrescentPage;
+export default ContactFormSereneParkPage;

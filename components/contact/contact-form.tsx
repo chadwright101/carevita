@@ -11,6 +11,7 @@ import classNames from "classnames";
 import theCrescentList from "../../data/the-crescent-extended-data.json";
 import eastlandsList from "../../data/eastlands-extended-data.json";
 import sereneParkList from "../../data/serene-park-extended-data.json";
+import ContactFormSereneParkPage from "../pages/individual-homes-pages/components/contact/contact-form-serene-park-page";
 
 interface Props {
   cssClasses?: string;
@@ -35,6 +36,8 @@ const ContactForm = ({
     return <ContactFormCrescentPage />;
   } else if (eastlands) {
     return <ContactFormEastlandsPage />;
+  } else if (serenePark) {
+    return <ContactFormSereneParkPage />;
   } else {
     return (
       <div className={`${cssClasses}`}>

@@ -7,112 +7,156 @@
   "phone": "044 533 1234",
   "heroSlider": [
     {
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/_MG_0356.jpg",
-      "alt": ""
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/hero/9U7A6283.jpg"
     },
     {
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/_MG_0292.jpg",
-      "alt": ""
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/hero/DJI_0961.jpg"
     },
     {
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/_MG_0300.jpg",
-      "alt": ""
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/hero/9U7A6627.jpg"
+    },
+    {
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/hero/9U7A6384.jpg"
+    },
+    {
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/hero/9U7A6120.jpg"
+    },
+    {
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/hero/9U7A6201-HDR.jpg"
     }
   ],
-  "facilities": {
+  "whatWeOffer": {
     "list": [
-      "Nunc porta, libero vel viverra tincidunt",
-      "nisl metus laoreet metus, tincidunt semper",
-      "purus ac efficitur volutpat",
-      "orci orci tincidunt tellus, at lobortis",
-      "Nunc tristique augue eget pretium"
+      "Ensuite rooms",
+      "All meals & snacks",
+      "Laundry",
+      "Cleaning",
+      "24/7 onsite nursing",
+      "Medication management"
+    ],
+    "pampering": ["Manicures", "Pedicures", "Massages"],
+    "weeklyActivities": [
+      "Bingo",
+      "Exercise classes",
+      "Bible study",
+      "Putt putt",
+      "Musician",
+      "General knowledge quiz"
     ],
     "image": {
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/_MG_9874.jpg",
-      "alt": ""
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/about/9U7A6374.jpg"
     }
   },
-  "catering": {
+  "about": {
     "paragraphs": [
-      "Suspendisse convallis ex vel eros tristique volutpat quis vitae justo. Aenean mattis nunc at dui convallis aliquam.",
-      "Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean et nibh diam."
+      "The Crescent offers all en-suite rooms and a full service to residents including all meals, snacks, laundry cleaning, nursing and any medication management required. The daily activities include ladies receiving manicures, pedicures and foot massages, weekly bingo, exercise classes, bible study, put put and our famous quiz, and of course our weekly guest musician who plays every Friday to entertain our residents. ",
+      "Our care team comprises of qualified nurses and care workers and all our meals are made in-house with each residents dietary requirements taken into account.",
+      "The Crescent is truly an icon in Plettenberg Bay where residents experience a warm homely home in their golden years."
     ],
     "image": {
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/_MG_9993.JPG",
-      "alt": ""
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/about/9U7A6167.jpg"
     }
   },
   "meetTheTeam": {
-    "paragraph": "Suspendisse convallis ex vel eros tristique volutpat quis vitae justo. Aenean mattis nunc at dui convallis aliquam.",
     "images": [
       {
-        "position": "General Manager",
-        "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/WhatsApp+Image+2023-03-14+at+08.55.36+(1).jpeg",
-        "alt": "",
-        "teamMember": "Darren Kemp",
-        "bio": "Dolors sit amet consectetur adipisicing elit. Perspiciatis reprehenderit molestiae velit iusto accusantium cumque ut nemo eveniet rem inventore maxime eum eaque a, fugit amet facilis tenetur?"
+        "position": "Facility manager",
+        "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/staff/9U7A6010.jpg",
+        "teamMember": "Jumiree Jansen"
       },
       {
-        "position": "Head Nurse",
-        "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/WhatsApp+Image+2023-03-14+at+08.55.36+(2).jpeg",
-        "alt": "",
-        "teamMember": "Sivu Themba",
-        "bio": "Nam sagittis, tortor egestas rutrum auctor, turpis nisl pulvinar odio, ut interdum enim nisl a nulla. Nunc dictum eget ligula at laoreet. Ut sagittis est nisl, non rutrum nulla cursus nec."
+        "position": "Head Staff Nurse",
+        "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/staff/9U7A6032.jpg",
+        "teamMember": "Emelio Phekula"
+      },
+      {
+        "position": "Staff Nurse",
+        "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/staff/9U7A6631.jpg",
+        "teamMember": "Pamela Knepscheld"
       },
       {
         "position": "Head Chef",
-        "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/WhatsApp+Image+2023-03-14+at+08.55.36.jpeg",
-        "alt": "",
-        "teamMember": "Sally Roberts",
-        "bio": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit qui repellendus harum assumenda dolorum eius itaque porro, ipsam illum accusantium, commodi veniam facere sequi voluptatem?."
+        "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/staff/9U7A6004.jpg",
+        "teamMember": "Clayton Van Wyk"
+      },
+      {
+        "position": "Supervisor",
+        "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/staff/9U7A6039.jpg",
+        "teamMember": "Jennifer September"
       }
     ]
   },
   "gallerySlider": [
     {
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/IMG_9734.jpg",
-      "alt": ""
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/hero/DJI_0961.jpg"
     },
     {
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/IMG_9675.jpg",
-      "alt": ""
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6582.jpg"
     },
     {
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/4.jpg",
-      "alt": ""
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6627.jpg"
     },
     {
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/IMG_9734.jpg",
-      "alt": ""
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6242.jpg"
     },
     {
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/IMG_9675.jpg",
-      "alt": ""
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/staff-combined.jpg"
     },
     {
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/4.jpg",
-      "alt": ""
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6120.jpg"
     },
     {
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/IMG_9734.jpg",
-      "alt": ""
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6145.jpg"
     },
     {
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/IMG_9675.jpg",
-      "alt": ""
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6189-HDR.jpg"
     },
     {
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/4.jpg",
-      "alt": ""
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6201-HDR.jpg"
+    },
+    {
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6209-HDR.jpg"
+    },
+    {
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6229-HDR.jpg"
+    },
+    {
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6221-HDR-Edit.jpg"
+    },
+    {
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6382.jpg"
+    },
+    {
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6417.jpg"
+    },
+    {
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6466.jpg"
+    },
+
+    {
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6293-HDR.jpg"
+    },
+    {
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6301-HDR.jpg"
+    },
+
+    {
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6331-HDR-Edit.jpg"
+    },
+    {
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6355-HDR-Edit.jpg"
+    },
+
+    {
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6471-HDR.jpg"
     }
   ],
   "locationDetail": {
     "description": [
-      "Nam ut lacus lacinia, condimentum risus non, vulputate ligula. Duis id massa ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque ac diam ipsum. In non nulla sapien. Cras ac mi mi. Cras finibus diam quis elementum tempus. Donec faucibus sagittis dolor efficitur mollis. Morbi tincidunt nisl in condimentum mattis. Aliquam quam velit, feugiat in diam in, pulvinar bibendum orci. Praesent fringilla elit sit amet ultrices volutpat."
+      "The Crescent is a retirement home in the heart of Plettenberg Bay, overlooking a magnificent mountain and only minutes away from the beautiful beaches and white sands stretching for some 20 kilometres alongside the sparkling Indian Ocean. The Crescent is close to Robberg Peninsula and its long nature reserve. Here you will find a large colony of fur seal, in addition to a wealth of marine species and birding."
     ],
     "image": {
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/IMG_9675.jpg",
-      "alt": ""
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/hero/DJI_0961.jpg"
     }
   }
 }

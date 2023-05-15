@@ -6,9 +6,10 @@ import "@splidejs/react-splide/css/core";
 
 interface Props {
   galleryList?: string[];
+  alt: string;
 }
 
-const BlogPostSlider = ({ galleryList }: Props) => {
+const BlogPostSlider = ({ galleryList, alt }: Props) => {
   return (
     <Splide
       options={{
@@ -68,11 +69,12 @@ const BlogPostSlider = ({ galleryList }: Props) => {
           >
             <Image
               src={item}
-              alt=""
+              alt={alt}
               width={1400}
               height={1000}
               className="object-cover h-full w-full"
-              priority
+              loading={index < 2 ? "eager" : "lazy"}
+              quality={50}
             />
           </SplideSlide>
         ))}

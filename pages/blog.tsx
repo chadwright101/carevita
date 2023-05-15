@@ -15,6 +15,7 @@ export interface blogData {
     mediaItemUrl: string;
   };
   galleryList: Array<string>;
+  videoUrl: string;
 }
 
 interface Props {
@@ -74,6 +75,7 @@ export async function getStaticProps() {
               galleryImage5 {
                 mediaItemUrl
               }
+              videoUrl
             }
             id
             date

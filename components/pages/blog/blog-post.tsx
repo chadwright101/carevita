@@ -25,7 +25,7 @@ const BlogPost = ({ cssClasses, data }: Props) => {
       {data?.map(
         (
           {
-            blog: { title, paragraph1, image1, galleryList },
+            blog: { title, paragraph1, image1, galleryList, videoUrl },
 
             id,
             date,
@@ -48,6 +48,9 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                   index % 2 && "desktop:order-2"
                 }`}
               >
+                {videoUrl && (
+                  <video src={videoUrl} className="w-auto h-full" controls />
+                )}
                 {image1 && (
                   <Image
                     src={image1?.mediaItemUrl}
@@ -55,11 +58,12 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                     width={1000}
                     height={1000}
                     className="object-cover h-full w-full"
-                    priority
+                    loading={index < 2 ? "eager" : "lazy"}
+                    quality={50}
                   />
                 )}
                 {galleryList && !image1 && (
-                  <BlogPostSlider galleryList={galleryList} />
+                  <BlogPostSlider galleryList={galleryList} alt={title} />
                 )}
               </div>
               <div>
@@ -87,6 +91,13 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                   }`}
                 >
                   {/* Mobile view */}
+                  {videoUrl && (
+                    <video
+                      src={videoUrl}
+                      className="w-auto h-full mx-auto tablet:mx-0"
+                      controls
+                    />
+                  )}
                   {image1 && (
                     <Image
                       src={image1?.mediaItemUrl}
@@ -94,11 +105,12 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                       width={1000}
                       height={1000}
                       className="object-cover h-full w-full"
-                      priority
+                      loading={index < 1 ? "eager" : "lazy"}
+                      quality={50}
                     />
                   )}
                   {galleryList && !image1 && (
-                    <BlogPostSlider galleryList={galleryList} />
+                    <BlogPostSlider galleryList={galleryList} alt={title} />
                   )}
                 </div>
               </div>

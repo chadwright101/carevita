@@ -48,6 +48,7 @@ const OurHomes = ({ cssClasses }: Props) => {
                 width={1400}
                 height={1000}
                 className={`object-cover h-full w-full ${position}`}
+                quality={50}
               />
             </SplideSlide>
           )

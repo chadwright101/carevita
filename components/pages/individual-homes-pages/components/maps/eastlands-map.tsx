@@ -10,8 +10,8 @@ const EastlandsMap = ({ cssClasses }: Props) => {
   });
   if (!isLoaded)
     return (
-      <div className="mt-10 bg-lightGreen/20 text-heading font-thin text-center py-16 max-w-[1400px]">
-        Map loading...
+      <div className="bg-lightGreen/20 grid place-items-center py-16 max-w-[1400px]">
+        <p className="text-heading font-thin">Map loading...</p>
       </div>
     );
   return (

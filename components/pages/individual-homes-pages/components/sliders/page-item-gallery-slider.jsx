@@ -5,7 +5,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 import "@splidejs/react-splide/css/core";
 
-const PageItemGallerySlider = ({ imageList }) => {
+const PageItemGallerySlider = ({ imageList, homeName }) => {
   const slider1 = useRef();
   const slider2 = useRef();
 
@@ -33,17 +33,19 @@ const PageItemGallerySlider = ({ imageList }) => {
           },
         }}
       >
-        {imageList.map(({ url, alt }, index) => (
+        {imageList.map(({ url }, index) => (
           <SplideSlide
             key={index}
-            className="h-[250px] phone:h-[325px] tablet:h-[450px] tabletLarge:h-[525px] desktop:h-[600px]"
+            className="h-[250px] phone:h-[325px] tablet:h-[450px] tabletLarge:h-[525px] desktop:h-[700px]"
           >
             <Image
               src={url}
-              alt={alt}
+              alt={`${homeName} gallery item`}
               width={1400}
               height={1000}
               className="object-cover h-full w-full"
+              loading={index < 1 ? "eager" : "lazy"}
+              quality={50}
             />
           </SplideSlide>
         ))}
@@ -63,7 +65,7 @@ const PageItemGallerySlider = ({ imageList }) => {
         ref={(slider) => (slider2.current = slider)}
         className="hidden desktopSmall:block"
       >
-        {imageList.map(({ url, alt }, index) => (
+        {imageList.map(({ url }, index) => (
           <SplideSlide
             key={index}
             className="h-[110px] splide__slide splide__slide.is-active"
@@ -71,11 +73,13 @@ const PageItemGallerySlider = ({ imageList }) => {
             <div className="w-full bg-white h-full flex justify-center overflow-hidden">
               <Image
                 src={url}
-                alt={alt}
+                alt={`${homeName} gallery item`}
                 width={200}
                 height={200}
                 className="object-cover h-full w-full cursor-pointer px-1 pt-2"
                 onClick={() => slider1.current.go(index)}
+                loading={index < 1 ? "eager" : "lazy"}
+                quality={50}
               />
             </div>
           </SplideSlide>

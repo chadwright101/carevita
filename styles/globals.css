@@ -90,11 +90,18 @@
   }
 
   .splide__arrows {
-    @apply z-10 absolute w-full flex justify-between px-10 top-1/2
+    @apply z-10 absolute w-full px-10 top-1/2
   }
 
   .splide__arrow {
-    @apply fill-white p-4 -m-4 opacity-90
+    @apply fill-white p-4 -m-4 opacity-90 absolute
+  }
+
+  @media (min-width: 1100px) {
+    .splide__arrow {
+      @apply p-0 m-0
+    }
+
   }
 
   .splide__arrow:hover {
@@ -107,5 +114,9 @@
 
   .splide__arrow--prev {
     @apply -scale-100
+  }
+
+  .splide__arrow--next {
+    @apply right-10
   }
 }

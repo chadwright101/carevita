@@ -17,7 +17,6 @@ interface Props {
 const Header = ({ cssClasses }: Props) => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [toggleHomeSubmenu, setToggleHomeSubmenu] = useState(false);
-  const [toggleSchoolSubmenu, setToggleSchoolSubmenu] = useState(false);
 
   const scrollPosition = useScrollPosition();
 
@@ -31,7 +30,7 @@ const Header = ({ cssClasses }: Props) => {
             alt="CareVita logo"
             width={80}
             height={120}
-            className={classNames("transition-all", {
+            className={classNames("ease-in-out duration-300 delay-[10ms]", {
               "w-[80px] h-auto": scrollPosition === 0,
               "w-[64px] h-auto": scrollPosition > 0,
             })}
@@ -94,28 +93,20 @@ const Header = ({ cssClasses }: Props) => {
           <nav>
             <ul className="flex gap-6">
               {menuList.navigation.desktop.map(
-                ({ title, url, schoolSubmenu, homeSubmenu }, index) => (
+                ({ title, url, homeSubmenu }, index) => (
                   <li
                     key={index}
                     onMouseEnter={
-                      (schoolSubmenu &&
-                        (() => {
-                          setToggleSchoolSubmenu(!toggleSchoolSubmenu);
-                        })) ||
-                      (homeSubmenu &&
-                        (() => {
-                          setToggleHomeSubmenu(!toggleHomeSubmenu);
-                        }))
+                      homeSubmenu &&
+                      (() => {
+                        setToggleHomeSubmenu(!toggleHomeSubmenu);
+                      })
                     }
                     onMouseLeave={
-                      (schoolSubmenu &&
-                        (() => {
-                          setToggleSchoolSubmenu(!toggleSchoolSubmenu);
-                        })) ||
-                      (homeSubmenu &&
-                        (() => {
-                          setToggleHomeSubmenu(!toggleHomeSubmenu);
-                        }))
+                      homeSubmenu &&
+                      (() => {
+                        setToggleHomeSubmenu(!toggleHomeSubmenu);
+                      })
                     }
                   >
                     <Link
@@ -148,27 +139,6 @@ const Header = ({ cssClasses }: Props) => {
                             <p className="text-smallest">{location}</p>
                           </li>
                         ))}
-                      </ul>
-                    )}
-                    {schoolSubmenu && toggleSchoolSubmenu && (
-                      <ul className="absolute bg-white p-6 border border-t-0 border-black -translate-x-8 rounded-b-xl flex flex-col gap-2 drop-shadow-md">
-                        {/* while blocks to hide borders */}
-                        <div className="w-3 bg-white h-4 absolute -translate-x-8 -translate-y-6"></div>
-                        <div className="w-3 bg-white h-4 absolute translate-x-[120px] -translate-y-6"></div>
-
-                        {schoolSubmenu.map(
-                          ({ title, url, location }, index) => (
-                            <li key={index} className="flex flex-col gap-0.5">
-                              <Link
-                                href={url}
-                                className=" font-light text-smaller hover:underline underline-offset-[5px] decoration-green decoration-2"
-                              >
-                                {title}
-                              </Link>
-                              <p className="text-smallest">{location}</p>
-                            </li>
-                          )
-                        )}
                       </ul>
                     )}
                   </li>
