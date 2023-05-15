@@ -34,17 +34,6 @@
         ]
       },
       {
-        "title": "Our Schools",
-        "url": "#",
-        "schoolSubmenu": [
-          {
-            "title": "Coming Soon",
-            "location": "",
-            "url": "#"
-          }
-        ]
-      },
-      {
         "title": "Blog",
         "url": "/blog"
       },
