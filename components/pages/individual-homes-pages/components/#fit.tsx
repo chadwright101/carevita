@@ -139,43 +139,61 @@ const Fit = ({ cssClasses }: Props) => {
                 className="object-cover h-[350px]"
               />
 
-              <div className="grid gap-y-4 gap-x-10 tablet:grid-cols-2 tabletLarge:flex flex-col">
-                <div className="grid grid-cols-[100px_1fr]">
-                  <p>Phone:</p>
-                  <Link
-                    href="tel:+27609608695"
-                    className="text-paragraph font-thin p-4 -m-4 tabletLarge:p-0 tabletLarge:m-0 mr-auto"
-                  >
-                    060 960 8695
-                  </Link>
-                </div>
-                <div className="grid grid-cols-[100px_1fr]">
-                  <p>Email:</p>
-                  <Link
-                    href="mailto:fit@carevita.co.za"
-                    className=" text-paragraph font-thin text-link underline underline-offset-4 p-4 -m-4 tabletLarge:p-0 tabletLarge:m-0 mr-auto"
-                  >
-                    fit@carevita.co.za
-                  </Link>
-                </div>
-                <div className="grid grid-cols-[100px_1fr]">
-                  <p>Facebook:</p>
-                  <Link
-                    href=""
-                    className=" text-paragraph font-thin p-4 -m-4 tabletLarge:p-0 tabletLarge:m-0 mr-auto"
-                  >
-                    CareVita#fit
-                  </Link>
-                </div>
-                <div className="grid grid-cols-[100px_1fr]">
-                  <p>Instagram:</p>
-                  <Link
-                    href=""
-                    className=" text-paragraph font-thin p-4 -m-4 tabletLarge:p-0 tabletLarge:m-0 mr-auto"
-                  >
-                    carevitafit
-                  </Link>
-                </div>
+              <div className="grid gap-y-6 gap-x-10 tablet:grid-cols-2 tabletLarge:gap-y-4 tabletLarge:flex flex-col">
+                <Link
+                  href="tel:+27609608695"
+                  className="text-paragraph font-thin p-4 -m-4 tabletLarge:p-0 tabletLarge:m-0 grid grid-cols-[50px_1fr] mr-auto items-center tabletLarge:hover:text-green"
+                >
+                  <Image
+                    src="/icons/phone.svg"
+                    alt="#fit on phone"
+                    width={24}
+                    height={24}
+                  />
+                  060 960 8695
+                </Link>
+                <Link
+                  href="mailto:fit@carevita.co.za"
+                  className=" text-paragraph font-thin text-link underline underline-offset-4 p-4 -m-4 tabletLarge:p-0 tabletLarge:m-0 grid grid-cols-[50px_1fr] mr-auto items-center tabletLarge:hover:text-green"
+                >
+                  <Image
+                    src="/icons/email.svg"
+                    alt="#fit on email"
+                    width={24}
+                    height={24}
+                  />
+                  fit@carevita.co.za
+                </Link>
+
+                <Link
+                  href="https://www.facebook.com/profile.php?id=100090893863466"
+                  target="_blank"
+                  className=" text-paragraph font-thin p-4 -m-4 tabletLarge:p-0 tabletLarge:m-0 grid grid-cols-[50px_1fr] mr-auto items-center tabletLarge:hover:text-green"
+                >
+                  <Image
+                    src="/icons/facebook.svg"
+                    alt="#fit on Facebook"
+                    width={26}
+                    height={26}
+                    className=" -translate-x-[1px]"
+                  />
+                  CareVita#fit
+                </Link>
+
+                <Link
+                  href="https://instagram.com/carevita_fit?igshid=ZGUzMzM3NWJiOQ=="
+                  target="_blank"
+                  className=" text-paragraph font-thin p-4 -m-4 tabletLarge:p-0 tabletLarge:m-0 grid grid-cols-[50px_1fr] mr-auto items-center tabletLarge:hover:text-green"
+                >
+                  <Image
+                    src="/icons/instagram.svg"
+                    alt="#fit on Instagram"
+                    width={28}
+                    height={28}
+                    className=" -translate-x-[2px]"
+                  />
+                  carevitafit
+                </Link>
               </div>
             </div>
           </div>
