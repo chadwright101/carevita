@@ -5,7 +5,7 @@
       "extendedTitle": "The Crescent Retirement Lodge",
       "extendedLocation": "Plettenberg Bay, Western Cape",
       "location": "Plettenberg Bay, WC",
-      "image": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/hero/DJI_0961.jpg",
+      "image": "/Crescent-4.jpg",
       "imageAlt": "",
       "description": "The Crescent is a retirement home in the heart of Plettenberg Bay, overlooking a magnificent mountain and only minutes away from the beautiful beaches alongside the sparkling Indian Ocean. The Crescent is truly an icon in Plettenberg Bay where residents experience a warm homely home in their golden years.",
       "homesPageUrl": "our-homes/the-crescent",
@@ -40,6 +40,11 @@
   "ourHomesSliderHomePage": [
     {
       "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6201-HDR.jpg",
+      "alt": "",
+      "position": ""
+    },
+    {
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/Crescent-5.jpg",
       "alt": "",
       "position": ""
     },
