@@ -27,9 +27,7 @@ const About = ({ about, whatWeOffer, homeName }: Props) => {
   return (
     <div className="grid gap-16 tabletLarge:grid-cols-2 tabletLarge:gap-10">
       <div>
-        <div>
-          <Heading variant={headingVariant.subheading}>About us</Heading>
-        </div>
+        <Heading variant={headingVariant.subheading}>About us</Heading>
         <div className="flex flex-col gap-10">
           <article>
             <p className="mb-4">{paragraphs[0]}</p>

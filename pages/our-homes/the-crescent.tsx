@@ -7,6 +7,7 @@ import CrescentMap from "@/components/pages/individual-homes-pages/components/ma
 import Heading, { headingVariant } from "@/components/heading";
 import ContactForm from "@/components/contact/contact-form";
 import Layout from "@/components/layout";
+import Fit from "@/components/pages/individual-homes-pages/components/#fit";
 
 import pageList from "../../data/the-crescent-extended-data.json";
 
@@ -27,8 +28,10 @@ const TheCrescent = () => {
           />
           <CrescentMap cssClasses="w-full h-[400px] tabletLarge:h-[500px]" />
         </div>
+        <hr className="text-black my-16" />
+        <Fit cssClasses="mb-16" />
       </Layout>
-      <section className="px-6 tabletLarge:px-12 pt-10 pb-12 bg-blue mt-16">
+      <section className="px-6 tabletLarge:px-12 pt-10 pb-12 bg-blue">
         <div className="w-full max-w-[1400px] mx-auto">
           <Heading
             variant={headingVariant.sectionHeading}
