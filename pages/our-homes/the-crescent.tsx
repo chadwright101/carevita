@@ -37,7 +37,7 @@ const TheCrescent = () => {
             variant={headingVariant.sectionHeading}
             cssClasses="text-white"
           >
-            Contact
+            Contact The Crescent Lodge
           </Heading>
           <ContactForm crescent />
         </div>

@@ -37,7 +37,7 @@ const Eastlands = () => {
             variant={headingVariant.sectionHeading}
             cssClasses="text-white"
           >
-            Contact
+            Contact Eastlands Estate
           </Heading>
           <ContactForm eastlands />
         </div>

@@ -197,6 +197,7 @@ const Fit = ({ cssClasses }: Props) => {
               </div>
             </div>
           </div>
+          <hr className="text-black mt-10" />
         </article>
       )}
     </section>
