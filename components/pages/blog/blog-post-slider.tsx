@@ -75,6 +75,7 @@ const BlogPostSlider = ({ galleryList, alt }: Props) => {
               className="object-cover h-full w-full"
               loading={index < 2 ? "eager" : "lazy"}
               quality={50}
+              sizes="(max-width: 425px) 300px, (max-width: 650px) 350px, (max-width: 900px) 450px,(max-width: 1100px) 500px,(max-width: 1400px) 650px, 550px"
             />
           </SplideSlide>
         ))}

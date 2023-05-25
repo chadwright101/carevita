@@ -36,23 +36,22 @@ const OurHomes = ({ cssClasses }: Props) => {
         }}
         className="max-w-[1400px] tablet:mx-auto"
       >
-        {sliderList.ourHomesSliderHomePage.map(
-          ({ url, alt, position }, index) => (
-            <SplideSlide
-              key={index}
-              className="h-[300px] w-full tablet:h-[400px] tabletLarge:h-[500px] desktopSmall:h-[575px] desktop:h-[615px]"
-            >
-              <Image
-                src={url}
-                alt={alt}
-                width={1400}
-                height={1000}
-                className={`object-cover h-full w-full ${position}`}
-                quality={50}
-              />
-            </SplideSlide>
-          )
-        )}
+        {sliderList.ourHomesSliderHomePage.map(({ url }, index) => (
+          <SplideSlide
+            key={index}
+            className="h-[300px] w-full tablet:h-[400px] tabletLarge:h-[500px] desktopSmall:h-[575px] desktop:h-[615px]"
+          >
+            <Image
+              src={url}
+              alt="Carevita - Our Homes"
+              width={1400}
+              height={1000}
+              className="object-cover h-full w-full"
+              quality={50}
+              sizes="(max-width: 650px) 300px, (max-width: 900px) 400px, (max-width: 1400px) 575px, 615px"
+            />
+          </SplideSlide>
+        ))}
       </Splide>
       <Button
         url="our-homes"

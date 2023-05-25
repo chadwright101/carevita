@@ -35,6 +35,8 @@ const Footer = ({ cssClasses, border }: Props) => {
             width={120}
             height={100}
             className="w-[120px] h-auto"
+            sizes="(max-width: 900px) 100px, (max-width: 1400px) 100px, 100px"
+            quality={50}
           />
         </div>
         <p className="tabletLarge:text-[16px]">

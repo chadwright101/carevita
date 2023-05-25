@@ -20,6 +20,8 @@ const Fit = ({ cssClasses }: Props) => {
           width={200}
           height={200}
           className="mx-auto"
+          sizes="(max-width: 425px) 200px,(max-width: 650px) 200px, (max-width: 1400px) 200px, 200px"
+          quality={50}
         />
         <Heading
           variant={headingVariant.subheading}
@@ -38,6 +40,8 @@ const Fit = ({ cssClasses }: Props) => {
             width={900}
             height={750}
             className="object-cover h-[400px]"
+            sizes="(max-width: 425px) 400px,(max-width: 650px) 400px, (max-width: 900px) 400px, (max-width: 1400px) 400px, 400px"
+            quality={50}
           />
           <Image
             src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/fit/20230420_141012.jpg"
@@ -45,6 +49,8 @@ const Fit = ({ cssClasses }: Props) => {
             width={900}
             height={750}
             className="object-cover hidden h-[400px] tabletLarge:block"
+            sizes="(max-width: 425px) 400px,(max-width: 650px) 400px, (max-width: 900px) 400px, (max-width: 1400px) 400px, 400px"
+            quality={50}
           />
         </div>
         {!toggleInfo && (
@@ -107,6 +113,8 @@ const Fit = ({ cssClasses }: Props) => {
                 width={900}
                 height={750}
                 className="object-cover h-[300px] tablet:h-[400px] desktopSmall:h-[500px] order-1 desktopSmall:order-none"
+                sizes="(max-width: 425px) 300px,(max-width: 650px) 400px, (max-width: 900px) 500px, (max-width: 1400px) 500px, 500px"
+                quality={50}
               />
               <Image
                 src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/fit/20230420_143829.jpg"
@@ -114,6 +122,8 @@ const Fit = ({ cssClasses }: Props) => {
                 width={900}
                 height={750}
                 className="hidden phone:block object-cover h-[300px] tablet:h-[400px] desktopSmall:h-[500px] order-1 desktopSmall:order-none"
+                sizes="(max-width: 425px) 300px,(max-width: 650px) 400px, (max-width: 900px) 500px, (max-width: 1400px) 500px, 500px"
+                quality={50}
               />
               <Image
                 src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/fit/20230420_143903.jpg"
@@ -121,6 +131,8 @@ const Fit = ({ cssClasses }: Props) => {
                 width={900}
                 height={750}
                 className="hidden tabletLarge:block object-cover h-[300px] tablet:h-[400px] desktopSmall:h-[500px] order-1 desktopSmall:order-none"
+                sizes="(max-width: 425px) 300px,(max-width: 650px) 400px, (max-width: 900px) 500px, (max-width: 1400px) 500px, 500px"
+                quality={50}
               />
             </div>
             <div className="grid gap-10 tabletLarge:grid-cols-2 desktopSmall:grid-cols-3 desktopSmall:col-span-full">
@@ -130,6 +142,8 @@ const Fit = ({ cssClasses }: Props) => {
                 width={900}
                 height={750}
                 className="hidden object-right desktopSmall:block object-cover h-[350px]"
+                sizes="(max-width: 425px) 350px,(max-width: 650px) 350px, (max-width: 900px) 350px, (max-width: 1400px) 350px, 350px"
+                quality={50}
               />
               <Image
                 src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/fit/20230420_142646.jpg"
@@ -137,6 +151,8 @@ const Fit = ({ cssClasses }: Props) => {
                 width={900}
                 height={750}
                 className="object-cover h-[350px]"
+                sizes="(max-width: 425px) 350px,(max-width: 650px) 350px, (max-width: 900px) 350px, (max-width: 1400px) 350px, 350px"
+                quality={50}
               />
 
               <div className="grid gap-y-6 gap-x-10 tablet:grid-cols-2 tabletLarge:gap-y-4 tabletLarge:flex flex-col">
@@ -192,7 +208,7 @@ const Fit = ({ cssClasses }: Props) => {
                     height={28}
                     className=" -translate-x-[2px]"
                   />
-                  carevitafit
+                  carevita_fit
                 </Link>
               </div>
             </div>
