@@ -398,7 +398,7 @@ const ContactForm = ({
               }}
               extendedTitle={theCrescentList.extendedTitle}
               location={theCrescentList.location}
-              cssClasses={classNames("transition-all", {
+              cssClasses={classNames("transition-all text-left", {
                 "hover:scale-105 hover:-mb-[10px]": !showCrescent,
                 "border-b-2 border-white pb-2 -mb-[10px]": showCrescent,
               })}

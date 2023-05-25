@@ -38,12 +38,13 @@ const Services = ({ cssClasses }: Props) => {
             </p>
           </div>
           <Image
-            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/Crescent.jpeg"
-            alt=""
+            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/hero/9U7A6283.jpg"
+            alt="Carevita - Nursing Services"
             width={900}
             height={700}
             className="object-cover w-full h-full tabletLarge:row-span-2"
             quality={50}
+            sizes="(max-width: 650px) 280px, (max-width: 900px) 350px, 290px"
           />
         </div>
         <div className="grid grid-cols-1 grid-rows-[1fr_280px] tablet:grid-rows-[1fr_350px] gap-10 place-items-center tablet:place-items-start tabletLarge:grid-cols-2 tabletLarge:grid-rows-[150px_150px] desktopSmall:grid-rows-[125px_125px] desktop:grid-cols-[1.5fr_2fr]">
@@ -75,7 +76,7 @@ const Services = ({ cssClasses }: Props) => {
           </div>
           <Image
             src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/home-page/9U7A6457.jpg"
-            alt=""
+            alt="Carevita - Supporting Services"
             width={900}
             height={700}
             className="object-cover w-full h-full tabletLarge:row-span-2"
@@ -91,6 +92,7 @@ const Services = ({ cssClasses }: Props) => {
               height={50}
               className="mb-6 mx-auto tablet:mx-0 tablet:w-10 tablet:h-auto"
               quality={50}
+              sizes="(max-width: 650px) 280px, (max-width: 900px) 350px, 290px"
             />
             <Heading
               variant={headingVariant.subheading}
@@ -109,11 +111,12 @@ const Services = ({ cssClasses }: Props) => {
           </div>
           <Image
             src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/home-page/9U7A6417.jpg"
-            alt=""
+            alt="Carevita - Catering Services"
             width={900}
             height={600}
             className="object-cover w-full h-full tabletLarge:row-span-2"
             quality={50}
+            sizes="(max-width: 650px) 280px, (max-width: 900px) 350px, 290px"
           />
         </div>
       </div>

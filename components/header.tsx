@@ -35,6 +35,7 @@ const Header = ({ cssClasses }: Props) => {
               "w-[64px] h-auto": scrollPosition > 0,
             })}
             priority
+            sizes="(max-width: 900px) 65px, (max-width: 1400px) 65px, 65px"
           />
         </Link>
         <button className="p-2 -m-2" onClick={() => setToggleMenu(true)}>
@@ -88,6 +89,7 @@ const Header = ({ cssClasses }: Props) => {
                 "w-14 h-auto": scrollPosition > 0,
               })}
               priority
+              sizes="(max-width: 900px) 65px, (max-width: 1400px) 65px, 65px"
             />
           </Link>
           <nav>

@@ -46,6 +46,7 @@ const About = ({ about, whatWeOffer, homeName }: Props) => {
             height={750}
             className="object-cover h-[250px] phone:h-[275px] tablet:h-[400px] tabletLarge:hidden"
             quality={50}
+            sizes="(max-width: 425px) 250px, (max-width: 650px) 275px, (max-width: 900px) 400px,(max-width: 1400px) 300px, 375px"
           />
         </div>
       </div>
@@ -85,30 +86,33 @@ const About = ({ about, whatWeOffer, homeName }: Props) => {
           </ul>
           <Image
             src={whatWeOfferImage.url}
-            alt={`${homeName} facilities`}
+            alt={`${homeName} - What we offer`}
             width={1000}
             height={750}
             className="object-cover h-[250px] phone:h-[275px] tablet:h-[400px] tabletLarge:hidden"
             quality={50}
+            sizes="(max-width: 425px) 250px, (max-width: 650px) 275px, (max-width: 900px) 400px,(max-width: 1400px) 300px, 375px"
           />
         </div>
       </div>
 
       <Image
         src={about.image.url}
-        alt={`${homeName} catering`}
+        alt={`${homeName}`}
         width={1000}
         height={750}
         className="hidden object-cover h-[300px] tabletLarge:block desktop:h-[375px]"
         quality={50}
+        sizes="(max-width: 425px) 250px, (max-width: 650px) 275px, (max-width: 900px) 400px,(max-width: 1400px) 300px, 375px"
       />
       <Image
         src={whatWeOffer.image.url}
-        alt={`${homeName} facilities`}
+        alt={`${homeName} - What we offer`}
         width={1000}
         height={750}
         className="hidden object-cover h-[300px] desktop:h-[375px] tabletLarge:block"
         quality={50}
+        sizes="(max-width: 425px) 250px, (max-width: 650px) 275px, (max-width: 900px) 400px,(max-width: 1400px) 300px, 375px"
       />
     </div>
   );

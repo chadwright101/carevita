@@ -69,12 +69,13 @@ const PageItemHeroSlider = ({ imageList, homeName }: Props) => {
           >
             <Image
               src={url}
-              alt={`${homeName}`}
+              alt={`${homeName} - Plettenberg Bay`}
               width={1400}
               height={1000}
               className="object-cover h-full w-full"
               loading={index < 2 ? "eager" : "lazy"}
               quality={50}
+              sizes="(max-width: 425px) 325px,(max-width: 650px) 450px, (max-width: 1400px) 525px, 700px"
             />
           </SplideSlide>
         ))}

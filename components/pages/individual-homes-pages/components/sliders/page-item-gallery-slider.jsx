@@ -46,6 +46,7 @@ const PageItemGallerySlider = ({ imageList, homeName }) => {
               className="object-cover h-full w-full"
               loading={index < 1 ? "eager" : "lazy"}
               quality={50}
+              sizes="(max-width: 425px) 325px,(max-width: 650px) 450px, (max-width: 1400px) 525px, 700px"
             />
           </SplideSlide>
         ))}
@@ -73,13 +74,14 @@ const PageItemGallerySlider = ({ imageList, homeName }) => {
             <div className="w-full bg-white h-full flex justify-center overflow-hidden">
               <Image
                 src={url}
-                alt={`${homeName} gallery item`}
+                alt={`${homeName} gallery thumbnail`}
                 width={200}
                 height={200}
                 className="object-cover h-full w-full cursor-pointer px-1 pt-2"
                 onClick={() => slider1.current.go(index)}
                 loading={index < 1 ? "eager" : "lazy"}
                 quality={50}
+                sizes="(max-width: 425px) 110px,(max-width: 650px) 110px, (max-width: 1400px) 110px, 110px"
               />
             </div>
           </SplideSlide>
