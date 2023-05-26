@@ -1,8 +1,7 @@
-import Image from "next/image";
-
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 
 import "@splidejs/react-splide/css/core";
+import ImageContainer from "@/components/utils/image-container";
 
 interface Props {
   imageList: Array<{ url: string }>;
@@ -67,15 +66,17 @@ const PageItemHeroSlider = ({ imageList, homeName }: Props) => {
             key={index}
             className="h-[250px] phone:h-[325px] tablet:h-[450px] tabletLarge:h-[525px] desktop:h-[700px]"
           >
-            <Image
+            <ImageContainer
               src={url}
               alt={`${homeName} - Plettenberg Bay`}
               width={1400}
               height={1000}
-              className="object-cover h-full w-full"
+              cssClasses="object-cover h-full w-full"
+              smallest={325}
+              phone={450}
+              desktopSmall={525}
+              desktop={800}
               loading={index < 2 ? "eager" : "lazy"}
-              quality={50}
-              sizes="(max-width: 425px) 325px,(max-width: 650px) 450px, (max-width: 1400px) 525px, 700px"
             />
           </SplideSlide>
         ))}

@@ -1,10 +1,10 @@
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 import ContactFormCrescentPage from "../pages/individual-homes-pages/components/contact/contact-form-crescent-page";
 import ContactFormEastlandsPage from "../pages/individual-homes-pages/components/contact/contact-form-eastlands";
 import Button from "../button";
+import ImageContainer from "../utils/image-container";
 
 import classNames from "classnames";
 
@@ -529,12 +529,13 @@ const ContactForm = ({
                 </form>
               </div>
               <div className="overflow-hidden">
-                <Image
-                  src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/_MG_9972.jpg"
-                  alt=""
-                  width={1000}
-                  height={1000}
-                  className="object-cover w-full h-full"
+                <ImageContainer
+                  src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6120.jpg"
+                  alt="Contact The Crescent"
+                  width={505}
+                  height={680}
+                  cssClasses="object-cover w-full h-full"
+                  desktop={505}
                 />
               </div>
             </div>
@@ -617,12 +618,13 @@ const ContactForm = ({
                 </form>
               </div>
               <div className="overflow-hidden">
-                <Image
+                <ImageContainer
                   src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/_MG_9993.JPG"
-                  alt=""
-                  width={1000}
-                  height={1000}
-                  className="object-cover w-full h-full"
+                  alt="Contact Eastlands"
+                  width={505}
+                  height={680}
+                  cssClasses="object-cover w-full h-full"
+                  desktop={505}
                 />
               </div>
             </div>
@@ -705,12 +707,13 @@ const ContactForm = ({
                 </form>
               </div>
               <div className="overflow-hidden">
-                <Image
+                <ImageContainer
                   src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/_MG_9890.jpg"
-                  alt=""
-                  width={1000}
-                  height={1000}
-                  className="object-cover w-full h-full"
+                  alt="Contact Serene Park"
+                  width={505}
+                  height={680}
+                  cssClasses="object-cover w-full h-full"
+                  desktop={505}
                 />
               </div>
             </div>

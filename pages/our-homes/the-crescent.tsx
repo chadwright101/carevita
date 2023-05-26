@@ -10,6 +10,7 @@ import Layout from "@/components/layout";
 import Fit from "@/components/pages/individual-homes-pages/components/#fit";
 
 import pageList from "../../data/the-crescent-extended-data.json";
+import ImageContainer from "@/components/utils/image-container";
 
 const TheCrescent = () => {
   return (
@@ -18,14 +19,15 @@ const TheCrescent = () => {
       <IndividualHomesPageItem homeList={pageList} />
       <Layout>
         <div className="desktopSmall:grid grid-cols-2 gap-10  mt-10">
-          <Image
+          <ImageContainer
             src={pageList.locationDetail.image.url}
             alt={pageList.extendedTitle}
             width={700}
             height={400}
-            className="object-cover w-full hidden h-[500px] desktopSmall:block"
-            quality={50}
-            sizes="(max-width: 900px) 500px, (max-width: 1400px) 500px, 500px"
+            cssClasses="object-cover w-full hidden h-[500px] desktopSmall:block"
+            tablet={500}
+            desktopSmall={500}
+            desktop={500}
           />
           <CrescentMap cssClasses="w-full h-[400px] tabletLarge:h-[500px]" />
         </div>

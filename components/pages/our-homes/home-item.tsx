@@ -1,5 +1,4 @@
-import Image from "next/image";
-
+import ImageContainer from "@/components/utils/image-container";
 import Button from "../../button";
 import Heading, { headingVariant } from "../../heading";
 
@@ -30,15 +29,16 @@ const HomeItem = ({
           {location}
         </h3>
       </div>
-      <Image
+      <ImageContainer
         src={heroImageUrl}
         alt={heroImageAlt}
         width={1000}
         height={750}
-        className="object-cover h-[225px] phone:h-[300px] tablet:h-[380px] tabletLarge:h-[280px] desktop:h-[250px]"
-        priority
-        quality={50}
-        sizes="(max-width: 650px) 300px, (max-width: 900px) 380px, (max-width: 1400px) 280px, 250px"
+        cssClasses="object-cover h-[225px] phone:h-[300px] tablet:h-[380px] tabletLarge:h-[280px] desktop:h-[250px]"
+        phone={300}
+        tablet={380}
+        desktopSmall={280}
+        desktop={250}
       />
       <p>{paragraph}</p>
       <Button url={buttonUrl} cssClasses="mx-auto"></Button>

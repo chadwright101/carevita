@@ -1,9 +1,9 @@
-import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 import "@splidejs/react-splide/css/core";
+import ImageContainer from "@/components/utils/image-container";
 
 const PageItemGallerySlider = ({ imageList, homeName }) => {
   const slider1 = useRef();
@@ -38,15 +38,18 @@ const PageItemGallerySlider = ({ imageList, homeName }) => {
             key={index}
             className="h-[250px] phone:h-[325px] tablet:h-[450px] tabletLarge:h-[525px] desktop:h-[700px]"
           >
-            <Image
+            <ImageContainer
               src={url}
               alt={`${homeName} gallery item`}
               width={1400}
               height={1000}
-              className="object-cover h-full w-full"
+              cssClasses="object-cover h-full w-full"
+              smallest={325}
+              phone={450}
+              desktopSmall={525}
+              desktop={800}
+              onClick={() => slider1.current.go(index)}
               loading={index < 1 ? "eager" : "lazy"}
-              quality={50}
-              sizes="(max-width: 425px) 325px,(max-width: 650px) 450px, (max-width: 1400px) 525px, 700px"
             />
           </SplideSlide>
         ))}
@@ -72,16 +75,18 @@ const PageItemGallerySlider = ({ imageList, homeName }) => {
             className="h-[110px] splide__slide splide__slide.is-active"
           >
             <div className="w-full bg-white h-full flex justify-center overflow-hidden">
-              <Image
+              <ImageContainer
                 src={url}
                 alt={`${homeName} gallery thumbnail`}
                 width={200}
                 height={200}
-                className="object-cover h-full w-full cursor-pointer px-1 pt-2"
+                cssClasses="object-cover h-full w-full cursor-pointer px-1 pt-2"
+                smallest={110}
+                phone={110}
+                desktopSmall={110}
+                desktop={110}
                 onClick={() => slider1.current.go(index)}
                 loading={index < 1 ? "eager" : "lazy"}
-                quality={50}
-                sizes="(max-width: 425px) 110px,(max-width: 650px) 110px, (max-width: 1400px) 110px, 110px"
               />
             </div>
           </SplideSlide>

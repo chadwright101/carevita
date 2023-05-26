@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 import Heading, { headingVariant } from "../../../heading";
+import ImageContainer from "@/components/utils/image-container";
 
 interface Props {
   cssClasses?: string;
@@ -14,14 +15,16 @@ const Fit = ({ cssClasses }: Props) => {
   return (
     <section className={`${cssClasses}`}>
       <div className="grid gap-10">
-        <Image
+        <ImageContainer
           src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/fit/CareVita-fit.jpg"
           alt="CareVita #fit"
           width={200}
           height={200}
-          className="mx-auto"
-          sizes="(max-width: 425px) 200px,(max-width: 650px) 200px, (max-width: 1400px) 200px, 200px"
-          quality={50}
+          cssClasses="mx-auto"
+          smallest={200}
+          phone={200}
+          desktopSmall={200}
+          desktop={200}
         />
         <Heading
           variant={headingVariant.subheading}
@@ -34,23 +37,29 @@ const Fit = ({ cssClasses }: Props) => {
           no further than our exercise classes!
         </p>
         <div className="tabletLarge:grid grid-cols-2 gap-10">
-          <Image
+          <ImageContainer
             src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/fit/20230420_144516.jpg"
             alt="#fit"
             width={900}
             height={750}
-            className="object-cover h-[400px]"
-            sizes="(max-width: 425px) 400px,(max-width: 650px) 400px, (max-width: 900px) 400px, (max-width: 1400px) 400px, 400px"
-            quality={50}
+            cssClasses="object-cover h-[400px]"
+            smallest={400}
+            phone={400}
+            tablet={400}
+            desktopSmall={400}
+            desktop={400}
           />
-          <Image
+          <ImageContainer
             src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/fit/20230420_141012.jpg"
             alt="#fit"
             width={900}
             height={750}
-            className="object-cover hidden h-[400px] tabletLarge:block"
-            sizes="(max-width: 425px) 400px,(max-width: 650px) 400px, (max-width: 900px) 400px, (max-width: 1400px) 400px, 400px"
-            quality={50}
+            cssClasses="object-cover h-[400px]"
+            smallest={400}
+            phone={400}
+            tablet={400}
+            desktopSmall={400}
+            desktop={400}
           />
         </div>
         {!toggleInfo && (
@@ -107,52 +116,67 @@ const Fit = ({ cssClasses }: Props) => {
           </p>
           <div className="grid gap-10 mt-6">
             <div className="phone:grid grid-cols-2 tabletLarge:grid-cols-3 gap-10">
-              <Image
+              <ImageContainer
                 src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/fit/20230420_143721.jpg"
                 alt="#fit"
                 width={900}
                 height={750}
-                className="object-cover h-[300px] tablet:h-[400px] desktopSmall:h-[500px] order-1 desktopSmall:order-none"
-                sizes="(max-width: 425px) 300px,(max-width: 650px) 400px, (max-width: 900px) 500px, (max-width: 1400px) 500px, 500px"
-                quality={50}
+                cssClasses="object-cover h-[300px] tablet:h-[400px] desktopSmall:h-[500px] order-1 desktopSmall:order-none"
+                smallest={300}
+                phone={400}
+                tablet={500}
+                desktopSmall={500}
+                desktop={500}
               />
-              <Image
+              <ImageContainer
                 src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/fit/20230420_143829.jpg"
                 alt="#fit"
                 width={900}
                 height={750}
-                className="hidden phone:block object-cover h-[300px] tablet:h-[400px] desktopSmall:h-[500px] order-1 desktopSmall:order-none"
-                sizes="(max-width: 425px) 300px,(max-width: 650px) 400px, (max-width: 900px) 500px, (max-width: 1400px) 500px, 500px"
-                quality={50}
+                cssClasses="hidden phone:block object-cover h-[300px] tablet:h-[400px] desktopSmall:h-[500px] order-1 desktopSmall:order-none"
+                smallest={300}
+                phone={400}
+                tablet={500}
+                desktopSmall={500}
+                desktop={500}
               />
-              <Image
+              <ImageContainer
                 src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/fit/20230420_143903.jpg"
                 alt="#fit"
                 width={900}
                 height={750}
-                className="hidden tabletLarge:block object-cover h-[300px] tablet:h-[400px] desktopSmall:h-[500px] order-1 desktopSmall:order-none"
-                sizes="(max-width: 425px) 300px,(max-width: 650px) 400px, (max-width: 900px) 500px, (max-width: 1400px) 500px, 500px"
-                quality={50}
+                cssClasses="hidden tabletLarge:block object-cover h-[300px] tablet:h-[400px] desktopSmall:h-[500px] order-1 desktopSmall:order-none"
+                smallest={300}
+                phone={400}
+                tablet={500}
+                desktopSmall={500}
+                desktop={500}
               />
             </div>
             <div className="grid gap-10 tabletLarge:grid-cols-2 desktopSmall:grid-cols-3 desktopSmall:col-span-full">
-              <Image
+              <ImageContainer
                 src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/fit/20230420_143400.jpg"
                 alt="#fit"
                 width={900}
                 height={750}
-                className="hidden object-right desktopSmall:block object-cover h-[350px]"
-                sizes="(max-width: 425px) 350px,(max-width: 650px) 350px, (max-width: 900px) 350px, (max-width: 1400px) 350px, 350px"
-                quality={50}
+                cssClasses="hidden object-right desktopSmall:block object-cover h-[350px]"
+                smallest={350}
+                phone={350}
+                tablet={350}
+                desktopSmall={350}
+                desktop={350}
               />
-              <Image
+              <ImageContainer
                 src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/fit/20230420_142646.jpg"
                 alt="#fit"
                 width={900}
                 height={750}
-                className="object-cover h-[350px]"
-                sizes="(max-width: 425px) 350px,(max-width: 650px) 350px, (max-width: 900px) 350px, (max-width: 1400px) 350px, 350px"
-                quality={50}
+                cssClasses="object-cover h-[350px]"
+                smallest={350}
+                phone={350}
+                tablet={350}
+                desktopSmall={350}
+                desktop={350}
               />
 
               <div className="grid gap-y-6 gap-x-10 tablet:grid-cols-2 tabletLarge:gap-y-4 tabletLarge:flex flex-col">

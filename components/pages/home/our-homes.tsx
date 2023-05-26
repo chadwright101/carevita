@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import Button from "../../button";
 
 import { Splide, SplideSlide } from "@splidejs/react-splide";
@@ -9,6 +7,7 @@ import "@splidejs/react-splide/css/core";
 import sliderList from "../../../data/home-page-our-homes-data.json";
 import Heading, { headingVariant } from "../../heading";
 import Layout from "@/components/layout";
+import ImageContainer from "@/components/utils/image-container";
 
 interface Props {
   cssClasses?: string;
@@ -41,14 +40,16 @@ const OurHomes = ({ cssClasses }: Props) => {
             key={index}
             className="h-[300px] w-full tablet:h-[400px] tabletLarge:h-[500px] desktopSmall:h-[575px] desktop:h-[615px]"
           >
-            <Image
+            <ImageContainer
               src={url}
               alt="Carevita - Our Homes"
               width={1400}
               height={1000}
-              className="object-cover h-full w-full"
-              quality={50}
-              sizes="(max-width: 650px) 300px, (max-width: 900px) 400px, (max-width: 1400px) 575px, 615px"
+              cssClasses="object-cover w-full h-full"
+              phone={300}
+              tablet={400}
+              desktopSmall={575}
+              desktop={615}
             />
           </SplideSlide>
         ))}

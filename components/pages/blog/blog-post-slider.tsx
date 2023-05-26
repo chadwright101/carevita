@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 
 import "@splidejs/react-splide/css/core";
+import ImageContainer from "@/components/utils/image-container";
 
 interface Props {
   galleryList?: string[];
@@ -67,15 +68,19 @@ const BlogPostSlider = ({ galleryList, alt }: Props) => {
             key={index}
             className="h-[300px] phone:h-[350px] tablet:h-[450px] tabletLarge:h-[500px] desktopSmall:h-[600px] desktop:h-[550px]"
           >
-            <Image
+            <ImageContainer
               src={item}
               alt={alt}
               width={1400}
               height={1000}
-              className="object-cover h-full w-full"
+              cssClasses="object-cover w-full h-full"
+              smallest={300}
+              phone={350}
+              tablet={450}
+              tabletLarge={500}
+              desktopSmall={650}
+              desktop={550}
               loading={index < 2 ? "eager" : "lazy"}
-              quality={50}
-              sizes="(max-width: 425px) 300px, (max-width: 650px) 350px, (max-width: 900px) 450px,(max-width: 1100px) 500px,(max-width: 1400px) 650px, 550px"
             />
           </SplideSlide>
         ))}
