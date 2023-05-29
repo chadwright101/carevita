@@ -1,9 +1,9 @@
-import Image from "next/image";
 import Heading, { headingVariant } from "@/components/heading";
 import { blogData } from "@/pages/blog";
 import BlogPostSlider from "./blog-post-slider";
 
 import parse from "html-react-parser";
+import ImageContainer from "@/components/utils/image-container";
 
 interface Props {
   cssClasses?: string;
@@ -52,15 +52,16 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                   <video src={videoUrl} className="w-auto h-full" controls />
                 )}
                 {image1 && (
-                  <Image
+                  <ImageContainer
                     src={image1?.mediaItemUrl}
                     alt={title}
                     width={1000}
                     height={1000}
-                    className="object-cover h-full w-full"
-                    loading={index < 2 ? "eager" : "lazy"}
-                    quality={50}
-                    sizes="(max-width: 425px) 300px, (max-width: 650px) 350px, (max-width: 900px) 450px,(max-width: 1100px) 500px,(max-width: 1400px) 650px, 550px"
+                    cssClasses="object-cover w-full h-full"
+                    tablet={90}
+                    desktopSmall={80}
+                    desktop={40}
+                    eager={index < 2 ? true : false}
                   />
                 )}
                 {galleryList && !image1 && (
@@ -100,15 +101,16 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                     />
                   )}
                   {image1 && (
-                    <Image
+                    <ImageContainer
                       src={image1?.mediaItemUrl}
                       alt={title}
                       width={1000}
                       height={1000}
-                      className="object-cover h-full w-full"
-                      loading={index < 1 ? "eager" : "lazy"}
-                      quality={50}
-                      sizes="(max-width: 425px) 300px, (max-width: 650px) 350px, (max-width: 900px) 450px,(max-width: 1100px) 500px,(max-width: 1400px) 650px, 550px"
+                      cssClasses="object-cover w-full h-full"
+                      tablet={90}
+                      desktopSmall={80}
+                      desktop={40}
+                      eager={index < 1 ? true : false}
                     />
                   )}
                   {galleryList && !image1 && (

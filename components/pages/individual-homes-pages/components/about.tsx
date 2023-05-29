@@ -1,6 +1,5 @@
-import Image from "next/image";
-
 import Heading, { headingVariant } from "../../../heading";
+import ImageContainer from "@/components/utils/image-container";
 
 interface Props {
   about: {
@@ -38,15 +37,17 @@ const About = ({ about, whatWeOffer, homeName }: Props) => {
             <p className="mb-4">{paragraphs[5]}</p>
             <p>{about.paragraphs[3]}</p>
           </article>
-
-          <Image
+          <ImageContainer
             src={aboutImage.url}
             alt={`${homeName}`}
             width={1000}
             height={750}
-            className="object-cover h-[250px] phone:h-[275px] tablet:h-[400px] tabletLarge:hidden"
-            quality={50}
-            sizes="(max-width: 425px) 250px, (max-width: 650px) 275px, (max-width: 900px) 400px,(max-width: 1400px) 300px, 375px"
+            cssClasses="object-cover h-[250px] phone:h-[275px] tablet:h-[400px] tabletLarge:hidden"
+            smallest={90}
+            phone={60}
+            tablet={60}
+            desktopSmall={30}
+            desktop={40}
           />
         </div>
       </div>
@@ -84,35 +85,43 @@ const About = ({ about, whatWeOffer, homeName }: Props) => {
               ))}
             </div>
           </ul>
-          <Image
+          <ImageContainer
             src={whatWeOfferImage.url}
             alt={`${homeName} - What we offer`}
             width={1000}
             height={750}
-            className="object-cover h-[250px] phone:h-[275px] tablet:h-[400px] tabletLarge:hidden"
-            quality={50}
-            sizes="(max-width: 425px) 250px, (max-width: 650px) 275px, (max-width: 900px) 400px,(max-width: 1400px) 300px, 375px"
+            cssClasses="object-cover h-[250px] phone:h-[275px] tablet:h-[400px] tabletLarge:hidden"
+            smallest={90}
+            phone={60}
+            tablet={60}
+            desktopSmall={30}
+            desktop={40}
           />
         </div>
       </div>
-
-      <Image
+      <ImageContainer
         src={about.image.url}
         alt={`${homeName}`}
         width={1000}
         height={750}
-        className="hidden object-cover h-[300px] tabletLarge:block desktop:h-[375px]"
-        quality={50}
-        sizes="(max-width: 425px) 250px, (max-width: 650px) 275px, (max-width: 900px) 400px,(max-width: 1400px) 300px, 375px"
+        cssClasses="hidden object-cover h-[300px] tabletLarge:block desktop:h-[375px]"
+        smallest={90}
+        phone={60}
+        tablet={60}
+        desktopSmall={30}
+        desktop={40}
       />
-      <Image
+      <ImageContainer
         src={whatWeOffer.image.url}
         alt={`${homeName} - What we offer`}
         width={1000}
         height={750}
-        className="hidden object-cover h-[300px] desktop:h-[375px] tabletLarge:block"
-        quality={50}
-        sizes="(max-width: 425px) 250px, (max-width: 650px) 275px, (max-width: 900px) 400px,(max-width: 1400px) 300px, 375px"
+        cssClasses="hidden object-cover h-[300px] tabletLarge:block desktop:h-[375px]"
+        smallest={90}
+        phone={60}
+        tablet={60}
+        desktopSmall={30}
+        desktop={40}
       />
     </div>
   );

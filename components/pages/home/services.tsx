@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Heading, { headingVariant } from "../../heading";
+import ImageContainer from "@/components/utils/image-container";
 
 interface Props {
   cssClasses?: string;
@@ -37,14 +38,17 @@ const Services = ({ cssClasses }: Props) => {
               management of these specialised services.
             </p>
           </div>
-          <Image
+          <ImageContainer
             src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/hero/9U7A6283.jpg"
             alt="Carevita - Nursing Services"
             width={900}
             height={700}
-            className="object-cover w-full h-full tabletLarge:row-span-2"
-            quality={50}
-            sizes="(max-width: 650px) 280px, (max-width: 900px) 350px, 290px"
+            cssClasses="object-cover w-full h-full tabletLarge:row-span-2"
+            smallest={110}
+            phone={80}
+            tablet={75}
+            desktopSmall={35}
+            desktop={20}
           />
         </div>
         <div className="grid grid-cols-1 grid-rows-[1fr_280px] tablet:grid-rows-[1fr_350px] gap-10 place-items-center tablet:place-items-start tabletLarge:grid-cols-2 tabletLarge:grid-rows-[150px_150px] desktopSmall:grid-rows-[125px_125px] desktop:grid-cols-[1.5fr_2fr]">
@@ -74,13 +78,17 @@ const Services = ({ cssClasses }: Props) => {
               electricity consumption.
             </p>
           </div>
-          <Image
+          <ImageContainer
             src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/home-page/9U7A6457.jpg"
             alt="Carevita - Supporting Services"
             width={900}
             height={700}
-            className="object-cover w-full h-full tabletLarge:row-span-2"
-            quality={50}
+            cssClasses="object-cover w-full h-full tabletLarge:row-span-2"
+            smallest={110}
+            phone={80}
+            tablet={75}
+            desktopSmall={35}
+            desktop={20}
           />
         </div>
         <div className="grid grid-cols-1 grid-rows-[1fr_280px] tablet:grid-rows-[1fr_350px] gap-10 place-items-center tablet:place-items-start tabletLarge:grid-cols-2 tabletLarge:grid-rows-[150px_150px] desktopSmall:grid-rows-[125px_125px] desktop:grid-cols-[1.5fr_2fr]">
@@ -109,14 +117,17 @@ const Services = ({ cssClasses }: Props) => {
               and prepared by our well-trained and passionate culinary team.
             </p>
           </div>
-          <Image
+          <ImageContainer
             src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/home-page/9U7A6417.jpg"
             alt="Carevita - Catering Services"
             width={900}
-            height={600}
-            className="object-cover w-full h-full tabletLarge:row-span-2"
-            quality={50}
-            sizes="(max-width: 650px) 280px, (max-width: 900px) 350px, 290px"
+            height={700}
+            cssClasses="object-cover w-full h-full tabletLarge:row-span-2"
+            smallest={110}
+            phone={80}
+            tablet={75}
+            desktopSmall={35}
+            desktop={20}
           />
         </div>
       </div>

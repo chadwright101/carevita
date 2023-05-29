@@ -4,12 +4,10 @@ import HomeItem from "@/components/pages/our-homes/home-item";
 import Heading, { headingVariant } from "@/components/heading";
 import Layout from "@/components/layout";
 import Contact from "@/components/contact/contact";
-import useScrollPosition from "@/components/utils/scroll-position";
 
-import homeList from "../../data/home-page-our-homes-data.json";
+import homeList from "../../data/our-homes-page-data.json";
 
 const OurHomes = () => {
-  const scrollPosition = useScrollPosition();
   return (
     <>
       <Header />
@@ -36,6 +34,7 @@ const OurHomes = () => {
                   location={location}
                   paragraph={description}
                   buttonUrl={homesPageUrl}
+                  loading={index < 2 ? "eager" : "lazy"}
                 />
                 {index < homeList.ourHomesPage.length - 1 && (
                   <hr className="my-16 tablet:text-white tablet:my-10 desktop:my-5" />

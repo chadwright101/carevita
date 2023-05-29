@@ -1,6 +1,5 @@
-import Image from "next/image";
-
 import Heading, { headingVariant } from "../../../heading";
+import ImageContainer from "@/components/utils/image-container";
 
 interface Props {
   meetTheTeam: {
@@ -22,14 +21,17 @@ const MeetTheTeam = ({ meetTheTeam, homeName }: Props) => {
           <div key={index}>
             <article className="flex flex-col items-center gap-8 max-w-[375px] tabletLarge:gap-6 desktop:max-w-full">
               <h4 className="text-larger text-center">{position}</h4>
-              <Image
+              <ImageContainer
                 src={url}
                 alt={`${homeName} ${position}`}
                 width={400}
                 height={400}
-                className="object-cover w-[325px] h-[400px] desktop:w-[400px] desktop:h-[500px]"
-                quality={50}
-                sizes="(max-width: 650px) 250px, (max-width: 900px) 250px,(max-width: 1400px) 250px, 400px"
+                cssClasses="object-cover w-[325px] h-[400px] desktop:w-[400px] desktop:h-[500px]"
+                smallest={50}
+                phone={50}
+                tablet={30}
+                desktopSmall={25}
+                desktop={20}
               />
               <p className="text-center text-larger">{teamMember}</p>
             </article>
