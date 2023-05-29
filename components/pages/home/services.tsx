@@ -44,9 +44,11 @@ const Services = ({ cssClasses }: Props) => {
             width={900}
             height={700}
             cssClasses="object-cover w-full h-full tabletLarge:row-span-2"
-            phone={280}
-            tablet={400}
-            desktop={290}
+            smallest={110}
+            phone={80}
+            tablet={75}
+            desktopSmall={35}
+            desktop={20}
           />
         </div>
         <div className="grid grid-cols-1 grid-rows-[1fr_280px] tablet:grid-rows-[1fr_350px] gap-10 place-items-center tablet:place-items-start tabletLarge:grid-cols-2 tabletLarge:grid-rows-[150px_150px] desktopSmall:grid-rows-[125px_125px] desktop:grid-cols-[1.5fr_2fr]">
@@ -82,9 +84,11 @@ const Services = ({ cssClasses }: Props) => {
             width={900}
             height={700}
             cssClasses="object-cover w-full h-full tabletLarge:row-span-2"
-            phone={280}
-            tablet={400}
-            desktop={290}
+            smallest={110}
+            phone={80}
+            tablet={75}
+            desktopSmall={35}
+            desktop={20}
           />
         </div>
         <div className="grid grid-cols-1 grid-rows-[1fr_280px] tablet:grid-rows-[1fr_350px] gap-10 place-items-center tablet:place-items-start tabletLarge:grid-cols-2 tabletLarge:grid-rows-[150px_150px] desktopSmall:grid-rows-[125px_125px] desktop:grid-cols-[1.5fr_2fr]">
@@ -117,11 +121,13 @@ const Services = ({ cssClasses }: Props) => {
             src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/home-page/9U7A6417.jpg"
             alt="Carevita - Catering Services"
             width={900}
-            height={600}
+            height={700}
             cssClasses="object-cover w-full h-full tabletLarge:row-span-2"
-            phone={280}
-            tablet={400}
-            desktop={290}
+            smallest={110}
+            phone={80}
+            tablet={75}
+            desktopSmall={35}
+            desktop={20}
           />
         </div>
       </div>

@@ -36,18 +36,17 @@ const Fit = ({ cssClasses }: Props) => {
           Are you looking for a way to improve your wellbeing and health? Look
           no further than our exercise classes!
         </p>
-        <div className="tabletLarge:grid grid-cols-2 gap-10">
+        <div className="grid tabletLarge:grid-cols-2 gap-10">
           <ImageContainer
             src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/fit/20230420_144516.jpg"
             alt="#fit"
             width={900}
             height={750}
             cssClasses="object-cover h-[400px]"
-            smallest={400}
-            phone={400}
-            tablet={400}
-            desktopSmall={400}
-            desktop={400}
+            phone={80}
+            tabletLarge={50}
+            desktopSmall={30}
+            desktop={25}
           />
           <ImageContainer
             src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/fit/20230420_141012.jpg"
@@ -55,11 +54,10 @@ const Fit = ({ cssClasses }: Props) => {
             width={900}
             height={750}
             cssClasses="object-cover h-[400px]"
-            smallest={400}
-            phone={400}
-            tablet={400}
-            desktopSmall={400}
-            desktop={400}
+            phone={80}
+            tabletLarge={50}
+            desktopSmall={30}
+            desktop={25}
           />
         </div>
         {!toggleInfo && (
@@ -122,11 +120,11 @@ const Fit = ({ cssClasses }: Props) => {
                 width={900}
                 height={750}
                 cssClasses="object-cover h-[300px] tablet:h-[400px] desktopSmall:h-[500px] order-1 desktopSmall:order-none"
-                smallest={300}
-                phone={400}
-                tablet={500}
-                desktopSmall={500}
-                desktop={500}
+                smallest={80}
+                phone={40}
+                tablet={25}
+                desktopSmall={25}
+                desktop={20}
               />
               <ImageContainer
                 src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/fit/20230420_143829.jpg"
@@ -134,11 +132,11 @@ const Fit = ({ cssClasses }: Props) => {
                 width={900}
                 height={750}
                 cssClasses="hidden phone:block object-cover h-[300px] tablet:h-[400px] desktopSmall:h-[500px] order-1 desktopSmall:order-none"
-                smallest={300}
-                phone={400}
-                tablet={500}
-                desktopSmall={500}
-                desktop={500}
+                smallest={80}
+                phone={40}
+                tablet={25}
+                desktopSmall={25}
+                desktop={20}
               />
               <ImageContainer
                 src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/fit/20230420_143903.jpg"
@@ -146,11 +144,11 @@ const Fit = ({ cssClasses }: Props) => {
                 width={900}
                 height={750}
                 cssClasses="hidden tabletLarge:block object-cover h-[300px] tablet:h-[400px] desktopSmall:h-[500px] order-1 desktopSmall:order-none"
-                smallest={300}
-                phone={400}
-                tablet={500}
-                desktopSmall={500}
-                desktop={500}
+                smallest={80}
+                phone={40}
+                tablet={25}
+                desktopSmall={25}
+                desktop={20}
               />
             </div>
             <div className="grid gap-10 tabletLarge:grid-cols-2 desktopSmall:grid-cols-3 desktopSmall:col-span-full">
@@ -160,11 +158,11 @@ const Fit = ({ cssClasses }: Props) => {
                 width={900}
                 height={750}
                 cssClasses="hidden object-right desktopSmall:block object-cover h-[350px]"
-                smallest={350}
-                phone={350}
-                tablet={350}
-                desktopSmall={350}
-                desktop={350}
+                smallest={80}
+                phone={80}
+                tablet={75}
+                desktopSmall={40}
+                desktop={30}
               />
               <ImageContainer
                 src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/fit/20230420_142646.jpg"
@@ -172,11 +170,11 @@ const Fit = ({ cssClasses }: Props) => {
                 width={900}
                 height={750}
                 cssClasses="object-cover h-[350px]"
-                smallest={350}
-                phone={350}
-                tablet={350}
-                desktopSmall={350}
-                desktop={350}
+                smallest={80}
+                phone={80}
+                tablet={75}
+                desktopSmall={40}
+                desktop={30}
               />
 
               <div className="grid gap-y-6 gap-x-10 tablet:grid-cols-2 tabletLarge:gap-y-4 tabletLarge:flex flex-col">

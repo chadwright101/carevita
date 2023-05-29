@@ -5,7 +5,7 @@ import ImageContainer from "@/components/utils/image-container";
 
 interface Props {
   imageList: Array<{ url: string }>;
-  homeName: string;
+  homeName?: string;
 }
 
 const PageItemHeroSlider = ({ imageList, homeName }: Props) => {
@@ -72,11 +72,10 @@ const PageItemHeroSlider = ({ imageList, homeName }: Props) => {
               width={1400}
               height={1000}
               cssClasses="object-cover h-full w-full"
-              smallest={325}
-              phone={450}
-              desktopSmall={525}
-              desktop={800}
-              loading={index < 2 ? "eager" : "lazy"}
+              phone={100}
+              desktopSmall={80}
+              desktop={100}
+              eager={index < 2 ? true : false}
             />
           </SplideSlide>
         ))}

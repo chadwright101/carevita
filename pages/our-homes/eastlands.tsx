@@ -20,12 +20,11 @@ const Eastlands = () => {
           <ImageContainer
             src={pageList.locationDetail.image.url}
             alt={pageList.extendedTitle}
-            width={700}
-            height={400}
+            width={900}
+            height={600}
             cssClasses="object-cover w-full hidden h-[500px] desktopSmall:block"
-            tablet={500}
-            desktopSmall={500}
-            desktop={500}
+            desktopSmall={50}
+            desktop={40}
           />
           <EastlandsMap cssClasses="w-full h-[400px] tabletLarge:h-[500px]" />
         </div>

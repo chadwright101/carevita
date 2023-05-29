@@ -44,12 +44,11 @@ const PageItemGallerySlider = ({ imageList, homeName }) => {
               width={1400}
               height={1000}
               cssClasses="object-cover h-full w-full"
-              smallest={325}
-              phone={450}
-              desktopSmall={525}
-              desktop={800}
+              phone={80}
+              desktopSmall={75}
+              desktop={100}
               onClick={() => slider1.current.go(index)}
-              loading={index < 1 ? "eager" : "lazy"}
+              eager={index < 2 ? true : false}
             />
           </SplideSlide>
         ))}
@@ -81,10 +80,9 @@ const PageItemGallerySlider = ({ imageList, homeName }) => {
                 width={200}
                 height={200}
                 cssClasses="object-cover h-full w-full cursor-pointer px-1 pt-2"
-                smallest={110}
-                phone={110}
-                desktopSmall={110}
-                desktop={110}
+                desktopSmall={7.5}
+                quality={30}
+                desktop={7.5}
                 onClick={() => slider1.current.go(index)}
                 loading={index < 1 ? "eager" : "lazy"}
               />

@@ -43,11 +43,11 @@ const About = ({ about, whatWeOffer, homeName }: Props) => {
             width={1000}
             height={750}
             cssClasses="object-cover h-[250px] phone:h-[275px] tablet:h-[400px] tabletLarge:hidden"
-            smallest={250}
-            phone={275}
-            tablet={400}
-            desktopSmall={300}
-            desktop={375}
+            smallest={90}
+            phone={60}
+            tablet={60}
+            desktopSmall={30}
+            desktop={40}
           />
         </div>
       </div>
@@ -91,11 +91,11 @@ const About = ({ about, whatWeOffer, homeName }: Props) => {
             width={1000}
             height={750}
             cssClasses="object-cover h-[250px] phone:h-[275px] tablet:h-[400px] tabletLarge:hidden"
-            smallest={250}
-            phone={275}
-            tablet={400}
-            desktopSmall={300}
-            desktop={375}
+            smallest={90}
+            phone={60}
+            tablet={60}
+            desktopSmall={30}
+            desktop={40}
           />
         </div>
       </div>
@@ -105,11 +105,11 @@ const About = ({ about, whatWeOffer, homeName }: Props) => {
         width={1000}
         height={750}
         cssClasses="hidden object-cover h-[300px] tabletLarge:block desktop:h-[375px]"
-        smallest={250}
-        phone={275}
-        tablet={400}
-        desktopSmall={300}
-        desktop={375}
+        smallest={90}
+        phone={60}
+        tablet={60}
+        desktopSmall={30}
+        desktop={40}
       />
       <ImageContainer
         src={whatWeOffer.image.url}
@@ -117,11 +117,11 @@ const About = ({ about, whatWeOffer, homeName }: Props) => {
         width={1000}
         height={750}
         cssClasses="hidden object-cover h-[300px] tabletLarge:block desktop:h-[375px]"
-        smallest={250}
-        phone={275}
-        tablet={400}
-        desktopSmall={300}
-        desktop={375}
+        smallest={90}
+        phone={60}
+        tablet={60}
+        desktopSmall={30}
+        desktop={40}
       />
     </div>
   );

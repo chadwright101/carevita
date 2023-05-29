@@ -535,7 +535,7 @@ const ContactForm = ({
                   width={505}
                   height={680}
                   cssClasses="object-cover w-full h-full"
-                  desktop={505}
+                  desktop={30}
                 />
               </div>
             </div>
@@ -624,7 +624,7 @@ const ContactForm = ({
                   width={505}
                   height={680}
                   cssClasses="object-cover w-full h-full"
-                  desktop={505}
+                  desktop={30}
                 />
               </div>
             </div>
@@ -713,7 +713,7 @@ const ContactForm = ({
                   width={505}
                   height={680}
                   cssClasses="object-cover w-full h-full"
-                  desktop={505}
+                  desktop={30}
                 />
               </div>
             </div>

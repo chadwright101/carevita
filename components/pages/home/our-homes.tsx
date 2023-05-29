@@ -4,7 +4,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 import "@splidejs/react-splide/css/core";
 
-import sliderList from "../../../data/home-page-our-homes-data.json";
+import sliderList from "../../../data/our-homes-page-data.json";
 import Heading, { headingVariant } from "../../heading";
 import Layout from "@/components/layout";
 import ImageContainer from "@/components/utils/image-container";
@@ -46,10 +46,8 @@ const OurHomes = ({ cssClasses }: Props) => {
               width={1400}
               height={1000}
               cssClasses="object-cover w-full h-full"
-              phone={300}
-              tablet={400}
-              desktopSmall={575}
-              desktop={615}
+              desktopSmall={100}
+              desktop={80}
             />
           </SplideSlide>
         ))}

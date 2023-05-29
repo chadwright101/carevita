@@ -10,6 +10,7 @@ interface Props {
   location: string;
   paragraph: string;
   buttonUrl: string;
+  loading?: "eager" | "lazy";
 }
 
 const HomeItem = ({
@@ -20,6 +21,7 @@ const HomeItem = ({
   location,
   paragraph,
   buttonUrl,
+  loading,
 }: Props) => {
   return (
     <article className={`flex flex-col gap-10 ${cssClasses}`}>
@@ -35,10 +37,11 @@ const HomeItem = ({
         width={1000}
         height={750}
         cssClasses="object-cover h-[225px] phone:h-[300px] tablet:h-[380px] tabletLarge:h-[280px] desktop:h-[250px]"
-        phone={300}
-        tablet={380}
-        desktopSmall={280}
-        desktop={250}
+        smallest={90}
+        tablet={80}
+        desktopSmall={40}
+        desktop={25}
+        eager
       />
       <p>{paragraph}</p>
       <Button url={buttonUrl} cssClasses="mx-auto"></Button>

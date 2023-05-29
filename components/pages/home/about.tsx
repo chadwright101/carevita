@@ -49,10 +49,9 @@ const About = ({ cssClasses }: Props) => {
             width={900}
             height={450}
             cssClasses="object-cover w-full h-full"
-            smallest={255}
-            tablet={500}
-            desktopSmall={425}
-            desktop={300}
+            tablet={90}
+            desktopSmall={50}
+            desktop={30}
           />
           <ImageContainer
             src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/home-page/9U7A6543.jpg"
@@ -60,10 +59,9 @@ const About = ({ cssClasses }: Props) => {
             width={900}
             height={450}
             cssClasses="object-cover w-full h-full"
-            smallest={255}
-            tablet={500}
-            desktopSmall={425}
-            desktop={300}
+            tablet={90}
+            desktopSmall={50}
+            desktop={30}
           />
         </div>
       </main>

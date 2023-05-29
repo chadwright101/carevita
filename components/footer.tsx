@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import menuList from "../data/navigation-data.json";
+import ImageContainer from "./utils/image-container";
 
 interface Props {
   cssClasses?: string;
@@ -9,6 +10,8 @@ interface Props {
 }
 
 const Footer = ({ cssClasses, border }: Props) => {
+  const desktopMenu = menuList.navigation.desktop;
+
   return (
     <footer className={`${cssClasses}`}>
       {/* mobile view */}
@@ -20,7 +23,7 @@ const Footer = ({ cssClasses, border }: Props) => {
         <div className="w-full max-w-[1400px] flex justify-center tabletLarge:justify-between items-center">
           <nav className="hidden tabletLarge:flex">
             <ul>
-              {menuList.navigation.desktop.map(({ title, url }, index) => (
+              {desktopMenu.map(({ title, url }, index) => (
                 <li key={index}>
                   <Link href={url} className=" hover:font-light">
                     {title}
@@ -29,14 +32,16 @@ const Footer = ({ cssClasses, border }: Props) => {
               ))}
             </ul>
           </nav>
-          <Image
+          <ImageContainer
             src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/carevita-logo.png"
             alt="CareVita logo"
             width={120}
             height={100}
-            className="w-[120px] h-auto"
-            sizes="(max-width: 900px) 100px, (max-width: 1400px) 100px, 100px"
-            quality={50}
+            cssClasses="w-[120px] h-auto"
+            smallest={30}
+            phone={20}
+            desktopSmall={10}
+            desktop={10}
           />
         </div>
         <p className="tabletLarge:text-[16px]">

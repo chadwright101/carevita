@@ -58,13 +58,10 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                     width={1000}
                     height={1000}
                     cssClasses="object-cover w-full h-full"
-                    smallest={300}
-                    phone={350}
-                    tablet={450}
-                    tabletLarge={500}
-                    desktopSmall={650}
-                    desktop={550}
-                    loading={index < 2 ? "eager" : "lazy"}
+                    tablet={90}
+                    desktopSmall={80}
+                    desktop={40}
+                    eager={index < 2 ? true : false}
                   />
                 )}
                 {galleryList && !image1 && (
@@ -110,13 +107,10 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                       width={1000}
                       height={1000}
                       cssClasses="object-cover w-full h-full"
-                      smallest={300}
-                      phone={350}
-                      tablet={450}
-                      tabletLarge={500}
-                      desktopSmall={650}
-                      desktop={550}
-                      loading={index < 1 ? "eager" : "lazy"}
+                      tablet={90}
+                      desktopSmall={80}
+                      desktop={40}
+                      eager={index < 1 ? true : false}
                     />
                   )}
                   {galleryList && !image1 && (

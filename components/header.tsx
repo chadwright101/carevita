@@ -9,6 +9,7 @@ import classNames from "classnames";
 
 import menuIcon from "public/icons/menu-icon.svg";
 import closeIcon from "public/icons/close-icon.svg";
+import ImageContainer from "./utils/image-container";
 
 interface Props {
   cssClasses?: string;
@@ -25,17 +26,20 @@ const Header = ({ cssClasses }: Props) => {
       {/* mobile nav */}
       <div className="w-full flex justify-between items-center px-6 py-4 border-b-2 border-black drop-shadow-md bg-white tabletLarge:hidden">
         <Link href="/" className="p-4 -m-4">
-          <Image
+          <ImageContainer
             src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/carevita-logo.png"
             alt="CareVita logo"
             width={80}
             height={120}
-            className={classNames("ease-in-out duration-300 delay-[10ms]", {
+            cssClasses={classNames("ease-in-out duration-300 delay-[10ms]", {
               "w-[80px] h-auto": scrollPosition === 0,
               "w-[64px] h-auto": scrollPosition > 0,
             })}
-            priority
-            sizes="(max-width: 900px) 65px, (max-width: 1400px) 65px, 65px"
+            smallest={30}
+            phone={20}
+            desktopSmall={10}
+            desktop={10}
+            eager
           />
         </Link>
         <button className="p-2 -m-2" onClick={() => setToggleMenu(true)}>
