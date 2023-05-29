@@ -48,7 +48,7 @@ const Services = ({ cssClasses }: Props) => {
             phone={80}
             tablet={75}
             desktopSmall={35}
-            desktop={20}
+            desktop={25}
           />
         </div>
         <div className="grid grid-cols-1 grid-rows-[1fr_280px] tablet:grid-rows-[1fr_350px] gap-10 place-items-center tablet:place-items-start tabletLarge:grid-cols-2 tabletLarge:grid-rows-[150px_150px] desktopSmall:grid-rows-[125px_125px] desktop:grid-cols-[1.5fr_2fr]">
@@ -88,7 +88,7 @@ const Services = ({ cssClasses }: Props) => {
             phone={80}
             tablet={75}
             desktopSmall={35}
-            desktop={20}
+            desktop={25}
           />
         </div>
         <div className="grid grid-cols-1 grid-rows-[1fr_280px] tablet:grid-rows-[1fr_350px] gap-10 place-items-center tablet:place-items-start tabletLarge:grid-cols-2 tabletLarge:grid-rows-[150px_150px] desktopSmall:grid-rows-[125px_125px] desktop:grid-cols-[1.5fr_2fr]">
@@ -127,7 +127,7 @@ const Services = ({ cssClasses }: Props) => {
             phone={80}
             tablet={75}
             desktopSmall={35}
-            desktop={20}
+            desktop={25}
           />
         </div>
       </div>
