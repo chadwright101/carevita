@@ -2,57 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "helvetica_neue";
-  font-weight: 200;
-  src:
-    url("../fonts/helvetica-neue-light.woff2") format("woff2"),
-    url("../fonts/helvetica-neue-light.woff") format("woff"),
-    url("../fonts/helvetica-neue-light.ttf") format("truetype");
-  font-display: swap
-}
-
-@font-face {
-  font-family: "helvetica_neue";
-  font-weight: 200;
-  src:
-    url("../fonts/helvetica-neue-light-italic.woff2") format("woff2"),
-    url("../fonts/helvetica-neue-light-italic.woff") format("woff"),
-    url("../fonts/helvetica-neue-light-italic.ttf") format("truetype");
-  font-display: swap;
-  font-style: italic
-}
-
-@font-face {
-  font-family: "helvetica_neue";
-  font-weight: 300;
-  src:
-    url("../fonts//helvetic-neue.woff2") format("woff2"),
-    url("../fonts//helvetic-neue.woff") format("woff"),
-    url("../fonts//helvetic-neue.ttf") format("woff");
-  font-display: swap
-}
-
-@font-face {
-  font-family: "helvetica_neue";
-  font-weight: 300;
-  src:
-    url("../fonts/helvetic-neue-italic.woff2") format("woff2"),
-    url("../fonts/helvetic-neue-italic.woff") format("woff"),
-    url("../fonts/helvetic-neue-italic.ttf") format("truetype");
-  font-display: swap;
-  font-style: italic
-}
 
 @layer base {
+
+  @font-face {
+    font-family: "Raleway";
+    src: url("../fonts/Raleway/Raleway-VariableFont_wght.woff2") format("woff2 supports variations"),
+      url("../fonts/Raleway/Raleway-VariableFont_wght.woff2") format("woff2-variations");
+    font-weight: 100 700;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Raleway";
+    src: url("../fonts/Raleway/Raleway-Italic-VariableFont_wght.woff2") format("woff2 supports variations"),
+      url("../fonts/Raleway/Raleway-Italic-VariableFont_wght.woff2") format("woff2-variations");
+    font-weight: 100 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Raleway";
+    src: url("../fonts/Raleway/Raleway-VariableFont_wght.woff") format("woff supports variations"),
+      url("../fonts/Raleway/Raleway-VariableFont_wght.woff") format("woff-variations");
+    font-weight: 100 700;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Raleway";
+    src: url("../fonts/Raleway/Raleway-Italic-VariableFont_wght.woff") format("woff supports variations"),
+      url("../fonts/Raleway/Raleway-Italic-VariableFont_wght.woff") format("woff-variations");
+    font-weight: 100 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Raleway";
+    src: url("../fonts/Raleway/Raleway-VariableFont_wght.ttf") format("truetype supports variations"),
+      url("../fonts/Raleway/Raleway-VariableFont_wght.ttf") format("truetype-variations");
+    font-weight: 100 700;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Raleway";
+    src: url("../fonts/Raleway/Raleway-Italic-VariableFont_wght.ttf") format("truetype supports variations"),
+      url("../fonts/Raleway/Raleway-Italic-VariableFont_wght.ttf") format("truetype-variations");
+    font-weight: 100 700;
+    font-style: italic;
+    font-display: swap;
+  }
+
   * {
-    font-family: "helvetica_neue";
+    font-family: "Raleway";
     color: #222222
   }
 
   h1,
   h2 {
-    font-weight: 200;
+    font-weight: 500;
     font-size: 2.25rem;
   }
 
@@ -60,7 +71,7 @@
   h4,
   h5,
   h6 {
-    font-weight: 300;
+    font-weight: 400;
     font-size: 1.5rem;
   }
 
