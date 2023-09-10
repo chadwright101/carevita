@@ -33,7 +33,7 @@ const HomeItem = ({
       </div>
       <ImageContainer
         src={featuredImage}
-        alt={`${title} - ${location}`}
+        alt={`${title} - ${extendedLocation}`}
         width={1000}
         height={750}
         cssClasses="object-cover h-[225px] phone:h-[300px] tablet:h-[380px] tabletLarge:h-[280px] desktop:h-[250px]"
