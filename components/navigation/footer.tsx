@@ -1,29 +1,29 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import menuList from "../data/navigation-data.json";
-import ImageContainer from "./utils/image-container";
+import navigation from "../../data/navigation-data.json";
+import ImageContainer from "../utils/image-container";
 
 interface Props {
   cssClasses?: string;
   border?: boolean;
 }
 
-const Footer = ({ cssClasses, border }: Props) => {
-  const desktopMenu = menuList.navigation.desktop;
+const currentYear = new Date().getFullYear();
 
+const Footer = ({ cssClasses, border }: Props) => {
   return (
     <footer className={`${cssClasses}`}>
       {/* mobile view */}
       <div
-        className={`w-full flex flex-col gap-4 items-center px-6 pt-10 pb-6 bg-white ${
+        className={`w-full flex flex-col gap-6 items-center px-6 pt-10 pb-6 bg-white ${
           border && "tabletLarge:border-t border-black tablet:mt-10"
         } tablet:px-12`}
       >
         <div className="w-full max-w-[1400px] flex justify-center tabletLarge:justify-between items-center">
           <nav className="hidden tabletLarge:flex">
             <ul>
-              {desktopMenu.map(({ title, url }, index) => (
+              {navigation.map(({ title, url }, index) => (
                 <li key={index}>
                   <Link href={url} className=" hover:font-light">
                     {title}
@@ -44,11 +44,11 @@ const Footer = ({ cssClasses, border }: Props) => {
             desktop={10}
           />
         </div>
-        <p className="tabletLarge:text-[16px]">
-          © CareVita |{" "}
+        <p className="tabletLarge:text-[16px] grid place-items-center gap-0.5">
+          © CareVita {currentYear}
           <Link
             href="https://www.carevita.co.za"
-            className="p-4 -m-4 tabletLarge:hover:underline underline-offset-4 decoration-1"
+            className="p-4 -m-4 text-link tabletLarge:hover:underline underline-offset-4 decoration-1"
           >
             www.carevita.co.za
           </Link>

@@ -1,4 +1,4 @@
-import Heading, { headingVariant } from "../../heading";
+import Heading, { headingVariant } from "../../../heading";
 import ImageContainer from "@/components/utils/image-container";
 
 interface Props {

@@ -17,12 +17,10 @@ const PageItemGallerySlider = ({ imageList, homeName }) => {
       <Splide
         ref={(slider) => (slider1.current = slider)}
         options={{
-          rewind: true,
           type: "fade",
           rewind: true,
           pagination: false,
           speed: 2000,
-          interval: 6500,
           interval: 6500,
           autoplay: true,
           dragMinThreshold: 10,
@@ -33,14 +31,14 @@ const PageItemGallerySlider = ({ imageList, homeName }) => {
           },
         }}
       >
-        {imageList.map(({ url }, index) => (
+        {imageList.map((url, index) => (
           <SplideSlide
             key={index}
             className="h-[250px] phone:h-[325px] tablet:h-[450px] tabletLarge:h-[525px] desktop:h-[700px]"
           >
             <ImageContainer
               src={url}
-              alt={`${homeName} gallery item`}
+              alt={`${homeName} gallery item - Image ${index + 1}`}
               width={1400}
               height={1000}
               cssClasses="object-cover h-full w-full"
@@ -56,7 +54,6 @@ const PageItemGallerySlider = ({ imageList, homeName }) => {
       <Splide
         options={{
           type: "slide",
-          rewind: true,
           pagination: false,
           fixedWidth: 190,
           fixedHeight: 110,
@@ -68,7 +65,7 @@ const PageItemGallerySlider = ({ imageList, homeName }) => {
         ref={(slider) => (slider2.current = slider)}
         className="hidden desktopSmall:block"
       >
-        {imageList.map(({ url }, index) => (
+        {imageList.map((url, index) => (
           <SplideSlide
             key={index}
             className="h-[110px] splide__slide splide__slide.is-active"
@@ -76,7 +73,7 @@ const PageItemGallerySlider = ({ imageList, homeName }) => {
             <div className="w-full bg-white h-full flex justify-center overflow-hidden">
               <ImageContainer
                 src={url}
-                alt={`${homeName} gallery thumbnail`}
+                alt={`${homeName} gallery thumbnail - Image ${index + 1}`}
                 width={200}
                 height={200}
                 cssClasses="object-cover h-full w-full cursor-pointer px-1 pt-2"

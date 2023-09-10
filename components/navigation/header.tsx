@@ -2,14 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-import menuList from "../data/navigation-data.json";
-import useScrollPosition from "./utils/scroll-position";
+import navigation from "@/data/navigation-data.json";
+import useScrollPosition from "@/components/utils/scroll-position";
 
 import classNames from "classnames";
 
 import menuIcon from "public/icons/menu-icon.svg";
 import closeIcon from "public/icons/close-icon.svg";
-import ImageContainer from "./utils/image-container";
+import ImageContainer from "@/components/utils/image-container";
 
 interface Props {
   cssClasses?: string;
@@ -49,7 +49,7 @@ const Header = ({ cssClasses }: Props) => {
       {toggleMenu && (
         <nav className="fixed top-0 h-screen w-full bg-blue pt-8 px-5">
           <ul className="mt-10 flex flex-col gap-4">
-            {menuList.navigation.mobile.map(({ title, url }, index) => (
+            {navigation.map(({ title, url }, index) => (
               <>
                 <li key={index}>
                   <Link
@@ -60,7 +60,7 @@ const Header = ({ cssClasses }: Props) => {
                     {title}
                   </Link>
                 </li>
-                {index < menuList.navigation.mobile.length - 1 && (
+                {index < navigation.length - 1 && (
                   <hr className="px-5 text-white" />
                 )}
               </>
@@ -98,58 +98,56 @@ const Header = ({ cssClasses }: Props) => {
           </Link>
           <nav>
             <ul className="flex gap-6">
-              {menuList.navigation.desktop.map(
-                ({ title, url, homeSubmenu }, index) => (
-                  <li
-                    key={index}
-                    onMouseEnter={
-                      homeSubmenu &&
-                      (() => {
-                        setToggleHomeSubmenu(!toggleHomeSubmenu);
-                      })
-                    }
-                    onMouseLeave={
-                      homeSubmenu &&
-                      (() => {
-                        setToggleHomeSubmenu(!toggleHomeSubmenu);
-                      })
-                    }
+              {navigation.map(({ title, url, homeSubmenu }, index) => (
+                <li
+                  key={index}
+                  onMouseEnter={
+                    homeSubmenu &&
+                    (() => {
+                      setToggleHomeSubmenu(!toggleHomeSubmenu);
+                    })
+                  }
+                  onMouseLeave={
+                    homeSubmenu &&
+                    (() => {
+                      setToggleHomeSubmenu(!toggleHomeSubmenu);
+                    })
+                  }
+                >
+                  <Link
+                    href={url}
+                    className={`${
+                      index < 2 &&
+                      "hover:underline underline-offset-8 decoration-green decoration-2"
+                    } ${
+                      index > 3 &&
+                      "hover:underline underline-offset-8 decoration-green decoration-2"
+                    }`}
                   >
-                    <Link
-                      href={url}
-                      className={`${
-                        index < 2 &&
-                        "hover:underline underline-offset-8 decoration-green decoration-2"
-                      } ${
-                        index > 3 &&
-                        "hover:underline underline-offset-8 decoration-green decoration-2"
-                      }`}
-                    >
-                      {title}
-                    </Link>
+                    {title}
+                  </Link>
 
-                    {homeSubmenu && toggleHomeSubmenu && (
-                      <ul className="absolute bg-white p-6 border border-t-0 border-black -translate-x-[59px] rounded-b-xl flex flex-col gap-2 drop-shadow-md">
-                        {/* while blocks to hide borders */}
-                        <div className="w-3 bg-white h-4 absolute -translate-x-8 -translate-y-6"></div>
-                        <div className="w-3 bg-white h-4 absolute translate-x-[170px] -translate-y-6"></div>
+                  {homeSubmenu && toggleHomeSubmenu && (
+                    <ul className="absolute bg-white p-6 border border-t-0 border-black -translate-x-[59px] rounded-b-xl flex flex-col gap-2 drop-shadow-md">
+                      {/* while blocks to hide borders */}
+                      <div className="w-3 bg-white h-4 absolute -translate-x-8 -translate-y-6"></div>
+                      <div className="w-3 bg-white h-4 absolute translate-x-[170px] -translate-y-6"></div>
 
-                        {homeSubmenu.map(({ title, url, location }, index) => (
-                          <li key={index} className="flex flex-col gap-0.5">
-                            <Link
-                              href={url}
-                              className="font-light text-smaller hover:underline underline-offset-[5px] decoration-green decoration-2"
-                            >
-                              {title}
-                            </Link>
-                            <p className="text-smallest">{location}</p>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </li>
-                )
-              )}
+                      {homeSubmenu.map(({ title, url, location }, index) => (
+                        <li key={index} className="flex flex-col gap-0.5">
+                          <Link
+                            href={url}
+                            className="font-light text-smaller hover:underline underline-offset-[5px] decoration-green decoration-2"
+                          >
+                            {title}
+                          </Link>
+                          <p className="text-smallest">{location}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ))}
             </ul>
           </nav>
         </div>

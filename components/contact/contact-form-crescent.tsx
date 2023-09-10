@@ -1,15 +1,19 @@
 import { useState } from "react";
 import Link from "next/link";
 
-import Button from "../../../../button";
+import Button from "@/components/button";
+import { DataProps } from "@/components/utils/data-props";
 
-interface Props {
+interface Props extends DataProps {
   cssClasses?: string;
 }
 
-import homeList from "../../../../../data/eastlands-extended-data.json";
-
-const ContactFormEastlandsPage = ({ cssClasses }: Props) => {
+const ContactFormCrescentPage = ({
+  data: {
+    general: { email, phone, title },
+  },
+  cssClasses,
+}: Props) => {
   const [showMessage, setShowMessage] = useState(false);
   const [showEmail, setShowEmail] = useState(false);
   const [showPhone, setShowPhone] = useState(false);
@@ -33,7 +37,7 @@ const ContactFormEastlandsPage = ({ cssClasses }: Props) => {
                   href="mailto:jumireej@carevita.co.za"
                   className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0 tabletLarge:hover:underline underline-offset-8 decoration-1"
                 >
-                  {homeList.email}
+                  {email}
                 </Link>
               )}
             </div>
@@ -54,7 +58,7 @@ const ContactFormEastlandsPage = ({ cssClasses }: Props) => {
                   href="tel:+27445331234"
                   className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0"
                 >
-                  {homeList.phone}
+                  {phone}
                 </Link>
               )}
             </div>
@@ -62,10 +66,8 @@ const ContactFormEastlandsPage = ({ cssClasses }: Props) => {
         </ul>
         <p className="text-white">
           Please fill out the form below, and our staff from{" "}
-          <span className="font-light text-white">
-            {homeList.extendedTitle}
-          </span>{" "}
-          will be in touch with you ASAP...
+          <span className="font-light text-white">{title}</span> will be in
+          touch with you ASAP...
         </p>
         <form action="" method="POST" className="flex flex-col gap-10">
           <div className="flex flex-col gap-3">
@@ -139,4 +141,4 @@ const ContactFormEastlandsPage = ({ cssClasses }: Props) => {
   );
 };
 
-export default ContactFormEastlandsPage;
+export default ContactFormCrescentPage;

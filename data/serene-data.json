@@ -1,0 +1,105 @@
+{
+  "general": {
+    "title": "Serene Park Centre",
+    "extendedTitle": "Serene Park Frail Care Centre",
+    "location": "Pretoria, GP",
+    "extendedLocation": "Pretoria, Gauteng",
+    "email": "serenepark@carevita.co.za",
+    "phone": "1234567890",
+    "homeUrl": "our-homes/serene-park",
+    "description": "Serene Park, a beautiful home close to Menlyn Maine and Menlyn Park Shopping Centre in Pretoria has been in operation since 1987. The home is set within tranquil gardens and offers a variety of different types of accommodation and th healthcare facility offers a full service to residents"
+  },
+  "whatWeOffer": {
+    "list": [
+      "Frail Care facilities",
+      "Doctor & physio visits",
+      "24/7 onsite nursing",
+      "Medication management",
+      "All meals & snacks",
+      "Laundry",
+      "Cleaning",
+      "Tranquil gardens"
+    ],
+    "weeklyActivities": [
+      "Shuttle to the shops",
+      "Exercises designed for the elderly",
+      "Brain gym quiz",
+      "Movie nights",
+      "Garden walks",
+      "Word search",
+      "Bingo"
+    ],
+    "pampering": [""],
+    "image": ""
+  },
+  "about": {
+    "paragraphs": [
+      "Serene Park, a beautiful home close to Menlyn Maine and Menlyn Park Shopping Centre in Pretoria has been in operation since 1987.",
+      "The home is set within tranquil gardens and offers a variety of different types of accommodation. The healthcare facility offers a full service to residents including all meals, snacks, laundry, cleaning, nursing and any medication management required. Various daily activities that include exercises designed for older residents, brain gym quiz, movie nights, garden walks, word search and Bingo keep our residents active and entertained.",
+      "Serene Park has a shuttle that takes residents for weekly shopping trips to Menlyn, Glen Fair Shopping Centre and Pick 'n Pay Hypermarket on Wednesdays for two and a half hours. Two doctors visit the centre, one visits if called and the other comes to do consultations on a weekly basis. A physiotherapist is also available for appointments.",
+      "Our care team comprises of qualified nurses and care workers and all our meals are made in-house with each resident's dietary requirements considered.",
+      "Serene is truly an icon in Pretoria where residents experience a warm homely environment in their golden years."
+    ],
+    "image": ""
+  },
+  "meetTheTeam": [
+    {
+      "position": "Facility manager",
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/staff/9U7A6010.jpg",
+      "teamMember": "Jumiree Jansen"
+    },
+    {
+      "position": "Head Staff Nurse",
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/staff/9U7A6032.jpg",
+      "teamMember": "Emelio Phekula"
+    },
+    {
+      "position": "Staff Nurse",
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/staff/9U7A6631.jpg",
+      "teamMember": "Pamela Knepscheld"
+    },
+    {
+      "position": "Head Chef",
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/staff/9U7A6004.jpg",
+      "teamMember": "Clayton Van Wyk"
+    },
+    {
+      "position": "Supervisor",
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/staff/9U7A6039.jpg",
+      "teamMember": "Jennifer September"
+    }
+  ],
+
+  "images": {
+    "heroSlider": [
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/hero/9U7A6120.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/hero/9U7A6201-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/hero/9U7A6283.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/hero/9U7A6627.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/hero/9U7A6384.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/hero/DJI_0961.jpg"
+    ],
+    "gallerySlider": [
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/hero/DJI_0961.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6582.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6627.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6242.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/staff-combined.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6120.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6145.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6189-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6201-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6209-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6229-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6221-HDR-Edit.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6382.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6417.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6466.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6293-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6301-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6331-HDR-Edit.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6355-HDR-Edit.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6471-HDR.jpg"
+    ]
+  }
+}

@@ -1,11 +1,11 @@
-import Button from "../../button";
+import Button from "../../../button";
 
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 import "@splidejs/react-splide/css/core";
 
-import sliderList from "../../../data/our-homes-page-data.json";
-import Heading, { headingVariant } from "../../heading";
+import sliderList from "@/data/general-data.json";
+import Heading, { headingVariant } from "../../../heading";
 import Layout from "@/components/layout";
 import ImageContainer from "@/components/utils/image-container";
 
@@ -35,7 +35,7 @@ const OurHomes = ({ cssClasses }: Props) => {
         }}
         className="max-w-[1400px] tablet:mx-auto"
       >
-        {sliderList.ourHomesSliderHomePage.map(({ url }, index) => (
+        {sliderList.homePage.ourHomesSliderHomePage.map((url, index) => (
           <SplideSlide
             key={index}
             className="h-[300px] w-full tablet:h-[400px] tabletLarge:h-[500px] desktopSmall:h-[575px] desktop:h-[615px]"

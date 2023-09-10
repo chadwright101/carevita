@@ -1,51 +1,39 @@
-import Header from "@/components/header";
-import Footer from "@/components/footer";
 import HomeItem from "@/components/pages/our-homes/home-item";
 import Heading, { headingVariant } from "@/components/heading";
 import Layout from "@/components/layout";
 import Contact from "@/components/contact/contact";
 
-import homeList from "../../data/our-homes-page-data.json";
+import crescentData from "@/data/crescent-data.json";
+import sereneData from "@/data/serene-data.json";
+import eastlandsData from "@/data/eastlands-data.json";
 
 const OurHomes = () => {
   return (
     <>
-      <Header />
       <Layout>
-        <Heading variant={headingVariant.pageHeading}>Our homes</Heading>
+        <Heading variant={headingVariant.pageHeading}>Our Homes</Heading>
         <main className="grid tabletLarge:grid-cols-2 tabletLarge:gap-10 desktop:grid-cols-3">
-          {homeList.ourHomesPage.map(
-            (
-              {
-                extendedTitle,
-                description,
-                location,
-                image,
-                imageAlt,
-                homesPageUrl,
-              },
-              index
-            ) => (
-              <div key={index}>
-                <HomeItem
-                  heroImageUrl={image}
-                  heroImageAlt={imageAlt}
-                  heading={extendedTitle}
-                  location={location}
-                  paragraph={description}
-                  buttonUrl={homesPageUrl}
-                  loading={index < 2 ? "eager" : "lazy"}
-                />
-                {index < homeList.ourHomesPage.length - 1 && (
-                  <hr className="my-16 tablet:text-white tablet:my-10 desktop:my-5" />
-                )}
-              </div>
-            )
-          )}
+          <div>
+            <HomeItem
+              data={crescentData}
+              featuredImage={crescentData.images.heroSlider[1]}
+            />
+            <hr className="my-16 tablet:text-white tablet:my-10 desktop:my-5" />
+          </div>
+          <div>
+            <HomeItem
+              data={eastlandsData}
+              featuredImage={eastlandsData.images.heroSlider[0]}
+            />
+            <hr className="my-16 tablet:text-white tablet:my-10 desktop:my-5" />
+          </div>
+          <HomeItem
+            data={sereneData}
+            featuredImage={sereneData.images.heroSlider[2]}
+          />
         </main>
       </Layout>
       <Contact cssClasses="mt-20" />
-      <Footer />
     </>
   );
 };

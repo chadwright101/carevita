@@ -1,10 +1,8 @@
-import Footer from "@/components/footer";
-import Header from "@/components/header";
 import Heading, { headingVariant } from "@/components/heading";
 import BlogPost from "@/components/pages/blog/blog-post";
 import Layout from "@/components/layout";
 
-import client from "@/components/utils/client";
+import blogClient from "@/components/utils/blog-client";
 
 import { gql } from "@apollo/client";
 
@@ -34,14 +32,13 @@ interface Props {
 const Blog = ({ blogPosts }: Props) => {
   return (
     <>
-      <Header />
       <Layout>
         <Heading variant={headingVariant.pageHeading} cssClasses="mb-14">
           Blog
         </Heading>
+        <hr className="my-14" />
         <BlogPost data={blogPosts} />
       </Layout>
-      <Footer />
     </>
   );
 };
@@ -49,7 +46,7 @@ const Blog = ({ blogPosts }: Props) => {
 export default Blog;
 
 export async function getStaticProps() {
-  const { data } = await client.query({
+  const { data } = await blogClient.query({
     query: gql`
       query BlogPosts {
         posts {

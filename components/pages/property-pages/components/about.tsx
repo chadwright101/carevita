@@ -1,28 +1,28 @@
+import { DataProps } from "@/components/utils/data-props";
 import Heading, { headingVariant } from "../../../heading";
 import ImageContainer from "@/components/utils/image-container";
 
 interface Props {
-  about: {
-    paragraphs: Array<string>;
-    image: { url: string };
+  general: {
+    title: string;
   };
-  homeName: string;
+  about: {
+    paragraphs: string[];
+    image: string;
+  };
   whatWeOffer: {
-    list: Array<string>;
-    pampering?: Array<string>;
-    weeklyActivities: Array<string>;
-    image: { url: string };
+    list: string[];
+    pampering: string[];
+    weeklyActivities: string[];
+    image: string;
   };
 }
 
-const About = ({ about, whatWeOffer, homeName }: Props) => {
-  const {
-    list,
-    pampering,
-    weeklyActivities,
-    image: whatWeOfferImage,
-  } = whatWeOffer;
-  const { paragraphs, image: aboutImage } = about;
+const About = ({
+  general: { title },
+  about: { paragraphs, image: aboutImage },
+  whatWeOffer: { list, pampering, weeklyActivities, image },
+}: Props) => {
   return (
     <div className="grid gap-16 tabletLarge:grid-cols-2 tabletLarge:gap-10">
       <div>
@@ -34,12 +34,11 @@ const About = ({ about, whatWeOffer, homeName }: Props) => {
             <p className="mb-4">{paragraphs[2]}</p>
             <p className="mb-4">{paragraphs[3]}</p>
             <p className="mb-4">{paragraphs[4]}</p>
-            <p className="mb-4">{paragraphs[5]}</p>
-            <p>{about.paragraphs[3]}</p>
+            <p>{paragraphs[5]}</p>
           </article>
           <ImageContainer
-            src={aboutImage.url}
-            alt={`${homeName}`}
+            src={aboutImage}
+            alt={`${title}`}
             width={1000}
             height={750}
             cssClasses="object-cover h-[250px] phone:h-[275px] tablet:h-[400px] tabletLarge:hidden"
@@ -86,8 +85,8 @@ const About = ({ about, whatWeOffer, homeName }: Props) => {
             </div>
           </ul>
           <ImageContainer
-            src={whatWeOfferImage.url}
-            alt={`${homeName} - What we offer`}
+            src={image}
+            alt={`${title} - What we offer`}
             width={1000}
             height={750}
             cssClasses="object-cover h-[250px] phone:h-[275px] tablet:h-[400px] tabletLarge:hidden"
@@ -100,8 +99,8 @@ const About = ({ about, whatWeOffer, homeName }: Props) => {
         </div>
       </div>
       <ImageContainer
-        src={about.image.url}
-        alt={`${homeName}`}
+        src={aboutImage}
+        alt={`${title}`}
         width={1000}
         height={750}
         cssClasses="hidden object-cover h-[300px] tabletLarge:block desktop:h-[375px]"
@@ -112,8 +111,8 @@ const About = ({ about, whatWeOffer, homeName }: Props) => {
         desktop={40}
       />
       <ImageContainer
-        src={whatWeOffer.image.url}
-        alt={`${homeName} - What we offer`}
+        src={image}
+        alt={`${title} - What we offer`}
         width={1000}
         height={750}
         cssClasses="hidden object-cover h-[300px] tabletLarge:block desktop:h-[375px]"

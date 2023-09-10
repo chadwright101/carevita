@@ -4,7 +4,7 @@ import "@splidejs/react-splide/css/core";
 import ImageContainer from "@/components/utils/image-container";
 
 interface Props {
-  imageList: Array<{ url: string }>;
+  imageList: Array<string>;
   homeName?: string;
 }
 
@@ -61,14 +61,14 @@ const PageItemHeroSlider = ({ imageList, homeName }: Props) => {
         </button>
       </div>
       <SplideTrack>
-        {imageList.map(({ url }, index) => (
+        {imageList.map((url, index) => (
           <SplideSlide
             key={index}
             className="h-[250px] phone:h-[325px] tablet:h-[450px] tabletLarge:h-[525px] desktop:h-[700px]"
           >
             <ImageContainer
               src={url}
-              alt={`${homeName} - Plettenberg Bay`}
+              alt={`${homeName} - Image ${index + 1}`}
               width={1400}
               height={1000}
               cssClasses="object-cover h-full w-full"

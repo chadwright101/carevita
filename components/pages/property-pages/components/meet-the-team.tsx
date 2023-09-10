@@ -2,13 +2,11 @@ import Heading, { headingVariant } from "../../../heading";
 import ImageContainer from "@/components/utils/image-container";
 
 interface Props {
-  meetTheTeam: {
-    images: Array<{
-      position: string;
-      url: string;
-      teamMember: string;
-    }>;
-  };
+  meetTheTeam: Array<{
+    position: string;
+    url: string;
+    teamMember: string;
+  }>;
   homeName: string;
 }
 
@@ -17,7 +15,7 @@ const MeetTheTeam = ({ meetTheTeam, homeName }: Props) => {
     <div>
       <Heading variant={headingVariant.subheading}>Meet the team</Heading>
       <div className="flex flex-col items-center tablet:grid grid-cols-2 desktopSmall:flex desktopSmall:flex-row tabletLarge:flex-wrap justify-around gap-x-8 gap-y-10 desktop:gap-y-16 mt-16 tabletLarge:mt-10 desktop:justify-center">
-        {meetTheTeam.images.map(({ position, url, teamMember }, index) => (
+        {meetTheTeam.map(({ position, url, teamMember }, index) => (
           <div key={index}>
             <article className="flex flex-col items-center gap-8 max-w-[375px] tabletLarge:gap-6 desktop:max-w-full">
               <h4 className="text-larger text-center">{position}</h4>
@@ -36,7 +34,7 @@ const MeetTheTeam = ({ meetTheTeam, homeName }: Props) => {
               <p className="text-center text-larger">{teamMember}</p>
             </article>
 
-            {index < meetTheTeam.images.length - 1 && (
+            {index < meetTheTeam.length - 1 && (
               <hr className="text-black mt-10 tablet:hidden" />
             )}
           </div>

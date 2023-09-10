@@ -1,68 +1,42 @@
-{
-  "navigation": {
-    "desktop": [
+[
+  {
+    "title": "Home",
+    "url": "/"
+  },
+  {
+    "title": "Services",
+    "url": "/#services"
+  },
+  {
+    "title": "Our Homes",
+    "url": "/our-homes",
+    "homeSubmenu": [
       {
-        "title": "Home",
-        "url": "/"
+        "title": "The Crescent",
+        "extendedTitle": "The Crescent Retirement",
+        "location": "Plettenberg Bay, WC",
+        "url": "/our-homes/the-crescent"
       },
       {
-        "title": "Services",
-        "url": "/#services"
+        "title": "Eastlands Estate",
+        "extendedTitle": "Eastlands Mature Lifestyle Estate",
+        "location": "Benoni, GP",
+        "url": "/our-homes/eastlands"
       },
       {
-        "title": "Our Homes",
-        "url": "/our-homes",
-        "homeSubmenu": [
-          {
-            "title": "The Crescent",
-            "extendedTitle": "The Crescent Retirement",
-            "location": "Plettenberg Bay, WC",
-            "url": "/our-homes/the-crescent"
-          },
-          {
-            "title": "Eastlands Estate",
-            "extendedTitle": "Eastlands Mature Lifestyle Estate",
-            "location": "Benoni, GP",
-            "url": "/our-homes/eastlands"
-          },
-          {
-            "title": "Serene Park Centre",
-            "extendedTitle": "Serene Park Frail Care Centre",
-            "location": "Pretoria, GP",
-            "url": "/our-homes/serene-park"
-          }
-        ]
-      },
-      {
-        "title": "Blog",
-        "url": "/blog"
-      },
-      {
-        "title": "Contact",
-        "url": "/#contact"
-      }
-    ],
-    "mobile": [
-      {
-        "title": "Home",
-        "url": "/"
-      },
-      {
-        "title": "Services",
-        "url": "/#services"
-      },
-      {
-        "title": "Our Homes",
-        "url": "/our-homes"
-      },
-      {
-        "title": "Blog",
-        "url": "/blog"
-      },
-      {
-        "title": "Contact",
-        "url": "/#contact"
+        "title": "Serene Park Centre",
+        "extendedTitle": "Serene Park Frail Care Centre",
+        "location": "Pretoria, GP",
+        "url": "/our-homes/serene-park"
       }
     ]
+  },
+  {
+    "title": "Blog",
+    "url": "/blog"
+  },
+  {
+    "title": "Contact",
+    "url": "/#contact"
   }
-}
+]
