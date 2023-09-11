@@ -1,7 +1,8 @@
+import { useRouter } from "next/router";
 import { useState } from "react";
 import Link from "next/link";
 
-import ContactFormCrescentPage from "./contact-form-crescent";
+import HomeContactForm from "./home-contact-form";
 import Button from "../button";
 import ImageContainer from "../utils/image-container";
 
@@ -18,20 +19,21 @@ interface Props {
   serenePark?: boolean;
 }
 
-const ContactForm = ({
-  cssClasses,
-  crescent,
-  eastlands,
-  serenePark,
-}: Props) => {
+const ContactForm = ({ cssClasses }: Props) => {
+  const router = useRouter();
+  const currentPath = router.pathname;
   const [showCrescent, setShowCrescent] = useState(false);
   const [showEastlands, setShowEastlands] = useState(false);
   const [showSerenePark, setShowSerenePark] = useState(false);
   const [showAccountsEmail, setShowAccountsEmail] = useState(false);
   const [showGeneralEmail, setShowGeneralEmail] = useState(false);
 
-  if (crescent) {
-    return <ContactFormCrescentPage data={crescentData} />;
+  if (currentPath === "/our-homes/the-crescent") {
+    return <HomeContactForm data={crescentData} />;
+  } else if (currentPath === "/our-homes/eastlands") {
+    return <HomeContactForm data={eastlandsData} />;
+  } else if (currentPath === "/our-homes/serene-park") {
+    return <HomeContactForm data={sereneData} />;
   } else {
     return (
       <div className={`${cssClasses}`}>
@@ -524,7 +526,7 @@ const ContactForm = ({
               </div>
               <div className="overflow-hidden">
                 <ImageContainer
-                  src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/gallery/9U7A6120.jpg"
+                  src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6120.jpg"
                   alt="Contact The Crescent"
                   width={505}
                   height={680}
@@ -613,7 +615,7 @@ const ContactForm = ({
               </div>
               <div className="overflow-hidden">
                 <ImageContainer
-                  src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/_MG_9993.JPG"
+                  src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/Crescent-5.jpg"
                   alt="Contact Eastlands"
                   width={505}
                   height={680}
@@ -702,7 +704,7 @@ const ContactForm = ({
               </div>
               <div className="overflow-hidden">
                 <ImageContainer
-                  src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/placeholders/_MG_9890.jpg"
+                  src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/Crescent-5.jpg"
                   alt="Contact Serene Park"
                   width={505}
                   height={680}

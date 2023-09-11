@@ -1,11 +1,11 @@
-import Button from "../../../button";
+import Button from "../../button";
 
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 import "@splidejs/react-splide/css/core";
 
 import sliderList from "@/data/general-data.json";
-import Heading, { headingVariant } from "../../../heading";
+import Heading, { headingVariant } from "../../heading";
 import Layout from "@/components/layout";
 import ImageContainer from "@/components/utils/image-container";
 

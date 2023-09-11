@@ -40,7 +40,7 @@ const TheCrescent = () => {
           >
             <span className=" font-thin text-white">Contact</span> The Crescent
           </Heading>
-          <ContactForm crescent />
+          <ContactForm />
         </div>
       </section>
     </>

@@ -12,20 +12,20 @@ const OurHomes = () => {
     <>
       <Layout>
         <Heading variant={headingVariant.pageHeading}>Our Homes</Heading>
-        <main className="grid tabletLarge:grid-cols-2 tabletLarge:gap-10 desktop:grid-cols-3">
+        <main className="grid gap-y-12 gap-x-10 tabletLarge:gap-y-16 tabletLarge:grid-cols-2 tabletLarge:gap-10 desktop:grid-cols-3">
           <div>
             <HomeItem
               data={crescentData}
               featuredImage={crescentData.images.heroSlider[1]}
             />
-            <hr className="my-16 tablet:text-white tablet:my-10 desktop:my-5" />
+            <hr className="mt-16 tabletLarge:hidden" />
           </div>
           <div>
             <HomeItem
               data={eastlandsData}
               featuredImage={eastlandsData.images.heroSlider[0]}
             />
-            <hr className="my-16 tablet:text-white tablet:my-10 desktop:my-5" />
+            <hr className="mt-16 tabletLarge:hidden" />
           </div>
           <HomeItem
             data={sereneData}

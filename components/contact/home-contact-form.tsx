@@ -2,13 +2,19 @@ import { useState } from "react";
 import Link from "next/link";
 
 import Button from "@/components/button";
-import { DataProps } from "@/components/utils/data-props";
 
-interface Props extends DataProps {
+interface Props {
   cssClasses?: string;
+  data: {
+    general: {
+      email: string;
+      phone: string;
+      title: string;
+    };
+  };
 }
 
-const ContactFormCrescentPage = ({
+const HomeFormCrescentPage = ({
   data: {
     general: { email, phone, title },
   },
@@ -141,4 +147,4 @@ const ContactFormCrescentPage = ({
   );
 };
 
-export default ContactFormCrescentPage;
+export default HomeFormCrescentPage;

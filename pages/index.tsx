@@ -1,16 +1,18 @@
-import Hero from "@/components/pages/blog/home/hero";
-import About from "@/components/pages/blog/home/about";
+import Hero from "@/components/pages/home/hero";
+import About from "@/components/pages/home/about";
 import Layout from "@/components/layout";
-import Services from "@/components/pages/blog/home/services";
-import OurHomes from "@/components/pages/blog/home/our-homes";
+import Services from "@/components/pages/home/services";
+import OurHomes from "@/components/pages/home/our-homes";
 import Contact from "@/components/contact/contact";
+
+import generalData from "@/data/general-data.json";
 
 const Home = () => {
   return (
     <>
       <Hero />
       <Layout>
-        <About cssClasses="my-16" />
+        <About cssClasses="my-16" data={generalData} />
         <div
           id="services"
           className="-translate-y-36 tablet:-translate-y-40 desktop:-translate-y-36"

@@ -1,6 +1,7 @@
 import Head from "next/head";
+import { DataProps } from "../utils/data-props";
 
-interface Props {
+interface Props extends DataProps {
   pageName?: string;
 }
 
