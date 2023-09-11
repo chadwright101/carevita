@@ -23,7 +23,7 @@ const Footer = ({ cssClasses, border }: Props) => {
         <div className="w-full max-w-[1400px] flex justify-center tabletLarge:justify-between items-center">
           <nav className="hidden tabletLarge:flex">
             <ul>
-              {navigation.map(({ title, url }, index) => (
+              {navigation.general.map(({ title, url }, index) => (
                 <li key={index}>
                   <Link href={url} className=" hover:font-light">
                     {title}

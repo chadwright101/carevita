@@ -23,7 +23,7 @@ const PageItemGallerySlider = ({ imageList, homeName }) => {
           speed: 2000,
           interval: 6500,
           autoplay: true,
-          dragMinThreshold: 10,
+          dragMinThreshold: { mouse: 50, touch: 150 },
           breakpoints: {
             900: {
               arrows: false,

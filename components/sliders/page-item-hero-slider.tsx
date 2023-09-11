@@ -16,7 +16,7 @@ const PageItemHeroSlider = ({ imageList, homeName }: Props) => {
         type: "fade",
         interval: 5000,
         rewind: true,
-        dragMinThreshold: 10,
+        dragMinThreshold: { mouse: 50, touch: 150 },
         breakpoints: {
           900: {
             arrows: false,

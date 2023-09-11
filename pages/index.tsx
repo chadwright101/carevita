@@ -15,15 +15,15 @@ const Home = () => {
         <About cssClasses="my-16" data={generalData} />
         <div
           id="services"
-          className="-translate-y-36 tablet:-translate-y-40 desktop:-translate-y-36"
+          className="-translate-y-28 tablet:-translate-y-32 desktop:-translate-y-28"
         ></div>
         <Services />
       </Layout>
-      <OurHomes cssClasses="my-16" />
       <div
-        id="contact"
-        className="-translate-y-36 tablet:-translate-y-36 desktop:-translate-y-32"
+        id="gallery"
+        className="-translate-y-28 tablet:-translate-y-32 desktop:-translate-y-28"
       ></div>
+      <OurHomes cssClasses="my-16" />
       <Contact />
     </>
   );

@@ -32,6 +32,10 @@ const TheCrescent = () => {
         <hr className="text-black my-16" />
         <Fit cssClasses="mb-16" />
       </Layout>
+      <div
+        id="contact"
+        className="-translate-y-28 tablet:-translate-y-32 desktop:-translate-y-28"
+      ></div>
       <section className="px-6 tabletLarge:px-12 pt-10 pb-12 bg-blue">
         <div className="w-full max-w-[1400px] mx-auto">
           <Heading

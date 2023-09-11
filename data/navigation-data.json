@@ -1,42 +1,210 @@
-[
-  {
-    "title": "Home",
-    "url": "/"
-  },
-  {
-    "title": "Services",
-    "url": "/#services"
-  },
-  {
-    "title": "Our Homes",
-    "url": "/our-homes",
-    "homeSubmenu": [
-      {
-        "title": "The Crescent",
-        "extendedTitle": "The Crescent Retirement",
-        "location": "Plettenberg Bay, WC",
-        "url": "/our-homes/the-crescent"
-      },
-      {
-        "title": "Eastlands Estate",
-        "extendedTitle": "Eastlands Mature Lifestyle Estate",
-        "location": "Benoni, GP",
-        "url": "/our-homes/eastlands"
-      },
-      {
-        "title": "Serene Park Centre",
-        "extendedTitle": "Serene Park Frail Care Centre",
-        "location": "Pretoria, GP",
-        "url": "/our-homes/serene-park"
-      }
-    ]
-  },
-  {
-    "title": "Blog",
-    "url": "/blog"
-  },
-  {
-    "title": "Contact",
-    "url": "/#contact"
-  }
-]
+{
+  "general": [
+    {
+      "title": "Home",
+      "url": "/"
+    },
+    {
+      "title": "Services",
+      "url": "/#services"
+    },
+    {
+      "title": "Gallery",
+      "url": "/#gallery"
+    },
+    {
+      "title": "Our Homes",
+      "url": "/our-homes",
+      "homeSubmenu": [
+        {
+          "title": "The Crescent",
+          "extendedTitle": "The Crescent Retirement",
+          "location": "Plettenberg Bay, WC",
+          "url": "/our-homes/the-crescent"
+        },
+        {
+          "title": "Eastlands Estate",
+          "extendedTitle": "Eastlands Mature Lifestyle Estate",
+          "location": "Benoni, GP",
+          "url": "/our-homes/eastlands"
+        },
+        {
+          "title": "Serene Park Centre",
+          "extendedTitle": "Serene Park Frail Care Centre",
+          "location": "Pretoria, GP",
+          "url": "/our-homes/serene-park"
+        }
+      ]
+    },
+    {
+      "title": "Blog",
+      "url": "/blog"
+    },
+    {
+      "title": "Contact",
+      "url": "/#contact"
+    }
+  ],
+  "crescent": [
+    {
+      "title": "Home",
+      "url": "/"
+    },
+    {
+      "title": "About",
+      "url": "/our-homes/the-crescent/#about"
+    },
+    {
+      "title": "Staff",
+      "url": "/our-homes/the-crescent/#staff"
+    },
+    {
+      "title": "Gallery",
+      "url": "/our-homes/the-crescent/#gallery"
+    },
+    {
+      "title": "Location",
+      "url": "/our-homes/the-crescent/#location"
+    },
+    {
+      "title": "Our Homes",
+      "url": "/our-homes",
+      "homeSubmenu": [
+        {
+          "title": "The Crescent",
+          "extendedTitle": "The Crescent Retirement",
+          "location": "Plettenberg Bay, WC",
+          "url": "/our-homes/the-crescent"
+        },
+        {
+          "title": "Eastlands Estate",
+          "extendedTitle": "Eastlands Mature Lifestyle Estate",
+          "location": "Benoni, GP",
+          "url": "/our-homes/eastlands"
+        },
+        {
+          "title": "Serene Park Centre",
+          "extendedTitle": "Serene Park Frail Care Centre",
+          "location": "Pretoria, GP",
+          "url": "/our-homes/serene-park"
+        }
+      ]
+    },
+    {
+      "title": "Blog",
+      "url": "/blog"
+    },
+    {
+      "title": "Contact",
+      "url": "/our-homes/the-crescent/#contact"
+    }
+  ],
+  "eastlands": [
+    {
+      "title": "Home",
+      "url": "/"
+    },
+    {
+      "title": "About",
+      "url": "/our-homes/eastlands/#about"
+    },
+    {
+      "title": "Staff",
+      "url": "/our-homes/eastlands/#staff"
+    },
+    {
+      "title": "Gallery",
+      "url": "/our-homes/eastlands/#gallery"
+    },
+    {
+      "title": "Location",
+      "url": "/our-homes/eastlands/#location"
+    },
+    {
+      "title": "Our Homes",
+      "url": "/our-homes",
+      "homeSubmenu": [
+        {
+          "title": "The Crescent",
+          "extendedTitle": "The Crescent Retirement",
+          "location": "Plettenberg Bay, WC",
+          "url": "/our-homes/the-crescent"
+        },
+        {
+          "title": "Eastlands Estate",
+          "extendedTitle": "Eastlands Mature Lifestyle Estate",
+          "location": "Benoni, GP",
+          "url": "/our-homes/eastlands"
+        },
+        {
+          "title": "Serene Park Centre",
+          "extendedTitle": "Serene Park Frail Care Centre",
+          "location": "Pretoria, GP",
+          "url": "/our-homes/serene-park"
+        }
+      ]
+    },
+    {
+      "title": "Blog",
+      "url": "/blog"
+    },
+    {
+      "title": "Contact",
+      "url": "/our-homes/eastlands/#contact"
+    }
+  ],
+  "serene": [
+    {
+      "title": "Home",
+      "url": "/"
+    },
+    {
+      "title": "About",
+      "url": "/our-homes/serene-park/#about"
+    },
+    {
+      "title": "Staff",
+      "url": "/our-homes/serene-park/#staff"
+    },
+    {
+      "title": "Gallery",
+      "url": "/our-homes/serene-park/#gallery"
+    },
+    {
+      "title": "Location",
+      "url": "/our-homes/serene-park/#location"
+    },
+    {
+      "title": "Our Homes",
+      "url": "/our-homes",
+      "homeSubmenu": [
+        {
+          "title": "The Crescent",
+          "extendedTitle": "The Crescent Retirement",
+          "location": "Plettenberg Bay, WC",
+          "url": "/our-homes/the-crescent"
+        },
+        {
+          "title": "Eastlands Estate",
+          "extendedTitle": "Eastlands Mature Lifestyle Estate",
+          "location": "Benoni, GP",
+          "url": "/our-homes/eastlands"
+        },
+        {
+          "title": "Serene Park Centre",
+          "extendedTitle": "Serene Park Frail Care Centre",
+          "location": "Pretoria, GP",
+          "url": "/our-homes/serene-park"
+        }
+      ]
+    },
+    {
+      "title": "Blog",
+      "url": "/blog"
+    },
+    {
+      "title": "Contact",
+      "url": "/our-homes/serene-park/#contact"
+    }
+  ]
+}

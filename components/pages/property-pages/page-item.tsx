@@ -32,13 +32,33 @@ const PageItem = ({
       <Layout>
         <main>
           <div className="flex flex-col gap-16 mt-16">
-            <About about={about} general={general} whatWeOffer={whatWeOffer} />
-            <MeetTheTeam
-              meetTheTeam={meetTheTeam}
-              homeName={general.extendedTitle}
-            />
+            <div>
+              <div
+                id="about"
+                className="-translate-y-28 tablet:-translate-y-32 desktop:-translate-y-28"
+              ></div>
+              <About
+                about={about}
+                general={general}
+                whatWeOffer={whatWeOffer}
+              />
+            </div>
+            <div>
+              <div
+                id="staff"
+                className="-translate-y-28 tablet:-translate-y-32 desktop:-translate-y-28"
+              ></div>
+              <MeetTheTeam
+                meetTheTeam={meetTheTeam}
+                homeName={general.extendedTitle}
+              />
+            </div>
           </div>
         </main>
+        <div
+          id="gallery"
+          className="-translate-y-12 tablet:-translate-y-16 desktop:-translate-y-12"
+        ></div>
         <article className="my-16">
           <Heading variant={headingVariant.subheading}>Gallery</Heading>
           <PageItemGallerySlider
@@ -46,6 +66,10 @@ const PageItem = ({
             homeName={general.extendedTitle}
           />
         </article>
+        <div
+          id="location"
+          className="-translate-y-28 tablet:-translate-y-32 desktop:-translate-y-28"
+        ></div>
         <article>
           <Heading variant={headingVariant.subheading}>Location</Heading>
           {general.description && <p>{general.description}</p>}
