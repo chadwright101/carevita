@@ -21,9 +21,13 @@ const Home = () => {
       </Layout>
       <div
         id="gallery"
-        className="-translate-y-28 tablet:-translate-y-32 desktop:-translate-y-28"
+        className="-translate-y-12 tablet:-translate-y-16 desktop:-translate-y-12"
       ></div>
       <OurHomes cssClasses="my-16" />
+      <div
+        id="contact"
+        className="-translate-y-28 tablet:-translate-y-32 desktop:-translate-y-28"
+      ></div>
       <Contact />
     </>
   );
