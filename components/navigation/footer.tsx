@@ -55,7 +55,7 @@ const Footer = ({ cssClasses, border }: Props) => {
             </p>
           </div>
         </div>
-        <hr className="w-1/2 desktopSmall:w-1/3" />
+        <hr className="w-1/2 desktopSmall:w-1/4 desktop:w-1/6" />
         <p className="tabletLarge:text-[16px] grid place-items-center gap-0.5">
           © CareVita {currentYear}
           <Link

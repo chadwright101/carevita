@@ -36,7 +36,7 @@ const HomeItem = ({
         alt={`${title} - ${extendedLocation}`}
         width={1000}
         height={750}
-        cssClasses="object-cover h-[225px] phone:h-[300px] tablet:h-[380px] tabletLarge:h-[280px] desktop:h-[250px]"
+        cssClasses="object-cover h-[225px] phone:h-[300px] tablet:h-[380px] tabletLarge:h-[280px] desktop:h-[325px]"
         smallest={90}
         tablet={80}
         desktopSmall={40}
@@ -44,7 +44,7 @@ const HomeItem = ({
         eager
         url={homeUrl}
       />
-      <p className="desktop:h-[235px]">{description}</p>
+      <p className="desktop:h-[135px]">{description}</p>
       <Button url={homeUrl} cssClasses="mx-auto"></Button>
     </article>
   );
