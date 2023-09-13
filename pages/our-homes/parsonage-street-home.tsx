@@ -6,16 +6,16 @@ import Layout from "@/components/layout";
 import Fit from "@/components/pages/property-pages/components/#fit";
 import ImageContainer from "@/components/utils/image-container";
 
-import crescentData from "@/data/crescent-data.json";
+import parsonageData from "@/data/parsonage-data.json";
 
 const TheCrescent = () => {
   const {
     general: { title },
     images: { gallerySlider },
-  } = crescentData;
+  } = parsonageData;
   return (
     <>
-      <IndividualHomesPageItem data={crescentData} />
+      <IndividualHomesPageItem data={parsonageData} />
       <Layout>
         <div className="desktopSmall:grid grid-cols-2 gap-10  mt-10">
           <ImageContainer

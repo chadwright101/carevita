@@ -33,6 +33,12 @@
           "extendedTitle": "Serene Park Frail Care Centre",
           "location": "Pretoria, GP",
           "url": "/our-homes/serene-park"
+        },
+        {
+          "title": "Parsonage Street",
+          "extendedTitle": "Parsonage Street Home for the Aged",
+          "location": "Graaff Reinet, EC",
+          "url": "/our-homes/parsonage-street-home"
         }
       ]
     },
@@ -87,6 +93,12 @@
           "extendedTitle": "Serene Park Frail Care Centre",
           "location": "Pretoria, GP",
           "url": "/our-homes/serene-park"
+        },
+        {
+          "title": "Parsonage Street",
+          "extendedTitle": "Parsonage Street Home for the Aged",
+          "location": "Graaff Reinet, EC",
+          "url": "/our-homes/parsonage-street-home"
         }
       ]
     },
@@ -141,6 +153,12 @@
           "extendedTitle": "Serene Park Frail Care Centre",
           "location": "Pretoria, GP",
           "url": "/our-homes/serene-park"
+        },
+        {
+          "title": "Parsonage Street",
+          "extendedTitle": "Parsonage Street Home for the Aged",
+          "location": "Graaff Reinet, EC",
+          "url": "/our-homes/parsonage-street-home"
         }
       ]
     },
@@ -195,6 +213,12 @@
           "extendedTitle": "Serene Park Frail Care Centre",
           "location": "Pretoria, GP",
           "url": "/our-homes/serene-park"
+        },
+        {
+          "title": "Parsonage Street",
+          "extendedTitle": "Parsonage Street Home for the Aged",
+          "location": "Graaff Reinet, EC",
+          "url": "/our-homes/parsonage-street-home"
         }
       ]
     },
@@ -205,6 +229,66 @@
     {
       "title": "Contact",
       "url": "/our-homes/serene-park/#contact"
+    }
+  ],
+  "parsonage": [
+    {
+      "title": "Home",
+      "url": "/"
+    },
+    {
+      "title": "About",
+      "url": "/our-homes/parsonage-street-home/#about"
+    },
+    {
+      "title": "Staff",
+      "url": "/our-homes/parsonage-street-home/#staff"
+    },
+    {
+      "title": "Gallery",
+      "url": "/our-homes/parsonage-street-home/#gallery"
+    },
+    {
+      "title": "Location",
+      "url": "/our-homes/parsonage-street-home/#location"
+    },
+    {
+      "title": "Our Homes",
+      "url": "/our-homes",
+      "homeSubmenu": [
+        {
+          "title": "The Crescent",
+          "extendedTitle": "The Crescent Retirement",
+          "location": "Plettenberg Bay, WC",
+          "url": "/our-homes/the-crescent"
+        },
+        {
+          "title": "Eastlands Estate",
+          "extendedTitle": "Eastlands Mature Lifestyle Estate",
+          "location": "Benoni, GP",
+          "url": "/our-homes/eastlands"
+        },
+        {
+          "title": "Serene Park Centre",
+          "extendedTitle": "Serene Park Frail Care Centre",
+          "location": "Pretoria, GP",
+          "url": "/our-homes/serene-park"
+        },
+        {
+          "title": "Parsonage Street",
+          "extendedTitle": "Parsonage Street Home for the Aged",
+          "location": "Graaff Reinet, EC",
+          "url": "/our-homes/parsonage-street-home"
+        }
+      ]
+    },
+    {
+      "title": "Blog",
+      "url": "/blog"
+    },
+    {
+      "title": "Contact",
+      "url": "/our-homes/parsonage-street-home/#contact"
     }
   ]
 }

@@ -21,7 +21,7 @@ const PageItemGallerySlider = ({ imageList, homeName }) => {
           rewind: true,
           pagination: false,
           speed: 2000,
-          interval: 6500,
+          interval: 5500,
           autoplay: true,
           dragMinThreshold: { mouse: 50, touch: 150 },
           breakpoints: {

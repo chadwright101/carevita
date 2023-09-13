@@ -37,7 +37,7 @@
       "Specially designed games",
       "Swimming laps in the indoor heated pool"
     ],
-    "image": ""
+    "image": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4662.jpg"
   },
   "about": {
     "paragraphs": [
@@ -48,61 +48,70 @@
       "Our care team is comprised of qualified nurses and care workers, while the in-house physiotherapist and general practitioner take care of all the residents' health needs. All our meals are made in-house with each resident's dietary requirements taken into account.",
       "Eastlands is truly an icon in Gauteng where residents experience a warm homely home in their golden years."
     ],
-    "image": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6167.jpg"
+    "image": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4496.jpg"
   },
   "meetTheTeam": [
     {
       "position": "Facility manager",
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6010.jpg",
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4871.jpg",
       "teamMember": "Jumiree Jansen"
     },
     {
       "position": "Head Staff Nurse",
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6032.jpg",
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4872.jpg",
       "teamMember": "Emelio Phekula"
     },
     {
       "position": "Head Chef",
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6004.jpg",
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4777.jpg",
       "teamMember": "Clayton Van Wyk"
     },
     {
       "position": "Supervisor",
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6039.jpg",
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4778.jpg",
+      "teamMember": "Jennifer September"
+    },
+    {
+      "position": "Supervisor",
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A5510.jpg",
       "teamMember": "Jennifer September"
     }
   ],
 
   "images": {
     "heroSlider": [
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6120.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6201-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6283.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6627.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6384.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/DJI_0961.jpg"
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4551-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4326-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4582.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4753.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4173-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4494.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/DJI_0535.jpg"
     ],
     "gallerySlider": [
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/DJI_0961.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6582.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6627.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6242.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/staff-combined.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6120.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6145.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6189-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6201-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6209-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6229-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6221-HDR-Edit.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6382.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6417.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6466.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6293-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6301-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6331-HDR-Edit.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6355-HDR-Edit.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6471-HDR.jpg"
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4188-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4272-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4877.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4662.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4326-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A5505.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/DJI_0527.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4822.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4611.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4706.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4417.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4376-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A5490.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/DJI_0551.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A5481.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/DJI_0547.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4697.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4633-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4532-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/DJI_0551.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4648-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4525.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/DJI_0542.jpg"
     ]
   }
 }
