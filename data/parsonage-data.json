@@ -7,74 +7,68 @@
     "email": "parsonage@carevita.co.za",
     "phone": "044 533 1234",
     "homeUrl": "our-homes/parsonage-street-home",
-    "description": ""
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore consectetur sit eum nemo sint assumenda dolorum ea, ipsam earum? Iusto beatae sapiente blanditiis sed est recusandae suscipit earum adipisci. Quos harum et perspiciatis consectetur. Dolor fugiat totam quae nam modi tenetur debitis! Eum ratione natus ipsam earum possimus. Deserunt delectus aspernatur reiciendis. Ullam debitis numquam dolores magni? Suscipit nam nobis quam, recusandae praesentium dignissimos dicta itaque consequuntur, ad nemo, esse sunt ipsam cum eveniet soluta."
   },
   "whatWeOffer": {
-    "list": [""],
-    "pampering": [""],
-    "weeklyActivities": [""],
-    "image": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6471-HDR.jpg"
+    "list": ["Item 1", "Item 2", "Item 3"],
+    "pampering": ["Item 1", "Item 2", "Item 3"],
+    "weeklyActivities": ["Item 1", "Item 2", "Item 3"],
+    "image": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3635.jpg"
   },
   "about": {
-    "paragraphs": [""],
-    "image": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6167.jpg"
+    "paragraphs": [
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore consectetur sit eum nemo sint assumenda dolorum ea, ipsam earum? Iusto beatae sapiente blanditiis sed est recusandae suscipit earum adipisci. Quos harum et perspiciatis consectetur. Dolor fugiat totam quae nam modi tenetur debitis! Eum ratione natus ipsam earum possimus. Deserunt delectus aspernatur reiciendis. Ullam debitis numquam dolores magni? Suscipit nam nobis quam, recusandae praesentium dignissimos dicta itaque consequuntur, ad nemo, esse sunt ipsam cum eveniet soluta.",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nulla ad sint laboriosam veniam nihil iste quos repudiandae eaque natus. Aspernatur odit quos ducimus consequatur ut aperiam rem cumque ipsum ex asperiores iste qui hic soluta, ab, optio accusamus totam consectetur officiis a! Reprehenderit nemo nesciunt corrupti facere sunt vel!"
+    ],
+    "image": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3786.jpg"
   },
 
   "meetTheTeam": [
     {
-      "position": "Facility manager",
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6010.jpg",
-      "teamMember": "Jumiree Jansen"
+      "position": "Kitchen & Cleaning Manager",
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3775.jpg",
+      "teamMember": "Ria Pretorius"
     },
     {
       "position": "Head Staff Nurse",
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6631.jpg",
-      "teamMember": "Pamela Knepscheld"
-    },
-    {
-      "position": "Head Chef",
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6004.jpg",
-      "teamMember": "Clayton Van Wyk"
-    },
-    {
-      "position": "Supervisor",
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6039.jpg",
-      "teamMember": "Jennifer September"
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A4055.jpg",
+      "teamMember": "Sr. Elke Hoskin"
     }
   ],
   "images": {
     "heroSlider": [
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6283.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/Crescent-2.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6627.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6384.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6120.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6201-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/DJI_0968.jpg"
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3469.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3773.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/DJI_0514.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3836.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3634.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3408-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3852.jpg"
     ],
     "gallerySlider": [
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/Crescent-2.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6582.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6627.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6242.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/staff-combined.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6120.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6145.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6189-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6201-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6209-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6229-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6221-HDR-Edit.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6382.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6417.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6466.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6293-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6301-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6331-HDR-Edit.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6355-HDR-Edit.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6471-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/Crescent-5.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/DJI_0961.jpg"
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/DJI_0505.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3997.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3480-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A4016.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3773.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3804.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/DJI_0494.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3384-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3470.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3638.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3412-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3870.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/DJI_0499.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A4100.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3709.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A4022.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3436-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/DJI_0493.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3573-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3603-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3724.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A4098.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3558.jpg"
     ]
   }
 }
