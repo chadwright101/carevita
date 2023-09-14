@@ -25,9 +25,9 @@ const MeetTheTeam = ({ meetTheTeam, homeName }: Props) => {
                 width={400}
                 height={400}
                 cssClasses="object-cover w-[325px] h-[400px] desktop:w-[400px] desktop:h-[500px]"
-                smallest={50}
-                phone={50}
-                tablet={30}
+                smallest={90}
+                phone={70}
+                tablet={40}
                 desktopSmall={25}
                 desktop={20}
               />

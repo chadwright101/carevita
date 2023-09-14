@@ -34,10 +34,13 @@ const Header = ({ cssClasses }: Props) => {
             alt="CareVita logo"
             width={80}
             height={120}
-            cssClasses={classNames("ease-in-out duration-300 delay-[10ms]", {
-              "w-[80px] h-auto": scrollPosition === 0,
-              "w-[64px] h-auto": scrollPosition > 0,
-            })}
+            cssClasses={classNames(
+              "ease-in-out duration-300 delay-[10ms] h-auto",
+              {
+                "w-[80px]": scrollPosition === 0,
+                "w-[64px]": scrollPosition > 0,
+              }
+            )}
             smallest={30}
             phone={20}
             desktopSmall={10}
@@ -154,9 +157,9 @@ const Header = ({ cssClasses }: Props) => {
               alt="CareVita logo"
               width={80}
               height={120}
-              className={classNames("transition-all", {
-                "w-[80px] h-auto": scrollPosition === 0,
-                "w-14 h-auto": scrollPosition > 0,
+              className={classNames("transition-all h-auto", {
+                "w-[80px]": scrollPosition === 0,
+                "w-14": scrollPosition > 0,
               })}
               priority
               sizes="(max-width: 900px) 65px, (max-width: 1400px) 65px, 65px"
