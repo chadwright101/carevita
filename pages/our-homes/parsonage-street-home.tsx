@@ -19,7 +19,7 @@ const TheCrescent = () => {
       <Layout>
         <div className="desktopSmall:grid grid-cols-2 gap-10  mt-10">
           <ImageContainer
-            src={gallerySlider[21]}
+            src={gallerySlider[6]}
             alt={title}
             width={700}
             height={400}
