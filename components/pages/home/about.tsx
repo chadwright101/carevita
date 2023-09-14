@@ -41,7 +41,7 @@ const About = ({
             desktop={30}
           />
           <ImageContainer
-            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6543.jpg"
+            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4662.jpg"
             alt="Carevita - About us"
             width={900}
             height={450}

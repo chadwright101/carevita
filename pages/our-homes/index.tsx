@@ -137,7 +137,7 @@ const OurHomes = () => {
               </div>
               <HomeItem
                 data={sereneData}
-                featuredImage={sereneData.images.heroSlider[2]}
+                featuredImage={sereneData.images.heroSlider[1]}
               />
             </>
           )}
