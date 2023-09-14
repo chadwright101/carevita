@@ -877,7 +877,7 @@ const HomePageContactForm = () => {
             </div>
             <div className="overflow-hidden">
               <ImageContainer
-                src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/Crescent-5.jpg"
+                src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A5003-HDR.jpg"
                 alt="Contact Serene Park"
                 width={505}
                 height={680}
