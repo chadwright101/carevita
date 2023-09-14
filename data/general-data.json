@@ -25,6 +25,28 @@
       "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6466.jpg",
       "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6293-HDR.jpg",
       "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6331-HDR-Edit.jpg"
-    ]
+    ],
+    "meta": {
+      "title": "Home - CareVita",
+      "description": "CareVita was founded in 2018 with the main purpose of breathing new life into the Retirement Management Sector.",
+      "keywords": "CareVita, Retirement, retirement home, frail care, elderly care, caregiving, nursing, nursing services, supporting services, catering services, retirement estate",
+      "images": [""]
+    }
+  },
+  "blog": {
+    "meta": {
+      "title": "Blog - CareVita",
+      "description": "CareVita was founded in 2018 with the main purpose of breathing new life into the Retirement Management Sector.",
+      "keywords": "blog, CareVita, Retirement, retirement home, frail care, elderly care, caregiving, nursing, nursing services, supporting services, catering services, retirement estate",
+      "images": [""]
+    }
+  },
+  "ourHomes": {
+    "meta": {
+      "title": "Our Homes - CareVita",
+      "description": "CareVita was founded in 2018 with the main purpose of breathing new life into the Retirement Management Sector.",
+      "keywords": "our homes, CareVita, Retirement, retirement home, frail care, elderly care, caregiving, nursing, nursing services, supporting services, catering services, retirement estate",
+      "images": [""]
+    }
   }
 }

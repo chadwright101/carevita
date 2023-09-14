@@ -5,6 +5,7 @@ import MeetTheTeam from "./components/meet-the-team";
 import PageItemGallerySlider from "../../sliders/page-item-gallery-slider";
 import PageItemHeroSlider from "../../sliders/page-item-hero-slider";
 import Layout from "@/components/layout";
+import MetaComponent from "../meta-component";
 
 const PageItem = ({
   data: {
@@ -17,6 +18,7 @@ const PageItem = ({
 }: DataProps) => {
   return (
     <>
+      <MetaComponent general={general} />
       <Layout>
         <Heading variant={headingVariant.pageHeading}>
           {general.extendedTitle}

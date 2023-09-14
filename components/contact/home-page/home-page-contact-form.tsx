@@ -525,7 +525,7 @@ const HomePageContactForm = () => {
             }}
             extendedTitle={crescentData.general.title}
             location={crescentData.general.location}
-            cssClasses={classNames("transition-all text-left", {
+            cssClasses={classNames("ease-in-out duration-300 text-left", {
               "hover:scale-105 hover:-mb-[10px]": !showCrescent,
               "border-b-2 border-white pb-2 -mb-[10px]": showCrescent,
             })}
@@ -547,7 +547,7 @@ const HomePageContactForm = () => {
             }}
             extendedTitle={eastlandsData.general.title}
             location={eastlandsData.general.location}
-            cssClasses={classNames("transition-all", {
+            cssClasses={classNames("ease-in-out duration-300", {
               "hover:scale-105 hover:-mb-[10px]": !showEastlands,
               "border-b-2 border-white pb-2 -mb-[10px]": showEastlands,
             })}
@@ -569,7 +569,7 @@ const HomePageContactForm = () => {
             }}
             extendedTitle={sereneData.general.title}
             location={sereneData.general.location}
-            cssClasses={classNames("transition-all", {
+            cssClasses={classNames("ease-in-out duration-300", {
               "hover:scale-105 hover:-mb-[10px]": !showSerenePark,
               "border-b-2 border-white pb-2 -mb-[10px]": showSerenePark,
             })}
@@ -591,7 +591,7 @@ const HomePageContactForm = () => {
             }}
             extendedTitle={parsonageData.general.title}
             location={parsonageData.general.location}
-            cssClasses={classNames("transition-all", {
+            cssClasses={classNames("ease-in-out duration-300", {
               "hover:scale-105 hover:-mb-[10px]": !showParsonage,
               "border-b-2 border-white pb-2 -mb-[10px]": showParsonage,
             })}

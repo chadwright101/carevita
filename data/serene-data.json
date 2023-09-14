@@ -7,7 +7,12 @@
     "email": "serenepark@carevita.co.za",
     "phone": "1234567890",
     "homeUrl": "our-homes/serene-park",
-    "description": "Serene Park, a beautiful home close to Menlyn Maine and Menlyn Park Shopping Centre in Pretoria has been in operation since 1987. The home is set within tranquil gardens and offers a variety of different types of accommodation and th healthcare facility offers a full service to residents."
+    "description": "Serene Park, a beautiful home close to Menlyn Maine and Menlyn Park Shopping Centre in Pretoria has been in operation since 1987. The home is set within tranquil gardens and offers a variety of different types of accommodation and th healthcare facility offers a full service to residents.",
+    "meta": {
+      "title": "CareVita",
+      "keywords": "CareVita, Retirement, retirement home, frail care, elderly care, caregiving, nursing, nursing services, supporting services, catering services, retirement estate",
+      "images": [""]
+    }
   },
   "whatWeOffer": {
     "list": [

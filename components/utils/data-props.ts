@@ -9,6 +9,10 @@ export interface DataProps {
       phone: string;
       homeUrl: string;
       description?: string;
+      meta: {
+        keywords: string;
+        images: string[];
+      };
     };
     whatWeOffer: {
       list: Array<string>;
