@@ -48,5 +48,11 @@
       "keywords": "our homes, CareVita, Retirement, retirement home, frail care, elderly care, caregiving, nursing, nursing services, supporting services, catering services, retirement estate",
       "images": [""]
     }
+  },
+  "social": {
+    "facebook": {
+      "url": "https://www.facebook.com/CareLifeRetirement",
+      "image": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/facebook-logo.png"
+    }
   }
 }

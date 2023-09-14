@@ -4,6 +4,8 @@ import Link from "next/link";
 import navigation from "../../data/navigation-data.json";
 import ImageContainer from "../utils/image-container";
 
+import generalData from "@/data/general-data.json";
+
 interface Props {
   cssClasses?: string;
   border?: boolean;
@@ -29,9 +31,37 @@ const Footer = ({ cssClasses, border }: Props) => {
                   </Link>
                 </li>
               ))}
+              <li className="mt-2">
+                <Link
+                  href={generalData.social.facebook.url}
+                  className="hidden tabletLarge:block desktopSmall:hover:scale-105 desktopSmall:hover:opacity-[85%] transition-all duration-500"
+                  target="_blank"
+                >
+                  <Image
+                    src={generalData.social.facebook.image}
+                    alt="Facebook logo"
+                    width={35}
+                    height={35}
+                    className="tablet:w-[35px] h-auto"
+                  />
+                </Link>
+              </li>
             </ul>
           </nav>
           <div className="flex flex-col gap-4 items-center tabletLarge:items-end tabletLarge:gap-1">
+            <Link
+              href={generalData.social.facebook.url}
+              className="p-3 -m-3 tabletLarge:hidden"
+              target="_blank"
+            >
+              <Image
+                src={generalData.social.facebook.image}
+                alt="Facebook logo"
+                width={45}
+                height={45}
+                className="tablet:w-[40px] h-auto"
+              />
+            </Link>
             <ImageContainer
               src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/carevita-logo.png"
               alt="CareVita logo"
@@ -43,7 +73,7 @@ const Footer = ({ cssClasses, border }: Props) => {
               desktopSmall={10}
               desktop={10}
             />
-            <p className="text-[16px] flex flex-col items-center tabletLarge:items-end tabletLarge:text-right tabletLarge:text-[15px]">
+            <p className="text-[16px] flex flex-col items-center tabletLarge:items-end tabletLarge:text-right tabletLarge:mt-2 tabletLarge:text-[15px]">
               Designed & developed by:
               <a
                 href="https://www.thewrightdesigns.co.za"

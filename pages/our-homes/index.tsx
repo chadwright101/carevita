@@ -131,7 +131,7 @@ const OurHomes = () => {
               <div>
                 <HomeItem
                   data={eastlandsData}
-                  featuredImage="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/DJI_0549.jpg"
+                  featuredImage={eastlandsData.images.heroSlider[0]}
                 />
                 <hr className="mt-16 tabletLarge:hidden" />
               </div>
