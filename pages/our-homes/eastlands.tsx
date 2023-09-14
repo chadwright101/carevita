@@ -1,5 +1,4 @@
 import IndividualHomesPageItem from "@/components/pages/property-pages/page-item";
-import CrescentMap from "@/components/contact/maps/crescent-map";
 import Heading, { headingVariant } from "@/components/heading";
 import ContactForm from "@/components/contact/contact-form";
 import Layout from "@/components/layout";
@@ -7,6 +6,7 @@ import Fit from "@/components/pages/property-pages/components/#fit";
 import ImageContainer from "@/components/utils/image-container";
 
 import eastlandsData from "@/data/eastlands-data.json";
+import EastlandsMap from "@/components/contact/maps/eastlands-map";
 
 const TheCrescent = () => {
   const {
@@ -27,7 +27,7 @@ const TheCrescent = () => {
             desktopSmall={50}
             desktop={40}
           />
-          <CrescentMap cssClasses="w-full h-[400px] tabletLarge:h-[500px]" />
+          <EastlandsMap cssClasses="w-full h-[400px] tabletLarge:h-[500px]" />
         </div>
         <hr className="text-black my-16" />
         <Fit cssClasses="mb-16" />

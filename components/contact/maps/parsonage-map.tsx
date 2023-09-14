@@ -4,7 +4,7 @@ interface Props {
   cssClasses?: string;
 }
 
-const CrescentMap = ({ cssClasses }: Props) => {
+const ParsonageMap = ({ cssClasses }: Props) => {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
   });
@@ -25,4 +25,4 @@ const CrescentMap = ({ cssClasses }: Props) => {
   );
 };
 
-export default CrescentMap;
+export default ParsonageMap;

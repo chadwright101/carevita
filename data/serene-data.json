@@ -9,9 +9,12 @@
     "homeUrl": "our-homes/serene-park",
     "description": "Serene Park, a beautiful home close to Menlyn Maine and Menlyn Park Shopping Centre in Pretoria has been in operation since 1987. The home is set within tranquil gardens and offers a variety of different types of accommodation and th healthcare facility offers a full service to residents.",
     "meta": {
-      "title": "CareVita",
       "keywords": "CareVita, Retirement, retirement home, frail care, elderly care, caregiving, nursing, nursing services, supporting services, catering services, retirement estate",
-      "images": [""]
+      "images": [
+        "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/DJI_0568.jpg",
+        "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A4945-HDR.jpg",
+        "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A5185.jpg"
+      ]
     }
   },
   "whatWeOffer": {
@@ -35,7 +38,7 @@
       "Bingo"
     ],
     "pampering": [""],
-    "image": ""
+    "image": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A5441.jpg"
   },
   "about": {
     "paragraphs": [
@@ -45,61 +48,64 @@
       "Our care team comprises of qualified nurses and care workers and all our meals are made in-house with each resident's dietary requirements considered.",
       "Serene is truly an icon in Pretoria where residents experience a warm homely environment in their golden years."
     ],
-    "image": ""
+    "image": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A5179.jpg"
   },
   "meetTheTeam": [
     {
       "position": "Facility manager",
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6010.jpg",
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A6010.jpg",
       "teamMember": "Jumiree Jansen"
     },
     {
       "position": "Head Staff Nurse",
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6032.jpg",
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A6032.jpg",
       "teamMember": "Emelio Phekula"
     },
     {
       "position": "Head Chef",
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6004.jpg",
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A6004.jpg",
       "teamMember": "Clayton Van Wyk"
     },
     {
       "position": "Supervisor",
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6039.jpg",
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A6039.jpg",
       "teamMember": "Jennifer September"
     }
   ],
 
   "images": {
     "heroSlider": [
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6120.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6201-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6283.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6627.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6384.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/DJI_0961.jpg"
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A5003-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A5024-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A5185.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A5246.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/DJI_0568.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A4945-HDR.jpg"
     ],
     "gallerySlider": [
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/DJI_0961.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6582.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6627.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6242.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/staff-combined.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6120.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6145.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6189-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6201-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6209-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6229-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6221-HDR-Edit.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6382.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6417.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6466.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6293-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6301-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6331-HDR-Edit.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6355-HDR-Edit.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6471-HDR.jpg"
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A4945-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A5354.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A5133-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A5252.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A5164.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A5041-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A5106.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A5018-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/DJI_0570.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A4892-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A5203.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/DJI_0574.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A5314.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A5450.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A5371.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A4937-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A5383.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A5394.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A5343.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A4960-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A5175.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A4989-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A4918-HDR.jpg"
     ]
   }
 }
