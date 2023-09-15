@@ -19,13 +19,15 @@
   },
   "whatWeOffer": {
     "list": [
-      "Ensuite independent and dependant accommodation",
+      "Ensuite rooms",
       "Frail care facilities",
       "All meals & snacks",
       "Laundry",
       "Cleaning",
       "24/7 onsite nursing",
       "Medication management",
+      "Weekly doctor visits",
+      "Physiotherapist",
       "Heated indoor swimming pool",
       "Outdoor swimming pool",
       "Restaurant",
@@ -35,15 +37,15 @@
       "Gym",
       "High security"
     ],
-    "pampering": ["Beauty salon"],
+    "pampering": ["Beauty salon", "Manicures", "Pedicures"],
     "weeklyActivities": [
       "Shuttle to the shops",
       "Bingo",
-      "Bridge",
+      "Exercises",
       "General knowledge quiz",
-      "Church services",
-      "Specially designed games",
-      "Swimming laps in the indoor heated pool"
+      "Bible studies",
+      "Arts & crafts",
+      "Walks"
     ],
     "image": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A5490.jpg"
   },
@@ -61,8 +63,8 @@
   "meetTheTeam": [
     {
       "position": "Facility manager",
-      "url": "",
-      "teamMember": ""
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4871.jpg",
+      "teamMember": "Vishnu Govender"
     },
     {
       "position": "Registered Nurse",

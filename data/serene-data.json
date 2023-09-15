@@ -30,14 +30,12 @@
     ],
     "weeklyActivities": [
       "Shuttle to the shops",
-      "Exercises designed for the elderly",
-      "Brain gym quiz",
-      "Movie nights",
+      "Chair Exercise Classes",
       "Garden walks",
-      "Word search",
+      "Memory Challenges",
       "Bingo"
     ],
-    "pampering": [""],
+    "pampering": ["Manicures", "Pedicures", "Onsite Hairdresser"],
     "image": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A5441.jpg"
   },
   "about": {
@@ -53,8 +51,8 @@
   "meetTheTeam": [
     {
       "position": "Facility manager",
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A4871.jpg",
-      "teamMember": "Vishnu Govender"
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A3808.jpg",
+      "teamMember": "Werner van Niekerk"
     },
     {
       "position": "Registered Nurse",

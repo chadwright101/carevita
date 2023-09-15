@@ -27,9 +27,9 @@ const MeetTheTeam = ({ meetTheTeam, homeName }: Props) => {
                 cssClasses="object-cover w-[325px] h-[400px] desktop:w-[400px] desktop:h-[500px]"
                 smallest={90}
                 phone={70}
-                tablet={40}
-                desktopSmall={25}
-                desktop={20}
+                tablet={45}
+                desktopSmall={30}
+                desktop={25}
               />
               <p className="text-center text-larger">{teamMember}</p>
             </article>
