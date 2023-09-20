@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 
 import "@splidejs/react-splide/css/core";

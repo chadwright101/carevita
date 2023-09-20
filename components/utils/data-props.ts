@@ -7,6 +7,8 @@ export interface DataProps {
       extendedLocation?: string;
       email: string;
       phone: string;
+      extendedPhone: string;
+      formAction: string;
       homeUrl: string;
       description?: string;
       meta: {

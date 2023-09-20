@@ -9,14 +9,16 @@ interface Props {
     general: {
       email: string;
       phone: string;
+      extendedPhone: string;
       title: string;
+      formAction: string;
     };
   };
 }
 
-const HomeFormCrescentPage = ({
+const PropertyPagesContactForm = ({
   data: {
-    general: { email, phone, title },
+    general: { email, phone, title, extendedPhone, formAction },
   },
   cssClasses,
 }: Props) => {
@@ -40,7 +42,7 @@ const HomeFormCrescentPage = ({
               )}
               {showEmail && (
                 <Link
-                  href="mailto:jumireej@carevita.co.za"
+                  href={`mailto:${email}`}
                   className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0 tabletLarge:hover:underline underline-offset-8 decoration-1"
                 >
                   {email}
@@ -61,7 +63,7 @@ const HomeFormCrescentPage = ({
               )}
               {showPhone && (
                 <Link
-                  href="tel:+27445331234"
+                  href={`tel:${extendedPhone}`}
                   className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0"
                 >
                   {phone}
@@ -75,7 +77,11 @@ const HomeFormCrescentPage = ({
           <span className="font-light text-white">{title}</span> will be in
           touch with you ASAP...
         </p>
-        <form action="" method="POST" className="flex flex-col gap-10">
+        <form
+          action={`https://formsubmit.co/${formAction}`}
+          method="POST"
+          className="flex flex-col gap-10"
+        >
           <div className="flex flex-col gap-3">
             <label htmlFor="name" className="text-larger text-white font-thin">
               Name:
@@ -147,4 +153,4 @@ const HomeFormCrescentPage = ({
   );
 };
 
-export default HomeFormCrescentPage;
+export default PropertyPagesContactForm;

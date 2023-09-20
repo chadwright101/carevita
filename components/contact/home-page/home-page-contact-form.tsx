@@ -71,7 +71,7 @@ const HomePageContactForm = () => {
                   <p className="text-white text-larger font-light">Phone:</p>
                   <div className="place-items-start">
                     <Link
-                      href="tel:+27445331234"
+                      href={`tel:${crescentData.general.extendedPhone}`}
                       className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0"
                     >
                       {crescentData.general.phone}
@@ -79,7 +79,11 @@ const HomePageContactForm = () => {
                   </div>
                 </li>
               </ul>
-              <form action="" method="POST" className="flex flex-col gap-5">
+              <form
+                action={`https://formsubmit.co/${crescentData.general.formAction}`}
+                method="POST"
+                className="flex flex-col gap-5"
+              >
                 <input
                   type="text"
                   name="subject"
@@ -191,7 +195,7 @@ const HomePageContactForm = () => {
                   <p className="text-white text-larger font-light">Phone:</p>
                   <div className="place-items-start">
                     <Link
-                      href="tel:1234567890"
+                      href={`tel:${eastlandsData.general.extendedPhone}`}
                       className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0"
                     >
                       {eastlandsData.general.phone}
@@ -199,7 +203,11 @@ const HomePageContactForm = () => {
                   </div>
                 </li>
               </ul>
-              <form action="" method="POST" className="flex flex-col gap-5">
+              <form
+                action={`https://formsubmit.co/${eastlandsData.general.formAction}`}
+                method="POST"
+                className="flex flex-col gap-5"
+              >
                 <input
                   type="text"
                   name="subject"
@@ -311,7 +319,7 @@ const HomePageContactForm = () => {
                   <p className="text-white text-larger font-light">Phone:</p>
                   <div className="place-items-start">
                     <Link
-                      href="tel:1234567890"
+                      href={`tel:${sereneData.general.extendedPhone}`}
                       className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0"
                     >
                       {sereneData.general.phone}
@@ -319,7 +327,11 @@ const HomePageContactForm = () => {
                   </div>
                 </li>
               </ul>
-              <form action="" method="POST" className="flex flex-col gap-5">
+              <form
+                action={`https://formsubmit.co/${sereneData.general.formAction}`}
+                method="POST"
+                className="flex flex-col gap-5"
+              >
                 <input
                   type="text"
                   name="subject"
@@ -431,7 +443,7 @@ const HomePageContactForm = () => {
                   <p className="text-white text-larger font-light">Phone:</p>
                   <div className="place-items-start">
                     <Link
-                      href="tel:1234567890"
+                      href={`tel:${parsonageData.general.extendedPhone}`}
                       className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0"
                     >
                       {parsonageData.general.phone}
@@ -439,7 +451,11 @@ const HomePageContactForm = () => {
                   </div>
                 </li>
               </ul>
-              <form action="" method="POST" className="flex flex-col gap-5">
+              <form
+                action={`https://formsubmit.co/${parsonageData.general.formAction}`}
+                method="POST"
+                className="flex flex-col gap-5"
+              >
                 <input
                   type="text"
                   name="subject"
@@ -606,7 +622,7 @@ const HomePageContactForm = () => {
           <div className="grid grid-cols-2 gap-10 mt-10">
             <div>
               <ul className="flex flex-col gap-2 mb-10">
-                <li className="grid grid-cols-[80px_1fr]">
+                <li className="grid grid-cols-[80px_1fr] mr-auto">
                   <p className="text-white text-larger font-light">Email:</p>
                   <Link
                     href="mailto:jumireej@carevita.co.za"
@@ -615,17 +631,21 @@ const HomePageContactForm = () => {
                     {crescentData.general.email}
                   </Link>
                 </li>
-                <li className="grid grid-cols-[80px_1fr]">
+                <li className="grid grid-cols-[80px_1fr] mr-auto">
                   <p className="text-white text-larger font-light">Phone:</p>
                   <Link
-                    href="tel:+27445331234"
+                    href={`tel:${crescentData.general.extendedPhone}`}
                     className="text-white text-larger"
                   >
                     {crescentData.general.phone}
                   </Link>
                 </li>
               </ul>
-              <form action="" method="POST" className="flex flex-col gap-4">
+              <form
+                action={`https://formsubmit.co/${crescentData.general.formAction}`}
+                method="POST"
+                className="flex flex-col gap-4"
+              >
                 <input
                   type="text"
                   name="subject"
@@ -701,7 +721,7 @@ const HomePageContactForm = () => {
           <div className="grid grid-cols-2 gap-10 mt-10">
             <div>
               <ul className="flex flex-col gap-2 mb-10">
-                <li className="grid grid-cols-[80px_1fr]">
+                <li className="grid grid-cols-[80px_1fr] mr-auto">
                   <p className="text-white text-larger font-light">Email:</p>
                   <Link
                     href="mailto:eastlands@carevita.co.za"
@@ -710,17 +730,21 @@ const HomePageContactForm = () => {
                     {eastlandsData.general.email}
                   </Link>
                 </li>
-                <li className="grid grid-cols-[80px_1fr]">
+                <li className="grid grid-cols-[80px_1fr] mr-auto">
                   <p className="text-white text-larger font-light">Phone:</p>
                   <Link
-                    href="tel:1234567890"
+                    href={`tel:${eastlandsData.general.extendedPhone}`}
                     className="text-white text-larger"
                   >
                     {eastlandsData.general.phone}
                   </Link>
                 </li>
               </ul>
-              <form action="" method="POST" className="flex flex-col gap-4">
+              <form
+                action={`https://formsubmit.co/${eastlandsData.general.formAction}`}
+                method="POST"
+                className="flex flex-col gap-4"
+              >
                 <input
                   type="text"
                   name="subject"
@@ -796,7 +820,7 @@ const HomePageContactForm = () => {
           <div className="grid grid-cols-2 gap-10 mt-10">
             <div>
               <ul className="flex flex-col gap-2 mb-10">
-                <li className="grid grid-cols-[80px_1fr]">
+                <li className="grid grid-cols-[80px_1fr] mr-auto">
                   <p className="text-white text-larger font-light">Email:</p>
                   <Link
                     href="mailto:serenepark@carevita.co.za"
@@ -805,17 +829,21 @@ const HomePageContactForm = () => {
                     {sereneData.general.email}
                   </Link>
                 </li>
-                <li className="grid grid-cols-[80px_1fr]">
+                <li className="grid grid-cols-[80px_1fr] mr-auto">
                   <p className="text-white text-larger font-light">Phone:</p>
                   <Link
-                    href="tel:1234567890"
+                    href={`tel:${sereneData.general.extendedPhone}`}
                     className="text-white text-larger"
                   >
                     {sereneData.general.phone}
                   </Link>
                 </li>
               </ul>
-              <form action="" method="POST" className="flex flex-col gap-4">
+              <form
+                action={`https://formsubmit.co/${sereneData.general.formAction}`}
+                method="POST"
+                className="flex flex-col gap-4"
+              >
                 <input
                   type="text"
                   name="subject"
@@ -891,7 +919,7 @@ const HomePageContactForm = () => {
           <div className="grid grid-cols-2 gap-10 mt-10">
             <div>
               <ul className="flex flex-col gap-2 mb-10">
-                <li className="grid grid-cols-[80px_1fr]">
+                <li className="grid grid-cols-[80px_1fr] mr-auto">
                   <p className="text-white text-larger font-light">Email:</p>
                   <Link
                     href="mailto:serenepark@carevita.co.za"
@@ -900,17 +928,21 @@ const HomePageContactForm = () => {
                     {parsonageData.general.email}
                   </Link>
                 </li>
-                <li className="grid grid-cols-[80px_1fr]">
+                <li className="grid grid-cols-[80px_1fr] mr-auto">
                   <p className="text-white text-larger font-light">Phone:</p>
                   <Link
-                    href="tel:1234567890"
+                    href={`tel:${parsonageData.general.extendedPhone}`}
                     className="text-white text-larger"
                   >
                     {parsonageData.general.phone}
                   </Link>
                 </li>
               </ul>
-              <form action="" method="POST" className="flex flex-col gap-4">
+              <form
+                action={`https://formsubmit.co/${parsonageData.general.formAction}`}
+                method="POST"
+                className="flex flex-col gap-4"
+              >
                 <input
                   type="text"
                   name="subject"

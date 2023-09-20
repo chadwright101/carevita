@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 
-import PropertyPageContactForm from "./property-pages/property-pages-contact-form";
+import PropertyPagesContactForm from "./property-pages/property-pages-contact-form";
 import HomePageContactForm from "./home-page/home-page-contact-form";
 
 import crescentData from "@/data/crescent-data.json";
@@ -13,13 +13,13 @@ const ContactForm = () => {
   const currentPath = router.pathname;
 
   if (currentPath === "/our-homes/the-crescent") {
-    return <PropertyPageContactForm data={crescentData} />;
+    return <PropertyPagesContactForm data={crescentData} />;
   } else if (currentPath === "/our-homes/eastlands") {
-    return <PropertyPageContactForm data={eastlandsData} />;
+    return <PropertyPagesContactForm data={eastlandsData} />;
   } else if (currentPath === "/our-homes/serene-park") {
-    return <PropertyPageContactForm data={sereneData} />;
+    return <PropertyPagesContactForm data={sereneData} />;
   } else if (currentPath === "/our-homes/parsonage-street-home") {
-    return <PropertyPageContactForm data={parsonageData} />;
+    return <PropertyPagesContactForm data={parsonageData} />;
   } else {
     return <HomePageContactForm />;
   }

@@ -5,7 +5,9 @@
     "location": "Graaff Reinet, EC",
     "extendedLocation": "Graaff-Reinet, Eastern Cape",
     "email": "parsonage@carevita.co.za",
-    "phone": "044 533 1234",
+    "phone": "",
+    "extendedPhone": "+27",
+    "formAction": "",
     "homeUrl": "our-homes/parsonage-street-home",
     "description": "Situated in the most historic part of Graaff Reinet, Parsonage Street Home is an unique private elder-care establishment. Parsonage Street, as it is fondly referred to, encompasses 2 sections offering, Mid and Frail Care with common living and dining spaces.",
     "meta": {
@@ -50,14 +52,14 @@
       "teamMember": "Ria Pretorius"
     },
     {
-      "position": "Registered Nurse",
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A4055.jpg",
-      "teamMember": "Sr. Elke Hoskin"
+      "position": "Nursing Manager",
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/wilma-headshot.jpg",
+      "teamMember": "Sr. Wilma Nel"
     },
     {
       "position": "Registered Nurse",
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/wilma-headshot.jpg",
-      "teamMember": "Sr. Wilma Nel"
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A4055.jpg",
+      "teamMember": "Sr. Elke Hoskin"
     }
   ],
 
