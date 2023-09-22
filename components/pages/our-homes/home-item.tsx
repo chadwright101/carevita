@@ -1,50 +1,51 @@
+import Link from "next/link";
 import ImageContainer from "@/components/utils/image-container";
 import Button from "../../button";
 import Heading, { headingVariant } from "../../heading";
+import { DataProps } from "@/components/utils/data-props";
 
-interface Props {
+interface Props extends DataProps {
   cssClasses?: string;
-  heroImageUrl: any;
-  heroImageAlt: any;
-  heading: string;
-  location: string;
-  paragraph: string;
-  buttonUrl: string;
-  loading?: "eager" | "lazy";
+  featuredImage: string;
 }
 
 const HomeItem = ({
   cssClasses,
-  heroImageUrl,
-  heroImageAlt,
-  heading,
-  location,
-  paragraph,
-  buttonUrl,
-  loading,
+  data: {
+    general: { title, extendedTitle, extendedLocation, description, homeUrl },
+  },
+  featuredImage,
 }: Props) => {
   return (
     <article className={`flex flex-col gap-10 ${cssClasses}`}>
       <div className="flex flex-col">
-        <Heading variant={headingVariant.subheading}>{heading}</Heading>
+        <Link href={homeUrl}>
+          <Heading
+            cssClasses="desktopSmall:hover:text-green"
+            variant={headingVariant.subheading}
+          >
+            {extendedTitle}
+          </Heading>
+        </Link>
         <h3 className="font-thin text-paragraph -mt-6 tablet:-mt-4 desktop:-mt-7 text-center tablet:text-left">
-          {location}
+          {extendedLocation}
         </h3>
       </div>
       <ImageContainer
-        src={heroImageUrl}
-        alt={heroImageAlt}
+        src={featuredImage}
+        alt={`${title} - ${extendedLocation}`}
         width={1000}
         height={750}
-        cssClasses="object-cover h-[225px] phone:h-[300px] tablet:h-[380px] tabletLarge:h-[280px] desktop:h-[250px]"
+        cssClasses="object-cover h-[225px] phone:h-[300px] tablet:h-[380px] tabletLarge:h-[280px] desktop:h-[325px]"
         smallest={90}
         tablet={80}
         desktopSmall={40}
         desktop={25}
         eager
+        url={homeUrl}
       />
-      <p>{paragraph}</p>
-      <Button url={buttonUrl} cssClasses="mx-auto"></Button>
+      <p className="desktop:h-[135px]">{description}</p>
+      <Button url={homeUrl} cssClasses="mx-auto"></Button>
     </article>
   );
 };

@@ -1,0 +1,133 @@
+{
+  "general": {
+    "title": "Eastlands Estate",
+    "extendedTitle": "Eastlands Mature Lifestyle Estate",
+    "location": "Benoni, GP",
+    "extendedLocation": "Benoni, Gauteng",
+    "email": "eastlands@carevita.co.za",
+    "phone": "010 035 3368",
+    "extendedPhone": "+27100353368",
+    "formAction": "",
+    "homeUrl": "our-homes/eastlands",
+    "description": "Eastlands Mature Lifestyle Estate is one of South Africa's leading luxury retirement estates that combines the very best in healthcare, wellness and leisure amenities to offer an outstanding retirement lifestyle. Eastlands is truly an icon in Gauteng where residents experience a warm homely home in their golden years.",
+    "meta": {
+      "keywords": "CareVita, Retirement, retirement home, frail care, elderly care, caregiving, nursing, nursing services, supporting services, catering services, retirement estate",
+      "images": [
+        "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4551-HDR.jpg",
+        "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4753.jpg",
+        "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4326-HDR.jpg"
+      ]
+    }
+  },
+  "whatWeOffer": {
+    "list": [
+      "Ensuite rooms",
+      "Frail care facilities",
+      "All meals & snacks",
+      "Laundry",
+      "Cleaning",
+      "24/7 onsite nursing",
+      "Medication management",
+      "Weekly doctor visits",
+      "Physiotherapist",
+      "Heated indoor swimming pool",
+      "Outdoor swimming pool",
+      "Restaurant",
+      "Library",
+      "Bowling green",
+      "Jukskei field",
+      "Gym",
+      "High security"
+    ],
+    "pampering": ["Beauty salon", "Manicures", "Pedicures"],
+    "weeklyActivities": [
+      "Shuttle to the shops",
+      "Bingo",
+      "Exercises",
+      "General knowledge quiz",
+      "Bible studies",
+      "Arts & crafts",
+      "Walks"
+    ],
+    "image": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A5490.jpg"
+  },
+  "about": {
+    "paragraphs": [
+      "Eastlands Mature Lifestyle Estate is one of South Africa's leading luxury retirement estates that combines the very best in healthcare, wellness and leisure amenities to offer an outstanding retirement lifestyle.",
+      "The healthcare centre offers en-suite independent and dependant accommodation as well as frail care facilities designed to assist with the residents' care.",
+      "Eastlands offers a full service to residents including all meals, snacks, laundry, cleaning, nursing and any medication management required. Daily activities include swimming laps in the heated indoor pool and an outdoor pool, lap pool, bowling green and Jukskei field, gym and beauty salon. The beautifully styled library, restaurant, weekly shuttle to shops and the high security offered by the estate will ensure residents are pampered daily.",
+      "Bingo, bridge, quiz, weekly church services and specifically designed games to stimulate an ageing mind take place daily to ensure residents are well entertained.",
+      "Our care team is comprised of qualified nurses and care workers, while the in-house physiotherapist and general practitioner take care of all the residents' health needs. All our meals are made in-house with each resident's dietary requirements taken into account.",
+      "Eastlands is truly an icon in Gauteng where residents experience a warm homely home in their golden years."
+    ],
+    "image": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4662.jpg"
+  },
+  "meetTheTeam": [
+    {
+      "position": "Facility manager",
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4871.jpg",
+      "teamMember": "Vishnu Govender"
+    },
+    {
+      "position": "Nursing Manager",
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4872.jpg",
+      "teamMember": "Sr. Dulcie Nanagati"
+    },
+    {
+      "position": "Nurse",
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4777.jpg",
+      "teamMember": "Musa Nkosi"
+    },
+    {
+      "position": "Nurse",
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A5459.jpg",
+      "teamMember": "Mpho Molokwane"
+    },
+    {
+      "position": "Chef",
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4780.jpg",
+      "teamMember": "Elizabeth Chakela"
+    },
+    {
+      "position": "Chef",
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A5510.jpg",
+      "teamMember": "Zandile Khela"
+    }
+  ],
+
+  "images": {
+    "heroSlider": [
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4551-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4326-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4582.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4753.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4173-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4494.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/DJI_0535.jpg"
+    ],
+    "gallerySlider": [
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4188-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4272-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4877.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4662.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4326-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A5505.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/DJI_0527.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4822.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4611.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4706.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4417.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4376-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/DJI_0551.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A5481.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/DJI_0547.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4697.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4633-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4532-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/DJI_0551.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4648-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4525.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/DJI_0542.jpg"
+    ]
+  }
+}

@@ -39,11 +39,11 @@ const Services = ({ cssClasses }: Props) => {
             </p>
           </div>
           <ImageContainer
-            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/sliders/hero/9U7A6283.jpg"
+            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A5252.jpg"
             alt="Carevita - Nursing Services"
             width={900}
             height={700}
-            cssClasses="object-cover w-full h-full tabletLarge:row-span-2"
+            cssClasses="object-cover w-full h-full tabletLarge:row-span-2 object-bottom"
             smallest={110}
             phone={80}
             tablet={75}
@@ -79,7 +79,7 @@ const Services = ({ cssClasses }: Props) => {
             </p>
           </div>
           <ImageContainer
-            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/home-page/9U7A6457.jpg"
+            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4525.jpg"
             alt="Carevita - Supporting Services"
             width={900}
             height={700}
@@ -118,7 +118,7 @@ const Services = ({ cssClasses }: Props) => {
             </p>
           </div>
           <ImageContainer
-            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/home-page/9U7A6417.jpg"
+            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6417.jpg"
             alt="Carevita - Catering Services"
             width={900}
             height={700}

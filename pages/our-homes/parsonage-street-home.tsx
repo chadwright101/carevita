@@ -5,20 +5,21 @@ import Layout from "@/components/layout";
 import Fit from "@/components/pages/property-pages/components/#fit";
 import ImageContainer from "@/components/utils/image-container";
 
-import sereneData from "@/data/serene-data.json";
-import SereneParkMap from "@/components/contact/maps/serene-park-map";
+import parsonageData from "@/data/parsonage-data.json";
+import ParsonageMap from "@/components/contact/maps/parsonage-map";
 
 const TheCrescent = () => {
   const {
     general: { title },
-  } = sereneData;
+    images: { gallerySlider },
+  } = parsonageData;
   return (
     <>
-      <IndividualHomesPageItem data={sereneData} />
+      <IndividualHomesPageItem data={parsonageData} />
       <Layout>
         <div className="desktopSmall:grid grid-cols-2 gap-10  mt-10">
           <ImageContainer
-            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/DJI_0568.jpg"
+            src={gallerySlider[6]}
             alt={title}
             width={700}
             height={400}
@@ -26,7 +27,7 @@ const TheCrescent = () => {
             desktopSmall={50}
             desktop={40}
           />
-          <SereneParkMap cssClasses="w-full h-[400px] tabletLarge:h-[500px]" />
+          <ParsonageMap cssClasses="w-full h-[400px] tabletLarge:h-[500px]" />
         </div>
         <hr className="text-black my-16" />
         <Fit cssClasses="mb-16" />

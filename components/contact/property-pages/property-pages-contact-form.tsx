@@ -1,15 +1,27 @@
 import { useState } from "react";
 import Link from "next/link";
 
-import Button from "../../../../button";
+import Button from "@/components/button";
 
 interface Props {
   cssClasses?: string;
+  data: {
+    general: {
+      email: string;
+      phone: string;
+      extendedPhone: string;
+      title: string;
+      formAction: string;
+    };
+  };
 }
 
-import homeList from "../../../../../data/eastlands-extended-data.json";
-
-const ContactFormEastlandsPage = ({ cssClasses }: Props) => {
+const PropertyPagesContactForm = ({
+  data: {
+    general: { email, phone, title, extendedPhone, formAction },
+  },
+  cssClasses,
+}: Props) => {
   const [showMessage, setShowMessage] = useState(false);
   const [showEmail, setShowEmail] = useState(false);
   const [showPhone, setShowPhone] = useState(false);
@@ -30,10 +42,10 @@ const ContactFormEastlandsPage = ({ cssClasses }: Props) => {
               )}
               {showEmail && (
                 <Link
-                  href="mailto:jumireej@carevita.co.za"
+                  href={`mailto:${email}`}
                   className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0 tabletLarge:hover:underline underline-offset-8 decoration-1"
                 >
-                  {homeList.email}
+                  {email}
                 </Link>
               )}
             </div>
@@ -51,10 +63,10 @@ const ContactFormEastlandsPage = ({ cssClasses }: Props) => {
               )}
               {showPhone && (
                 <Link
-                  href="tel:+27445331234"
+                  href={`tel:${extendedPhone}`}
                   className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0"
                 >
-                  {homeList.phone}
+                  {phone}
                 </Link>
               )}
             </div>
@@ -62,12 +74,14 @@ const ContactFormEastlandsPage = ({ cssClasses }: Props) => {
         </ul>
         <p className="text-white">
           Please fill out the form below, and our staff from{" "}
-          <span className="font-light text-white">
-            {homeList.extendedTitle}
-          </span>{" "}
-          will be in touch with you ASAP...
+          <span className="font-light text-white">{title}</span> will be in
+          touch with you ASAP...
         </p>
-        <form action="" method="POST" className="flex flex-col gap-10">
+        <form
+          action={`https://formsubmit.co/${formAction}`}
+          method="POST"
+          className="flex flex-col gap-10"
+        >
           <div className="flex flex-col gap-3">
             <label htmlFor="name" className="text-larger text-white font-thin">
               Name:
@@ -139,4 +153,4 @@ const ContactFormEastlandsPage = ({ cssClasses }: Props) => {
   );
 };
 
-export default ContactFormEastlandsPage;
+export default PropertyPagesContactForm;

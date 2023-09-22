@@ -1,0 +1,102 @@
+{
+  "general": {
+    "title": "Parsonage Street Home",
+    "extendedTitle": "Parsonage Street Home for the Aged",
+    "location": "Graaff Reinet, EC",
+    "extendedLocation": "Graaff-Reinet, Eastern Cape",
+    "email": "parsonage@carevita.co.za",
+    "phone": "",
+    "extendedPhone": "+27",
+    "formAction": "",
+    "homeUrl": "our-homes/parsonage-street-home",
+    "description": "Situated in the most historic part of Graaff Reinet, Parsonage Street Home is an unique private elder-care establishment. Parsonage Street, as it is fondly referred to, encompasses 2 sections offering, Mid and Frail Care with common living and dining spaces.",
+    "meta": {
+      "keywords": "CareVita, Retirement, retirement home, frail care, elderly care, caregiving, nursing, nursing services, supporting services, catering services, retirement estate",
+      "images": [
+        "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3469.jpg",
+        "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/DJI_0514.jpg",
+        "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3836.jpg"
+      ]
+    }
+  },
+  "whatWeOffer": {
+    "list": [
+      "Ensuite rooms",
+      "All meals & snacks",
+      "Laundry",
+      "Cleaning",
+      "24/7 onsite nursing",
+      "Medication management"
+    ],
+    "pampering": ["Manicures", "Pedicures", "Hairstylist"],
+    "weeklyActivities": ["Church Service", "Bingo", "Music"],
+    "image": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3635.jpg"
+  },
+  "about": {
+    "paragraphs": [
+      "Situated in the most historic part of Graaff Reinet, Parsonage Street Home is an unique private elder-care establishment. Parsonage Street, as it is fondly referred to, encompasses 2 sections offering, Mid and Frail Care with common living and dining spaces. These sections have recently been renovated to enhance the comfort of residents and better facilitate assistance and supervision by caregivers. The garden is the heart of the home with shady patios and our prize giant avocado tree.",
+      "An absolute priority at Parsonage Street Home is CARE. We strive to ensure that each resident receives the necessary care to live a quality healthy life with dignity, and to face physical and cognitive challenges with as little anxiety as possible. Our incredible team of staff are compassionate individuals who take the time to form relationships with our residents and provide tailored care. We provide regular training sessions to ensure that they are confident and equipped to provide the best care and services possible."
+    ],
+    "image": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3786.jpg"
+  },
+
+  "meetTheTeam": [
+    {
+      "position": "Facility Manager",
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A5085.jpg",
+      "teamMember": "Cheryl Jonck"
+    },
+    {
+      "position": "Kitchen & Cleaning Manager",
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3775.jpg",
+      "teamMember": "Ria Pretorius"
+    },
+    {
+      "position": "Nursing Manager",
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/wilma-headshot.jpg",
+      "teamMember": "Sr. Wilma Nel"
+    },
+    {
+      "position": "Registered Nurse",
+      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A4055.jpg",
+      "teamMember": "Sr. Elke Hoskin"
+    }
+  ],
+
+  "images": {
+    "heroSlider": [
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3469.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3773.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/DJI_0514.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3836.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3634.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3408-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3852.jpg"
+    ],
+    "gallerySlider": [
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/DJI_0505.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3997.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3480-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A4016.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3773.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3804.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/DJI_0494.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3384-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3470.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3638.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3412-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3870.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/DJI_0499.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A4100.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3709.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A4022.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3436-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/DJI_0493.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3573-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3603-HDR.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3724.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A4098.jpg",
+      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3558.jpg"
+    ]
+  }
+}

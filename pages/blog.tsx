@@ -1,12 +1,13 @@
-import Footer from "@/components/footer";
-import Header from "@/components/header";
+import Head from "next/head";
+
 import Heading, { headingVariant } from "@/components/heading";
 import BlogPost from "@/components/pages/blog/blog-post";
 import Layout from "@/components/layout";
-
-import client from "@/components/utils/client";
+import blogClient from "@/components/utils/blog-client";
 
 import { gql } from "@apollo/client";
+
+import generalData from "@/data/general-data.json";
 
 export interface blogData {
   paragraph1: string;
@@ -32,16 +33,34 @@ interface Props {
 }
 
 const Blog = ({ blogPosts }: Props) => {
+  const {
+    blog: {
+      meta: { title, description, keywords, images },
+    },
+  } = generalData;
   return (
     <>
-      <Header />
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta name="keywords" content={keywords} />
+        {images.map((image, index) => (
+          <meta property="og:image" content={image} key={index} />
+        ))}
+        <meta property="og:title" content={`${title}`} />
+        <meta property="og:url" content={`https://www.catevita.co.za`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content={description} />
+        <meta property="og:site_name" content={`Home - ${title}`} />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"></link>
+      </Head>
       <Layout>
         <Heading variant={headingVariant.pageHeading} cssClasses="mb-14">
           Blog
         </Heading>
+        <hr className="my-14" />
         <BlogPost data={blogPosts} />
       </Layout>
-      <Footer />
     </>
   );
 };
@@ -49,7 +68,7 @@ const Blog = ({ blogPosts }: Props) => {
 export default Blog;
 
 export async function getStaticProps() {
-  const { data } = await client.query({
+  const { data } = await blogClient.query({
     query: gql`
       query BlogPosts {
         posts {
