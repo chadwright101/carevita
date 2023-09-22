@@ -82,6 +82,13 @@ const PropertyPagesContactForm = ({
           method="POST"
           className="flex flex-col gap-10"
         >
+          <input
+            type="text"
+            name="subject"
+            defaultValue={`Website Contact Form - ${title}`}
+            className="hidden"
+          />
+          <input type="text" name="_honey" className="hidden" />
           <div className="flex flex-col gap-3">
             <label htmlFor="name" className="text-larger text-white font-thin">
               Name:
