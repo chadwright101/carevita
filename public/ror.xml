@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:ror="http://rorweb.com/0.1/" >
+<channel>
+  <title>ROR Sitemap for https://carevita.co.za/</title>
+  <link>https://carevita.co.za/</link>
+
+<item>
+     <link>https://www.carevita.co.za/</link>
+     <title>Home - CareVita</title>
+     <description>CareVita was founded in 2018 with the main purpose of breathing new life into the Retirement Management Sector.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>0</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://www.carevita.co.za/our-homes</link>
+     <title>Our Homes - CareVita</title>
+     <description>CareVita was founded in 2018 with the main purpose of breathing new life into the Retirement Management Sector.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://www.carevita.co.za/blog</link>
+     <title>Blog - CareVita</title>
+     <description>CareVita was founded in 2018 with the main purpose of breathing new life into the Retirement Management Sector.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://www.carevita.co.za/our-homes/the-crescent</link>
+     <title>The Crescent - CareVita</title>
+     <description>The Crescent is a retirement home located in the heart of Plettenberg Bay, overlooking a magnificent mountain and only minutes away from the beautiful beaches and white sands along the Indian Ocean. The Crescent is close to Robberg Peninsula and its long nature reserve. Here you will find a large colony of fur seal, in addition to a wealth of marine species and birding.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://www.carevita.co.za/our-homes/eastlands</link>
+     <title>Eastlands Estate - CareVita</title>
+     <description>Eastlands Mature Lifestyle Estate is one of South Africa&amp;#x27;s leading luxury retirement estates that combines the very best in healthcare, wellness and leisure amenities to offer an outstanding retirement lifestyle. Eastlands is truly an icon in Gauteng where residents experience a warm homely home in their golden years.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://www.carevita.co.za/our-homes/serene-park</link>
+     <title>Serene Park Centre - CareVita</title>
+     <description>Serene Park, a beautiful home close to Menlyn Maine and Menlyn Park Shopping Centre in Pretoria has been in operation since 1987. The home is set within tranquil gardens and offers a variety of different types of accommodation and the healthcare facility offers a full service to residents.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://www.carevita.co.za/our-homes/parsonage-street-home</link>
+     <title>Parsonage Street Home - CareVita</title>
+     <description>Situated in the most historic part of Graaff Reinet, Parsonage Street Home is an unique private elder-care establishment. Parsonage Street, as it is fondly referred to, encompasses 2 sections offering, Mid and Frail Care with common living and dining spaces.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+</channel>
+</rss>
+  
