@@ -2,7 +2,6 @@ import IndividualHomesPageItem from "@/components/pages/property-pages/page-item
 import Heading, { headingVariant } from "@/components/heading";
 import ContactForm from "@/components/contact/contact-form";
 import Layout from "@/components/layout";
-import Fit from "@/components/pages/property-pages/components/#fit";
 import ImageContainer from "@/components/utils/image-container";
 
 import sereneData from "@/data/serene-data.json";
@@ -29,7 +28,6 @@ const TheCrescent = () => {
           <SereneParkMap cssClasses="w-full h-[400px] tabletLarge:h-[500px]" />
         </div>
         <hr className="text-black my-16" />
-        <Fit cssClasses="mb-16" />
       </Layout>
       <div
         id="contact"
