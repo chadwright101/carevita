@@ -25,9 +25,8 @@ const TheCrescent = () => {
             desktopSmall={50}
             desktop={40}
           />
-          <SereneParkMap cssClasses="w-full h-[400px] tabletLarge:h-[500px]" />
+          <SereneParkMap cssClasses="w-full h-[400px] tabletLarge:h-[500px] mb-16" />
         </div>
-        <hr className="text-black my-16" />
       </Layout>
       <div
         id="contact"

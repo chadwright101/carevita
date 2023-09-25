@@ -26,9 +26,8 @@ const TheCrescent = () => {
             desktopSmall={50}
             desktop={40}
           />
-          <EastlandsMap cssClasses="w-full h-[400px] tabletLarge:h-[500px]" />
+          <EastlandsMap cssClasses="w-full h-[400px] tabletLarge:h-[500px] mb-16" />
         </div>
-        <hr className="text-black my-16" />
       </Layout>
       <div
         id="contact"
