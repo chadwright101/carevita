@@ -104,6 +104,22 @@ const PropertyPagesContactForm = ({
           </div>
           {showMessage && (
             <>
+              <div className="flex flex-col gap-2">
+                <label
+                  htmlFor="phone"
+                  className="text-larger text-white font-thin"
+                >
+                  Phone:
+                </label>
+                <input
+                  type="text"
+                  id="phone"
+                  name="phone"
+                  required
+                  placeholder="Phone number"
+                  className="pl-2 py-1.5"
+                />
+              </div>
               <div className="flex flex-col gap-3">
                 <label
                   htmlFor="email"
