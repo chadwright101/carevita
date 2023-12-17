@@ -9,9 +9,6 @@ import ImageContainer from "@/components/utils/image-container";
 
 import classNames from "classnames";
 
-import menuIcon from "public/icons/menu-icon.svg";
-import closeIcon from "public/icons/close-icon.svg";
-
 interface Props {
   cssClasses?: string;
 }
@@ -49,7 +46,16 @@ const Header = ({ cssClasses }: Props) => {
           />
         </Link>
         <button className="p-2 -m-2" onClick={() => setToggleMenu(true)}>
-          <Image src={menuIcon} alt="Menu icon" className="w-11 h-auto mt-1" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="48"
+            viewBox="0 96 960 960"
+            width="48"
+            fill="#222222"
+            className="w-11 h-auto mt-1"
+          >
+            <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" />
+          </svg>
         </button>
       </div>
       {toggleMenu && (
@@ -139,11 +145,15 @@ const Header = ({ cssClasses }: Props) => {
             className="p-2 -m-2 absolute top-7 right-5"
             onClick={() => setToggleMenu(false)}
           >
-            <Image
-              src={closeIcon}
-              alt="Close menu icon"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="48"
+              width="48"
+              fill="#ffffff"
               className="w-11 h-auto mr-1"
-            />
+            >
+              <path d="m12.45 37.65-2.1-2.1L21.9 24 10.35 12.45l2.1-2.1L24 21.9l11.55-11.55 2.1 2.1L26.1 24l11.55 11.55-2.1 2.1L24 26.1Z" />
+            </svg>
           </button>
         </nav>
       )}
