@@ -12,7 +12,7 @@
     "@apollo/client": "^3.8.8",
     "@react-google-maps/api": "^2.18.1",
     "@splidejs/react-splide": "^0.7.12",
-    "@types/node": "20.10.6",
+    "@types/node": "20.11.14",
     "@types/react": "18.2.48",
     "@types/react-dom": "18.2.18",
     "classnames": "^2.5.1",
