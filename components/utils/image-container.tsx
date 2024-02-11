@@ -57,7 +57,7 @@ const ImageContainer = ({
           })}
           onClick={onClick}
           onLoadStart={() => setLoading(true)}
-          onLoadingComplete={() => setLoading(false)}
+          onLoad={() => setLoading(false)}
           sizes={`(max-width: 425px) ${
             isLoading ? smallest! / 10 : smallest
           }vw,(max-width: 650px) ${
@@ -87,7 +87,7 @@ const ImageContainer = ({
         })}
         onClick={onClick}
         onLoadStart={() => setLoading(true)}
-        onLoadingComplete={() => setLoading(false)}
+        onLoad={() => setLoading(false)}
         sizes={`(max-width: 425px) ${
           isLoading ? smallest! / 10 : smallest
         }vw,(max-width: 650px) ${

@@ -42,6 +42,10 @@
         "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4326-HDR.jpg",
         "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/DJI_0514.jpg"
       ]
+    },
+    "contact": {
+      "general": "info@carevita.co.za",
+      "accounts": "accounts@carevita.co.za"
     }
   },
   "blog": {

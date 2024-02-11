@@ -1,13 +1,12 @@
 {
   "general": {
+    "shortTitle": "crescent",
     "title": "The Crescent",
     "extendedTitle": "The Crescent",
     "location": "Plettenberg Bay, WC",
     "extendedLocation": "Plettenberg Bay, Western Cape",
     "email": "jumiree@carevita.co.za",
-    "phone": "087 265 3537",
-    "extendedPhone": "+27872653537",
-    "formAction": "856622aa715f03bf76024363a68c180f",
+    "phone": "+27 87 265 3537",
     "homeUrl": "our-homes/the-crescent",
     "description": "The Crescent is a retirement home located in the heart of Plettenberg Bay, overlooking a magnificent mountain and only minutes away from the beautiful beaches and white sands along the Indian Ocean. The Crescent is close to Robberg Peninsula and its long nature reserve. Here you will find a large colony of fur seal, in addition to a wealth of marine species and birding.",
     "meta": {

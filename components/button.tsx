@@ -19,6 +19,7 @@ interface Props {
   arrowCssClasses?: string;
   homeIconUrl?: any;
   homeIconAlt?: any;
+  disabled?: boolean;
 }
 
 const Button = ({
@@ -36,12 +37,14 @@ const Button = ({
   arrowCssClasses,
   homeIconUrl,
   homeIconAlt,
+  disabled,
 }: Props) => {
   if (form) {
     return (
       <button
         className={`bg-green text-subheading font-thin text-white px-6 py-2.5 flex gap-6 items-center tabletLarge:hover:bg-lightGreen ${cssClasses}`}
         type="submit"
+        disabled={disabled}
       >
         {children}
         <Image
@@ -66,6 +69,7 @@ const Button = ({
       <button
         className={`bg-green text-subheading font-thin text-white px-6 py-2.5 flex gap-6 items-center tabletLarge:hover:bg-lightGreen ${cssClasses}`}
         onClick={onClick}
+        type="button"
       >
         Next
         <Image
