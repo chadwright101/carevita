@@ -47,6 +47,7 @@ export default async function handler(
   }
 
   const secretCode = req.headers["api-email-code"];
+  const generalEmail = req.headers["general-email"];
 
   if (secretCode !== process.env.NEXT_PUBLIC_API_EMAIL_SECRET_CODE) {
     return res.status(403).json({ error: "Forbidden" });
@@ -93,7 +94,7 @@ export default async function handler(
 
   const mailOptions = {
     from: process.env.SMTP_SEND_FROM,
-    to: recipientEmail,
+    to: generalEmail ? "info@carevita.co.za" : recipientEmail,
     subject: "Website - Contact Form",
     replyTo: email,
     text: message,
