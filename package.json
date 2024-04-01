@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.8.8",
-    "@react-google-maps/api": "^2.18.1",
+    "@react-google-maps/api": "^2.19.3",
     "@splidejs/react-splide": "^0.7.12",
     "@types/node": "20.11.24",
     "@types/nodemailer": "^6.4.14",
