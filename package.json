@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@apollo/client": "^3.8.8",
+    "@apollo/client": "^3.9.9",
     "@react-google-maps/api": "^2.19.3",
     "@splidejs/react-splide": "^0.7.12",
     "@types/node": "20.11.24",
