@@ -31,7 +31,7 @@ const About = ({
         </div>
         <div className="grid grid-rows-2 gap-10 mt-6 tablet:grid-rows-[400px_400px] tabletLarge:grid-cols-2 tabletLarge:grid-rows-1 desktop:grid-cols-1 desktop:grid-rows-[300px_300px]">
           <ImageContainer
-            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6242.jpg"
+            src="/assets/media/the-crescent/9U7A6242.jpg"
             alt="Carevita - About us"
             width={900}
             height={450}
@@ -41,7 +41,7 @@ const About = ({
             desktop={30}
           />
           <ImageContainer
-            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4662.jpg"
+            src="/assets/media/eastlands/9U7A4662.jpg"
             alt="Carevita - About us"
             width={900}
             height={450}

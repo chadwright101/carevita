@@ -144,7 +144,7 @@ const OurHomes = () => {
           {showEastern && (
             <HomeItem
               data={parsonageData}
-              featuredImage="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3432-HDR.jpg"
+              featuredImage="/assets/media/parsonage-street/9U7A3432-HDR.jpg"
             />
           )}
         </main>

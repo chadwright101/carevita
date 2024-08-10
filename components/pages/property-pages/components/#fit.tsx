@@ -16,7 +16,7 @@ const Fit = ({ cssClasses }: Props) => {
     <section className={`${cssClasses}`}>
       <div className="grid gap-10">
         <ImageContainer
-          src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/fit/CareVita-fit.jpg"
+          src="/assets/media/fit/CareVita-fit.jpg"
           alt="CareVita #fit"
           width={200}
           height={200}
@@ -38,7 +38,7 @@ const Fit = ({ cssClasses }: Props) => {
         </p>
         <div className="grid tabletLarge:grid-cols-2 gap-10">
           <ImageContainer
-            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/fit/20230420_144516.jpg"
+            src="/assets/media/fit/20230420_144516.jpg"
             alt="#fit"
             width={900}
             height={750}
@@ -49,7 +49,7 @@ const Fit = ({ cssClasses }: Props) => {
             desktop={25}
           />
           <ImageContainer
-            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/fit/20230420_141012.jpg"
+            src="/assets/media/fit/20230420_141012.jpg"
             alt="#fit"
             width={900}
             height={750}
@@ -115,7 +115,7 @@ const Fit = ({ cssClasses }: Props) => {
           <div className="grid gap-10 mt-6">
             <div className="phone:grid grid-cols-2 tabletLarge:grid-cols-3 gap-10">
               <ImageContainer
-                src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/fit/20230420_143721.jpg"
+                src="/assets/media/fit/20230420_143721.jpg"
                 alt="#fit"
                 width={900}
                 height={750}
@@ -127,7 +127,7 @@ const Fit = ({ cssClasses }: Props) => {
                 desktop={20}
               />
               <ImageContainer
-                src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/fit/20230420_143829.jpg"
+                src="/assets/media/fit/20230420_143829.jpg"
                 alt="#fit"
                 width={900}
                 height={750}
@@ -139,7 +139,7 @@ const Fit = ({ cssClasses }: Props) => {
                 desktop={20}
               />
               <ImageContainer
-                src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/fit/20230420_143903.jpg"
+                src="/assets/media/fit/20230420_143903.jpg"
                 alt="#fit"
                 width={900}
                 height={750}
@@ -153,7 +153,7 @@ const Fit = ({ cssClasses }: Props) => {
             </div>
             <div className="grid gap-10 tabletLarge:grid-cols-2 desktopSmall:grid-cols-3 desktopSmall:col-span-full">
               <ImageContainer
-                src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/fit/20230420_143400.jpg"
+                src="/assets/media/fit/20230420_143400.jpg"
                 alt="#fit"
                 width={900}
                 height={750}
@@ -165,7 +165,7 @@ const Fit = ({ cssClasses }: Props) => {
                 desktop={30}
               />
               <ImageContainer
-                src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/fit/20230420_142646.jpg"
+                src="/assets/media/fit/20230420_142646.jpg"
                 alt="#fit"
                 width={900}
                 height={750}
@@ -183,7 +183,7 @@ const Fit = ({ cssClasses }: Props) => {
                   className="text-paragraph font-thin p-4 -m-4 tabletLarge:p-0 tabletLarge:m-0 grid grid-cols-[50px_1fr] mr-auto items-center tabletLarge:hover:text-green"
                 >
                   <Image
-                    src="/icons/phone.svg"
+                    src="/assets/icons/phone.svg"
                     alt="#fit on phone"
                     width={24}
                     height={24}
@@ -195,7 +195,7 @@ const Fit = ({ cssClasses }: Props) => {
                   className=" text-paragraph font-thin text-link underline underline-offset-4 p-4 -m-4 tabletLarge:p-0 tabletLarge:m-0 grid grid-cols-[50px_1fr] mr-auto items-center tabletLarge:hover:text-green"
                 >
                   <Image
-                    src="/icons/email.svg"
+                    src="/assets/icons/email.svg"
                     alt="#fit on email"
                     width={24}
                     height={24}
@@ -209,7 +209,7 @@ const Fit = ({ cssClasses }: Props) => {
                   className=" text-paragraph font-thin p-4 -m-4 tabletLarge:p-0 tabletLarge:m-0 grid grid-cols-[50px_1fr] mr-auto items-center tabletLarge:hover:text-green"
                 >
                   <Image
-                    src="/icons/facebook.svg"
+                    src="/assets/icons/facebook.svg"
                     alt="#fit on Facebook"
                     width={26}
                     height={26}
@@ -224,7 +224,7 @@ const Fit = ({ cssClasses }: Props) => {
                   className=" text-paragraph font-thin p-4 -m-4 tabletLarge:p-0 tabletLarge:m-0 grid grid-cols-[50px_1fr] mr-auto items-center tabletLarge:hover:text-green"
                 >
                   <Image
-                    src="/icons/instagram.svg"
+                    src="/assets/icons/instagram.svg"
                     alt="#fit on Instagram"
                     width={28}
                     height={28}
