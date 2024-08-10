@@ -12,9 +12,9 @@
     "meta": {
       "keywords": "CareVita, Retirement, retirement home, frail care, elderly care, caregiving, nursing, nursing services, supporting services, catering services, retirement estate",
       "images": [
-        "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/Crescent-2.jpg",
-        "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6283.jpg",
-        "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6120.jpg"
+        "/assets/media/the-crescent/Crescent-2.jpg",
+        "/assets/media/the-crescent/9U7A6283.jpg",
+        "/assets/media/the-crescent/9U7A6120.jpg"
       ]
     }
   },
@@ -36,7 +36,7 @@
       "Musician",
       "General knowledge quiz"
     ],
-    "image": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6374.jpg"
+    "image": "/assets/media/the-crescent/9U7A6374.jpg"
   },
   "about": {
     "paragraphs": [
@@ -44,64 +44,64 @@
       "Our care team comprises of qualified nurses and care workers and all our meals are made in-house with each residents dietary requirements taken into account.",
       "The Crescent is truly an icon in Plettenberg Bay where residents experience a warm homely home in their golden years."
     ],
-    "image": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6167.jpg"
+    "image": "/assets/media/the-crescent/9U7A6167.jpg"
   },
 
   "meetTheTeam": [
     {
       "position": "Facility manager",
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6010.jpg",
+      "url": "/assets/media/the-crescent/9U7A6010.jpg",
       "teamMember": "Jumiree Jansen"
     },
     {
       "position": "Nursing Manager",
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6631.jpg",
+      "url": "/assets/media/the-crescent/9U7A6631.jpg",
       "teamMember": "Sr. Pamela Knepscheld"
     },
     {
       "position": "Head Chef",
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6004.jpg",
+      "url": "/assets/media/the-crescent/9U7A6004.jpg",
       "teamMember": "Clayton Van Wyk"
     },
     {
       "position": "Supervisor",
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6039.jpg",
+      "url": "/assets/media/the-crescent/9U7A6039.jpg",
       "teamMember": "Jennifer September"
     }
   ],
   "images": {
     "heroSlider": [
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6283.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/Crescent-2.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6627.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6384.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6120.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6201-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/DJI_0968.jpg"
+      "/assets/media/the-crescent/9U7A6283.jpg",
+      "/assets/media/the-crescent/Crescent-2.jpg",
+      "/assets/media/the-crescent/9U7A6627.jpg",
+      "/assets/media/the-crescent/9U7A6384.jpg",
+      "/assets/media/the-crescent/9U7A6120.jpg",
+      "/assets/media/the-crescent/9U7A6201-HDR.jpg",
+      "/assets/media/the-crescent/DJI_0968.jpg"
     ],
     "gallerySlider": [
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/Crescent-2.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6582.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6627.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6242.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/staff-combined.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6120.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6145.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6189-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6201-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6209-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6229-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6221-HDR-Edit.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6382.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6417.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6466.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6293-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6301-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6331-HDR-Edit.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6355-HDR-Edit.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6471-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/Crescent-5.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/DJI_0961.jpg"
+      "/assets/media/the-crescent/Crescent-2.jpg",
+      "/assets/media/the-crescent/9U7A6582.jpg",
+      "/assets/media/the-crescent/9U7A6627.jpg",
+      "/assets/media/the-crescent/9U7A6242.jpg",
+      "/assets/media/the-crescent/staff-combined.jpg",
+      "/assets/media/the-crescent/9U7A6120.jpg",
+      "/assets/media/the-crescent/9U7A6145.jpg",
+      "/assets/media/the-crescent/9U7A6189-HDR.jpg",
+      "/assets/media/the-crescent/9U7A6201-HDR.jpg",
+      "/assets/media/the-crescent/9U7A6209-HDR.jpg",
+      "/assets/media/the-crescent/9U7A6229-HDR.jpg",
+      "/assets/media/the-crescent/9U7A6221-HDR-Edit.jpg",
+      "/assets/media/the-crescent/9U7A6382.jpg",
+      "/assets/media/the-crescent/9U7A6417.jpg",
+      "/assets/media/the-crescent/9U7A6466.jpg",
+      "/assets/media/the-crescent/9U7A6293-HDR.jpg",
+      "/assets/media/the-crescent/9U7A6301-HDR.jpg",
+      "/assets/media/the-crescent/9U7A6331-HDR-Edit.jpg",
+      "/assets/media/the-crescent/9U7A6355-HDR-Edit.jpg",
+      "/assets/media/the-crescent/9U7A6471-HDR.jpg",
+      "/assets/media/the-crescent/Crescent-5.jpg",
+      "/assets/media/the-crescent/DJI_0961.jpg"
     ]
   }
 }

@@ -93,7 +93,7 @@ const HomePageDesktopContactForm = () => {
           arrowCssClasses={classNames("", {
             hidden: !showCrescent,
           })}
-          homeIconUrl="/icons/beach-white.svg"
+          homeIconUrl="/assets/icons/beach-white.svg"
           homeIconAlt="Beach umbrella icon"
         />
 
@@ -117,7 +117,7 @@ const HomePageDesktopContactForm = () => {
           arrowCssClasses={classNames("", {
             hidden: !showEastlands,
           })}
-          homeIconUrl="/icons/flower-white.svg"
+          homeIconUrl="/assets/icons/flower-white.svg"
           homeIconAlt="Flower icon"
         />
 
@@ -141,7 +141,7 @@ const HomePageDesktopContactForm = () => {
           arrowCssClasses={classNames("", {
             hidden: !showSerenePark,
           })}
-          homeIconUrl="/icons/leaves-white.svg"
+          homeIconUrl="/assets/icons/leaves-white.svg"
           homeIconAlt="Leaves icon"
         />
 
@@ -165,7 +165,7 @@ const HomePageDesktopContactForm = () => {
           arrowCssClasses={classNames("", {
             hidden: !showParsonage,
           })}
-          homeIconUrl="/icons/sun-white.svg"
+          homeIconUrl="/assets/icons/sun-white.svg"
           homeIconAlt="Sun icon"
         />
       </div>
@@ -312,7 +312,7 @@ const HomePageDesktopContactForm = () => {
           </div>
           <div className="overflow-hidden">
             <ImageContainer
-              src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/Crescent-5.jpg"
+              src="/assets/media/the-crescent/Crescent-5.jpg"
               alt="Contact The Crescent"
               width={505}
               height={680}
@@ -463,7 +463,7 @@ const HomePageDesktopContactForm = () => {
           </div>
           <div className="overflow-hidden">
             <ImageContainer
-              src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4633-HDR.jpg"
+              src="/assets/media/eastlands/9U7A4633-HDR.jpg"
               alt="Contact Eastlands"
               width={505}
               height={680}
@@ -614,7 +614,7 @@ const HomePageDesktopContactForm = () => {
           </div>
           <div className="overflow-hidden">
             <ImageContainer
-              src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A5003-HDR.jpg"
+              src="/assets/media/serene-park/9U7A5003-HDR.jpg"
               alt="Contact Serene Park"
               width={505}
               height={680}
@@ -765,7 +765,7 @@ const HomePageDesktopContactForm = () => {
           </div>
           <div className="overflow-hidden">
             <ImageContainer
-              src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3468.jpg"
+              src="/assets/media/parsonage-street/9U7A3468.jpg"
               alt="Contact Serene Park"
               width={505}
               height={680}

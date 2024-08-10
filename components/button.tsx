@@ -48,7 +48,7 @@ const Button = ({
       >
         {children}
         <Image
-          src="/icons/arrow_forward-white.svg"
+          src="/assets/icons/arrow_forward-white.svg"
           alt="Arrow icon"
           width={20}
           height={20}
@@ -73,7 +73,7 @@ const Button = ({
       >
         Next
         <Image
-          src="/icons/arrow_forward-white.svg"
+          src="/assets/icons/arrow_forward-white.svg"
           alt="Arrow icon"
           width={20}
           height={20}
@@ -96,7 +96,7 @@ const Button = ({
           </span>
         </div>
         <Image
-          src="/icons/arrow_forward-blue.svg"
+          src="/assets/icons/arrow_forward-blue.svg"
           alt="Arrow icon"
           width={32}
           height={32}
@@ -124,7 +124,7 @@ const Button = ({
             </div>
           </div>
           <Image
-            src="/icons/arrow_drop_down.svg"
+            src="/assets/icons/arrow_drop_down.svg"
             alt="Arrow icon"
             width={23}
             height={23}

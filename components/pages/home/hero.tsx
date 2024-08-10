@@ -16,11 +16,11 @@ const Hero = ({ cssClasses }: Props) => {
           muted
           loop
           className="w-full h-[450px] tabletLarge:h-[600px] object-cover desktop:max-w-[1400px] mx-auto"
-          poster="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/video-poster-carevita.webp"
+          poster="/assets/media/video-poster-carevita.webp"
           playsInline
         >
-          <source src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/carevita-mobile-video.webm" />
-          <source src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/carevita-mobile-video.mp4" />
+          <source src="/assets/media/carevita-mobile-video.webm" />
+          <source src="/assets/media/carevita-mobile-video.mp4" />
         </video>
       )}
       {windowWidth > 650 && (
@@ -29,11 +29,11 @@ const Hero = ({ cssClasses }: Props) => {
           muted
           loop
           className="w-full h-[450px] tabletLarge:h-[600px] object-cover desktop:max-w-[1400px] mx-auto"
-          poster="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/video-poster-carevita.webp"
+          poster="/assets/media/video-poster-carevita.webp"
           playsInline
         >
-          <source src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/carevita-desktop-video.webm" />
-          <source src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/carevita-desktop-video.mp4" />
+          <source src="/assets/media/carevita-desktop-video.webm" />
+          <source src="/assets/media/carevita-desktop-video.mp4" />
         </video>
       )}
     </section>

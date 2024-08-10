@@ -14,7 +14,7 @@ const Services = ({ cssClasses }: Props) => {
         <div className="grid grid-cols-1 grid-rows-[1fr_280px] tablet:grid-rows-[1fr_350px] gap-10 place-items-center tablet:place-items-start tabletLarge:grid-cols-2 tabletLarge:grid-rows-[150px_150px] desktopSmall:grid-rows-[125px_125px] desktop:grid-cols-[1.5fr_2fr]">
           <div className="tablet:grid grid-cols-11 tabletLarge:grid-cols-8 tabletLarge:order-2">
             <Image
-              src="/icons/ecg-heart.svg"
+              src="/assets/icons/ecg-heart.svg"
               alt=""
               width={50}
               height={50}
@@ -39,7 +39,7 @@ const Services = ({ cssClasses }: Props) => {
             </p>
           </div>
           <ImageContainer
-            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A5252.jpg"
+            src="/assets/media/serene-park/9U7A5252.jpg"
             alt="Carevita - Nursing Services"
             width={900}
             height={700}
@@ -54,7 +54,7 @@ const Services = ({ cssClasses }: Props) => {
         <div className="grid grid-cols-1 grid-rows-[1fr_280px] tablet:grid-rows-[1fr_350px] gap-10 place-items-center tablet:place-items-start tabletLarge:grid-cols-2 tabletLarge:grid-rows-[150px_150px] desktopSmall:grid-rows-[125px_125px] desktop:grid-cols-[1.5fr_2fr]">
           <div className="tablet:grid grid-cols-11 tabletLarge:grid-cols-8 tabletLarge:order-2">
             <Image
-              src="/icons/bathtub.svg"
+              src="/assets/icons/bathtub.svg"
               alt=""
               width={50}
               height={50}
@@ -79,7 +79,7 @@ const Services = ({ cssClasses }: Props) => {
             </p>
           </div>
           <ImageContainer
-            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4525.jpg"
+            src="/assets/media/eastlands/9U7A4525.jpg"
             alt="Carevita - Supporting Services"
             width={900}
             height={700}
@@ -94,7 +94,7 @@ const Services = ({ cssClasses }: Props) => {
         <div className="grid grid-cols-1 grid-rows-[1fr_280px] tablet:grid-rows-[1fr_350px] gap-10 place-items-center tablet:place-items-start tabletLarge:grid-cols-2 tabletLarge:grid-rows-[150px_150px] desktopSmall:grid-rows-[125px_125px] desktop:grid-cols-[1.5fr_2fr]">
           <div className="tablet:grid grid-cols-11 tabletLarge:grid-cols-8 tabletLarge:order-2">
             <Image
-              src="/icons/local_dining.svg"
+              src="/assets/icons/local_dining.svg"
               alt=""
               width={50}
               height={50}
@@ -118,7 +118,7 @@ const Services = ({ cssClasses }: Props) => {
             </p>
           </div>
           <ImageContainer
-            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6417.jpg"
+            src="/assets/media/the-crescent/9U7A6417.jpg"
             alt="Carevita - Catering Services"
             width={900}
             height={700}
