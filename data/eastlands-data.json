@@ -12,9 +12,9 @@
     "meta": {
       "keywords": "CareVita, Retirement, retirement home, frail care, elderly care, caregiving, nursing, nursing services, supporting services, catering services, retirement estate",
       "images": [
-        "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4551-HDR.jpg",
-        "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4753.jpg",
-        "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4326-HDR.jpg"
+        "/assets/media/eastlands/9U7A4551-HDR.jpg",
+        "/assets/media/eastlands/9U7A4753.jpg",
+        "/assets/media/eastlands/9U7A4326-HDR.jpg"
       ]
     }
   },
@@ -48,7 +48,7 @@
       "Arts & crafts",
       "Walks"
     ],
-    "image": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A5490.jpg"
+    "image": "/assets/media/eastlands/9U7A5490.jpg"
   },
   "about": {
     "paragraphs": [
@@ -59,74 +59,74 @@
       "Our care team is comprised of qualified nurses and care workers, while the in-house physiotherapist and general practitioner take care of all the residents' health needs. All our meals are made in-house with each resident's dietary requirements taken into account.",
       "Eastlands is truly an icon in Gauteng where residents experience a warm homely home in their golden years."
     ],
-    "image": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4662.jpg"
+    "image": "/assets/media/eastlands/9U7A4662.jpg"
   },
   "meetTheTeam": [
     {
       "position": "Facility manager",
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4871.jpg",
+      "url": "/assets/media/eastlands/9U7A4871.jpg",
       "teamMember": "Vishnu Govender"
     },
     {
       "position": "Nursing Manager",
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4872.jpg",
+      "url": "/assets/media/eastlands/9U7A4872.jpg",
       "teamMember": "Sr. Dulcie Nanagati"
     },
     {
       "position": "Nurse",
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4777.jpg",
+      "url": "/assets/media/eastlands/9U7A4777.jpg",
       "teamMember": "Musa Nkosi"
     },
     {
       "position": "Nurse",
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A5459.jpg",
+      "url": "/assets/media/eastlands/9U7A5459.jpg",
       "teamMember": "Mpho Molokwane"
     },
     {
       "position": "Chef",
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4780.jpg",
+      "url": "/assets/media/eastlands/9U7A4780.jpg",
       "teamMember": "Elizabeth Chakela"
     },
     {
       "position": "Chef",
-      "url": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A5510.jpg",
+      "url": "/assets/media/eastlands/9U7A5510.jpg",
       "teamMember": "Zandile Khela"
     }
   ],
 
   "images": {
     "heroSlider": [
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4551-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4326-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4582.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4753.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4173-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4494.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/DJI_0535.jpg"
+      "/assets/media/eastlands/9U7A4551-HDR.jpg",
+      "/assets/media/eastlands/9U7A4326-HDR.jpg",
+      "/assets/media/eastlands/9U7A4582.jpg",
+      "/assets/media/eastlands/9U7A4753.jpg",
+      "/assets/media/eastlands/9U7A4173-HDR.jpg",
+      "/assets/media/eastlands/9U7A4494.jpg",
+      "/assets/media/eastlands/DJI_0535.jpg"
     ],
     "gallerySlider": [
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4188-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4272-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4877.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4662.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4326-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A5505.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/DJI_0527.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4822.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4611.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4706.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4417.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4376-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/DJI_0551.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A5481.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/DJI_0547.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4697.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4633-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4532-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/DJI_0551.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4648-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4525.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/DJI_0542.jpg"
+      "/assets/media/eastlands/9U7A4188-HDR.jpg",
+      "/assets/media/eastlands/9U7A4272-HDR.jpg",
+      "/assets/media/eastlands/9U7A4877.jpg",
+      "/assets/media/eastlands/9U7A4662.jpg",
+      "/assets/media/eastlands/9U7A4326-HDR.jpg",
+      "/assets/media/eastlands/9U7A5505.jpg",
+      "/assets/media/eastlands/DJI_0527.jpg",
+      "/assets/media/eastlands/9U7A4822.jpg",
+      "/assets/media/eastlands/9U7A4611.jpg",
+      "/assets/media/eastlands/9U7A4706.jpg",
+      "/assets/media/eastlands/9U7A4417.jpg",
+      "/assets/media/eastlands/9U7A4376-HDR.jpg",
+      "/assets/media/eastlands/DJI_0551.jpg",
+      "/assets/media/eastlands/9U7A5481.jpg",
+      "/assets/media/eastlands/DJI_0547.jpg",
+      "/assets/media/eastlands/9U7A4697.jpg",
+      "/assets/media/eastlands/9U7A4633-HDR.jpg",
+      "/assets/media/eastlands/9U7A4532-HDR.jpg",
+      "/assets/media/eastlands/DJI_0551.jpg",
+      "/assets/media/eastlands/9U7A4648-HDR.jpg",
+      "/assets/media/eastlands/9U7A4525.jpg",
+      "/assets/media/eastlands/DJI_0542.jpg"
     ]
   }
 }

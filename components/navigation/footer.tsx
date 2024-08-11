@@ -63,7 +63,7 @@ const Footer = ({ cssClasses, border }: Props) => {
               />
             </Link>
             <ImageContainer
-              src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/carevita-logo.png"
+              src="/assets/media/carevita-logo.png"
               alt="CareVita logo"
               width={120}
               height={100}

@@ -84,9 +84,9 @@ const BusinessPortfolio = () => {
           <FadedLine cssClasses="my-20" />
           <div className="desktopSmall:grid grid-cols-2 gap-x-10">
             <div className="hidden desktopSmall:grid desktop:grid-cols-2 gap-10 h-full">
-              <div className="h-full bg-[url('https://ik.imagekit.io/thewrightdesigns/carevita/parsonage-street/images/tr:w-800,q-75/9U7A3469.jpg')] bg-center bg-cover desktop:col-span-2"></div>
+              <div className="h-full bg-[url('https://ik.imagekit.io/thewrightdesigns/parsonage-street/tr:w-800,q-75/9U7A3469.jpg')] bg-center bg-cover desktop:col-span-2"></div>
               <div className="h-full bg-[url('https://ik.imagekit.io/thewrightdesigns/tr:h-700,q-75/9.jpg?updatedAt=1710568299234')] bg-center bg-cover"></div>
-              <div className="h-full bg-[url('https://ik.imagekit.io/thewrightdesigns/carevita/the-crescent/images/tr:h-500,q-75/9U7A6283.jpg')] bg-center bg-cover"></div>
+              <div className="h-full bg-[url('https://ik.imagekit.io/thewrightdesigns/the-crescent/tr:h-500,q-75/9U7A6283.jpg')] bg-center bg-cover"></div>
             </div>
             <ul>
               {arms.map(({ title, paragraph, image }, index) => (
@@ -166,7 +166,7 @@ const BusinessPortfolio = () => {
           <ImageContainer
             width={900}
             height={500}
-            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A5024-HDR.jpg"
+            src="/assets/media/serene-park/9U7A5024-HDR.jpg"
             cssClasses="hidden w-full object-cover h-full desktopSmall:block"
           />
         </section>

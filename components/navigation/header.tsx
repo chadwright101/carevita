@@ -27,7 +27,7 @@ const Header = ({ cssClasses }: Props) => {
       <div className="w-full flex justify-between items-center px-6 py-4 border-b-2 border-black drop-shadow-md bg-white tabletLarge:hidden">
         <Link href="/" className="p-4 -m-4">
           <ImageContainer
-            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/carevita-logo.png"
+            src="/assets/media/carevita-logo.png"
             alt="CareVita logo"
             width={80}
             height={120}
@@ -163,7 +163,7 @@ const Header = ({ cssClasses }: Props) => {
         <div className="flex w-full justify-between items-end max-w-[1400px] mx-auto">
           <Link href="/" className="p-2 -m-2">
             <Image
-              src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/carevita-logo.png"
+              src="/assets/media/carevita-logo.png"
               alt="CareVita logo"
               width={80}
               height={120}

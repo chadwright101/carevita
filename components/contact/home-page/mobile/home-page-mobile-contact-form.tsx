@@ -83,7 +83,7 @@ const HomePageMobileContactForm = () => {
                 cssClasses="text-left"
                 extendedTitle={crescentData.general.title}
                 location={crescentData.general.location}
-                homeIconUrl="/icons/beach-blue.svg"
+                homeIconUrl="/assets/icons/beach-blue.svg"
                 homeIconAlt="Beach umbrella icon"
               />
             </>
@@ -283,7 +283,7 @@ const HomePageMobileContactForm = () => {
               cssClasses="text-left"
               extendedTitle={eastlandsData.general.title}
               location={eastlandsData.general.location}
-              homeIconUrl="/icons/flower-blue.svg"
+              homeIconUrl="/assets/icons/flower-blue.svg"
               homeIconAlt="Flower icon"
             />
           )}
@@ -482,7 +482,7 @@ const HomePageMobileContactForm = () => {
               cssClasses="text-left"
               extendedTitle={sereneData.general.title}
               location={sereneData.general.location}
-              homeIconUrl="/icons/leaves-blue.svg"
+              homeIconUrl="/assets/icons/leaves-blue.svg"
               homeIconAlt="Leaves icon"
             />
           )}
@@ -687,7 +687,7 @@ const HomePageMobileContactForm = () => {
               cssClasses="text-left"
               extendedTitle={parsonageData.general.title}
               location={parsonageData.general.location}
-              homeIconUrl="/icons/sun-blue.svg"
+              homeIconUrl="/assets/icons/sun-blue.svg"
               homeIconAlt="Sun icon"
             />
           )}

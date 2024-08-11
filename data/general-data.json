@@ -19,28 +19,28 @@
       ]
     },
     "ourHomesSliderHomePage": [
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3469.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4173-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6229-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/DJI_0514.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/Crescent-5.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4551-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6201-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/DJI_0568.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3634.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A4945-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4326-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/9U7A5024-HDR.jpg",
-      "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6466.jpg"
+      "/assets/media/parsonage-street/9U7A3469.jpg",
+      "/assets/media/eastlands/9U7A4173-HDR.jpg",
+      "/assets/media/the-crescent/9U7A6229-HDR.jpg",
+      "/assets/media/parsonage-street/DJI_0514.jpg",
+      "/assets/media/the-crescent/Crescent-5.jpg",
+      "/assets/media/eastlands/9U7A4551-HDR.jpg",
+      "/assets/media/the-crescent/9U7A6201-HDR.jpg",
+      "/assets/media/serene-park/DJI_0568.jpg",
+      "/assets/media/parsonage-street/9U7A3634.jpg",
+      "/assets/media/serene-park/9U7A4945-HDR.jpg",
+      "/assets/media/eastlands/9U7A4326-HDR.jpg",
+      "/assets/media/serene-park/9U7A5024-HDR.jpg",
+      "/assets/media/the-crescent/9U7A6466.jpg"
     ],
     "meta": {
       "title": "Home - CareVita",
       "description": "CareVita was founded in 2018 with the main purpose of breathing new life into the Retirement Management Sector.",
       "keywords": "CareVita, Retirement, retirement home, frail care, elderly care, caregiving, nursing, nursing services, supporting services, catering services, retirement estate",
       "images": [
-        "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/the-crescent/images/9U7A6283.jpg",
-        "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4326-HDR.jpg",
-        "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/DJI_0514.jpg"
+        "/assets/media/the-crescent/9U7A6283.jpg",
+        "/assets/media/eastlands/9U7A4326-HDR.jpg",
+        "/assets/media/parsonage-street/DJI_0514.jpg"
       ]
     },
     "contact": {
@@ -53,9 +53,7 @@
       "title": "Blog - CareVita",
       "description": "CareVita was founded in 2018 with the main purpose of breathing new life into the Retirement Management Sector.",
       "keywords": "blog, CareVita, Retirement, retirement home, frail care, elderly care, caregiving, nursing, nursing services, supporting services, catering services, retirement estate",
-      "images": [
-        "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3836.jpg"
-      ]
+      "images": ["/assets/media/parsonage-street/9U7A3836.jpg"]
     }
   },
   "ourHomes": {
@@ -64,15 +62,15 @@
       "description": "CareVita was founded in 2018 with the main purpose of breathing new life into the Retirement Management Sector.",
       "keywords": "our homes, CareVita, Retirement, retirement home, frail care, elderly care, caregiving, nursing, nursing services, supporting services, catering services, retirement estate",
       "images": [
-        "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/eastlands/images/9U7A4551-HDR.jpg",
-        "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/parsonage-street/images/9U7A3469.jpg"
+        "/assets/media/eastlands/9U7A4551-HDR.jpg",
+        "/assets/media/parsonage-street/9U7A3469.jpg"
       ]
     }
   },
   "social": {
     "facebook": {
       "url": "https://www.facebook.com/CareLifeRetirement",
-      "image": "https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/facebook-logo.png"
+      "image": "/assets/media/facebook-logo.png"
     }
   }
 }

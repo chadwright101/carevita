@@ -17,7 +17,7 @@ const TheCrescent = () => {
       <Layout>
         <div className="desktopSmall:grid grid-cols-2 gap-10  mt-10">
           <ImageContainer
-            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/carevita/serene-park/images/DJI_0568.jpg"
+            src="/assets/media/serene-park/DJI_0568.jpg"
             alt={title}
             width={700}
             height={400}
