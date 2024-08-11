@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
 
 import classNames from "classnames";
 
@@ -39,7 +38,6 @@ const ImageContainer = ({
   url,
   onClick,
 }: Props) => {
-  const [isLoading, setLoading] = useState(true);
   if (url) {
     return (
       <Link href={url} className="overflow-hidden">
@@ -48,27 +46,13 @@ const ImageContainer = ({
           src={src}
           width={width}
           height={height}
-          quality={isLoading ? 5 : quality || 50}
+          quality={quality || 50}
           loading={eager ? "eager" : "lazy"}
           className={classNames(`ease-in-out duration-500 ${cssClasses}`, {
-            "blur-xl": isLoading,
-            "blur-none": !isLoading,
             "desktopSmall:hover:scale-105": url,
           })}
           onClick={onClick}
-          onLoadStart={() => setLoading(true)}
-          onLoad={() => setLoading(false)}
-          sizes={`(max-width: 425px) ${
-            isLoading ? smallest! / 10 : smallest
-          }vw,(max-width: 650px) ${
-            isLoading ? phone! / 10 : phone
-          }vw, (max-width: 900px) ${
-            isLoading ? tablet! / 10 : tablet
-          }vw, (max-width: 1100px) ${
-            isLoading ? tabletLarge! / 10 : tabletLarge
-          }vw, (max-width: 1400px) ${
-            isLoading ? desktopSmall! / 10 : desktopSmall
-          }vw, ${isLoading ? desktop! / 10 : desktop}vw `}
+          sizes={`(max-width: 425px) ${smallest}vw,(max-width: 650px) ${phone}vw, (max-width: 900px) ${tablet}vw, (max-width: 1100px) ${tabletLarge}vw, (max-width: 1400px) ${desktopSmall}vw, ${desktop}vw `}
         />
       </Link>
     );
@@ -79,26 +63,11 @@ const ImageContainer = ({
         src={src}
         width={width}
         height={height}
-        quality={isLoading ? 5 : quality || 50}
+        quality={50}
         loading={eager ? "eager" : "lazy"}
-        className={classNames(`ease-in-out duration-500 ${cssClasses}`, {
-          "blur-xl": isLoading,
-          "blur-none": !isLoading,
-        })}
+        className={`ease-in-out duration-500 ${cssClasses}`}
         onClick={onClick}
-        onLoadStart={() => setLoading(true)}
-        onLoad={() => setLoading(false)}
-        sizes={`(max-width: 425px) ${
-          isLoading ? smallest! / 10 : smallest
-        }vw,(max-width: 650px) ${
-          isLoading ? phone! / 10 : phone
-        }vw, (max-width: 900px) ${
-          isLoading ? tablet! / 10 : tablet
-        }vw, (max-width: 1100px) ${
-          isLoading ? tabletLarge! / 10 : tabletLarge
-        }vw, (max-width: 1400px) ${
-          isLoading ? desktopSmall! / 10 : desktopSmall
-        }vw, ${isLoading ? desktop! / 10 : desktop}vw `}
+        sizes={`(max-width: 425px) ${smallest}vw,(max-width: 650px) ${phone}vw, (max-width: 900px) ${tablet}vw, (max-width: 1100px) ${tabletLarge}vw, (max-width: 1400px) ${desktopSmall}vw, ${desktop}vw `}
       />
     );
   }
