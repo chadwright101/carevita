@@ -84,9 +84,9 @@ const BusinessPortfolio = () => {
           <FadedLine cssClasses="my-20" />
           <div className="desktopSmall:grid grid-cols-2 gap-x-10">
             <div className="hidden desktopSmall:grid desktop:grid-cols-2 gap-10 h-full">
-              <div className="h-full bg-[url('https://ik.imagekit.io/thewrightdesigns/parsonage-street/tr:w-800,q-75/9U7A3469.jpg')] bg-center bg-cover desktop:col-span-2"></div>
-              <div className="h-full bg-[url('https://ik.imagekit.io/thewrightdesigns/tr:h-700,q-75/9.jpg?updatedAt=1710568299234')] bg-center bg-cover"></div>
-              <div className="h-full bg-[url('https://ik.imagekit.io/thewrightdesigns/the-crescent/tr:h-500,q-75/9U7A6283.jpg')] bg-center bg-cover"></div>
+              <div className="h-full bg-[url('https://ik.imagekit.io/thewrightdesigns/tr:w-800,q-75/9U7A3469.jpg')] bg-center bg-cover desktop:col-span-2"></div>
+              <div className="h-full bg-[url('https://ik.imagekit.io/thewrightdesigns/tr:h-700,q-75/9.jpg')] bg-center bg-cover"></div>
+              <div className="h-full bg-[url('https://ik.imagekit.io/thewrightdesigns/tr:h-500,q-75/9U7A6283.jpg')] bg-center bg-cover"></div>
             </div>
             <ul>
               {arms.map(({ title, paragraph, image }, index) => (
