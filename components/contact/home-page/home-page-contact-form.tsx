@@ -19,6 +19,7 @@ const HomePageContactForm = () => {
           </p>
           {showGeneralEmail ? (
             <Link
+              prefetch={false}
               href={`mailto:${showGeneralEmail}`}
               className="text-larger font-thin italic text-white underline-offset-8 decoration-1 tabletLarge:hover:underline tabletLarge:cursor-pointer desktopSmall:text-paragraph"
             >
@@ -44,6 +45,7 @@ const HomePageContactForm = () => {
           </p>
           {showAccountsEmail ? (
             <Link
+              prefetch={false}
               href={`mailto:${showAccountsEmail}`}
               className="text-larger font-thin italic text-white underline-offset-8 decoration-1 tabletLarge:hover:underline tabletLarge:cursor-pointer desktopSmall:text-paragraph"
             >

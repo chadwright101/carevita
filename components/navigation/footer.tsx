@@ -26,13 +26,18 @@ const Footer = ({ cssClasses, border }: Props) => {
             <ul>
               {navigation.general.map(({ title, url }, index) => (
                 <li key={index}>
-                  <Link href={url} className=" hover:font-light">
+                  <Link
+                    prefetch={false}
+                    href={url}
+                    className=" hover:font-light"
+                  >
                     {title}
                   </Link>
                 </li>
               ))}
               <li className="mt-2">
                 <Link
+                  prefetch={false}
                   href={generalData.social.facebook.url}
                   className="hidden tabletLarge:block desktopSmall:hover:scale-105 desktopSmall:hover:opacity-[85%] transition-all duration-500"
                   target="_blank"
@@ -50,6 +55,7 @@ const Footer = ({ cssClasses, border }: Props) => {
           </nav>
           <div className="flex flex-col gap-4 items-center tabletLarge:items-end tabletLarge:gap-1">
             <Link
+              prefetch={false}
               href={generalData.social.facebook.url}
               className="p-3 -m-3 tabletLarge:hidden"
               target="_blank"
@@ -89,6 +95,7 @@ const Footer = ({ cssClasses, border }: Props) => {
         <p className="tabletLarge:text-[16px] grid place-items-center gap-0.5">
           © CareVita {currentYear}
           <Link
+            prefetch={false}
             href="https://www.carevita.co.za"
             className="p-4 -m-4 text-link tabletLarge:hover:underline underline-offset-4 decoration-1"
           >

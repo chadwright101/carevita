@@ -179,6 +179,7 @@ const Fit = ({ cssClasses }: Props) => {
 
               <div className="grid gap-y-6 gap-x-10 tablet:grid-cols-2 tabletLarge:gap-y-4 tabletLarge:flex flex-col">
                 <Link
+                  prefetch={false}
                   href="tel:+27609608695"
                   className="text-paragraph font-thin p-4 -m-4 tabletLarge:p-0 tabletLarge:m-0 grid grid-cols-[50px_1fr] mr-auto items-center tabletLarge:hover:text-green"
                 >
@@ -191,6 +192,7 @@ const Fit = ({ cssClasses }: Props) => {
                   060 960 8695
                 </Link>
                 <Link
+                  prefetch={false}
                   href="mailto:fit@carevita.co.za"
                   className=" text-paragraph font-thin text-link underline underline-offset-4 p-4 -m-4 tabletLarge:p-0 tabletLarge:m-0 grid grid-cols-[50px_1fr] mr-auto items-center tabletLarge:hover:text-green"
                 >
@@ -204,6 +206,7 @@ const Fit = ({ cssClasses }: Props) => {
                 </Link>
 
                 <Link
+                  prefetch={false}
                   href="https://www.facebook.com/profile.php?id=100090893863466"
                   target="_blank"
                   className=" text-paragraph font-thin p-4 -m-4 tabletLarge:p-0 tabletLarge:m-0 grid grid-cols-[50px_1fr] mr-auto items-center tabletLarge:hover:text-green"
@@ -219,6 +222,7 @@ const Fit = ({ cssClasses }: Props) => {
                 </Link>
 
                 <Link
+                  prefetch={false}
                   href="https://instagram.com/carevita_fit?igshid=ZGUzMzM3NWJiOQ=="
                   target="_blank"
                   className=" text-paragraph font-thin p-4 -m-4 tabletLarge:p-0 tabletLarge:m-0 grid grid-cols-[50px_1fr] mr-auto items-center tabletLarge:hover:text-green"

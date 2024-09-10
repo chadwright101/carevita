@@ -25,7 +25,7 @@ const Header = ({ cssClasses }: Props) => {
     <header className={`w-full sticky h-auto top-0 z-10 ${cssClasses}`}>
       {/* mobile nav */}
       <div className="w-full flex justify-between items-center px-6 py-4 border-b-2 border-black drop-shadow-md bg-white tabletLarge:hidden">
-        <Link href="/" className="p-4 -m-4">
+        <Link prefetch={false} href="/" className="p-4 -m-4">
           <ImageContainer
             src="/assets/media/carevita-logo.png"
             alt="CareVita logo"
@@ -70,6 +70,7 @@ const Header = ({ cssClasses }: Props) => {
                     <>
                       <li key={index}>
                         <Link
+                          prefetch={false}
                           href={url}
                           onClick={() => setToggleMenu(false)}
                           className="text-white text-subheading p-4 -m-4"
@@ -91,6 +92,7 @@ const Header = ({ cssClasses }: Props) => {
                     <>
                       <li key={index}>
                         <Link
+                          prefetch={false}
                           href={url}
                           onClick={() => setToggleMenu(false)}
                           className="text-white text-subheading p-4 -m-4"
@@ -112,6 +114,7 @@ const Header = ({ cssClasses }: Props) => {
                     <>
                       <li key={index}>
                         <Link
+                          prefetch={false}
                           href={url}
                           onClick={() => setToggleMenu(false)}
                           className="text-white text-subheading p-4 -m-4"
@@ -128,6 +131,7 @@ const Header = ({ cssClasses }: Props) => {
                   <>
                     <li key={index}>
                       <Link
+                        prefetch={false}
                         href={url}
                         onClick={() => setToggleMenu(false)}
                         className="text-white text-subheading p-4 -m-4"
@@ -161,7 +165,7 @@ const Header = ({ cssClasses }: Props) => {
       {/* desktop navigation */}
       <div className="hidden tabletLarge:block px-12 py-4 border-b-2 w-full border-black drop-shadow-md bg-white ">
         <div className="flex w-full justify-between items-end max-w-[1400px] mx-auto">
-          <Link href="/" className="p-2 -m-2">
+          <Link prefetch={false} href="/" className="p-2 -m-2">
             <Image
               src="/assets/media/carevita-logo.png"
               alt="CareVita logo"
@@ -196,6 +200,7 @@ const Header = ({ cssClasses }: Props) => {
                         }
                       >
                         <Link
+                          prefetch={false}
                           href={url}
                           className={`underline-offset-8 decoration-green decoration-2 ${
                             title !== "Our Homes" && "hover:underline"
@@ -217,6 +222,7 @@ const Header = ({ cssClasses }: Props) => {
                                   className="flex flex-col gap-0.5"
                                 >
                                   <Link
+                                    prefetch={false}
                                     href={url}
                                     className={`font-light text-smaller hover:underline underline-offset-[5px] decoration-green decoration-2 ${
                                       currentRoute === url && "underline"
@@ -252,6 +258,7 @@ const Header = ({ cssClasses }: Props) => {
                         }
                       >
                         <Link
+                          prefetch={false}
                           href={url}
                           className={`underline-offset-8 decoration-green decoration-2 ${
                             title !== "Our Homes" && "hover:underline"
@@ -273,6 +280,7 @@ const Header = ({ cssClasses }: Props) => {
                                   className="flex flex-col gap-0.5"
                                 >
                                   <Link
+                                    prefetch={false}
                                     href={url}
                                     className={`font-light text-smaller hover:underline underline-offset-[5px] decoration-green decoration-2 ${
                                       currentRoute === url && "underline"
@@ -308,6 +316,7 @@ const Header = ({ cssClasses }: Props) => {
                         }
                       >
                         <Link
+                          prefetch={false}
                           href={url}
                           className={`underline-offset-8 decoration-green decoration-2 ${
                             title !== "Our Homes" && "hover:underline"
@@ -329,6 +338,7 @@ const Header = ({ cssClasses }: Props) => {
                                   className="flex flex-col gap-0.5"
                                 >
                                   <Link
+                                    prefetch={false}
                                     href={url}
                                     className={`font-light text-smaller hover:underline underline-offset-[5px] decoration-green decoration-2 ${
                                       currentRoute === url && "underline"
@@ -364,6 +374,7 @@ const Header = ({ cssClasses }: Props) => {
                         }
                       >
                         <Link
+                          prefetch={false}
                           href={url}
                           className={`underline-offset-8 decoration-green decoration-2 ${
                             title !== "Our Homes" && "hover:underline"
@@ -385,6 +396,7 @@ const Header = ({ cssClasses }: Props) => {
                                   className="flex flex-col gap-0.5"
                                 >
                                   <Link
+                                    prefetch={false}
                                     href={url}
                                     className={`font-light text-smaller hover:underline underline-offset-[5px] decoration-green decoration-2 ${
                                       currentRoute === url && "underline"
@@ -419,6 +431,7 @@ const Header = ({ cssClasses }: Props) => {
                         }
                       >
                         <Link
+                          prefetch={false}
                           href={url}
                           className={`underline-offset-8 decoration-green decoration-2 ${
                             title !== "Our Homes" && "hover:underline"
@@ -440,6 +453,7 @@ const Header = ({ cssClasses }: Props) => {
                                   className="flex flex-col gap-0.5"
                                 >
                                   <Link
+                                    prefetch={false}
                                     href={url}
                                     className="font-light text-smaller hover:underline underline-offset-[5px] decoration-green decoration-2"
                                   >

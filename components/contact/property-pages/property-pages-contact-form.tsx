@@ -84,6 +84,7 @@ const PropertyPagesContactForm = ({
                 </p>
               ) : (
                 <Link
+                  prefetch={false}
                   href={`mailto:${showEmail}`}
                   className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0 tabletLarge:hover:underline underline-offset-8 decoration-1"
                 >
@@ -107,6 +108,7 @@ const PropertyPagesContactForm = ({
                 </p>
               ) : (
                 <Link
+                  prefetch={false}
                   href={`tel:${showPhone}`}
                   className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0"
                 >

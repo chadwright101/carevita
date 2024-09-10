@@ -19,7 +19,7 @@ const HomeItem = ({
   return (
     <article className={`flex flex-col gap-10 ${cssClasses}`}>
       <div className="flex flex-col">
-        <Link href={homeUrl}>
+        <Link prefetch={false} href={homeUrl}>
           <Heading
             cssClasses="desktopSmall:hover:text-green"
             variant={headingVariant.subheading}

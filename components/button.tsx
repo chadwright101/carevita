@@ -137,6 +137,7 @@ const Button = ({
     return (
       <button className={`mx-auto ${cssClasses}`}>
         <Link
+          prefetch={false}
           href={url!}
           className="px-12 py-2.5 text-subheading font-thin bg-green text-white drop-shadow-md tabletLarge:hover:bg-lightGreen tablet:px-10"
         >

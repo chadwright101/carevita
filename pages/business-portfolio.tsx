@@ -148,6 +148,7 @@ const BusinessPortfolio = () => {
                     </p>
                   ) : (
                     <Link
+                      prefetch={false}
                       href={`mailto:${showEmail}`}
                       className="text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktopSmall:p-0 desktopSmall:m-0 tabletLarge:hover:underline underline-offset-8 decoration-1"
                     >

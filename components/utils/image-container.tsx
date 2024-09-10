@@ -40,7 +40,7 @@ const ImageContainer = ({
 }: Props) => {
   if (url) {
     return (
-      <Link href={url} className="overflow-hidden">
+      <Link prefetch={false} href={url} className="overflow-hidden">
         <Image
           alt={alt || "Carevita"}
           src={src}

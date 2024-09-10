@@ -105,6 +105,7 @@ const HomePageMobileContactForm = () => {
                 <div className="place-items-start">
                   {showCrescentEmail ? (
                     <Link
+                      prefetch={false}
                       href={`mailto:${showCrescentEmail}`}
                       className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0"
                     >
@@ -128,6 +129,7 @@ const HomePageMobileContactForm = () => {
                 <div className="place-items-start">
                   {showCrescentPhone ? (
                     <Link
+                      prefetch={false}
                       href={`tel:${showCrescentPhone}`}
                       className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0"
                     >
@@ -304,6 +306,7 @@ const HomePageMobileContactForm = () => {
                 <div className="place-items-start">
                   {showEastlandsEmail ? (
                     <Link
+                      prefetch={false}
                       href={`mailto:${showEastlandsEmail}`}
                       className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0"
                     >
@@ -327,6 +330,7 @@ const HomePageMobileContactForm = () => {
                 <div className="place-items-start">
                   {showEastlandsPhone ? (
                     <Link
+                      prefetch={false}
                       href={`tel:${showEastlandsPhone}`}
                       className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0"
                     >
@@ -503,6 +507,7 @@ const HomePageMobileContactForm = () => {
                 <div className="place-items-start">
                   {showSereneParkEmail ? (
                     <Link
+                      prefetch={false}
                       href={`mailto:${showSereneParkEmail}`}
                       className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0"
                     >
@@ -526,6 +531,7 @@ const HomePageMobileContactForm = () => {
                 <div className="place-items-start">
                   {showSereneParkPhone ? (
                     <Link
+                      prefetch={false}
                       href={`tel:${showSereneParkPhone}`}
                       className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0"
                     >
@@ -708,6 +714,7 @@ const HomePageMobileContactForm = () => {
                 <div className="place-items-start">
                   {showParsonageEmail ? (
                     <Link
+                      prefetch={false}
                       href={`mailto:${showParsonageEmail}`}
                       className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0"
                     >
@@ -731,6 +738,7 @@ const HomePageMobileContactForm = () => {
                 <div className="place-items-start">
                   {showParsonagePhone ? (
                     <Link
+                      prefetch={false}
                       href={`tel:${showParsonagePhone}`}
                       className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0"
                     >

@@ -179,6 +179,7 @@ const HomePageDesktopContactForm = () => {
                 <p className="text-white text-larger font-light">Email:</p>
                 {showCrescentEmail ? (
                   <Link
+                    prefetch={false}
                     href={`mailto:${showCrescentEmail}`}
                     className="text-white text-larger hover:underline underline-offset-4 decoration-1"
                   >
@@ -200,6 +201,7 @@ const HomePageDesktopContactForm = () => {
                 <p className="text-white text-larger font-light">Phone:</p>
                 {showCrescentPhone ? (
                   <Link
+                    prefetch={false}
                     href={`tel:${showCrescentPhone}`}
                     className="text-white text-larger hover:underline underline-offset-4 decoration-1"
                   >
@@ -330,6 +332,7 @@ const HomePageDesktopContactForm = () => {
                 <p className="text-white text-larger font-light">Email:</p>
                 {showEastlandsEmail ? (
                   <Link
+                    prefetch={false}
                     href={`mailto:${showEastlandsEmail}`}
                     className="text-white text-larger hover:underline underline-offset-4 decoration-1"
                   >
@@ -351,6 +354,7 @@ const HomePageDesktopContactForm = () => {
                 <p className="text-white text-larger font-light">Phone:</p>
                 {showEastlandsPhone ? (
                   <Link
+                    prefetch={false}
                     href={`tel:${showEastlandsPhone}`}
                     className="text-white text-larger hover:underline underline-offset-4 decoration-1"
                   >
@@ -481,6 +485,7 @@ const HomePageDesktopContactForm = () => {
                 <p className="text-white text-larger font-light">Email:</p>
                 {showSereneParkEmail ? (
                   <Link
+                    prefetch={false}
                     href={`mailto:${showSereneParkEmail}`}
                     className="text-white text-larger hover:underline underline-offset-4 decoration-1"
                   >
@@ -502,6 +507,7 @@ const HomePageDesktopContactForm = () => {
                 <p className="text-white text-larger font-light">Phone:</p>
                 {showSereneParkPhone ? (
                   <Link
+                    prefetch={false}
                     href={`tel:${showSereneParkPhone}`}
                     className="text-white text-larger hover:underline underline-offset-4 decoration-1"
                   >
@@ -632,6 +638,7 @@ const HomePageDesktopContactForm = () => {
                 <p className="text-white text-larger font-light">Email:</p>
                 {showParsonageEmail ? (
                   <Link
+                    prefetch={false}
                     href={`mailto:${showParsonageEmail}`}
                     className="text-white text-larger hover:underline underline-offset-4 decoration-1"
                   >
@@ -653,6 +660,7 @@ const HomePageDesktopContactForm = () => {
                 <p className="text-white text-larger font-light">Phone:</p>
                 {showParsonagePhone ? (
                   <Link
+                    prefetch={false}
                     href={`tel:${showParsonagePhone}`}
                     className="text-white text-larger hover:underline underline-offset-4 decoration-1"
                   >
