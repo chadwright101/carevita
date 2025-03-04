@@ -44,11 +44,9 @@ const Services = ({ cssClasses }: Props) => {
             width={900}
             height={700}
             cssClasses="object-cover w-full h-full tabletLarge:row-span-2 object-bottom"
-            smallest={110}
-            phone={80}
-            tablet={75}
-            desktopSmall={35}
-            desktop={25}
+            phone={110}
+            tabletLarge={75}
+            desktop={35}
           />
         </div>
         <div className="grid grid-cols-1 grid-rows-[1fr_280px] tablet:grid-rows-[1fr_350px] gap-10 place-items-center tablet:place-items-start tabletLarge:grid-cols-2 tabletLarge:grid-rows-[150px_150px] desktopSmall:grid-rows-[125px_125px] desktop:grid-cols-[1.5fr_2fr]">
@@ -84,11 +82,9 @@ const Services = ({ cssClasses }: Props) => {
             width={900}
             height={700}
             cssClasses="object-cover w-full h-full tabletLarge:row-span-2"
-            smallest={110}
-            phone={80}
-            tablet={75}
-            desktopSmall={35}
-            desktop={25}
+            phone={110}
+            tabletLarge={75}
+            desktop={35}
           />
         </div>
         <div className="grid grid-cols-1 grid-rows-[1fr_280px] tablet:grid-rows-[1fr_350px] gap-10 place-items-center tablet:place-items-start tabletLarge:grid-cols-2 tabletLarge:grid-rows-[150px_150px] desktopSmall:grid-rows-[125px_125px] desktop:grid-cols-[1.5fr_2fr]">
@@ -123,11 +119,9 @@ const Services = ({ cssClasses }: Props) => {
             width={900}
             height={700}
             cssClasses="object-cover w-full h-full tabletLarge:row-span-2"
-            smallest={110}
-            phone={80}
-            tablet={75}
-            desktopSmall={35}
-            desktop={25}
+            phone={110}
+            tabletLarge={75}
+            desktop={35}
           />
         </div>
       </div>

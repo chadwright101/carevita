@@ -37,10 +37,9 @@ const HomeItem = ({
         width={1000}
         height={750}
         cssClasses="object-cover h-[225px] phone:h-[300px] tablet:h-[380px] tabletLarge:h-[280px] desktop:h-[325px]"
-        smallest={90}
-        tablet={80}
-        desktopSmall={40}
-        desktop={25}
+        phone={90}
+        tabletLarge={80}
+        desktop={40}
         eager
         url={homeUrl}
       />

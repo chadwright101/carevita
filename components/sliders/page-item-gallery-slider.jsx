@@ -43,7 +43,6 @@ const PageItemGallerySlider = ({ imageList, homeName }) => {
               height={1000}
               cssClasses="object-cover h-full w-full"
               phone={80}
-              desktopSmall={75}
               desktop={100}
               onClick={() => slider1.current.go(index)}
               eager={index < 2 ? true : false}
@@ -77,7 +76,6 @@ const PageItemGallerySlider = ({ imageList, homeName }) => {
                 width={200}
                 height={200}
                 cssClasses="object-cover h-full w-full cursor-pointer px-1 pt-2"
-                desktopSmall={7.5}
                 quality={30}
                 desktop={7.5}
                 onClick={() => slider1.current.go(index)}

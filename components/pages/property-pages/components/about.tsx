@@ -42,10 +42,7 @@ const About = ({
             width={1000}
             height={750}
             cssClasses="object-cover h-[250px] phone:h-[275px] tablet:h-[400px] tabletLarge:hidden"
-            smallest={70}
-            phone={40}
-            tablet={30}
-            desktopSmall={20}
+            phone={70}
             desktop={30}
           />
         </div>
@@ -90,10 +87,7 @@ const About = ({
             width={1000}
             height={750}
             cssClasses="object-cover h-[250px] phone:h-[275px] tablet:h-[400px] tabletLarge:hidden"
-            smallest={70}
-            phone={40}
-            tablet={30}
-            desktopSmall={20}
+            phone={70}
             desktop={30}
           />
         </div>
@@ -104,10 +98,8 @@ const About = ({
         width={1000}
         height={750}
         cssClasses="hidden object-cover h-[300px] tabletLarge:block desktop:h-[375px]"
-        smallest={90}
-        phone={60}
-        tablet={60}
-        desktopSmall={30}
+        phone={90}
+        tabletLarge={60}
         desktop={40}
       />
       <ImageContainer
@@ -116,10 +108,7 @@ const About = ({
         width={1000}
         height={750}
         cssClasses="hidden object-cover h-[300px] tabletLarge:block desktop:h-[375px]"
-        smallest={90}
-        phone={60}
-        tablet={60}
-        desktopSmall={30}
+        phone={90}
         desktop={40}
       />
     </div>

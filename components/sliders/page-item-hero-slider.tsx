@@ -73,7 +73,6 @@ const PageItemHeroSlider = ({ imageList, homeName }: Props) => {
               height={1000}
               cssClasses="object-cover h-full w-full"
               phone={100}
-              desktopSmall={80}
               desktop={100}
               eager={index < 2 ? true : false}
             />

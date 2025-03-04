@@ -36,9 +36,8 @@ const About = ({
             width={900}
             height={450}
             cssClasses="object-cover w-full h-full"
-            tablet={90}
-            desktopSmall={50}
-            desktop={30}
+            tabletLarge={90}
+            desktop={50}
           />
           <ImageContainer
             src="/assets/media/eastlands/9U7A4662.jpg"
@@ -46,9 +45,8 @@ const About = ({
             width={900}
             height={450}
             cssClasses="object-cover w-full h-full"
-            tablet={90}
-            desktopSmall={50}
-            desktop={30}
+            tabletLarge={90}
+            desktop={50}
           />
         </div>
       </main>

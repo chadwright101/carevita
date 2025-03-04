@@ -74,9 +74,7 @@ const Footer = ({ cssClasses, border }: Props) => {
               width={120}
               height={100}
               cssClasses="w-[120px] h-auto"
-              smallest={30}
-              phone={20}
-              desktopSmall={10}
+              phone={30}
               desktop={10}
             />
             <p className="text-[16px] flex flex-col items-center tabletLarge:items-end tabletLarge:text-right tabletLarge:mt-2 tabletLarge:text-[15px]">

@@ -38,9 +38,7 @@ const Header = ({ cssClasses }: Props) => {
                 "w-[64px]": scrollPosition > 0,
               }
             )}
-            smallest={30}
-            phone={20}
-            desktopSmall={10}
+            phone={30}
             desktop={10}
             eager
           />

@@ -23,8 +23,7 @@ const TheCrescent = () => {
             width={700}
             height={400}
             cssClasses="object-cover w-full hidden h-[500px] desktopSmall:block"
-            desktopSmall={50}
-            desktop={40}
+            desktop={50}
           />
           <EastlandsMap cssClasses="w-full h-[400px] tabletLarge:h-[500px] mb-16" />
         </div>

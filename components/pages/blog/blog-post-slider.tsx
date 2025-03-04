@@ -72,9 +72,8 @@ const BlogPostSlider = ({ galleryList, alt }: Props) => {
               width={1400}
               height={1000}
               cssClasses="object-cover w-full h-full"
-              tablet={90}
-              desktopSmall={80}
-              desktop={40}
+              tabletLarge={90}
+              desktop={80}
               eager={index < 2 ? true : false}
             />
           </SplideSlide>

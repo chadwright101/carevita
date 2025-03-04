@@ -8,11 +8,8 @@ interface Props {
   alt?: string;
   width: number;
   height: number;
-  smallest?: number;
   phone?: number;
-  tablet?: number;
   tabletLarge?: number;
-  desktopSmall?: number;
   desktop?: number;
   cssClasses?: string;
   quality?: number;
@@ -26,12 +23,9 @@ const ImageContainer = ({
   alt,
   width,
   height,
-  smallest,
   phone,
-  tablet,
   tabletLarge,
   desktop,
-  desktopSmall,
   cssClasses,
   quality,
   eager,
@@ -52,7 +46,9 @@ const ImageContainer = ({
             "desktopSmall:hover:scale-105": url,
           })}
           onClick={onClick}
-          sizes={`(max-width: 425px) ${smallest}vw,(max-width: 650px) ${phone}vw, (max-width: 900px) ${tablet}vw, (max-width: 1100px) ${tabletLarge}vw, (max-width: 1400px) ${desktopSmall}vw, ${desktop}vw `}
+          sizes={`${phone ? `(max-width: 650px) ${phone}vw,` : ""} ${
+            tabletLarge ? `(max-width: 1100px) ${tabletLarge}vw,` : ""
+          } ${desktop}vw `}
         />
       </Link>
     );
@@ -67,7 +63,9 @@ const ImageContainer = ({
         loading={eager ? "eager" : "lazy"}
         className={`ease-in-out duration-500 ${cssClasses}`}
         onClick={onClick}
-        sizes={`(max-width: 425px) ${smallest}vw,(max-width: 650px) ${phone}vw, (max-width: 900px) ${tablet}vw, (max-width: 1100px) ${tabletLarge}vw, (max-width: 1400px) ${desktopSmall}vw, ${desktop}vw `}
+        sizes={`${phone ? `(max-width: 650px) ${phone}vw,` : ""} ${
+          tabletLarge ? `(max-width: 1100px) ${tabletLarge}vw,` : ""
+        } ${desktop}vw `}
       />
     );
   }
