@@ -18,14 +18,14 @@ export interface DataProps {
     whatWeOffer: {
       list: Array<string>;
       image: string;
-      pampering: Array<string>;
-      weeklyActivities: Array<string>;
+      pampering?: Array<string>;
+      weeklyActivities?: Array<string>;
     };
     about: {
       paragraphs: Array<string>;
       image: string;
     };
-    meetTheTeam: Array<{
+    meetTheTeam?: Array<{
       position: string;
       url: string;
       teamMember: string;

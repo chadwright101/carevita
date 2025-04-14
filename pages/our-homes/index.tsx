@@ -13,6 +13,7 @@ import crescentData from "@/data/crescent-data.json";
 import sereneData from "@/data/serene-data.json";
 import eastlandsData from "@/data/eastlands-data.json";
 import parsonageData from "@/data/parsonage-data.json";
+import hartlandData from "@/data/hartland-data.json";
 
 const OurHomes = () => {
   const [showGauteng, setShowGauteng] = useState(true);
@@ -113,19 +114,6 @@ const OurHomes = () => {
           )}
         </div>
         <main className="grid gap-y-12 gap-x-10 tabletLarge:gap-y-24 tabletLarge:gap-x-10 tabletLarge:grid-cols-2">
-          {showWestern && (
-            <div>
-              <HomeItem
-                data={crescentData}
-                featuredImage={crescentData.images.heroSlider[1]}
-              />
-              <hr
-                className={classNames("mt-16 tabletLarge:hidden", {
-                  hidden: showWestern,
-                })}
-              />
-            </div>
-          )}
           {showGauteng && (
             <>
               <div>
@@ -138,6 +126,21 @@ const OurHomes = () => {
               <HomeItem
                 data={sereneData}
                 featuredImage={sereneData.images.heroSlider[1]}
+              />
+            </>
+          )}
+          {showWestern && (
+            <>
+              <div>
+                <HomeItem
+                  data={crescentData}
+                  featuredImage={crescentData.images.heroSlider[1]}
+                />
+                <hr className="mt-16 tabletLarge:hidden" />
+              </div>
+              <HomeItem
+                data={hartlandData}
+                featuredImage={hartlandData.images.heroSlider[1]}
               />
             </>
           )}

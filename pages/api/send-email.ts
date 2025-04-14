@@ -58,6 +58,7 @@ export default async function handler(
     "Eastlands Estate": process.env.SMTP_SEND_TO_EASTLANDS,
     "Serene Park Centre": process.env.SMTP_SEND_TO_SERENE,
     "Parsonage Street Home": process.env.SMTP_SEND_TO_PARSONAGE,
+    "Hartland Estate": process.env.SMTP_SEND_TO_HARTLAND,
   };
 
   let {

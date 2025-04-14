@@ -50,10 +50,12 @@ const PageItem = ({
                 id="staff"
                 className="-translate-y-28 tablet:-translate-y-32 desktop:-translate-y-28"
               ></div>
-              <MeetTheTeam
-                meetTheTeam={meetTheTeam}
-                homeName={general.extendedTitle}
-              />
+              {meetTheTeam && (
+                <MeetTheTeam
+                  meetTheTeam={meetTheTeam}
+                  homeName={general.extendedTitle}
+                />
+              )}
             </div>
           </div>
         </main>

@@ -1,6 +1,7 @@
 import { DataProps } from "@/components/utils/data-props";
 import Heading, { headingVariant } from "../../../heading";
 import ImageContainer from "@/components/utils/image-container";
+import classNames from "classnames";
 
 interface Props {
   general: {
@@ -12,8 +13,8 @@ interface Props {
   };
   whatWeOffer: {
     list: string[];
-    pampering: string[];
-    weeklyActivities: string[];
+    pampering?: string[];
+    weeklyActivities?: string[];
     image: string;
   };
 }
@@ -34,7 +35,8 @@ const About = ({
             <p className="mb-4">{paragraphs[2]}</p>
             <p className="mb-4">{paragraphs[3]}</p>
             <p className="mb-4">{paragraphs[4]}</p>
-            <p>{paragraphs[5]}</p>
+            <p className="mb-4">{paragraphs[5]}</p>
+            <p>{paragraphs[6]}</p>
           </article>
           <ImageContainer
             src={aboutImage}
@@ -52,16 +54,23 @@ const About = ({
           <Heading variant={headingVariant.subheading}>What we offer</Heading>
         </article>
         <div className="grid gap-10">
-          <ul className="grid gap-1 list-disc ml-4 gap-x-10 phone:grid-cols-2 tabletLarge:grid-cols-1 desktopSmall:grid-cols-2">
+          <ul
+            className={classNames("grid gap-1 list-disc ml-4 gap-x-10", {
+              "phone:grid-cols-2 tabletLarge:grid-cols-1 desktopSmall:grid-cols-2":
+                weeklyActivities || pampering,
+            })}
+          >
             <ul className="flex flex-col gap-1 list-disc">
-              <li>
-                Weekly activities
-                <ul className="grid gap-1 mt-1 list-[square] ml-8">
-                  {weeklyActivities.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </ul>
-              </li>
+              {weeklyActivities && (
+                <li>
+                  Weekly activities
+                  <ul className="grid gap-1 mt-1 list-[square] ml-8">
+                    {weeklyActivities.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                </li>
+              )}
               {pampering && (
                 <li>
                   Pampering
@@ -75,9 +84,7 @@ const About = ({
             </ul>
             <div className="flex flex-col gap-1">
               {list.map((item, index) => (
-                <li className="" key={index}>
-                  {item}
-                </li>
+                <li key={index}>{item}</li>
               ))}
             </div>
           </ul>

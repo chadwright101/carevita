@@ -1,0 +1,70 @@
+{
+  "general": {
+    "shortTitle": "hartland",
+    "title": "Hartland Estate",
+    "extendedTitle": "Hartland Lifestyle Estate",
+    "location": "Mossel Bay, WC",
+    "extendedLocation": "Mossel Bay, Western Cape",
+    "email": "jumiree@carevita.co.za",
+    "phone": "+27 87 265 3537",
+    "homeUrl": "our-homes/hartland-estate",
+    "description": "This thoughtfully designed estate offers residents the perfect blend of natural beauty and modern convenience. With panoramic views of the ocean and the surrounding fynbos landscape, Hartland creates a peaceful yet vibrant setting where residents can truly feel at home.",
+    "meta": {
+      "keywords": "Hartland, CareVita, Retirement, retirement home, frail care, elderly care, caregiving, nursing, nursing services, supporting services, catering services, retirement estate",
+      "images": [
+        "/assets/media/hartland-estate/ArealSlide_nov24_4.jpg",
+        "/assets/media/hartland-estate/Bespoke-4.jpg"
+      ]
+    }
+  },
+  "whatWeOffer": {
+    "list": [
+      "Blood Pressure Testing",
+      "Blood Glucose Testing",
+      "Colostomy Care",
+      "Care Worker Call Out",
+      "Senior Nurse Call Out",
+      "Cholesterol Testing",
+      "Injections",
+      "Medication Management",
+      "Medication Ordering",
+      "Oxygen Supply",
+      "Urine Testing",
+      "Vital Checks",
+      "Wound Care",
+      "Nebulizing"
+    ],
+    "image": "/assets/media/hartland-estate/Bespoke-2.jpg"
+  },
+  "about": {
+    "paragraphs": [
+      "A New Standard for Comfortable Living in Mossel Bay",
+      "Set against the serene backdrop of the Western Cape’s pristine coastline, Hartland Lifestyle Estate is quickly becoming one of Mossel Bay’s most sought-after developments—especially for mature residents looking to embrace a lifestyle of comfort, community, and care.",
+      "CareVita is proud to be associated with a development that prioritizes the well-being and quality of life of its residents.",
+      "What truly sets Hartland Lifestyle Estate apart, however, is its focus on providing exceptional care and support for its mature residents. Through a strategic partnership with CareVita, the estate ensures that residents have access to professional, compassionate assistance within the comfort of their own homes.",
+      "Adding even more value to this already attractive offering, a new frail care facility will soon be under construction within the estate. Once completed, this facility will further reinforce Hartland’s commitment to providing a safe, supportive environment where residents can age with dignity and peace of mind. It will serve as a cornerstone of long-term care, seamlessly complementing the existing home-based services provided by CareVita."
+    ],
+    "image": "/assets/media/hartland-estate/ArealSlide_nov24_4.jpg"
+  },
+  "images": {
+    "heroSlider": [
+      "/assets/media/hartland-estate/ArealSlide_nov24_3.jpg",
+      "/assets/media/hartland-estate/hartland-lifestyle-estate-11.jpg",
+      "/assets/media/hartland-estate/ArealSlide_nov24.jpg",
+      "/assets/media/hartland-estate/hartland-lifestyle-estate-6.jpg"
+    ],
+    "gallerySlider": [
+      "/assets/media/hartland-estate/ArealSlide_nov24_3.jpg",
+      "/assets/media/hartland-estate/hartland-lifestyle-estate-5.jpg",
+      "/assets/media/hartland-estate/ArealSlide_nov24_4.jpg",
+      "/assets/media/hartland-estate/hartland-lifestyle-estate-11.jpg",
+      "/assets/media/hartland-estate/ArealSlide_nov24.jpg",
+      "/assets/media/hartland-estate/Hartland-Green-Belt.jpg",
+      "/assets/media/hartland-estate/hartland-lifestyle-estate-6.jpg",
+      "/assets/media/hartland-estate/Bespoke-2.jpg",
+      "/assets/media/hartland-estate/hartland-lifestyle-estate-12.jpg",
+      "/assets/media/hartland-estate/Bespoke-4.jpg",
+      "/assets/media/hartland-estate/hartland-lifestyle-estate-3.jpg"
+    ]
+  }
+}
