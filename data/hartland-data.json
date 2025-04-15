@@ -13,28 +13,28 @@
       "keywords": "Hartland, CareVita, Retirement, retirement home, frail care, elderly care, caregiving, nursing, nursing services, supporting services, catering services, retirement estate",
       "images": [
         "/assets/media/hartland-estate/ArealSlide_nov24_4.jpg",
-        "/assets/media/hartland-estate/Bespoke-4.jpg"
+        "/assets/media/hartland-estate/thumbnail.jpg"
       ]
     }
   },
   "whatWeOffer": {
     "list": [
-      "Blood Pressure Testing",
-      "Blood Glucose Testing",
-      "Colostomy Care",
-      "Care Worker Call Out",
-      "Senior Nurse Call Out",
-      "Cholesterol Testing",
+      "Blood pressure testing",
+      "Blood glucose testing",
+      "Cholesterol testing",
+      "Urine testing",
+      "Vital checks",
       "Injections",
-      "Medication Management",
-      "Medication Ordering",
-      "Oxygen Supply",
-      "Urine Testing",
-      "Vital Checks",
-      "Wound Care",
-      "Nebulizing"
+      "Medication management",
+      "Medication ordering",
+      "Oxygen supply",
+      "Would care",
+      "Nebulizing",
+      "Colostomy care",
+      "Caregiver call out",
+      "Nurse call out"
     ],
-    "image": "/assets/media/hartland-estate/Bespoke-2.jpg"
+    "image": "/assets/media/hartland-estate/thumbnail.jpg"
   },
   "about": {
     "paragraphs": [
@@ -51,14 +51,15 @@
       "/assets/media/hartland-estate/ArealSlide_nov24_3.jpg",
       "/assets/media/hartland-estate/hartland-lifestyle-estate-11.jpg",
       "/assets/media/hartland-estate/ArealSlide_nov24.jpg",
-      "/assets/media/hartland-estate/hartland-lifestyle-estate-6.jpg"
+      "/assets/media/hartland-estate/hartland-lifestyle-estate-6.jpg",
+      "/assets/media/hartland-estate/thumbnail.jpg"
     ],
     "gallerySlider": [
-      "/assets/media/hartland-estate/ArealSlide_nov24_3.jpg",
+      "/assets/media/hartland-estate/ArealSlide_nov24.jpg",
       "/assets/media/hartland-estate/hartland-lifestyle-estate-5.jpg",
       "/assets/media/hartland-estate/ArealSlide_nov24_4.jpg",
       "/assets/media/hartland-estate/hartland-lifestyle-estate-11.jpg",
-      "/assets/media/hartland-estate/ArealSlide_nov24.jpg",
+      "/assets/media/hartland-estate/ArealSlide_nov24_3.jpg",
       "/assets/media/hartland-estate/Hartland-Green-Belt.jpg",
       "/assets/media/hartland-estate/hartland-lifestyle-estate-6.jpg",
       "/assets/media/hartland-estate/Bespoke-2.jpg",
