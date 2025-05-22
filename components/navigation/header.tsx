@@ -59,8 +59,8 @@ const Header = ({ cssClasses }: Props) => {
       {toggleMenu && (
         <nav className="fixed top-0 h-screen w-full bg-blue pt-8 px-5 tabletLarge:hidden">
           <ul className="mt-10 flex flex-col gap-4">
-            {currentRoute === "/our-homes/the-crescent"
-              ? navigation.crescent
+            {currentRoute === "/our-homes/hartland-estate"
+              ? navigation.hartland
                   .filter(
                     ({ title }) => title !== "About" && title !== "Location"
                   )
@@ -179,7 +179,123 @@ const Header = ({ cssClasses }: Props) => {
           </Link>
           <nav>
             <ul className="flex gap-6">
-              {currentRoute === "/our-homes/the-crescent"
+              {currentRoute === "/our-homes/hartland-estate"
+                ? navigation.hartland.map(
+                    ({ title, url, homeSubmenu }, index) => (
+                      <li
+                        key={index}
+                        onMouseEnter={
+                          homeSubmenu &&
+                          (() => {
+                            setToggleHomeSubmenu(!toggleHomeSubmenu);
+                          })
+                        }
+                        onMouseLeave={
+                          homeSubmenu &&
+                          (() => {
+                            setToggleHomeSubmenu(!toggleHomeSubmenu);
+                          })
+                        }
+                      >
+                        <Link
+                          prefetch={false}
+                          href={url}
+                          className={`underline-offset-8 decoration-green decoration-2 ${
+                            title !== "Our Homes" && "hover:underline"
+                          } ${currentRoute === url && "underline"}`}
+                        >
+                          {title}
+                        </Link>
+
+                        {homeSubmenu && toggleHomeSubmenu && (
+                          <ul className="absolute bg-white p-6 border border-t-0 border-black -translate-x-[59px] rounded-b-xl flex flex-col gap-2">
+                            {/* white blocks to hide borders */}
+                            <div className="w-3 bg-white h-4 absolute -translate-x-8 -translate-y-6"></div>
+                            <div className="w-3 bg-white h-4 absolute translate-x-[170px] -translate-y-6"></div>
+
+                            {homeSubmenu.map(
+                              ({ title, url, location }, index) => (
+                                <li
+                                  key={index}
+                                  className="flex flex-col gap-0.5"
+                                >
+                                  <Link
+                                    prefetch={false}
+                                    href={url}
+                                    className={`font-light text-smaller hover:underline underline-offset-[5px] decoration-green decoration-2 ${
+                                      currentRoute === url && "underline"
+                                    }`}
+                                  >
+                                    {title}
+                                  </Link>
+                                  <p className="text-smallest">{location}</p>
+                                </li>
+                              )
+                            )}
+                          </ul>
+                        )}
+                      </li>
+                    )
+                  )
+                : currentRoute === "/our-homes/the-crescent"
+                ? navigation.crescent.map(
+                    ({ title, url, homeSubmenu }, index) => (
+                      <li
+                        key={index}
+                        onMouseEnter={
+                          homeSubmenu &&
+                          (() => {
+                            setToggleHomeSubmenu(!toggleHomeSubmenu);
+                          })
+                        }
+                        onMouseLeave={
+                          homeSubmenu &&
+                          (() => {
+                            setToggleHomeSubmenu(!toggleHomeSubmenu);
+                          })
+                        }
+                      >
+                        <Link
+                          prefetch={false}
+                          href={url}
+                          className={`underline-offset-8 decoration-green decoration-2 ${
+                            title !== "Our Homes" && "hover:underline"
+                          } ${currentRoute === url && "underline"}`}
+                        >
+                          {title}
+                        </Link>
+
+                        {homeSubmenu && toggleHomeSubmenu && (
+                          <ul className="absolute bg-white p-6 border border-t-0 border-black -translate-x-[59px] rounded-b-xl flex flex-col gap-2">
+                            {/* white blocks to hide borders */}
+                            <div className="w-3 bg-white h-4 absolute -translate-x-8 -translate-y-6"></div>
+                            <div className="w-3 bg-white h-4 absolute translate-x-[170px] -translate-y-6"></div>
+
+                            {homeSubmenu.map(
+                              ({ title, url, location }, index) => (
+                                <li
+                                  key={index}
+                                  className="flex flex-col gap-0.5"
+                                >
+                                  <Link
+                                    prefetch={false}
+                                    href={url}
+                                    className={`font-light text-smaller hover:underline underline-offset-[5px] decoration-green decoration-2 ${
+                                      currentRoute === url && "underline"
+                                    }`}
+                                  >
+                                    {title}
+                                  </Link>
+                                  <p className="text-smallest">{location}</p>
+                                </li>
+                              )
+                            )}
+                          </ul>
+                        )}
+                      </li>
+                    )
+                  )
+                : currentRoute === "/our-homes/the-crescent"
                 ? navigation.crescent.map(
                     ({ title, url, homeSubmenu }, index) => (
                       <li

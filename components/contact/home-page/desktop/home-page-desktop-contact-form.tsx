@@ -78,6 +78,31 @@ const HomePageDesktopContactForm = () => {
         Please select which facility you&#39;d like to get in touch with...
       </p>
       <div className="flex justify-between">
+        {/* hartland */}
+        <Button
+          desktopHomesForm
+          onClick={() => {
+            setShowCrescent(false);
+            setShowEastlands(false);
+            setShowSerenePark(false);
+            setShowParsonage(false);
+            setShowHartland(true);
+            setFormSubmitted(false);
+            setFormError("");
+          }}
+          extendedTitle={hartlandData.general.title}
+          location={hartlandData.general.location}
+          cssClasses={classNames("ease-in-out duration-300", {
+            "hover:scale-105 hover:-mb-[10px]": !showHartland,
+            "border-b-2 border-white pb-2 -mb-[10px]": showHartland,
+          })}
+          arrowCssClasses={classNames("", {
+            hidden: !showHartland,
+          })}
+          homeIconUrl="/assets/icons/spa-white.svg"
+          homeIconAlt="Cottage icon"
+        />
+
         {/* the crescent */}
         <Button
           desktopHomesForm
@@ -176,31 +201,6 @@ const HomePageDesktopContactForm = () => {
           })}
           homeIconUrl="/assets/icons/sun-white.svg"
           homeIconAlt="Sun icon"
-        />
-
-        {/* hartland */}
-        <Button
-          desktopHomesForm
-          onClick={() => {
-            setShowCrescent(false);
-            setShowEastlands(false);
-            setShowSerenePark(false);
-            setShowParsonage(false);
-            setShowHartland(true);
-            setFormSubmitted(false);
-            setFormError("");
-          }}
-          extendedTitle={hartlandData.general.title}
-          location={hartlandData.general.location}
-          cssClasses={classNames("ease-in-out duration-300", {
-            "hover:scale-105 hover:-mb-[10px]": !showHartland,
-            "border-b-2 border-white pb-2 -mb-[10px]": showHartland,
-          })}
-          arrowCssClasses={classNames("", {
-            hidden: !showHartland,
-          })}
-          homeIconUrl="/assets/icons/spa-white.svg"
-          homeIconAlt="Cottage icon"
         />
       </div>
 

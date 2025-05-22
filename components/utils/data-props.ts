@@ -34,6 +34,13 @@ export interface DataProps {
       heroSlider: Array<string>;
       gallerySlider: Array<string>;
     };
+    video?: {
+      desktopMp4: string;
+      mobileMp4: string;
+      desktopWebm: string;
+      mobileWebm: string;
+      poster: string;
+    };
   };
 }
 

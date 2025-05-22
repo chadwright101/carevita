@@ -17,6 +17,12 @@
       "url": "/our-homes",
       "homeSubmenu": [
         {
+          "title": "Hartland Estate",
+          "extendedTitle": "Hartland Lifestyle Estate",
+          "location": "Mossel Bay, WC",
+          "url": "/our-homes/hartland-estate"
+        },
+        {
           "title": "The Crescent",
           "extendedTitle": "The Crescent Retirement",
           "location": "Plettenberg Bay, WC",
@@ -39,12 +45,6 @@
           "extendedTitle": "Parsonage Street Home for the Aged",
           "location": "Graaff Reinet, EC",
           "url": "/our-homes/parsonage-street-home"
-        },
-        {
-          "title": "Hartland Estate",
-          "extendedTitle": "Hartland Lifestyle Estate",
-          "location": "Mossel Bay, WC",
-          "url": "/our-homes/hartland-estate"
         }
       ]
     },
@@ -55,6 +55,68 @@
     {
       "title": "Contact",
       "url": "/#contact"
+    }
+  ],
+  "hartland": [
+    {
+      "title": "Home",
+      "url": "/"
+    },
+    {
+      "title": "About",
+      "url": "/our-homes/hartland-estate/#about"
+    },
+    {
+      "title": "Gallery",
+      "url": "/our-homes/hartland-estate/#gallery"
+    },
+    {
+      "title": "Location",
+      "url": "/our-homes/hartland-estate/#location"
+    },
+    {
+      "title": "Our Homes",
+      "url": "/our-homes",
+      "homeSubmenu": [
+        {
+          "title": "Hartland Estate",
+          "extendedTitle": "Hartland Lifestyle Estate",
+          "location": "Mossel Bay, WC",
+          "url": "/our-homes/hartland-estate"
+        },
+        {
+          "title": "The Crescent",
+          "extendedTitle": "The Crescent Retirement",
+          "location": "Plettenberg Bay, WC",
+          "url": "/our-homes/the-crescent"
+        },
+        {
+          "title": "Eastlands Estate",
+          "extendedTitle": "Eastlands Mature Lifestyle Estate",
+          "location": "Benoni, GP",
+          "url": "/our-homes/eastlands"
+        },
+        {
+          "title": "Serene Park Centre",
+          "extendedTitle": "Serene Park Frail Care Centre",
+          "location": "Pretoria, GP",
+          "url": "/our-homes/serene-park"
+        },
+        {
+          "title": "Parsonage Street",
+          "extendedTitle": "Parsonage Street Home for the Aged",
+          "location": "Graaff Reinet, EC",
+          "url": "/our-homes/parsonage-street-home"
+        }
+      ]
+    },
+    {
+      "title": "Blog",
+      "url": "/blog"
+    },
+    {
+      "title": "Contact",
+      "url": "/our-homes/the-crescent/#contact"
     }
   ],
   "crescent": [
@@ -83,6 +145,12 @@
       "url": "/our-homes",
       "homeSubmenu": [
         {
+          "title": "Hartland Estate",
+          "extendedTitle": "Hartland Lifestyle Estate",
+          "location": "Mossel Bay, WC",
+          "url": "/our-homes/hartland-estate"
+        },
+        {
           "title": "The Crescent",
           "extendedTitle": "The Crescent Retirement",
           "location": "Plettenberg Bay, WC",
@@ -105,12 +173,6 @@
           "extendedTitle": "Parsonage Street Home for the Aged",
           "location": "Graaff Reinet, EC",
           "url": "/our-homes/parsonage-street-home"
-        },
-        {
-          "title": "Hartland Estate",
-          "extendedTitle": "Hartland Lifestyle Estate",
-          "location": "Mossel Bay, WC",
-          "url": "/our-homes/hartland-estate"
         }
       ]
     },
@@ -149,6 +211,12 @@
       "url": "/our-homes",
       "homeSubmenu": [
         {
+          "title": "Hartland Estate",
+          "extendedTitle": "Hartland Lifestyle Estate",
+          "location": "Mossel Bay, WC",
+          "url": "/our-homes/hartland-estate"
+        },
+        {
           "title": "The Crescent",
           "extendedTitle": "The Crescent Retirement",
           "location": "Plettenberg Bay, WC",
@@ -171,12 +239,6 @@
           "extendedTitle": "Parsonage Street Home for the Aged",
           "location": "Graaff Reinet, EC",
           "url": "/our-homes/parsonage-street-home"
-        },
-        {
-          "title": "Hartland Estate",
-          "extendedTitle": "Hartland Lifestyle Estate",
-          "location": "Mossel Bay, WC",
-          "url": "/our-homes/hartland-estate"
         }
       ]
     },
@@ -215,6 +277,12 @@
       "url": "/our-homes",
       "homeSubmenu": [
         {
+          "title": "Hartland Estate",
+          "extendedTitle": "Hartland Lifestyle Estate",
+          "location": "Mossel Bay, WC",
+          "url": "/our-homes/hartland-estate"
+        },
+        {
           "title": "The Crescent",
           "extendedTitle": "The Crescent Retirement",
           "location": "Plettenberg Bay, WC",
@@ -237,12 +305,6 @@
           "extendedTitle": "Parsonage Street Home for the Aged",
           "location": "Graaff Reinet, EC",
           "url": "/our-homes/parsonage-street-home"
-        },
-        {
-          "title": "Hartland Estate",
-          "extendedTitle": "Hartland Lifestyle Estate",
-          "location": "Mossel Bay, WC",
-          "url": "/our-homes/hartland-estate"
         }
       ]
     },
@@ -281,6 +343,12 @@
       "url": "/our-homes",
       "homeSubmenu": [
         {
+          "title": "Hartland Estate",
+          "extendedTitle": "Hartland Lifestyle Estate",
+          "location": "Mossel Bay, WC",
+          "url": "/our-homes/hartland-estate"
+        },
+        {
           "title": "The Crescent",
           "extendedTitle": "The Crescent Retirement",
           "location": "Plettenberg Bay, WC",
@@ -303,12 +371,6 @@
           "extendedTitle": "Parsonage Street Home for the Aged",
           "location": "Graaff Reinet, EC",
           "url": "/our-homes/parsonage-street-home"
-        },
-        {
-          "title": "Hartland Estate",
-          "extendedTitle": "Hartland Lifestyle Estate",
-          "location": "Mossel Bay, WC",
-          "url": "/our-homes/hartland-estate"
         }
       ]
     },

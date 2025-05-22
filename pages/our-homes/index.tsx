@@ -50,24 +50,6 @@ const OurHomes = () => {
                 "italic text-link text-smallest min-[375px]:text-smaller p-4 -m-4 hover:text-green hover:tabletLarge:cursor-pointer tabletLarge:m-0 tabletLarge:p-0 phone:text-paragraph",
                 {
                   "text-green font-light":
-                    showGauteng && !showWestern && !showEastern,
-                }
-              )}
-              onClick={() => {
-                setShowGauteng(true),
-                  setShowWestern(false),
-                  setShowEastern(false),
-                  setShowClearFilter(true);
-              }}
-            >
-              Gauteng
-            </li>
-            |
-            <li
-              className={classNames(
-                "italic text-link text-smallest min-[375px]:text-smaller p-4 -m-4 hover:text-green hover:tabletLarge:cursor-pointer tabletLarge:m-0 tabletLarge:p-0 phone:text-paragraph",
-                {
-                  "text-green font-light":
                     showWestern && !showGauteng && !showEastern,
                 }
               )}
@@ -79,6 +61,24 @@ const OurHomes = () => {
               }}
             >
               Western Cape
+            </li>
+            |
+            <li
+              className={classNames(
+                "italic text-link text-smallest min-[375px]:text-smaller p-4 -m-4 hover:text-green hover:tabletLarge:cursor-pointer tabletLarge:m-0 tabletLarge:p-0 phone:text-paragraph",
+                {
+                  "text-green font-light":
+                    showGauteng && !showWestern && !showEastern,
+                }
+              )}
+              onClick={() => {
+                setShowGauteng(true),
+                  setShowWestern(false),
+                  setShowEastern(false),
+                  setShowClearFilter(true);
+              }}
+            >
+              Gauteng
             </li>
             |
             <li
@@ -114,6 +114,24 @@ const OurHomes = () => {
           )}
         </div>
         <main className="grid gap-y-12 gap-x-10 tabletLarge:gap-y-24 tabletLarge:gap-x-10 tabletLarge:grid-cols-2">
+          {showWestern && (
+            <>
+              <div>
+                <HomeItem
+                  data={hartlandData}
+                  featuredImage={hartlandData.images.gallerySlider[0]}
+                />
+                <hr className="mt-16 tabletLarge:hidden" />
+              </div>
+              <div>
+                <HomeItem
+                  data={crescentData}
+                  featuredImage={crescentData.images.heroSlider[1]}
+                />
+                <hr className="mt-16 tabletLarge:hidden" />
+              </div>
+            </>
+          )}
           {showGauteng && (
             <>
               <div>
@@ -129,21 +147,7 @@ const OurHomes = () => {
               />
             </>
           )}
-          {showWestern && (
-            <>
-              <div>
-                <HomeItem
-                  data={crescentData}
-                  featuredImage={crescentData.images.heroSlider[1]}
-                />
-                <hr className="mt-16 tabletLarge:hidden" />
-              </div>
-              <HomeItem
-                data={hartlandData}
-                featuredImage={hartlandData.images.heroSlider[1]}
-              />
-            </>
-          )}
+
           {showEastern && (
             <HomeItem
               data={parsonageData}

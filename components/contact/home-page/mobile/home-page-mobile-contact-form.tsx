@@ -71,6 +71,212 @@ const HomePageMobileContactForm = () => {
 
   return (
     <div className="desktop:hidden">
+      <p className="text-white mb-8">
+        Please select which facility you&#39;d like to get in touch with...
+      </p>
+
+      {/* hartland estate form */}
+
+      <div className="mt-10 max-w-[1400px] mx-auto">
+        {!showCrescent &&
+          !showEastlands &&
+          !showSerenePark &&
+          !showParsonage &&
+          !showHartland && (
+            <Button
+              mobileHomesForm
+              onClick={() => {
+                setShowHartland(!showHartland);
+                setFormError("");
+              }}
+              cssClasses="text-left"
+              extendedTitle={hartlandData.general.title}
+              location={hartlandData.general.location}
+              homeIconUrl="/assets/icons/spa-blue.svg"
+              homeIconAlt="Cottage icon"
+            />
+          )}
+
+        {showHartland && (
+          <div className="flex flex-col gap-6">
+            <div className="flex flex-col">
+              <h4 className="text-white text-center font-light tablet:text-left">
+                {hartlandData.general.title}
+              </h4>
+              <p className="text-white text-center tablet:text-left">
+                {hartlandData.general.location}
+              </p>
+            </div>
+            <ul className="flex flex-col gap-6 mt-4 tablet:gap-4 desktop:gap-2">
+              <li className="grid grid-cols-[80px_1fr]">
+                <p className="text-white text-larger font-light">Email:</p>
+                <div className="place-items-start">
+                  {showHartlandEmail ? (
+                    <Link
+                      prefetch={false}
+                      href={`mailto:${showHartlandEmail}`}
+                      className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0"
+                    >
+                      {showHartlandEmail}
+                    </Link>
+                  ) : (
+                    <button
+                      className="text-larger font-thin italic text-white underline-offset-8 decoration-1 tabletLarge:hover:underline tabletLarge:cursor-pointer"
+                      onClick={async () => {
+                        const email = await fetchEmail("hartland");
+                        setShowHartlandEmail(email);
+                      }}
+                    >
+                      Show email address
+                    </button>
+                  )}
+                </div>
+              </li>
+              <li className="grid grid-cols-[80px_1fr]">
+                <p className="text-white text-larger font-light">Phone:</p>
+                <div className="place-items-start">
+                  {showHartlandPhone ? (
+                    <Link
+                      prefetch={false}
+                      href={`tel:${showHartlandPhone}`}
+                      className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0"
+                    >
+                      {showHartlandPhone}
+                    </Link>
+                  ) : (
+                    <button
+                      className="text-larger font-thin italic text-white underline-offset-8 decoration-1 tabletLarge:hover:underline tabletLarge:cursor-pointer"
+                      onClick={async () => {
+                        const phone = await fetchPhone("hartland");
+                        setShowHartlandPhone(phone);
+                      }}
+                    >
+                      Show phone number
+                    </button>
+                  )}
+                </div>
+              </li>
+            </ul>
+            {!formSubmited ? (
+              <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+                <input
+                  type="text"
+                  name="property"
+                  defaultValue={hartlandData.general.title}
+                  className="hidden"
+                />
+                <input type="text" name="_honey" className="hidden" />
+                <div className="flex flex-col gap-3">
+                  <label
+                    htmlFor="name"
+                    className="text-larger text-white font-thin"
+                  >
+                    Name:
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    placeholder="Full name"
+                    className="pl-2 py-1.5"
+                  />
+                </div>
+                <div className="flex flex-col gap-3">
+                  <label
+                    htmlFor="phone"
+                    className="text-larger text-white font-thin"
+                  >
+                    Phone:
+                  </label>
+                  <input
+                    type="text"
+                    id="phone"
+                    name="phone"
+                    required
+                    placeholder="Phone number"
+                    className="pl-2 py-1.5"
+                  />
+                </div>
+                <div className="flex flex-col gap-3">
+                  <label
+                    htmlFor="email"
+                    className="text-larger text-white font-thin"
+                  >
+                    Email:
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder="Email address"
+                    className="pl-2 py-1.5"
+                  />
+                </div>
+                <div className="flex flex-col gap-3">
+                  <label
+                    htmlFor="message"
+                    className="text-larger text-white font-thin"
+                  >
+                    Message:
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    placeholder="Type your message here"
+                    className="pl-2 py-1.5"
+                    rows={3}
+                  />
+                </div>
+                <div className="flex justify-between mt-2">
+                  {!formSubmitting ? (
+                    <Button form onClick={() => setShowHartland(false)}>
+                      Submit
+                    </Button>
+                  ) : (
+                    <Button form disabled>
+                      <div className="flex justify-center items-center w-[77px]">
+                        <div className="animate-spin rounded-full h-8 w-8 border-y-2 border-l-2 border-white"></div>
+                      </div>
+                    </Button>
+                  )}
+                  <Button
+                    formBack
+                    onClick={() => {
+                      setShowHartland(false);
+                      setFormSubmitted(false);
+                    }}
+                  >
+                    Back
+                  </Button>
+                </div>
+                {formError && <p className="text-white italic">{formError}</p>}
+              </form>
+            ) : (
+              <>
+                <p className="text-white text-larger italic py-4">
+                  Thank you for your message, we will be in touch ASAP...
+                </p>
+                <div className="flex justify-start">
+                  <Button
+                    formBack
+                    onClick={() => {
+                      setShowHartland(false);
+                      setFormSubmitted(false);
+                    }}
+                    cssClasses=""
+                  >
+                    Back
+                  </Button>
+                </div>
+              </>
+            )}
+          </div>
+        )}
+      </div>
+
       {/* the crescent form */}
       <div className="mt-10 max-w-[1400px] mx-auto">
         {!showCrescent &&
@@ -78,21 +284,15 @@ const HomePageMobileContactForm = () => {
           !showSerenePark &&
           !showParsonage &&
           !showHartland && (
-            <>
-              <p className="text-white mb-8">
-                Please select which facility you&#39;d like to get in touch
-                with...
-              </p>
-              <Button
-                mobileHomesForm
-                onClick={() => setShowCrescent(!showCrescent)}
-                cssClasses="text-left"
-                extendedTitle={crescentData.general.title}
-                location={crescentData.general.location}
-                homeIconUrl="/assets/icons/beach-blue.svg"
-                homeIconAlt="Beach umbrella icon"
-              />
-            </>
+            <Button
+              mobileHomesForm
+              onClick={() => setShowCrescent(!showCrescent)}
+              cssClasses="text-left"
+              extendedTitle={crescentData.general.title}
+              location={crescentData.general.location}
+              homeIconUrl="/assets/icons/beach-blue.svg"
+              homeIconAlt="Beach umbrella icon"
+            />
           )}
 
         {showCrescent && (
@@ -874,208 +1074,6 @@ const HomePageMobileContactForm = () => {
                     formBack
                     onClick={() => {
                       setShowParsonage(false);
-                      setFormSubmitted(false);
-                    }}
-                    cssClasses=""
-                  >
-                    Back
-                  </Button>
-                </div>
-              </>
-            )}
-          </div>
-        )}
-      </div>
-
-      {/* hartland estate form */}
-
-      <div className="mt-10 max-w-[1400px] mx-auto">
-        {!showCrescent &&
-          !showEastlands &&
-          !showSerenePark &&
-          !showParsonage &&
-          !showHartland && (
-            <Button
-              mobileHomesForm
-              onClick={() => {
-                setShowHartland(!showHartland);
-                setFormError("");
-              }}
-              cssClasses="text-left"
-              extendedTitle={hartlandData.general.title}
-              location={hartlandData.general.location}
-              homeIconUrl="/assets/icons/spa-blue.svg"
-              homeIconAlt="Cottage icon"
-            />
-          )}
-
-        {showHartland && (
-          <div className="flex flex-col gap-6">
-            <div className="flex flex-col">
-              <h4 className="text-white text-center font-light tablet:text-left">
-                {hartlandData.general.title}
-              </h4>
-              <p className="text-white text-center tablet:text-left">
-                {hartlandData.general.location}
-              </p>
-            </div>
-            <ul className="flex flex-col gap-6 mt-4 tablet:gap-4 desktop:gap-2">
-              <li className="grid grid-cols-[80px_1fr]">
-                <p className="text-white text-larger font-light">Email:</p>
-                <div className="place-items-start">
-                  {showHartlandEmail ? (
-                    <Link
-                      prefetch={false}
-                      href={`mailto:${showHartlandEmail}`}
-                      className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0"
-                    >
-                      {showHartlandEmail}
-                    </Link>
-                  ) : (
-                    <button
-                      className="text-larger font-thin italic text-white underline-offset-8 decoration-1 tabletLarge:hover:underline tabletLarge:cursor-pointer"
-                      onClick={async () => {
-                        const email = await fetchEmail("hartland");
-                        setShowHartlandEmail(email);
-                      }}
-                    >
-                      Show email address
-                    </button>
-                  )}
-                </div>
-              </li>
-              <li className="grid grid-cols-[80px_1fr]">
-                <p className="text-white text-larger font-light">Phone:</p>
-                <div className="place-items-start">
-                  {showHartlandPhone ? (
-                    <Link
-                      prefetch={false}
-                      href={`tel:${showHartlandPhone}`}
-                      className="text-white text-larger p-4 -m-4 tablet:p-2 tablet:-m-2 desktop:p-0 desktop:m-0"
-                    >
-                      {showHartlandPhone}
-                    </Link>
-                  ) : (
-                    <button
-                      className="text-larger font-thin italic text-white underline-offset-8 decoration-1 tabletLarge:hover:underline tabletLarge:cursor-pointer"
-                      onClick={async () => {
-                        const phone = await fetchPhone("hartland");
-                        setShowHartlandPhone(phone);
-                      }}
-                    >
-                      Show phone number
-                    </button>
-                  )}
-                </div>
-              </li>
-            </ul>
-            {!formSubmited ? (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-                <input
-                  type="text"
-                  name="property"
-                  defaultValue={hartlandData.general.title}
-                  className="hidden"
-                />
-                <input type="text" name="_honey" className="hidden" />
-                <div className="flex flex-col gap-3">
-                  <label
-                    htmlFor="name"
-                    className="text-larger text-white font-thin"
-                  >
-                    Name:
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    placeholder="Full name"
-                    className="pl-2 py-1.5"
-                  />
-                </div>
-                <div className="flex flex-col gap-3">
-                  <label
-                    htmlFor="phone"
-                    className="text-larger text-white font-thin"
-                  >
-                    Phone:
-                  </label>
-                  <input
-                    type="text"
-                    id="phone"
-                    name="phone"
-                    required
-                    placeholder="Phone number"
-                    className="pl-2 py-1.5"
-                  />
-                </div>
-                <div className="flex flex-col gap-3">
-                  <label
-                    htmlFor="email"
-                    className="text-larger text-white font-thin"
-                  >
-                    Email:
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    placeholder="Email address"
-                    className="pl-2 py-1.5"
-                  />
-                </div>
-                <div className="flex flex-col gap-3">
-                  <label
-                    htmlFor="message"
-                    className="text-larger text-white font-thin"
-                  >
-                    Message:
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    placeholder="Type your message here"
-                    className="pl-2 py-1.5"
-                    rows={3}
-                  />
-                </div>
-                <div className="flex justify-between mt-2">
-                  {!formSubmitting ? (
-                    <Button form onClick={() => setShowHartland(false)}>
-                      Submit
-                    </Button>
-                  ) : (
-                    <Button form disabled>
-                      <div className="flex justify-center items-center w-[77px]">
-                        <div className="animate-spin rounded-full h-8 w-8 border-y-2 border-l-2 border-white"></div>
-                      </div>
-                    </Button>
-                  )}
-                  <Button
-                    formBack
-                    onClick={() => {
-                      setShowHartland(false);
-                      setFormSubmitted(false);
-                    }}
-                  >
-                    Back
-                  </Button>
-                </div>
-                {formError && <p className="text-white italic">{formError}</p>}
-              </form>
-            ) : (
-              <>
-                <p className="text-white text-larger italic py-4">
-                  Thank you for your message, we will be in touch ASAP...
-                </p>
-                <div className="flex justify-start">
-                  <Button
-                    formBack
-                    onClick={() => {
-                      setShowHartland(false);
                       setFormSubmitted(false);
                     }}
                     cssClasses=""

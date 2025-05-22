@@ -6,6 +6,7 @@ import PageItemGallerySlider from "../../sliders/page-item-gallery-slider";
 import PageItemHeroSlider from "../../sliders/page-item-hero-slider";
 import Layout from "@/components/layout";
 import MetaComponent from "../meta-component";
+import VideoHeroComponent from "@/components/utils/video-hero-component";
 
 const PageItem = ({
   data: {
@@ -14,6 +15,7 @@ const PageItem = ({
     whatWeOffer,
     meetTheTeam,
     images: { heroSlider, gallerySlider },
+    video,
   },
 }: DataProps) => {
   return (
@@ -27,10 +29,20 @@ const PageItem = ({
           {general.extendedLocation}
         </h3>
       </Layout>
-      <PageItemHeroSlider
-        imageList={heroSlider}
-        homeName={general.extendedTitle}
-      />
+      {heroSlider.length > 0 ? (
+        <PageItemHeroSlider
+          imageList={heroSlider}
+          homeName={general.extendedTitle}
+        />
+      ) : (
+        <VideoHeroComponent
+          desktopMp4={video!.desktopMp4}
+          mobileMp4={video!.mobileMp4}
+          desktopWebm={video!.desktopWebm}
+          mobileWebm={video!.mobileWebm}
+          poster={video!.poster}
+        />
+      )}
       <Layout>
         <main>
           <div className="flex flex-col gap-16 mt-16">
@@ -45,18 +57,18 @@ const PageItem = ({
                 whatWeOffer={whatWeOffer}
               />
             </div>
-            <div>
-              <div
-                id="staff"
-                className="-translate-y-28 tablet:-translate-y-32 desktop:-translate-y-28"
-              ></div>
-              {meetTheTeam && (
+            {meetTheTeam && (
+              <div>
+                <div
+                  id="staff"
+                  className="-translate-y-28 tablet:-translate-y-32 desktop:-translate-y-28"
+                ></div>
                 <MeetTheTeam
                   meetTheTeam={meetTheTeam}
                   homeName={general.extendedTitle}
                 />
-              )}
-            </div>
+              </div>
+            )}
           </div>
         </main>
         <div

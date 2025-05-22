@@ -18,7 +18,7 @@ const HartlandEstate = () => {
       <Layout>
         <div className="desktopSmall:grid grid-cols-2 gap-10  mt-10">
           <ImageContainer
-            src={gallerySlider[0]}
+            src={gallerySlider[1]}
             alt={title}
             width={700}
             height={400}
