@@ -5,7 +5,8 @@ const nextConfig = {
 
 module.exports = {
   images: {
-    deviceSizes: [640, 750, 828, 1080, 1200, 1400],
+    deviceSizes: [425, 900, 1400],
+    minimumCacheTTL: 86400,
     remotePatterns: [
       {
         protocol: "http",
