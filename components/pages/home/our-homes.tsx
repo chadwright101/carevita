@@ -17,7 +17,7 @@ const OurHomes = ({ cssClasses }: Props) => {
   return (
     <section className={`flex flex-col ${cssClasses}`}>
       <Layout>
-        <Heading variant={headingVariant.sectionHeading}>Our Homes</Heading>
+        <Heading variant={headingVariant.sectionHeading}>Gallery</Heading>
       </Layout>
       <Splide
         options={{
@@ -54,7 +54,9 @@ const OurHomes = ({ cssClasses }: Props) => {
       <Button
         url="our-homes"
         cssClasses="mt-10 desktop:mt-0 desktop:-translate-y-[540px] desktop:translate-x-[500px]"
-      />
+      >
+        View Our Homes
+      </Button>
     </section>
   );
 };
