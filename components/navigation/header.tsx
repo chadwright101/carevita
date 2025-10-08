@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, Fragment } from "react";
 import { useRouter } from "next/router";
 
 import navigation from "@/data/navigation-data.json";
@@ -65,7 +65,7 @@ const Header = ({ cssClasses }: Props) => {
                     ({ title }) => title !== "About" && title !== "Location"
                   )
                   .map(({ title, url }, index) => (
-                    <>
+                    <Fragment key={index}>
                       <li key={index}>
                         <Link
                           prefetch={false}
@@ -79,7 +79,7 @@ const Header = ({ cssClasses }: Props) => {
                       {index < navigation.crescent.length - 1 && (
                         <hr className="px-5 text-white" />
                       )}
-                    </>
+                    </Fragment>
                   ))
               : currentRoute === "/our-homes/eastlands"
               ? navigation.eastlands
@@ -87,7 +87,7 @@ const Header = ({ cssClasses }: Props) => {
                     ({ title }) => title !== "About" && title !== "Location"
                   )
                   .map(({ title, url }, index) => (
-                    <>
+                    <Fragment key={index}>
                       <li key={index}>
                         <Link
                           prefetch={false}
@@ -101,7 +101,7 @@ const Header = ({ cssClasses }: Props) => {
                       {index < navigation.crescent.length - 1 && (
                         <hr className="px-5 text-white" />
                       )}
-                    </>
+                    </Fragment>
                   ))
               : currentRoute === "/our-homes/serene-park"
               ? navigation.serene
@@ -109,7 +109,7 @@ const Header = ({ cssClasses }: Props) => {
                     ({ title }) => title !== "About" && title !== "Location"
                   )
                   .map(({ title, url }, index) => (
-                    <>
+                    <Fragment key={index}>
                       <li key={index}>
                         <Link
                           prefetch={false}
@@ -123,10 +123,10 @@ const Header = ({ cssClasses }: Props) => {
                       {index < navigation.crescent.length - 1 && (
                         <hr className="px-5 text-white" />
                       )}
-                    </>
+                    </Fragment>
                   ))
               : navigation.general.map(({ title, url }, index) => (
-                  <>
+                  <Fragment key={index}>
                     <li key={index}>
                       <Link
                         prefetch={false}
@@ -140,7 +140,7 @@ const Header = ({ cssClasses }: Props) => {
                     {index < navigation.general.length - 1 && (
                       <hr className="px-5 text-white" />
                     )}
-                  </>
+                  </Fragment>
                 ))}
           </ul>
           <button

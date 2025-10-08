@@ -1,4 +1,4 @@
-import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
 
 interface Props {
   cssClasses?: string;
@@ -20,7 +20,7 @@ const CrescentMap = ({ cssClasses }: Props) => {
       center={{ lat: -34.062417, lng: 23.3702613 }}
       mapContainerClassName={`${cssClasses}`}
     >
-      <Marker position={{ lat: -34.0628026, lng: 23.3723729 }} />
+      <MarkerF position={{ lat: -34.0628026, lng: 23.3723729 }} />
     </GoogleMap>
   );
 };

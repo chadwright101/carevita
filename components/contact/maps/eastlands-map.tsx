@@ -1,4 +1,4 @@
-import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
 
 interface Props {
   cssClasses?: string;
@@ -20,7 +20,7 @@ const EastlandsMap = ({ cssClasses }: Props) => {
       center={{ lat: -26.0576208, lng: 28.3282441 }}
       mapContainerClassName={`${cssClasses}`}
     >
-      <Marker position={{ lat: -26.0576208, lng: 28.3282441 }} />
+      <MarkerF position={{ lat: -26.0576208, lng: 28.3282441 }} />
     </GoogleMap>
   );
 };

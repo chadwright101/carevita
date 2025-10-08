@@ -10,7 +10,9 @@ const PageItemGallerySlider = ({ imageList, homeName }) => {
   const slider2 = useRef();
 
   useEffect(() => {
-    slider1.current.sync(slider2.current.splide);
+    if (slider1.current && slider2.current && slider1.current.splide && slider2.current.splide) {
+      slider1.current.sync(slider2.current.splide);
+    }
   }, [slider1, slider2]);
   return (
     <>
@@ -44,7 +46,7 @@ const PageItemGallerySlider = ({ imageList, homeName }) => {
               cssClasses="object-cover h-full w-full"
               phone={80}
               desktop={100}
-              onClick={() => slider1.current.go(index)}
+              onClick={() => slider1.current?.go(index)}
               eager={index < 2 ? true : false}
             />
           </SplideSlide>
@@ -78,7 +80,7 @@ const PageItemGallerySlider = ({ imageList, homeName }) => {
                 cssClasses="object-cover h-full w-full cursor-pointer px-1 pt-2"
                 quality={30}
                 desktop={7.5}
-                onClick={() => slider1.current.go(index)}
+                onClick={() => slider1.current?.go(index)}
                 loading={index < 1 ? "eager" : "lazy"}
               />
             </div>

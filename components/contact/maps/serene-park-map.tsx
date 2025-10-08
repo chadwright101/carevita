@@ -1,4 +1,4 @@
-import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
 
 interface Props {
   cssClasses?: string;
@@ -20,7 +20,7 @@ const SereneParkMap = ({ cssClasses }: Props) => {
       center={{ lat: -25.7882638, lng: 28.2861379 }}
       mapContainerClassName={`${cssClasses}`}
     >
-      <Marker position={{ lat: -25.7882638, lng: 28.2861379 }} />
+      <MarkerF position={{ lat: -25.7882638, lng: 28.2861379 }} />
     </GoogleMap>
   );
 };

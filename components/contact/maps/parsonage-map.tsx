@@ -1,4 +1,4 @@
-import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
 
 interface Props {
   cssClasses?: string;
@@ -20,7 +20,7 @@ const ParsonageMap = ({ cssClasses }: Props) => {
       center={{ lat: -32.251518, lng: 24.5343881 }}
       mapContainerClassName={`${cssClasses}`}
     >
-      <Marker position={{ lat: -32.251518, lng: 24.5343881 }} />
+      <MarkerF position={{ lat: -32.251518, lng: 24.5343881 }} />
     </GoogleMap>
   );
 };

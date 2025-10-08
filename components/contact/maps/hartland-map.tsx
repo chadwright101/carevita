@@ -1,4 +1,4 @@
-import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
 
 interface Props {
   cssClasses?: string;
@@ -20,7 +20,7 @@ const HartlandMap = ({ cssClasses }: Props) => {
       center={{ lat: -34.10100507599022, lng: 22.12163566099227 }}
       mapContainerClassName={`${cssClasses}`}
     >
-      <Marker position={{ lat: -34.10100507599022, lng: 22.12163566099227 }} />
+      <MarkerF position={{ lat: -34.10100507599022, lng: 22.12163566099227 }} />
     </GoogleMap>
   );
 };
