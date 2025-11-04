@@ -63,16 +63,6 @@
   },
   "meetTheTeam": [
     {
-      "position": "Facility manager",
-      "url": "/assets/media/eastlands/9U7A4871.jpg",
-      "teamMember": "Vishnu Govender"
-    },
-    {
-      "position": "Nursing Manager",
-      "url": "/assets/media/eastlands/9U7A4872.jpg",
-      "teamMember": "Sr. Dulcie Nanagati"
-    },
-    {
       "position": "Nurse",
       "url": "/assets/media/eastlands/9U7A4777.jpg",
       "teamMember": "Musa Nkosi"
@@ -81,16 +71,6 @@
       "position": "Nurse",
       "url": "/assets/media/eastlands/9U7A5459.jpg",
       "teamMember": "Mpho Molokwane"
-    },
-    {
-      "position": "Chef",
-      "url": "/assets/media/eastlands/9U7A4780.jpg",
-      "teamMember": "Elizabeth Chakela"
-    },
-    {
-      "position": "Chef",
-      "url": "/assets/media/eastlands/9U7A5510.jpg",
-      "teamMember": "Zandile Khela"
     }
   ],
 
