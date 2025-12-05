@@ -32,6 +32,43 @@ interface Props {
   }>;
 }
 
+interface BlogPostsQueryResponse {
+  posts: {
+    nodes: Array<{
+      blog: {
+        paragraph1: string;
+        title: string;
+        image1?: {
+          mediaItemUrl: string;
+        };
+        galleryImage1?: {
+          mediaItemUrl: string;
+        };
+        galleryImage2?: {
+          mediaItemUrl: string;
+        };
+        galleryImage3?: {
+          mediaItemUrl: string;
+        };
+        galleryImage4?: {
+          mediaItemUrl: string;
+        };
+        galleryImage5?: {
+          mediaItemUrl: string;
+        };
+        videoUrl: string;
+      };
+      id: string;
+      date: string;
+      author: {
+        node: {
+          name: string;
+        };
+      };
+    }>;
+  };
+}
+
 const Blog = ({ blogPosts }: Props) => {
   const {
     blog: {
@@ -68,7 +105,7 @@ const Blog = ({ blogPosts }: Props) => {
 export default Blog;
 
 export async function getStaticProps() {
-  const { data } = await blogClient.query({
+  const { data } = await blogClient.query<BlogPostsQueryResponse>({
     query: gql`
       query BlogPosts {
         posts {
@@ -110,7 +147,7 @@ export async function getStaticProps() {
   });
 
   const finalContent = {
-    blogPosts: data.posts.nodes.map((node: any) => ({
+    blogPosts: data?.posts.nodes.map((node) => ({
       ...node,
       blog: {
         ...node.blog,
@@ -121,7 +158,7 @@ export async function getStaticProps() {
           node.blog.galleryImage4?.mediaItemUrl,
         ].filter((item) => item !== undefined),
       },
-    })),
+    })) || [],
   };
 
   return {

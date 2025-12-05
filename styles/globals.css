@@ -1,9 +1,35 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
+@theme {
+  --color-*: initial;
+  --color-green: #5C873C;
+  --color-lightGreen: #94C36A;
+  --color-blue: #134266;
+  --color-white: #FFFFFF;
+  --color-black: #222222;
+  --color-link: #0000EE;
 
-@layer base {
+  --text-*: initial;
+  --text-smallest: 0.938rem;
+  --text-smaller: 1.063rem;
+  --text-paragraph: 1.125rem;
+  --text-larger: 1.25rem;
+  --text-subheading: 1.5rem;
+  --text-heading: 2.25rem;
+
+  --font-weight-*: initial;
+  --font-weight-thin: 200;
+  --font-weight-light: 300;
+
+  --breakpoint-*: initial;
+  --breakpoint-phone: 425px;
+  --breakpoint-tablet: 650px;
+  --breakpoint-tabletLarge: 900px;
+  --breakpoint-desktopSmall: 1100px;
+  --breakpoint-desktop: 1400px;
+}
+
+@layer components {
 
   @font-face {
     font-family: "Raleway";
@@ -84,6 +110,11 @@
   p {
     text-align: justify;
   }
+
+  input,
+  textarea {
+    background-color: #FFFFFF;
+  }
 }
 
 @layer utilities {
@@ -94,10 +125,6 @@
 
   .splide__slide.is-active {
     @apply opacity-100
-  }
-
-  .splide__slide:hover {
-    @apply opacity-100 scale-105 transition-all duration-500 ease-in-out
   }
 
   .splide__arrows {

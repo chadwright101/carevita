@@ -15,5 +15,6 @@ module.exports = {
         pathname: "/wp-content/**",
       },
     ],
+    qualities: [50, 75],
   },
 };

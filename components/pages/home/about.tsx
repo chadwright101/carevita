@@ -35,7 +35,7 @@ const About = ({
             alt="Carevita - About us"
             width={900}
             height={450}
-            cssClasses="object-cover w-full h-auto"
+            cssClasses="object-cover w-full h-full"
             tabletLarge={90}
             desktop={50}
           />
@@ -44,7 +44,7 @@ const About = ({
             alt="Carevita - About us"
             width={900}
             height={450}
-            cssClasses="object-cover w-full h-auto"
+            cssClasses="object-cover w-full h-full"
             tabletLarge={90}
             desktop={50}
           />

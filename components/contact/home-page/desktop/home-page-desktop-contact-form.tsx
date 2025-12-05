@@ -93,8 +93,8 @@ const HomePageDesktopContactForm = () => {
           extendedTitle={hartlandData.general.title}
           location={hartlandData.general.location}
           cssClasses={classNames("ease-in-out duration-300", {
-            "hover:scale-105 hover:-mb-[10px]": !showHartland,
-            "border-b-2 border-white pb-2 -mb-[10px]": showHartland,
+            "hover:scale-105 hover:-mb-2.5": !showHartland,
+            "border-b-2 border-white pb-2 -mb-2.5": showHartland,
           })}
           arrowCssClasses={classNames("", {
             hidden: !showHartland,
@@ -118,8 +118,8 @@ const HomePageDesktopContactForm = () => {
           extendedTitle={crescentData.general.title}
           location={crescentData.general.location}
           cssClasses={classNames("ease-in-out duration-300 text-left", {
-            "hover:scale-105 hover:-mb-[10px]": !showCrescent,
-            "border-b-2 border-white pb-2 -mb-[10px]": showCrescent,
+            "hover:scale-105 hover:-mb-2.5": !showCrescent,
+            "border-b-2 border-white pb-2 -mb-2.5": showCrescent,
           })}
           arrowCssClasses={classNames("", {
             hidden: !showCrescent,
@@ -143,8 +143,8 @@ const HomePageDesktopContactForm = () => {
           extendedTitle={eastlandsData.general.title}
           location={eastlandsData.general.location}
           cssClasses={classNames("ease-in-out duration-300", {
-            "hover:scale-105 hover:-mb-[10px]": !showEastlands,
-            "border-b-2 border-white pb-2 -mb-[10px]": showEastlands,
+            "hover:scale-105 hover:-mb-2.5": !showEastlands,
+            "border-b-2 border-white pb-2 -mb-2.5": showEastlands,
           })}
           arrowCssClasses={classNames("", {
             hidden: !showEastlands,
@@ -168,8 +168,8 @@ const HomePageDesktopContactForm = () => {
           extendedTitle={sereneData.general.title}
           location={sereneData.general.location}
           cssClasses={classNames("ease-in-out duration-300", {
-            "hover:scale-105 hover:-mb-[10px]": !showSerenePark,
-            "border-b-2 border-white pb-2 -mb-[10px]": showSerenePark,
+            "hover:scale-105 hover:-mb-2.5": !showSerenePark,
+            "border-b-2 border-white pb-2 -mb-2.5": showSerenePark,
           })}
           arrowCssClasses={classNames("", {
             hidden: !showSerenePark,
@@ -193,8 +193,8 @@ const HomePageDesktopContactForm = () => {
           extendedTitle={parsonageData.general.title}
           location={parsonageData.general.location}
           cssClasses={classNames("ease-in-out duration-300", {
-            "hover:scale-105 hover:-mb-[10px]": !showParsonage,
-            "border-b-2 border-white pb-2 -mb-[10px]": showParsonage,
+            "hover:scale-105 hover:-mb-2.5": !showParsonage,
+            "border-b-2 border-white pb-2 -mb-2.5": showParsonage,
           })}
           arrowCssClasses={classNames("", {
             hidden: !showParsonage,
