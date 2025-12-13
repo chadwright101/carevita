@@ -20,7 +20,7 @@
     "eslint": "9.39.1",
     "eslint-config-next": "16.0.7",
     "html-react-parser": "^5.2.10",
-    "next": "16.0.7",
+    "next": "16.0.10",
     "nodemailer": "^7.0.11",
     "rate-limiter-flexible": "^9.0.0",
     "react": "19.2.1",
