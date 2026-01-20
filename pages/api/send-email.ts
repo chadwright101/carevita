@@ -6,7 +6,8 @@ type PropertyType =
   | "The Crescent"
   | "Eastlands Estate"
   | "Serene Park Centre"
-  | "Parsonage Street Home";
+  | "Parsonage Street Home"
+  | "Hartland Estate";
 
 interface Props {
   name: string;
@@ -61,6 +62,14 @@ export default async function handler(
     "Hartland Estate": process.env.SMTP_SEND_TO_HARTLAND,
   };
 
+  const propertyCcMap: Record<PropertyType, string | undefined> = {
+    "The Crescent": undefined,
+    "Eastlands Estate": process.env.SMTP_CC_EASTLANDS,
+    "Serene Park Centre": process.env.SMTP_CC_SERENE,
+    "Parsonage Street Home": process.env.SMTP_CC_PARSONAGE,
+    "Hartland Estate": undefined,
+  };
+
   let {
     name,
     email,
@@ -92,10 +101,12 @@ export default async function handler(
   });
 
   const recipientEmail: string | undefined = propertyEmailMap[property];
+  const ccEmail: string | undefined = property ? propertyCcMap[property] : undefined;
 
   const mailOptions = {
     from: process.env.SMTP_SEND_FROM,
     to: generalEmail ? "info@carevita.co.za" : recipientEmail,
+    ...(ccEmail && { cc: ccEmail }),
     subject: generalEmail
       ? "Website - Business Portfolio Contact Form"
       : "Website - Contact Form",
