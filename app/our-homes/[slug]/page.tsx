@@ -1,0 +1,106 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import PageItem from "@/_components/pages/property-pages/page-item";
+import Heading, { headingVariant } from "@/_components/ui/heading";
+import PropertyPagesContactForm from "@/_components/contact/property-pages/property-pages-contact-form";
+import PageWrapper from "@/_lib/page-wrapper";
+import PropertyMap from "@/_components/contact/property-map";
+
+import hartlandData from "@/_data/hartland-data.json";
+import crescentData from "@/_data/crescent-data.json";
+import eastlandsData from "@/_data/eastlands-data.json";
+import sereneData from "@/_data/serene-data.json";
+import parsonageData from "@/_data/parsonage-data.json";
+
+const propertyData = {
+  "hartland-estate": hartlandData,
+  "the-crescent": crescentData,
+  eastlands: eastlandsData,
+  "serene-park": sereneData,
+  "parsonage-street-home": parsonageData,
+} as const;
+
+type PropertySlug = keyof typeof propertyData;
+
+export function generateStaticParams() {
+  return Object.keys(propertyData).map((slug) => ({
+    slug,
+  }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: PropertySlug }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const data = propertyData[slug];
+  const { general } = data;
+
+  return {
+    metadataBase: new URL("https://www.carevita.com"),
+    title: `${general.title} - CareVita`,
+    description: general.description || general.extendedTitle,
+    keywords: general.meta.keywords,
+    openGraph: {
+      description: general.description || general.extendedTitle,
+      type: "website",
+      locale: "en_ZA",
+      siteName: "CareVita",
+      images: general.meta.images.map((url) => ({
+        url,
+      })),
+    },
+  };
+}
+
+export default async function PropertyPage({
+  params,
+}: {
+  params: Promise<{ slug: PropertySlug }>;
+}) {
+  const { slug } = await params;
+  const data = propertyData[slug];
+  const {
+    general: { title, map, contactImage },
+  } = data;
+
+  return (
+    <>
+      <PageItem data={data} />
+      <PageWrapper>
+        <div className="tablet:grid grid-cols-2 gap-10 mt-10">
+          <Image
+            src={contactImage}
+            alt={title}
+            width={700}
+            height={400}
+            className="object-cover w-full hidden h-[500px] tablet:block"
+            sizes="50vw"
+          />
+          <PropertyMap
+            cssClasses="w-full h-[400px] tablet:h-[500px] mb-16"
+            lat={map.lat}
+            lng={map.lng}
+            zoom={map.zoom}
+          />
+        </div>
+      </PageWrapper>
+      <div
+        id="contact"
+        className="-translate-y-28 tablet:-translate-y-32 desktop:-translate-y-28"
+      ></div>
+      <section className="px-6 pt-10 pb-12 bg-blue">
+        <div className="w-full max-w-[1280px] mx-auto">
+          <Heading
+            variant={headingVariant.sectionHeading}
+            cssClasses="text-white"
+          >
+            <span className="font-thin text-white">Contact</span> {title}
+          </Heading>
+          <PropertyPagesContactForm data={data} />
+        </div>
+      </section>
+    </>
+  );
+}

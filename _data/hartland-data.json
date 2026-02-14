@@ -1,0 +1,80 @@
+{
+  "general": {
+    "shortTitle": "hartland",
+    "title": "Hartland Estate",
+    "extendedTitle": "Hartland Lifestyle Estate",
+    "location": "Mossel Bay, WC",
+    "extendedLocation": "Mossel Bay, Western Cape",
+    "email": "hartland@carevita.co.za",
+    "phone": "+27 64 791 2778",
+    "homeUrl": "our-homes/hartland-estate",
+    "description": "This thoughtfully designed estate offers residents the perfect blend of natural beauty and modern convenience. With panoramic views of the ocean and the surrounding fynbos landscape, Hartland creates a peaceful yet vibrant setting where residents can truly feel at home.",
+    "slug": "hartland-estate",
+    "contactImage": "/assets/media/hartland-estate/IMG_0274.JPG",
+    "map": {
+      "lat": -34.10100507599022,
+      "lng": 22.12163566099227,
+      "zoom": 13.75
+    },
+    "meta": {
+      "keywords": "Hartland, CareVita, Retirement, retirement home, frail care, elderly care, caregiving, nursing, nursing services, supporting services, catering services, retirement estate",
+      "images": [
+        "/assets/media/hartland-estate/ArealSlide_nov24_4.jpg",
+        "/assets/media/hartland-estate/thumbnail.jpg"
+      ]
+    }
+  },
+  "whatWeOffer": {
+    "list": [
+      "Blood pressure testing",
+      "Blood glucose testing",
+      "Cholesterol testing",
+      "Urine testing",
+      "Vital checks",
+      "Injections",
+      "Medication management",
+      "Medication ordering",
+      "Oxygen supply",
+      "Wound care",
+      "Nebulizing",
+      "Colostomy care",
+      "Caregiver call out",
+      "Nurse call out"
+    ],
+    "image": "/assets/media/hartland-estate/thumbnail.jpg"
+  },
+  "about": {
+    "paragraphs": [
+      "A New Standard for Comfortable Living in Mossel Bay",
+      "Set against the serene backdrop of the Western Cape’s pristine coastline, Hartland Lifestyle Estate is quickly becoming one of Mossel Bay’s most sought-after developments—especially for mature residents looking to embrace a lifestyle of comfort, community, and care.",
+      "CareVita is proud to be associated with a development that prioritizes the well-being and quality of life of its residents.",
+      "What truly sets Hartland Lifestyle Estate apart, however, is its focus on providing exceptional care and support for its mature residents. Through a strategic partnership with CareVita, the estate ensures that residents have access to professional, compassionate assistance within the comfort of their own homes.",
+      "Adding even more value to this already attractive offering, a new frail care facility will soon be under construction within the estate. Once completed, this facility will further reinforce Hartland’s commitment to providing a safe, supportive environment where residents can age with dignity and peace of mind. It will serve as a cornerstone of long-term care, seamlessly complementing the existing home-based services provided by CareVita."
+    ],
+    "image": "/assets/media/hartland-estate/ArealSlide_nov24_4.jpg"
+  },
+  "images": {
+    "heroSlider": [],
+    "gallerySlider": [
+      "/assets/media/hartland-estate/ArealSlide_nov24_3.jpg",
+      "/assets/media/hartland-estate/IMG_0274.JPG",
+      "/assets/media/hartland-estate/ArealSlide_nov24_4.jpg",
+      "/assets/media/hartland-estate/Hartland-Green-Belt.jpg",
+      "/assets/media/hartland-estate/Bespoke-2.jpg",
+      "/assets/media/hartland-estate/IMG_0311.JPG",
+      "/assets/media/hartland-estate/ArealSlide_nov24.jpg",
+      "/assets/media/hartland-estate/hartland-lifestyle-estate-12.jpg",
+      "/assets/media/hartland-estate/Bespoke-4.jpg",
+      "/assets/media/hartland-estate/hartland-lifestyle-estate-3.jpg",
+      "/assets/media/hartland-estate/IMG_0343.JPG",
+      "/assets/media/hartland-estate/thumbnail.jpg"
+    ]
+  },
+  "video": {
+    "desktopMp4": "/assets/media/hartland-estate/video/hartland-desktop.mp4",
+    "desktopWebm": "/assets/media/hartland-estate/video/hartland-desktop.webm",
+    "mobileMp4": "/assets/media/hartland-estate/video/hartland-mobile.mp4",
+    "mobileWebm": "/assets/media/hartland-estate/video/hartland-mobile.webm",
+    "poster": "/assets/media/hartland-estate/video/video-poster-hartland.webp"
+  }
+}

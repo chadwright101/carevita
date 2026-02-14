@@ -1,0 +1,174 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-*: initial;
+  --color-green: #5C873C;
+  --color-lightGreen: #94C36A;
+  --color-blue: #134266;
+  --color-white: #FFFFFF;
+  --color-black: #222222;
+  --color-link: #0000EE;
+
+  --text-*: initial;
+  --text-smallest: 0.938rem;
+  --text-smaller: 1.063rem;
+  --text-paragraph: 1.125rem;
+  --text-larger: 1.25rem;
+  --text-subheading: 1.5rem;
+  --text-heading: 2.25rem;
+
+  --breakpoint-*: initial;
+  --breakpoint-phone: 425px;
+  --breakpoint-tablet: 900px;
+  --breakpoint-desktop: 1280px;
+
+  --margin-15: 60px;
+  --padding-15: 60px;
+  --gap-15: 60px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer components {
+
+  * {
+    font-family: "Raleway";
+    color: #222222
+  }
+
+
+  h1,
+  h2 {
+    font-weight: 500;
+    font-size: 2.25rem;
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 400;
+    font-size: 1.5rem;
+  }
+
+  p,
+  ul {
+    font-size: 1.125rem;
+    font-weight: 200;
+  }
+
+  p {
+    text-align: justify;
+  }
+
+  input,
+  textarea {
+    background-color: #FFFFFF;
+  }
+
+  .grecaptcha-badge {
+    visibility: hidden;
+  }
+
+  .spinner {
+    width: 20px;
+    height: 20px;
+    position: relative;
+  }
+
+  .spinner::before,
+  .spinner::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid transparent;
+    border-top-color: #FFFFFF;
+    animation: spin 1s linear infinite;
+  }
+
+  .spinner::after {
+    animation-delay: 0.5s;
+  }
+
+  .spinner-black {
+    width: 20px;
+    height: 20px;
+    position: relative;
+  }
+
+  .spinner-black::before,
+  .spinner-black::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid transparent;
+    border-top-color: #222222;
+    animation: spin 1s linear infinite;
+  }
+
+  .spinner-black::after {
+    animation-delay: 0.5s;
+  }
+
+  .spinner-large {
+    width: 24px;
+    height: 24px;
+    position: relative;
+  }
+
+  .spinner-large::before,
+  .spinner-large::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 2px solid transparent;
+    border-top-color: #FFFFFF;
+    animation: spin 1s linear infinite;
+  }
+
+  .spinner-large::after {
+    animation-delay: 0.5s;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes growDown {
+    from {
+      transform: scaleY(0);
+      opacity: 0;
+    }
+
+    to {
+      transform: scaleY(1);
+      opacity: 1;
+    }
+  }
+
+  .animate-grow-down {
+    animation: growDown 0.3s ease-out forwards;
+    transform-origin: top;
+  }
+
+}

@@ -1,0 +1,119 @@
+{
+  "general": {
+    "shortTitle": "eastlands",
+    "title": "Eastlands Estate",
+    "extendedTitle": "Eastlands Mature Lifestyle Estate",
+    "location": "Benoni, GP",
+    "extendedLocation": "Benoni, Gauteng",
+    "email": "jubie@carevita.co.za",
+    "phone": "+27 10 035 3368",
+    "homeUrl": "our-homes/eastlands",
+    "description": "Eastlands Mature Lifestyle Estate is one of South Africa's leading luxury retirement estates that combines the very best in healthcare, wellness and leisure amenities to offer an outstanding retirement lifestyle. Eastlands is truly an icon in Gauteng where residents experience a warm homely home in their golden years.",
+    "slug": "eastlands",
+    "contactImage": "/assets/media/eastlands/DJI_0542.jpg",
+    "map": {
+      "lat": -26.0576208,
+      "lng": 28.3282441,
+      "zoom": 13
+    },
+    "meta": {
+      "keywords": "CareVita, Retirement, retirement home, frail care, elderly care, caregiving, nursing, nursing services, supporting services, catering services, retirement estate",
+      "images": [
+        "/assets/media/eastlands/9U7A4551-HDR.jpg",
+        "/assets/media/eastlands/9U7A4753.jpg",
+        "/assets/media/eastlands/9U7A4326-HDR.jpg"
+      ]
+    }
+  },
+  "whatWeOffer": {
+    "list": [
+      "Ensuite rooms",
+      "Frail care facilities",
+      "All meals & snacks",
+      "Laundry",
+      "Cleaning",
+      "24/7 onsite nursing",
+      "Medication management",
+      "Weekly doctor visits",
+      "Physiotherapist",
+      "Heated indoor swimming pool",
+      "Outdoor swimming pool",
+      "Restaurant",
+      "Library",
+      "Bowling green",
+      "Jukskei field",
+      "Gym",
+      "High security"
+    ],
+    "pampering": ["Beauty salon", "Manicures", "Pedicures"],
+    "weeklyActivities": [
+      "Shuttle to the shops",
+      "Bingo",
+      "Exercises",
+      "General knowledge quiz",
+      "Bible studies",
+      "Arts & crafts",
+      "Walks"
+    ],
+    "image": "/assets/media/eastlands/9U7A5490.jpg"
+  },
+  "about": {
+    "paragraphs": [
+      "Eastlands Mature Lifestyle Estate is one of South Africa's leading luxury retirement estates that combines the very best in healthcare, wellness and leisure amenities to offer an outstanding retirement lifestyle.",
+      "The healthcare centre offers en-suite independent and dependant accommodation as well as frail care facilities designed to assist with the residents' care.",
+      "Eastlands offers a full service to residents including all meals, snacks, laundry, cleaning, nursing and any medication management required. Daily activities include swimming laps in the heated indoor pool and an outdoor pool, lap pool, bowling green and Jukskei field, gym and beauty salon. The beautifully styled library, restaurant, weekly shuttle to shops and the high security offered by the estate will ensure residents are pampered daily.",
+      "Bingo, bridge, quiz, weekly church services and specifically designed games to stimulate an ageing mind take place daily to ensure residents are well entertained.",
+      "Our care team is comprised of qualified nurses and care workers, while the in-house physiotherapist and general practitioner take care of all the residents' health needs. All our meals are made in-house with each resident's dietary requirements taken into account.",
+      "Eastlands is truly an icon in Gauteng where residents experience a warm homely home in their golden years."
+    ],
+    "image": "/assets/media/eastlands/9U7A4662.jpg"
+  },
+  "meetTheTeam": [
+    {
+      "position": "Nurse",
+      "url": "/assets/media/eastlands/9U7A4777.jpg",
+      "teamMember": "Musa Nkosi"
+    },
+    {
+      "position": "Nurse",
+      "url": "/assets/media/eastlands/9U7A5459.jpg",
+      "teamMember": "Mpho Molokwane"
+    }
+  ],
+
+  "images": {
+    "heroSlider": [
+      "/assets/media/eastlands/9U7A4551-HDR.jpg",
+      "/assets/media/eastlands/9U7A4326-HDR.jpg",
+      "/assets/media/eastlands/9U7A4582.jpg",
+      "/assets/media/eastlands/9U7A4753.jpg",
+      "/assets/media/eastlands/9U7A4173-HDR.jpg",
+      "/assets/media/eastlands/9U7A4494.jpg",
+      "/assets/media/eastlands/DJI_0535.jpg"
+    ],
+    "gallerySlider": [
+      "/assets/media/eastlands/9U7A4188-HDR.jpg",
+      "/assets/media/eastlands/9U7A4272-HDR.jpg",
+      "/assets/media/eastlands/9U7A4877.jpg",
+      "/assets/media/eastlands/9U7A4662.jpg",
+      "/assets/media/eastlands/9U7A4326-HDR.jpg",
+      "/assets/media/eastlands/9U7A5505.jpg",
+      "/assets/media/eastlands/DJI_0527.jpg",
+      "/assets/media/eastlands/9U7A4822.jpg",
+      "/assets/media/eastlands/9U7A4611.jpg",
+      "/assets/media/eastlands/9U7A4706.jpg",
+      "/assets/media/eastlands/9U7A4417.jpg",
+      "/assets/media/eastlands/9U7A4376-HDR.jpg",
+      "/assets/media/eastlands/DJI_0551.jpg",
+      "/assets/media/eastlands/9U7A5481.jpg",
+      "/assets/media/eastlands/DJI_0547.jpg",
+      "/assets/media/eastlands/9U7A4697.jpg",
+      "/assets/media/eastlands/9U7A4633-HDR.jpg",
+      "/assets/media/eastlands/9U7A4532-HDR.jpg",
+      "/assets/media/eastlands/DJI_0551.jpg",
+      "/assets/media/eastlands/9U7A4648-HDR.jpg",
+      "/assets/media/eastlands/9U7A4525.jpg",
+      "/assets/media/eastlands/DJI_0542.jpg"
+    ]
+  }
+}
