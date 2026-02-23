@@ -29,7 +29,11 @@ const HomePageMobileContactForm = () => {
 
       {selectedProperty && (
         <div className="mt-10 max-w-[1280px] mx-auto">
-          <MobilePropertyContactForm property={selectedProperty} onBack={handleBack} />
+          <MobilePropertyContactForm
+            key={selectedProperty.id}
+            property={selectedProperty}
+            onBack={handleBack}
+          />
         </div>
       )}
     </div>

@@ -6,11 +6,8 @@ import PropertyContactForm from "@/_components/contact/property-contact-form";
 import { useContactForm } from "@/_lib/hooks/use-contact-form";
 
 const HomePageDesktopContactForm = () => {
-  const {
-    selectedPropertyId,
-    selectedProperty,
-    handlePropertySelect,
-  } = useContactForm();
+  const { selectedPropertyId, selectedProperty, handlePropertySelect } =
+    useContactForm();
 
   return (
     <div className="hidden desktop:block max-w-[1280px] mx-auto">
@@ -24,7 +21,12 @@ const HomePageDesktopContactForm = () => {
         onPropertySelect={handlePropertySelect}
       />
 
-      {selectedProperty && <PropertyContactForm property={selectedProperty} />}
+      {selectedProperty && (
+        <PropertyContactForm
+          key={selectedProperty.id}
+          property={selectedProperty}
+        />
+      )}
     </div>
   );
 };

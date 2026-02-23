@@ -99,7 +99,8 @@ const PropertyPagesContactForm = ({
               <input
                 type="text"
                 name="property"
-                defaultValue={title}
+                value={title}
+                readOnly
                 className="hidden"
               />
               <input type="text" name="_honey" className="hidden" />

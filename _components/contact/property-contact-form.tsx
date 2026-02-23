@@ -39,7 +39,8 @@ const PropertyContactForm = ({ property }: PropertyContactFormProps) => {
             <input
               type="text"
               name="property"
-              defaultValue={property.data.general.title}
+              value={property.data.general.title}
+              readOnly
               className="hidden"
             />
             <input type="text" name="_honey" className="hidden" />
@@ -114,9 +115,7 @@ const PropertyContactForm = ({ property }: PropertyContactFormProps) => {
               <Button variant="form">Submit</Button>
               <RecaptchaNotice cssClasses="text-white" />
             </div>
-            {state.error && (
-              <p className="text-white italic">{state.error}</p>
-            )}
+            {state.error && <p className="text-white italic">{state.error}</p>}
           </form>
         ) : (
           <p className="text-white text-subheading font-extralight italic underline-offset-8 decoration-1">
@@ -130,7 +129,7 @@ const PropertyContactForm = ({ property }: PropertyContactFormProps) => {
           alt={property.contactImage.alt}
           width={505}
           height={680}
-          className="object-cover w-full h-full"
+          className="object-cover aspect-video w-full h-full"
           sizes="35vw"
         />
       </div>
