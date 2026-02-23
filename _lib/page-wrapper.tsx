@@ -8,7 +8,7 @@ interface Props {
 const PageWrapper = ({ children, cssClasses }: Props) => {
   return (
     <>
-      <div className={`px-6 desktop:px-12 ${cssClasses}`}>
+      <div className={`px-6 desktop:px-0 ${cssClasses}`}>
         <div className="max-w-[1280px] tablet:mx-auto">{children}</div>
       </div>
     </>

@@ -89,7 +89,7 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                   <p>{parse(`${paragraph1}`)}</p>
                 </div>
                 {/* Mobile view */}
-                <div className="w-full mt-10 aspect-[5/3] desktop:hidden">
+                <div className="w-full mt-10 [&_img]:aspect-[5/3] [&_video]:aspect-square desktop:hidden">
                   {videoUrl && (
                     <video
                       src={videoUrl}

@@ -28,7 +28,7 @@ const RegionFilter = () => {
 
   return (
     <>
-      <div className="hidden min-[350px]:grid mb-10 place-content-center tablet:place-content-start tablet:mb-7">
+      <div className="hidden min-[400px]:grid mb-10 place-content-center tablet:place-content-start tablet:mb-7">
         <ul className="flex gap-3 mb-5 justify-center desktop:mb-2">
           {regions.map((region, index) => (
             <div key={region.id} className="flex gap-3 items-center">
