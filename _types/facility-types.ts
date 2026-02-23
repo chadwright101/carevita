@@ -11,18 +11,25 @@ export interface FacilityGeneral {
   slug: string;
   description: string;
   contactImage: string;
-  map: { lat: number; lng: number; zoom: number };
-  meta: { keywords: string; images: string[] };
+  map: {
+    lat: number;
+    lng: number;
+    zoom: number;
+  };
+  meta: {
+    keywords: string;
+    images: string[];
+  };
 }
 
-export interface WhatWeOffer {
+export interface FacilityWhatWeOffer {
   list: string[];
   image: string;
   pampering?: string[];
   weeklyActivities?: string[];
 }
 
-export interface About {
+export interface FacilityAbout {
   paragraphs: string[];
   image: string;
 }
@@ -48,12 +55,30 @@ export interface FacilityVideo {
 
 export interface Facility {
   general: FacilityGeneral;
-  whatWeOffer: WhatWeOffer;
-  about: About;
+  whatWeOffer: FacilityWhatWeOffer;
+  about: FacilityAbout;
   meetTheTeam?: TeamMember[];
   images: FacilityImages;
   video?: FacilityVideo;
   order: number;
   isActive: boolean;
   timestamp: number;
+}
+
+export interface HomePageContent {
+  about: {
+    paragraphs: string[];
+    list: string[];
+  };
+  ourHomesSliderHomePage: string[];
+  services: Array<{
+    title: string;
+    description: string;
+    icon: string;
+    image: string;
+  }>;
+  contact: {
+    general: string;
+    accounts: string;
+  };
 }
