@@ -4,15 +4,21 @@ import PageWrapper from "@/_lib/page-wrapper";
 import Services from "@/_components/pages/home-page/services";
 import OurHomes from "@/_components/pages/home-page/our-homes-gallery";
 import ContactComponent from "@/_components/contact/contact-component";
+import { getHomePageContent, getAllFacilities } from "@/_actions/facilities-actions";
 
-import generalData from "@/_data/general-data.json";
+export const revalidate = 86400;
 
-const Home = () => {
+async function Home() {
+  const [homePageContent, facilities] = await Promise.all([
+    getHomePageContent(),
+    getAllFacilities(),
+  ]);
+
   return (
     <div>
       <Hero />
       <PageWrapper>
-        <About cssClasses="my-16" data={generalData} />
+        <About cssClasses="my-16" data={{ homePage: homePageContent }} />
         <div id="services" className="scroll-mt-32"></div>
         <Services />
         <div
@@ -25,6 +31,6 @@ const Home = () => {
       <ContactComponent />
     </div>
   );
-};
+}
 
 export default Home;

@@ -1,41 +1,41 @@
 "use client";
 
 import Image from "next/image";
+import { useActionState, useTransition } from "react";
 import Button from "@/_components/ui/button";
 import ContactInfoList from "@/_components/contact/contact-info-list";
 import RecaptchaNotice from "@/_components/ui/recaptcha-notice";
 import { PropertyConfig } from "@/_lib/properties-config";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { sendEmailWithActionState } from "@/_actions/send-email-action";
 
 interface PropertyContactFormProps {
   property: PropertyConfig;
-  formState: { submitting: boolean; submitted: boolean; error: string };
-  onSubmit: (formData: FormData) => Promise<void>;
 }
 
-const PropertyContactForm = ({
-  property,
-  formState,
-  onSubmit,
-}: PropertyContactFormProps) => {
+const PropertyContactForm = ({ property }: PropertyContactFormProps) => {
   const { executeRecaptcha } = useGoogleReCaptcha();
+  const [state, formAction] = useActionState(sendEmailWithActionState, {
+    success: false,
+    error: "",
+  });
+  const [, startTransition] = useTransition();
+
+  const handleFormAction = async (formData: FormData) => {
+    if (!executeRecaptcha) {
+      return;
+    }
+    const recaptchaToken = await executeRecaptcha("contact_form");
+    formData.append("recaptchaToken", recaptchaToken);
+    startTransition(() => formAction(formData));
+  };
 
   return (
     <div className="grid grid-cols-2 gap-10 mt-10">
       <div>
         <ContactInfoList propertyId={property.id} />
-        {!formState.submitted ? (
-          <form
-            action={async (formData) => {
-              if (!executeRecaptcha) {
-                return;
-              }
-              const recaptchaToken = await executeRecaptcha("contact_form");
-              formData.append("recaptchaToken", recaptchaToken);
-              await onSubmit(formData);
-            }}
-            className="flex flex-col gap-4"
-          >
+        {!state.success ? (
+          <form action={handleFormAction} className="flex flex-col gap-4">
             <input
               type="text"
               name="property"
@@ -114,8 +114,8 @@ const PropertyContactForm = ({
               <Button variant="form">Submit</Button>
               <RecaptchaNotice cssClasses="text-white" />
             </div>
-            {formState.error && (
-              <p className="text-white italic">{formState.error}</p>
+            {state.error && (
+              <p className="text-white italic">{state.error}</p>
             )}
           </form>
         ) : (

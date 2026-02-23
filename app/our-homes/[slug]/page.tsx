@@ -5,37 +5,33 @@ import Heading, { headingVariant } from "@/_components/ui/heading";
 import PropertyPagesContactForm from "@/_components/contact/property-pages/property-pages-contact-form";
 import PageWrapper from "@/_lib/page-wrapper";
 import PropertyMap from "@/_components/contact/property-map";
+import { getFacilityBySlug, getAllFacilities } from "@/_actions/facilities-actions";
+import { Facility } from "@/_types/facility-types";
 
-import hartlandData from "@/_data/hartland-data.json";
-import crescentData from "@/_data/crescent-data.json";
-import eastlandsData from "@/_data/eastlands-data.json";
-import sereneData from "@/_data/serene-data.json";
-import parsonageData from "@/_data/parsonage-data.json";
+export const revalidate = 86400;
 
-const propertyData = {
-  "hartland-estate": hartlandData,
-  "the-crescent": crescentData,
-  eastlands: eastlandsData,
-  "serene-park": sereneData,
-  "parsonage-street-home": parsonageData,
-} as const;
-
-type PropertySlug = keyof typeof propertyData;
-
-export function generateStaticParams() {
-  return Object.keys(propertyData).map((slug) => ({
-    slug,
+export async function generateStaticParams() {
+  const facilities = await getAllFacilities();
+  return facilities.map((facility) => ({
+    slug: facility.general.slug,
   }));
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: PropertySlug }>;
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const data = propertyData[slug];
-  const { general } = data;
+  const facility = await getFacilityBySlug(slug);
+
+  if (!facility) {
+    return {
+      title: "Not Found",
+    };
+  }
+
+  const { general } = facility;
 
   return {
     metadataBase: new URL("https://www.carevita.com"),
@@ -57,17 +53,22 @@ export async function generateMetadata({
 export default async function PropertyPage({
   params,
 }: {
-  params: Promise<{ slug: PropertySlug }>;
+  params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const data = propertyData[slug];
+  const facility = await getFacilityBySlug(slug);
+
+  if (!facility) {
+    return null;
+  }
+
   const {
     general: { title, map, contactImage },
-  } = data;
+  } = facility;
 
   return (
     <>
-      <PageItem data={data} />
+      <PageItem data={facility} />
       <PageWrapper>
         <div className="tablet:grid grid-cols-2 gap-10 mt-10">
           <Image
@@ -98,7 +99,7 @@ export default async function PropertyPage({
           >
             <span className="font-thin text-white">Contact</span> {title}
           </Heading>
-          <PropertyPagesContactForm data={data} />
+          <PropertyPagesContactForm data={facility} />
         </div>
       </section>
     </>

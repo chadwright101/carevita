@@ -9,9 +9,7 @@ const HomePageDesktopContactForm = () => {
   const {
     selectedPropertyId,
     selectedProperty,
-    formState,
     handlePropertySelect,
-    handleSubmit,
   } = useContactForm();
 
   return (
@@ -26,13 +24,7 @@ const HomePageDesktopContactForm = () => {
         onPropertySelect={handlePropertySelect}
       />
 
-      {selectedProperty && (
-        <PropertyContactForm
-          property={selectedProperty}
-          formState={formState}
-          onSubmit={handleSubmit}
-        />
-      )}
+      {selectedProperty && <PropertyContactForm property={selectedProperty} />}
     </div>
   );
 };

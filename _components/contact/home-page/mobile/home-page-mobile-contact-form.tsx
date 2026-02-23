@@ -9,10 +9,8 @@ const HomePageMobileContactForm = () => {
   const {
     selectedPropertyId,
     selectedProperty,
-    formState,
     handlePropertySelect,
     handleBack,
-    handleSubmit,
   } = useContactForm();
 
   return (
@@ -31,12 +29,7 @@ const HomePageMobileContactForm = () => {
 
       {selectedProperty && (
         <div className="mt-10 max-w-[1280px] mx-auto">
-          <MobilePropertyContactForm
-            property={selectedProperty}
-            formState={formState}
-            onSubmit={handleSubmit}
-            onBack={handleBack}
-          />
+          <MobilePropertyContactForm property={selectedProperty} onBack={handleBack} />
         </div>
       )}
     </div>

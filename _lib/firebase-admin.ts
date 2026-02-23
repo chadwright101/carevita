@@ -1,10 +1,9 @@
 import * as admin from "firebase-admin";
 
-let firebaseAdminApp: admin.app.App;
-
 export function getFirebaseAdminApp(): admin.app.App {
-  if (firebaseAdminApp) {
-    return firebaseAdminApp;
+  const existingApp = admin.apps[0];
+  if (existingApp) {
+    return existingApp;
   }
 
   const projectId = process.env.FIREBASE_PROJECT_ID;
@@ -17,15 +16,13 @@ export function getFirebaseAdminApp(): admin.app.App {
     );
   }
 
-  firebaseAdminApp = admin.initializeApp({
+  return admin.initializeApp({
     credential: admin.credential.cert({
       projectId,
       clientEmail,
       privateKey,
     }),
   });
-
-  return firebaseAdminApp;
 }
 
 export function getFirestoreDb() {

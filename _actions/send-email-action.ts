@@ -103,3 +103,10 @@ export async function sendEmail(
     return { success: false, error: "Failed to send email" };
   }
 }
+
+export async function sendEmailWithActionState(
+  prevState: any,
+  formData: FormData
+): Promise<{ success: boolean; error?: string }> {
+  return sendEmail(formData);
+}

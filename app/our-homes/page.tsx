@@ -4,6 +4,9 @@ import RegionFilter from "@/_components/pages/our-homes-page/region-filter";
 import Heading, { headingVariant } from "@/_components/ui/heading";
 import PageWrapper from "@/_lib/page-wrapper";
 import Contact from "@/_components/contact/contact-component";
+import { getAllFacilities } from "@/_actions/facilities-actions";
+
+export const revalidate = 86400;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.carevita.com"),
@@ -29,7 +32,9 @@ export const metadata: Metadata = {
   },
 };
 
-const OurHomesPage = () => {
+async function OurHomesPage() {
+  await getAllFacilities();
+
   return (
     <>
       <PageWrapper cssClasses="mt-10">
@@ -44,6 +49,6 @@ const OurHomesPage = () => {
       <Contact cssClasses="mt-20" />
     </>
   );
-};
+}
 
 export default OurHomesPage;
