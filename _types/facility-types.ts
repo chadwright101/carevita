@@ -65,10 +65,25 @@ export interface Facility {
   timestamp: number;
 }
 
+export interface FacilityNavigation {
+  slug: string;
+  shortTitle: string;
+  location: string;
+  homeUrl: string;
+  hasStaff: boolean;
+  title: string;
+  extendedTitle: string;
+  extendedLocation: string;
+  description: string;
+  featuredImage: string;
+  region: "WC" | "GP" | "EC";
+  order: number;
+  isActive: boolean;
+}
+
 export interface HomePageContent {
   about: {
-    paragraphs: string[];
-    list: string[];
+    content: string;
   };
   ourHomesSliderHomePage: string[];
   services: Array<{

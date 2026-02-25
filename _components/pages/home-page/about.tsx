@@ -1,4 +1,5 @@
 import Image from "next/image";
+import DOMPurify from "isomorphic-dompurify";
 import { GeneralDataProps } from "@/_lib/utils/data-props";
 import Heading, { headingVariant } from "../../ui/heading";
 import classNames from "classnames";
@@ -11,10 +12,12 @@ const About = ({
   cssClasses,
   data: {
     homePage: {
-      about: { paragraphs, list },
+      about: { content },
     },
   },
 }: Props) => {
+  const sanitized = DOMPurify.sanitize(content);
+
   return (
     <main
       className={classNames(
@@ -29,15 +32,10 @@ const About = ({
         >
           About
         </Heading>
-        <p>{paragraphs[0]}</p>
-        <p>{paragraphs[1]}</p>
-        <p>{paragraphs[2]}</p>
-        <ul className="list-disc ml-6">
-          {list.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
-        <p>{paragraphs[3]}</p>
+        <div
+          className="[&_p]:mb-4 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-4 [&_li]:mb-1"
+          dangerouslySetInnerHTML={{ __html: sanitized }}
+        />
       </div>
       <div className="grid gap-10 mt-6 min-[800px]:grid-cols-2 desktop:grid-cols-1 desktop:grid-rows-[300px_300px]">
         <Image

@@ -4,22 +4,18 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, Fragment, useEffect } from "react";
 
-import navigation from "@/_data/navigation-data.json";
-import crescentData from "@/_data/crescent-data.json";
-import eastlandsData from "@/_data/eastlands-data.json";
-import sereneData from "@/_data/serene-data.json";
-import parsonageData from "@/_data/parsonage-data.json";
-
 import classNames from "classnames";
 import { X } from "lucide-react";
+import { FacilityNavigation } from "@/_types/facility-types";
 
 interface Props {
   currentRoute: string;
   scrollPosition: number;
   cssClasses?: string;
+  facilities: FacilityNavigation[];
 }
 
-const MobileHeader = ({ currentRoute, scrollPosition, cssClasses }: Props) => {
+const MobileHeader = ({ currentRoute, scrollPosition, cssClasses, facilities }: Props) => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   useEffect(() => {
@@ -30,42 +26,29 @@ const MobileHeader = ({ currentRoute, scrollPosition, cssClasses }: Props) => {
     }
   }, [toggleMenu]);
 
-  const routeConfig: Record<
-    string,
-    { navKey: keyof typeof navigation; meetTheTeam?: { length: number } }
-  > = {
-    "/our-homes/hartland-estate": { navKey: "hartland" },
-    "/our-homes/the-crescent": {
-      navKey: "crescent",
-      meetTheTeam: crescentData.meetTheTeam,
-    },
-    "/our-homes/eastlands": {
-      navKey: "eastlands",
-      meetTheTeam: eastlandsData.meetTheTeam,
-    },
-    "/our-homes/serene-park": {
-      navKey: "serene",
-      meetTheTeam: sereneData.meetTheTeam,
-    },
-    "/our-homes/parsonage-street-home": {
-      navKey: "parsonage",
-      meetTheTeam: parsonageData.meetTheTeam,
-    },
-  };
+  const currentFacility = facilities.find(
+    (f) => `/our-homes/${f.slug}` === currentRoute,
+  );
 
-  const config = routeConfig[currentRoute];
-  const navItems = config
-    ? navigation[config.navKey].filter(
-        ({ title }) =>
-          title !== "About" &&
-          title !== "Location" &&
-          !(
-            title === "Staff" &&
-            config.meetTheTeam &&
-            config.meetTheTeam.length <= 2
-          ),
-      )
-    : navigation.general;
+  const navItems = currentFacility
+    ? [
+        { title: "Home", url: "/" },
+        ...(currentFacility.hasStaff
+          ? [{ title: "Staff", url: `${currentFacility.homeUrl}#staff` }]
+          : []),
+        { title: "Gallery", url: `${currentFacility.homeUrl}#gallery` },
+        { title: "Our Homes", url: "/our-homes" },
+        { title: "Blog", url: "/blog" },
+        { title: "Contact", url: `${currentFacility.homeUrl}#contact` },
+      ]
+    : [
+        { title: "Home", url: "/" },
+        { title: "Services", url: "/#services" },
+        { title: "Gallery", url: "/#gallery" },
+        { title: "Our Homes", url: "/our-homes" },
+        { title: "Blog", url: "/blog" },
+        { title: "Contact", url: "/#contact" },
+      ];
 
   return (
     <>

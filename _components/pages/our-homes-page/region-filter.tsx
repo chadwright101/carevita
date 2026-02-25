@@ -4,27 +4,27 @@ import { useState } from "react";
 import classNames from "classnames";
 
 import HomeItem from "@/_components/pages/our-homes-page/home-item";
+import { FacilityNavigation } from "@/_types/facility-types";
 
-import crescentData from "@/_data/crescent-data.json";
-import sereneData from "@/_data/serene-data.json";
-import eastlandsData from "@/_data/eastlands-data.json";
-import parsonageData from "@/_data/parsonage-data.json";
-import hartlandData from "@/_data/hartland-data.json";
-
-type Region = "all" | "western" | "gauteng" | "eastern";
+type Region = "all" | "WC" | "GP" | "EC";
 
 const regions = [
-  { id: "western" as Region, label: "Western Cape" },
-  { id: "gauteng" as Region, label: "Gauteng" },
-  { id: "eastern" as Region, label: "Eastern Cape" },
+  { id: "WC" as Region, label: "Western Cape" },
+  { id: "GP" as Region, label: "Gauteng" },
+  { id: "EC" as Region, label: "Eastern Cape" },
 ];
 
-const RegionFilter = () => {
+interface Props {
+  facilities: FacilityNavigation[];
+}
+
+const RegionFilter = ({ facilities }: Props) => {
   const [activeRegion, setActiveRegion] = useState<Region>("all");
 
-  const showWestern = activeRegion === "all" || activeRegion === "western";
-  const showGauteng = activeRegion === "all" || activeRegion === "gauteng";
-  const showEastern = activeRegion === "all" || activeRegion === "eastern";
+  const filtered =
+    activeRegion === "all"
+      ? facilities
+      : facilities.filter((f) => f.region === activeRegion);
 
   return (
     <>
@@ -58,52 +58,15 @@ const RegionFilter = () => {
         )}
       </div>
       <main className="grid gap-y-12 gap-x-10 tablet:gap-y-24 tablet:gap-x-10 tablet:grid-cols-2">
-        {showWestern && (
-          <>
-            <div className="grid gap-16">
-              <HomeItem
-                data={hartlandData}
-                featuredImage={hartlandData.images.gallerySlider[0]}
-              />
-              <hr className="text-black/25 tablet:hidden" />
-            </div>
-            <div className="grid gap-16">
-              <HomeItem
-                data={crescentData}
-                featuredImage={crescentData.images.heroSlider[1]}
-              />
-              <hr className="text-black/25 tablet:hidden" />
-            </div>
-          </>
-        )}
-        {showGauteng && (
-          <>
-            <div className="grid gap-16">
-              <HomeItem
-                data={eastlandsData}
-                featuredImage={eastlandsData.images.heroSlider[0]}
-              />
-              <hr className="text-black/25 tablet:hidden" />
-            </div>
-            <div className="grid gap-16">
-              <HomeItem
-                data={sereneData}
-                featuredImage={sereneData.images.heroSlider[1]}
-              />
-              <hr className="text-black/25 tablet:hidden" />
-            </div>
-          </>
-        )}
-
-        {showEastern && (
-          <div className="grid gap-16">
+        {filtered.map((facility) => (
+          <div key={facility.slug} className="grid gap-16">
             <HomeItem
-              data={parsonageData}
-              featuredImage="/assets/media/parsonage-street/9U7A3432-HDR.jpg"
+              data={facility}
+              featuredImage={facility.featuredImage}
             />
             <hr className="text-black/25 tablet:hidden" />
           </div>
-        )}
+        ))}
       </main>
     </>
   );

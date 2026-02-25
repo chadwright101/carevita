@@ -1,6 +1,7 @@
 "use client";
 
-import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
+import { useEffect, useRef } from "react";
+import { GoogleMap, useLoadScript } from "@react-google-maps/api";
 
 interface PropertyMapProps {
   cssClasses?: string;
@@ -9,10 +10,29 @@ interface PropertyMapProps {
   zoom: number;
 }
 
+const libraries: ("marker")[] = ["marker"];
+
 const PropertyMap = ({ cssClasses, lat, lng, zoom }: PropertyMapProps) => {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
+    libraries,
+    preventGoogleFontsLoading: true,
   });
+
+  const mapRef = useRef<google.maps.Map | null>(null);
+
+  useEffect(() => {
+    if (!mapRef.current || !isLoaded) return;
+
+    const marker = new google.maps.marker.AdvancedMarkerElement({
+      map: mapRef.current,
+      position: { lat, lng },
+    });
+
+    return () => {
+      marker.map = null;
+    };
+  }, [isLoaded, lat, lng]);
 
   if (!isLoaded)
     return (
@@ -26,9 +46,11 @@ const PropertyMap = ({ cssClasses, lat, lng, zoom }: PropertyMapProps) => {
       zoom={zoom}
       center={{ lat, lng }}
       mapContainerClassName={`${cssClasses}`}
-    >
-      <MarkerF position={{ lat, lng }} />
-    </GoogleMap>
+      onLoad={(map) => {
+        mapRef.current = map;
+        (map as any).setMapId(process.env.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID);
+      }}
+    />
   );
 };
 

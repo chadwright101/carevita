@@ -4,15 +4,12 @@ import PageWrapper from "@/_lib/page-wrapper";
 import Services from "@/_components/pages/home-page/services";
 import OurHomes from "@/_components/pages/home-page/our-homes-gallery";
 import ContactComponent from "@/_components/contact/contact-component";
-import { getHomePageContent, getAllFacilities } from "@/_actions/facilities-actions";
+import { getHomePageContent } from "@/_actions/facilities-actions";
 
 export const revalidate = 86400;
 
 async function Home() {
-  const [homePageContent, facilities] = await Promise.all([
-    getHomePageContent(),
-    getAllFacilities(),
-  ]);
+  const homePageContent = await getHomePageContent();
 
   return (
     <div>

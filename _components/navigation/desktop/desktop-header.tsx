@@ -4,56 +4,62 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-import navigation from "@/_data/navigation-data.json";
-import crescentData from "@/_data/crescent-data.json";
-import eastlandsData from "@/_data/eastlands-data.json";
-import sereneData from "@/_data/serene-data.json";
-import parsonageData from "@/_data/parsonage-data.json";
-
 import classNames from "classnames";
+import { FacilityNavigation } from "@/_types/facility-types";
+
+interface NavItem {
+  title: string;
+  url: string;
+}
 
 interface Props {
   currentRoute: string;
   scrollPosition: number;
+  facilities: FacilityNavigation[];
 }
 
-const DesktopHeader = ({ currentRoute, scrollPosition }: Props) => {
+const staticGeneralNav: NavItem[] = [
+  { title: "Home", url: "/" },
+  { title: "Services", url: "/#services" },
+  { title: "Gallery", url: "/#gallery" },
+];
+
+const staticGeneralNavEnd: NavItem[] = [
+  { title: "Blog", url: "/blog" },
+  { title: "Contact", url: "/#contact" },
+];
+
+const DesktopHeader = ({ currentRoute, scrollPosition, facilities }: Props) => {
   const [toggleHomeSubmenu, setToggleHomeSubmenu] = useState(false);
 
-  const routeConfig: Record<
-    string,
-    { navKey: keyof typeof navigation; meetTheTeam?: { length: number } }
-  > = {
-    "/our-homes/hartland-estate": { navKey: "hartland" },
-    "/our-homes/the-crescent": {
-      navKey: "crescent",
-      meetTheTeam: crescentData.meetTheTeam,
-    },
-    "/our-homes/eastlands": {
-      navKey: "eastlands",
-      meetTheTeam: eastlandsData.meetTheTeam,
-    },
-    "/our-homes/serene-park": {
-      navKey: "serene",
-      meetTheTeam: sereneData.meetTheTeam,
-    },
-    "/our-homes/parsonage-street-home": {
-      navKey: "parsonage",
-      meetTheTeam: parsonageData.meetTheTeam,
-    },
-  };
+  const currentFacility = facilities.find(
+    (f) => `/our-homes/${f.slug}` === currentRoute,
+  );
 
-  const config = routeConfig[currentRoute];
-  const navItems = config
-    ? navigation[config.navKey].filter(
-        ({ title }) =>
-          !(
-            title === "Staff" &&
-            config.meetTheTeam &&
-            config.meetTheTeam.length <= 2
-          ),
-      )
-    : navigation.general;
+  const homeSubmenu = facilities.map((f) => ({
+    title: f.title,
+    location: f.location,
+    url: f.homeUrl,
+  }));
+
+  const navItems = currentFacility
+    ? [
+        { title: "Home", url: "/" },
+        { title: "About", url: `${currentFacility.homeUrl}#about` },
+        ...(currentFacility.hasStaff
+          ? [{ title: "Staff", url: `${currentFacility.homeUrl}#staff` }]
+          : []),
+        { title: "Gallery", url: `${currentFacility.homeUrl}#gallery` },
+        { title: "Location", url: `${currentFacility.homeUrl}#location` },
+        { title: "Our Homes", url: "/our-homes" },
+        { title: "Blog", url: "/blog" },
+        { title: "Contact", url: `${currentFacility.homeUrl}#contact` },
+      ]
+    : [
+        ...staticGeneralNav,
+        { title: "Our Homes", url: "/our-homes" },
+        ...staticGeneralNavEnd,
+      ];
 
   return (
     <div className="hidden desktop:block relative py-4 border-b-1 w-full border-black/25 drop-shadow-sm bg-white">
@@ -74,20 +80,18 @@ const DesktopHeader = ({ currentRoute, scrollPosition }: Props) => {
         </Link>
         <nav>
           <ul className="flex gap-6">
-            {navItems.map(({ title, url, homeSubmenu }, index) => (
+            {navItems.map(({ title, url }, index) => (
               <li
                 key={index}
                 onMouseEnter={
-                  homeSubmenu &&
-                  (() => {
-                    setToggleHomeSubmenu(!toggleHomeSubmenu);
-                  })
+                  title === "Our Homes"
+                    ? () => setToggleHomeSubmenu(true)
+                    : undefined
                 }
                 onMouseLeave={
-                  homeSubmenu &&
-                  (() => {
-                    setToggleHomeSubmenu(!toggleHomeSubmenu);
-                  })
+                  title === "Our Homes"
+                    ? () => setToggleHomeSubmenu(false)
+                    : undefined
                 }
               >
                 <Link
@@ -106,7 +110,7 @@ const DesktopHeader = ({ currentRoute, scrollPosition }: Props) => {
                   {title}
                 </Link>
 
-                {homeSubmenu && toggleHomeSubmenu && (
+                {title === "Our Homes" && toggleHomeSubmenu && (
                   <ul className="absolute bg-white px-6 py-3 border border-t-0 border-black -translate-x-[55px] rounded-b-xl flex flex-col gap-2 animate-grow-down">
                     <div className="absolute top-0 w-[102%] -left-[2px] h-4 bg-white" />
                     {homeSubmenu.map(({ title, url, location }, index) => (

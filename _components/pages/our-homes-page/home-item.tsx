@@ -3,18 +3,17 @@ import Image from "next/image";
 import classNames from "classnames";
 import Button from "../../ui/button";
 import Heading, { headingVariant } from "../../ui/heading";
-import { DataProps } from "@/_lib/utils/data-props";
+import { FacilityNavigation } from "@/_types/facility-types";
 
-interface Props extends DataProps {
+interface Props {
   cssClasses?: string;
+  data: FacilityNavigation;
   featuredImage: string;
 }
 
 const HomeItem = ({
   cssClasses,
-  data: {
-    general: { title, extendedTitle, extendedLocation, description, homeUrl },
-  },
+  data: { title, extendedTitle, extendedLocation, description, homeUrl },
   featuredImage,
 }: Props) => {
   return (

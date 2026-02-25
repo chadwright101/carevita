@@ -4,7 +4,7 @@ import RegionFilter from "@/_components/pages/our-homes-page/region-filter";
 import Heading, { headingVariant } from "@/_components/ui/heading";
 import PageWrapper from "@/_lib/page-wrapper";
 import Contact from "@/_components/contact/contact-component";
-import { getAllFacilities } from "@/_actions/facilities-actions";
+import { getFacilityNavigation } from "@/_actions/facilities-actions";
 
 export const revalidate = 86400;
 
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 };
 
 async function OurHomesPage() {
-  await getAllFacilities();
+  const facilities = await getFacilityNavigation();
 
   return (
     <>
@@ -44,7 +44,7 @@ async function OurHomesPage() {
         >
           Our Homes
         </Heading>
-        <RegionFilter />
+        <RegionFilter facilities={facilities} />
       </PageWrapper>
       <Contact cssClasses="mt-20" />
     </>

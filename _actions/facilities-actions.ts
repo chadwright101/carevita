@@ -2,8 +2,11 @@
 
 import { getFirestoreDb } from "@/_lib/firebase-admin";
 import { serializeFirestoreData } from "@/_lib/firebase-serializer";
-import { Facility } from "@/_types/facility-types";
-import { HomePageContent } from "@/_types/facility-types";
+import {
+  Facility,
+  FacilityNavigation,
+  HomePageContent,
+} from "@/_types/facility-types";
 
 export async function getAllFacilities(): Promise<Facility[]> {
   const db = getFirestoreDb();
@@ -14,13 +17,15 @@ export async function getAllFacilities(): Promise<Facility[]> {
     .get();
 
   const facilities = facilitiesSnapshot.docs.map((doc) =>
-    serializeFirestoreData(doc.data() as Facility)
+    serializeFirestoreData(doc.data() as Facility),
   );
 
   return facilities;
 }
 
-export async function getFacilityBySlug(slug: string): Promise<Facility | null> {
+export async function getFacilityBySlug(
+  slug: string,
+): Promise<Facility | null> {
   const db = getFirestoreDb();
   const facilitiesSnapshot = await db
     .collection("facilities")
@@ -34,10 +39,23 @@ export async function getFacilityBySlug(slug: string): Promise<Facility | null> 
   }
 
   const facility = serializeFirestoreData(
-    facilitiesSnapshot.docs[0].data() as Facility
+    facilitiesSnapshot.docs[0].data() as Facility,
   );
 
   return facility;
+}
+
+export async function getFacilityNavigation(): Promise<FacilityNavigation[]> {
+  const db = getFirestoreDb();
+  const snapshot = await db
+    .collection("facilityNavigation")
+    .where("isActive", "==", true)
+    .orderBy("order", "asc")
+    .get();
+
+  return snapshot.docs.map((doc) =>
+    serializeFirestoreData(doc.data() as FacilityNavigation),
+  );
 }
 
 export async function getHomePageContent(): Promise<HomePageContent> {
@@ -52,7 +70,7 @@ export async function getHomePageContent(): Promise<HomePageContent> {
   }
 
   const homePageContent = serializeFirestoreData(
-    homePageSnapshot.data() as HomePageContent
+    homePageSnapshot.data() as HomePageContent,
   );
 
   return homePageContent;

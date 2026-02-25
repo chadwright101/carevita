@@ -25,7 +25,7 @@ export interface Service {
 }
 
 export interface HomePage {
-  about: { paragraphs: string[]; list: string[] };
+  about: { content: string };
   ourHomesSliderHomePage: string[];
   services: Service[];
   contact: { general: string; accounts: string };
