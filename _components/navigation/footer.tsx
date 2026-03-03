@@ -17,18 +17,27 @@ const Footer = ({ cssClasses }: Props) => {
       <div className="w-full mx-auto max-w-[1280px] flex flex-col gap-6 items-center px-5 pt-15 mt-15 border-t border-black/25 pb-6 bg-white desktop:pt-10">
         <div className="w-full max-w-[1280px] flex justify-center tablet:justify-between items-center">
           <nav className="hidden tablet:flex">
-            <ul>
+            <ul className="text-[16px]">
               {navigation.general.map(({ title, url }, index) => (
                 <li key={index}>
                   <Link
                     prefetch={false}
                     href={url}
-                    className=" hover:font-light"
+                    className="hover:underline underline-offset-4 decoration-1"
                   >
                     {title}
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link
+                  prefetch={false}
+                  href="/login"
+                  className="font-normal hover:underline underline-offset-4 decoration-1"
+                >
+                  Admin Login
+                </Link>
+              </li>
               <li className="mt-2">
                 <Link
                   prefetch={false}

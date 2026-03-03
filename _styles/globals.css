@@ -8,6 +8,7 @@
   --color-white: #FFFFFF;
   --color-black: #222222;
   --color-link: #0000EE;
+  --color-error: #dc2626;
 
   --text-*: initial;
   --text-smallest: 0.938rem;

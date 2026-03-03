@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { getFirebaseAuth } from "@/_lib/firebase-client";
 import { sendPasswordResetEmail } from "firebase/auth";
+import Link from "next/link";
+import Button from "@/_components/ui/button";
 
 export function PasswordResetForm() {
   const [email, setEmail] = useState("");
@@ -10,14 +12,12 @@ export function PasswordResetForm() {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  async function handleAction(formData: FormData) {
     setError(null);
     setIsLoading(true);
-
     try {
       const auth = getFirebaseAuth();
-      await sendPasswordResetEmail(auth, email);
+      await sendPasswordResetEmail(auth, formData.get("email") as string);
       setSuccess(true);
       setEmail("");
     } catch (err) {
@@ -25,27 +25,62 @@ export function PasswordResetForm() {
     } finally {
       setIsLoading(false);
     }
-  };
+  }
+
+  if (success) {
+    return (
+      <main className="flex justify-center items-center min-h-screen">
+        <div className="w-full max-w-md px-6 text-center flex flex-col gap-4">
+          <p>
+            Password reset email has been sent. Please check your inbox and
+            follow the link to reset your password.
+          </p>
+          <Link href="/login" className="text-link">
+            Back to Login
+          </Link>
+        </div>
+      </main>
+    );
+  }
 
   return (
-    <form onSubmit={handleSubmit}>
-      {error && <div className="text-red-600">{error}</div>}
-      {success && (
-        <div className="text-green-600">
-          Password reset email sent. Check your inbox for further instructions.
-        </div>
-      )}
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Enter your email"
-        required
-        disabled={isLoading}
-      />
-      <button type="submit" disabled={isLoading}>
-        {isLoading ? "Sending..." : "Send Reset Email"}
-      </button>
-    </form>
+    <main className="flex justify-center items-center min-h-screen">
+      <div className="w-full max-w-md px-6">
+        <h1 className="text-center mb-8">Forgot Password</h1>
+        <form action={handleAction}>
+          <div className="flex flex-col gap-5">
+            <div>
+              <label htmlFor="email" className="block mb-2">
+                Email
+              </label>
+              <input
+                id="email"
+                type="email"
+                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email"
+                autoComplete="email"
+                required
+                disabled={isLoading}
+                className="w-full pl-2 py-1.5 border border-black/25"
+              />
+            </div>
+
+            {error && <p className="text-error">{error}</p>}
+
+            <Button variant="form" cssClasses="w-full justify-center" disabled={isLoading}>
+              {isLoading ? "Sending..." : "Send Reset Email"}
+            </Button>
+
+            <div className="text-center">
+              <Link href="/login" className="text-link">
+                Back to Login
+              </Link>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
   );
 }
