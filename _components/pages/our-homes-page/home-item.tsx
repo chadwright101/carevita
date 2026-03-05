@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import classNames from "classnames";
-import Button from "../../ui/button";
+import ButtonLink from "../../ui/button-link";
 import Heading, { headingVariant } from "../../ui/heading";
 import { FacilityNavigation } from "@/_types/facility-types";
 
@@ -19,7 +19,7 @@ const HomeItem = ({
   return (
     <article
       className={classNames(
-        "flex flex-col h-full justify-between gap-10",
+        "flex flex-col h-full justify-between items-center gap-10",
         cssClasses,
       )}
     >
@@ -54,7 +54,7 @@ const HomeItem = ({
         </Link>
         <p>{description}</p>
       </div>
-      <Button url={homeUrl} cssClasses="mx-auto" />
+      <ButtonLink href={homeUrl} backgroundColor="green" />
     </article>
   );
 };

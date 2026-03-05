@@ -1,27 +1,28 @@
-"use client";
+import { getAllFacilitiesAdmin } from "@/_actions/admin-facilities-actions";
+import { getHomePageContent } from "@/_actions/facilities-actions";
+import FacilitiesSection from "@/_components/user/dashboard/facilities/facilities-section";
+import FacilityAddForm from "@/_components/user/dashboard/facilities/facility-add-form";
+import HomeContentSection from "@/_components/user/dashboard/home-content/home-content-section";
+import HomeSliderSection from "@/_components/user/dashboard/home-slider/home-slider-section";
 
-import { useAuth } from "@/_contexts/auth-context";
-import { signOut } from "@/_actions/auth-actions";
-
-export default function DashboardPage() {
-  const { user } = useAuth();
+export default async function DashboardPage() {
+  const [facilities, homeContent] = await Promise.all([
+    getAllFacilitiesAdmin(),
+    getHomePageContent(),
+  ]);
 
   return (
-    <main className="p-8">
-      <div className="flex items-center justify-between">
-        <div>
-          <h1>Dashboard</h1>
-          {user?.email && <p>{user.email}</p>}
-        </div>
-        <form action={signOut}>
-          <button
-            type="submit"
-            className="desktop:hover:cursor-pointer"
-          >
-            Sign Out
-          </button>
-        </form>
+    <main className="p-8 flex flex-col gap-12">
+      <h1>Dashboard</h1>
+
+      <div className="flex flex-col gap-4">
+        <FacilitiesSection facilities={facilities} />
+        <FacilityAddForm />
       </div>
+
+      <HomeContentSection homeContent={homeContent} />
+
+      <HomeSliderSection images={homeContent.ourHomesSliderHomePage} />
     </main>
   );
 }

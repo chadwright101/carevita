@@ -8,7 +8,7 @@ import PropertyMap from "@/_components/contact/property-map";
 import { getFacilityBySlug, getAllFacilities } from "@/_actions/facilities-actions";
 import { Facility } from "@/_types/facility-types";
 
-export const revalidate = 86400;
+export const revalidate = 0;
 
 export async function generateStaticParams() {
   const facilities = await getAllFacilities();

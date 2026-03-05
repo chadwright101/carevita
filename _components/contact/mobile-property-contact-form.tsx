@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState, useTransition } from "react";
-import Button from "@/_components/ui/button";
+import ButtonType from "@/_components/ui/button-type";
 import ContactInfoList from "@/_components/contact/contact-info-list";
 import RecaptchaNotice from "@/_components/ui/recaptcha-notice";
 import { PropertyConfig } from "@/_lib/properties-config";
@@ -122,10 +122,10 @@ const MobilePropertyContactForm = ({
           </div>
           <div className="flex flex-col gap-5 mt-5">
             <div className="flex gap-4 w-full justify-between">
-              <Button variant="form">Submit</Button>
-              <Button variant="formBack" onClick={onBack}>
+              <ButtonType backgroundColor="green" iconArrow>Submit</ButtonType>
+              <ButtonType backgroundColor="lightGreen" type="button" onClick={onBack}>
                 Back
-              </Button>
+              </ButtonType>
             </div>
             <RecaptchaNotice cssClasses="text-white" />
           </div>
@@ -138,9 +138,9 @@ const MobilePropertyContactForm = ({
           <p className="text-white text-subheading font-extralight italic underline-offset-8 decoration-1">
             Thank you for your message. We will be in touch soon.
           </p>
-          <Button variant="formBack" onClick={onBack}>
+          <ButtonType backgroundColor="lightGreen" type="button" onClick={onBack}>
             Back
-          </Button>
+          </ButtonType>
         </div>
       )}
     </div>

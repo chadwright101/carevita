@@ -6,7 +6,7 @@ import PageWrapper from "@/_lib/page-wrapper";
 import Contact from "@/_components/contact/contact-component";
 import { getFacilityNavigation } from "@/_actions/facilities-actions";
 
-export const revalidate = 86400;
+export const revalidate = 0;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.carevita.com"),

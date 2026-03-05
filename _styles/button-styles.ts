@@ -4,21 +4,39 @@ export const buttonStyles = (
   cssClasses?: string,
   disabled?: boolean,
   pending?: boolean,
-  variant?: "form" | "formBack" | "formNext" | "link",
+  backgroundColor?: "blue" | "green" | "lightGreen" | "black" | "red",
+  type?: "button" | "submit",
+  strokeColor?: "black" | "red",
 ) =>
   classNames(
-    "text-subheading font-light ease-in-out duration-300",
+    "text-paragraph px-6 py-2.5 font-light ease-in-out duration-300 rounded-md",
     cssClasses,
     {
+      "bg-blue text-white": !strokeColor,
       "opacity-50 cursor-not-allowed": pending || disabled,
+      "desktop:hover:bg-blue/90":
+        !(disabled || pending) &&
+        (!backgroundColor || backgroundColor === "blue") &&
+        !strokeColor,
       "desktop:hover:cursor-pointer": !(disabled || pending),
-      "bg-green text-white px-6 py-2.5 flex gap-6 items-center":
-        variant === "form" || variant === "formNext",
-      "desktop:hover:bg-green/80":
-        (variant === "form" || variant === "formNext" || variant === "link") &&
-        !(disabled || pending),
-      "bg-lightGreen text-white px-6 py-2.5": variant === "formBack",
-      "px-12 py-2.5 bg-green text-white drop-shadow-md tablet:px-10":
-        variant === "link",
+      "bg-green flex gap-6 items-center": backgroundColor === "green",
+      "desktop:hover:bg-green/90":
+        backgroundColor === "green" && !(disabled || pending),
+      "bg-lightGreen": backgroundColor === "lightGreen",
+      "desktop:hover:bg-lightGreen/90":
+        backgroundColor === "lightGreen" && !(disabled || pending),
+      "bg-black": backgroundColor === "black",
+      "desktop:hover:bg-black/90":
+        backgroundColor === "black" && !(disabled || pending),
+      "bg-error": backgroundColor === "red",
+      "desktop:hover:bg-error/90":
+        backgroundColor === "red" && !(disabled || pending),
+      "border-2 border-black text-black font-normal": strokeColor === "black",
+      "desktop:hover:bg-black/10":
+        strokeColor === "black" && !(disabled || pending),
+      "border-2 border-error text-error font-normal": strokeColor === "red",
+      "desktop:hover:bg-error/10":
+        strokeColor === "red" && !(disabled || pending),
+      "min-w-[150px] grid place-items-center": type === "submit",
     },
   );

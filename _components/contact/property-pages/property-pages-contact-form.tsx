@@ -4,7 +4,7 @@ import { useState } from "react";
 import classNames from "classnames";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
-import Button from "@/_components/ui/button";
+import ButtonType from "@/_components/ui/button-type";
 import ShowEmailAddress from "@/_components/ui/contact/show-email-address";
 import ShowPhoneNumber from "@/_components/ui/contact/show-phone-number";
 import RecaptchaNotice from "@/_components/ui/recaptcha-notice";
@@ -178,9 +178,9 @@ const PropertyPagesContactForm = ({
               {showMessage && (
                 <>
                   <div className="flex flex-col gap-4">
-                    <Button variant="form" cssClasses="mr-auto">
+                    <ButtonType backgroundColor="green" iconArrow cssClasses="mr-auto">
                       Submit
-                    </Button>
+                    </ButtonType>
                     <RecaptchaNotice cssClasses="text-white" />
                   </div>
                   {formError && (
@@ -192,11 +192,15 @@ const PropertyPagesContactForm = ({
               )}
             </form>
             {!showMessage && (
-              <Button
-                variant="formNext"
+              <ButtonType
+                backgroundColor="green"
+                iconArrow
+                type="button"
                 onClick={() => setShowMessage(true)}
                 cssClasses="mr-auto"
-              />
+              >
+                Next
+              </ButtonType>
             )}
           </>
         ) : (

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import Button from "@/_components/ui/button";
+import ButtonType from "@/_components/ui/button-type";
 import RecaptchaNotice from "@/_components/ui/recaptcha-notice";
 
 const BusinessPortfolioContactForm = () => {
@@ -123,9 +123,9 @@ const BusinessPortfolioContactForm = () => {
             {showMessage && (
               <>
                 <div className="flex flex-col gap-4">
-                  <Button variant="form" cssClasses="mr-auto">
+                  <ButtonType backgroundColor="green" iconArrow cssClasses="mr-auto">
                     Submit
-                  </Button>
+                  </ButtonType>
                   <RecaptchaNotice cssClasses="[&_a]:text-black" />
                 </div>
                 {formError && (
@@ -137,11 +137,15 @@ const BusinessPortfolioContactForm = () => {
             )}
           </form>
           {!showMessage && (
-            <Button
-              variant="formNext"
+            <ButtonType
+              backgroundColor="green"
+              iconArrow
+              type="button"
               onClick={() => setShowMessage(true)}
               cssClasses="mr-auto"
-            />
+            >
+              Next
+            </ButtonType>
           )}
         </>
       ) : (

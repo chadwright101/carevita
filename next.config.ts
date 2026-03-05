@@ -12,6 +12,12 @@ const nextConfig: NextConfig = {
         port: "",
         pathname: "/wp-content/**",
       },
+      {
+        protocol: "https",
+        hostname: "storage.googleapis.com",
+        port: "",
+        pathname: "/**",
+      },
     ],
     qualities: [30, 50, 75],
   },

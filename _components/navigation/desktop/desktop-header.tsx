@@ -6,6 +6,7 @@ import { useState } from "react";
 
 import classNames from "classnames";
 import { FacilityNavigation } from "@/_types/facility-types";
+import { signOut } from "@/_actions/auth-actions";
 
 interface NavItem {
   title: string;
@@ -16,6 +17,7 @@ interface Props {
   currentRoute: string;
   scrollPosition: number;
   facilities: FacilityNavigation[];
+  isLoggedIn: boolean;
 }
 
 const staticGeneralNav: NavItem[] = [
@@ -29,7 +31,12 @@ const staticGeneralNavEnd: NavItem[] = [
   { title: "Contact", url: "/#contact" },
 ];
 
-const DesktopHeader = ({ currentRoute, scrollPosition, facilities }: Props) => {
+const DesktopHeader = ({
+  currentRoute,
+  scrollPosition,
+  facilities,
+  isLoggedIn,
+}: Props) => {
   const [toggleHomeSubmenu, setToggleHomeSubmenu] = useState(false);
 
   const currentFacility = facilities.find(
@@ -42,8 +49,13 @@ const DesktopHeader = ({ currentRoute, scrollPosition, facilities }: Props) => {
     url: f.homeUrl,
   }));
 
+  const dashboardItem = { title: "Dashboard", url: "/dashboard" };
+
+  const signOutItem = { title: "Sign Out", url: "" };
+
   const navItems = currentFacility
     ? [
+        ...(isLoggedIn ? [dashboardItem, signOutItem] : []),
         { title: "Home", url: "/" },
         { title: "About", url: `${currentFacility.homeUrl}#about` },
         ...(currentFacility.hasStaff
@@ -56,6 +68,7 @@ const DesktopHeader = ({ currentRoute, scrollPosition, facilities }: Props) => {
         { title: "Contact", url: `${currentFacility.homeUrl}#contact` },
       ]
     : [
+        ...(isLoggedIn ? [dashboardItem, signOutItem] : []),
         ...staticGeneralNav,
         { title: "Our Homes", url: "/our-homes" },
         ...staticGeneralNavEnd,
@@ -80,60 +93,74 @@ const DesktopHeader = ({ currentRoute, scrollPosition, facilities }: Props) => {
         </Link>
         <nav>
           <ul className="flex gap-6">
-            {navItems.map(({ title, url }, index) => (
-              <li
-                key={index}
-                onMouseEnter={
-                  title === "Our Homes"
-                    ? () => setToggleHomeSubmenu(true)
-                    : undefined
-                }
-                onMouseLeave={
-                  title === "Our Homes"
-                    ? () => setToggleHomeSubmenu(false)
-                    : undefined
-                }
-              >
-                <Link
-                  prefetch={false}
-                  href={url}
-                  className={classNames(
-                    "underline-offset-8 decoration-green decoration-2",
-                    title !== "Our Homes"
-                      ? "hover:underline"
-                      : "px-4 -mx-4 pb-5 -mb-5",
-                    {
-                      underline: currentRoute === url,
-                    },
-                  )}
+            {navItems.map(({ title, url }, index) =>
+              title === "Sign Out" ? (
+                <li key={index}>
+                  <form action={signOut}>
+                    <button
+                      type="submit"
+                      className="underline-offset-8 decoration-green font-normal decoration-2 hover:underline desktop:hover:cursor-pointer"
+                    >
+                      Sign Out
+                    </button>
+                  </form>
+                </li>
+              ) : (
+                <li
+                  key={index}
+                  onMouseEnter={
+                    title === "Our Homes"
+                      ? () => setToggleHomeSubmenu(true)
+                      : undefined
+                  }
+                  onMouseLeave={
+                    title === "Our Homes"
+                      ? () => setToggleHomeSubmenu(false)
+                      : undefined
+                  }
                 >
-                  {title}
-                </Link>
+                  <Link
+                    prefetch={false}
+                    href={url}
+                    className={classNames(
+                      "underline-offset-8 decoration-green decoration-2",
+                      title !== "Our Homes"
+                        ? "hover:underline"
+                        : "px-4 -mx-4 pb-5 -mb-5",
+                      {
+                        underline: currentRoute === url,
+                      },
+                      title === "Dashboard" && "font-normal",
+                    )}
+                  >
+                    {title}
+                  </Link>
 
-                {title === "Our Homes" && toggleHomeSubmenu && (
-                  <ul className="absolute bg-white px-6 py-3 border border-t-0 border-black -translate-x-[55px] rounded-b-xl flex flex-col gap-2 animate-grow-down">
-                    <div className="absolute top-0 w-[102%] -left-[2px] h-4 bg-white" />
-                    {homeSubmenu.map(({ title, url, location }, index) => (
-                      <li key={index} className="flex flex-col gap-0.5">
-                        <Link
-                          prefetch={false}
-                          href={url}
-                          className={classNames(
-                            "font-light text-smaller hover:underline underline-offset-[5px] decoration-green decoration-2",
-                            {
-                              underline: currentRoute === url,
-                            },
-                          )}
-                        >
-                          {title}
-                        </Link>
-                        <p className="text-smallest">{location}</p>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
+                  {title === "Our Homes" && toggleHomeSubmenu && (
+                    <ul className="absolute bg-white px-6 py-3 border border-t-0 border-black -translate-x-[55px] rounded-b-xl flex flex-col gap-2 animate-grow-down">
+                      <div className="absolute top-0 w-[102%] -left-[2px] h-4 bg-white" />
+                      {homeSubmenu.map(({ title, url, location }, index) => (
+                        <li key={index} className="flex flex-col gap-0.5">
+                          <Link
+                            prefetch={false}
+                            href={url}
+                            className={classNames(
+                              "font-light text-smaller hover:underline underline-offset-[5px] decoration-green decoration-2",
+                              {
+                                underline: currentRoute === url,
+                              },
+                            )}
+                          >
+                            {title}
+                          </Link>
+                          <p className="text-smallest">{location}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ),
+            )}
           </ul>
         </nav>
       </div>

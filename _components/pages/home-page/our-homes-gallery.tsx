@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import Button from "../../ui/button";
+import ButtonLink from "../../ui/button-link";
 import Heading, { headingVariant } from "../../ui/heading";
 import OurHomesSlider from "../../sliders/our-homes-slider";
 
@@ -18,7 +18,7 @@ const OurHomesGallery = ({ cssClasses }: Props) => {
       </Heading>
       <OurHomesSlider cssClasses="mb-10" />
       <div className="flex w-full justify-center z-10 desktop:absolute desktop:top-40 desktop:right-10 desktop:w-auto">
-        <Button url="our-homes">View Our Homes</Button>
+        <ButtonLink href="our-homes">View Our Homes</ButtonLink>
       </div>
     </section>
   );

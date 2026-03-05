@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useActionState, useTransition } from "react";
-import Button from "@/_components/ui/button";
+import ButtonType from "@/_components/ui/button-type";
 import ContactInfoList from "@/_components/contact/contact-info-list";
 import RecaptchaNotice from "@/_components/ui/recaptcha-notice";
 import { PropertyConfig } from "@/_lib/properties-config";
@@ -112,7 +112,7 @@ const PropertyContactForm = ({ property }: PropertyContactFormProps) => {
               />
             </div>
             <div className="mt-5 flex flex-col items-start gap-4">
-              <Button variant="form">Submit</Button>
+              <ButtonType backgroundColor="green" iconArrow>Submit</ButtonType>
               <RecaptchaNotice cssClasses="text-white" />
             </div>
             {state.error && <p className="text-white italic">{state.error}</p>}

@@ -6,7 +6,7 @@ import OurHomes from "@/_components/pages/home-page/our-homes-gallery";
 import ContactComponent from "@/_components/contact/contact-component";
 import { getHomePageContent } from "@/_actions/facilities-actions";
 
-export const revalidate = 86400;
+export const revalidate = 0;
 
 async function Home() {
   const homePageContent = await getHomePageContent();

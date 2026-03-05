@@ -11,9 +11,10 @@ import { FacilityNavigation } from "@/_types/facility-types";
 interface Props {
   cssClasses?: string;
   facilities: FacilityNavigation[];
+  isLoggedIn: boolean;
 }
 
-const Header = ({ cssClasses, facilities }: Props) => {
+const Header = ({ cssClasses, facilities, isLoggedIn }: Props) => {
   const currentRoute = usePathname();
   const scrollPosition = useScrollPosition();
 
@@ -24,11 +25,13 @@ const Header = ({ cssClasses, facilities }: Props) => {
         scrollPosition={scrollPosition}
         cssClasses={cssClasses}
         facilities={facilities}
+        isLoggedIn={isLoggedIn}
       />
       <DesktopHeader
         currentRoute={currentRoute}
         scrollPosition={scrollPosition}
         facilities={facilities}
+        isLoggedIn={isLoggedIn}
       />
     </header>
   );

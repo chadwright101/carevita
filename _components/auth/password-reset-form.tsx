@@ -4,7 +4,7 @@ import { useState } from "react";
 import { getFirebaseAuth } from "@/_lib/firebase-client";
 import { sendPasswordResetEmail } from "firebase/auth";
 import Link from "next/link";
-import Button from "@/_components/ui/button";
+import ButtonType from "@/_components/ui/button-type";
 
 export function PasswordResetForm() {
   const [email, setEmail] = useState("");
@@ -17,7 +17,9 @@ export function PasswordResetForm() {
     setIsLoading(true);
     try {
       const auth = getFirebaseAuth();
-      await sendPasswordResetEmail(auth, formData.get("email") as string);
+      await sendPasswordResetEmail(auth, formData.get("email") as string, {
+        url: `${process.env.NEXT_PUBLIC_APP_URL}/password-reset`,
+      });
       setSuccess(true);
       setEmail("");
     } catch (err) {
@@ -69,9 +71,9 @@ export function PasswordResetForm() {
 
             {error && <p className="text-error">{error}</p>}
 
-            <Button variant="form" cssClasses="w-full justify-center" disabled={isLoading}>
+            <ButtonType backgroundColor="green" iconArrow cssClasses="w-full justify-center" disabled={isLoading}>
               {isLoading ? "Sending..." : "Send Reset Email"}
-            </Button>
+            </ButtonType>
 
             <div className="text-center">
               <Link href="/login" className="text-link">

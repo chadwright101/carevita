@@ -7,15 +7,23 @@ import { useState, Fragment, useEffect } from "react";
 import classNames from "classnames";
 import { X } from "lucide-react";
 import { FacilityNavigation } from "@/_types/facility-types";
+import { signOut } from "@/_actions/auth-actions";
 
 interface Props {
   currentRoute: string;
   scrollPosition: number;
   cssClasses?: string;
   facilities: FacilityNavigation[];
+  isLoggedIn: boolean;
 }
 
-const MobileHeader = ({ currentRoute, scrollPosition, cssClasses, facilities }: Props) => {
+const MobileHeader = ({
+  currentRoute,
+  scrollPosition,
+  cssClasses,
+  facilities,
+  isLoggedIn,
+}: Props) => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   useEffect(() => {
@@ -30,8 +38,12 @@ const MobileHeader = ({ currentRoute, scrollPosition, cssClasses, facilities }: 
     (f) => `/our-homes/${f.slug}` === currentRoute,
   );
 
+  const dashboardItem = { title: "Dashboard", url: "/dashboard" };
+  const signOutItem = { title: "Sign Out", url: "" };
+
   const navItems = currentFacility
     ? [
+        ...(isLoggedIn ? [dashboardItem, signOutItem] : []),
         { title: "Home", url: "/" },
         ...(currentFacility.hasStaff
           ? [{ title: "Staff", url: `${currentFacility.homeUrl}#staff` }]
@@ -42,6 +54,7 @@ const MobileHeader = ({ currentRoute, scrollPosition, cssClasses, facilities }: 
         { title: "Contact", url: `${currentFacility.homeUrl}#contact` },
       ]
     : [
+        ...(isLoggedIn ? [dashboardItem, signOutItem] : []),
         { title: "Home", url: "/" },
         { title: "Services", url: "/#services" },
         { title: "Gallery", url: "/#gallery" },
@@ -98,14 +111,28 @@ const MobileHeader = ({ currentRoute, scrollPosition, cssClasses, facilities }: 
           {navItems.map(({ title, url }, index) => (
             <Fragment key={index}>
               <li>
-                <Link
-                  prefetch={false}
-                  href={url}
-                  onClick={() => setToggleMenu(false)}
-                  className="text-white text-subheading p-4 -m-4"
-                >
-                  {title}
-                </Link>
+                {title === "Sign Out" ? (
+                  <form action={signOut}>
+                    <button
+                      type="submit"
+                      className="text-white text-subheading font-normal p-4 -m-4 desktop:hover:cursor-pointer"
+                    >
+                      Sign Out
+                    </button>
+                  </form>
+                ) : (
+                  <Link
+                    prefetch={false}
+                    href={url}
+                    onClick={() => setToggleMenu(false)}
+                    className={classNames(
+                      "text-white text-subheading p-4 -m-4",
+                      title === "Dashboard" && "font-normal",
+                    )}
+                  >
+                    {title}
+                  </Link>
+                )}
               </li>
               {index < navItems.length - 1 && (
                 <hr className="px-5 text-white" />
