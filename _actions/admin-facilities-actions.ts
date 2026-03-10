@@ -71,7 +71,7 @@ export async function createFacility(
         },
       },
       whatWeOffer: {
-        list: JSON.parse((formData.get("whatWeOfferList") as string) || "[]"),
+        list: (formData.get("whatWeOfferList") as string) ?? "",
         image: formData.get("whatWeOfferImage") as string,
         pampering: JSON.parse(
           (formData.get("pampering") as string) || "[]"
@@ -81,9 +81,7 @@ export async function createFacility(
         ),
       },
       about: {
-        paragraphs: JSON.parse(
-          (formData.get("aboutParagraphs") as string) || "[]"
-        ),
+        paragraphs: (formData.get("aboutParagraphs") as string) ?? "",
         image: formData.get("aboutImage") as string,
       },
       meetTheTeam: JSON.parse(
@@ -158,7 +156,7 @@ export async function updateFacility(
         },
       },
       whatWeOffer: {
-        list: JSON.parse((formData.get("whatWeOfferList") as string) || "[]"),
+        list: (formData.get("whatWeOfferList") as string) ?? "",
         image: formData.get("whatWeOfferImage") as string,
         pampering: JSON.parse(
           (formData.get("pampering") as string) || "[]"
@@ -168,9 +166,7 @@ export async function updateFacility(
         ),
       },
       about: {
-        paragraphs: JSON.parse(
-          (formData.get("aboutParagraphs") as string) || "[]"
-        ),
+        paragraphs: (formData.get("aboutParagraphs") as string) ?? "",
         image: formData.get("aboutImage") as string,
       },
       meetTheTeam: JSON.parse(

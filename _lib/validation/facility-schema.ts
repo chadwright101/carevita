@@ -24,14 +24,14 @@ export const facilityGeneralSchema = z.object({
 });
 
 export const whatWeOfferSchema = z.object({
-  list: z.array(z.string()),
+  list: z.string(),
   image: z.string().min(1),
   pampering: z.array(z.string()).optional(),
   weeklyActivities: z.array(z.string()).optional(),
 });
 
 export const aboutSchema = z.object({
-  paragraphs: z.array(z.string()),
+  paragraphs: z.string(),
   image: z.string().min(1),
 });
 

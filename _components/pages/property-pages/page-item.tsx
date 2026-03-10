@@ -1,3 +1,4 @@
+import DOMPurify from "isomorphic-dompurify";
 import { DataProps } from "@/_lib/utils/data-props";
 import Heading, { headingVariant } from "../../ui/heading";
 import About from "./about";
@@ -80,7 +81,12 @@ const PageItem = ({
           >
             Location
           </Heading>
-          {general.description && <p>{general.description}</p>}
+          {general.description && (
+            <article
+              className="[&_p]:mb-4 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-4 [&_li]:mb-1"
+              dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(general.description) }}
+            />
+          )}
         </section>
       </PageWrapper>
     </div>

@@ -1,20 +1,18 @@
 import Image from "next/image";
+import DOMPurify from "isomorphic-dompurify";
 import { DataProps } from "@/_lib/utils/data-props";
 import Heading, { headingVariant } from "../../ui/heading";
-import classNames from "classnames";
 
 interface Props {
   general: {
     title: string;
   };
   about: {
-    paragraphs: string[];
+    paragraphs: string | string[];
     image: string;
   };
   whatWeOffer: {
-    list: string[];
-    pampering?: string[];
-    weeklyActivities?: string[];
+    list: string;
     image: string;
   };
 }
@@ -22,7 +20,7 @@ interface Props {
 const About = ({
   general: { title },
   about: { paragraphs, image: aboutImage },
-  whatWeOffer: { list, pampering, weeklyActivities, image },
+  whatWeOffer: { list, image },
 }: Props) => {
   return (
     <div className="grid gap-16 tablet:grid-cols-2 tablet:gap-10">
@@ -34,18 +32,17 @@ const About = ({
           About us
         </Heading>
         <div className="flex flex-col gap-10">
-          <article>
-            {paragraphs.map((paragraph, index) => (
-              <p
-                key={index}
-                className={classNames({
-                  "mb-4": index !== paragraphs.length - 1,
-                })}
-              >
-                {paragraph}
-              </p>
-            ))}
-          </article>
+          {(() => {
+            const html = Array.isArray(paragraphs)
+              ? paragraphs.map((p) => `<p>${p}</p>`).join("")
+              : paragraphs;
+            return (
+              <article
+                className="[&_p]:mb-4 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-4 [&_li]:mb-1"
+                dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(html) }}
+              />
+            );
+          })()}
           <Image
             src={aboutImage}
             alt={`${title}`}
@@ -62,40 +59,10 @@ const About = ({
           </Heading>
         </article>
         <div className="grid gap-10">
-          <ul
-            className={classNames("grid gap-1 list-disc ml-4 gap-x-10", {
-              "phone:grid-cols-2 tablet:grid-cols-1 desktop:grid-cols-2":
-                weeklyActivities || pampering,
-            })}
-          >
-            <ul className="flex flex-col gap-1 list-disc">
-              {weeklyActivities && (
-                <li>
-                  Weekly activities
-                  <ul className="grid gap-1 mt-1 list-[square] ml-8">
-                    {weeklyActivities.map((item, index) => (
-                      <li key={index}>{item}</li>
-                    ))}
-                  </ul>
-                </li>
-              )}
-              {pampering && (
-                <li>
-                  Pampering
-                  <ul className="grid mt-1 gap-1 list-[square] ml-8">
-                    {pampering.map((item, index) => (
-                      <li key={index}>{item}</li>
-                    ))}
-                  </ul>
-                </li>
-              )}
-            </ul>
-            <div className="flex flex-col gap-1">
-              {list.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </div>
-          </ul>
+          <article
+            className="[&_p]:mb-1 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-1 [&_li]:mb-1"
+            dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(list) }}
+          />
           <Image
             src={image}
             alt={`${title} - What we offer`}

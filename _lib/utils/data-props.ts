@@ -22,13 +22,13 @@ export interface DataProps {
       };
     };
     whatWeOffer: {
-      list: Array<string>;
+      list: string;
       image: string;
       pampering?: Array<string>;
       weeklyActivities?: Array<string>;
     };
     about: {
-      paragraphs: Array<string>;
+      paragraphs: Array<string> | string;
       image: string;
     };
     meetTheTeam?: Array<{

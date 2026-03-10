@@ -1,8 +1,11 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
+import RichTextEditor from "@/_components/ui/forms/rich-text-editor";
 
 interface Props {
-  aboutParagraphs: string[];
-  setAboutParagraphs: React.Dispatch<React.SetStateAction<string[]>>;
+  aboutContent: string;
   aboutImage: string;
   setAboutImage: (v: string) => void;
   activeSection: string;
@@ -10,13 +13,14 @@ interface Props {
 }
 
 export default function AboutSection({
-  aboutParagraphs,
-  setAboutParagraphs,
+  aboutContent,
   aboutImage,
   setAboutImage,
   activeSection,
   toggleSection,
 }: Props) {
+  const [content, setContent] = useState(aboutContent);
+
   return (
     <div className="border border-black rounded-md overflow-hidden">
       <button
@@ -29,37 +33,12 @@ export default function AboutSection({
       </button>
       {activeSection === "about" && (
         <div className="flex flex-col gap-3 p-4 border-t border-black">
-          <span className="text-smallest">Paragraphs</span>
-          {aboutParagraphs.map((p, i) => (
-            <div key={i} className="flex gap-2">
-              <textarea
-                value={p}
-                onChange={(e) =>
-                  setAboutParagraphs((prev) =>
-                    prev.map((v, j) => (j === i ? e.target.value : v))
-                  )
-                }
-                rows={3}
-                className="border border-black rounded p-2 flex-1"
-              />
-              <button
-                type="button"
-                onClick={() =>
-                  setAboutParagraphs((prev) => prev.filter((_, j) => j !== i))
-                }
-                className="desktop:hover:cursor-pointer self-start"
-              >
-                Remove
-              </button>
-            </div>
-          ))}
-          <button
-            type="button"
-            onClick={() => setAboutParagraphs((prev) => [...prev, ""])}
-            className="desktop:hover:cursor-pointer self-start"
-          >
-            Add Paragraph
-          </button>
+          <span className="text-smallest">Content</span>
+          <RichTextEditor
+            value={content}
+            onChange={setContent}
+            toolbarButtons={["bold", "italic", "bulletList", "orderedList"]}
+          />
           <label className="flex flex-col gap-1">
             <span className="text-smallest">About Image URL</span>
             <input
@@ -78,7 +57,7 @@ export default function AboutSection({
       <input
         type="hidden"
         name="aboutParagraphs"
-        value={JSON.stringify(aboutParagraphs)}
+        value={content}
       />
       <input type="hidden" name="aboutImage" value={aboutImage} />
     </div>

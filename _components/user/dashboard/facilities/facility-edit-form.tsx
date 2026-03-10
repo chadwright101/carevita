@@ -33,13 +33,7 @@ export default function FacilityEditForm({ facility }: Props) {
   const [description, setDescription] = useState(general.description ?? "");
   const [contactImage, setContactImage] = useState(general.contactImage ?? "");
   const [metaKeywords, setMetaKeywords] = useState(general.meta.keywords ?? "");
-  const [whatWeOfferList, setWhatWeOfferList] = useState(whatWeOffer.list);
   const [whatWeOfferImage, setWhatWeOfferImage] = useState(whatWeOffer.image ?? "");
-  const [pampering, setPampering] = useState(whatWeOffer.pampering ?? []);
-  const [weeklyActivities, setWeeklyActivities] = useState(
-    whatWeOffer.weeklyActivities ?? []
-  );
-  const [aboutParagraphs, setAboutParagraphs] = useState(about.paragraphs);
   const [aboutImage, setAboutImage] = useState(about.image ?? "");
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>(
     meetTheTeam ?? []
@@ -81,8 +75,7 @@ export default function FacilityEditForm({ facility }: Props) {
       />
 
       <AboutSection
-        aboutParagraphs={aboutParagraphs}
-        setAboutParagraphs={setAboutParagraphs}
+        aboutContent={about.paragraphs}
         aboutImage={aboutImage}
         setAboutImage={setAboutImage}
         activeSection={activeSection}
@@ -90,14 +83,9 @@ export default function FacilityEditForm({ facility }: Props) {
       />
 
       <WhatWeOfferSection
-        whatWeOfferList={whatWeOfferList}
-        setWhatWeOfferList={setWhatWeOfferList}
+        whatWeOfferList={whatWeOffer.list}
         whatWeOfferImage={whatWeOfferImage}
         setWhatWeOfferImage={setWhatWeOfferImage}
-        pampering={pampering}
-        setPampering={setPampering}
-        weeklyActivities={weeklyActivities}
-        setWeeklyActivities={setWeeklyActivities}
         activeSection={activeSection}
         toggleSection={toggleSection}
       />

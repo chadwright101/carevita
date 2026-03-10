@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import MapCoordinatesTooltip from "@/_lib/utils/map-coordinates-tooltip";
+import RichTextEditor from "@/_components/ui/forms/rich-text-editor";
 
 interface Props {
   description: string;
@@ -38,15 +41,14 @@ export default function LocationSection({
       </button>
       {activeSection === "location" && (
         <div className="flex flex-col gap-3 p-4 border-t border-black">
-          <label className="flex flex-col gap-1">
+          <div className="flex flex-col gap-1">
             <span className="text-smallest">Description</span>
-            <textarea
+            <RichTextEditor
               value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              rows={3}
-              className="border border-black rounded p-2"
+              onChange={setDescription}
+              minHeight="min-h-64"
             />
-          </label>
+          </div>
 
           <label className="flex flex-col gap-1">
             <span className="text-smallest">Contact Image URL</span>

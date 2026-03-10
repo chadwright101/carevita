@@ -22,14 +22,14 @@ export interface FacilityGeneral {
 }
 
 export interface FacilityWhatWeOffer {
-  list: string[];
+  list: string;
   image: string;
   pampering?: string[];
   weeklyActivities?: string[];
 }
 
 export interface FacilityAbout {
-  paragraphs: string[];
+  paragraphs: string;
   image: string;
 }
 
