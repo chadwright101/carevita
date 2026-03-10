@@ -16,6 +16,7 @@ const PageItem = ({
     video,
   },
 }: DataProps) => {
+  const displayTitle = general.extendedTitle || general.title;
   return (
     <div className="mt-10 desktop:max-w-[1280px] desktop:mx-auto">
       <PageWrapper>
@@ -23,7 +24,7 @@ const PageItem = ({
           variant={headingVariant.pageHeading}
           cssClasses="text-center tablet:text-left"
         >
-          {general.extendedTitle}
+          {displayTitle}
         </Heading>
         <h3 className="text-paragraph font-extralight text-center mb-10 tablet:text-left">
           {general.extendedLocation}
@@ -32,7 +33,7 @@ const PageItem = ({
       {heroSlider.length > 0 ? (
         <GeneralSlider
           imageList={heroSlider}
-          homeName={general.extendedTitle}
+          homeName={displayTitle}
           variant="hero"
         />
       ) : (
@@ -53,7 +54,7 @@ const PageItem = ({
                 <div id="staff" className="scroll-mt-32"></div>
                 <MeetTheTeam
                   meetTheTeam={meetTheTeam}
-                  homeName={general.extendedTitle}
+                  homeName={displayTitle}
                 />
               </div>
             )}
@@ -68,7 +69,7 @@ const PageItem = ({
           </Heading>
           <GeneralSlider
             imageList={gallerySlider}
-            homeName={general.extendedTitle}
+            homeName={displayTitle}
             variant="gallery"
           />
         </section>

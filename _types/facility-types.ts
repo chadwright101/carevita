@@ -1,10 +1,9 @@
 export interface FacilityGeneral {
-  shortTitle: string;
   title: string;
-  extendedTitle: string;
+  extendedTitle?: string;
   location: string;
   extendedLocation: string;
-  region: "WC" | "GP" | "EC";
+  region: "EC" | "FS" | "GP" | "KZN" | "LP" | "MP" | "NC" | "NW" | "WC";
   email: string;
   phone: string;
   homeUrl: string;
@@ -67,7 +66,6 @@ export interface Facility {
 
 export interface FacilityNavigation {
   slug: string;
-  shortTitle: string;
   location: string;
   homeUrl: string;
   hasStaff: boolean;
@@ -76,7 +74,7 @@ export interface FacilityNavigation {
   extendedLocation: string;
   description: string;
   featuredImage: string;
-  region: "WC" | "GP" | "EC";
+  region: "WC" | "GP" | "EC" | "KZN" | "LP" | "MP" | "NW" | "FS" | "NC";
   order: number;
   isActive: boolean;
 }

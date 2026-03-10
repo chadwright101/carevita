@@ -17,20 +17,20 @@ import {
 const emailFunctions = {
   general: fetchGeneralEmail,
   accounts: fetchAccountsEmail,
-  crescent: fetchCrescentEmail,
-  eastlands: fetchEastlandsEmail,
-  serene: fetchSereneEmail,
-  parsonage: fetchParsonageEmail,
-  hartland: fetchHartlandEmail,
+  "the-crescent": fetchCrescentEmail,
+  "eastlands-estate": fetchEastlandsEmail,
+  "serene-park-centre": fetchSereneEmail,
+  "parsonage-street-home-for-the-aged": fetchParsonageEmail,
+  "hartland-estate": fetchHartlandEmail,
 };
 
 const phoneFunctions = {
   general: fetchGeneralPhone,
-  crescent: fetchCrescentPhone,
-  eastlands: fetchEastlandsPhone,
-  serene: fetchSerenePhone,
-  parsonage: fetchParsonagePhone,
-  hartland: fetchHartlandPhone,
+  "the-crescent": fetchCrescentPhone,
+  "eastlands-estate": fetchEastlandsPhone,
+  "serene-park-centre": fetchSerenePhone,
+  "parsonage-street-home-for-the-aged": fetchParsonagePhone,
+  "hartland-estate": fetchHartlandPhone,
 };
 
 export const getEmailFetcher = (property: string) => {

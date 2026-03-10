@@ -1,9 +1,8 @@
 export interface DataProps {
   data: {
     general: {
-      shortTitle: string;
       title: string;
-      extendedTitle: string;
+      extendedTitle?: string;
       location: string;
       extendedLocation?: string;
       email: string;

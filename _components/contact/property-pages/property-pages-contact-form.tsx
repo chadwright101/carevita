@@ -15,14 +15,14 @@ interface Props {
   data: {
     general: {
       title: string;
-      shortTitle: string;
+      slug: string;
     };
   };
 }
 
 const PropertyPagesContactForm = ({
   data: {
-    general: { title, shortTitle },
+    general: { title, slug },
   },
   cssClasses,
 }: Props) => {
@@ -40,13 +40,13 @@ const PropertyPagesContactForm = ({
           <li className="grid grid-cols-[80px_1fr]">
             <p className="text-white text-larger font-light">Email:</p>
             <div className="place-items-start mr-auto">
-              <ShowEmailAddress property={shortTitle} />
+              <ShowEmailAddress property={slug} />
             </div>
           </li>
           <li className="grid grid-cols-[80px_1fr]">
             <p className="text-white text-larger font-light">Phone:</p>
             <div className="place-items-start mr-auto">
-              <ShowPhoneNumber property={shortTitle} />
+              <ShowPhoneNumber property={slug} />
             </div>
           </li>
         </ul>

@@ -1,12 +1,19 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 import { verifySession } from "@/_lib/auth-utils";
 import { getFirestoreDb } from "@/_lib/firebase-admin";
 import { facilitySchema } from "@/_lib/validation/facility-schema";
 import { ActionResult } from "@/_types/general-types";
-import { Facility } from "@/_types/facility-types";
+import { Facility, FacilityGeneral } from "@/_types/facility-types";
 import { serializeFirestoreData } from "@/_lib/firebase-serializer";
+
+const regionFullName: Record<string, string> = {
+  WC: "Western Cape", GP: "Gauteng", EC: "Eastern Cape",
+  KZN: "KwaZulu-Natal", LP: "Limpopo", MP: "Mpumalanga",
+  NW: "North West", FS: "Free State", NC: "Northern Cape",
+};
 
 export async function getAllFacilitiesAdmin(): Promise<Facility[]> {
   await verifySession();
@@ -21,6 +28,14 @@ export async function getAllFacilitiesAdmin(): Promise<Facility[]> {
   );
 }
 
+export async function getFacilityBySlugAdmin(slug: string): Promise<Facility | null> {
+  await verifySession();
+  const db = getFirestoreDb();
+  const doc = await db.collection("facilities").doc(slug).get();
+  if (!doc.exists) return null;
+  return serializeFirestoreData(doc.data() as Facility);
+}
+
 export async function createFacility(
   prevState: any,
   formData: FormData
@@ -29,25 +44,26 @@ export async function createFacility(
     await verifySession();
 
     const slug = formData.get("slug") as string;
+    const city = formData.get("city") as string;
+    const region = formData.get("region") as string;
 
     const facilityData: Facility = {
       general: {
-        shortTitle: formData.get("shortTitle") as string,
         title: formData.get("title") as string,
-        extendedTitle: formData.get("extendedTitle") as string,
-        location: formData.get("location") as string,
-        extendedLocation: formData.get("extendedLocation") as string,
-        region: formData.get("region") as "WC" | "GP" | "EC",
+        extendedTitle: (formData.get("extendedTitle") as string) || (formData.get("title") as string),
+        location: `${city}, ${region}`,
+        extendedLocation: `${city}, ${regionFullName[region]}`,
+        region: region as FacilityGeneral["region"],
         email: formData.get("email") as string,
-        phone: formData.get("phone") as string,
-        homeUrl: formData.get("homeUrl") as string,
+        phone: (() => { const p = formData.get("phone") as string; return p.startsWith("+270") ? "+27" + p.slice(4) : p; })(),
+        homeUrl: `/our-homes/${slug}`,
         slug,
         description: formData.get("description") as string,
         contactImage: formData.get("contactImage") as string,
         map: {
           lat: parseFloat(formData.get("mapLat") as string),
           lng: parseFloat(formData.get("mapLng") as string),
-          zoom: parseInt(formData.get("mapZoom") as string),
+          zoom: 13.75,
         },
         meta: {
           keywords: formData.get("metaKeywords") as string,
@@ -115,25 +131,26 @@ export async function updateFacility(
     await verifySession();
 
     const slug = formData.get("slug") as string;
+    const city = formData.get("city") as string;
+    const region = formData.get("region") as string;
 
     const facilityData: Facility = {
       general: {
-        shortTitle: formData.get("shortTitle") as string,
         title: formData.get("title") as string,
-        extendedTitle: formData.get("extendedTitle") as string,
-        location: formData.get("location") as string,
-        extendedLocation: formData.get("extendedLocation") as string,
-        region: formData.get("region") as "WC" | "GP" | "EC",
+        extendedTitle: (formData.get("extendedTitle") as string) || (formData.get("title") as string),
+        location: `${city}, ${region}`,
+        extendedLocation: `${city}, ${regionFullName[region]}`,
+        region: region as FacilityGeneral["region"],
         email: formData.get("email") as string,
-        phone: formData.get("phone") as string,
-        homeUrl: formData.get("homeUrl") as string,
+        phone: (() => { const p = formData.get("phone") as string; return p.startsWith("+270") ? "+27" + p.slice(4) : p; })(),
+        homeUrl: `/our-homes/${slug}`,
         slug,
         description: formData.get("description") as string,
         contactImage: formData.get("contactImage") as string,
         map: {
           lat: parseFloat(formData.get("mapLat") as string),
           lng: parseFloat(formData.get("mapLng") as string),
-          zoom: parseInt(formData.get("mapZoom") as string),
+          zoom: 13.75,
         },
         meta: {
           keywords: formData.get("metaKeywords") as string,
@@ -183,14 +200,14 @@ export async function updateFacility(
     revalidatePath("/");
     revalidatePath("/our-homes");
     revalidatePath(`/our-homes/${slug}`);
-
-    return { success: true, data: facilityData };
+    revalidatePath("/dashboard");
   } catch (error) {
     return {
       success: false,
       error: error instanceof Error ? error.message : "Failed to update facility",
     };
   }
+  redirect("/dashboard");
 }
 
 export async function deleteFacility(
@@ -241,6 +258,34 @@ export async function reorderFacilities(
     for (const item of order) {
       const navRef = db.collection("facilityNavigation").doc(item.slug);
       batch.update(navRef, { order: item.order });
+    }
+
+    await batch.commit();
+
+    revalidatePath("/");
+    revalidatePath("/our-homes");
+
+    return { success: true };
+  } catch (error) {
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : "Failed to reorder facilities",
+    };
+  }
+}
+
+export async function updateFacilityOrder(
+  orderPayload: { slug: string; order: number }[]
+): Promise<ActionResult> {
+  try {
+    await verifySession();
+
+    const db = getFirestoreDb();
+    const batch = db.batch();
+
+    for (const item of orderPayload) {
+      batch.update(db.collection("facilities").doc(item.slug), { order: item.order });
+      batch.update(db.collection("facilityNavigation").doc(item.slug), { order: item.order });
     }
 
     await batch.commit();

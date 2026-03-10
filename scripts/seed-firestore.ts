@@ -61,7 +61,6 @@ async function seedFacilities() {
 
     const facilityNavDoc: FacilityNavigation = {
       slug: rawData.general.slug,
-      shortTitle: rawData.general.shortTitle,
       location: rawData.general.location,
       homeUrl: rawData.general.homeUrl,
       hasStaff: Array.isArray(rawData.meetTheTeam) && rawData.meetTheTeam.length > 2,
