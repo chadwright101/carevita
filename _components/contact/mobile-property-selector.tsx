@@ -1,8 +1,8 @@
 import PropertySelectorButton from "@/_components/ui/property-selector-button";
-import { PropertyConfig } from "@/_lib/properties-config";
+import { FacilityNavigation } from "@/_types/facility-types";
 
 interface MobilePropertySelectorProps {
-  properties: PropertyConfig[];
+  properties: FacilityNavigation[];
   selectedPropertyId: string | null;
   onPropertySelect: (id: string) => void;
 }
@@ -16,18 +16,16 @@ const MobilePropertySelector = ({
 
   return (
     <div className="mt-10 flex flex-col gap-10 max-w-[1280px] mx-auto">
-      {properties.map((property) => {
+      {properties.map((facility) => {
         if (showButtons) {
           return (
             <PropertySelectorButton
-              key={property.id}
+              key={facility.slug}
               mobile
-              onClick={() => onPropertySelect(property.id)}
+              onClick={() => onPropertySelect(facility.slug)}
               cssClasses="text-left"
-              extendedTitle={property.data.general.title}
-              location={property.data.general.location}
-              homeIconUrl={property.icon.url.replace("-white.svg", "-blue.svg")}
-              homeIconAlt={property.icon.alt}
+              extendedTitle={facility.title}
+              location={facility.location}
             />
           );
         }

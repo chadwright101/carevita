@@ -5,8 +5,10 @@ import Heading, { headingVariant } from "@/_components/ui/heading";
 import PropertyPagesContactForm from "@/_components/contact/property-pages/property-pages-contact-form";
 import PageWrapper from "@/_lib/page-wrapper";
 import PropertyMap from "@/_components/contact/property-map";
-import { getFacilityBySlug, getAllFacilities } from "@/_actions/facilities-actions";
-import { Facility } from "@/_types/facility-types";
+import {
+  getFacilityBySlug,
+  getAllFacilities,
+} from "@/_actions/facilities-actions";
 
 export const revalidate = 0;
 

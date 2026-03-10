@@ -1,12 +1,10 @@
 "use server";
 
 import generalData from "@/_data/general-data.json";
-import crescentData from "@/_data/crescent-data.json";
-import eastlandsData from "@/_data/eastlands-data.json";
-import sereneData from "@/_data/serene-data.json";
-import parsonageData from "@/_data/parsonage-data.json";
-import hartlandData from "@/_data/hartland-data.json";
 import { verifyRecaptchaToken } from "@/_lib/verify-recaptcha";
+import { getFirestoreDb } from "@/_lib/firebase-admin";
+import { serializeFirestoreData } from "@/_lib/firebase-serializer";
+import { Facility } from "@/_types/facility-types";
 
 // General Contact
 export const fetchGeneralEmail = async (recaptchaToken?: string) => {
@@ -39,107 +37,28 @@ export const fetchAccountsEmail = async (recaptchaToken?: string) => {
   return generalData.homePage.contact.accounts;
 };
 
-// The Crescent
-export const fetchCrescentEmail = async (recaptchaToken?: string) => {
+export const fetchFacilityEmail = async (slug: string, recaptchaToken?: string) => {
   if (recaptchaToken) {
     const result = await verifyRecaptchaToken(recaptchaToken);
     if (!result.success) {
       throw new Error(result.error || "reCAPTCHA verification failed");
     }
   }
-  return crescentData.general.email;
+  const db = getFirestoreDb();
+  const doc = await db.collection("facilities").doc(slug).get();
+  const data = serializeFirestoreData(doc.data() as Facility);
+  return data?.general?.email ?? "";
 };
 
-export const fetchCrescentPhone = async (recaptchaToken?: string) => {
+export const fetchFacilityPhone = async (slug: string, recaptchaToken?: string) => {
   if (recaptchaToken) {
     const result = await verifyRecaptchaToken(recaptchaToken);
     if (!result.success) {
       throw new Error(result.error || "reCAPTCHA verification failed");
     }
   }
-  return crescentData.general.phone;
-};
-
-// Eastlands
-export const fetchEastlandsEmail = async (recaptchaToken?: string) => {
-  if (recaptchaToken) {
-    const result = await verifyRecaptchaToken(recaptchaToken);
-    if (!result.success) {
-      throw new Error(result.error || "reCAPTCHA verification failed");
-    }
-  }
-  return eastlandsData.general.email;
-};
-
-export const fetchEastlandsPhone = async (recaptchaToken?: string) => {
-  if (recaptchaToken) {
-    const result = await verifyRecaptchaToken(recaptchaToken);
-    if (!result.success) {
-      throw new Error(result.error || "reCAPTCHA verification failed");
-    }
-  }
-  return eastlandsData.general.phone;
-};
-
-// Serene Park
-export const fetchSereneEmail = async (recaptchaToken?: string) => {
-  if (recaptchaToken) {
-    const result = await verifyRecaptchaToken(recaptchaToken);
-    if (!result.success) {
-      throw new Error(result.error || "reCAPTCHA verification failed");
-    }
-  }
-  return sereneData.general.email;
-};
-
-export const fetchSerenePhone = async (recaptchaToken?: string) => {
-  if (recaptchaToken) {
-    const result = await verifyRecaptchaToken(recaptchaToken);
-    if (!result.success) {
-      throw new Error(result.error || "reCAPTCHA verification failed");
-    }
-  }
-  return sereneData.general.phone;
-};
-
-// Parsonage Street
-export const fetchParsonageEmail = async (recaptchaToken?: string) => {
-  if (recaptchaToken) {
-    const result = await verifyRecaptchaToken(recaptchaToken);
-    if (!result.success) {
-      throw new Error(result.error || "reCAPTCHA verification failed");
-    }
-  }
-  return parsonageData.general.email;
-};
-
-export const fetchParsonagePhone = async (recaptchaToken?: string) => {
-  if (recaptchaToken) {
-    const result = await verifyRecaptchaToken(recaptchaToken);
-    if (!result.success) {
-      throw new Error(result.error || "reCAPTCHA verification failed");
-    }
-  }
-  return parsonageData.general.phone;
-};
-
-// Hartland Estate
-export const fetchHartlandEmail = async (recaptchaToken?: string) => {
-  if (recaptchaToken) {
-    const result = await verifyRecaptchaToken(recaptchaToken);
-    if (!result.success) {
-      throw new Error(result.error || "reCAPTCHA verification failed");
-    }
-  }
-  return hartlandData.general.email;
-};
-
-export const fetchHartlandPhone = async (recaptchaToken?: string) => {
-  if (recaptchaToken) {
-    const result = await verifyRecaptchaToken(recaptchaToken);
-    if (!result.success) {
-      throw new Error(result.error || "reCAPTCHA verification failed");
-    }
-  }
-  return hartlandData.general.phone;
+  const db = getFirestoreDb();
+  const doc = await db.collection("facilities").doc(slug).get();
+  const data = serializeFirestoreData(doc.data() as Facility);
+  return data?.general?.phone ?? "";
 };

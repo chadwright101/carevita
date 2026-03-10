@@ -1,17 +1,21 @@
 "use client";
 
-import { PROPERTIES } from "@/_lib/properties-config";
 import MobilePropertySelector from "@/_components/contact/mobile-property-selector";
 import MobilePropertyContactForm from "@/_components/contact/mobile-property-contact-form";
 import { useContactForm } from "@/_lib/hooks/use-contact-form";
+import { FacilityNavigation } from "@/_types/facility-types";
 
-const HomePageMobileContactForm = () => {
+interface Props {
+  facilities: FacilityNavigation[];
+}
+
+const HomePageMobileContactForm = ({ facilities }: Props) => {
   const {
     selectedPropertyId,
     selectedProperty,
     handlePropertySelect,
     handleBack,
-  } = useContactForm();
+  } = useContactForm(facilities);
 
   return (
     <div className="desktop:hidden">
@@ -21,7 +25,7 @@ const HomePageMobileContactForm = () => {
 
       {!selectedPropertyId && (
         <MobilePropertySelector
-          properties={PROPERTIES}
+          properties={facilities}
           selectedPropertyId={selectedPropertyId}
           onPropertySelect={handlePropertySelect}
         />
@@ -30,7 +34,7 @@ const HomePageMobileContactForm = () => {
       {selectedProperty && (
         <div className="mt-10 max-w-[1280px] mx-auto">
           <MobilePropertyContactForm
-            key={selectedProperty.id}
+            key={selectedProperty.slug}
             property={selectedProperty}
             onBack={handleBack}
           />

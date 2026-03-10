@@ -3,22 +3,7 @@
 import nodemailer from "nodemailer";
 import { contactEmailTemplate } from "@/_lib/utils/contact-email-template";
 import { verifyRecaptchaToken } from "@/_lib/verify-recaptcha";
-
-const propertyEmailMap: Record<string, string | undefined> = {
-  "The Crescent": process.env.SMTP_SEND_TO_CRESCENT,
-  "Eastlands Estate": process.env.SMTP_SEND_TO_EASTLANDS,
-  "Serene Park Centre": process.env.SMTP_SEND_TO_SERENE,
-  "Parsonage Street Home": process.env.SMTP_SEND_TO_PARSONAGE,
-  "Hartland Estate": process.env.SMTP_SEND_TO_HARTLAND,
-};
-
-const propertyCcMap: Record<string, string | undefined> = {
-  "The Crescent": undefined,
-  "Eastlands Estate": process.env.SMTP_CC_EASTLANDS,
-  "Serene Park Centre": process.env.SMTP_CC_SERENE,
-  "Parsonage Street Home": process.env.SMTP_CC_PARSONAGE,
-  "Hartland Estate": undefined,
-};
+import { getFirestoreDb } from "@/_lib/firebase-admin";
 
 const sanitizeInput = (input: string): string => {
   return input.replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -49,6 +34,7 @@ export async function sendEmail(
       const phone = sanitizeInput(formData.get("phone")?.toString() || "");
       const message = sanitizeInput(formData.get("message")?.toString() || "");
       const property = formData.get("property")?.toString() || "";
+      const propertySlug = formData.get("propertySlug")?.toString() || "";
 
       if (!name.trim() || !email.trim() || !phone.trim() || !message.trim()) {
         return {
@@ -76,15 +62,17 @@ export async function sendEmail(
         requireTLS: true,
       });
 
-      const recipientEmail = property
-        ? propertyEmailMap[property]
-        : "info@carevita.co.za";
-      const ccEmail = property ? propertyCcMap[property] : undefined;
+      let recipientEmail = "info@carevita.co.za";
+      if (propertySlug) {
+        const db = getFirestoreDb();
+        const doc = await db.collection("facilities").doc(propertySlug).get();
+        const facilityEmail = doc.data()?.general?.email;
+        if (facilityEmail) recipientEmail = facilityEmail;
+      }
 
       const mailOptions = {
         from: process.env.SMTP_SEND_FROM as string,
         to: recipientEmail,
-        ...(ccEmail && { cc: ccEmail }),
         subject: property
           ? "Website - Contact Form"
           : "Website - Business Portfolio Contact Form",

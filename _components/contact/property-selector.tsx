@@ -1,9 +1,9 @@
 import PropertySelectorButton from "@/_components/ui/property-selector-button";
-import { PropertyConfig } from "@/_lib/properties-config";
+import { FacilityNavigation } from "@/_types/facility-types";
 import classNames from "classnames";
 
 interface PropertySelectorProps {
-  properties: PropertyConfig[];
+  properties: FacilityNavigation[];
   selectedPropertyId: string | null;
   onPropertySelect: (id: string) => void;
 }
@@ -15,15 +15,15 @@ const PropertySelector = ({
 }: PropertySelectorProps) => {
   return (
     <div className="flex justify-between">
-      {properties.map((property) => {
-        const isSelected = selectedPropertyId === property.id;
+      {properties.map((facility) => {
+        const isSelected = selectedPropertyId === facility.slug;
 
         return (
           <PropertySelectorButton
-            key={property.id}
-            onClick={() => onPropertySelect(property.id)}
-            extendedTitle={property.data.general.title}
-            location={property.data.general.location}
+            key={facility.slug}
+            onClick={() => onPropertySelect(facility.slug)}
+            extendedTitle={facility.title}
+            location={facility.location}
             cssClasses={classNames(
               "text-left transition-transform duration-300 delay-75 desktop:hover:cursor-pointer",
               {
@@ -34,8 +34,6 @@ const PropertySelector = ({
             arrowCssClasses={classNames({
               hidden: !isSelected,
             })}
-            homeIconUrl={property.icon.url}
-            homeIconAlt={property.icon.alt}
           />
         );
       })}

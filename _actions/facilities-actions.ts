@@ -48,14 +48,29 @@ export async function getFacilityBySlug(
 export async function getFacilityNavigation(): Promise<FacilityNavigation[]> {
   const db = getFirestoreDb();
   const snapshot = await db
-    .collection("facilityNavigation")
+    .collection("facilities")
     .where("isActive", "==", true)
     .orderBy("order", "asc")
     .get();
 
-  return snapshot.docs.map((doc) =>
-    serializeFirestoreData(doc.data() as FacilityNavigation),
-  );
+  return snapshot.docs.map((doc) => {
+    const data = serializeFirestoreData(doc.data() as Facility);
+    return {
+      slug: data.general.slug,
+      title: data.general.title,
+      extendedTitle: data.general.extendedTitle,
+      location: data.general.location,
+      extendedLocation: data.general.extendedLocation,
+      description: data.general.description,
+      homeUrl: data.general.homeUrl,
+      region: data.general.region,
+      featuredImage: data.images.heroSlider[0],
+      contactImage: data.general.contactImage,
+      hasStaff: Array.isArray(data.meetTheTeam) && data.meetTheTeam.length > 2,
+      order: data.order,
+      isActive: data.isActive,
+    };
+  });
 }
 
 export async function getHomePageContent(): Promise<HomePageContent> {

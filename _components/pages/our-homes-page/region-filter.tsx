@@ -6,12 +6,18 @@ import classNames from "classnames";
 import HomeItem from "@/_components/pages/our-homes-page/home-item";
 import { FacilityNavigation } from "@/_types/facility-types";
 
-type Region = "all" | "WC" | "GP" | "EC";
+type Region = "all" | "EC" | "FS" | "GP" | "KZN" | "LP" | "MP" | "NC" | "NW" | "WC";
 
-const regions = [
-  { id: "WC" as Region, label: "Western Cape" },
-  { id: "GP" as Region, label: "Gauteng" },
+const allRegions = [
   { id: "EC" as Region, label: "Eastern Cape" },
+  { id: "FS" as Region, label: "Free State" },
+  { id: "GP" as Region, label: "Gauteng" },
+  { id: "KZN" as Region, label: "KwaZulu-Natal" },
+  { id: "LP" as Region, label: "Limpopo" },
+  { id: "MP" as Region, label: "Mpumalanga" },
+  { id: "NW" as Region, label: "North West" },
+  { id: "NC" as Region, label: "Northern Cape" },
+  { id: "WC" as Region, label: "Western Cape" },
 ];
 
 interface Props {
@@ -20,6 +26,10 @@ interface Props {
 
 const RegionFilter = ({ facilities }: Props) => {
   const [activeRegion, setActiveRegion] = useState<Region>("all");
+
+  const availableRegions = allRegions.filter((region) =>
+    facilities.some((f) => f.region === region.id)
+  );
 
   const filtered =
     activeRegion === "all"
@@ -30,7 +40,7 @@ const RegionFilter = ({ facilities }: Props) => {
     <>
       <div className="hidden min-[400px]:grid mb-10 place-content-center tablet:place-content-start tablet:mb-7">
         <ul className="flex gap-3 mb-5 justify-center desktop:mb-2">
-          {regions.map((region, index) => (
+          {availableRegions.map((region, index) => (
             <div key={region.id} className="flex gap-3 items-center">
               {index > 0 && <span>|</span>}
               <li onClick={() => setActiveRegion(region.id)}>

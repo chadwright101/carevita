@@ -6,8 +6,6 @@ import classNames from "classnames";
 interface PropertySelectorButtonProps {
   extendedTitle: string;
   location: string;
-  homeIconUrl: string;
-  homeIconAlt: string;
   onClick: () => void;
   cssClasses?: string;
   arrowCssClasses?: string;
@@ -17,8 +15,6 @@ interface PropertySelectorButtonProps {
 const PropertySelectorButton = ({
   extendedTitle,
   location,
-  homeIconUrl,
-  homeIconAlt,
   onClick,
   cssClasses,
   arrowCssClasses,
@@ -33,15 +29,12 @@ const PropertySelectorButton = ({
         )}
         onClick={onClick}
       >
-        <div className="flex items-center gap-4">
-          <Image src={homeIconUrl} alt={homeIconAlt} width={50} height={50} />
-          <span className="text-blue flex flex-col">
-            {extendedTitle}
-            <span className="text-blue text-paragraph font-extralight">
-              {location}
-            </span>
+        <span className="text-blue flex flex-col">
+          {extendedTitle}
+          <span className="text-blue text-paragraph font-extralight">
+            {location}
           </span>
-        </div>
+        </span>
         <Image
           src="/assets/icons/arrow_forward-blue.svg"
           alt="Arrow icon"
@@ -56,22 +49,13 @@ const PropertySelectorButton = ({
   return (
     <button className="text-larger flex flex-col" onClick={onClick}>
       <div className="flex flex-col gap-2">
-        <div className={classNames("flex gap-3 items-center", cssClasses)}>
-          <Image
-            src={homeIconUrl}
-            alt={homeIconAlt}
-            width={50}
-            height={50}
-            className="-translate-x-[4px]"
-          />
-          <div>
-            <h4 className="text-white text-larger flex flex-col">
-              {extendedTitle}
-            </h4>
-            <p className="text-white text-smaller font-extralight">
-              {location}
-            </p>
-          </div>
+        <div className={classNames("flex flex-col", cssClasses)}>
+          <h4 className="text-white text-larger">
+            {extendedTitle}
+          </h4>
+          <p className="text-white text-smaller font-extralight">
+            {location}
+          </p>
         </div>
         <Image
           src="/assets/icons/arrow_drop_down.svg"

@@ -64,7 +64,7 @@ const ShowPhoneNumber = ({
   } else {
     return (
       <Link
-        href={`tel:${showPhone}`}
+        href={`tel:+27${showPhone.replace(/\s/g, "").replace(/^0/, "")}`}
         className={classNames(
           "text-larger p-2 -m-2 font-extralight desktop:hover:opacity-80 desktop:cursor-pointer desktop:p-0 desktop:m-0 desktop:text-paragraph ease-in-out duration-300",
           blackText ? "text-black" : "text-white",

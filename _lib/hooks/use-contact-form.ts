@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { PROPERTIES } from "@/_lib/properties-config";
+import { FacilityNavigation } from "@/_types/facility-types";
 
-export const useContactForm = () => {
+export const useContactForm = (facilities: FacilityNavigation[]) => {
   const [selectedPropertyId, setSelectedPropertyId] = useState<string | null>(
     null,
   );
@@ -16,7 +16,7 @@ export const useContactForm = () => {
     setSelectedPropertyId(null);
   };
 
-  const selectedProperty = PROPERTIES.find((p) => p.id === selectedPropertyId);
+  const selectedProperty = facilities.find((f) => f.slug === selectedPropertyId);
 
   return {
     selectedPropertyId,

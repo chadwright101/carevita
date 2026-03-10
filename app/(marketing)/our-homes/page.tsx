@@ -46,7 +46,7 @@ async function OurHomesPage() {
         </Heading>
         <RegionFilter facilities={facilities} />
       </PageWrapper>
-      <Contact cssClasses="mt-20" />
+      <Contact cssClasses="mt-20" facilities={facilities} />
     </>
   );
 }

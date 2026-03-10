@@ -5,12 +5,12 @@ import { useActionState, useTransition } from "react";
 import ButtonType from "@/_components/ui/button-type";
 import ContactInfoList from "@/_components/contact/contact-info-list";
 import RecaptchaNotice from "@/_components/ui/recaptcha-notice";
-import { PropertyConfig } from "@/_lib/properties-config";
+import { FacilityNavigation } from "@/_types/facility-types";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { sendEmailWithActionState } from "@/_actions/send-email-action";
 
 interface PropertyContactFormProps {
-  property: PropertyConfig;
+  property: FacilityNavigation;
 }
 
 const PropertyContactForm = ({ property }: PropertyContactFormProps) => {
@@ -33,13 +33,20 @@ const PropertyContactForm = ({ property }: PropertyContactFormProps) => {
   return (
     <div className="grid grid-cols-2 gap-10 mt-10">
       <div>
-        <ContactInfoList propertyId={property.id} />
+        <ContactInfoList propertyId={property.slug} />
         {!state.success ? (
           <form action={handleFormAction} className="flex flex-col gap-4">
             <input
               type="text"
               name="property"
-              value={property.data.general.title}
+              value={property.extendedTitle}
+              readOnly
+              className="hidden"
+            />
+            <input
+              type="text"
+              name="propertySlug"
+              value={property.slug}
               readOnly
               className="hidden"
             />
@@ -125,8 +132,8 @@ const PropertyContactForm = ({ property }: PropertyContactFormProps) => {
       </div>
       <div className="overflow-hidden">
         <Image
-          src={property.contactImage.src}
-          alt={property.contactImage.alt}
+          src={property.contactImage}
+          alt={property.extendedTitle}
           width={505}
           height={680}
           className="object-cover aspect-video w-full h-full"

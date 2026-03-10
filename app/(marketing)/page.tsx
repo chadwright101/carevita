@@ -4,12 +4,13 @@ import PageWrapper from "@/_lib/page-wrapper";
 import Services from "@/_components/pages/home-page/services";
 import OurHomes from "@/_components/pages/home-page/our-homes-gallery";
 import ContactComponent from "@/_components/contact/contact-component";
-import { getHomePageContent } from "@/_actions/facilities-actions";
+import { getHomePageContent, getFacilityNavigation } from "@/_actions/facilities-actions";
 
 export const revalidate = 0;
 
 async function Home() {
   const homePageContent = await getHomePageContent();
+  const facilities = await getFacilityNavigation();
 
   return (
     <div>
@@ -25,7 +26,7 @@ async function Home() {
         <OurHomes cssClasses="my-16" />
       </PageWrapper>
       <div id="contact" className="scroll-mt-32"></div>
-      <ContactComponent />
+      <ContactComponent facilities={facilities} />
     </div>
   );
 }

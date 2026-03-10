@@ -255,11 +255,6 @@ export async function reorderFacilities(
       batch.update(ref, { order: item.order });
     }
 
-    for (const item of order) {
-      const navRef = db.collection("facilityNavigation").doc(item.slug);
-      batch.update(navRef, { order: item.order });
-    }
-
     await batch.commit();
 
     revalidatePath("/");
@@ -285,7 +280,6 @@ export async function updateFacilityOrder(
 
     for (const item of orderPayload) {
       batch.update(db.collection("facilities").doc(item.slug), { order: item.order });
-      batch.update(db.collection("facilityNavigation").doc(item.slug), { order: item.order });
     }
 
     await batch.commit();

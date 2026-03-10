@@ -74,6 +74,7 @@ export interface FacilityNavigation {
   extendedLocation: string;
   description: string;
   featuredImage: string;
+  contactImage: string;
   region: "WC" | "GP" | "EC" | "KZN" | "LP" | "MP" | "NW" | "FS" | "NC";
   order: number;
   isActive: boolean;

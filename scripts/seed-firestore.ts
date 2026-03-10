@@ -3,7 +3,7 @@ import * as path from "path";
 import { config } from "dotenv";
 config({ path: path.join(process.cwd(), ".env.local") });
 import { getFirestoreDb } from "../_lib/firebase-admin";
-import type { Facility, FacilityNavigation, HomePageContent } from "../_types/facility-types";
+import type { Facility, HomePageContent } from "../_types/facility-types";
 
 interface FacilityMapping {
   jsonFile: string;
@@ -59,26 +59,9 @@ async function seedFacilities() {
       timestamp: Date.now(),
     };
 
-    const facilityNavDoc: FacilityNavigation = {
-      slug: rawData.general.slug,
-      location: rawData.general.location,
-      homeUrl: rawData.general.homeUrl,
-      hasStaff: Array.isArray(rawData.meetTheTeam) && rawData.meetTheTeam.length > 2,
-      title: rawData.general.title,
-      extendedTitle: rawData.general.extendedTitle,
-      extendedLocation: rawData.general.extendedLocation,
-      description: rawData.general.description,
-      featuredImage: rawData.images.heroSlider[0],
-      region: mapping.region,
-      order: mapping.order,
-      isActive: true,
-    };
-
     try {
       await db.collection("facilities").doc(mapping.docId).set(facilityDoc);
       console.log(`✅ Migrated facility: ${mapping.docId}`);
-      await db.collection("facilityNavigation").doc(mapping.docId).set(facilityNavDoc);
-      console.log(`✅ Migrated facilityNavigation: ${mapping.docId}`);
     } catch (error) {
       console.error(`❌ Failed to migrate ${mapping.docId}:`, error);
     }

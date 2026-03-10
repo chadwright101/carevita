@@ -4,12 +4,12 @@ import { useActionState, useTransition } from "react";
 import ButtonType from "@/_components/ui/button-type";
 import ContactInfoList from "@/_components/contact/contact-info-list";
 import RecaptchaNotice from "@/_components/ui/recaptcha-notice";
-import { PropertyConfig } from "@/_lib/properties-config";
+import { FacilityNavigation } from "@/_types/facility-types";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { sendEmailWithActionState } from "@/_actions/send-email-action";
 
 interface MobilePropertyContactFormProps {
-  property: PropertyConfig;
+  property: FacilityNavigation;
   onBack: () => void;
 }
 
@@ -37,19 +37,25 @@ const MobilePropertyContactForm = ({
     <div className="flex flex-col gap-6">
       <div className="flex flex-col">
         <h4 className="text-white text-center font-light tablet:text-left">
-          {property.data.general.title}
+          {property.extendedTitle}
         </h4>
         <p className="text-white text-center tablet:text-left">
-          {property.data.general.location}
+          {property.extendedLocation}
         </p>
       </div>
-      <ContactInfoList propertyId={property.id} />
+      <ContactInfoList propertyId={property.slug} />
       {!state.success ? (
         <form action={handleFormAction} className="flex flex-col gap-5">
           <input
             type="text"
             name="property"
-            defaultValue={property.data.general.title}
+            defaultValue={property.extendedTitle}
+            className="hidden"
+          />
+          <input
+            type="text"
+            name="propertySlug"
+            defaultValue={property.slug}
             className="hidden"
           />
           <input type="text" name="_honey" className="hidden" />
@@ -122,23 +128,31 @@ const MobilePropertyContactForm = ({
           </div>
           <div className="flex flex-col gap-5 mt-5">
             <div className="flex gap-4 w-full justify-between">
-              <ButtonType backgroundColor="green" iconArrow>Submit</ButtonType>
-              <ButtonType backgroundColor="lightGreen" type="button" onClick={onBack}>
+              <ButtonType backgroundColor="green" iconArrow>
+                Submit
+              </ButtonType>
+              <ButtonType
+                backgroundColor="lightGreen"
+                type="button"
+                onClick={onBack}
+              >
                 Back
               </ButtonType>
             </div>
             <RecaptchaNotice cssClasses="text-white" />
           </div>
-          {state.error && (
-            <p className="text-white italic">{state.error}</p>
-          )}
+          {state.error && <p className="text-white italic">{state.error}</p>}
         </form>
       ) : (
         <div className="flex flex-col gap-6">
           <p className="text-white text-subheading font-extralight italic underline-offset-8 decoration-1">
             Thank you for your message. We will be in touch soon.
           </p>
-          <ButtonType backgroundColor="lightGreen" type="button" onClick={onBack}>
+          <ButtonType
+            backgroundColor="lightGreen"
+            type="button"
+            onClick={onBack}
+          >
             Back
           </ButtonType>
         </div>

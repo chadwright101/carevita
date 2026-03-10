@@ -3,12 +3,14 @@
 import classNames from "classnames";
 import ContactForm from "./contact-form";
 import Heading, { headingVariant } from "../ui/heading";
+import { FacilityNavigation } from "@/_types/facility-types";
 
 interface Props {
   cssClasses?: string;
+  facilities: FacilityNavigation[];
 }
 
-const ContactComponent = ({ cssClasses }: Props) => {
+const ContactComponent = ({ cssClasses, facilities }: Props) => {
   return (
     <section className={classNames("px-6 tablet:px-12 pt-10 pb-12 bg-blue", cssClasses)}>
       <div className="w-full max-w-[1280px] mx-auto">
@@ -19,7 +21,7 @@ const ContactComponent = ({ cssClasses }: Props) => {
           Contact
         </Heading>
       </div>
-      <ContactForm />
+      <ContactForm facilities={facilities} />
     </section>
   );
 };

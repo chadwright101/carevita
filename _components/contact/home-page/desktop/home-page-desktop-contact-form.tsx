@@ -1,13 +1,17 @@
 "use client";
 
-import { PROPERTIES } from "@/_lib/properties-config";
 import PropertySelector from "@/_components/contact/property-selector";
 import PropertyContactForm from "@/_components/contact/property-contact-form";
 import { useContactForm } from "@/_lib/hooks/use-contact-form";
+import { FacilityNavigation } from "@/_types/facility-types";
 
-const HomePageDesktopContactForm = () => {
+interface Props {
+  facilities: FacilityNavigation[];
+}
+
+const HomePageDesktopContactForm = ({ facilities }: Props) => {
   const { selectedPropertyId, selectedProperty, handlePropertySelect } =
-    useContactForm();
+    useContactForm(facilities);
 
   return (
     <div className="hidden desktop:block max-w-[1280px] mx-auto">
@@ -16,14 +20,14 @@ const HomePageDesktopContactForm = () => {
       </p>
 
       <PropertySelector
-        properties={PROPERTIES}
+        properties={facilities}
         selectedPropertyId={selectedPropertyId}
         onPropertySelect={handlePropertySelect}
       />
 
       {selectedProperty && (
         <PropertyContactForm
-          key={selectedProperty.id}
+          key={selectedProperty.slug}
           property={selectedProperty}
         />
       )}
