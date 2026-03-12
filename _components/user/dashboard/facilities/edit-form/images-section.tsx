@@ -1,6 +1,11 @@
+"use client";
+
 import Image from "next/image";
+import ImageUploader from "@/_components/user/dashboard/image-uploader";
+import { deleteImage } from "@/_actions/delete-image-action";
 
 interface Props {
+  facilitySlug: string;
   heroSliderState: string[];
   setHeroSliderState: React.Dispatch<React.SetStateAction<string[]>>;
   gallerySliderState: string[];
@@ -10,6 +15,7 @@ interface Props {
 }
 
 export default function ImagesSection({
+  facilitySlug,
   heroSliderState,
   setHeroSliderState,
   gallerySliderState,
@@ -33,22 +39,15 @@ export default function ImagesSection({
           {heroSliderState.map((url, i) => (
             <div key={i} className="flex flex-col gap-1">
               <div className="flex gap-2">
-                <input
-                  value={url}
-                  onChange={(e) =>
-                    setHeroSliderState((prev) =>
-                      prev.map((v, j) => (j === i ? e.target.value : v))
-                    )
-                  }
-                  className="border border-black rounded p-2 flex-1"
-                />
+                <div className="flex-1" />
                 <button
                   type="button"
-                  onClick={() =>
+                  onClick={() => {
+                    deleteImage(url);
                     setHeroSliderState((prev) =>
                       prev.filter((_, j) => j !== i)
-                    )
-                  }
+                    );
+                  }}
                   className="desktop:hover:cursor-pointer"
                 >
                   Remove
@@ -61,33 +60,23 @@ export default function ImagesSection({
               )}
             </div>
           ))}
-          <button
-            type="button"
-            onClick={() => setHeroSliderState((prev) => [...prev, ""])}
-            className="desktop:hover:cursor-pointer self-start"
-          >
-            Add Hero Image
-          </button>
+          <ImageUploader
+            storagePath={`facilities/${facilitySlug}/hero-slider`}
+            onUploaded={(url) => setHeroSliderState((prev) => [...prev, url])}
+          />
           <span className="text-smallest">Gallery Slider</span>
           {gallerySliderState.map((url, i) => (
             <div key={i} className="flex flex-col gap-1">
               <div className="flex gap-2">
-                <input
-                  value={url}
-                  onChange={(e) =>
-                    setGallerySliderState((prev) =>
-                      prev.map((v, j) => (j === i ? e.target.value : v))
-                    )
-                  }
-                  className="border border-black rounded p-2 flex-1"
-                />
+                <div className="flex-1" />
                 <button
                   type="button"
-                  onClick={() =>
+                  onClick={() => {
+                    deleteImage(url);
                     setGallerySliderState((prev) =>
                       prev.filter((_, j) => j !== i)
-                    )
-                  }
+                    );
+                  }}
                   className="desktop:hover:cursor-pointer"
                 >
                   Remove
@@ -100,13 +89,10 @@ export default function ImagesSection({
               )}
             </div>
           ))}
-          <button
-            type="button"
-            onClick={() => setGallerySliderState((prev) => [...prev, ""])}
-            className="desktop:hover:cursor-pointer self-start"
-          >
-            Add Gallery Image
-          </button>
+          <ImageUploader
+            storagePath={`facilities/${facilitySlug}/gallery-slider`}
+            onUploaded={(url) => setGallerySliderState((prev) => [...prev, url])}
+          />
         </div>
       )}
       <input

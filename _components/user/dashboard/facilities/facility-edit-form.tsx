@@ -52,7 +52,7 @@ export default function FacilityEditForm({ facility }: Props) {
   }
 
   return (
-    <form action={formAction} className="flex flex-col gap-3">
+    <form action={formAction} autoComplete="off" className="flex flex-col gap-3">
       <input type="hidden" name="slug" value={general.slug} />
       <input type="hidden" name="isActive" value={String(isActive)} />
       <input type="hidden" name="order" value={String(order)} />
@@ -75,6 +75,7 @@ export default function FacilityEditForm({ facility }: Props) {
       />
 
       <AboutSection
+        facilitySlug={general.slug}
         aboutContent={about.paragraphs}
         aboutImage={aboutImage}
         setAboutImage={setAboutImage}
@@ -83,6 +84,7 @@ export default function FacilityEditForm({ facility }: Props) {
       />
 
       <WhatWeOfferSection
+        facilitySlug={general.slug}
         whatWeOfferList={whatWeOffer.list}
         whatWeOfferImage={whatWeOfferImage}
         setWhatWeOfferImage={setWhatWeOfferImage}
@@ -91,6 +93,7 @@ export default function FacilityEditForm({ facility }: Props) {
       />
 
       <MeetTheTeamSection
+        facilitySlug={general.slug}
         teamMembers={teamMembers}
         setTeamMembers={setTeamMembers}
         activeSection={activeSection}
@@ -98,6 +101,7 @@ export default function FacilityEditForm({ facility }: Props) {
       />
 
       <ImagesSection
+        facilitySlug={general.slug}
         heroSliderState={heroSliderState}
         setHeroSliderState={setHeroSliderState}
         gallerySliderState={gallerySliderState}
@@ -107,6 +111,7 @@ export default function FacilityEditForm({ facility }: Props) {
       />
 
       <LocationSection
+        facilitySlug={general.slug}
         description={description}
         setDescription={setDescription}
         contactImage={contactImage}
@@ -120,6 +125,7 @@ export default function FacilityEditForm({ facility }: Props) {
       />
 
       <MetaSection
+        facilitySlug={general.slug}
         metaKeywords={metaKeywords}
         setMetaKeywords={setMetaKeywords}
         metaImages={metaImages}

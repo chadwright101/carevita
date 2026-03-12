@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import ImageUploader from "@/_components/user/dashboard/image-uploader";
 import RichTextEditor from "@/_components/ui/forms/rich-text-editor";
 
 interface Props {
+  facilitySlug: string;
   aboutContent: string;
   aboutImage: string;
   setAboutImage: (v: string) => void;
@@ -13,6 +15,7 @@ interface Props {
 }
 
 export default function AboutSection({
+  facilitySlug,
   aboutContent,
   aboutImage,
   setAboutImage,
@@ -39,19 +42,19 @@ export default function AboutSection({
             onChange={setContent}
             toolbarButtons={["bold", "italic", "bulletList", "orderedList"]}
           />
-          <label className="flex flex-col gap-1">
-            <span className="text-smallest">About Image URL</span>
-            <input
-              value={aboutImage}
-              onChange={(e) => setAboutImage(e.target.value)}
-              className="border border-black rounded p-2"
+          <div className="flex flex-col gap-1">
+            <span className="text-smallest">Image</span>
+            <ImageUploader
+              storagePath={`facilities/${facilitySlug}/about`}
+              onUploaded={setAboutImage}
+              currentUrl={aboutImage}
             />
             {aboutImage && (
               <div className="relative w-20 h-14 overflow-hidden rounded">
                 <Image src={aboutImage} alt="" fill className="object-cover" />
               </div>
             )}
-          </label>
+          </div>
         </div>
       )}
       <input

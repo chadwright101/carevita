@@ -1,7 +1,11 @@
+"use client";
+
 import Image from "next/image";
+import ImageUploader from "@/_components/user/dashboard/image-uploader";
 import { TeamMember } from "@/_types/facility-types";
 
 interface Props {
+  facilitySlug: string;
   teamMembers: TeamMember[];
   setTeamMembers: React.Dispatch<React.SetStateAction<TeamMember[]>>;
   activeSection: string;
@@ -9,6 +13,7 @@ interface Props {
 }
 
 export default function MeetTheTeamSection({
+  facilitySlug,
   teamMembers,
   setTeamMembers,
   activeSection,
@@ -59,18 +64,16 @@ export default function MeetTheTeamSection({
                   className="border border-black rounded p-2"
                 />
               </label>
-              <label className="flex flex-col gap-1">
-                <span className="text-smallest">Image URL</span>
-                <input
-                  value={member.url}
-                  onChange={(e) =>
+              <div className="flex flex-col gap-1">
+                <span className="text-smallest">Image</span>
+                <ImageUploader
+                  storagePath={`facilities/${facilitySlug}/team`}
+                  onUploaded={(url) =>
                     setTeamMembers((prev) =>
-                      prev.map((m, j) =>
-                        j === i ? { ...m, url: e.target.value } : m
-                      )
+                      prev.map((m, j) => (j === i ? { ...m, url } : m))
                     )
                   }
-                  className="border border-black rounded p-2"
+                  currentUrl={member.url}
                 />
                 {member.url && (
                   <div className="relative w-20 h-14 overflow-hidden rounded">
@@ -82,7 +85,7 @@ export default function MeetTheTeamSection({
                     />
                   </div>
                 )}
-              </label>
+              </div>
               <button
                 type="button"
                 onClick={() =>

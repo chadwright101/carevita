@@ -1,8 +1,12 @@
+"use client";
+
 import { useState } from "react";
 import Image from "next/image";
+import ImageUploader from "@/_components/user/dashboard/image-uploader";
 import RichTextEditor from "@/_components/ui/forms/rich-text-editor";
 
 interface Props {
+  facilitySlug: string;
   whatWeOfferList: string;
   whatWeOfferImage: string;
   setWhatWeOfferImage: (v: string) => void;
@@ -11,6 +15,7 @@ interface Props {
 }
 
 export default function WhatWeOfferSection({
+  facilitySlug,
   whatWeOfferList,
   whatWeOfferImage,
   setWhatWeOfferImage,
@@ -37,12 +42,12 @@ export default function WhatWeOfferSection({
             onChange={setContent}
             toolbarButtons={["bold", "italic", "bulletList"]}
           />
-          <label className="flex flex-col gap-1">
-            <span className="text-smallest">Offer Image URL</span>
-            <input
-              value={whatWeOfferImage}
-              onChange={(e) => setWhatWeOfferImage(e.target.value)}
-              className="border border-black rounded p-2"
+          <div className="flex flex-col gap-1">
+            <span className="text-smallest">Image</span>
+            <ImageUploader
+              storagePath={`facilities/${facilitySlug}/what-we-offer`}
+              onUploaded={setWhatWeOfferImage}
+              currentUrl={whatWeOfferImage}
             />
             {whatWeOfferImage && (
               <div className="relative w-20 h-14 overflow-hidden rounded">
@@ -54,7 +59,7 @@ export default function WhatWeOfferSection({
                 />
               </div>
             )}
-          </label>
+          </div>
         </div>
       )}
       <input

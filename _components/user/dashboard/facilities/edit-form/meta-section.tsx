@@ -1,6 +1,11 @@
+"use client";
+
 import Image from "next/image";
+import ImageUploader from "@/_components/user/dashboard/image-uploader";
+import { deleteImage } from "@/_actions/delete-image-action";
 
 interface Props {
+  facilitySlug: string;
   metaKeywords: string;
   setMetaKeywords: (v: string) => void;
   metaImages: string[];
@@ -10,6 +15,7 @@ interface Props {
 }
 
 export default function MetaSection({
+  facilitySlug,
   metaKeywords,
   setMetaKeywords,
   metaImages,
@@ -43,20 +49,13 @@ export default function MetaSection({
             {metaImages.map((url, i) => (
               <div key={i} className="flex flex-col gap-1">
                 <div className="flex gap-2">
-                  <input
-                    value={url}
-                    onChange={(e) =>
-                      setMetaImages((prev) =>
-                        prev.map((v, j) => (j === i ? e.target.value : v))
-                      )
-                    }
-                    className="border border-black rounded p-2 flex-1"
-                  />
+                  <div className="flex-1" />
                   <button
                     type="button"
-                    onClick={() =>
-                      setMetaImages((prev) => prev.filter((_, j) => j !== i))
-                    }
+                    onClick={() => {
+                      deleteImage(url);
+                      setMetaImages((prev) => prev.filter((_, j) => j !== i));
+                    }}
                     className="desktop:hover:cursor-pointer"
                   >
                     Remove
@@ -69,13 +68,10 @@ export default function MetaSection({
                 )}
               </div>
             ))}
-            <button
-              type="button"
-              onClick={() => setMetaImages((prev) => [...prev, ""])}
-              className="desktop:hover:cursor-pointer self-start"
-            >
-              Add Meta Image
-            </button>
+            <ImageUploader
+              storagePath={`facilities/${facilitySlug}/meta`}
+              onUploaded={(url) => setMetaImages((prev) => [...prev, url])}
+            />
           </div>
         </div>
       )}

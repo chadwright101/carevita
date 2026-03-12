@@ -1,10 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import ImageUploader from "@/_components/user/dashboard/image-uploader";
 import MapCoordinatesTooltip from "@/_lib/utils/map-coordinates-tooltip";
 import RichTextEditor from "@/_components/ui/forms/rich-text-editor";
 
 interface Props {
+  facilitySlug: string;
   description: string;
   setDescription: (v: string) => void;
   contactImage: string;
@@ -18,6 +20,7 @@ interface Props {
 }
 
 export default function LocationSection({
+  facilitySlug,
   description,
   setDescription,
   contactImage,
@@ -50,19 +53,19 @@ export default function LocationSection({
             />
           </div>
 
-          <label className="flex flex-col gap-1">
-            <span className="text-smallest">Contact Image URL</span>
-            <input
-              value={contactImage}
-              onChange={(e) => setContactImage(e.target.value)}
-              className="border border-black rounded p-2"
+          <div className="flex flex-col gap-1">
+            <span className="text-smallest">Image</span>
+            <ImageUploader
+              storagePath={`facilities/${facilitySlug}/contact`}
+              onUploaded={setContactImage}
+              currentUrl={contactImage}
             />
             {contactImage && (
               <div className="relative w-20 h-14 overflow-hidden rounded">
                 <Image src={contactImage} alt="" fill className="object-cover" />
               </div>
             )}
-          </label>
+          </div>
 
           <div className="flex items-center gap-2">
             <MapCoordinatesTooltip />

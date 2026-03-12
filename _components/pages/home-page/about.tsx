@@ -16,8 +16,6 @@ const About = ({
     },
   },
 }: Props) => {
-  const sanitized = DOMPurify.sanitize(content);
-
   return (
     <main
       className={classNames(
@@ -33,8 +31,8 @@ const About = ({
           About
         </Heading>
         <div
-          className="[&_p]:mb-4 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-4 [&_li]:mb-1"
-          dangerouslySetInnerHTML={{ __html: sanitized }}
+          className="[&_p]:mb-4 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-4 [&_li]:mb-1 [&_ol]:list-decimal [&_ol]:ml-6 [&_ol]:mb-4"
+          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(content) }}
         />
       </div>
       <div className="grid gap-10 mt-6 min-[800px]:grid-cols-2 desktop:grid-cols-1 desktop:grid-rows-[300px_300px]">

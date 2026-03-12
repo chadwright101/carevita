@@ -111,8 +111,8 @@ export default function GeneralSection({
       <input type="hidden" name="extendedTitle" value={extendedTitle} />
       <input type="hidden" name="city" value={city} />
       <input type="hidden" name="region" value={region} />
-      <input type="hidden" name="email" value={email} />
-      <input type="hidden" name="phone" value={phone} />
+      <input type="hidden" name="facilityEmail" value={email} />
+      <input type="hidden" name="facilityPhone" value={phone} />
     </div>
   );
 }

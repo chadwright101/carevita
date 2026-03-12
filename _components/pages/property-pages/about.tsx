@@ -38,7 +38,7 @@ const About = ({
               : paragraphs;
             return (
               <article
-                className="[&_p]:mb-4 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-4 [&_li]:mb-1"
+                className="[&_p]:mb-4 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-4 [&_li]:mb-1 [&_ol]:list-decimal [&_ol]:ml-6 [&_ol]:mb-4"
                 dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(html) }}
               />
             );
@@ -60,7 +60,7 @@ const About = ({
         </article>
         <div className="grid gap-10">
           <article
-            className="[&_p]:mb-1 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-1 [&_li]:mb-1"
+            className="desktop:columns-2 [&_p]:mb-4 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-4 [&_li]:mb-1 [&_li]:break-inside-avoid [&_ul]:break-inside-avoid [&_ol]:list-decimal [&_ol]:ml-6 [&_ol]:mb-4"
             dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(list) }}
           />
           <Image
