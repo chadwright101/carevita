@@ -1,29 +1,36 @@
 "use client";
 
+import Image from "next/image";
 import { useRef, useState } from "react";
 import { uploadImage } from "@/_actions/upload-image-action";
 import { deleteImage } from "@/_actions/delete-image-action";
 import ButtonType from "@/_components/ui/button-type";
+import { buttonStyles } from "@/_styles/button-styles";
 
 interface Props {
   storagePath: string;
   onUploaded: (url: string) => void;
   currentUrl?: string;
+  showPreview?: boolean;
 }
 
 export default function ImageUploader({
   storagePath,
   onUploaded,
   currentUrl,
+  showPreview = false,
 }: Props) {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
   const [isValidFile, setIsValidFile] = useState(false);
+  const [fileName, setFileName] = useState("No file chosen");
 
   const handleFileChange = () => {
     const file = fileInputRef.current?.files?.[0];
+    setFileName(file ? file.name : "No file chosen");
+
     if (!file) {
       setIsValidFile(false);
       return;
@@ -32,8 +39,7 @@ export default function ImageUploader({
     const allowedTypes = ["image/jpeg", "image/jpg", "image/png", "image/webp"];
     const maxSize = 10 * 1024 * 1024;
 
-    const isValid =
-      allowedTypes.includes(file.type) && file.size <= maxSize;
+    const isValid = allowedTypes.includes(file.type) && file.size <= maxSize;
     setIsValidFile(isValid);
   };
 
@@ -84,16 +90,23 @@ export default function ImageUploader({
   };
 
   return (
-    <div className="flex flex-col gap-2">
-      <p className="text-smallest text-gray-500">
-        Supported formats: JPEG, PNG, WebP. Max file size: 10MB
-      </p>
-      <div className="flex items-center gap-3">
+    <div className="flex flex-col gap-5">
+      <div className="flex flex-wrap items-start justify-between gap-5">
+        <div className="flex flex-col min-[500px]:flex-row min-[500px]:items-center gap-2">
+          <label
+            htmlFor="file-input"
+            className={buttonStyles(undefined, loading, false, "blue")}
+          >
+            Choose file
+          </label>
+          <span className="text-smallest italic text-black/70">{fileName}</span>
+        </div>
         <input
+          id="file-input"
           ref={fileInputRef}
           type="file"
           accept="image/jpg,image/jpeg,image/png,image/webp"
-          className="text-smallest desktop:hover:cursor-pointer"
+          className="hidden"
           disabled={loading}
           onChange={handleFileChange}
         />
@@ -106,8 +119,20 @@ export default function ImageUploader({
           {loading ? "Uploading..." : "Upload"}
         </ButtonType>
       </div>
-      {error && <p className="text-error text-smallest">{error}</p>}
-      {success && <p className="text-green text-smallest">Uploaded</p>}
+      {error && <p className="text-white bg-error p-2">{error}</p>}
+      {success && <p className="text-green">Successfully uploaded</p>}
+      <p className="text-smallest text-error/70">
+        Supported formats: JPEG, PNG, WebP. Max file size: 10MB
+      </p>
+      {showPreview && currentUrl && (
+        <Image
+          src={currentUrl}
+          alt=""
+          width={200}
+          height={120}
+          className="object-cover"
+        />
+      )}
     </div>
   );
 }

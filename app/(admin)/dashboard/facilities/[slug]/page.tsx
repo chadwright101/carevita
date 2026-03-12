@@ -13,7 +13,7 @@ export default async function EditFacilityPage({
   if (!facility) notFound();
 
   return (
-    <main className="p-8 flex flex-col gap-6">
+    <main className="flex mt-15 flex-col gap-6">
       <Link href="/dashboard">← Back to Dashboard</Link>
       <h1>Edit {facility.general.title}</h1>
       <FacilityEditForm facility={facility} />

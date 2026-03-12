@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import ImageUploader from "@/_components/user/dashboard/image-uploader";
 import MapCoordinatesTooltip from "@/_lib/utils/map-coordinates-tooltip";
 import RichTextEditor from "@/_components/ui/forms/rich-text-editor";
@@ -59,12 +58,8 @@ export default function LocationSection({
               storagePath={`facilities/${facilitySlug}/contact`}
               onUploaded={setContactImage}
               currentUrl={contactImage}
+              showPreview
             />
-            {contactImage && (
-              <div className="relative w-20 h-14 overflow-hidden rounded">
-                <Image src={contactImage} alt="" fill className="object-cover" />
-              </div>
-            )}
           </div>
 
           <div className="flex items-center gap-2">

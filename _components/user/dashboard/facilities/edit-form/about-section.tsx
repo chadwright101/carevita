@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import ImageUploader from "@/_components/user/dashboard/image-uploader";
 import RichTextEditor from "@/_components/ui/forms/rich-text-editor";
 
@@ -48,12 +47,8 @@ export default function AboutSection({
               storagePath={`facilities/${facilitySlug}/about`}
               onUploaded={setAboutImage}
               currentUrl={aboutImage}
+              showPreview
             />
-            {aboutImage && (
-              <div className="relative w-20 h-14 overflow-hidden rounded">
-                <Image src={aboutImage} alt="" fill className="object-cover" />
-              </div>
-            )}
           </div>
         </div>
       )}

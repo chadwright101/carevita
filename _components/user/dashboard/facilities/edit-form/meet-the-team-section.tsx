@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import ImageUploader from "@/_components/user/dashboard/image-uploader";
 import { TeamMember } from "@/_types/facility-types";
 
@@ -74,17 +73,8 @@ export default function MeetTheTeamSection({
                     )
                   }
                   currentUrl={member.url}
+                  showPreview
                 />
-                {member.url && (
-                  <div className="relative w-20 h-14 overflow-hidden rounded">
-                    <Image
-                      src={member.url}
-                      alt=""
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                )}
               </div>
               <button
                 type="button"
