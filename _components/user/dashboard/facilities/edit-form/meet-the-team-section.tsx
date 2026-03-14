@@ -1,6 +1,6 @@
 "use client";
 
-import ImageUploader from "@/_components/user/dashboard/image-uploader";
+import TeamMemberList from "@/_components/user/dashboard/facilities/edit-form/team-member-list";
 import { TeamMember } from "@/_types/facility-types";
 
 interface Props {
@@ -29,77 +29,11 @@ export default function MeetTheTeamSection({
         <span>{activeSection === "meetTheTeam" ? "−" : "+"}</span>
       </button>
       {activeSection === "meetTheTeam" && (
-        <div className="flex flex-col gap-3 p-4 border-t border-black">
-          {teamMembers.map((member, i) => (
-            <div
-              key={i}
-              className="flex flex-col gap-2 border border-black rounded p-3"
-            >
-              <label className="flex flex-col gap-1">
-                <span className="text-smallest">Position</span>
-                <input
-                  value={member.position}
-                  onChange={(e) =>
-                    setTeamMembers((prev) =>
-                      prev.map((m, j) =>
-                        j === i ? { ...m, position: e.target.value } : m
-                      )
-                    )
-                  }
-                  className="border border-black rounded p-2"
-                />
-              </label>
-              <label className="flex flex-col gap-1">
-                <span className="text-smallest">Team Member Name</span>
-                <input
-                  value={member.teamMember}
-                  onChange={(e) =>
-                    setTeamMembers((prev) =>
-                      prev.map((m, j) =>
-                        j === i ? { ...m, teamMember: e.target.value } : m
-                      )
-                    )
-                  }
-                  className="border border-black rounded p-2"
-                />
-              </label>
-              <div className="flex flex-col gap-1">
-                <span className="text-smallest">Image</span>
-                <ImageUploader
-                  storagePath={`facilities/${facilitySlug}/team`}
-                  onUploaded={(url) =>
-                    setTeamMembers((prev) =>
-                      prev.map((m, j) => (j === i ? { ...m, url } : m))
-                    )
-                  }
-                  currentUrl={member.url}
-                  showPreview
-                />
-              </div>
-              <button
-                type="button"
-                onClick={() =>
-                  setTeamMembers((prev) => prev.filter((_, j) => j !== i))
-                }
-                className="desktop:hover:cursor-pointer self-start"
-              >
-                Remove Member
-              </button>
-            </div>
-          ))}
-          <button
-            type="button"
-            onClick={() =>
-              setTeamMembers((prev) => [
-                ...prev,
-                { position: "", url: "", teamMember: "" },
-              ])
-            }
-            className="desktop:hover:cursor-pointer self-start"
-          >
-            Add Team Member
-          </button>
-        </div>
+        <TeamMemberList
+          facilitySlug={facilitySlug}
+          teamMembers={teamMembers}
+          setTeamMembers={setTeamMembers}
+        />
       )}
       <input
         type="hidden"

@@ -6,7 +6,9 @@ interface Props {
   city: string;
   setCity: (v: string) => void;
   region: "EC" | "FS" | "GP" | "KZN" | "LP" | "MP" | "NC" | "NW" | "WC";
-  setRegion: (v: "EC" | "FS" | "GP" | "KZN" | "LP" | "MP" | "NC" | "NW" | "WC") => void;
+  setRegion: (
+    v: "EC" | "FS" | "GP" | "KZN" | "LP" | "MP" | "NC" | "NW" | "WC",
+  ) => void;
   email: string;
   setEmail: (v: string) => void;
   phone: string;
@@ -42,69 +44,78 @@ export default function GeneralSection({
         <span>{activeSection === "general" ? "−" : "+"}</span>
       </button>
       {activeSection === "general" && (
-        <div className="flex flex-col gap-3 p-4 border-t border-black">
-          <div className="grid grid-cols-2 gap-3">
-            <label className="flex flex-col gap-1">
-              <span className="text-smallest">Facility Name</span>
-              <input
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                className="border border-black rounded p-2"
-              />
-            </label>
-            <label className="flex flex-col gap-1">
-              <span className="text-smallest">
-                Facility Extended Name (optional)
-              </span>
-              <input
-                value={extendedTitle}
-                onChange={(e) => setExtendedTitle(e.target.value)}
-                className="border border-black rounded p-2"
-              />
-            </label>
-            <label className="flex flex-col gap-1">
-              <span className="text-smallest">City/Town</span>
-              <input
-                value={city}
-                onChange={(e) => setCity(e.target.value)}
-                className="border border-black rounded p-2"
-              />
-            </label>
-            <label className="flex flex-col gap-1">
-              <span className="text-smallest">Province</span>
-              <select
-                value={region}
-                onChange={(e) => setRegion(e.target.value as "EC" | "FS" | "GP" | "KZN" | "LP" | "MP" | "NC" | "NW" | "WC")}
-                className="border border-black rounded p-2 desktop:hover:cursor-pointer"
-              >
-                <option value="EC">Eastern Cape</option>
-                <option value="FS">Free State</option>
-                <option value="GP">Gauteng</option>
-                <option value="KZN">KwaZulu-Natal</option>
-                <option value="LP">Limpopo</option>
-                <option value="MP">Mpumalanga</option>
-                <option value="NW">North West</option>
-                <option value="NC">Northern Cape</option>
-                <option value="WC">Western Cape</option>
-              </select>
-            </label>
-            <label className="flex flex-col gap-1">
-              <span className="text-smallest">Facility Email</span>
-              <input
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="border border-black rounded p-2"
-              />
-            </label>
-            <label className="flex flex-col gap-1">
-              <span className="text-smallest">Facility Phone</span>
-              <input
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                className="border border-black rounded p-2"
-              />
-            </label>
-          </div>
+        <div className="grid grid-cols-2 gap-x-10 gap-y-5 px-5 py-7 border-t border-black">
+          <label className="flex flex-col gap-1 justify-between">
+            Facility Name
+            <input
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              className="border border-black rounded p-2"
+            />
+          </label>
+          <label className="flex flex-col gap-1">
+            Facility Extended Name (optional)
+            <input
+              value={extendedTitle}
+              onChange={(e) => setExtendedTitle(e.target.value)}
+              className="border border-black rounded p-2"
+            />
+          </label>
+          <label className="flex flex-col gap-1">
+            City/Town
+            <input
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+              className="border border-black rounded p-2"
+            />
+          </label>
+          <label className="flex flex-col gap-1">
+            Province
+            <select
+              value={region}
+              onChange={(e) =>
+                setRegion(
+                  e.target.value as
+                    | "EC"
+                    | "FS"
+                    | "GP"
+                    | "KZN"
+                    | "LP"
+                    | "MP"
+                    | "NC"
+                    | "NW"
+                    | "WC",
+                )
+              }
+              className="border border-black rounded p-2 desktop:hover:cursor-pointer"
+            >
+              <option value="EC">Eastern Cape</option>
+              <option value="FS">Free State</option>
+              <option value="GP">Gauteng</option>
+              <option value="KZN">KwaZulu-Natal</option>
+              <option value="LP">Limpopo</option>
+              <option value="MP">Mpumalanga</option>
+              <option value="NW">North West</option>
+              <option value="NC">Northern Cape</option>
+              <option value="WC">Western Cape</option>
+            </select>
+          </label>
+          <label className="flex flex-col gap-1">
+            Facility Email
+            <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="border border-black rounded p-2"
+            />
+          </label>
+          <label className="flex flex-col gap-1">
+            Facility Phone
+            <input
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              className="border border-black rounded p-2"
+            />
+          </label>
         </div>
       )}
       <input type="hidden" name="title" value={title} />

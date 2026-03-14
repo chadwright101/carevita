@@ -34,15 +34,17 @@ export default function WhatWeOfferSection({
         <span>{activeSection === "whatWeOffer" ? "−" : "+"}</span>
       </button>
       {activeSection === "whatWeOffer" && (
-        <div className="flex flex-col gap-3 p-4 border-t border-black">
-          <span className="text-smallest">Offer List</span>
-          <RichTextEditor
-            value={content}
-            onChange={setContent}
-            toolbarButtons={["bold", "italic", "bulletList"]}
-          />
-          <div className="flex flex-col gap-1">
-            <span className="text-smallest">Image</span>
+        <div className="flex flex-col gap-10 px-5 py-7 border-t border-black">
+          <div className="flex flex-col gap-5">
+            <span className="font-semibold">Offerings</span>
+            <RichTextEditor
+              value={content}
+              onChange={setContent}
+              toolbarButtons={["bold", "italic", "bulletList"]}
+            />
+          </div>
+          <div className="flex flex-col gap-5">
+            <span className="font-semibold">Image</span>
             <ImageUploader
               storagePath={`facilities/${facilitySlug}/what-we-offer`}
               onUploaded={setWhatWeOfferImage}
@@ -52,16 +54,8 @@ export default function WhatWeOfferSection({
           </div>
         </div>
       )}
-      <input
-        type="hidden"
-        name="whatWeOfferList"
-        value={content}
-      />
-      <input
-        type="hidden"
-        name="whatWeOfferImage"
-        value={whatWeOfferImage}
-      />
+      <input type="hidden" name="whatWeOfferList" value={content} />
+      <input type="hidden" name="whatWeOfferImage" value={whatWeOfferImage} />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useId, useRef, useState } from "react";
 import { uploadImage } from "@/_actions/upload-image-action";
 import { deleteImage } from "@/_actions/delete-image-action";
 import ButtonType from "@/_components/ui/button-type";
@@ -20,6 +20,7 @@ export default function ImageUploader({
   currentUrl,
   showPreview = false,
 }: Props) {
+  const id = useId();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -91,10 +92,10 @@ export default function ImageUploader({
 
   return (
     <div className="flex flex-col gap-5">
-      <div className="flex flex-wrap items-start justify-between gap-5">
+      <div className="flex flex-wrap items-start justify-between gap-5 tablet:justify-start">
         <div className="flex flex-col min-[500px]:flex-row min-[500px]:items-center gap-2">
           <label
-            htmlFor="file-input"
+            htmlFor={id}
             className={buttonStyles(undefined, loading, false, "blue")}
           >
             Choose file
@@ -102,7 +103,7 @@ export default function ImageUploader({
           <span className="text-smallest italic text-black/70">{fileName}</span>
         </div>
         <input
-          id="file-input"
+          id={id}
           ref={fileInputRef}
           type="file"
           accept="image/jpg,image/jpeg,image/png,image/webp"

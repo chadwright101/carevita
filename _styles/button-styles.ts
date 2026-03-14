@@ -9,7 +9,7 @@ export const buttonStyles = (
   strokeColor?: "black" | "red",
 ) =>
   classNames(
-    "text-paragraph px-6 py-2.5 flex gap-6 font-light ease-in-out duration-300 rounded-md",
+    "text-paragraph px-6 text-center py-2.5 flex justify-center gap-6 font-light ease-in-out duration-300 rounded-md",
     cssClasses,
     {
       "bg-blue text-white": !strokeColor,
@@ -37,6 +37,6 @@ export const buttonStyles = (
       "border-2 border-error text-error font-normal": strokeColor === "red",
       "desktop:hover:bg-error/10":
         strokeColor === "red" && !(disabled || pending),
-      "min-w-[150px] flex items-center justify-center": type === "submit",
+      "min-w-[150px] flex items-center": type === "submit",
     },
   );

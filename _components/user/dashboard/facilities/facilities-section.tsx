@@ -10,7 +10,7 @@ interface Props {
 export default function FacilitiesSection({ facilities }: Props) {
   return (
     <section className="flex flex-col gap-4">
-      <h2>Facilities</h2>
+      <h2 className="text-subheading">Facilities</h2>
       <FacilityList facilities={facilities} />
     </section>
   );

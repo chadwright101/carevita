@@ -12,7 +12,7 @@ export default async function DashboardPage() {
   ]);
 
   return (
-    <main className="p-8 flex flex-col gap-12">
+    <main className="flex pt-15 flex-col gap-10">
       <h1>Dashboard</h1>
 
       <div className="flex flex-col gap-4">

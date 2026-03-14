@@ -44,7 +44,7 @@ export default function LocationSection({
       {activeSection === "location" && (
         <div className="flex flex-col gap-3 p-4 border-t border-black">
           <div className="flex flex-col gap-1">
-            <span className="text-smallest">Description</span>
+            <span className="font-semibold">Description</span>
             <RichTextEditor
               value={description}
               onChange={setDescription}
@@ -53,7 +53,7 @@ export default function LocationSection({
           </div>
 
           <div className="flex flex-col gap-1">
-            <span className="text-smallest">Image</span>
+            <span className="font-semibold">Image</span>
             <ImageUploader
               storagePath={`facilities/${facilitySlug}/contact`}
               onUploaded={setContactImage}
@@ -68,7 +68,7 @@ export default function LocationSection({
 
           <div className="grid grid-cols-2 gap-3">
             <label className="flex flex-col gap-1">
-              <span className="text-smallest">Latitude</span>
+              <span className="font-semibold">Latitude</span>
               <input
                 value={mapLat}
                 onChange={(e) => setMapLat(e.target.value)}
@@ -76,7 +76,7 @@ export default function LocationSection({
               />
             </label>
             <label className="flex flex-col gap-1">
-              <span className="text-smallest">Longitude</span>
+              <span className="font-semibold">Longitude</span>
               <input
                 value={mapLng}
                 onChange={(e) => setMapLng(e.target.value)}

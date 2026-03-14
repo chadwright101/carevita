@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import ImageUploader from "@/_components/user/dashboard/image-uploader";
+import ImageList from "@/_components/user/dashboard/image-list";
 import { deleteImage } from "@/_actions/delete-image-action";
 
 interface Props {
@@ -34,65 +34,76 @@ export default function ImagesSection({
         <span>{activeSection === "images" ? "−" : "+"}</span>
       </button>
       {activeSection === "images" && (
-        <div className="flex flex-col gap-3 p-4 border-t border-black">
-          <span className="text-smallest">Hero Slider</span>
-          {heroSliderState.map((url, i) => (
-            <div key={i} className="flex flex-col gap-1">
-              <div className="flex gap-2">
-                <div className="flex-1" />
-                <button
-                  type="button"
-                  onClick={() => {
+        <div className="flex flex-col gap-5 px-5 py-7 border-t border-black">
+          <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-5">
+              <span className="font-semibold">Hero Slider</span>
+              {heroSliderState.length === 0 && (
+                <span className="text-black/70 italic text-smallest">
+                  Gallery empty
+                </span>
+              )}
+              {heroSliderState.length > 0 && (
+                <ImageList
+                  urls={heroSliderState}
+                  onRemove={(url) => {
                     deleteImage(url);
                     setHeroSliderState((prev) =>
-                      prev.filter((_, j) => j !== i)
+                      prev.filter((img) => img !== url),
                     );
                   }}
-                  className="desktop:hover:cursor-pointer"
-                >
-                  Remove
-                </button>
-              </div>
-              {url && (
-                <div className="relative w-20 h-14 overflow-hidden rounded">
-                  <Image src={url} alt="" fill className="object-cover" />
-                </div>
-              )}
-            </div>
-          ))}
-          <ImageUploader
-            storagePath={`facilities/${facilitySlug}/hero-slider`}
-            onUploaded={(url) => setHeroSliderState((prev) => [...prev, url])}
-          />
-          <span className="text-smallest">Gallery Slider</span>
-          {gallerySliderState.map((url, i) => (
-            <div key={i} className="flex flex-col gap-1">
-              <div className="flex gap-2">
-                <div className="flex-1" />
-                <button
-                  type="button"
-                  onClick={() => {
-                    deleteImage(url);
-                    setGallerySliderState((prev) =>
-                      prev.filter((_, j) => j !== i)
-                    );
+                  onMove={(index, direction) => {
+                    setHeroSliderState((prev) => {
+                      const next = [...prev];
+                      const target = index + direction;
+                      if (target < 0 || target >= next.length) return prev;
+                      [next[index], next[target]] = [next[target], next[index]];
+                      return next;
+                    });
                   }}
-                  className="desktop:hover:cursor-pointer"
-                >
-                  Remove
-                </button>
-              </div>
-              {url && (
-                <div className="relative w-20 h-14 overflow-hidden rounded">
-                  <Image src={url} alt="" fill className="object-cover" />
-                </div>
+                />
               )}
             </div>
-          ))}
-          <ImageUploader
-            storagePath={`facilities/${facilitySlug}/gallery-slider`}
-            onUploaded={(url) => setGallerySliderState((prev) => [...prev, url])}
-          />
+            <ImageUploader
+              storagePath={`facilities/${facilitySlug}/hero-slider`}
+              onUploaded={(url) => setHeroSliderState((prev) => [...prev, url])}
+            />
+          </div>
+          <hr className="text-black/25" />
+          <div className="flex flex-col gap-5">
+            <span className="font-semibold">Gallery Slider</span>
+            {gallerySliderState.length === 0 && (
+              <span className="text-black/70 italic text-smallest">
+                Gallery empty
+              </span>
+            )}
+            <div className="flex flex-wrap gap-5">
+              <ImageList
+                urls={gallerySliderState}
+                onRemove={(url) => {
+                  deleteImage(url);
+                  setGallerySliderState((prev) =>
+                    prev.filter((img) => img !== url),
+                  );
+                }}
+                onMove={(index, direction) => {
+                  setGallerySliderState((prev) => {
+                    const next = [...prev];
+                    const target = index + direction;
+                    if (target < 0 || target >= next.length) return prev;
+                    [next[index], next[target]] = [next[target], next[index]];
+                    return next;
+                  });
+                }}
+              />
+              <ImageUploader
+                storagePath={`facilities/${facilitySlug}/gallery-slider`}
+                onUploaded={(url) =>
+                  setGallerySliderState((prev) => [...prev, url])
+                }
+              />
+            </div>
+          </div>
         </div>
       )}
       <input

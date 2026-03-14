@@ -4,7 +4,7 @@ import { useState, useTransition } from "react";
 import { Facility } from "@/_types/facility-types";
 import { updateFacilityOrder } from "@/_actions/admin-facilities-actions";
 import FacilityListItem from "./facility-list-item";
-import classNames from "classnames";
+import ReorderButtons from "../reorder-buttons";
 
 interface Props {
   facilities: Facility[];
@@ -21,45 +21,22 @@ export default function FacilityList({ facilities }: Props) {
     [next[index], next[target]] = [next[target], next[index]];
     setOrdered(next);
 
-    const payload = next.map((f, i) => ({ slug: f.general.slug, order: i + 1 }));
+    const payload = next.map((f, i) => ({
+      slug: f.general.slug,
+      order: i + 1,
+    }));
     startTransition(() => {
       updateFacilityOrder(payload);
     });
   }
 
   return (
-    <ul className="flex flex-col gap-3">
+    <ul className="grid gap-5 tablet:grid-cols-2 desktop:grid-cols-3">
       {ordered.map((facility, index) => (
-        <div key={facility.general.slug} className="flex gap-2">
-          <div className="grid gap-1">
-            <button
-              type="button"
-              onClick={() => move(index, -1)}
-              disabled={index === 0 || isPending}
-              className={classNames(
-                "px-5 text-smallest border border-black rounded tablet:px-3 disabled:opacity-30 desktop:hover:cursor-pointer",
-                {
-                  "hover:desktop:cursor-not-allowed": index === 0,
-                },
-              )}
-            >
-              ↑
-            </button>
-            <button
-              type="button"
-              onClick={() => move(index, 1)}
-              disabled={index === ordered.length - 1 || isPending}
-              className={classNames(
-                "px-5 text-smallest border border-black rounded tablet:px-3 disabled:opacity-30 desktop:hover:cursor-pointer",
-                {
-                  "hover:desktop:cursor-not-allowed":
-                    index === ordered.length - 1,
-                },
-              )}
-            >
-              ↓
-            </button>
-          </div>
+        <div
+          key={facility.general.slug}
+          className="flex gap-5 p-5 border border-black/75 rounded"
+        >
           <div className="flex-1">
             <FacilityListItem
               facility={facility}
@@ -68,6 +45,15 @@ export default function FacilityList({ facilities }: Props) {
                   prev.filter((f) => f.general.slug !== slug),
                 )
               }
+              index={index}
+            />
+          </div>
+          <div>
+            <ReorderButtons
+              index={index}
+              total={ordered.length}
+              onMove={(direction) => move(index, direction)}
+              disabled={isPending}
             />
           </div>
         </div>

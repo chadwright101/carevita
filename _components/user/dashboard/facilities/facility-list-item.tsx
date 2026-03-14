@@ -11,6 +11,7 @@ import { buttonStyles } from "@/_styles/button-styles";
 interface Props {
   facility: Facility;
   onDeactivate: (slug: string) => void;
+  index: number;
 }
 
 const initialState = { success: false, error: "" };
@@ -18,6 +19,7 @@ const initialState = { success: false, error: "" };
 export default function FacilityListItem({
   facility,
   onDeactivate,
+  index,
 }: Props) {
   const [confirming, setConfirming] = useState(false);
   const [deleteState, deleteAction] = useActionState(
@@ -30,19 +32,12 @@ export default function FacilityListItem({
   }, [deleteState.success]);
 
   return (
-    <li
-      className={classNames(
-        "flex flex-col border border-black rounded-md overflow-hidden scroll-mt-20",
-        confirming ? "bg-error/10" : "bg-white",
-      )}
-    >
-      <div className="flex flex-col gap-5 p-4 tablet:items-center tablet:flex-row tablet:justify-between">
-        <div className="flex flex-col tablet:items-center tablet:flex-row gap-3">
-          <p className="font-medium">{facility.general.title}</p>
-          <p className="text-smaller text-black opacity-60">
-            {facility.general.region}
-          </p>
-        </div>
+    <li className="flex flex-col scroll-mt-20 bg-white">
+      <div className="flex flex-col items-start gap-3 relative">
+        <p>
+          <span className="mr-1">{index + 1}.</span>
+          {facility.general.title}
+        </p>
         <div className="flex flex-col gap-5 tablet:gap-2">
           {!deleteState.error && (
             <p className="text-smallest text-error tablet:max-w-[300px]">
@@ -50,11 +45,21 @@ export default function FacilityListItem({
             </p>
           )}
 
-          <div className="flex flex-col tablet:items-center tablet:flex-row gap-2">
+          <div className="flex gap-3">
             {!confirming && (
               <Link
                 href={`/dashboard/facilities/${facility.general.slug}`}
-                className={buttonStyles(undefined, false, false, undefined, "button", "black")}
+                className={classNames(
+                  "w-full",
+                  buttonStyles(
+                    undefined,
+                    false,
+                    false,
+                    undefined,
+                    "button",
+                    "black",
+                  ),
+                )}
               >
                 Edit
               </Link>
@@ -93,6 +98,7 @@ export default function FacilityListItem({
                 type="button"
                 strokeColor="red"
                 onClick={() => setConfirming(true)}
+                cssClasses="w-full"
               >
                 Deactivate
               </ButtonType>

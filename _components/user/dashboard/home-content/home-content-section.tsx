@@ -12,7 +12,7 @@ interface Props {
 export default function HomeContentSection({ homeContent }: Props) {
   return (
     <section className="flex flex-col gap-6">
-      <h2>Home Page Content</h2>
+      <h2 className="text-subheading">Home Page Content</h2>
       <EditAboutForm about={homeContent.about} />
       <EditServicesForm services={homeContent.services} />
       <EditContactForm contact={homeContent.contact} />

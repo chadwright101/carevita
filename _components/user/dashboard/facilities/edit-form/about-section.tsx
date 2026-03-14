@@ -34,15 +34,17 @@ export default function AboutSection({
         <span>{activeSection === "about" ? "−" : "+"}</span>
       </button>
       {activeSection === "about" && (
-        <div className="flex flex-col gap-3 p-4 border-t border-black">
-          <span className="text-smallest">Content</span>
-          <RichTextEditor
-            value={content}
-            onChange={setContent}
-            toolbarButtons={["bold", "italic", "bulletList", "orderedList"]}
-          />
-          <div className="flex flex-col gap-1">
-            <span className="text-smallest">Image</span>
+        <div className="flex flex-col gap-10 px-5 py-7 border-t border-black">
+          <div className="flex flex-col gap-5">
+            <span className="font-semibold">Content</span>
+            <RichTextEditor
+              value={content}
+              onChange={setContent}
+              toolbarButtons={["bold", "italic", "bulletList", "orderedList"]}
+            />
+          </div>
+          <div className="flex flex-col gap-5">
+            <span className="font-semibold">Image</span>
             <ImageUploader
               storagePath={`facilities/${facilitySlug}/about`}
               onUploaded={setAboutImage}
@@ -52,11 +54,7 @@ export default function AboutSection({
           </div>
         </div>
       )}
-      <input
-        type="hidden"
-        name="aboutParagraphs"
-        value={content}
-      />
+      <input type="hidden" name="aboutParagraphs" value={content} />
       <input type="hidden" name="aboutImage" value={aboutImage} />
     </div>
   );
