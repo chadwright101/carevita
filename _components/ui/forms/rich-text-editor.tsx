@@ -17,13 +17,7 @@ interface Props {
   placeholder?: string;
   minHeight?: string;
   disabled?: boolean;
-  toolbarButtons?: (
-    | "bold"
-    | "italic"
-    | "bulletList"
-    | "orderedList"
-    | "heading"
-  )[];
+  toolbarButtons?: ("bold" | "italic" | "bulletList" | "orderedList")[];
 }
 
 export default function RichTextEditor({
@@ -47,7 +41,7 @@ export default function RichTextEditor({
     editorProps: {
       attributes: {
         class:
-          "prose prose-sm max-w-none p-3 outline-none [&_p]:mb-3 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-3 [&_li]:mb-1 [&_ol]:list-decimal [&_ol]:ml-6 [&_ol]:mb-3 [&_h1]:text-heading [&_h2]:text-subheading [&_h3]:text-paragraph",
+          "prose prose-sm max-w-none p-3 outline-none [&_p]:mb-3 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-3 [&_li]:mb-1 [&_ol]:list-decimal [&_ol]:ml-6 [&_ol]:mb-3",
       },
     },
   });

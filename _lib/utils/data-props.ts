@@ -36,9 +36,10 @@ export interface DataProps {
       url: string;
       teamMember: string;
     }>;
-    images: {
+    media: {
       heroSlider: Array<string>;
       gallerySlider: Array<string>;
+      heroDisplayMode?: "slider" | "video";
     };
     video?: {
       desktopMp4: string;

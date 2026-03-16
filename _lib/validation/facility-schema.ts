@@ -41,9 +41,10 @@ export const teamMemberSchema = z.object({
   teamMember: z.string().min(1),
 });
 
-export const facilityImagesSchema = z.object({
+export const facilityMediaSchema = z.object({
   heroSlider: z.array(z.string()),
   gallerySlider: z.array(z.string()),
+  heroDisplayMode: z.enum(["slider", "video"]).optional(),
 });
 
 export const facilityVideoSchema = z.object({
@@ -59,7 +60,7 @@ export const facilitySchema = z.object({
   whatWeOffer: whatWeOfferSchema,
   about: aboutSchema,
   meetTheTeam: z.array(teamMemberSchema).optional(),
-  images: facilityImagesSchema,
+  media: facilityMediaSchema,
   video: facilityVideoSchema.optional(),
   order: z.number(),
   isActive: z.boolean(),

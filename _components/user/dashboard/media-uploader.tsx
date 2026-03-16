@@ -1,8 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useId, useRef, useState } from "react";
 import { uploadImage } from "@/_actions/upload-image-action";
+import { uploadVideo } from "@/_actions/upload-video-action";
 import { deleteImage } from "@/_actions/delete-image-action";
 import ButtonType from "@/_components/ui/button-type";
 import { buttonStyles } from "@/_styles/button-styles";
@@ -12,13 +14,19 @@ interface Props {
   onUploaded: (url: string) => void;
   currentUrl?: string;
   showPreview?: boolean;
+  mediaType?: "image" | "video";
+  maxSizeMb?: number;
+  dimensionNote?: string;
 }
 
-export default function ImageUploader({
+export default function MediaUploader({
   storagePath,
   onUploaded,
   currentUrl,
   showPreview = false,
+  mediaType = "image",
+  maxSizeMb,
+  dimensionNote,
 }: Props) {
   const id = useId();
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -28,6 +36,20 @@ export default function ImageUploader({
   const [isValidFile, setIsValidFile] = useState(false);
   const [fileName, setFileName] = useState("No file chosen");
 
+  const isVideo = mediaType === "video";
+  const allowedTypes = isVideo
+    ? ["video/mp4", "video/webm"]
+    : ["image/jpeg", "image/jpg", "image/png", "image/webp"];
+  const defaultMaxMb = isVideo ? 3 : 10;
+  const effectiveMaxMb = maxSizeMb ?? defaultMaxMb;
+  const maxSize = effectiveMaxMb * 1024 * 1024;
+  const acceptAttr = isVideo
+    ? "video/mp4,video/webm"
+    : "image/jpg,image/jpeg,image/png,image/webp";
+  const formatNote = isVideo
+    ? `Supported formats: MP4, WebM. Max file size: ${effectiveMaxMb}MB`
+    : "Supported formats: JPEG, PNG, WebP. Max file size: 10MB";
+
   const handleFileChange = () => {
     const file = fileInputRef.current?.files?.[0];
     setFileName(file ? file.name : "No file chosen");
@@ -36,9 +58,6 @@ export default function ImageUploader({
       setIsValidFile(false);
       return;
     }
-
-    const allowedTypes = ["image/jpeg", "image/jpg", "image/png", "image/webp"];
-    const maxSize = 10 * 1024 * 1024;
 
     const isValid = allowedTypes.includes(file.type) && file.size <= maxSize;
     setIsValidFile(isValid);
@@ -51,16 +70,18 @@ export default function ImageUploader({
     }
 
     const file = fileInputRef.current.files[0];
-    const allowedTypes = ["image/jpeg", "image/jpg", "image/png", "image/webp"];
-    const maxSize = 10 * 1024 * 1024;
 
     if (!allowedTypes.includes(file.type)) {
-      setError("Invalid file type. Use JPEG, PNG, or WebP");
+      setError(
+        isVideo
+          ? "Invalid file type. Use MP4 or WebM"
+          : "Invalid file type. Use JPEG, PNG, or WebP"
+      );
       return;
     }
 
     if (file.size > maxSize) {
-      setError("File exceeds 10MB limit");
+      setError(isVideo ? "File exceeds 3MB limit" : "File exceeds 10MB limit");
       return;
     }
 
@@ -71,12 +92,17 @@ export default function ImageUploader({
     const formData = new FormData();
     formData.append("file", fileInputRef.current.files[0]);
     formData.append("storagePath", storagePath);
+    if (isVideo) {
+      formData.append("maxSizeBytes", String(maxSize));
+    }
 
-    const result = await uploadImage({}, formData);
+    const result = isVideo
+      ? await uploadVideo({}, formData)
+      : await uploadImage({}, formData);
     setLoading(false);
 
     if (result.success && result.data?.url) {
-      if (currentUrl) {
+      if (!isVideo && currentUrl) {
         await deleteImage(currentUrl);
       }
       onUploaded(result.data.url);
@@ -106,7 +132,7 @@ export default function ImageUploader({
           id={id}
           ref={fileInputRef}
           type="file"
-          accept="image/jpg,image/jpeg,image/png,image/webp"
+          accept={acceptAttr}
           className="hidden"
           disabled={loading}
           onChange={handleFileChange}
@@ -122,10 +148,11 @@ export default function ImageUploader({
       </div>
       {error && <p className="text-white bg-error p-2">{error}</p>}
       {success && <p className="text-green">Successfully uploaded</p>}
-      <p className="text-smallest text-error/70">
-        Supported formats: JPEG, PNG, WebP. Max file size: 10MB
-      </p>
-      {showPreview && currentUrl && (
+      <p className="text-smallest text-error/70">{formatNote}</p>
+      {dimensionNote && (
+        <p className="text-smallest text-black/70 italic">{dimensionNote}</p>
+      )}
+      {!isVideo && showPreview && currentUrl && (
         <Image
           src={currentUrl}
           alt=""
@@ -133,6 +160,15 @@ export default function ImageUploader({
           height={120}
           className="object-cover"
         />
+      )}
+      {isVideo && showPreview && currentUrl && (
+        <Link href={currentUrl} target="_blank" rel="noopener noreferrer" className="desktop:hover:cursor-pointer w-fit">
+          <video
+            src={currentUrl}
+            preload="metadata"
+            className="w-[200px] h-[120px] object-cover pointer-events-none"
+          />
+        </Link>
       )}
     </div>
   );

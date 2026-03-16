@@ -52,7 +52,7 @@ async function seedFacilities() {
       whatWeOffer: rawData.whatWeOffer,
       about: rawData.about,
       ...(rawData.meetTheTeam && { meetTheTeam: rawData.meetTheTeam }),
-      images: rawData.images,
+      media: rawData.media,
       ...(rawData.video && { video: rawData.video }),
       order: mapping.order,
       isActive: true,

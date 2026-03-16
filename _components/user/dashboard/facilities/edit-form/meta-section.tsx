@@ -1,6 +1,6 @@
 "use client";
 
-import ImageUploader from "@/_components/user/dashboard/image-uploader";
+import MediaUploader from "@/_components/user/dashboard/media-uploader";
 import ImageList from "@/_components/user/dashboard/image-list";
 import { deleteImage } from "@/_actions/delete-image-action";
 
@@ -53,7 +53,7 @@ export default function MetaSection({
                 setMetaImages((prev) => prev.filter((img) => img !== url));
               }}
             />
-            <ImageUploader
+            <MediaUploader
               storagePath={`facilities/${facilitySlug}/meta`}
               onUploaded={(url) => setMetaImages((prev) => [...prev, url])}
             />

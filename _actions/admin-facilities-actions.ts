@@ -87,14 +87,25 @@ export async function createFacility(
       meetTheTeam: JSON.parse(
         (formData.get("meetTheTeam") as string) || "[]"
       ),
-      images: {
+      media: {
         heroSlider: JSON.parse(
           (formData.get("heroSlider") as string) || "[]"
         ),
         gallerySlider: JSON.parse(
           (formData.get("gallerySlider") as string) || "[]"
         ),
+        heroDisplayMode: (formData.get("heroDisplayMode") as "slider" | "video") || undefined,
       },
+      video: (() => {
+        const desktopMp4 = (formData.get("heroDesktopMp4") as string) || "";
+        const desktopWebm = (formData.get("heroDesktopWebm") as string) || "";
+        const mobileMp4 = (formData.get("heroMobileMp4") as string) || "";
+        const mobileWebm = (formData.get("heroMobileWebm") as string) || "";
+        const poster = (formData.get("heroPoster") as string) || "";
+        return desktopMp4 || desktopWebm || mobileMp4 || mobileWebm || poster
+          ? { desktopMp4, desktopWebm, mobileMp4, mobileWebm, poster }
+          : undefined;
+      })(),
       order: parseInt(formData.get("order") as string) || 0,
       isActive: true,
       timestamp: Date.now(),
@@ -172,14 +183,25 @@ export async function updateFacility(
       meetTheTeam: JSON.parse(
         (formData.get("meetTheTeam") as string) || "[]"
       ),
-      images: {
+      media: {
         heroSlider: JSON.parse(
           (formData.get("heroSlider") as string) || "[]"
         ),
         gallerySlider: JSON.parse(
           (formData.get("gallerySlider") as string) || "[]"
         ),
+        heroDisplayMode: (formData.get("heroDisplayMode") as "slider" | "video") || undefined,
       },
+      video: (() => {
+        const desktopMp4 = (formData.get("heroDesktopMp4") as string) || "";
+        const desktopWebm = (formData.get("heroDesktopWebm") as string) || "";
+        const mobileMp4 = (formData.get("heroMobileMp4") as string) || "";
+        const mobileWebm = (formData.get("heroMobileWebm") as string) || "";
+        const poster = (formData.get("heroPoster") as string) || "";
+        return desktopMp4 || desktopWebm || mobileMp4 || mobileWebm || poster
+          ? { desktopMp4, desktopWebm, mobileMp4, mobileWebm, poster }
+          : undefined;
+      })(),
       order: parseInt(formData.get("order") as string) || 0,
       isActive: formData.get("isActive") === "true",
       timestamp: Date.now(),

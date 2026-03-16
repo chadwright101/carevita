@@ -64,7 +64,7 @@ export async function getFacilityNavigation(): Promise<FacilityNavigation[]> {
       description: data.general.description,
       homeUrl: data.general.homeUrl,
       region: data.general.region,
-      featuredImage: data.images.heroSlider[0],
+      featuredImage: (data.media ?? (data as any).images)?.heroSlider?.[0],
       contactImage: data.general.contactImage,
       hasStaff: Array.isArray(data.meetTheTeam) && data.meetTheTeam.length > 2,
       order: data.order,

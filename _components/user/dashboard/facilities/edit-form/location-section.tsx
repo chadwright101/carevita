@@ -1,6 +1,6 @@
 "use client";
 
-import ImageUploader from "@/_components/user/dashboard/image-uploader";
+import MediaUploader from "@/_components/user/dashboard/media-uploader";
 import MapCoordinatesTooltip from "@/_lib/utils/map-coordinates-tooltip";
 import RichTextEditor from "@/_components/ui/forms/rich-text-editor";
 
@@ -54,7 +54,7 @@ export default function LocationSection({
 
           <div className="flex flex-col gap-1">
             <span className="font-semibold">Image</span>
-            <ImageUploader
+            <MediaUploader
               storagePath={`facilities/${facilitySlug}/contact`}
               onUploaded={setContactImage}
               currentUrl={contactImage}

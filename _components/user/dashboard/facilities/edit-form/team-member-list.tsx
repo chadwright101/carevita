@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import classNames from "classnames";
-import ImageUploader from "@/_components/user/dashboard/image-uploader";
+import MediaUploader from "@/_components/user/dashboard/media-uploader";
 import ReorderButtons from "@/_components/user/dashboard/reorder-buttons";
 import { TeamMember } from "@/_types/facility-types";
 import { X } from "lucide-react";
@@ -116,7 +116,7 @@ export default function TeamMemberList({
           </div>
           <div className="flex flex-col gap-3">
             <span className="font-semibold">Image</span>
-            <ImageUploader
+            <MediaUploader
               storagePath={`facilities/${facilitySlug}/team`}
               onUploaded={(url) =>
                 setTeamMembers((prev) =>

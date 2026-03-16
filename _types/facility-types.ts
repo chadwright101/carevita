@@ -39,9 +39,10 @@ export interface TeamMember {
   teamMember: string;
 }
 
-export interface FacilityImages {
+export interface FacilityMedia {
   heroSlider: string[];
   gallerySlider: string[];
+  heroDisplayMode?: "slider" | "video";
 }
 
 export interface FacilityVideo {
@@ -57,7 +58,7 @@ export interface Facility {
   whatWeOffer: FacilityWhatWeOffer;
   about: FacilityAbout;
   meetTheTeam?: TeamMember[];
-  images: FacilityImages;
+  media: FacilityMedia;
   video?: FacilityVideo;
   order: number;
   isActive: boolean;

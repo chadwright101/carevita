@@ -21,8 +21,8 @@ const initialState = { success: false, error: "" };
 export default function FacilityEditForm({ facility }: Props) {
   const [state, formAction] = useActionState(updateFacility, initialState);
 
-  const { general, whatWeOffer, about, meetTheTeam, images, order, isActive } =
-    facility;
+  const { general, whatWeOffer, about, meetTheTeam, order, isActive } = facility;
+  const media = facility.media ?? (facility as any).images;
 
   const [title, setTitle] = useState(general.title ?? "");
   const [extendedTitle, setExtendedTitle] = useState(general.extendedTitle ?? "");
@@ -38,10 +38,16 @@ export default function FacilityEditForm({ facility }: Props) {
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>(
     meetTheTeam ?? []
   );
-  const [heroSliderState, setHeroSliderState] = useState(images.heroSlider);
+  const [heroSliderState, setHeroSliderState] = useState(media.heroSlider);
   const [gallerySliderState, setGallerySliderState] = useState(
-    images.gallerySlider
+    media.gallerySlider
   );
+  const [heroDisplayMode, setHeroDisplayMode] = useState<"slider" | "video">(media.heroDisplayMode ?? "slider");
+  const [heroDesktopMp4, setHeroDesktopMp4] = useState(facility.video?.desktopMp4 ?? "");
+  const [heroDesktopWebm, setHeroDesktopWebm] = useState(facility.video?.desktopWebm ?? "");
+  const [heroMobileMp4, setHeroMobileMp4] = useState(facility.video?.mobileMp4 ?? "");
+  const [heroMobileWebm, setHeroMobileWebm] = useState(facility.video?.mobileWebm ?? "");
+  const [heroPoster, setHeroPoster] = useState(facility.video?.poster ?? "");
   const [metaImages, setMetaImages] = useState(general.meta.images);
   const [mapLat, setMapLat] = useState(String(general.map.lat));
   const [mapLng, setMapLng] = useState(String(general.map.lng));
@@ -106,6 +112,18 @@ export default function FacilityEditForm({ facility }: Props) {
         setHeroSliderState={setHeroSliderState}
         gallerySliderState={gallerySliderState}
         setGallerySliderState={setGallerySliderState}
+        heroDisplayMode={heroDisplayMode}
+        setHeroDisplayMode={setHeroDisplayMode}
+        heroDesktopMp4={heroDesktopMp4}
+        setHeroDesktopMp4={setHeroDesktopMp4}
+        heroDesktopWebm={heroDesktopWebm}
+        setHeroDesktopWebm={setHeroDesktopWebm}
+        heroMobileMp4={heroMobileMp4}
+        setHeroMobileMp4={setHeroMobileMp4}
+        heroMobileWebm={heroMobileWebm}
+        setHeroMobileWebm={setHeroMobileWebm}
+        heroPoster={heroPoster}
+        setHeroPoster={setHeroPoster}
         activeSection={activeSection}
         toggleSection={toggleSection}
       />

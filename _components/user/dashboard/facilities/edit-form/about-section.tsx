@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import ImageUploader from "@/_components/user/dashboard/image-uploader";
+import MediaUploader from "@/_components/user/dashboard/media-uploader";
 import RichTextEditor from "@/_components/ui/forms/rich-text-editor";
 
 interface Props {
@@ -40,12 +40,11 @@ export default function AboutSection({
             <RichTextEditor
               value={content}
               onChange={setContent}
-              toolbarButtons={["bold", "italic", "bulletList", "orderedList"]}
             />
           </div>
           <div className="flex flex-col gap-5">
             <span className="font-semibold">Image</span>
-            <ImageUploader
+            <MediaUploader
               storagePath={`facilities/${facilitySlug}/about`}
               onUploaded={setAboutImage}
               currentUrl={aboutImage}

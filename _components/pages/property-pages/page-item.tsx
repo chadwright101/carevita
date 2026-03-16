@@ -7,16 +7,9 @@ import GeneralSlider from "../../sliders/general-slider";
 import PageWrapper from "@/_lib/page-wrapper";
 import VideoHeroComponent from "@/_lib/utils/video-hero-component";
 
-const PageItem = ({
-  data: {
-    general,
-    about,
-    whatWeOffer,
-    meetTheTeam,
-    images: { heroSlider, gallerySlider },
-    video,
-  },
-}: DataProps) => {
+const PageItem = ({ data }: DataProps) => {
+  const { general, about, whatWeOffer, meetTheTeam, media, video } = data;
+  const { heroSlider, gallerySlider, heroDisplayMode } = media ?? (data as any).images;
   const displayTitle = general.extendedTitle || general.title;
   return (
     <div className="mt-10 desktop:max-w-[1280px] desktop:mx-auto">
@@ -31,21 +24,29 @@ const PageItem = ({
           {general.extendedLocation}
         </h3>
       </PageWrapper>
-      {heroSlider.length > 0 ? (
+      {heroDisplayMode === "video" && video ? (
+        <VideoHeroComponent
+          desktopMp4={video.desktopMp4}
+          mobileMp4={video.mobileMp4}
+          desktopWebm={video.desktopWebm}
+          mobileWebm={video.mobileWebm}
+          poster={video.poster}
+        />
+      ) : heroSlider.length > 0 ? (
         <GeneralSlider
           imageList={heroSlider}
           homeName={displayTitle}
           variant="hero"
         />
-      ) : (
+      ) : video ? (
         <VideoHeroComponent
-          desktopMp4={video!.desktopMp4}
-          mobileMp4={video!.mobileMp4}
-          desktopWebm={video!.desktopWebm}
-          mobileWebm={video!.mobileWebm}
-          poster={video!.poster}
+          desktopMp4={video.desktopMp4}
+          mobileMp4={video.mobileMp4}
+          desktopWebm={video.desktopWebm}
+          mobileWebm={video.mobileWebm}
+          poster={video.poster}
         />
-      )}
+      ) : null}
       <PageWrapper>
         <main>
           <div className="flex flex-col gap-16 mt-10">
