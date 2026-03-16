@@ -61,7 +61,7 @@ export async function getFacilityNavigation(): Promise<FacilityNavigation[]> {
       extendedTitle: data.general.extendedTitle,
       location: data.general.location,
       extendedLocation: data.general.extendedLocation,
-      description: data.general.description,
+      description: data.general.ourHomesDescription || data.general.description,
       homeUrl: data.general.homeUrl,
       region: data.general.region,
       featuredImage: (data.media ?? (data as any).images)?.heroSlider?.[0],

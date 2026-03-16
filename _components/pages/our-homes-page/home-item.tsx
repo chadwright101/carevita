@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import classNames from "classnames";
+import DOMPurify from "isomorphic-dompurify";
 import ButtonLink from "../../ui/button-link";
 import Heading, { headingVariant } from "../../ui/heading";
 import { FacilityNavigation } from "@/_types/facility-types";
@@ -52,7 +53,7 @@ const HomeItem = ({
             sizes="(max-width: 425px) 90vw, (max-width: 900px) 80vw, 40vw"
           />
         </Link>
-        <p>{description}</p>
+        <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(description) }} />
       </div>
       <ButtonLink href={homeUrl} backgroundColor="green" />
     </article>

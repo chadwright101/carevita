@@ -59,6 +59,7 @@ export async function createFacility(
         homeUrl: `/our-homes/${slug}`,
         slug,
         description: formData.get("description") as string,
+        ourHomesDescription: (formData.get("ourHomesDescription") as string) || "",
         contactImage: formData.get("contactImage") as string,
         map: {
           lat: parseFloat(formData.get("mapLat") as string),
@@ -155,6 +156,7 @@ export async function updateFacility(
         homeUrl: `/our-homes/${slug}`,
         slug,
         description: formData.get("description") as string,
+        ourHomesDescription: (formData.get("ourHomesDescription") as string) || "",
         contactImage: formData.get("contactImage") as string,
         map: {
           lat: parseFloat(formData.get("mapLat") as string),

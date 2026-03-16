@@ -6,6 +6,7 @@ import MediaUploader from "@/_components/user/dashboard/media-uploader";
 import ReorderButtons from "@/_components/user/dashboard/reorder-buttons";
 import { TeamMember } from "@/_types/facility-types";
 import { X } from "lucide-react";
+import ButtonType from "@/_components/ui/button-type";
 
 interface Props {
   facilitySlug: string;
@@ -129,18 +130,18 @@ export default function TeamMemberList({
           </div>
         </div>
       ))}
-      <button
-        type="button"
+      <ButtonType
+        backgroundColor="blue"
+        cssClasses="mr-auto self-center"
         onClick={() =>
           setTeamMembers((prev) => [
             ...prev,
             { position: "", url: "", teamMember: "" },
           ])
         }
-        className="desktop:hover:cursor-pointer self-start"
       >
         Add Team Member
-      </button>
+      </ButtonType>
     </div>
   );
 }

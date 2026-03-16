@@ -9,6 +9,7 @@ export interface FacilityGeneral {
   homeUrl: string;
   slug: string;
   description: string;
+  ourHomesDescription?: string;
   contactImage: string;
   map: {
     lat: number;

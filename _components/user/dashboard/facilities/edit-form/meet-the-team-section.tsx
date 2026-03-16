@@ -25,7 +25,7 @@ export default function MeetTheTeamSection({
         onClick={() => toggleSection("meetTheTeam")}
         className="w-full flex justify-between items-center p-4 desktop:hover:cursor-pointer"
       >
-        <span className="text-subheading">Meet the Team (optional)</span>
+        <span className="text-subheading">Meet the Team</span>
         <span>{activeSection === "meetTheTeam" ? "−" : "+"}</span>
       </button>
       {activeSection === "meetTheTeam" && (

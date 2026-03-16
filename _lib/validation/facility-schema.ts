@@ -11,6 +11,7 @@ export const facilityGeneralSchema = z.object({
   homeUrl: z.string().min(1),
   slug: z.string().min(1),
   description: z.string().min(1),
+  ourHomesDescription: z.string().optional(),
   contactImage: z.string().min(1),
   map: z.object({
     lat: z.number(),

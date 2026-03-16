@@ -11,6 +11,7 @@ import MeetTheTeamSection from "./edit-form/meet-the-team-section";
 import ImagesSection from "./edit-form/images-section";
 import LocationSection from "./edit-form/location-section";
 import MetaSection from "./edit-form/meta-section";
+import OurHomesPageSection from "./edit-form/our-homes-page-section";
 
 interface Props {
   facility: Facility;
@@ -49,6 +50,7 @@ export default function FacilityEditForm({ facility }: Props) {
   const [heroMobileWebm, setHeroMobileWebm] = useState(facility.video?.mobileWebm ?? "");
   const [heroPoster, setHeroPoster] = useState(facility.video?.poster ?? "");
   const [metaImages, setMetaImages] = useState(general.meta.images);
+  const [ourHomesDescription, setOurHomesDescription] = useState(general.ourHomesDescription ?? "");
   const [mapLat, setMapLat] = useState(String(general.map.lat));
   const [mapLng, setMapLng] = useState(String(general.map.lng));
   const [activeSection, setActiveSection] = useState("general");
@@ -138,6 +140,13 @@ export default function FacilityEditForm({ facility }: Props) {
         setMapLat={setMapLat}
         mapLng={mapLng}
         setMapLng={setMapLng}
+        activeSection={activeSection}
+        toggleSection={toggleSection}
+      />
+
+      <OurHomesPageSection
+        ourHomesDescription={ourHomesDescription}
+        setOurHomesDescription={setOurHomesDescription}
         activeSection={activeSection}
         toggleSection={toggleSection}
       />
