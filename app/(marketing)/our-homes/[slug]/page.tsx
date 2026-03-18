@@ -37,11 +37,11 @@ export async function generateMetadata({
 
   return {
     metadataBase: new URL("https://www.carevita.com"),
-    title: `${general.title} - CareVita`,
-    description: location.description || general.extendedTitle,
+    title: `${general.facilityName} - CareVita`,
+    description: location.description || general.facilityExtendedName,
     keywords: meta.keywords,
     openGraph: {
-      description: location.description || general.extendedTitle,
+      description: location.description || general.facilityExtendedName,
       type: "website",
       locale: "en_ZA",
       siteName: "CareVita",
@@ -64,7 +64,7 @@ export default async function PropertyPage({
     return null;
   }
 
-  const { general: { title }, location: { map, contactImage } } = facility;
+  const { general: { facilityName }, location: { map, locationImage } } = facility;
 
   return (
     <>
@@ -72,8 +72,8 @@ export default async function PropertyPage({
       <PageWrapper>
         <div className="tablet:grid grid-cols-2 gap-10 mt-10">
           <Image
-            src={contactImage}
-            alt={title}
+            src={locationImage}
+            alt={facilityName}
             width={700}
             height={400}
             className="object-cover w-full hidden h-[500px] tablet:block"
@@ -97,7 +97,7 @@ export default async function PropertyPage({
             variant={headingVariant.sectionHeading}
             cssClasses="text-white"
           >
-            <span className="font-thin text-white">Contact</span> {title}
+            <span className="font-thin text-white">Contact</span> {facilityName}
           </Heading>
           <PropertyPagesContactForm data={facility} />
         </div>

@@ -87,7 +87,7 @@ export default function LocationSection({
         </div>
       )}
       <input type="hidden" name="description" value={description} />
-      <input type="hidden" name="contactImage" value={contactImage} />
+      <input type="hidden" name="locationImage" value={contactImage} />
       <input type="hidden" name="mapLat" value={mapLat} />
       <input type="hidden" name="mapLng" value={mapLng} />
     </div>

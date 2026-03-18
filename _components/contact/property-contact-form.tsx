@@ -39,7 +39,7 @@ const PropertyContactForm = ({ property }: PropertyContactFormProps) => {
             <input
               type="text"
               name="property"
-              value={property.extendedTitle}
+              value={property.facilityExtendedName}
               readOnly
               className="hidden"
             />
@@ -119,7 +119,9 @@ const PropertyContactForm = ({ property }: PropertyContactFormProps) => {
               />
             </div>
             <div className="mt-5 flex flex-col items-start gap-4">
-              <ButtonType backgroundColor="green" iconArrow>Submit</ButtonType>
+              <ButtonType backgroundColor="green" iconArrow>
+                Submit
+              </ButtonType>
               <RecaptchaNotice cssClasses="text-white" />
             </div>
             {state.error && <p className="text-white italic">{state.error}</p>}
@@ -132,8 +134,8 @@ const PropertyContactForm = ({ property }: PropertyContactFormProps) => {
       </div>
       <div className="overflow-hidden">
         <Image
-          src={property.contactImage}
-          alt={property.extendedTitle}
+          src={property.locationImage}
+          alt={property.facilityExtendedName}
           width={505}
           height={680}
           className="object-cover aspect-video w-full h-full"

@@ -6,7 +6,17 @@ import classNames from "classnames";
 import HomeItem from "@/_components/pages/our-homes-page/home-item";
 import { FacilityNavigation } from "@/_types/facility-types";
 
-type Region = "all" | "EC" | "FS" | "GP" | "KZN" | "LP" | "MP" | "NC" | "NW" | "WC";
+type Region =
+  | "all"
+  | "EC"
+  | "FS"
+  | "GP"
+  | "KZN"
+  | "LP"
+  | "MP"
+  | "NC"
+  | "NW"
+  | "WC";
 
 const allRegions = [
   { id: "EC" as Region, label: "Eastern Cape" },
@@ -28,13 +38,13 @@ const RegionFilter = ({ facilities }: Props) => {
   const [activeRegion, setActiveRegion] = useState<Region>("all");
 
   const availableRegions = allRegions.filter((region) =>
-    facilities.some((f) => f.region === region.id)
+    facilities.some((f) => f.province === region.id),
   );
 
   const filtered =
     activeRegion === "all"
       ? facilities
-      : facilities.filter((f) => f.region === activeRegion);
+      : facilities.filter((f) => f.province === activeRegion);
 
   return (
     <>
@@ -70,10 +80,7 @@ const RegionFilter = ({ facilities }: Props) => {
       <main className="grid gap-y-12 gap-x-10 tablet:gap-y-24 tablet:gap-x-10 tablet:grid-cols-2">
         {filtered.map((facility) => (
           <div key={facility.slug} className="grid gap-16">
-            <HomeItem
-              data={facility}
-              featuredImage={facility.featuredImage}
-            />
+            <HomeItem data={facility} featuredImage={facility.featuredImage} />
             <hr className="text-black/25 tablet:hidden" />
           </div>
         ))}

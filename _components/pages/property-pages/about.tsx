@@ -5,22 +5,22 @@ import Heading, { headingVariant } from "../../ui/heading";
 
 interface Props {
   general: {
-    title: string;
+    facilityName: string;
   };
   about: {
-    paragraphs: string | string[];
+    content: string | string[];
     image: string;
   };
   whatWeOffer: {
-    list: string;
+    offerings: string;
     image: string;
   };
 }
 
 const About = ({
-  general: { title },
-  about: { paragraphs, image: aboutImage },
-  whatWeOffer: { list, image },
+  general: { facilityName },
+  about: { content, image: aboutImage },
+  whatWeOffer: { offerings, image },
 }: Props) => {
   return (
     <div className="grid gap-16 tablet:grid-cols-2 tablet:gap-10">
@@ -33,9 +33,9 @@ const About = ({
         </Heading>
         <div className="flex flex-col gap-10">
           {(() => {
-            const html = Array.isArray(paragraphs)
-              ? paragraphs.map((p) => `<p>${p}</p>`).join("")
-              : paragraphs;
+            const html = Array.isArray(content)
+              ? content.map((p) => `<p>${p}</p>`).join("")
+              : content;
             return (
               <article
                 className="[&_p]:mb-4 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-4 [&_li]:mb-1 [&_ol]:list-decimal [&_ol]:ml-6 [&_ol]:mb-4"
@@ -45,7 +45,7 @@ const About = ({
           })()}
           <Image
             src={aboutImage}
-            alt={`${title}`}
+            alt={`${facilityName}`}
             width={800}
             height={600}
             className="object-cover aspect-video tablet:hidden"
@@ -61,11 +61,11 @@ const About = ({
         <div className="grid gap-10">
           <article
             className="desktop:columns-2 [&_p]:mb-4 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-4 [&_li]:mb-1 [&_li]:break-inside-avoid [&_ul]:break-inside-avoid [&_ol]:list-decimal [&_ol]:ml-6 [&_ol]:mb-4"
-            dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(list) }}
+            dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(offerings) }}
           />
           <Image
             src={image}
-            alt={`${title} - What we offer`}
+            alt={`${facilityName} - What we offer`}
             width={800}
             height={600}
             className="object-cover aspect-video tablet:hidden"
@@ -74,14 +74,14 @@ const About = ({
       </div>
       <Image
         src={aboutImage}
-        alt={`${title}`}
+        alt={`${facilityName}`}
         width={650}
         height={450}
         className="hidden object-cover aspect-video tablet:block"
       />
       <Image
         src={image}
-        alt={`${title} - What we offer`}
+        alt={`${facilityName} - What we offer`}
         width={650}
         height={450}
         className="hidden object-cover aspect-video tablet:block"

@@ -15,7 +15,7 @@ export default async function EditFacilityPage({
   return (
     <main className="flex mt-15 flex-col gap-6">
       <Link href="/dashboard">← Back to Dashboard</Link>
-      <h1>Edit {facility.general.title}</h1>
+      <h1>Edit {facility.general.facilityName}</h1>
       <FacilityEditForm facility={facility} />
     </main>
   );

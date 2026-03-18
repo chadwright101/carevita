@@ -36,7 +36,7 @@ export default function FacilityListItem({
       <div className="flex flex-col items-start gap-3 relative">
         <p>
           <span className="mr-1">{index + 1}.</span>
-          {facility.general.title}
+          {facility.general.facilityName}
         </p>
         <div className="flex flex-col gap-5 tablet:gap-2">
           {!deleteState.error && (

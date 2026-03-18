@@ -37,7 +37,7 @@ const MobilePropertyContactForm = ({
     <div className="flex flex-col gap-6">
       <div className="flex flex-col">
         <h4 className="text-white text-center font-light tablet:text-left">
-          {property.extendedTitle}
+          {property.facilityExtendedName}
         </h4>
         <p className="text-white text-center tablet:text-left">
           {property.extendedLocation}
@@ -49,7 +49,7 @@ const MobilePropertyContactForm = ({
           <input
             type="text"
             name="property"
-            defaultValue={property.extendedTitle}
+            defaultValue={property.facilityExtendedName}
             className="hidden"
           />
           <input

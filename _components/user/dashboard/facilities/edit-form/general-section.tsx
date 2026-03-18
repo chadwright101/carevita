@@ -5,9 +5,9 @@ interface Props {
   setExtendedTitle: (v: string) => void;
   city: string;
   setCity: (v: string) => void;
-  region: "EC" | "FS" | "GP" | "KZN" | "LP" | "MP" | "NC" | "NW" | "WC";
+  region: "" | "EC" | "FS" | "GP" | "KZN" | "LP" | "MP" | "NC" | "NW" | "WC";
   setRegion: (
-    v: "EC" | "FS" | "GP" | "KZN" | "LP" | "MP" | "NC" | "NW" | "WC",
+    v: "" | "EC" | "FS" | "GP" | "KZN" | "LP" | "MP" | "NC" | "NW" | "WC",
   ) => void;
   email: string;
   setEmail: (v: string) => void;
@@ -76,6 +76,7 @@ export default function GeneralSection({
               onChange={(e) =>
                 setRegion(
                   e.target.value as
+                    | ""
                     | "EC"
                     | "FS"
                     | "GP"
@@ -89,6 +90,7 @@ export default function GeneralSection({
               }
               className="border border-black rounded p-2 desktop:hover:cursor-pointer"
             >
+              <option value="" disabled>Select Province</option>
               <option value="EC">Eastern Cape</option>
               <option value="FS">Free State</option>
               <option value="GP">Gauteng</option>
@@ -118,8 +120,8 @@ export default function GeneralSection({
           </label>
         </div>
       )}
-      <input type="hidden" name="title" value={title} />
-      <input type="hidden" name="extendedTitle" value={extendedTitle} />
+      <input type="hidden" name="facilityName" value={title} />
+      <input type="hidden" name="facilityExtendedName" value={extendedTitle} />
       <input type="hidden" name="city" value={city} />
       <input type="hidden" name="region" value={region} />
       <input type="hidden" name="facilityEmail" value={email} />

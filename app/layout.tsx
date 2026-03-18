@@ -13,7 +13,7 @@ import Header from "@/_components/navigation/header";
 import Footer from "@/_components/navigation/footer";
 import RecaptchaProvider from "@/_components/providers/recaptcha-provider";
 import { getFacilityNavigation } from "@/_actions/facilities-actions";
-import { getCurrentUser } from "@/_actions/auth-actions";
+import { getSessionUserId } from "@/_lib/auth-utils";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.carevita.com"),
@@ -47,16 +47,16 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [facilities, user] = await Promise.all([
+  const [facilities, userId] = await Promise.all([
     getFacilityNavigation(),
-    getCurrentUser(),
+    getSessionUserId(),
   ]);
 
   return (
     <html lang="en">
       <body className={classNames(ralewaySansSerif.className, "antialiased")}>
         <RecaptchaProvider>
-          <Header facilities={facilities} isLoggedIn={!!user} />
+          <Header facilities={facilities} isLoggedIn={!!userId} />
           {children}
           <Footer />
         </RecaptchaProvider>

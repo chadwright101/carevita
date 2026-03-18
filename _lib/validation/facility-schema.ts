@@ -1,20 +1,19 @@
 import { z } from "zod";
 
 export const facilityGeneralSchema = z.object({
-  title: z.string().min(1),
-  extendedTitle: z.string().optional(),
-  location: z.string().min(1),
+  facilityName: z.string().min(1),
+  facilityExtendedName: z.string().optional(),
+  cityTown: z.string().min(1),
   extendedLocation: z.string().min(1),
-  region: z.enum(["WC", "GP", "EC", "KZN", "LP", "MP", "NW", "FS", "NC"]),
-  email: z.string().email(),
-  phone: z.string().min(1),
-  homeUrl: z.string().min(1),
+  province: z.enum(["WC", "GP", "EC", "KZN", "LP", "MP", "NW", "FS", "NC"]),
+  facilityEmail: z.string().email(),
+  facilityPhone: z.string().min(1),
   slug: z.string().min(1),
 });
 
 export const facilityLocationSchema = z.object({
   description: z.string().min(1),
-  contactImage: z.string().min(1),
+  locationImage: z.string().min(1),
   map: z.object({
     lat: z.number(),
     lng: z.number(),
@@ -32,14 +31,14 @@ export const facilityOurHomesPageSchema = z.object({
 });
 
 export const whatWeOfferSchema = z.object({
-  list: z.string(),
+  offerings: z.string(),
   image: z.string().min(1),
   pampering: z.array(z.string()).optional(),
   weeklyActivities: z.array(z.string()).optional(),
 });
 
 export const aboutSchema = z.object({
-  paragraphs: z.string(),
+  content: z.string(),
   image: z.string().min(1),
 });
 

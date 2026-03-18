@@ -1,18 +1,17 @@
 export interface DataProps {
   data: {
     general: {
-      title: string;
-      extendedTitle?: string;
-      location: string;
+      facilityName: string;
+      facilityExtendedName?: string;
+      cityTown: string;
       extendedLocation?: string;
-      email: string;
-      phone: string;
-      homeUrl: string;
+      facilityEmail: string;
+      facilityPhone: string;
       slug: string;
     };
     location: {
       description: string;
-      contactImage: string;
+      locationImage: string;
       map: {
         lat: number;
         lng: number;
@@ -20,13 +19,13 @@ export interface DataProps {
       };
     };
     whatWeOffer: {
-      list: string;
+      offerings: string;
       image: string;
       pampering?: Array<string>;
       weeklyActivities?: Array<string>;
     };
     about: {
-      paragraphs: Array<string> | string;
+      content: Array<string> | string;
       image: string;
     };
     meetTheTeam?: Array<{

@@ -44,9 +44,9 @@ const DesktopHeader = ({
   );
 
   const homeSubmenu = facilities.map((f) => ({
-    title: f.title,
-    location: f.location,
-    url: f.homeUrl,
+    title: f.facilityName,
+    location: f.cityTown,
+    url: `/our-homes/${f.slug}`,
   }));
 
   const dashboardItem = { title: "Dashboard", url: "/dashboard" };
@@ -57,15 +57,15 @@ const DesktopHeader = ({
     ? [
         ...(isLoggedIn ? [dashboardItem, signOutItem] : []),
         { title: "Home", url: "/" },
-        { title: "About", url: `${currentFacility.homeUrl}#about` },
+        { title: "About", url: `${`/our-homes/${currentFacility.slug}`}#about` },
         ...(currentFacility.hasStaff
-          ? [{ title: "Staff", url: `${currentFacility.homeUrl}#staff` }]
+          ? [{ title: "Staff", url: `${`/our-homes/${currentFacility.slug}`}#staff` }]
           : []),
-        { title: "Gallery", url: `${currentFacility.homeUrl}#gallery` },
-        { title: "Location", url: `${currentFacility.homeUrl}#location` },
+        { title: "Gallery", url: `${`/our-homes/${currentFacility.slug}`}#gallery` },
+        { title: "Location", url: `${`/our-homes/${currentFacility.slug}`}#location` },
         { title: "Our Homes", url: "/our-homes" },
         { title: "Blog", url: "/blog" },
-        { title: "Contact", url: `${currentFacility.homeUrl}#contact` },
+        { title: "Contact", url: `${`/our-homes/${currentFacility.slug}`}#contact` },
       ]
     : [
         ...(isLoggedIn ? [dashboardItem, signOutItem] : []),

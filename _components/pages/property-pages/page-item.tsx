@@ -10,7 +10,7 @@ import VideoHeroComponent from "@/_lib/utils/video-hero-component";
 const PageItem = ({ data }: DataProps) => {
   const { general, location, about, whatWeOffer, meetTheTeam, media } = data;
   const { heroSlider, gallerySlider, heroDisplayMode, video } = media ?? (data as any).images;
-  const displayTitle = general.extendedTitle || general.title;
+  const displayTitle = general.facilityExtendedName || general.facilityName;
   return (
     <div className="mt-10 desktop:max-w-[1280px] desktop:mx-auto">
       <PageWrapper>

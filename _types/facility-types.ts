@@ -1,18 +1,17 @@
 export interface FacilityGeneral {
-  title: string;
-  extendedTitle?: string;
-  location: string;
+  facilityName: string;
+  facilityExtendedName?: string;
+  cityTown: string;
   extendedLocation: string;
-  region: "EC" | "FS" | "GP" | "KZN" | "LP" | "MP" | "NC" | "NW" | "WC";
-  email: string;
-  phone: string;
-  homeUrl: string;
+  province: "EC" | "FS" | "GP" | "KZN" | "LP" | "MP" | "NC" | "NW" | "WC";
+  facilityEmail: string;
+  facilityPhone: string;
   slug: string;
 }
 
 export interface FacilityLocation {
   description: string;
-  contactImage: string;
+  locationImage: string;
   map: {
     lat: number;
     lng: number;
@@ -30,14 +29,14 @@ export interface FacilityOurHomesPage {
 }
 
 export interface FacilityWhatWeOffer {
-  list: string;
+  offerings: string;
   image: string;
   pampering?: string[];
   weeklyActivities?: string[];
 }
 
 export interface FacilityAbout {
-  paragraphs: string;
+  content: string;
   image: string;
 }
 
@@ -76,16 +75,15 @@ export interface Facility {
 
 export interface FacilityNavigation {
   slug: string;
-  location: string;
-  homeUrl: string;
+  cityTown: string;
   hasStaff: boolean;
-  title: string;
-  extendedTitle: string;
+  facilityName: string;
+  facilityExtendedName: string;
   extendedLocation: string;
   description: string;
   featuredImage: string;
-  contactImage: string;
-  region: "WC" | "GP" | "EC" | "KZN" | "LP" | "MP" | "NW" | "FS" | "NC";
+  locationImage: string;
+  province: "WC" | "GP" | "EC" | "KZN" | "LP" | "MP" | "NW" | "FS" | "NC";
   order: number;
   isActive: boolean;
 }

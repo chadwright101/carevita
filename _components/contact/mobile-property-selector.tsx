@@ -24,8 +24,8 @@ const MobilePropertySelector = ({
               mobile
               onClick={() => onPropertySelect(facility.slug)}
               cssClasses="text-left"
-              extendedTitle={facility.title}
-              location={facility.location}
+              extendedTitle={facility.facilityName}
+              location={facility.cityTown}
             />
           );
         }

@@ -46,12 +46,12 @@ const MobileHeader = ({
         ...(isLoggedIn ? [dashboardItem, signOutItem] : []),
         { title: "Home", url: "/" },
         ...(currentFacility.hasStaff
-          ? [{ title: "Staff", url: `${currentFacility.homeUrl}#staff` }]
+          ? [{ title: "Staff", url: `${`/our-homes/${currentFacility.slug}`}#staff` }]
           : []),
-        { title: "Gallery", url: `${currentFacility.homeUrl}#gallery` },
+        { title: "Gallery", url: `${`/our-homes/${currentFacility.slug}`}#gallery` },
         { title: "Our Homes", url: "/our-homes" },
         { title: "Blog", url: "/blog" },
-        { title: "Contact", url: `${currentFacility.homeUrl}#contact` },
+        { title: "Contact", url: `${`/our-homes/${currentFacility.slug}`}#contact` },
       ]
     : [
         ...(isLoggedIn ? [dashboardItem, signOutItem] : []),

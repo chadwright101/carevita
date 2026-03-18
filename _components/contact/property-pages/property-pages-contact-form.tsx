@@ -14,7 +14,7 @@ interface Props {
   cssClasses?: string;
   data: {
     general: {
-      title: string;
+      facilityName: string;
       slug: string;
     };
   };
@@ -22,7 +22,7 @@ interface Props {
 
 const PropertyPagesContactForm = ({
   data: {
-    general: { title, slug },
+    general: { facilityName, slug },
   },
   cssClasses,
 }: Props) => {
@@ -54,7 +54,7 @@ const PropertyPagesContactForm = ({
           <>
             <p className="text-white">
               Please fill out the form below, and our staff from{" "}
-              <span className="font-light text-white">{title}</span> will be in
+              <span className="font-light text-white">{facilityName}</span> will be in
               touch with you ASAP...
             </p>
             <form
@@ -99,7 +99,7 @@ const PropertyPagesContactForm = ({
               <input
                 type="text"
                 name="property"
-                value={title}
+                value={facilityName}
                 readOnly
                 className="hidden"
               />

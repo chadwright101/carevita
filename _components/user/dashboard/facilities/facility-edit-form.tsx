@@ -26,16 +26,16 @@ export default function FacilityEditForm({ facility }: Props) {
     facility;
   const media = facility.media ?? (facility as any).images;
 
-  const [title, setTitle] = useState(general.title ?? "");
+  const [title, setTitle] = useState(general.facilityName ?? "");
   const [extendedTitle, setExtendedTitle] = useState(
-    general.extendedTitle ?? "",
+    general.facilityExtendedName ?? "",
   );
-  const [city, setCity] = useState(general.location.split(", ")[0] ?? "");
-  const [region, setRegion] = useState(general.region ?? "");
-  const [email, setEmail] = useState(general.email ?? "");
-  const [phone, setPhone] = useState(general.phone ?? "");
+  const [city, setCity] = useState(general.cityTown.split(", ")[0] ?? "");
+  const [region, setRegion] = useState<"" | "EC" | "FS" | "GP" | "KZN" | "LP" | "MP" | "NC" | "NW" | "WC">(general.province ?? "");
+  const [email, setEmail] = useState(general.facilityEmail ?? "");
+  const [phone, setPhone] = useState(general.facilityPhone ?? "");
   const [description, setDescription] = useState(location.description ?? "");
-  const [contactImage, setContactImage] = useState(location.contactImage ?? "");
+  const [contactImage, setContactImage] = useState(location.locationImage ?? "");
   const [metaKeywords, setMetaKeywords] = useState(meta.keywords ?? "");
   const [whatWeOfferImage, setWhatWeOfferImage] = useState(
     whatWeOffer.image ?? "",
@@ -105,7 +105,7 @@ export default function FacilityEditForm({ facility }: Props) {
 
       <AboutSection
         facilitySlug={general.slug}
-        aboutContent={about.paragraphs}
+        aboutContent={about.content}
         aboutImage={aboutImage}
         setAboutImage={setAboutImage}
         activeSection={activeSection}
@@ -114,7 +114,7 @@ export default function FacilityEditForm({ facility }: Props) {
 
       <WhatWeOfferSection
         facilitySlug={general.slug}
-        whatWeOfferList={whatWeOffer.list}
+        whatWeOfferList={whatWeOffer.offerings}
         whatWeOfferImage={whatWeOfferImage}
         setWhatWeOfferImage={setWhatWeOfferImage}
         activeSection={activeSection}

@@ -49,19 +49,18 @@ export async function createFacility(
 
     const facilityData: Facility = {
       general: {
-        title: formData.get("title") as string,
-        extendedTitle: (formData.get("extendedTitle") as string) || (formData.get("title") as string),
-        location: `${city}, ${region}`,
+        facilityName: formData.get("facilityName") as string,
+        facilityExtendedName: (formData.get("facilityExtendedName") as string) || (formData.get("facilityName") as string),
+        cityTown: `${city}, ${region}`,
         extendedLocation: `${city}, ${regionFullName[region]}`,
-        region: region as FacilityGeneral["region"],
-        email: formData.get("facilityEmail") as string,
-        phone: (() => { const p = formData.get("facilityPhone") as string; return p.startsWith("+270") ? "+27" + p.slice(4) : p; })(),
-        homeUrl: `/our-homes/${slug}`,
+        province: region as FacilityGeneral["province"],
+        facilityEmail: formData.get("facilityEmail") as string,
+        facilityPhone: (() => { const p = formData.get("facilityPhone") as string; return p.startsWith("+270") ? "+27" + p.slice(4) : p; })(),
         slug,
       },
       location: {
         description: formData.get("description") as string,
-        contactImage: formData.get("contactImage") as string,
+        locationImage: formData.get("locationImage") as string,
         map: {
           lat: parseFloat(formData.get("mapLat") as string),
           lng: parseFloat(formData.get("mapLng") as string),
@@ -76,7 +75,7 @@ export async function createFacility(
         description: (formData.get("ourHomesDescription") as string) || "",
       },
       whatWeOffer: {
-        list: (formData.get("whatWeOfferList") as string) ?? "",
+        offerings: (formData.get("whatWeOfferList") as string) ?? "",
         image: formData.get("whatWeOfferImage") as string,
         pampering: JSON.parse(
           (formData.get("pampering") as string) || "[]"
@@ -86,7 +85,7 @@ export async function createFacility(
         ),
       },
       about: {
-        paragraphs: (formData.get("aboutParagraphs") as string) ?? "",
+        content: (formData.get("aboutParagraphs") as string) ?? "",
         image: formData.get("aboutImage") as string,
       },
       meetTheTeam: JSON.parse(
@@ -150,19 +149,18 @@ export async function updateFacility(
 
     const facilityData: Facility = {
       general: {
-        title: formData.get("title") as string,
-        extendedTitle: (formData.get("extendedTitle") as string) || (formData.get("title") as string),
-        location: `${city}, ${region}`,
+        facilityName: formData.get("facilityName") as string,
+        facilityExtendedName: (formData.get("facilityExtendedName") as string) || (formData.get("facilityName") as string),
+        cityTown: `${city}, ${region}`,
         extendedLocation: `${city}, ${regionFullName[region]}`,
-        region: region as FacilityGeneral["region"],
-        email: formData.get("facilityEmail") as string,
-        phone: (() => { const p = formData.get("facilityPhone") as string; return p.startsWith("+270") ? "+27" + p.slice(4) : p; })(),
-        homeUrl: `/our-homes/${slug}`,
+        province: region as FacilityGeneral["province"],
+        facilityEmail: formData.get("facilityEmail") as string,
+        facilityPhone: (() => { const p = formData.get("facilityPhone") as string; return p.startsWith("+270") ? "+27" + p.slice(4) : p; })(),
         slug,
       },
       location: {
         description: formData.get("description") as string,
-        contactImage: formData.get("contactImage") as string,
+        locationImage: formData.get("locationImage") as string,
         map: {
           lat: parseFloat(formData.get("mapLat") as string),
           lng: parseFloat(formData.get("mapLng") as string),
@@ -177,7 +175,7 @@ export async function updateFacility(
         description: (formData.get("ourHomesDescription") as string) || "",
       },
       whatWeOffer: {
-        list: (formData.get("whatWeOfferList") as string) ?? "",
+        offerings: (formData.get("whatWeOfferList") as string) ?? "",
         image: formData.get("whatWeOfferImage") as string,
         pampering: JSON.parse(
           (formData.get("pampering") as string) || "[]"
@@ -187,7 +185,7 @@ export async function updateFacility(
         ),
       },
       about: {
-        paragraphs: (formData.get("aboutParagraphs") as string) ?? "",
+        content: (formData.get("aboutParagraphs") as string) ?? "",
         image: formData.get("aboutImage") as string,
       },
       meetTheTeam: JSON.parse(

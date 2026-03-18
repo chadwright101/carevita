@@ -22,8 +22,8 @@ const PropertySelector = ({
           <PropertySelectorButton
             key={facility.slug}
             onClick={() => onPropertySelect(facility.slug)}
-            extendedTitle={facility.title}
-            location={facility.location}
+            extendedTitle={facility.facilityName}
+            location={facility.cityTown}
             cssClasses={classNames(
               "text-left transition-transform duration-300 delay-75 desktop:hover:cursor-pointer",
               {

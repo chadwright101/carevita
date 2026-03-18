@@ -66,7 +66,7 @@ export async function sendEmail(
       if (propertySlug) {
         const db = getFirestoreDb();
         const doc = await db.collection("facilitiesContent").doc(propertySlug).get();
-        const facilityEmail = doc.data()?.general?.email;
+        const facilityEmail = doc.data()?.general?.facilityEmail;
         if (facilityEmail) recipientEmail = facilityEmail;
       }
 
