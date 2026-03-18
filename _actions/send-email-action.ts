@@ -65,7 +65,7 @@ export async function sendEmail(
       let recipientEmail = "info@carevita.co.za";
       if (propertySlug) {
         const db = getFirestoreDb();
-        const doc = await db.collection("facilities").doc(propertySlug).get();
+        const doc = await db.collection("facilitiesContent").doc(propertySlug).get();
         const facilityEmail = doc.data()?.general?.email;
         if (facilityEmail) recipientEmail = facilityEmail;
       }

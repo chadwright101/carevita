@@ -45,7 +45,7 @@ export const fetchFacilityEmail = async (slug: string, recaptchaToken?: string) 
     }
   }
   const db = getFirestoreDb();
-  const doc = await db.collection("facilities").doc(slug).get();
+  const doc = await db.collection("facilitiesContent").doc(slug).get();
   const data = serializeFirestoreData(doc.data() as Facility);
   return data?.general?.email ?? "";
 };
@@ -58,7 +58,7 @@ export const fetchFacilityPhone = async (slug: string, recaptchaToken?: string) 
     }
   }
   const db = getFirestoreDb();
-  const doc = await db.collection("facilities").doc(slug).get();
+  const doc = await db.collection("facilitiesContent").doc(slug).get();
   const data = serializeFirestoreData(doc.data() as Facility);
   return data?.general?.phone ?? "";
 };

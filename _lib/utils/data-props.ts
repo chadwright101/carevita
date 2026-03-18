@@ -8,17 +8,15 @@ export interface DataProps {
       email: string;
       phone: string;
       homeUrl: string;
-      description?: string;
       slug: string;
+    };
+    location: {
+      description: string;
       contactImage: string;
       map: {
         lat: number;
         lng: number;
         zoom: number;
-      };
-      meta: {
-        keywords: string;
-        images: string[];
       };
     };
     whatWeOffer: {
@@ -40,13 +38,13 @@ export interface DataProps {
       heroSlider: Array<string>;
       gallerySlider: Array<string>;
       heroDisplayMode?: "slider" | "video";
-    };
-    video?: {
-      desktopMp4: string;
-      mobileMp4: string;
-      desktopWebm: string;
-      mobileWebm: string;
-      poster: string;
+      video?: {
+        desktopMp4: string;
+        mobileMp4: string;
+        desktopWebm: string;
+        mobileWebm: string;
+        poster: string;
+      };
     };
   };
 }

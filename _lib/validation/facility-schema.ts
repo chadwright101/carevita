@@ -10,18 +10,25 @@ export const facilityGeneralSchema = z.object({
   phone: z.string().min(1),
   homeUrl: z.string().min(1),
   slug: z.string().min(1),
+});
+
+export const facilityLocationSchema = z.object({
   description: z.string().min(1),
-  ourHomesDescription: z.string().optional(),
   contactImage: z.string().min(1),
   map: z.object({
     lat: z.number(),
     lng: z.number(),
     zoom: z.number(),
   }),
-  meta: z.object({
-    keywords: z.string(),
-    images: z.array(z.string()),
-  }),
+});
+
+export const facilityMetaSchema = z.object({
+  keywords: z.string(),
+  images: z.array(z.string()),
+});
+
+export const facilityOurHomesPageSchema = z.object({
+  description: z.string(),
 });
 
 export const whatWeOfferSchema = z.object({
@@ -46,23 +53,26 @@ export const facilityMediaSchema = z.object({
   heroSlider: z.array(z.string()),
   gallerySlider: z.array(z.string()),
   heroDisplayMode: z.enum(["slider", "video"]).optional(),
-});
-
-export const facilityVideoSchema = z.object({
-  desktopMp4: z.string(),
-  mobileMp4: z.string(),
-  desktopWebm: z.string(),
-  mobileWebm: z.string(),
-  poster: z.string(),
+  video: z
+    .object({
+      desktopMp4: z.string(),
+      mobileMp4: z.string(),
+      desktopWebm: z.string(),
+      mobileWebm: z.string(),
+      poster: z.string(),
+    })
+    .optional(),
 });
 
 export const facilitySchema = z.object({
   general: facilityGeneralSchema,
+  location: facilityLocationSchema,
+  meta: facilityMetaSchema,
+  ourHomesPage: facilityOurHomesPageSchema,
   whatWeOffer: whatWeOfferSchema,
   about: aboutSchema,
   meetTheTeam: z.array(teamMemberSchema).optional(),
   media: facilityMediaSchema,
-  video: facilityVideoSchema.optional(),
   order: z.number(),
   isActive: z.boolean(),
   timestamp: z.number(),

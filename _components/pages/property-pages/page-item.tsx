@@ -8,8 +8,8 @@ import PageWrapper from "@/_lib/page-wrapper";
 import VideoHeroComponent from "@/_lib/utils/video-hero-component";
 
 const PageItem = ({ data }: DataProps) => {
-  const { general, about, whatWeOffer, meetTheTeam, media, video } = data;
-  const { heroSlider, gallerySlider, heroDisplayMode } = media ?? (data as any).images;
+  const { general, location, about, whatWeOffer, meetTheTeam, media } = data;
+  const { heroSlider, gallerySlider, heroDisplayMode, video } = media ?? (data as any).images;
   const displayTitle = general.extendedTitle || general.title;
   return (
     <div className="mt-10 desktop:max-w-[1280px] desktop:mx-auto">
@@ -82,11 +82,11 @@ const PageItem = ({ data }: DataProps) => {
           >
             Location
           </Heading>
-          {general.description && (
+          {location.description && (
             <article
               className="[&_p]:mb-4 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-4 [&_li]:mb-1 [&_ol]:list-decimal [&_ol]:ml-6 [&_ol]:mb-4"
               dangerouslySetInnerHTML={{
-                __html: DOMPurify.sanitize(general.description),
+                __html: DOMPurify.sanitize(location.description),
               }}
             />
           )}

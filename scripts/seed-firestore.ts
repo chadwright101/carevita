@@ -60,7 +60,7 @@ async function seedFacilities() {
     };
 
     try {
-      await db.collection("facilities").doc(mapping.docId).set(facilityDoc);
+      await db.collection("facilitiesContent").doc(mapping.docId).set(facilityDoc);
       console.log(`✅ Migrated facility: ${mapping.docId}`);
     } catch (error) {
       console.error(`❌ Failed to migrate ${mapping.docId}:`, error);

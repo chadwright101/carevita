@@ -11,7 +11,7 @@ import {
 export async function getAllFacilities(): Promise<Facility[]> {
   const db = getFirestoreDb();
   const facilitiesSnapshot = await db
-    .collection("facilities")
+    .collection("facilitiesContent")
     .where("isActive", "==", true)
     .orderBy("order", "asc")
     .get();
@@ -28,7 +28,7 @@ export async function getFacilityBySlug(
 ): Promise<Facility | null> {
   const db = getFirestoreDb();
   const facilitiesSnapshot = await db
-    .collection("facilities")
+    .collection("facilitiesContent")
     .where("general.slug", "==", slug)
     .where("isActive", "==", true)
     .limit(1)
@@ -48,7 +48,7 @@ export async function getFacilityBySlug(
 export async function getFacilityNavigation(): Promise<FacilityNavigation[]> {
   const db = getFirestoreDb();
   const snapshot = await db
-    .collection("facilities")
+    .collection("facilitiesContent")
     .where("isActive", "==", true)
     .orderBy("order", "asc")
     .get();
@@ -61,11 +61,11 @@ export async function getFacilityNavigation(): Promise<FacilityNavigation[]> {
       extendedTitle: data.general.extendedTitle,
       location: data.general.location,
       extendedLocation: data.general.extendedLocation,
-      description: data.general.ourHomesDescription || data.general.description,
+      description: data.ourHomesPage.description || data.location.description,
       homeUrl: data.general.homeUrl,
       region: data.general.region,
       featuredImage: (data.media ?? (data as any).images)?.heroSlider?.[0],
-      contactImage: data.general.contactImage,
+      contactImage: data.location.contactImage,
       hasStaff: Array.isArray(data.meetTheTeam) && data.meetTheTeam.length > 2,
       order: data.order,
       isActive: data.isActive,

@@ -33,19 +33,19 @@ export async function generateMetadata({
     };
   }
 
-  const { general } = facility;
+  const { general, location, meta } = facility;
 
   return {
     metadataBase: new URL("https://www.carevita.com"),
     title: `${general.title} - CareVita`,
-    description: general.description || general.extendedTitle,
-    keywords: general.meta.keywords,
+    description: location.description || general.extendedTitle,
+    keywords: meta.keywords,
     openGraph: {
-      description: general.description || general.extendedTitle,
+      description: location.description || general.extendedTitle,
       type: "website",
       locale: "en_ZA",
       siteName: "CareVita",
-      images: general.meta.images.map((url) => ({
+      images: meta.images.map((url) => ({
         url,
       })),
     },
@@ -64,9 +64,7 @@ export default async function PropertyPage({
     return null;
   }
 
-  const {
-    general: { title, map, contactImage },
-  } = facility;
+  const { general: { title }, location: { map, contactImage } } = facility;
 
   return (
     <>

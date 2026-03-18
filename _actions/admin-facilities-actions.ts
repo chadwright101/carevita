@@ -19,7 +19,7 @@ export async function getAllFacilitiesAdmin(): Promise<Facility[]> {
   await verifySession();
   const db = getFirestoreDb();
   const snapshot = await db
-    .collection("facilities")
+    .collection("facilitiesContent")
     .where("isActive", "==", true)
     .orderBy("order", "asc")
     .get();
@@ -31,7 +31,7 @@ export async function getAllFacilitiesAdmin(): Promise<Facility[]> {
 export async function getFacilityBySlugAdmin(slug: string): Promise<Facility | null> {
   await verifySession();
   const db = getFirestoreDb();
-  const doc = await db.collection("facilities").doc(slug).get();
+  const doc = await db.collection("facilitiesContent").doc(slug).get();
   if (!doc.exists) return null;
   return serializeFirestoreData(doc.data() as Facility);
 }
@@ -58,18 +58,22 @@ export async function createFacility(
         phone: (() => { const p = formData.get("facilityPhone") as string; return p.startsWith("+270") ? "+27" + p.slice(4) : p; })(),
         homeUrl: `/our-homes/${slug}`,
         slug,
+      },
+      location: {
         description: formData.get("description") as string,
-        ourHomesDescription: (formData.get("ourHomesDescription") as string) || "",
         contactImage: formData.get("contactImage") as string,
         map: {
           lat: parseFloat(formData.get("mapLat") as string),
           lng: parseFloat(formData.get("mapLng") as string),
           zoom: 13.75,
         },
-        meta: {
-          keywords: formData.get("metaKeywords") as string,
-          images: JSON.parse((formData.get("metaImages") as string) || "[]"),
-        },
+      },
+      meta: {
+        keywords: formData.get("metaKeywords") as string,
+        images: JSON.parse((formData.get("metaImages") as string) || "[]"),
+      },
+      ourHomesPage: {
+        description: (formData.get("ourHomesDescription") as string) || "",
       },
       whatWeOffer: {
         list: (formData.get("whatWeOfferList") as string) ?? "",
@@ -96,17 +100,17 @@ export async function createFacility(
           (formData.get("gallerySlider") as string) || "[]"
         ),
         heroDisplayMode: (formData.get("heroDisplayMode") as "slider" | "video") || undefined,
+        video: (() => {
+          const desktopMp4 = (formData.get("heroDesktopMp4") as string) || "";
+          const desktopWebm = (formData.get("heroDesktopWebm") as string) || "";
+          const mobileMp4 = (formData.get("heroMobileMp4") as string) || "";
+          const mobileWebm = (formData.get("heroMobileWebm") as string) || "";
+          const poster = (formData.get("heroPoster") as string) || "";
+          return desktopMp4 || desktopWebm || mobileMp4 || mobileWebm || poster
+            ? { desktopMp4, desktopWebm, mobileMp4, mobileWebm, poster }
+            : undefined;
+        })(),
       },
-      video: (() => {
-        const desktopMp4 = (formData.get("heroDesktopMp4") as string) || "";
-        const desktopWebm = (formData.get("heroDesktopWebm") as string) || "";
-        const mobileMp4 = (formData.get("heroMobileMp4") as string) || "";
-        const mobileWebm = (formData.get("heroMobileWebm") as string) || "";
-        const poster = (formData.get("heroPoster") as string) || "";
-        return desktopMp4 || desktopWebm || mobileMp4 || mobileWebm || poster
-          ? { desktopMp4, desktopWebm, mobileMp4, mobileWebm, poster }
-          : undefined;
-      })(),
       order: parseInt(formData.get("order") as string) || 0,
       isActive: true,
       timestamp: Date.now(),
@@ -118,7 +122,7 @@ export async function createFacility(
     }
 
     const db = getFirestoreDb();
-    await db.collection("facilities").doc(slug).set(facilityData);
+    await db.collection("facilitiesContent").doc(slug).set(facilityData);
 
     revalidatePath("/");
     revalidatePath("/our-homes");
@@ -155,18 +159,22 @@ export async function updateFacility(
         phone: (() => { const p = formData.get("facilityPhone") as string; return p.startsWith("+270") ? "+27" + p.slice(4) : p; })(),
         homeUrl: `/our-homes/${slug}`,
         slug,
+      },
+      location: {
         description: formData.get("description") as string,
-        ourHomesDescription: (formData.get("ourHomesDescription") as string) || "",
         contactImage: formData.get("contactImage") as string,
         map: {
           lat: parseFloat(formData.get("mapLat") as string),
           lng: parseFloat(formData.get("mapLng") as string),
           zoom: 13.75,
         },
-        meta: {
-          keywords: formData.get("metaKeywords") as string,
-          images: JSON.parse((formData.get("metaImages") as string) || "[]"),
-        },
+      },
+      meta: {
+        keywords: formData.get("metaKeywords") as string,
+        images: JSON.parse((formData.get("metaImages") as string) || "[]"),
+      },
+      ourHomesPage: {
+        description: (formData.get("ourHomesDescription") as string) || "",
       },
       whatWeOffer: {
         list: (formData.get("whatWeOfferList") as string) ?? "",
@@ -193,17 +201,17 @@ export async function updateFacility(
           (formData.get("gallerySlider") as string) || "[]"
         ),
         heroDisplayMode: (formData.get("heroDisplayMode") as "slider" | "video") || undefined,
+        video: (() => {
+          const desktopMp4 = (formData.get("heroDesktopMp4") as string) || "";
+          const desktopWebm = (formData.get("heroDesktopWebm") as string) || "";
+          const mobileMp4 = (formData.get("heroMobileMp4") as string) || "";
+          const mobileWebm = (formData.get("heroMobileWebm") as string) || "";
+          const poster = (formData.get("heroPoster") as string) || "";
+          return desktopMp4 || desktopWebm || mobileMp4 || mobileWebm || poster
+            ? { desktopMp4, desktopWebm, mobileMp4, mobileWebm, poster }
+            : undefined;
+        })(),
       },
-      video: (() => {
-        const desktopMp4 = (formData.get("heroDesktopMp4") as string) || "";
-        const desktopWebm = (formData.get("heroDesktopWebm") as string) || "";
-        const mobileMp4 = (formData.get("heroMobileMp4") as string) || "";
-        const mobileWebm = (formData.get("heroMobileWebm") as string) || "";
-        const poster = (formData.get("heroPoster") as string) || "";
-        return desktopMp4 || desktopWebm || mobileMp4 || mobileWebm || poster
-          ? { desktopMp4, desktopWebm, mobileMp4, mobileWebm, poster }
-          : undefined;
-      })(),
       order: parseInt(formData.get("order") as string) || 0,
       isActive: formData.get("isActive") === "true",
       timestamp: Date.now(),
@@ -215,7 +223,7 @@ export async function updateFacility(
     }
 
     const db = getFirestoreDb();
-    await db.collection("facilities").doc(slug).set(facilityData, { merge: true });
+    await db.collection("facilitiesContent").doc(slug).set(facilityData, { merge: true });
 
     revalidatePath("/");
     revalidatePath("/our-homes");
@@ -240,7 +248,7 @@ export async function deleteFacility(
     const slug = formData.get("slug") as string;
     const db = getFirestoreDb();
 
-    await db.collection("facilities").doc(slug).update({ isActive: false });
+    await db.collection("facilitiesContent").doc(slug).update({ isActive: false });
 
     revalidatePath("/");
     revalidatePath("/our-homes");
@@ -271,7 +279,7 @@ export async function reorderFacilities(
     const batch = db.batch();
 
     for (const item of order) {
-      const ref = db.collection("facilities").doc(item.slug);
+      const ref = db.collection("facilitiesContent").doc(item.slug);
       batch.update(ref, { order: item.order });
     }
 
@@ -299,7 +307,7 @@ export async function updateFacilityOrder(
     const batch = db.batch();
 
     for (const item of orderPayload) {
-      batch.update(db.collection("facilities").doc(item.slug), { order: item.order });
+      batch.update(db.collection("facilitiesContent").doc(item.slug), { order: item.order });
     }
 
     await batch.commit();

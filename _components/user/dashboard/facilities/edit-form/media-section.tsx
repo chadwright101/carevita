@@ -1,6 +1,5 @@
 "use client";
 
-
 import MediaUploader from "@/_components/user/dashboard/media-uploader";
 import ImageList from "@/_components/user/dashboard/image-list";
 import { deleteImage } from "@/_actions/delete-image-action";
@@ -28,7 +27,7 @@ interface Props {
   toggleSection: (id: string) => void;
 }
 
-export default function ImagesSection({
+export default function MediaSection({
   facilitySlug,
   heroSliderState,
   setHeroSliderState,
@@ -49,7 +48,6 @@ export default function ImagesSection({
   activeSection,
   toggleSection,
 }: Props) {
-
   return (
     <div className="border border-black rounded-md overflow-hidden">
       <button
@@ -74,7 +72,7 @@ export default function ImagesSection({
                     false,
                     heroDisplayMode === "slider" ? "blue" : undefined,
                     undefined,
-                    heroDisplayMode === "slider" ? undefined : "black"
+                    heroDisplayMode === "slider" ? undefined : "black",
                   )}
                 >
                   Hero Slider
@@ -88,13 +86,15 @@ export default function ImagesSection({
                     false,
                     heroDisplayMode === "video" ? "blue" : undefined,
                     undefined,
-                    heroDisplayMode === "video" ? undefined : "black"
+                    heroDisplayMode === "video" ? undefined : "black",
                   )}
                 >
                   Hero Video
                 </button>
               </div>
-              <div className={heroDisplayMode === "slider" ? undefined : "hidden"}>
+              <div
+                className={heroDisplayMode === "slider" ? undefined : "hidden"}
+              >
                 <div className="flex flex-col gap-5">
                   <span className="font-semibold">Hero Slider</span>
                   {heroSliderState.length === 0 && (
@@ -116,7 +116,10 @@ export default function ImagesSection({
                           const next = [...prev];
                           const target = index + direction;
                           if (target < 0 || target >= next.length) return prev;
-                          [next[index], next[target]] = [next[target], next[index]];
+                          [next[index], next[target]] = [
+                            next[target],
+                            next[index],
+                          ];
                           return next;
                         });
                       }}
@@ -124,11 +127,15 @@ export default function ImagesSection({
                   )}
                   <MediaUploader
                     storagePath={`facilities/${facilitySlug}/hero-slider`}
-                    onUploaded={(url) => setHeroSliderState((prev) => [...prev, url])}
+                    onUploaded={(url) =>
+                      setHeroSliderState((prev) => [...prev, url])
+                    }
                   />
                 </div>
               </div>
-              <div className={heroDisplayMode === "video" ? undefined : "hidden"}>
+              <div
+                className={heroDisplayMode === "video" ? undefined : "hidden"}
+              >
                 <div className="flex flex-col gap-10">
                   <div className="flex flex-col gap-5">
                     <span className="font-semibold">Desktop MP4</span>
