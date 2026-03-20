@@ -1,5 +1,7 @@
 "use client";
 
+import classNames from "classnames";
+import { forwardRef } from "react";
 import MediaUploader from "@/_components/user/dashboard/media-uploader";
 import ImageList from "@/_components/user/dashboard/image-list";
 import { deleteImage } from "@/_actions/delete-image-action";
@@ -13,49 +15,64 @@ interface Props {
   setGallerySliderState: React.Dispatch<React.SetStateAction<string[]>>;
   heroDisplayMode: "slider" | "video";
   setHeroDisplayMode: (mode: "slider" | "video") => void;
-  heroDesktopMp4: string;
-  setHeroDesktopMp4: (url: string) => void;
-  heroDesktopWebm: string;
-  setHeroDesktopWebm: (url: string) => void;
-  heroMobileMp4: string;
-  setHeroMobileMp4: (url: string) => void;
-  heroMobileWebm: string;
-  setHeroMobileWebm: (url: string) => void;
-  heroPoster: string;
-  setHeroPoster: (url: string) => void;
+  heroLargeMp4: string;
+  setHeroLargeMp4: (url: string) => void;
+  heroLargeWebm: string;
+  setHeroLargeWebm: (url: string) => void;
+  heroSmallMp4: string;
+  setHeroSmallMp4: (url: string) => void;
+  heroSmallWebm: string;
+  setHeroSmallWebm: (url: string) => void;
+  heroPosterImage: string;
+  setHeroPosterImage: (url: string) => void;
   activeSection: string;
   toggleSection: (id: string) => void;
+  error?: string;
 }
 
-export default function MediaSection({
-  facilitySlug,
-  heroSliderState,
-  setHeroSliderState,
-  gallerySliderState,
-  setGallerySliderState,
-  heroDisplayMode,
-  setHeroDisplayMode,
-  heroDesktopMp4,
-  setHeroDesktopMp4,
-  heroDesktopWebm,
-  setHeroDesktopWebm,
-  heroMobileMp4,
-  setHeroMobileMp4,
-  heroMobileWebm,
-  setHeroMobileWebm,
-  heroPoster,
-  setHeroPoster,
-  activeSection,
-  toggleSection,
-}: Props) {
+const MediaSection = forwardRef<HTMLDivElement, Props>(function MediaSection(
+  {
+    facilitySlug,
+    heroSliderState,
+    setHeroSliderState,
+    gallerySliderState,
+    setGallerySliderState,
+    heroDisplayMode,
+    setHeroDisplayMode,
+    heroLargeMp4,
+    setHeroLargeMp4,
+    heroLargeWebm,
+    setHeroLargeWebm,
+    heroSmallMp4,
+    setHeroSmallMp4,
+    heroSmallWebm,
+    setHeroSmallWebm,
+    heroPosterImage,
+    setHeroPosterImage,
+    activeSection,
+    toggleSection,
+    error,
+  },
+  ref,
+) {
   return (
-    <div className="border border-black rounded-md overflow-hidden">
+    <div
+      ref={ref}
+      className="border border-black rounded-md overflow-hidden scroll-mt-24"
+    >
       <button
         type="button"
         onClick={() => toggleSection("images")}
         className="w-full flex justify-between items-center p-4 desktop:hover:cursor-pointer"
       >
-        <span className="text-subheading">Sliders/video</span>
+        <span className="flex items-center gap-3">
+          <span
+            className={classNames("text-subheading", { "text-error": error })}
+          >
+            Sliders/video
+          </span>
+          {error && <span className="text-error text-smallest">{error}</span>}
+        </span>
         <span>{activeSection === "images" ? "−" : "+"}</span>
       </button>
       {activeSection === "images" && (
@@ -138,10 +155,10 @@ export default function MediaSection({
               >
                 <div className="flex flex-col gap-10">
                   <div className="flex flex-col gap-5">
-                    <span className="font-semibold">Desktop MP4</span>
-                    {heroDesktopMp4 && (
+                    <span className="font-semibold">Large MP4</span>
+                    {heroLargeMp4 && (
                       <span className="text-smallest text-black/70 italic break-all">
-                        {heroDesktopMp4}
+                        {heroLargeMp4}
                       </span>
                     )}
                     <MediaUploader
@@ -149,16 +166,16 @@ export default function MediaSection({
                       maxSizeMb={3}
                       dimensionNote="Min dimensions: 1400 × 600px"
                       storagePath={`facilities/${facilitySlug}/hero-video/desktop`}
-                      onUploaded={setHeroDesktopMp4}
-                      currentUrl={heroDesktopMp4}
+                      onUploaded={setHeroLargeMp4}
+                      currentUrl={heroLargeMp4}
                       showPreview
                     />
                   </div>
                   <div className="flex flex-col gap-5">
-                    <span className="font-semibold">Desktop WebM</span>
-                    {heroDesktopWebm && (
+                    <span className="font-semibold">Large WebM</span>
+                    {heroLargeWebm && (
                       <span className="text-smallest text-black/70 italic break-all">
-                        {heroDesktopWebm}
+                        {heroLargeWebm}
                       </span>
                     )}
                     <MediaUploader
@@ -166,16 +183,16 @@ export default function MediaSection({
                       maxSizeMb={3}
                       dimensionNote="Min dimensions: 1400 × 600px"
                       storagePath={`facilities/${facilitySlug}/hero-video/desktop`}
-                      onUploaded={setHeroDesktopWebm}
-                      currentUrl={heroDesktopWebm}
+                      onUploaded={setHeroLargeWebm}
+                      currentUrl={heroLargeWebm}
                       showPreview
                     />
                   </div>
                   <div className="flex flex-col gap-5">
-                    <span className="font-semibold">Mobile MP4</span>
-                    {heroMobileMp4 && (
+                    <span className="font-semibold">Small MP4</span>
+                    {heroSmallMp4 && (
                       <span className="text-smallest text-black/70 italic break-all">
-                        {heroMobileMp4}
+                        {heroSmallMp4}
                       </span>
                     )}
                     <MediaUploader
@@ -183,16 +200,16 @@ export default function MediaSection({
                       maxSizeMb={1.75}
                       dimensionNote="Min dimensions: 650 × 450px"
                       storagePath={`facilities/${facilitySlug}/hero-video/mobile`}
-                      onUploaded={setHeroMobileMp4}
-                      currentUrl={heroMobileMp4}
+                      onUploaded={setHeroSmallMp4}
+                      currentUrl={heroSmallMp4}
                       showPreview
                     />
                   </div>
                   <div className="flex flex-col gap-5">
-                    <span className="font-semibold">Mobile WebM</span>
-                    {heroMobileWebm && (
+                    <span className="font-semibold">Small WebM</span>
+                    {heroSmallWebm && (
                       <span className="text-smallest text-black/70 italic break-all">
-                        {heroMobileWebm}
+                        {heroSmallWebm}
                       </span>
                     )}
                     <MediaUploader
@@ -200,17 +217,17 @@ export default function MediaSection({
                       maxSizeMb={1.75}
                       dimensionNote="Min dimensions: 650 × 450px"
                       storagePath={`facilities/${facilitySlug}/hero-video/mobile`}
-                      onUploaded={setHeroMobileWebm}
-                      currentUrl={heroMobileWebm}
+                      onUploaded={setHeroSmallWebm}
+                      currentUrl={heroSmallWebm}
                       showPreview
                     />
                   </div>
                   <div className="flex flex-col gap-5">
-                    <span className="font-semibold">Poster</span>
+                    <span className="font-semibold">Poster Image</span>
                     <MediaUploader
                       storagePath={`facilities/${facilitySlug}/hero-video`}
-                      onUploaded={setHeroPoster}
-                      currentUrl={heroPoster}
+                      onUploaded={setHeroPosterImage}
+                      currentUrl={heroPosterImage}
                       showPreview={true}
                     />
                   </div>
@@ -225,7 +242,7 @@ export default function MediaSection({
                   Gallery empty
                 </span>
               )}
-              <div className="flex flex-wrap gap-5">
+              <div className="flex flex-col gap-5">
                 <ImageList
                   urls={gallerySliderState}
                   onRemove={(url) => {
@@ -266,11 +283,13 @@ export default function MediaSection({
         value={JSON.stringify(gallerySliderState)}
       />
       <input type="hidden" name="heroDisplayMode" value={heroDisplayMode} />
-      <input type="hidden" name="heroDesktopMp4" value={heroDesktopMp4} />
-      <input type="hidden" name="heroDesktopWebm" value={heroDesktopWebm} />
-      <input type="hidden" name="heroMobileMp4" value={heroMobileMp4} />
-      <input type="hidden" name="heroMobileWebm" value={heroMobileWebm} />
-      <input type="hidden" name="heroPoster" value={heroPoster} />
+      <input type="hidden" name="heroLargeMp4" value={heroLargeMp4} />
+      <input type="hidden" name="heroLargeWebm" value={heroLargeWebm} />
+      <input type="hidden" name="heroSmallMp4" value={heroSmallMp4} />
+      <input type="hidden" name="heroSmallWebm" value={heroSmallWebm} />
+      <input type="hidden" name="heroPosterImage" value={heroPosterImage} />
     </div>
   );
-}
+});
+
+export default MediaSection;

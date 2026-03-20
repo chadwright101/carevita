@@ -100,13 +100,13 @@ export async function createFacility(
         ),
         heroDisplayMode: (formData.get("heroDisplayMode") as "slider" | "video") || undefined,
         video: (() => {
-          const desktopMp4 = (formData.get("heroDesktopMp4") as string) || "";
-          const desktopWebm = (formData.get("heroDesktopWebm") as string) || "";
-          const mobileMp4 = (formData.get("heroMobileMp4") as string) || "";
-          const mobileWebm = (formData.get("heroMobileWebm") as string) || "";
-          const poster = (formData.get("heroPoster") as string) || "";
-          return desktopMp4 || desktopWebm || mobileMp4 || mobileWebm || poster
-            ? { desktopMp4, desktopWebm, mobileMp4, mobileWebm, poster }
+          const largeMp4 = (formData.get("heroLargeMp4") as string) || "";
+          const largeWebm = (formData.get("heroLargeWebm") as string) || "";
+          const smallMp4 = (formData.get("heroSmallMp4") as string) || "";
+          const smallWebm = (formData.get("heroSmallWebm") as string) || "";
+          const posterImage = (formData.get("heroPosterImage") as string) || "";
+          return largeMp4 || largeWebm || smallMp4 || smallWebm || posterImage
+            ? { largeMp4, largeWebm, smallMp4, smallWebm, posterImage }
             : undefined;
         })(),
       },
@@ -200,13 +200,13 @@ export async function updateFacility(
         ),
         heroDisplayMode: (formData.get("heroDisplayMode") as "slider" | "video") || undefined,
         video: (() => {
-          const desktopMp4 = (formData.get("heroDesktopMp4") as string) || "";
-          const desktopWebm = (formData.get("heroDesktopWebm") as string) || "";
-          const mobileMp4 = (formData.get("heroMobileMp4") as string) || "";
-          const mobileWebm = (formData.get("heroMobileWebm") as string) || "";
-          const poster = (formData.get("heroPoster") as string) || "";
-          return desktopMp4 || desktopWebm || mobileMp4 || mobileWebm || poster
-            ? { desktopMp4, desktopWebm, mobileMp4, mobileWebm, poster }
+          const largeMp4 = (formData.get("heroLargeMp4") as string) || "";
+          const largeWebm = (formData.get("heroLargeWebm") as string) || "";
+          const smallMp4 = (formData.get("heroSmallMp4") as string) || "";
+          const smallWebm = (formData.get("heroSmallWebm") as string) || "";
+          const posterImage = (formData.get("heroPosterImage") as string) || "";
+          return largeMp4 || largeWebm || smallMp4 || smallWebm || posterImage
+            ? { largeMp4, largeWebm, smallMp4, smallWebm, posterImage }
             : undefined;
         })(),
       },

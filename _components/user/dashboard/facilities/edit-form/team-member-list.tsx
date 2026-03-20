@@ -33,7 +33,7 @@ export default function TeamMemberList({
               Are you sure you want to delete this team member?
             </p>
           )}
-          <div className="grid grid-cols-[1fr_80px] gap-5">
+          <div className="grid phone:grid-cols-[1fr_80px] gap-5">
             <div className="flex flex-col gap-5">
               <label className="flex flex-col gap-1">
                 <span className="font-semibold">Team Member Name</span>
@@ -64,7 +64,7 @@ export default function TeamMemberList({
                 />
               </label>
             </div>
-            <div className="flex flex-col gap-2 items-end">
+            <div className="flex flex-row-reverse order-first gap-2 justify-between phone:justify-start phone:flex-col phone:items-end phone:order-last">
               {confirmIndex === i && (
                 <button
                   type="button"
@@ -131,6 +131,7 @@ export default function TeamMemberList({
         </div>
       ))}
       <ButtonType
+        type="button"
         backgroundColor="blue"
         cssClasses="mr-auto self-center"
         onClick={() =>

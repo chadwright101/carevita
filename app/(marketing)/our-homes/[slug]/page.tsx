@@ -64,7 +64,10 @@ export default async function PropertyPage({
     return null;
   }
 
-  const { general: { facilityName }, location: { map, locationImage } } = facility;
+  const {
+    general: { facilityName },
+    location: { map, locationImage },
+  } = facility;
 
   return (
     <>

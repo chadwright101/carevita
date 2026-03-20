@@ -9,11 +9,11 @@ const Hero = ({ cssClasses }: Props) => {
   return (
     <section className={classNames(cssClasses)}>
       <VideoHeroComponent
-        desktopMp4="/assets/media/carevita-desktop-video.mp4"
-        mobileMp4="/assets/media/carevita-mobile-video.mp4"
-        desktopWebm="/assets/media/carevita-desktop-video.webm"
-        mobileWebm="/assets/media/carevita-mobile-video.webm"
-        poster="/assets/media/video-poster-carevita.webp"
+        largeMp4="/assets/media/carevita-large-video.mp4"
+        smallMp4="/assets/media/carevita-small-video.mp4"
+        largeWebm="/assets/media/carevita-desktop-video.webm"
+        smallWebm="/assets/media/carevita-mobile-video.webm"
+        posterImage="/assets/media/video-poster-carevita.webp"
       />
     </section>
   );

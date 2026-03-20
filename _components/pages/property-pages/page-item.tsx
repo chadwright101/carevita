@@ -26,11 +26,11 @@ const PageItem = ({ data }: DataProps) => {
       </PageWrapper>
       {heroDisplayMode === "video" && video ? (
         <VideoHeroComponent
-          desktopMp4={video.desktopMp4}
-          mobileMp4={video.mobileMp4}
-          desktopWebm={video.desktopWebm}
-          mobileWebm={video.mobileWebm}
-          poster={video.poster}
+          largeMp4={video.largeMp4}
+          smallMp4={video.smallMp4}
+          largeWebm={video.largeWebm}
+          smallWebm={video.smallWebm}
+          posterImage={video.posterImage}
         />
       ) : heroSlider.length > 0 ? (
         <GeneralSlider
@@ -40,11 +40,11 @@ const PageItem = ({ data }: DataProps) => {
         />
       ) : video ? (
         <VideoHeroComponent
-          desktopMp4={video.desktopMp4}
-          mobileMp4={video.mobileMp4}
-          desktopWebm={video.desktopWebm}
-          mobileWebm={video.mobileWebm}
-          poster={video.poster}
+          largeMp4={video.largeMp4}
+          smallMp4={video.smallMp4}
+          largeWebm={video.largeWebm}
+          smallWebm={video.smallWebm}
+          posterImage={video.posterImage}
         />
       ) : null}
       <PageWrapper>

@@ -51,11 +51,11 @@ export interface FacilityMedia {
   gallerySlider: string[];
   heroDisplayMode?: "slider" | "video";
   video?: {
-    desktopMp4: string;
-    mobileMp4: string;
-    desktopWebm: string;
-    mobileWebm: string;
-    poster: string;
+    largeMp4: string;
+    smallMp4: string;
+    largeWebm: string;
+    smallWebm: string;
+    posterImage: string;
   };
 }
 

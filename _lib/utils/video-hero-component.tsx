@@ -1,17 +1,17 @@
 interface Props {
-  desktopMp4: string;
-  mobileMp4: string;
-  desktopWebm: string;
-  mobileWebm: string;
-  poster: string;
+  largeMp4: string;
+  smallMp4: string;
+  largeWebm: string;
+  smallWebm: string;
+  posterImage: string;
 }
 
 const VideoHeroComponent = ({
-  desktopMp4,
-  mobileMp4,
-  desktopWebm,
-  mobileWebm,
-  poster,
+  largeMp4,
+  smallMp4,
+  largeWebm,
+  smallWebm,
+  posterImage,
 }: Props) => {
   return (
     <video
@@ -19,13 +19,13 @@ const VideoHeroComponent = ({
       muted
       loop
       className="w-full h-[450px] tablet:h-[600px] object-cover desktop:max-w-[1280px] mx-auto"
-      poster={poster}
+      poster={posterImage}
       playsInline
     >
-      <source src={desktopWebm} media="(min-width: 651px)" type="video/webm" />
-      <source src={desktopMp4} media="(min-width: 651px)" type="video/mp4" />
-      <source src={mobileWebm} type="video/webm" />
-      <source src={mobileMp4} type="video/mp4" />
+      <source src={largeWebm} media="(min-width: 651px)" type="video/webm" />
+      <source src={largeMp4} media="(min-width: 651px)" type="video/mp4" />
+      <source src={smallWebm} type="video/webm" />
+      <source src={smallMp4} type="video/mp4" />
     </video>
   );
 };

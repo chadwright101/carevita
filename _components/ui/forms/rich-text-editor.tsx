@@ -79,7 +79,7 @@ export default function RichTextEditor({
 
   return (
     <div className="border border-black rounded overflow-hidden">
-      <div className="border-b border-black p-2 flex gap-1 bg-gray-50">
+      <div className="border-b border-black p-2 flex flex-wrap gap-2 bg-gray-50">
         {getToolbarButtons().map((btn) => (
           <button
             key={btn.label}

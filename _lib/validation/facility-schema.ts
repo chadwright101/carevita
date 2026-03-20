@@ -54,11 +54,11 @@ export const facilityMediaSchema = z.object({
   heroDisplayMode: z.enum(["slider", "video"]).optional(),
   video: z
     .object({
-      desktopMp4: z.string(),
-      mobileMp4: z.string(),
-      desktopWebm: z.string(),
-      mobileWebm: z.string(),
-      poster: z.string(),
+      largeMp4: z.string(),
+      smallMp4: z.string(),
+      largeWebm: z.string(),
+      smallWebm: z.string(),
+      posterImage: z.string(),
     })
     .optional(),
 });

@@ -14,7 +14,7 @@ interface Props {
   toggleSection: (id: string) => void;
 }
 
-export default function MetaSection({
+export default function MetaDataSection({
   facilitySlug,
   metaKeywords,
   setMetaKeywords,
@@ -24,13 +24,13 @@ export default function MetaSection({
   toggleSection,
 }: Props) {
   return (
-    <div className="border border-black rounded-md overflow-hidden">
+    <div className="border border-black rounded-md overflow-hidden scroll-mt-24">
       <button
         type="button"
         onClick={() => toggleSection("meta")}
         className="w-full flex justify-between items-center p-4 desktop:hover:cursor-pointer"
       >
-        <span className="text-subheading">Meta</span>
+        <span className="text-subheading">Metadata</span>
         <span>{activeSection === "meta" ? "−" : "+"}</span>
       </button>
       {activeSection === "meta" && (

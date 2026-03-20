@@ -1,8 +1,12 @@
 "use client";
 
-import { useActionState, useState } from "react";
+import { useActionState, useEffect, useRef, useState, useTransition } from "react";
 import { Facility, TeamMember } from "@/_types/facility-types";
 import { updateFacility } from "@/_actions/admin-facilities-actions";
+import {
+  facilityGeneralSchema,
+  facilityLocationSchema,
+} from "@/_lib/validation/facility-schema";
 import ButtonType from "@/_components/ui/button-type";
 import GeneralSection from "./edit-form/general-section";
 import AboutSection from "./edit-form/about-section";
@@ -10,7 +14,7 @@ import WhatWeOfferSection from "./edit-form/what-we-offer-section";
 import MeetTheTeamSection from "./edit-form/meet-the-team-section";
 import MediaSection from "./edit-form/media-section";
 import LocationSection from "./edit-form/location-section";
-import MetaSection from "./edit-form/meta-section";
+import MetaDataSection from "./edit-form/metadata-section";
 import OurHomesPageSection from "./edit-form/our-homes-page-section";
 
 interface Props {
@@ -21,9 +25,19 @@ const initialState = { success: false, error: "" };
 
 export default function FacilityEditForm({ facility }: Props) {
   const [state, formAction] = useActionState(updateFacility, initialState);
+  const [isPending, startTransition] = useTransition();
 
-  const { general, whatWeOffer, about, meetTheTeam, location, meta, ourHomesPage, order, isActive } =
-    facility;
+  const {
+    general,
+    whatWeOffer,
+    about,
+    meetTheTeam,
+    location,
+    meta,
+    ourHomesPage,
+    order,
+    isActive,
+  } = facility;
   const media = facility.media ?? (facility as any).images;
 
   const [title, setTitle] = useState(general.facilityName ?? "");
@@ -31,16 +45,24 @@ export default function FacilityEditForm({ facility }: Props) {
     general.facilityExtendedName ?? "",
   );
   const [city, setCity] = useState(general.cityTown.split(", ")[0] ?? "");
-  const [region, setRegion] = useState<"" | "EC" | "FS" | "GP" | "KZN" | "LP" | "MP" | "NC" | "NW" | "WC">(general.province ?? "");
+  const [region, setRegion] = useState<
+    "" | "EC" | "FS" | "GP" | "KZN" | "LP" | "MP" | "NC" | "NW" | "WC"
+  >(general.province ?? "");
   const [email, setEmail] = useState(general.facilityEmail ?? "");
   const [phone, setPhone] = useState(general.facilityPhone ?? "");
   const [description, setDescription] = useState(location.description ?? "");
-  const [contactImage, setContactImage] = useState(location.locationImage ?? "");
+  const [contactImage, setContactImage] = useState(
+    location.locationImage ?? "",
+  );
   const [metaKeywords, setMetaKeywords] = useState(meta.keywords ?? "");
   const [whatWeOfferImage, setWhatWeOfferImage] = useState(
     whatWeOffer.image ?? "",
   );
+  const [aboutContent, setAboutContent] = useState(about.content ?? "");
   const [aboutImage, setAboutImage] = useState(about.image ?? "");
+  const [whatWeOfferContent, setWhatWeOfferContent] = useState(
+    whatWeOffer.offerings ?? "",
+  );
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>(
     meetTheTeam ?? [],
   );
@@ -51,19 +73,17 @@ export default function FacilityEditForm({ facility }: Props) {
   const [heroDisplayMode, setHeroDisplayMode] = useState<"slider" | "video">(
     media.heroDisplayMode ?? "slider",
   );
-  const [heroDesktopMp4, setHeroDesktopMp4] = useState(
-    media.video?.desktopMp4 ?? "",
+  const [heroLargeMp4, setHeroLargeMp4] = useState(media.video?.largeMp4 ?? "");
+  const [heroLargeWebm, setHeroLargeWebm] = useState(
+    media.video?.largeWebm ?? "",
   );
-  const [heroDesktopWebm, setHeroDesktopWebm] = useState(
-    media.video?.desktopWebm ?? "",
+  const [heroSmallMp4, setHeroSmallMp4] = useState(media.video?.smallMp4 ?? "");
+  const [heroSmallWebm, setHeroSmallWebm] = useState(
+    media.video?.smallWebm ?? "",
   );
-  const [heroMobileMp4, setHeroMobileMp4] = useState(
-    media.video?.mobileMp4 ?? "",
+  const [heroPosterImage, setHeroPosterImage] = useState(
+    media.video?.posterImage ?? "",
   );
-  const [heroMobileWebm, setHeroMobileWebm] = useState(
-    media.video?.mobileWebm ?? "",
-  );
-  const [heroPoster, setHeroPoster] = useState(media.video?.poster ?? "");
   const [metaImages, setMetaImages] = useState(meta.images);
   const [ourHomesDescription, setOurHomesDescription] = useState(
     ourHomesPage.description ?? "",
@@ -71,14 +91,165 @@ export default function FacilityEditForm({ facility }: Props) {
   const [mapLat, setMapLat] = useState(String(location.map.lat));
   const [mapLng, setMapLng] = useState(String(location.map.lng));
   const [activeSection, setActiveSection] = useState("general");
+  const [sectionErrors, setSectionErrors] = useState<Record<string, string>>(
+    {},
+  );
+
+  const generalRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const offerRef = useRef<HTMLDivElement>(null);
+  const meetTheTeamRef = useRef<HTMLDivElement>(null);
+  const mediaRef = useRef<HTMLDivElement>(null);
+  const locationRef = useRef<HTMLDivElement>(null);
+  const ourHomesRef = useRef<HTMLDivElement>(null);
+
+  const sectionRefMap: Record<string, React.RefObject<HTMLDivElement | null>> =
+    {
+      general: generalRef,
+      about: aboutRef,
+      whatWeOffer: offerRef,
+      meetTheTeam: meetTheTeamRef,
+      images: mediaRef,
+      location: locationRef,
+      ourHomesPage: ourHomesRef,
+    };
 
   function toggleSection(id: string) {
     setActiveSection((prev) => (prev === id ? "" : id));
   }
 
+  useEffect(() => {
+    if (activeSection) {
+      sectionRefMap[activeSection]?.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, [activeSection]);
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const errors: Record<string, string> = {};
+
+    const generalResult = facilityGeneralSchema.safeParse({
+      facilityName: title,
+      cityTown: city,
+      extendedLocation: city,
+      province: region,
+      facilityEmail: email,
+      facilityPhone: phone,
+      slug: general.slug,
+    });
+    if (!generalResult.success || phone.trim().length <= 3) {
+      const fields: string[] = [];
+      for (const issue of generalResult.success
+        ? []
+        : generalResult.error.issues) {
+        const field = issue.path[0];
+        if (field === "facilityName") fields.push("Facility Name");
+        else if (field === "facilityEmail") fields.push("Facility Email");
+        else if (field === "facilityPhone") fields.push("Phone Number");
+        else if (field === "province") fields.push("Province");
+        else if (field === "cityTown") fields.push("City/Town");
+      }
+      if (phone.trim().length <= 3 && !fields.includes("Phone Number"))
+        fields.push("Phone Number");
+      errors.general = `Please complete all required fields in this section${fields.length ? ` - ${fields.join(", ")}` : ""}.`;
+    }
+
+    const aboutFields: string[] = [];
+    if (!aboutContent) aboutFields.push("Content");
+    if (!aboutImage) aboutFields.push("About Image");
+    if (aboutFields.length > 0) {
+      errors.about = `Please complete all required fields in this section - ${aboutFields.join(", ")}.`;
+    }
+
+    const offerFields: string[] = [];
+    if (!whatWeOfferContent) offerFields.push("Content");
+    if (!whatWeOfferImage) offerFields.push("What We Offer Image");
+    if (offerFields.length > 0) {
+      errors.whatWeOffer = `Please complete all required fields in this section - ${offerFields.join(", ")}.`;
+    }
+
+    const missingMedia: string[] = [];
+    if (heroDisplayMode === "slider" && heroSliderState.length === 0)
+      missingMedia.push("Hero Slider");
+    if (heroDisplayMode === "video" && (!heroLargeMp4 || !heroPosterImage))
+      missingMedia.push("Hero Video");
+    if (gallerySliderState.length === 0) missingMedia.push("Gallery Slider");
+    if (missingMedia.length > 0) {
+      errors.images = `Please add images to this section - ${missingMedia.join(", ")}.`;
+    }
+
+    const lat = parseFloat(mapLat);
+    const lng = parseFloat(mapLng);
+    const locationResult = facilityLocationSchema.safeParse({
+      description,
+      locationImage: contactImage,
+      map: { lat, lng, zoom: location.map.zoom },
+    });
+    if (!locationResult.success || isNaN(lat) || isNaN(lng)) {
+      const fields: string[] = [];
+      if (!description) fields.push("Description");
+      if (!contactImage) fields.push("Location Image");
+      if (isNaN(lat) || isNaN(lng)) fields.push("Map Coordinates");
+      errors.location = `Please complete all required fields in this section${fields.length ? ` - ${fields.join(", ")}` : ""}.`;
+    }
+
+    if (!ourHomesDescription) {
+      errors.ourHomesPage = "A description is required.";
+    }
+
+    if (teamMembers.length > 0) {
+      const hasIncomplete = teamMembers.some(
+        (m) => !m.teamMember || !m.position || !m.url,
+      );
+      if (hasIncomplete) {
+        errors.meetTheTeam =
+          "Each team member must have a Name, Position, and Image.";
+      }
+    }
+
+    if (Object.keys(errors).length > 0) {
+      setSectionErrors(errors);
+      const sectionOrder = [
+        "general",
+        "about",
+        "whatWeOffer",
+        "images",
+        "location",
+        "ourHomesPage",
+        "meetTheTeam",
+      ];
+      const firstError = sectionOrder.find((id) => errors[id]);
+      if (firstError) {
+        setActiveSection(firstError);
+        const refMap: Record<string, React.RefObject<HTMLDivElement | null>> = {
+          general: generalRef,
+          about: aboutRef,
+          whatWeOffer: offerRef,
+          images: mediaRef,
+          location: locationRef,
+          ourHomesPage: ourHomesRef,
+          meetTheTeam: meetTheTeamRef,
+        };
+        refMap[firstError]?.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+      return;
+    }
+
+    setSectionErrors({});
+    startTransition(() => {
+      formAction(new FormData(e.currentTarget as HTMLFormElement));
+    });
+  }
+
   return (
     <form
-      action={formAction}
+      onSubmit={handleSubmit}
       autoComplete="off"
       className="flex flex-col gap-3"
     >
@@ -87,6 +258,7 @@ export default function FacilityEditForm({ facility }: Props) {
       <input type="hidden" name="order" value={String(order)} />
 
       <GeneralSection
+        ref={generalRef}
         title={title}
         setTitle={setTitle}
         extendedTitle={extendedTitle}
@@ -101,35 +273,45 @@ export default function FacilityEditForm({ facility }: Props) {
         setPhone={setPhone}
         activeSection={activeSection}
         toggleSection={toggleSection}
+        error={sectionErrors.general}
       />
 
       <AboutSection
+        ref={aboutRef}
         facilitySlug={general.slug}
-        aboutContent={about.content}
+        aboutContent={aboutContent}
+        setAboutContent={setAboutContent}
         aboutImage={aboutImage}
         setAboutImage={setAboutImage}
         activeSection={activeSection}
         toggleSection={toggleSection}
+        error={sectionErrors.about}
       />
 
       <WhatWeOfferSection
+        ref={offerRef}
         facilitySlug={general.slug}
-        whatWeOfferList={whatWeOffer.offerings}
+        whatWeOfferList={whatWeOfferContent}
+        setWhatWeOfferList={setWhatWeOfferContent}
         whatWeOfferImage={whatWeOfferImage}
         setWhatWeOfferImage={setWhatWeOfferImage}
         activeSection={activeSection}
         toggleSection={toggleSection}
+        error={sectionErrors.whatWeOffer}
       />
 
       <MeetTheTeamSection
+        ref={meetTheTeamRef}
         facilitySlug={general.slug}
         teamMembers={teamMembers}
         setTeamMembers={setTeamMembers}
         activeSection={activeSection}
         toggleSection={toggleSection}
+        error={sectionErrors.meetTheTeam}
       />
 
       <MediaSection
+        ref={mediaRef}
         facilitySlug={general.slug}
         heroSliderState={heroSliderState}
         setHeroSliderState={setHeroSliderState}
@@ -137,21 +319,23 @@ export default function FacilityEditForm({ facility }: Props) {
         setGallerySliderState={setGallerySliderState}
         heroDisplayMode={heroDisplayMode}
         setHeroDisplayMode={setHeroDisplayMode}
-        heroDesktopMp4={heroDesktopMp4}
-        setHeroDesktopMp4={setHeroDesktopMp4}
-        heroDesktopWebm={heroDesktopWebm}
-        setHeroDesktopWebm={setHeroDesktopWebm}
-        heroMobileMp4={heroMobileMp4}
-        setHeroMobileMp4={setHeroMobileMp4}
-        heroMobileWebm={heroMobileWebm}
-        setHeroMobileWebm={setHeroMobileWebm}
-        heroPoster={heroPoster}
-        setHeroPoster={setHeroPoster}
+        heroLargeMp4={heroLargeMp4}
+        setHeroLargeMp4={setHeroLargeMp4}
+        heroLargeWebm={heroLargeWebm}
+        setHeroLargeWebm={setHeroLargeWebm}
+        heroSmallMp4={heroSmallMp4}
+        setHeroSmallMp4={setHeroSmallMp4}
+        heroSmallWebm={heroSmallWebm}
+        setHeroSmallWebm={setHeroSmallWebm}
+        heroPosterImage={heroPosterImage}
+        setHeroPosterImage={setHeroPosterImage}
         activeSection={activeSection}
         toggleSection={toggleSection}
+        error={sectionErrors.images}
       />
 
       <LocationSection
+        ref={locationRef}
         facilitySlug={general.slug}
         description={description}
         setDescription={setDescription}
@@ -163,16 +347,25 @@ export default function FacilityEditForm({ facility }: Props) {
         setMapLng={setMapLng}
         activeSection={activeSection}
         toggleSection={toggleSection}
+        error={sectionErrors.location}
+      />
+
+      <input
+        type="hidden"
+        name="ourHomesDescription"
+        value={ourHomesDescription}
       />
 
       <OurHomesPageSection
+        ref={ourHomesRef}
         ourHomesDescription={ourHomesDescription}
         setOurHomesDescription={setOurHomesDescription}
         activeSection={activeSection}
         toggleSection={toggleSection}
+        error={sectionErrors.ourHomesPage}
       />
 
-      <MetaSection
+      <MetaDataSection
         facilitySlug={general.slug}
         metaKeywords={metaKeywords}
         setMetaKeywords={setMetaKeywords}
@@ -184,7 +377,9 @@ export default function FacilityEditForm({ facility }: Props) {
 
       {state.error && <p className="text-error text-smallest">{state.error}</p>}
 
-      <ButtonType cssClasses="self-start">Save Changes</ButtonType>
+      <ButtonType cssClasses="min-[500px]:self-start mt-2">
+        Save Changes
+      </ButtonType>
     </form>
   );
 }
