@@ -18,6 +18,9 @@ interface Props {
   mediaType?: "image" | "video";
   maxSizeMb?: number;
   dimensionNote?: string;
+  multiple?: boolean;
+  replaceMode?: boolean;
+  videoFormat?: "mp4" | "webm";
 }
 
 export default function MediaUploader({
@@ -28,6 +31,9 @@ export default function MediaUploader({
   mediaType = "image",
   maxSizeMb,
   dimensionNote,
+  multiple,
+  replaceMode,
+  videoFormat,
 }: Props) {
   const id = useId();
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -39,82 +45,106 @@ export default function MediaUploader({
 
   const isVideo = mediaType === "video";
   const allowedTypes = isVideo
-    ? ["video/mp4", "video/webm"]
+    ? videoFormat === "mp4"
+      ? ["video/mp4"]
+      : videoFormat === "webm"
+        ? ["video/webm"]
+        : ["video/mp4", "video/webm"]
     : ["image/jpeg", "image/jpg", "image/png", "image/webp"];
   const defaultMaxMb = isVideo ? 3 : 10;
   const effectiveMaxMb = maxSizeMb ?? defaultMaxMb;
   const maxSize = effectiveMaxMb * 1024 * 1024;
   const acceptAttr = isVideo
-    ? "video/mp4,video/webm"
+    ? videoFormat === "mp4"
+      ? "video/mp4"
+      : videoFormat === "webm"
+        ? "video/webm"
+        : "video/mp4,video/webm"
     : "image/jpg,image/jpeg,image/png,image/webp";
   const formatNote = isVideo
-    ? `Supported formats: MP4, WebM. Max file size: ${effectiveMaxMb}MB`
+    ? videoFormat === "mp4"
+      ? `Supported formats: MP4. Max file size: ${effectiveMaxMb}MB`
+      : videoFormat === "webm"
+        ? `Supported formats: WebM. Max file size: ${effectiveMaxMb}MB`
+        : `Supported formats: MP4, WebM. Max file size: ${effectiveMaxMb}MB`
     : "Supported formats: JPEG, PNG, WebP. Max file size: 10MB";
 
   const handleFileChange = () => {
-    const file = fileInputRef.current?.files?.[0];
-    setFileName(file ? file.name : "No file chosen");
-
-    if (!file) {
+    const files = fileInputRef.current?.files;
+    if (!files || files.length === 0) {
+      setFileName("No file chosen");
       setIsValidFile(false);
       return;
     }
-
-    const isValid = allowedTypes.includes(file.type) && file.size <= maxSize;
-    setIsValidFile(isValid);
+    const fileArray = Array.from(files);
+    setFileName(
+      fileArray.length === 1 ? fileArray[0].name : `${fileArray.length} files selected`,
+    );
+    setIsValidFile(
+      fileArray.every((f) => allowedTypes.includes(f.type) && f.size <= maxSize),
+    );
   };
 
   const handleUpload = async () => {
-    if (!fileInputRef.current?.files?.[0]) {
+    const files = fileInputRef.current?.files;
+    if (!files || files.length === 0) {
       setError("Please select a file");
       return;
     }
 
-    const file = fileInputRef.current.files[0];
+    const fileArray = Array.from(files);
 
-    if (!allowedTypes.includes(file.type)) {
-      setError(
-        isVideo
-          ? "Invalid file type. Use MP4 or WebM"
-          : "Invalid file type. Use JPEG, PNG, or WebP",
-      );
-      return;
-    }
-
-    if (file.size > maxSize) {
-      setError(isVideo ? "File exceeds 3MB limit" : "File exceeds 10MB limit");
-      return;
+    for (const file of fileArray) {
+      if (!allowedTypes.includes(file.type)) {
+        setError(
+          isVideo
+            ? "Invalid file type. Use MP4 or WebM"
+            : "Invalid file type. Use JPEG, PNG, or WebP",
+        );
+        return;
+      }
+      if (file.size > maxSize) {
+        setError(isVideo ? "File exceeds 3MB limit" : "File exceeds 10MB limit");
+        return;
+      }
     }
 
     setLoading(true);
     setError("");
     setSuccess(false);
 
-    const formData = new FormData();
-    formData.append("file", fileInputRef.current.files[0]);
-    formData.append("storagePath", storagePath);
-    if (isVideo) {
-      formData.append("maxSizeBytes", String(maxSize));
+    for (const file of fileArray) {
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("storagePath", storagePath);
+      if (isVideo) {
+        formData.append("maxSizeBytes", String(maxSize));
+      }
+
+      const result = isVideo
+        ? await uploadVideo({}, formData)
+        : await uploadImage({}, formData);
+
+      if (result.success && result.data?.url) {
+        if (!isVideo && !multiple && currentUrl) {
+          await deleteImage(currentUrl);
+        }
+        onUploaded(result.data.url);
+      } else {
+        setError(result.error || "Upload failed");
+        setLoading(false);
+        return;
+      }
     }
 
-    const result = isVideo
-      ? await uploadVideo({}, formData)
-      : await uploadImage({}, formData);
     setLoading(false);
-
-    if (result.success && result.data?.url) {
-      if (!isVideo && currentUrl) {
-        await deleteImage(currentUrl);
-      }
-      onUploaded(result.data.url);
-      if (fileInputRef.current) {
-        fileInputRef.current.value = "";
-      }
-      setSuccess(true);
-      setTimeout(() => setSuccess(false), 2000);
-    } else {
-      setError(result.error || "Upload failed");
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
     }
+    setFileName("No file chosen");
+    setIsValidFile(false);
+    setSuccess(true);
+    setTimeout(() => setSuccess(false), 2000);
   };
 
   return (
@@ -128,7 +158,13 @@ export default function MediaUploader({
               buttonStyles(undefined, loading, false, "blue"),
             )}
           >
-            Choose file
+            {multiple
+              ? replaceMode
+                ? `Replace ${isVideo ? "video" : "image"}s`
+                : `Choose ${isVideo ? "video" : "image"}s`
+              : replaceMode
+                ? `Replace ${isVideo ? "video" : "image"}`
+                : `Choose ${isVideo ? "video" : "image"}`}
           </label>
           <span className="text-smallest italic text-black/70 max-w-[65vw] phone:max-w-[240px] truncate">
             {fileName}
@@ -142,6 +178,7 @@ export default function MediaUploader({
           className="hidden"
           disabled={loading}
           onChange={handleFileChange}
+          multiple={multiple}
         />
         <ButtonType
           backgroundColor="green"

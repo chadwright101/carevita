@@ -53,19 +53,20 @@ const WhatWeOfferSection = forwardRef<HTMLDivElement, Props>(
         {activeSection === "whatWeOffer" && (
           <div className="flex flex-col gap-10 px-5 py-7 border-t border-black">
             <div className="flex flex-col gap-5">
-              <span className="font-semibold">Offerings</span>
+              <span className="font-semibold">Offerings *</span>
               <RichTextEditor
                 value={whatWeOfferList}
                 onChange={setWhatWeOfferList}
               />
             </div>
             <div className="flex flex-col gap-5">
-              <span className="font-semibold">Image</span>
+              <span className="font-semibold">Image *</span>
               <MediaUploader
                 storagePath={`facilities/${facilitySlug}/what-we-offer`}
                 onUploaded={setWhatWeOfferImage}
                 currentUrl={whatWeOfferImage}
                 showPreview
+                replaceMode={!!whatWeOfferImage}
               />
             </div>
           </div>

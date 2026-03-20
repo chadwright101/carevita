@@ -36,7 +36,7 @@ export default function TeamMemberList({
           <div className="grid phone:grid-cols-[1fr_80px] gap-5">
             <div className="flex flex-col gap-5">
               <label className="flex flex-col gap-1">
-                <span className="font-semibold">Team Member Name</span>
+                <span className="font-semibold">Team Member Name *</span>
                 <input
                   value={member.teamMember}
                   onChange={(e) =>
@@ -50,7 +50,7 @@ export default function TeamMemberList({
                 />
               </label>
               <label className="flex flex-col gap-1">
-                <span className="font-semibold">Position</span>
+                <span className="font-semibold">Position *</span>
                 <input
                   value={member.position}
                   onChange={(e) =>
@@ -116,7 +116,7 @@ export default function TeamMemberList({
             </div>
           </div>
           <div className="flex flex-col gap-3">
-            <span className="font-semibold">Image</span>
+            <span className="font-semibold">Image *</span>
             <MediaUploader
               storagePath={`facilities/${facilitySlug}/team`}
               onUploaded={(url) =>
@@ -126,6 +126,7 @@ export default function TeamMemberList({
               }
               currentUrl={member.url}
               showPreview
+              replaceMode={!!member.url}
             />
           </div>
         </div>

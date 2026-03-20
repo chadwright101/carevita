@@ -62,7 +62,7 @@ const LocationSection = forwardRef<HTMLDivElement, Props>(
         {activeSection === "location" && (
           <div className="flex flex-col gap-3 p-4 border-t border-black">
             <div className="flex flex-col gap-1">
-              <span className="font-semibold">Description</span>
+              <span className="font-semibold">Description *</span>
               <RichTextEditor
                 value={description}
                 onChange={setDescription}
@@ -71,12 +71,13 @@ const LocationSection = forwardRef<HTMLDivElement, Props>(
             </div>
 
             <div className="flex flex-col gap-1">
-              <span className="font-semibold">Image</span>
+              <span className="font-semibold">Image *</span>
               <MediaUploader
                 storagePath={`facilities/${facilitySlug}/contact`}
                 onUploaded={setContactImage}
                 currentUrl={contactImage}
                 showPreview
+                replaceMode={!!contactImage}
               />
             </div>
 
@@ -88,7 +89,7 @@ const LocationSection = forwardRef<HTMLDivElement, Props>(
 
               <div className="grid grid-cols-2 gap-3">
                 <label className="flex flex-col gap-1">
-                  <span className="font-semibold">Latitude</span>
+                  <span className="font-semibold">Latitude *</span>
                   <input
                     value={mapLat}
                     onChange={(e) => setMapLat(e.target.value)}
@@ -96,7 +97,7 @@ const LocationSection = forwardRef<HTMLDivElement, Props>(
                   />
                 </label>
                 <label className="flex flex-col gap-1">
-                  <span className="font-semibold">Longitude</span>
+                  <span className="font-semibold">Longitude *</span>
                   <input
                     value={mapLng}
                     onChange={(e) => setMapLng(e.target.value)}

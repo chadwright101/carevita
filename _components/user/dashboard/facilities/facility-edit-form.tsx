@@ -12,7 +12,8 @@ import GeneralSection from "./edit-form/general-section";
 import AboutSection from "./edit-form/about-section";
 import WhatWeOfferSection from "./edit-form/what-we-offer-section";
 import MeetTheTeamSection from "./edit-form/meet-the-team-section";
-import MediaSection from "./edit-form/media-section";
+import HeroSection from "./edit-form/hero-section";
+import GallerySection from "./edit-form/gallery-section";
 import LocationSection from "./edit-form/location-section";
 import MetaDataSection from "./edit-form/metadata-section";
 import OurHomesPageSection from "./edit-form/our-homes-page-section";
@@ -99,7 +100,8 @@ export default function FacilityEditForm({ facility }: Props) {
   const aboutRef = useRef<HTMLDivElement>(null);
   const offerRef = useRef<HTMLDivElement>(null);
   const meetTheTeamRef = useRef<HTMLDivElement>(null);
-  const mediaRef = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
+  const galleryRef = useRef<HTMLDivElement>(null);
   const locationRef = useRef<HTMLDivElement>(null);
   const ourHomesRef = useRef<HTMLDivElement>(null);
 
@@ -109,7 +111,8 @@ export default function FacilityEditForm({ facility }: Props) {
       about: aboutRef,
       whatWeOffer: offerRef,
       meetTheTeam: meetTheTeamRef,
-      images: mediaRef,
+      hero: heroRef,
+      gallery: galleryRef,
       location: locationRef,
       ourHomesPage: ourHomesRef,
     };
@@ -171,14 +174,14 @@ export default function FacilityEditForm({ facility }: Props) {
       errors.whatWeOffer = `Please complete all required fields in this section - ${offerFields.join(", ")}.`;
     }
 
-    const missingMedia: string[] = [];
-    if (heroDisplayMode === "slider" && heroSliderState.length === 0)
-      missingMedia.push("Hero Slider");
-    if (heroDisplayMode === "video" && (!heroLargeMp4 || !heroPosterImage))
-      missingMedia.push("Hero Video");
-    if (gallerySliderState.length === 0) missingMedia.push("Gallery Slider");
-    if (missingMedia.length > 0) {
-      errors.images = `Please add images to this section - ${missingMedia.join(", ")}.`;
+    if (heroDisplayMode === "slider" && heroSliderState.length === 0) {
+      errors.hero = "Please add images to this section - Hero Slider.";
+    }
+    if (heroDisplayMode === "video" && (!heroLargeMp4 || !heroPosterImage)) {
+      errors.hero = "Please add a video to this section - Hero Video.";
+    }
+    if (gallerySliderState.length === 0) {
+      errors.gallery = "Please add images to this section - Gallery Slider.";
     }
 
     const lat = parseFloat(mapLat);
@@ -216,7 +219,8 @@ export default function FacilityEditForm({ facility }: Props) {
         "general",
         "about",
         "whatWeOffer",
-        "images",
+        "hero",
+        "gallery",
         "location",
         "ourHomesPage",
         "meetTheTeam",
@@ -228,7 +232,8 @@ export default function FacilityEditForm({ facility }: Props) {
           general: generalRef,
           about: aboutRef,
           whatWeOffer: offerRef,
-          images: mediaRef,
+          hero: heroRef,
+          gallery: galleryRef,
           location: locationRef,
           ourHomesPage: ourHomesRef,
           meetTheTeam: meetTheTeamRef,
@@ -310,13 +315,11 @@ export default function FacilityEditForm({ facility }: Props) {
         error={sectionErrors.meetTheTeam}
       />
 
-      <MediaSection
-        ref={mediaRef}
+      <HeroSection
+        ref={heroRef}
         facilitySlug={general.slug}
         heroSliderState={heroSliderState}
         setHeroSliderState={setHeroSliderState}
-        gallerySliderState={gallerySliderState}
-        setGallerySliderState={setGallerySliderState}
         heroDisplayMode={heroDisplayMode}
         setHeroDisplayMode={setHeroDisplayMode}
         heroLargeMp4={heroLargeMp4}
@@ -331,7 +334,17 @@ export default function FacilityEditForm({ facility }: Props) {
         setHeroPosterImage={setHeroPosterImage}
         activeSection={activeSection}
         toggleSection={toggleSection}
-        error={sectionErrors.images}
+        error={sectionErrors.hero}
+      />
+
+      <GallerySection
+        ref={galleryRef}
+        facilitySlug={general.slug}
+        gallerySliderState={gallerySliderState}
+        setGallerySliderState={setGallerySliderState}
+        activeSection={activeSection}
+        toggleSection={toggleSection}
+        error={sectionErrors.gallery}
       />
 
       <LocationSection

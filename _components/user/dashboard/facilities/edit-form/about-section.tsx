@@ -52,16 +52,17 @@ const AboutSection = forwardRef<HTMLDivElement, Props>(function AboutSection(
       {activeSection === "about" && (
         <div className="flex flex-col gap-10 px-5 py-7 border-t border-black">
           <div className="flex flex-col gap-5">
-            <span className="font-semibold">Content</span>
+            <span className="font-semibold">Content *</span>
             <RichTextEditor value={aboutContent} onChange={setAboutContent} />
           </div>
           <div className="flex flex-col gap-5">
-            <span className="font-semibold">Image</span>
+            <span className="font-semibold">Image *</span>
             <MediaUploader
               storagePath={`facilities/${facilitySlug}/about`}
               onUploaded={setAboutImage}
               currentUrl={aboutImage}
               showPreview
+              replaceMode={!!aboutImage}
             />
           </div>
         </div>

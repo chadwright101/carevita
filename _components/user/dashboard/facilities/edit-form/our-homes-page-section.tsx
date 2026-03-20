@@ -45,7 +45,7 @@ const OurHomesPageSection = forwardRef<HTMLDivElement, Props>(
         {activeSection === "ourHomesPage" && (
           <div className="flex flex-col gap-3 p-4 border-t border-black">
             <div className="flex flex-col gap-1">
-              <span className="font-semibold">Description</span>
+              <span className="font-semibold">Description *</span>
               <textarea
                 name="ourHomesDescription"
                 value={ourHomesDescription}

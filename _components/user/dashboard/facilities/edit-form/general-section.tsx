@@ -67,7 +67,7 @@ const GeneralSection = forwardRef<HTMLDivElement, Props>(
         {activeSection === "general" && (
           <div className="grid tablet:grid-cols-2 gap-x-10 gap-y-5 px-5 py-7 border-t border-black">
             <label className="flex flex-col gap-1 justify-between">
-              Facility Name
+              Facility Name *
               <input
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
@@ -83,7 +83,7 @@ const GeneralSection = forwardRef<HTMLDivElement, Props>(
               />
             </label>
             <label className="flex flex-col gap-1">
-              City/Town
+              City/Town *
               <input
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
@@ -91,7 +91,7 @@ const GeneralSection = forwardRef<HTMLDivElement, Props>(
               />
             </label>
             <label className="flex flex-col gap-1">
-              Province
+              Province *
               <select
                 value={region}
                 onChange={(e) =>
@@ -126,7 +126,7 @@ const GeneralSection = forwardRef<HTMLDivElement, Props>(
               </select>
             </label>
             <label className="flex flex-col gap-1">
-              Facility Email
+              Facility Email *
               <input
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -134,7 +134,7 @@ const GeneralSection = forwardRef<HTMLDivElement, Props>(
               />
             </label>
             <label className="flex flex-col gap-1">
-              Facility Phone
+              Facility Phone *
               <input
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
