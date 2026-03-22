@@ -1,9 +1,9 @@
 interface Props {
   largeMp4: string;
-  smallMp4: string;
-  largeWebm: string;
-  smallWebm: string;
-  posterImage: string;
+  smallMp4?: string;
+  largeWebm?: string;
+  smallWebm?: string;
+  posterImage?: string;
 }
 
 const VideoHeroComponent = ({
@@ -22,10 +22,12 @@ const VideoHeroComponent = ({
       poster={posterImage}
       playsInline
     >
-      <source src={largeWebm} media="(min-width: 651px)" type="video/webm" />
+      {largeWebm && (
+        <source src={largeWebm} media="(min-width: 651px)" type="video/webm" />
+      )}
       <source src={largeMp4} media="(min-width: 651px)" type="video/mp4" />
-      <source src={smallWebm} type="video/webm" />
-      <source src={smallMp4} type="video/mp4" />
+      {smallWebm && <source src={smallWebm} type="video/webm" />}
+      {smallMp4 && <source src={smallMp4} type="video/mp4" />}
     </video>
   );
 };

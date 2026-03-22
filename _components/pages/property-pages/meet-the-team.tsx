@@ -11,7 +11,6 @@ interface Props {
 }
 
 const MeetTheTeam = ({ meetTheTeam, homeName }: Props) => {
-  if (meetTheTeam.length <= 2) return null;
   return (
     <div>
       <Heading

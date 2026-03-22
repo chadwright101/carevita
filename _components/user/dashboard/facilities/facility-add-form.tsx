@@ -85,17 +85,19 @@ export default function FacilityAddForm() {
 
   const slug = title.toLowerCase().replace(/\s+/g, "-");
 
-  const sectionRefMap: Record<string, React.RefObject<HTMLDivElement | null>> =
-    {
-      general: generalRef,
-      about: aboutRef,
-      whatWeOffer: offerRef,
-      meetTheTeam: meetTheTeamRef,
-      hero: heroRef,
-      gallery: galleryRef,
-      location: locationRef,
-      ourHomesPage: ourHomesRef,
-    };
+  const sectionRefMap: Record<
+    string,
+    React.RefObject<HTMLDivElement | null>
+  > = {
+    general: generalRef,
+    about: aboutRef,
+    whatWeOffer: offerRef,
+    meetTheTeam: meetTheTeamRef,
+    hero: heroRef,
+    gallery: galleryRef,
+    location: locationRef,
+    ourHomesPage: ourHomesRef,
+  };
 
   function toggleSection(id: string) {
     setActiveSection((prev) => (prev === id ? "" : id));
@@ -236,7 +238,7 @@ export default function FacilityAddForm() {
     <form
       onSubmit={handleSubmit}
       autoComplete="off"
-      className="flex flex-col gap-3"
+      className="flex flex-col gap-3 relative -mb-10"
     >
       <input type="hidden" name="slug" value={slug} />
       <input type="hidden" name="isActive" value="true" />
@@ -367,9 +369,13 @@ export default function FacilityAddForm() {
         <p className="text-green text-smallest">Facility created</p>
       )}
 
-      <ButtonType cssClasses="min-[500px]:self-start mt-2">
-        Create Facility
-      </ButtonType>
+      <div className="sticky bottom-0 w-full left-0">
+        <div className="bg-white/80 mx-auto w-full pt-5 pb-10">
+          <ButtonType cssClasses="min-[500px]:self-start mt-2">
+            Create Facility
+          </ButtonType>
+        </div>
+      </div>
     </form>
   );
 }

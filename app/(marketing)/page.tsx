@@ -4,7 +4,10 @@ import PageWrapper from "@/_lib/page-wrapper";
 import Services from "@/_components/pages/home-page/services";
 import OurHomes from "@/_components/pages/home-page/our-homes-gallery";
 import ContactComponent from "@/_components/contact/contact-component";
-import { getHomePageContent, getFacilityNavigation } from "@/_actions/facilities-actions";
+import {
+  getHomePageContent,
+  getFacilityNavigation,
+} from "@/_actions/facilities-actions";
 
 export const revalidate = 0;
 
@@ -17,16 +20,18 @@ async function Home() {
       <Hero />
       <PageWrapper>
         <About cssClasses="my-16" data={{ homePage: homePageContent }} />
-        <div id="services" className="scroll-mt-32"></div>
-        <Services />
+        <div id="services" className="scroll-mt-32">
+          <Services />
+        </div>
         <div
           id="gallery"
           className="scroll-mt-12 tablet:scroll-mt-16 desktop:scroll-mt-12"
         ></div>
         <OurHomes cssClasses="my-16" />
       </PageWrapper>
-      <div id="contact" className="scroll-mt-32"></div>
-      <ContactComponent facilities={facilities} />
+      <div id="contact" className="scroll-mt-32">
+        <ContactComponent facilities={facilities} />
+      </div>
     </div>
   );
 }

@@ -1,6 +1,12 @@
 "use client";
 
-import { useActionState, useEffect, useRef, useState, useTransition } from "react";
+import {
+  useActionState,
+  useEffect,
+  useRef,
+  useState,
+  useTransition,
+} from "react";
 import { Facility, TeamMember } from "@/_types/facility-types";
 import { updateFacility } from "@/_actions/admin-facilities-actions";
 import {
@@ -105,17 +111,19 @@ export default function FacilityEditForm({ facility }: Props) {
   const locationRef = useRef<HTMLDivElement>(null);
   const ourHomesRef = useRef<HTMLDivElement>(null);
 
-  const sectionRefMap: Record<string, React.RefObject<HTMLDivElement | null>> =
-    {
-      general: generalRef,
-      about: aboutRef,
-      whatWeOffer: offerRef,
-      meetTheTeam: meetTheTeamRef,
-      hero: heroRef,
-      gallery: galleryRef,
-      location: locationRef,
-      ourHomesPage: ourHomesRef,
-    };
+  const sectionRefMap: Record<
+    string,
+    React.RefObject<HTMLDivElement | null>
+  > = {
+    general: generalRef,
+    about: aboutRef,
+    whatWeOffer: offerRef,
+    meetTheTeam: meetTheTeamRef,
+    hero: heroRef,
+    gallery: galleryRef,
+    location: locationRef,
+    ourHomesPage: ourHomesRef,
+  };
 
   function toggleSection(id: string) {
     setActiveSection((prev) => (prev === id ? "" : id));
@@ -256,7 +264,7 @@ export default function FacilityEditForm({ facility }: Props) {
     <form
       onSubmit={handleSubmit}
       autoComplete="off"
-      className="flex flex-col gap-3"
+      className="flex flex-col gap-3 relative -mb-10"
     >
       <input type="hidden" name="slug" value={general.slug} />
       <input type="hidden" name="isActive" value={String(isActive)} />
@@ -390,9 +398,13 @@ export default function FacilityEditForm({ facility }: Props) {
 
       {state.error && <p className="text-error text-smallest">{state.error}</p>}
 
-      <ButtonType cssClasses="min-[500px]:self-start mt-2">
-        Save Changes
-      </ButtonType>
+      <div className="sticky bottom-0 w-full left-0">
+        <div className="bg-white/80 mx-auto w-full pt-5 pb-10">
+          <ButtonType cssClasses="min-[500px]:self-start mt-2">
+            Save Changes
+          </ButtonType>
+        </div>
+      </div>
     </form>
   );
 }

@@ -49,6 +49,12 @@ const MeetTheTeamSection = forwardRef<HTMLDivElement, Props>(
           <span>{activeSection === "meetTheTeam" ? "−" : "+"}</span>
         </button>
         {activeSection === "meetTheTeam" && (
+          <p className="text-smallest px-4 pb-2">
+            A minimum of 3 staff members must be added for this section to be
+            displayed on the facility page.
+          </p>
+        )}
+        {activeSection === "meetTheTeam" && (
           <TeamMemberList
             facilitySlug={facilitySlug}
             teamMembers={teamMembers}

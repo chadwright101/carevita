@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useCallback, useRef } from "react";
 import { GoogleMap, useLoadScript } from "@react-google-maps/api";
 
 interface PropertyMapProps {
@@ -10,7 +10,7 @@ interface PropertyMapProps {
   zoom: number;
 }
 
-const libraries: ("marker")[] = ["marker"];
+const libraries: "marker"[] = ["marker"];
 
 const PropertyMap = ({ cssClasses, lat, lng, zoom }: PropertyMapProps) => {
   const { isLoaded } = useLoadScript({
@@ -20,19 +20,41 @@ const PropertyMap = ({ cssClasses, lat, lng, zoom }: PropertyMapProps) => {
   });
 
   const mapRef = useRef<google.maps.Map | null>(null);
+  const markerRef = useRef<google.maps.marker.AdvancedMarkerElement | null>(null);
 
-  useEffect(() => {
-    if (!mapRef.current || !isLoaded) return;
+  const onMapLoad = useCallback(
+    (map: google.maps.Map) => {
+      try {
+        mapRef.current = map;
+        if (
+          window.google &&
+          window.google.maps &&
+          window.google.maps.marker &&
+          window.google.maps.marker.AdvancedMarkerElement
+        ) {
+          markerRef.current = new google.maps.marker.AdvancedMarkerElement({
+            map,
+            position: { lat, lng },
+          });
+        }
+      } catch (error) {
+        console.error("Error loading map:", error);
+      }
+    },
+    [lat, lng]
+  );
 
-    const marker = new google.maps.marker.AdvancedMarkerElement({
-      map: mapRef.current,
-      position: { lat, lng },
-    });
-
-    return () => {
-      marker.map = null;
-    };
-  }, [isLoaded, lat, lng]);
+  const onUnmount = useCallback(() => {
+    try {
+      if (markerRef.current) {
+        markerRef.current.map = null;
+        markerRef.current = null;
+      }
+      mapRef.current = null;
+    } catch (error) {
+      console.error("Error unmounting map:", error);
+    }
+  }, []);
 
   if (!isLoaded)
     return (
@@ -45,10 +67,11 @@ const PropertyMap = ({ cssClasses, lat, lng, zoom }: PropertyMapProps) => {
     <GoogleMap
       zoom={zoom}
       center={{ lat, lng }}
-      mapContainerClassName={`${cssClasses}`}
-      onLoad={(map) => {
-        mapRef.current = map;
-        (map as any).setMapId(process.env.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID);
+      mapContainerClassName={cssClasses}
+      onLoad={onMapLoad}
+      onUnmount={onUnmount}
+      options={{
+        mapId: process.env.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID,
       }}
     />
   );

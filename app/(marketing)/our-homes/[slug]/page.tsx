@@ -90,11 +90,10 @@ export default async function PropertyPage({
           />
         </div>
       </PageWrapper>
-      <div
+      <section
         id="contact"
-        className="-translate-y-28 tablet:-translate-y-32 desktop:-translate-y-28"
-      ></div>
-      <section className="px-6 pt-10 pb-12 bg-blue">
+        className="px-6 pt-10 pb-12 bg-blue scroll-mt-28 tablet:scroll-mt-32 desktop:scroll-mt-28"
+      >
         <div className="w-full max-w-[1280px] mx-auto">
           <Heading
             variant={headingVariant.sectionHeading}

@@ -73,7 +73,7 @@ const HeroSection = forwardRef<HTMLDivElement, Props>(function HeroSection(
       </button>
       {activeSection === "hero" && (
         <div className="flex flex-col gap-5 px-5 py-7 border-t border-black">
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-10">
             <div className="flex gap-2">
               <button
                 type="button"
@@ -146,17 +146,10 @@ const HeroSection = forwardRef<HTMLDivElement, Props>(function HeroSection(
                 />
               </div>
             </div>
-            <div
-              className={heroDisplayMode === "video" ? undefined : "hidden"}
-            >
+            <div className={heroDisplayMode === "video" ? undefined : "hidden"}>
               <div className="flex flex-col gap-10">
-                <div className="flex flex-col gap-5">
+                <div className="flex flex-col gap-5 border-b border-black/25 pb-10">
                   <span className="font-semibold">Large MP4 *</span>
-                  {heroLargeMp4 && (
-                    <span className="text-smallest text-black/70 italic break-all">
-                      {heroLargeMp4}
-                    </span>
-                  )}
                   <MediaUploader
                     mediaType="video"
                     videoFormat="mp4"
@@ -169,13 +162,8 @@ const HeroSection = forwardRef<HTMLDivElement, Props>(function HeroSection(
                     replaceMode={!!heroLargeMp4}
                   />
                 </div>
-                <div className="flex flex-col gap-5">
+                <div className="flex flex-col gap-5 border-b border-black/25 pb-10">
                   <span className="font-semibold">Large WebM</span>
-                  {heroLargeWebm && (
-                    <span className="text-smallest text-black/70 italic break-all">
-                      {heroLargeWebm}
-                    </span>
-                  )}
                   <MediaUploader
                     mediaType="video"
                     videoFormat="webm"
@@ -188,13 +176,8 @@ const HeroSection = forwardRef<HTMLDivElement, Props>(function HeroSection(
                     replaceMode={!!heroLargeWebm}
                   />
                 </div>
-                <div className="flex flex-col gap-5">
+                <div className="flex flex-col gap-5 border-b border-black/25 pb-10">
                   <span className="font-semibold">Small MP4</span>
-                  {heroSmallMp4 && (
-                    <span className="text-smallest text-black/70 italic break-all">
-                      {heroSmallMp4}
-                    </span>
-                  )}
                   <MediaUploader
                     mediaType="video"
                     videoFormat="mp4"
@@ -207,13 +190,8 @@ const HeroSection = forwardRef<HTMLDivElement, Props>(function HeroSection(
                     replaceMode={!!heroSmallMp4}
                   />
                 </div>
-                <div className="flex flex-col gap-5">
+                <div className="flex flex-col gap-5 border-b border-black/25 pb-10">
                   <span className="font-semibold">Small WebM</span>
-                  {heroSmallWebm && (
-                    <span className="text-smallest text-black/70 italic break-all">
-                      {heroSmallWebm}
-                    </span>
-                  )}
                   <MediaUploader
                     mediaType="video"
                     videoFormat="webm"

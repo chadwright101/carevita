@@ -78,10 +78,14 @@ export default function MediaUploader({
     }
     const fileArray = Array.from(files);
     setFileName(
-      fileArray.length === 1 ? fileArray[0].name : `${fileArray.length} files selected`,
+      fileArray.length === 1
+        ? fileArray[0].name
+        : `${fileArray.length} files selected`,
     );
     setIsValidFile(
-      fileArray.every((f) => allowedTypes.includes(f.type) && f.size <= maxSize),
+      fileArray.every(
+        (f) => allowedTypes.includes(f.type) && f.size <= maxSize,
+      ),
     );
   };
 
@@ -104,7 +108,9 @@ export default function MediaUploader({
         return;
       }
       if (file.size > maxSize) {
-        setError(isVideo ? "File exceeds 3MB limit" : "File exceeds 10MB limit");
+        setError(
+          isVideo ? "File exceeds 3MB limit" : "File exceeds 10MB limit",
+        );
         return;
       }
     }
@@ -126,7 +132,7 @@ export default function MediaUploader({
         : await uploadImage({}, formData);
 
       if (result.success && result.data?.url) {
-        if (!isVideo && !multiple && currentUrl) {
+        if (!multiple && currentUrl) {
           await deleteImage(currentUrl);
         }
         onUploaded(result.data.url);
@@ -148,7 +154,12 @@ export default function MediaUploader({
   };
 
   return (
-    <div className="flex flex-col gap-5">
+    <div
+      className={classNames(
+        "grid gap-5 tablet:gap-y-3",
+        isVideo && "tablet:gap-x-10 tablet:grid-cols-[325px_1fr]",
+      )}
+    >
       <div className="flex flex-wrap items-start justify-between gap-5 tablet:justify-start">
         <div className="flex flex-col w-full min-[500px]:flex-row overflow-hidden min-[500px]:items-center gap-2">
           <label
@@ -210,12 +221,12 @@ export default function MediaUploader({
           href={currentUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="desktop:hover:cursor-pointer w-fit"
+          className="tablet:col-start-2 tablet:row-start-1 tablet:row-span-3 desktop:hover:cursor-pointer w-fit"
         >
           <video
             src={currentUrl}
             preload="metadata"
-            className="w-[200px] h-[120px] object-cover pointer-events-none"
+            className="h-[120px] aspect-video w-auto object-cover pointer-events-none tablet:h-[180px]"
           />
         </Link>
       )}

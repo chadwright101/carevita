@@ -6,10 +6,12 @@ import MeetTheTeam from "./meet-the-team";
 import GeneralSlider from "../../sliders/general-slider";
 import PageWrapper from "@/_lib/page-wrapper";
 import VideoHeroComponent from "@/_lib/utils/video-hero-component";
+import classNames from "classnames";
 
 const PageItem = ({ data }: DataProps) => {
   const { general, location, about, whatWeOffer, meetTheTeam, media } = data;
-  const { heroSlider, gallerySlider, heroDisplayMode, video } = media ?? (data as any).images;
+  const { heroSlider, gallerySlider, heroDisplayMode, video } =
+    media ?? (data as any).images;
   const displayTitle = general.facilityExtendedName || general.facilityName;
   return (
     <div className="mt-10 desktop:max-w-[1280px] desktop:mx-auto">
@@ -47,22 +49,23 @@ const PageItem = ({ data }: DataProps) => {
           posterImage={video.posterImage}
         />
       ) : null}
-      <PageWrapper>
+      <PageWrapper cssClasses="mt-10">
         <main>
-          <div className="flex flex-col gap-16 mt-10">
+          <div
+            className={classNames(meetTheTeam && "flex flex-col gap-16 mb-16")}
+          >
             <About about={about} general={general} whatWeOffer={whatWeOffer} />
-            {meetTheTeam && (
-              <div>
-                <div id="staff" className="scroll-mt-32"></div>
+            {meetTheTeam && meetTheTeam.length <= 2 ? null : (
+              <div id="staff" className="scroll-mt-32">
                 <MeetTheTeam
-                  meetTheTeam={meetTheTeam}
+                  meetTheTeam={meetTheTeam!}
                   homeName={displayTitle}
                 />
               </div>
             )}
           </div>
         </main>
-        <section id="gallery" className="my-16 scroll-mt-32">
+        <section id="gallery" className="scroll-mt-32">
           <Heading
             variant={headingVariant.subheading}
             cssClasses="mb-5 text-center tablet:text-left"
@@ -75,7 +78,7 @@ const PageItem = ({ data }: DataProps) => {
             variant="gallery"
           />
         </section>
-        <section id="location" className="scroll-mt-32">
+        <section id="location" className="scroll-mt-32 mt-10">
           <Heading
             variant={headingVariant.subheading}
             cssClasses="mb-5 text-center tablet:text-left"
