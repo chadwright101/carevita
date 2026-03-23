@@ -7,6 +7,7 @@ import {
   FacilityNavigation,
   HomePageContent,
 } from "@/_types/facility-types";
+import { HomePage } from "@/_types/home-types";
 
 export async function getAllFacilities(): Promise<Facility[]> {
   const db = getFirestoreDb();
@@ -72,10 +73,10 @@ export async function getFacilityNavigation(): Promise<FacilityNavigation[]> {
   });
 }
 
-export async function getHomePageContent(): Promise<HomePageContent> {
+export async function getHomePageContent(): Promise<HomePage> {
   const db = getFirestoreDb();
   const homePageSnapshot = await db
-    .collection("siteContent")
+    .collection("pageContent")
     .doc("homePage")
     .get();
 
@@ -84,7 +85,7 @@ export async function getHomePageContent(): Promise<HomePageContent> {
   }
 
   const homePageContent = serializeFirestoreData(
-    homePageSnapshot.data() as HomePageContent,
+    homePageSnapshot.data() as HomePage,
   );
 
   return homePageContent;

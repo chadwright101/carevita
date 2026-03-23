@@ -19,6 +19,7 @@ interface Props {
   maxSizeMb?: number;
   dimensionNote?: string;
   multiple?: boolean;
+  maxFiles?: number;
   replaceMode?: boolean;
   videoFormat?: "mp4" | "webm";
 }
@@ -32,6 +33,7 @@ export default function MediaUploader({
   maxSizeMb,
   dimensionNote,
   multiple,
+  maxFiles,
   replaceMode,
   videoFormat,
 }: Props) {
@@ -51,7 +53,7 @@ export default function MediaUploader({
         ? ["video/webm"]
         : ["video/mp4", "video/webm"]
     : ["image/jpeg", "image/jpg", "image/png", "image/webp"];
-  const defaultMaxMb = isVideo ? 3 : 10;
+  const defaultMaxMb = isVideo ? 7 : 10;
   const effectiveMaxMb = maxSizeMb ?? defaultMaxMb;
   const maxSize = effectiveMaxMb * 1024 * 1024;
   const acceptAttr = isVideo
@@ -77,6 +79,14 @@ export default function MediaUploader({
       return;
     }
     const fileArray = Array.from(files);
+    if (maxFiles && fileArray.length > maxFiles) {
+      setError(`Max ${maxFiles} files allowed to be uploaded at a time`);
+      setIsValidFile(false);
+      setFileName("No file chosen");
+      if (fileInputRef.current) fileInputRef.current.value = "";
+      return;
+    }
+    setError("");
     setFileName(
       fileArray.length === 1
         ? fileArray[0].name
@@ -97,6 +107,11 @@ export default function MediaUploader({
     }
 
     const fileArray = Array.from(files);
+
+    if (maxFiles && fileArray.length > maxFiles) {
+      setError(`Max ${maxFiles} files allowed to be uploaded at a time`);
+      return;
+    }
 
     for (const file of fileArray) {
       if (!allowedTypes.includes(file.type)) {
@@ -157,7 +172,10 @@ export default function MediaUploader({
     <div
       className={classNames(
         "grid gap-5 tablet:gap-y-3",
-        isVideo && "tablet:gap-x-10 tablet:grid-cols-[325px_1fr]",
+        isVideo &&
+          showPreview &&
+          currentUrl &&
+          "tablet:gap-x-10 tablet:grid-cols-[325px_1fr]",
       )}
     >
       <div className="flex flex-wrap items-start justify-between gap-5 tablet:justify-start">
@@ -177,7 +195,7 @@ export default function MediaUploader({
                 ? `Replace ${isVideo ? "video" : "image"}`
                 : `Choose ${isVideo ? "video" : "image"}`}
           </label>
-          <span className="text-smallest italic text-black/70 max-w-[65vw] phone:max-w-[240px] truncate">
+          <span className="text-smallest italic text-black/70 max-w-[65vw] phone:max-w-[260px] truncate">
             {fileName}
           </span>
         </div>

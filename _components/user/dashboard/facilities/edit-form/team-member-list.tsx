@@ -7,6 +7,7 @@ import ReorderButtons from "@/_components/user/dashboard/reorder-buttons";
 import { TeamMember } from "@/_types/facility-types";
 import { X } from "lucide-react";
 import ButtonType from "@/_components/ui/button-type";
+import { deleteImage } from "@/_actions/delete-image-action";
 
 interface Props {
   facilitySlug: string;
@@ -80,6 +81,7 @@ export default function TeamMemberList({
                 type="button"
                 onClick={() => {
                   if (confirmIndex === i) {
+                    if (member.url) deleteImage(member.url);
                     setTeamMembers((prev) => prev.filter((_, j) => j !== i));
                     setConfirmIndex(null);
                   } else {

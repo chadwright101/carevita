@@ -61,7 +61,7 @@ html {
   }
 
   p {
-    text-align: justify;
+    @apply text-paragraph
   }
 
   input,

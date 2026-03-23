@@ -8,7 +8,6 @@ import { deleteImage } from "@/_actions/delete-image-action";
 import { buttonStyles } from "@/_styles/button-styles";
 
 interface Props {
-  facilitySlug: string;
   heroSliderState: string[];
   setHeroSliderState: React.Dispatch<React.SetStateAction<string[]>>;
   heroDisplayMode: "slider" | "video";
@@ -30,7 +29,6 @@ interface Props {
 
 const HeroSection = forwardRef<HTMLDivElement, Props>(function HeroSection(
   {
-    facilitySlug,
     heroSliderState,
     setHeroSliderState,
     heroDisplayMode,
@@ -138,7 +136,7 @@ const HeroSection = forwardRef<HTMLDivElement, Props>(function HeroSection(
                   />
                 )}
                 <MediaUploader
-                  storagePath={`facilities/${facilitySlug}/hero-slider`}
+                  storagePath="home/hero-slider"
                   onUploaded={(url) =>
                     setHeroSliderState((prev) => [...prev, url])
                   }
@@ -156,7 +154,7 @@ const HeroSection = forwardRef<HTMLDivElement, Props>(function HeroSection(
                     videoFormat="mp4"
                     maxSizeMb={7}
                     dimensionNote="Min dimensions: 1400 × 600px"
-                    storagePath={`facilities/${facilitySlug}/hero-video/desktop`}
+                    storagePath="home/hero-video/desktop"
                     onUploaded={setHeroLargeMp4}
                     currentUrl={heroLargeMp4}
                     showPreview
@@ -170,7 +168,7 @@ const HeroSection = forwardRef<HTMLDivElement, Props>(function HeroSection(
                     videoFormat="webm"
                     maxSizeMb={7}
                     dimensionNote="Min dimensions: 1400 × 600px"
-                    storagePath={`facilities/${facilitySlug}/hero-video/desktop`}
+                    storagePath="home/hero-video/desktop"
                     onUploaded={setHeroLargeWebm}
                     currentUrl={heroLargeWebm}
                     showPreview
@@ -184,7 +182,7 @@ const HeroSection = forwardRef<HTMLDivElement, Props>(function HeroSection(
                     videoFormat="mp4"
                     maxSizeMb={3}
                     dimensionNote="Min dimensions: 650 × 450px"
-                    storagePath={`facilities/${facilitySlug}/hero-video/mobile`}
+                    storagePath="home/hero-video/mobile"
                     onUploaded={setHeroSmallMp4}
                     currentUrl={heroSmallMp4}
                     showPreview
@@ -198,7 +196,7 @@ const HeroSection = forwardRef<HTMLDivElement, Props>(function HeroSection(
                     videoFormat="webm"
                     maxSizeMb={3}
                     dimensionNote="Min dimensions: 650 × 450px"
-                    storagePath={`facilities/${facilitySlug}/hero-video/mobile`}
+                    storagePath="home/hero-video/mobile"
                     onUploaded={setHeroSmallWebm}
                     currentUrl={heroSmallWebm}
                     showPreview
@@ -208,7 +206,7 @@ const HeroSection = forwardRef<HTMLDivElement, Props>(function HeroSection(
                 <div className="flex flex-col gap-5">
                   <span className="font-semibold">Poster Image *</span>
                   <MediaUploader
-                    storagePath={`facilities/${facilitySlug}/hero-video`}
+                    storagePath="home/hero-video"
                     onUploaded={setHeroPosterImage}
                     currentUrl={heroPosterImage}
                     showPreview={true}

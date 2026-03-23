@@ -17,24 +17,6 @@ export interface ShowPhoneNumberProps {
   blackText?: boolean;
 }
 
-export interface Service {
-  title: string;
-  description: string;
-  icon: string;
-  image: string;
-}
-
-export interface HomePage {
-  about: { content: string };
-  ourHomesSliderHomePage: string[];
-  services: Service[];
-  contact: { general: string; accounts: string };
-}
-
-export interface SiteContent {
-  homePage: HomePage;
-}
-
 export interface ActionResult<T = unknown> {
   success: boolean;
   error?: string;

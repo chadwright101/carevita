@@ -3,7 +3,8 @@
 import { revalidatePath } from "next/cache";
 import { verifySession } from "@/_lib/auth-utils";
 import { getFirestoreDb } from "@/_lib/firebase-admin";
-import { ActionResult, HomePage } from "@/_types/general-types";
+import { ActionResult } from "@/_types/general-types";
+import { HomePage } from "@/_types/home-types";
 
 export async function updateHomeAbout(
   prevState: any,
@@ -12,7 +13,7 @@ export async function updateHomeAbout(
   try {
     await verifySession();
     const db = getFirestoreDb();
-    await db.collection("siteContent").doc("homePage").update({
+    await db.collection("pageContent").doc("homePage").update({
       "about.content": formData.get("aboutContent") as string,
     });
     revalidatePath("/");
@@ -33,7 +34,7 @@ export async function updateHomeServices(
     await verifySession();
     const services = JSON.parse((formData.get("services") as string) || "[]");
     const db = getFirestoreDb();
-    await db.collection("siteContent").doc("homePage").update({ services });
+    await db.collection("pageContent").doc("homePage").update({ services });
     revalidatePath("/");
     return { success: true };
   } catch (error) {
@@ -51,7 +52,7 @@ export async function updateHomeContact(
   try {
     await verifySession();
     const db = getFirestoreDb();
-    await db.collection("siteContent").doc("homePage").update({
+    await db.collection("pageContent").doc("homePage").update({
       "contact.general": formData.get("contactGeneral") as string,
       "contact.accounts": formData.get("contactAccounts") as string,
     });
@@ -75,7 +76,19 @@ export async function updateHomeContent(
     const data = {
       about: {
         content: formData.get("aboutContent") as string,
+        image1: formData.get("aboutImage1") as string,
+        image2: formData.get("aboutImage2") as string,
       },
+      ourHomesSliderHomePage: JSON.parse(
+        (formData.get("ourHomesSliderHomePage") as string) || "[]",
+      ),
+      heroDisplayMode: formData.get("heroDisplayMode") as string,
+      heroSlider: JSON.parse((formData.get("heroSlider") as string) || "[]"),
+      heroLargeMp4: formData.get("heroLargeMp4") as string,
+      heroLargeWebm: formData.get("heroLargeWebm") as string,
+      heroSmallMp4: formData.get("heroSmallMp4") as string,
+      heroSmallWebm: formData.get("heroSmallWebm") as string,
+      heroPosterImage: formData.get("heroPosterImage") as string,
       services: JSON.parse((formData.get("services") as string) || "[]"),
       contact: {
         general: formData.get("contactGeneral") as string,
@@ -84,7 +97,7 @@ export async function updateHomeContent(
     };
 
     const db = getFirestoreDb();
-    await db.collection("siteContent").doc("homePage").update(data);
+    await db.collection("pageContent").doc("homePage").update(data);
 
     revalidatePath("/");
 
@@ -110,7 +123,7 @@ export async function updateHomeSlider(
 
     const db = getFirestoreDb();
     await db
-      .collection("siteContent")
+      .collection("pageContent")
       .doc("homePage")
       .update({ ourHomesSliderHomePage: images });
 

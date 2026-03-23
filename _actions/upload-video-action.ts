@@ -5,7 +5,7 @@ import { getAdminStorage } from "@/_lib/firebase-admin";
 import { ActionResult } from "@/_types/general-types";
 
 const ALLOWED_TYPES = ["video/mp4", "video/webm"];
-const MAX_SIZE_BYTES = 3 * 1024 * 1024;
+const MAX_SIZE_BYTES = 7 * 1024 * 1024;
 
 export async function uploadVideo(
   prevState: any,

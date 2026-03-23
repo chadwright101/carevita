@@ -182,14 +182,17 @@ export default function FacilityEditForm({ facility }: Props) {
       errors.whatWeOffer = `Please complete all required fields in this section - ${offerFields.join(", ")}.`;
     }
 
-    if (heroDisplayMode === "slider" && heroSliderState.length === 0) {
-      errors.hero = "Please add images to this section - Hero Slider.";
+    if (
+      heroDisplayMode === "slider" &&
+      (heroSliderState.length < 3 || heroSliderState.length > 7)
+    ) {
+      errors.hero = "Hero Slider requires between 3 and 7 images.";
     }
     if (heroDisplayMode === "video" && (!heroLargeMp4 || !heroPosterImage)) {
       errors.hero = "Please add a video to this section - Hero Video.";
     }
-    if (gallerySliderState.length === 0) {
-      errors.gallery = "Please add images to this section - Gallery Slider.";
+    if (gallerySliderState.length < 7 || gallerySliderState.length > 20) {
+      errors.gallery = "Gallery Slider requires between 7 and 20 images.";
     }
 
     const lat = parseFloat(mapLat);
