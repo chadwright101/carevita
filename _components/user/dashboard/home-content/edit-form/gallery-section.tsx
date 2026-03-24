@@ -73,6 +73,7 @@ const GallerySection = forwardRef<HTMLDivElement, Props>(
                 onUploaded={(url) => setImages((prev) => [...prev, url])}
                 multiple
                 maxFiles={3}
+                disabled={images.length >= 20}
                 onPendingAdd={onPendingAdd}
               />
             </div>

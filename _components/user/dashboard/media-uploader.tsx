@@ -24,6 +24,7 @@ interface Props {
   videoFormat?: "mp4" | "webm";
   onPendingAdd?: (url: string) => void;
   onPendingRemove?: (url: string) => void;
+  disabled?: boolean;
 }
 
 export default function MediaUploader({
@@ -40,6 +41,7 @@ export default function MediaUploader({
   videoFormat,
   onPendingAdd,
   onPendingRemove,
+  disabled,
 }: Props) {
   const id = useId();
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -158,7 +160,18 @@ export default function MediaUploader({
         onUploaded(result.data.url);
         onPendingAdd?.(result.data.url);
       } else {
-        setError(result.error || "Upload failed");
+        const raw = result.error || "";
+        const isNetworkError =
+          raw.includes("socket hang up") ||
+          raw.includes("ECONNRESET") ||
+          raw.includes("fetch failed") ||
+          raw.includes("network") ||
+          raw.includes("timeout");
+        setError(
+          isNetworkError
+            ? "Upload failed due to a network issue. Please try again."
+            : "Upload failed. Please try again.",
+        );
         setLoading(false);
         return;
       }
@@ -190,7 +203,7 @@ export default function MediaUploader({
             htmlFor={id}
             className={classNames(
               "shrink-0 w-full min-[500px]:w-auto",
-              buttonStyles(undefined, loading, false, "blue"),
+              buttonStyles(undefined, loading || disabled, false, "blue"),
             )}
           >
             {multiple
@@ -211,7 +224,7 @@ export default function MediaUploader({
           type="file"
           accept={acceptAttr}
           className="hidden"
-          disabled={loading}
+          disabled={loading || disabled}
           onChange={handleFileChange}
           multiple={multiple}
         />
@@ -219,13 +232,13 @@ export default function MediaUploader({
           backgroundColor="green"
           type="button"
           onClick={handleUpload}
-          disabled={loading || !isValidFile}
+          disabled={loading || !isValidFile || disabled}
           cssClasses="w-full min-[500px]:w-auto"
         >
           {loading ? "Uploading..." : "Upload"}
         </ButtonType>
       </div>
-      {error && <p className="text-white bg-error p-2">{error}</p>}
+      {error && <p className="text-white bg-error px-3 py-2 text-smallest">{error}</p>}
       {success && <p className="text-green">Successfully uploaded</p>}
       <p className="text-smallest text-error/70">{formatNote}</p>
       {dimensionNote && (

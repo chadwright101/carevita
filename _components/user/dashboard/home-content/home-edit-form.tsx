@@ -134,8 +134,12 @@ export default function HomeEditForm({ homeContent }: Props) {
 
     if (heroDisplayMode === "slider" && heroSliderState.length === 0) {
       errors.hero = "Please add at least one image to the Hero Slider.";
-    } else if (heroDisplayMode === "video" && (!heroLargeMp4 || !heroPosterImage)) {
-      errors.hero = "Please upload a Large MP4 and Poster Image for the Hero Video.";
+    } else if (heroDisplayMode === "video" && !heroLargeMp4 && !heroPosterImage) {
+      errors.hero = "Hero Video requires a Large MP4 and Poster Image.";
+    } else if (heroDisplayMode === "video" && !heroLargeMp4) {
+      errors.hero = "Hero Video requires a Large MP4.";
+    } else if (heroDisplayMode === "video" && !heroPosterImage) {
+      errors.hero = "Hero Video requires a Poster Image.";
     }
 
     const aboutResult = homeAboutSchema.safeParse({

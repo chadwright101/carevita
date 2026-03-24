@@ -196,8 +196,12 @@ export default function FacilityEditForm({ facility }: Props) {
     ) {
       errors.hero = "Hero Slider requires between 3 and 7 images.";
     }
-    if (heroDisplayMode === "video" && (!heroLargeMp4 || !heroPosterImage)) {
-      errors.hero = "Please add a video to this section - Hero Video.";
+    if (heroDisplayMode === "video" && !heroLargeMp4 && !heroPosterImage) {
+      errors.hero = "Hero Video requires a Large MP4 and Poster Image.";
+    } else if (heroDisplayMode === "video" && !heroLargeMp4) {
+      errors.hero = "Hero Video requires a Large MP4.";
+    } else if (heroDisplayMode === "video" && !heroPosterImage) {
+      errors.hero = "Hero Video requires a Poster Image.";
     }
     if (gallerySliderState.length < 7 || gallerySliderState.length > 20) {
       errors.gallery = "Gallery Slider requires between 7 and 20 images.";

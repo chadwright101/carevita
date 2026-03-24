@@ -149,6 +149,7 @@ const HeroSection = forwardRef<HTMLDivElement, Props>(function HeroSection(
                   }
                   multiple
                   maxFiles={3}
+                  disabled={heroSliderState.length >= 7}
                   onPendingAdd={onPendingAdd}
                 />
               </div>

@@ -85,6 +85,7 @@ const GallerySection = forwardRef<HTMLDivElement, Props>(
                 }
                 multiple
                 maxFiles={3}
+                disabled={gallerySliderState.length >= 20}
                 onPendingAdd={onPendingAdd}
               />
             </div>

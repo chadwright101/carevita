@@ -128,6 +128,7 @@ const MetaDataSection = forwardRef<HTMLDivElement, Props>(
               <MediaUploader
                 storagePath={`facilities/${facilitySlug}/meta`}
                 onUploaded={(url) => setMetaImages((prev) => [...prev, url])}
+                multiple
                 onPendingAdd={onPendingAdd}
               />
             </div>

@@ -102,16 +102,16 @@ export async function createFacility(
           (formData.get("gallerySlider") as string) || "[]"
         ),
         heroDisplayMode: (formData.get("heroDisplayMode") as "slider" | "video") || undefined,
-        video: (() => {
+        ...((() => {
           const largeMp4 = (formData.get("heroLargeMp4") as string) || "";
           const largeWebm = (formData.get("heroLargeWebm") as string) || "";
           const smallMp4 = (formData.get("heroSmallMp4") as string) || "";
           const smallWebm = (formData.get("heroSmallWebm") as string) || "";
           const posterImage = (formData.get("heroPosterImage") as string) || "";
           return largeMp4 || largeWebm || smallMp4 || smallWebm || posterImage
-            ? { largeMp4, largeWebm, smallMp4, smallWebm, posterImage }
-            : undefined;
-        })(),
+            ? { video: { largeMp4, largeWebm, smallMp4, smallWebm, posterImage } }
+            : {};
+        })()),
       },
       order: parseInt(formData.get("order") as string) || 0,
       isActive: true,
@@ -205,16 +205,16 @@ export async function updateFacility(
           (formData.get("gallerySlider") as string) || "[]"
         ),
         heroDisplayMode: (formData.get("heroDisplayMode") as "slider" | "video") || undefined,
-        video: (() => {
+        ...((() => {
           const largeMp4 = (formData.get("heroLargeMp4") as string) || "";
           const largeWebm = (formData.get("heroLargeWebm") as string) || "";
           const smallMp4 = (formData.get("heroSmallMp4") as string) || "";
           const smallWebm = (formData.get("heroSmallWebm") as string) || "";
           const posterImage = (formData.get("heroPosterImage") as string) || "";
           return largeMp4 || largeWebm || smallMp4 || smallWebm || posterImage
-            ? { largeMp4, largeWebm, smallMp4, smallWebm, posterImage }
-            : undefined;
-        })(),
+            ? { video: { largeMp4, largeWebm, smallMp4, smallWebm, posterImage } }
+            : {};
+        })()),
       },
       order: parseInt(formData.get("order") as string) || 0,
       isActive: formData.get("isActive") === "true",
