@@ -12,7 +12,7 @@ const About = ({
   cssClasses,
   data: {
     homePage: {
-      about: { content },
+      about: { content, image1, image2 },
     },
   },
 }: Props) => {
@@ -37,7 +37,7 @@ const About = ({
       </div>
       <div className="grid gap-10 mt-6 min-[800px]:grid-cols-2 desktop:grid-cols-1 desktop:grid-rows-[300px_300px]">
         <Image
-          src="/assets/media/the-crescent/9U7A6242.jpg"
+          src={image1}
           alt="Carevita - About us"
           width={900}
           height={450}
@@ -45,7 +45,7 @@ const About = ({
           sizes="(max-width: 900px) 90vw, 50vw"
         />
         <Image
-          src="/assets/media/eastlands/9U7A4662.jpg"
+          src={image2}
           alt="Carevita - About us"
           width={900}
           height={450}

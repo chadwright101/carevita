@@ -10,14 +10,14 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import sliderList from "@/_data/general-data.json";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Props {
   cssClasses?: string;
+  images: string[];
 }
 
-const OurHomesSlider = ({ cssClasses }: Props) => {
+const OurHomesSlider = ({ cssClasses, images }: Props) => {
   return (
     <Swiper
       speed={1000}
@@ -47,7 +47,7 @@ const OurHomesSlider = ({ cssClasses }: Props) => {
         } as React.CSSProperties
       }
     >
-      {sliderList.homePage.ourHomesSliderHomePage.map((url, index) => (
+      {images.map((url, index) => (
         <SwiperSlide key={index} className="pb-7">
           <Image
             src={url}

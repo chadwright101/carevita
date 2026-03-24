@@ -5,9 +5,10 @@ import OurHomesSlider from "../../sliders/our-homes-slider";
 
 interface Props {
   cssClasses?: string;
+  images: string[];
 }
 
-const OurHomesGallery = ({ cssClasses }: Props) => {
+const OurHomesGallery = ({ cssClasses, images }: Props) => {
   return (
     <section className={classNames("relative", cssClasses)}>
       <Heading
@@ -16,7 +17,7 @@ const OurHomesGallery = ({ cssClasses }: Props) => {
       >
         Gallery
       </Heading>
-      <OurHomesSlider cssClasses="mb-10" />
+      <OurHomesSlider cssClasses="mb-10" images={images} />
       <div className="flex w-full justify-center z-10 desktop:absolute desktop:top-40 desktop:right-10 desktop:w-auto">
         <ButtonLink href="our-homes">View Our Homes</ButtonLink>
       </div>

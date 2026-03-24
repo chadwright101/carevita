@@ -17,17 +17,25 @@ async function Home() {
 
   return (
     <div>
-      <Hero />
+      <Hero
+        heroDisplayMode={homePageContent.heroDisplayMode}
+        heroSlider={homePageContent.heroSlider}
+        heroLargeMp4={homePageContent.heroLargeMp4}
+        heroLargeWebm={homePageContent.heroLargeWebm}
+        heroSmallMp4={homePageContent.heroSmallMp4}
+        heroSmallWebm={homePageContent.heroSmallWebm}
+        heroPosterImage={homePageContent.heroPosterImage}
+      />
       <PageWrapper>
         <About cssClasses="my-16" data={{ homePage: homePageContent }} />
         <div id="services" className="scroll-mt-32">
-          <Services />
+          <Services services={homePageContent.services} />
         </div>
         <div
           id="gallery"
           className="scroll-mt-12 tablet:scroll-mt-16 desktop:scroll-mt-12"
         ></div>
-        <OurHomes cssClasses="my-16" />
+        <OurHomes cssClasses="my-16" images={homePageContent.ourHomesSliderHomePage} />
       </PageWrapper>
       <div id="contact" className="scroll-mt-32">
         <ContactComponent facilities={facilities} />

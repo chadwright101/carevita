@@ -1,10 +1,10 @@
 "use server";
 
-import generalData from "@/_data/general-data.json";
 import { verifyRecaptchaToken } from "@/_lib/verify-recaptcha";
 import { getFirestoreDb } from "@/_lib/firebase-admin";
 import { serializeFirestoreData } from "@/_lib/firebase-serializer";
 import { Facility } from "@/_types/facility-types";
+import { HomePage } from "@/_types/home-types";
 
 // General Contact
 export const fetchGeneralEmail = async (recaptchaToken?: string) => {
@@ -14,7 +14,10 @@ export const fetchGeneralEmail = async (recaptchaToken?: string) => {
       throw new Error(result.error || "reCAPTCHA verification failed");
     }
   }
-  return generalData.homePage.contact.general;
+  const db = getFirestoreDb();
+  const doc = await db.collection("pageContent").doc("homePage").get();
+  const data = serializeFirestoreData(doc.data() as HomePage);
+  return data?.contact?.general ?? "";
 };
 
 export const fetchGeneralPhone = async (recaptchaToken?: string) => {
@@ -34,7 +37,10 @@ export const fetchAccountsEmail = async (recaptchaToken?: string) => {
       throw new Error(result.error || "reCAPTCHA verification failed");
     }
   }
-  return generalData.homePage.contact.accounts;
+  const db = getFirestoreDb();
+  const doc = await db.collection("pageContent").doc("homePage").get();
+  const data = serializeFirestoreData(doc.data() as HomePage);
+  return data?.contact?.accounts ?? "";
 };
 
 export const fetchFacilityEmail = async (slug: string, recaptchaToken?: string) => {

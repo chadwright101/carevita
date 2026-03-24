@@ -53,8 +53,9 @@ export interface GeneralDataProps {
     homePage: {
       about: {
         content: string;
+        image1: string;
+        image2: string;
       };
-      ourHomesSliderHomePage: Array<string>;
     };
   };
 }
