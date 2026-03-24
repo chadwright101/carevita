@@ -149,6 +149,7 @@ export default function TeamMemberList({
             { position: "", url: "", teamMember: "" },
           ])
         }
+        disabled={teamMembers.length >= 6}
       >
         Add Team Member
       </ButtonType>

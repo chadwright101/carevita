@@ -28,6 +28,7 @@ export interface FacilityMeta {
 
 export interface FacilityOurHomesPage {
   description: string;
+  image: string;
 }
 
 export interface FacilityWhatWeOffer {

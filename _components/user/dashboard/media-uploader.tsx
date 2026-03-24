@@ -201,7 +201,7 @@ export default function MediaUploader({
                 ? `Replace ${isVideo ? "video" : "image"}`
                 : `Choose ${isVideo ? "video" : "image"}`}
           </label>
-          <span className="text-smallest italic text-black/70 max-w-[65vw] phone:max-w-[260px] truncate">
+          <span className="text-smallest italic text-black/70 max-w-[65vw] phone:max-w-[220px] truncate">
             {fileName}
           </span>
         </div>

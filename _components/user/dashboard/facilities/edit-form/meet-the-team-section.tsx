@@ -55,7 +55,8 @@ const MeetTheTeamSection = forwardRef<HTMLDivElement, Props>(
         {activeSection === "meetTheTeam" && (
           <p className="text-smallest px-4 pb-2">
             A minimum of 3 staff members must be added for this section to be
-            displayed on the facility page.
+            displayed on the facility page. A maximum of 6 staff members can be
+            added.
           </p>
         )}
         {activeSection === "meetTheTeam" && (

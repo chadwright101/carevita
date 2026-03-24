@@ -28,6 +28,7 @@ export const facilityMetaSchema = z.object({
 
 export const facilityOurHomesPageSchema = z.object({
   description: z.string(),
+  image: z.string().min(1),
 });
 
 export const whatWeOfferSchema = z.object({

@@ -69,6 +69,7 @@ export default function FacilityAddForm() {
   const [heroPosterImage, setHeroPosterImage] = useState("");
   const [metaImages, setMetaImages] = useState<string[]>([]);
   const [ourHomesDescription, setOurHomesDescription] = useState("");
+  const [ourHomesImage, setOurHomesImage] = useState("");
   const [mapLat, setMapLat] = useState("");
   const [mapLng, setMapLng] = useState("");
 
@@ -349,8 +350,11 @@ export default function FacilityAddForm() {
 
       <OurHomesPageSection
         ref={ourHomesRef}
+        facilitySlug={slug}
         ourHomesDescription={ourHomesDescription}
         setOurHomesDescription={setOurHomesDescription}
+        ourHomesImage={ourHomesImage}
+        setOurHomesImage={setOurHomesImage}
         activeSection={activeSection}
         toggleSection={toggleSection}
         error={sectionErrors.ourHomesPage}

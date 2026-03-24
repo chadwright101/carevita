@@ -64,7 +64,9 @@ export default function FacilityEditForm({ facility }: Props) {
   );
   const [metaKeywords, setMetaKeywords] = useState(meta.keywords ?? "");
   const [metaTitle, setMetaTitle] = useState(meta.title ?? "");
-  const [metaDescription, setMetaDescription] = useState(meta.description ?? "");
+  const [metaDescription, setMetaDescription] = useState(
+    meta.description ?? "",
+  );
   const [whatWeOfferImage, setWhatWeOfferImage] = useState(
     whatWeOffer.image ?? "",
   );
@@ -98,6 +100,7 @@ export default function FacilityEditForm({ facility }: Props) {
   const [ourHomesDescription, setOurHomesDescription] = useState(
     ourHomesPage.description ?? "",
   );
+  const [ourHomesImage, setOurHomesImage] = useState(ourHomesPage.image ?? "");
   const [mapLat, setMapLat] = useState(String(location.map.lat));
   const [mapLng, setMapLng] = useState(String(location.map.lng));
   const [activeSection, setActiveSection] = useState("general");
@@ -215,8 +218,11 @@ export default function FacilityEditForm({ facility }: Props) {
       errors.location = `Please complete all required fields in this section${fields.length ? ` - ${fields.join(", ")}` : ""}.`;
     }
 
-    if (!ourHomesDescription) {
-      errors.ourHomesPage = "A description is required.";
+    const ourHomesFields: string[] = [];
+    if (!ourHomesDescription) ourHomesFields.push("Description");
+    if (!ourHomesImage) ourHomesFields.push("Image");
+    if (ourHomesFields.length > 0) {
+      errors.ourHomesPage = `Please complete all required fields in this section - ${ourHomesFields.join(", ")}.`;
     }
 
     const metaFields: string[] = [];
@@ -226,7 +232,9 @@ export default function FacilityEditForm({ facility }: Props) {
       errors.meta = `Please complete all required fields in this section - ${metaFields.join(", ")}.`;
     }
 
-    if (teamMembers.length > 0) {
+    if (teamMembers.length > 0 && teamMembers.length < 3) {
+      errors.meetTheTeam = "A minimum of 3 staff members must be added.";
+    } else if (teamMembers.length > 0) {
       const hasIncomplete = teamMembers.some(
         (m) => !m.teamMember || !m.position || !m.url,
       );
@@ -307,6 +315,30 @@ export default function FacilityEditForm({ facility }: Props) {
         error={sectionErrors.general}
       />
 
+      <HeroSection
+        ref={heroRef}
+        facilitySlug={general.slug}
+        heroSliderState={heroSliderState}
+        setHeroSliderState={setHeroSliderState}
+        heroDisplayMode={heroDisplayMode}
+        setHeroDisplayMode={setHeroDisplayMode}
+        heroLargeMp4={heroLargeMp4}
+        setHeroLargeMp4={setHeroLargeMp4}
+        heroLargeWebm={heroLargeWebm}
+        setHeroLargeWebm={setHeroLargeWebm}
+        heroSmallMp4={heroSmallMp4}
+        setHeroSmallMp4={setHeroSmallMp4}
+        heroSmallWebm={heroSmallWebm}
+        setHeroSmallWebm={setHeroSmallWebm}
+        heroPosterImage={heroPosterImage}
+        setHeroPosterImage={setHeroPosterImage}
+        activeSection={activeSection}
+        toggleSection={toggleSection}
+        error={sectionErrors.hero}
+        onPendingAdd={addPending}
+        onPendingRemove={removePending}
+      />
+
       <AboutSection
         ref={aboutRef}
         facilitySlug={general.slug}
@@ -347,30 +379,6 @@ export default function FacilityEditForm({ facility }: Props) {
         onPendingRemove={removePending}
       />
 
-      <HeroSection
-        ref={heroRef}
-        facilitySlug={general.slug}
-        heroSliderState={heroSliderState}
-        setHeroSliderState={setHeroSliderState}
-        heroDisplayMode={heroDisplayMode}
-        setHeroDisplayMode={setHeroDisplayMode}
-        heroLargeMp4={heroLargeMp4}
-        setHeroLargeMp4={setHeroLargeMp4}
-        heroLargeWebm={heroLargeWebm}
-        setHeroLargeWebm={setHeroLargeWebm}
-        heroSmallMp4={heroSmallMp4}
-        setHeroSmallMp4={setHeroSmallMp4}
-        heroSmallWebm={heroSmallWebm}
-        setHeroSmallWebm={setHeroSmallWebm}
-        heroPosterImage={heroPosterImage}
-        setHeroPosterImage={setHeroPosterImage}
-        activeSection={activeSection}
-        toggleSection={toggleSection}
-        error={sectionErrors.hero}
-        onPendingAdd={addPending}
-        onPendingRemove={removePending}
-      />
-
       <GallerySection
         ref={galleryRef}
         facilitySlug={general.slug}
@@ -401,19 +409,18 @@ export default function FacilityEditForm({ facility }: Props) {
         onPendingRemove={removePending}
       />
 
-      <input
-        type="hidden"
-        name="ourHomesDescription"
-        value={ourHomesDescription}
-      />
-
       <OurHomesPageSection
         ref={ourHomesRef}
+        facilitySlug={general.slug}
         ourHomesDescription={ourHomesDescription}
         setOurHomesDescription={setOurHomesDescription}
+        ourHomesImage={ourHomesImage}
+        setOurHomesImage={setOurHomesImage}
         activeSection={activeSection}
         toggleSection={toggleSection}
         error={sectionErrors.ourHomesPage}
+        onPendingAdd={addPending}
+        onPendingRemove={removePending}
       />
 
       <MetaDataSection

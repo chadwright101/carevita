@@ -1,22 +1,35 @@
+"use client";
+
 import classNames from "classnames";
 import { forwardRef } from "react";
+import MediaUploader from "@/_components/user/dashboard/media-uploader";
 
 interface Props {
+  facilitySlug: string;
   ourHomesDescription: string;
   setOurHomesDescription: (v: string) => void;
+  ourHomesImage: string;
+  setOurHomesImage: (v: string) => void;
   activeSection: string;
   toggleSection: (id: string) => void;
   error?: string;
+  onPendingAdd?: (url: string) => void;
+  onPendingRemove?: (url: string) => void;
 }
 
 const OurHomesPageSection = forwardRef<HTMLDivElement, Props>(
   function OurHomesPageSection(
     {
+      facilitySlug,
       ourHomesDescription,
       setOurHomesDescription,
+      ourHomesImage,
+      setOurHomesImage,
       activeSection,
       toggleSection,
       error,
+      onPendingAdd,
+      onPendingRemove,
     },
     ref,
   ) {
@@ -43,7 +56,7 @@ const OurHomesPageSection = forwardRef<HTMLDivElement, Props>(
           <span>{activeSection === "ourHomesPage" ? "−" : "+"}</span>
         </button>
         {activeSection === "ourHomesPage" && (
-          <div className="flex flex-col gap-3 p-4 border-t border-black">
+          <div className="flex flex-col gap-10 px-5 py-7 border-t border-black">
             <div className="flex flex-col gap-1">
               <span className="font-semibold">Description *</span>
               <textarea
@@ -54,8 +67,22 @@ const OurHomesPageSection = forwardRef<HTMLDivElement, Props>(
                 className="border border-black rounded-md p-2"
               />
             </div>
+            <div className="flex flex-col gap-5">
+              <span className="font-semibold">Image *</span>
+              <MediaUploader
+                storagePath={`facilities/${facilitySlug}/our-homes-page`}
+                onUploaded={setOurHomesImage}
+                currentUrl={ourHomesImage}
+                showPreview
+                replaceMode={!!ourHomesImage}
+                onPendingAdd={onPendingAdd}
+                onPendingRemove={onPendingRemove}
+              />
+            </div>
           </div>
         )}
+        <input type="hidden" name="ourHomesDescription" value={ourHomesDescription} />
+        <input type="hidden" name="ourHomesImage" value={ourHomesImage} />
       </div>
     );
   },

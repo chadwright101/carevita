@@ -75,6 +75,7 @@ export async function createFacility(
       },
       ourHomesPage: {
         description: (formData.get("ourHomesDescription") as string) || "",
+        image: formData.get("ourHomesImage") as string,
       },
       whatWeOffer: {
         offerings: (formData.get("whatWeOfferList") as string) ?? "",
@@ -177,6 +178,7 @@ export async function updateFacility(
       },
       ourHomesPage: {
         description: (formData.get("ourHomesDescription") as string) || "",
+        image: formData.get("ourHomesImage") as string,
       },
       whatWeOffer: {
         offerings: (formData.get("whatWeOfferList") as string) ?? "",

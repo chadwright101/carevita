@@ -20,7 +20,7 @@ const MeetTheTeam = ({ meetTheTeam, homeName }: Props) => {
         Meet the team
       </Heading>
       <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-10">
-        {meetTheTeam.map(({ position, url, teamMember }, index) => (
+        {meetTheTeam.slice(0, 6).map(({ position, url, teamMember }, index) => (
           <article key={index}>
             <div className="flex flex-col items-center max-w-[400px] desktop:max-w-full">
               <Image
