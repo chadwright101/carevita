@@ -25,6 +25,8 @@ interface Props {
   activeSection: string;
   toggleSection: (id: string) => void;
   error?: string;
+  onPendingAdd?: (url: string) => void;
+  onPendingRemove?: (url: string) => void;
 }
 
 const HeroSection = forwardRef<HTMLDivElement, Props>(function HeroSection(
@@ -46,6 +48,8 @@ const HeroSection = forwardRef<HTMLDivElement, Props>(function HeroSection(
     activeSection,
     toggleSection,
     error,
+    onPendingAdd,
+    onPendingRemove,
   },
   ref,
 ) {
@@ -117,6 +121,7 @@ const HeroSection = forwardRef<HTMLDivElement, Props>(function HeroSection(
                     urls={heroSliderState}
                     onRemove={(url) => {
                       deleteImage(url);
+                      onPendingRemove?.(url);
                       setHeroSliderState((prev) =>
                         prev.filter((img) => img !== url),
                       );
@@ -142,6 +147,7 @@ const HeroSection = forwardRef<HTMLDivElement, Props>(function HeroSection(
                   }
                   multiple
                   maxFiles={3}
+                  onPendingAdd={onPendingAdd}
                 />
               </div>
             </div>
@@ -159,6 +165,8 @@ const HeroSection = forwardRef<HTMLDivElement, Props>(function HeroSection(
                     currentUrl={heroLargeMp4}
                     showPreview
                     replaceMode={!!heroLargeMp4}
+                    onPendingAdd={onPendingAdd}
+                    onPendingRemove={onPendingRemove}
                   />
                 </div>
                 <div className="flex flex-col gap-5 border-b border-black/25 pb-10">
@@ -173,6 +181,8 @@ const HeroSection = forwardRef<HTMLDivElement, Props>(function HeroSection(
                     currentUrl={heroLargeWebm}
                     showPreview
                     replaceMode={!!heroLargeWebm}
+                    onPendingAdd={onPendingAdd}
+                    onPendingRemove={onPendingRemove}
                   />
                 </div>
                 <div className="flex flex-col gap-5 border-b border-black/25 pb-10">
@@ -187,6 +197,8 @@ const HeroSection = forwardRef<HTMLDivElement, Props>(function HeroSection(
                     currentUrl={heroSmallMp4}
                     showPreview
                     replaceMode={!!heroSmallMp4}
+                    onPendingAdd={onPendingAdd}
+                    onPendingRemove={onPendingRemove}
                   />
                 </div>
                 <div className="flex flex-col gap-5 border-b border-black/25 pb-10">
@@ -201,6 +213,8 @@ const HeroSection = forwardRef<HTMLDivElement, Props>(function HeroSection(
                     currentUrl={heroSmallWebm}
                     showPreview
                     replaceMode={!!heroSmallWebm}
+                    onPendingAdd={onPendingAdd}
+                    onPendingRemove={onPendingRemove}
                   />
                 </div>
                 <div className="flex flex-col gap-5">
@@ -210,6 +224,8 @@ const HeroSection = forwardRef<HTMLDivElement, Props>(function HeroSection(
                     onUploaded={setHeroPosterImage}
                     currentUrl={heroPosterImage}
                     showPreview={true}
+                    onPendingAdd={onPendingAdd}
+                    onPendingRemove={onPendingRemove}
                   />
                 </div>
               </div>

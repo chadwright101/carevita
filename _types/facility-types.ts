@@ -20,6 +20,8 @@ export interface FacilityLocation {
 }
 
 export interface FacilityMeta {
+  title: string;
+  description: string;
   keywords: string;
   images: string[];
 }

@@ -15,6 +15,8 @@ interface Props {
   activeSection: string;
   toggleSection: (id: string) => void;
   error?: string;
+  onPendingAdd?: (url: string) => void;
+  onPendingRemove?: (url: string) => void;
 }
 
 const AboutSection = forwardRef<HTMLDivElement, Props>(function AboutSection(
@@ -28,6 +30,8 @@ const AboutSection = forwardRef<HTMLDivElement, Props>(function AboutSection(
     activeSection,
     toggleSection,
     error,
+    onPendingAdd,
+    onPendingRemove,
   },
   ref,
 ) {
@@ -68,6 +72,8 @@ const AboutSection = forwardRef<HTMLDivElement, Props>(function AboutSection(
                 currentUrl={aboutImage1}
                 showPreview
                 replaceMode={!!aboutImage1}
+                onPendingAdd={onPendingAdd}
+                onPendingRemove={onPendingRemove}
               />
             </div>
             <div className="flex flex-col gap-5">
@@ -78,6 +84,8 @@ const AboutSection = forwardRef<HTMLDivElement, Props>(function AboutSection(
                 currentUrl={aboutImage2}
                 showPreview
                 replaceMode={!!aboutImage2}
+                onPendingAdd={onPendingAdd}
+                onPendingRemove={onPendingRemove}
               />
             </div>
           </div>

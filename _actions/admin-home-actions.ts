@@ -74,6 +74,12 @@ export async function updateHomeContent(
     await verifySession();
 
     const data = {
+      meta: {
+        title: formData.get("metaTitle") as string,
+        description: formData.get("metaDescription") as string,
+        keywords: formData.get("metaKeywords") as string,
+        images: JSON.parse((formData.get("metaImages") as string) || "[]"),
+      },
       about: {
         content: formData.get("aboutContent") as string,
         image1: formData.get("aboutImage1") as string,

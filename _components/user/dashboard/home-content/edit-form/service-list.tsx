@@ -12,9 +12,11 @@ import { deleteImage } from "@/_actions/delete-image-action";
 interface Props {
   services: Service[];
   setServices: React.Dispatch<React.SetStateAction<Service[]>>;
+  onPendingAdd?: (url: string) => void;
+  onPendingRemove?: (url: string) => void;
 }
 
-export default function ServiceList({ services, setServices }: Props) {
+export default function ServiceList({ services, setServices, onPendingAdd, onPendingRemove }: Props) {
   const [confirmIndex, setConfirmIndex] = useState<number | null>(null);
 
   return (
@@ -81,7 +83,7 @@ export default function ServiceList({ services, setServices }: Props) {
                   type="button"
                   onClick={() => {
                     if (confirmIndex === i) {
-                      if (service.image) deleteImage(service.image);
+                      if (service.image) { deleteImage(service.image); onPendingRemove?.(service.image); }
                       setServices((prev) => prev.filter((_, j) => j !== i));
                       setConfirmIndex(null);
                     } else {
@@ -130,6 +132,8 @@ export default function ServiceList({ services, setServices }: Props) {
               currentUrl={service.image}
               showPreview
               replaceMode={!!service.image}
+              onPendingAdd={onPendingAdd}
+              onPendingRemove={onPendingRemove}
             />
           </div>
         </div>

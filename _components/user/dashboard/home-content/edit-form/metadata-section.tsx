@@ -7,7 +7,6 @@ import ImageList from "@/_components/user/dashboard/image-list";
 import { deleteImage } from "@/_actions/delete-image-action";
 
 interface Props {
-  facilitySlug: string;
   metaTitle: string;
   setMetaTitle: (v: string) => void;
   metaDescription: string;
@@ -26,7 +25,6 @@ interface Props {
 const MetaDataSection = forwardRef<HTMLDivElement, Props>(
   function MetaDataSection(
     {
-      facilitySlug,
       metaTitle,
       setMetaTitle,
       metaDescription,
@@ -55,7 +53,9 @@ const MetaDataSection = forwardRef<HTMLDivElement, Props>(
         >
           <span className="flex items-center gap-3">
             <span
-              className={classNames("text-subheading", { "text-error": error })}
+              className={classNames("text-subheading", {
+                "text-error": error,
+              })}
             >
               Metadata
             </span>
@@ -70,7 +70,7 @@ const MetaDataSection = forwardRef<HTMLDivElement, Props>(
               <span className="text-smallest text-black/60 italic">
                 The title of this page as it appears in Google search results
                 and browser tabs. Keep it under 60 characters and include the
-                facility name.
+                website name.
               </span>
               <input
                 value={metaTitle}
@@ -84,7 +84,7 @@ const MetaDataSection = forwardRef<HTMLDivElement, Props>(
               <span className="text-smallest text-black/60 italic">
                 A short summary of this page shown under the title in Google
                 search results. Aim for 1–2 sentences (under 160 characters)
-                that describe what the facility offers.
+                that describe what the website offers.
               </span>
               <textarea
                 value={metaDescription}
@@ -107,14 +107,13 @@ const MetaDataSection = forwardRef<HTMLDivElement, Props>(
                 className="border border-black rounded p-2"
               />
             </label>
-
             <div className="flex flex-col gap-3">
               <div className="flex flex-col gap-1">
                 <span className="font-semibold">Meta Images</span>
                 <span className="text-smallest text-black/60 italic">
                   Images that appear when this page is shared on social media
                   (e.g. Facebook, WhatsApp). Use a clear, high-quality image
-                  that represents the facility.
+                  that represents the website.
                 </span>
               </div>
               <ImageList
@@ -126,7 +125,7 @@ const MetaDataSection = forwardRef<HTMLDivElement, Props>(
                 }}
               />
               <MediaUploader
-                storagePath={`facilities/${facilitySlug}/meta`}
+                storagePath="home/meta"
                 onUploaded={(url) => setMetaImages((prev) => [...prev, url])}
                 onPendingAdd={onPendingAdd}
               />

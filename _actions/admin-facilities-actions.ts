@@ -68,6 +68,8 @@ export async function createFacility(
         },
       },
       meta: {
+        title: formData.get("metaTitle") as string,
+        description: formData.get("metaDescription") as string,
         keywords: formData.get("metaKeywords") as string,
         images: JSON.parse((formData.get("metaImages") as string) || "[]"),
       },
@@ -168,6 +170,8 @@ export async function updateFacility(
         },
       },
       meta: {
+        title: formData.get("metaTitle") as string,
+        description: formData.get("metaDescription") as string,
         keywords: formData.get("metaKeywords") as string,
         images: JSON.parse((formData.get("metaImages") as string) || "[]"),
       },

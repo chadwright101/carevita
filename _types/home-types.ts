@@ -5,6 +5,7 @@ export interface Service {
 }
 
 export interface HomePage {
+  meta: { title: string; description: string; keywords: string; images: string[] };
   about: { content: string; image1: string; image2: string };
   ourHomesSliderHomePage: string[];
   heroDisplayMode: "slider" | "video";

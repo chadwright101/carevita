@@ -14,6 +14,8 @@ interface Props {
   activeSection: string;
   toggleSection: (id: string) => void;
   error?: string;
+  onPendingAdd?: (url: string) => void;
+  onPendingRemove?: (url: string) => void;
 }
 
 const WhatWeOfferSection = forwardRef<HTMLDivElement, Props>(
@@ -27,6 +29,8 @@ const WhatWeOfferSection = forwardRef<HTMLDivElement, Props>(
       activeSection,
       toggleSection,
       error,
+      onPendingAdd,
+      onPendingRemove,
     },
     ref,
   ) {
@@ -67,6 +71,8 @@ const WhatWeOfferSection = forwardRef<HTMLDivElement, Props>(
                 currentUrl={whatWeOfferImage}
                 showPreview
                 replaceMode={!!whatWeOfferImage}
+                onPendingAdd={onPendingAdd}
+                onPendingRemove={onPendingRemove}
               />
             </div>
           </div>

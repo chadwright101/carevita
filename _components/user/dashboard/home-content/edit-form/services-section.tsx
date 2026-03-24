@@ -11,11 +11,13 @@ interface Props {
   activeSection: string;
   toggleSection: (id: string) => void;
   error?: string;
+  onPendingAdd?: (url: string) => void;
+  onPendingRemove?: (url: string) => void;
 }
 
 const ServiceSection = forwardRef<HTMLDivElement, Props>(
   function ServiceSection(
-    { services, setServices, activeSection, toggleSection, error },
+    { services, setServices, activeSection, toggleSection, error, onPendingAdd, onPendingRemove },
     ref,
   ) {
     return (
@@ -46,7 +48,7 @@ const ServiceSection = forwardRef<HTMLDivElement, Props>(
           </p>
         )}
         {activeSection === "services" && (
-          <ServiceList services={services} setServices={setServices} />
+          <ServiceList services={services} setServices={setServices} onPendingAdd={onPendingAdd} onPendingRemove={onPendingRemove} />
         )}
         <input type="hidden" name="services" value={JSON.stringify(services)} />
       </div>

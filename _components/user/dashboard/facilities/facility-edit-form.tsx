@@ -23,6 +23,7 @@ import GallerySection from "./edit-form/gallery-section";
 import LocationSection from "./edit-form/location-section";
 import MetaDataSection from "./edit-form/metadata-section";
 import OurHomesPageSection from "./edit-form/our-homes-page-section";
+import { usePendingUploads } from "@/_hooks/use-pending-uploads";
 
 interface Props {
   facility: Facility;
@@ -32,8 +33,8 @@ const initialState = { success: false, error: "" };
 
 export default function FacilityEditForm({ facility }: Props) {
   const [state, formAction] = useActionState(updateFacility, initialState);
-  const [isPending, startTransition] = useTransition();
-
+  const [, startTransition] = useTransition();
+  const { addPending, removePending, clearAll } = usePendingUploads();
   const {
     general,
     whatWeOffer,
@@ -62,6 +63,8 @@ export default function FacilityEditForm({ facility }: Props) {
     location.locationImage ?? "",
   );
   const [metaKeywords, setMetaKeywords] = useState(meta.keywords ?? "");
+  const [metaTitle, setMetaTitle] = useState(meta.title ?? "");
+  const [metaDescription, setMetaDescription] = useState(meta.description ?? "");
   const [whatWeOfferImage, setWhatWeOfferImage] = useState(
     whatWeOffer.image ?? "",
   );
@@ -110,6 +113,7 @@ export default function FacilityEditForm({ facility }: Props) {
   const galleryRef = useRef<HTMLDivElement>(null);
   const locationRef = useRef<HTMLDivElement>(null);
   const ourHomesRef = useRef<HTMLDivElement>(null);
+  const metaRef = useRef<HTMLDivElement>(null);
 
   const sectionRefMap: Record<
     string,
@@ -123,6 +127,7 @@ export default function FacilityEditForm({ facility }: Props) {
     gallery: galleryRef,
     location: locationRef,
     ourHomesPage: ourHomesRef,
+    meta: metaRef,
   };
 
   function toggleSection(id: string) {
@@ -214,6 +219,13 @@ export default function FacilityEditForm({ facility }: Props) {
       errors.ourHomesPage = "A description is required.";
     }
 
+    const metaFields: string[] = [];
+    if (!metaTitle) metaFields.push("Meta Title");
+    if (!metaDescription) metaFields.push("Meta Description");
+    if (metaFields.length > 0) {
+      errors.meta = `Please complete all required fields in this section - ${metaFields.join(", ")}.`;
+    }
+
     if (teamMembers.length > 0) {
       const hasIncomplete = teamMembers.some(
         (m) => !m.teamMember || !m.position || !m.url,
@@ -235,6 +247,7 @@ export default function FacilityEditForm({ facility }: Props) {
         "location",
         "ourHomesPage",
         "meetTheTeam",
+        "meta",
       ];
       const firstError = sectionOrder.find((id) => errors[id]);
       if (firstError) {
@@ -248,6 +261,7 @@ export default function FacilityEditForm({ facility }: Props) {
           location: locationRef,
           ourHomesPage: ourHomesRef,
           meetTheTeam: meetTheTeamRef,
+          meta: metaRef,
         };
         refMap[firstError]?.current?.scrollIntoView({
           behavior: "smooth",
@@ -258,6 +272,7 @@ export default function FacilityEditForm({ facility }: Props) {
     }
 
     setSectionErrors({});
+    clearAll();
     startTransition(() => {
       formAction(new FormData(e.currentTarget as HTMLFormElement));
     });
@@ -302,6 +317,8 @@ export default function FacilityEditForm({ facility }: Props) {
         activeSection={activeSection}
         toggleSection={toggleSection}
         error={sectionErrors.about}
+        onPendingAdd={addPending}
+        onPendingRemove={removePending}
       />
 
       <WhatWeOfferSection
@@ -314,6 +331,8 @@ export default function FacilityEditForm({ facility }: Props) {
         activeSection={activeSection}
         toggleSection={toggleSection}
         error={sectionErrors.whatWeOffer}
+        onPendingAdd={addPending}
+        onPendingRemove={removePending}
       />
 
       <MeetTheTeamSection
@@ -324,6 +343,8 @@ export default function FacilityEditForm({ facility }: Props) {
         activeSection={activeSection}
         toggleSection={toggleSection}
         error={sectionErrors.meetTheTeam}
+        onPendingAdd={addPending}
+        onPendingRemove={removePending}
       />
 
       <HeroSection
@@ -346,6 +367,8 @@ export default function FacilityEditForm({ facility }: Props) {
         activeSection={activeSection}
         toggleSection={toggleSection}
         error={sectionErrors.hero}
+        onPendingAdd={addPending}
+        onPendingRemove={removePending}
       />
 
       <GallerySection
@@ -356,6 +379,8 @@ export default function FacilityEditForm({ facility }: Props) {
         activeSection={activeSection}
         toggleSection={toggleSection}
         error={sectionErrors.gallery}
+        onPendingAdd={addPending}
+        onPendingRemove={removePending}
       />
 
       <LocationSection
@@ -372,6 +397,8 @@ export default function FacilityEditForm({ facility }: Props) {
         activeSection={activeSection}
         toggleSection={toggleSection}
         error={sectionErrors.location}
+        onPendingAdd={addPending}
+        onPendingRemove={removePending}
       />
 
       <input
@@ -390,13 +417,21 @@ export default function FacilityEditForm({ facility }: Props) {
       />
 
       <MetaDataSection
+        ref={metaRef}
         facilitySlug={general.slug}
+        metaTitle={metaTitle}
+        setMetaTitle={setMetaTitle}
+        metaDescription={metaDescription}
+        setMetaDescription={setMetaDescription}
         metaKeywords={metaKeywords}
         setMetaKeywords={setMetaKeywords}
         metaImages={metaImages}
         setMetaImages={setMetaImages}
         activeSection={activeSection}
         toggleSection={toggleSection}
+        error={sectionErrors.meta}
+        onPendingAdd={addPending}
+        onPendingRemove={removePending}
       />
 
       {state.error && <p className="text-error text-smallest">{state.error}</p>}

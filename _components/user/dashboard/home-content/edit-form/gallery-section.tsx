@@ -12,11 +12,13 @@ interface Props {
   activeSection: string;
   toggleSection: (id: string) => void;
   error?: string;
+  onPendingAdd?: (url: string) => void;
+  onPendingRemove?: (url: string) => void;
 }
 
 const GallerySection = forwardRef<HTMLDivElement, Props>(
   function GallerySection(
-    { images, setImages, activeSection, toggleSection, error },
+    { images, setImages, activeSection, toggleSection, error, onPendingAdd, onPendingRemove },
     ref,
   ) {
 
@@ -53,6 +55,7 @@ const GallerySection = forwardRef<HTMLDivElement, Props>(
                 urls={images}
                 onRemove={(url) => {
                   deleteImage(url);
+                  onPendingRemove?.(url);
                   setImages((prev) => prev.filter((img) => img !== url));
                 }}
                 onMove={(index, direction) => {
@@ -70,6 +73,7 @@ const GallerySection = forwardRef<HTMLDivElement, Props>(
                 onUploaded={(url) => setImages((prev) => [...prev, url])}
                 multiple
                 maxFiles={3}
+                onPendingAdd={onPendingAdd}
               />
             </div>
           </div>

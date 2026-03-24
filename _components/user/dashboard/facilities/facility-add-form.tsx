@@ -49,6 +49,8 @@ export default function FacilityAddForm() {
   const [phone, setPhone] = useState("+27");
   const [description, setDescription] = useState("");
   const [contactImage, setContactImage] = useState("");
+  const [metaTitle, setMetaTitle] = useState("");
+  const [metaDescription, setMetaDescription] = useState("");
   const [metaKeywords, setMetaKeywords] = useState("");
   const [whatWeOfferImage, setWhatWeOfferImage] = useState("");
   const [whatWeOfferContent, setWhatWeOfferContent] = useState("");
@@ -356,6 +358,10 @@ export default function FacilityAddForm() {
 
       <MetaDataSection
         facilitySlug={slug}
+        metaTitle={metaTitle}
+        setMetaTitle={setMetaTitle}
+        metaDescription={metaDescription}
+        setMetaDescription={setMetaDescription}
         metaKeywords={metaKeywords}
         setMetaKeywords={setMetaKeywords}
         metaImages={metaImages}

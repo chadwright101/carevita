@@ -13,6 +13,8 @@ interface Props {
   activeSection: string;
   toggleSection: (id: string) => void;
   error?: string;
+  onPendingAdd?: (url: string) => void;
+  onPendingRemove?: (url: string) => void;
 }
 
 const GallerySection = forwardRef<HTMLDivElement, Props>(
@@ -24,6 +26,8 @@ const GallerySection = forwardRef<HTMLDivElement, Props>(
       activeSection,
       toggleSection,
       error,
+      onPendingAdd,
+      onPendingRemove,
     },
     ref,
   ) {
@@ -59,6 +63,7 @@ const GallerySection = forwardRef<HTMLDivElement, Props>(
                 urls={gallerySliderState}
                 onRemove={(url) => {
                   deleteImage(url);
+                  onPendingRemove?.(url);
                   setGallerySliderState((prev) =>
                     prev.filter((img) => img !== url),
                   );
@@ -80,6 +85,7 @@ const GallerySection = forwardRef<HTMLDivElement, Props>(
                 }
                 multiple
                 maxFiles={3}
+                onPendingAdd={onPendingAdd}
               />
             </div>
           </div>

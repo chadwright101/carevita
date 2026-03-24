@@ -12,6 +12,8 @@ interface Props {
   activeSection: string;
   toggleSection: (id: string) => void;
   error?: string;
+  onPendingAdd?: (url: string) => void;
+  onPendingRemove?: (url: string) => void;
 }
 
 const MeetTheTeamSection = forwardRef<HTMLDivElement, Props>(
@@ -23,6 +25,8 @@ const MeetTheTeamSection = forwardRef<HTMLDivElement, Props>(
       activeSection,
       toggleSection,
       error,
+      onPendingAdd,
+      onPendingRemove,
     },
     ref,
   ) {
@@ -59,6 +63,8 @@ const MeetTheTeamSection = forwardRef<HTMLDivElement, Props>(
             facilitySlug={facilitySlug}
             teamMembers={teamMembers}
             setTeamMembers={setTeamMembers}
+            onPendingAdd={onPendingAdd}
+            onPendingRemove={onPendingRemove}
           />
         )}
         <input

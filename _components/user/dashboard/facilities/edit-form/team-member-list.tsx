@@ -13,12 +13,16 @@ interface Props {
   facilitySlug: string;
   teamMembers: TeamMember[];
   setTeamMembers: React.Dispatch<React.SetStateAction<TeamMember[]>>;
+  onPendingAdd?: (url: string) => void;
+  onPendingRemove?: (url: string) => void;
 }
 
 export default function TeamMemberList({
   facilitySlug,
   teamMembers,
   setTeamMembers,
+  onPendingAdd,
+  onPendingRemove,
 }: Props) {
   const [confirmIndex, setConfirmIndex] = useState<number | null>(null);
 
@@ -81,7 +85,7 @@ export default function TeamMemberList({
                 type="button"
                 onClick={() => {
                   if (confirmIndex === i) {
-                    if (member.url) deleteImage(member.url);
+                    if (member.url) { deleteImage(member.url); onPendingRemove?.(member.url); }
                     setTeamMembers((prev) => prev.filter((_, j) => j !== i));
                     setConfirmIndex(null);
                   } else {
@@ -129,6 +133,8 @@ export default function TeamMemberList({
               currentUrl={member.url}
               showPreview
               replaceMode={!!member.url}
+              onPendingAdd={onPendingAdd}
+              onPendingRemove={onPendingRemove}
             />
           </div>
         </div>

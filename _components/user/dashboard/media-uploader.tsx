@@ -22,6 +22,8 @@ interface Props {
   maxFiles?: number;
   replaceMode?: boolean;
   videoFormat?: "mp4" | "webm";
+  onPendingAdd?: (url: string) => void;
+  onPendingRemove?: (url: string) => void;
 }
 
 export default function MediaUploader({
@@ -36,6 +38,8 @@ export default function MediaUploader({
   maxFiles,
   replaceMode,
   videoFormat,
+  onPendingAdd,
+  onPendingRemove,
 }: Props) {
   const id = useId();
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -149,8 +153,10 @@ export default function MediaUploader({
       if (result.success && result.data?.url) {
         if (!multiple && currentUrl) {
           await deleteImage(currentUrl);
+          onPendingRemove?.(currentUrl);
         }
         onUploaded(result.data.url);
+        onPendingAdd?.(result.data.url);
       } else {
         setError(result.error || "Upload failed");
         setLoading(false);

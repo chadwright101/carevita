@@ -21,6 +21,8 @@ import ServicesSection from "@/_components/user/dashboard/home-content/edit-form
 import ContactSection from "@/_components/user/dashboard/home-content/edit-form/contact-section";
 import GallerySection from "@/_components/user/dashboard/home-content/edit-form/gallery-section";
 import HeroSection from "@/_components/user/dashboard/home-content/edit-form/hero-section";
+import MetaDataSection from "@/_components/user/dashboard/home-content/edit-form/metadata-section";
+import { usePendingUploads } from "@/_hooks/use-pending-uploads";
 
 interface Props {
   homeContent: HomePage;
@@ -32,9 +34,11 @@ export default function HomeEditForm({ homeContent }: Props) {
   const [state, formAction] = useActionState(updateHomeContent, initialState);
   const [, startTransition] = useTransition();
   const router = useRouter();
+  const { addPending, removePending, clearAll } = usePendingUploads();
 
   useEffect(() => {
     if (state.success) {
+      clearAll();
       router.push("/dashboard");
     }
   }, [state.success, router]);
@@ -79,6 +83,14 @@ export default function HomeEditForm({ homeContent }: Props) {
   const [contactAccounts, setContactAccounts] = useState(
     homeContent.contact.accounts ?? "",
   );
+  const [metaKeywords, setMetaKeywords] = useState(
+    homeContent.meta?.keywords ?? "",
+  );
+  const [metaTitle, setMetaTitle] = useState(homeContent.meta?.title ?? "");
+  const [metaDescription, setMetaDescription] = useState(homeContent.meta?.description ?? "");
+  const [metaImages, setMetaImages] = useState(
+    homeContent.meta?.images ?? [],
+  );
   const [activeSection, setActiveSection] = useState("hero");
   const [sectionErrors, setSectionErrors] = useState<Record<string, string>>(
     {},
@@ -89,6 +101,7 @@ export default function HomeEditForm({ homeContent }: Props) {
   const servicesRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
   const sliderRef = useRef<HTMLDivElement>(null);
+  const metaRef = useRef<HTMLDivElement>(null);
 
   const sectionRefMap: Record<
     string,
@@ -99,6 +112,7 @@ export default function HomeEditForm({ homeContent }: Props) {
     services: servicesRef,
     contact: contactRef,
     slider: sliderRef,
+    meta: metaRef,
   };
 
   function toggleSection(id: string) {
@@ -169,9 +183,16 @@ export default function HomeEditForm({ homeContent }: Props) {
       errors.contact = `Please complete all required fields in this section - ${fields.join(", ")}.`;
     }
 
+    const metaFields: string[] = [];
+    if (!metaTitle) metaFields.push("Meta Title");
+    if (!metaDescription) metaFields.push("Meta Description");
+    if (metaFields.length > 0) {
+      errors.meta = `Please complete all required fields in this section - ${metaFields.join(", ")}.`;
+    }
+
     if (Object.keys(errors).length > 0) {
       setSectionErrors(errors);
-      const sectionOrder = ["hero", "about", "services", "contact", "slider"];
+      const sectionOrder = ["hero", "about", "services", "contact", "slider", "meta"];
       const firstError = sectionOrder.find((id) => errors[id]);
       if (firstError) {
         setActiveSection(firstError);
@@ -214,6 +235,8 @@ export default function HomeEditForm({ homeContent }: Props) {
         activeSection={activeSection}
         toggleSection={toggleSection}
         error={sectionErrors.hero}
+        onPendingAdd={addPending}
+        onPendingRemove={removePending}
       />
 
       <AboutSection
@@ -227,6 +250,8 @@ export default function HomeEditForm({ homeContent }: Props) {
         activeSection={activeSection}
         toggleSection={toggleSection}
         error={sectionErrors.about}
+        onPendingAdd={addPending}
+        onPendingRemove={removePending}
       />
 
       <ServicesSection
@@ -236,6 +261,8 @@ export default function HomeEditForm({ homeContent }: Props) {
         activeSection={activeSection}
         toggleSection={toggleSection}
         error={sectionErrors.services}
+        onPendingAdd={addPending}
+        onPendingRemove={removePending}
       />
 
       <GallerySection
@@ -245,6 +272,8 @@ export default function HomeEditForm({ homeContent }: Props) {
         activeSection={activeSection}
         toggleSection={toggleSection}
         error={sectionErrors.slider}
+        onPendingAdd={addPending}
+        onPendingRemove={removePending}
       />
 
       <ContactSection
@@ -256,6 +285,23 @@ export default function HomeEditForm({ homeContent }: Props) {
         activeSection={activeSection}
         toggleSection={toggleSection}
         error={sectionErrors.contact}
+      />
+
+      <MetaDataSection
+        ref={metaRef}
+        metaTitle={metaTitle}
+        setMetaTitle={setMetaTitle}
+        metaDescription={metaDescription}
+        setMetaDescription={setMetaDescription}
+        metaKeywords={metaKeywords}
+        setMetaKeywords={setMetaKeywords}
+        metaImages={metaImages}
+        setMetaImages={setMetaImages}
+        activeSection={activeSection}
+        toggleSection={toggleSection}
+        error={sectionErrors.meta}
+        onPendingAdd={addPending}
+        onPendingRemove={removePending}
       />
 
       {state.error && <p className="text-error text-smallest">{state.error}</p>}
