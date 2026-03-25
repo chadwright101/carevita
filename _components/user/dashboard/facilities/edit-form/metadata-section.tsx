@@ -95,7 +95,7 @@ const MetaDataSection = forwardRef<HTMLDivElement, Props>(
             </label>
 
             <label className="flex flex-col gap-1">
-              <span className="font-semibold">Meta Keywords</span>
+              <span className="font-semibold">Meta Keywords (optional)</span>
               <span className="text-smallest text-black/60 italic">
                 A comma-separated list of words or phrases relevant to this page
                 (e.g. "retirement home, assisted living, Cape Town"). These help
@@ -110,7 +110,7 @@ const MetaDataSection = forwardRef<HTMLDivElement, Props>(
 
             <div className="flex flex-col gap-3">
               <div className="flex flex-col gap-1">
-                <span className="font-semibold">Meta Images</span>
+                <span className="font-semibold">Meta Images (optional)</span>
                 <span className="text-smallest text-black/60 italic">
                   Images that appear when this page is shared on social media
                   (e.g. Facebook, WhatsApp). Use a clear, high-quality image

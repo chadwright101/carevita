@@ -36,15 +36,7 @@ export async function sendEmail(
       const property = formData.get("property")?.toString() || "";
       const propertySlug = formData.get("propertySlug")?.toString() || "";
 
-      console.log("Contact form submission - propertySlug:", propertySlug);
-      console.log("Contact form submission - property:", property);
-      console.log("Contact form submission - name:", name);
-      console.log("Contact form submission - email:", email);
-      console.log("Contact form submission - phone:", phone);
-      console.log("Contact form submission - message length:", message.length);
-
       if (!name.trim() || !email.trim() || !phone.trim() || !message.trim()) {
-        console.log("Validation failed - missing required fields");
         return {
           success: false,
           error: "All required fields must be filled",
@@ -73,19 +65,14 @@ export async function sendEmail(
       let recipientEmail = "chad@bodymindzone.com";
       let ccEmail: string | undefined;
       if (propertySlug) {
-        console.log("Looking up facility email for slug:", propertySlug);
         const db = getFirestoreDb();
         const doc = await db
           .collection("facilitiesContent")
           .doc(propertySlug)
           .get();
         const facilityEmail = doc.data()?.general?.facilityEmail;
-        console.log("Found facility email:", facilityEmail);
         if (facilityEmail) recipientEmail = facilityEmail;
         ccEmail = doc.data()?.general?.facilityEmailCC;
-        console.log("Found CC email:", ccEmail);
-      } else {
-        console.log("No propertySlug provided, using fallback email");
       }
 
       const mailOptions: any = {
@@ -102,9 +89,7 @@ export async function sendEmail(
         mailOptions.cc = ccEmail;
       }
 
-      console.log("Sending email to:", recipientEmail, "CC:", ccEmail || "none");
       await transporter.sendMail(mailOptions);
-      console.log("Email sent successfully");
       return { success: true };
     } else {
       console.error("Invalid form submission due to non-empty honeypot field");
@@ -112,10 +97,6 @@ export async function sendEmail(
     }
   } catch (error) {
     console.error("Error sending email:", error);
-    if (error instanceof Error) {
-      console.error("Error message:", error.message);
-      console.error("Error stack:", error.stack);
-    }
     return { success: false, error: "Failed to send email" };
   }
 }

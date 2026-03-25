@@ -46,7 +46,7 @@ const MeetTheTeamSection = forwardRef<HTMLDivElement, Props>(
                 "text-error": error,
               })}
             >
-              Meet the Team
+              Meet the Team (optional)
             </span>
             {error && <span className="text-error text-smallest">{error}</span>}
           </span>

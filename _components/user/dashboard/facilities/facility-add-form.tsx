@@ -86,6 +86,7 @@ export default function FacilityAddForm() {
   const galleryRef = useRef<HTMLDivElement>(null);
   const locationRef = useRef<HTMLDivElement>(null);
   const ourHomesRef = useRef<HTMLDivElement>(null);
+  const metaRef = useRef<HTMLDivElement>(null);
 
   const slug = title.toLowerCase().replace(/\s+/g, "-");
 
@@ -101,6 +102,7 @@ export default function FacilityAddForm() {
     gallery: galleryRef,
     location: locationRef,
     ourHomesPage: ourHomesRef,
+    meta: metaRef,
   };
 
   function toggleSection(id: string) {
@@ -189,6 +191,13 @@ export default function FacilityAddForm() {
       errors.ourHomesPage = "A description is required.";
     }
 
+    const metaFields: string[] = [];
+    if (!metaTitle) metaFields.push("Meta Title");
+    if (!metaDescription) metaFields.push("Meta Description");
+    if (metaFields.length > 0) {
+      errors.meta = `Please complete all required fields in this section - ${metaFields.join(", ")}.`;
+    }
+
     if (teamMembers.length > 0) {
       const hasIncomplete = teamMembers.some(
         (m) => !m.teamMember || !m.position || !m.url,
@@ -210,6 +219,7 @@ export default function FacilityAddForm() {
         "location",
         "ourHomesPage",
         "meetTheTeam",
+        "meta",
       ];
       const firstError = sectionOrder.find((id) => errors[id]);
       if (firstError) {
@@ -223,6 +233,7 @@ export default function FacilityAddForm() {
           location: locationRef,
           ourHomesPage: ourHomesRef,
           meetTheTeam: meetTheTeamRef,
+          meta: metaRef,
         };
         refMap[firstError]?.current?.scrollIntoView({
           behavior: "smooth",
@@ -364,6 +375,7 @@ export default function FacilityAddForm() {
       />
 
       <MetaDataSection
+        ref={metaRef}
         facilitySlug={slug}
         metaTitle={metaTitle}
         setMetaTitle={setMetaTitle}
@@ -375,6 +387,7 @@ export default function FacilityAddForm() {
         setMetaImages={setMetaImages}
         activeSection={activeSection}
         toggleSection={toggleSection}
+        error={sectionErrors.meta}
       />
 
       {state.error && <p className="text-error text-smallest">{state.error}</p>}
