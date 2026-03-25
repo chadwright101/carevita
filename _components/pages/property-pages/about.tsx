@@ -1,5 +1,5 @@
 import Image from "next/image";
-import DOMPurify from "isomorphic-dompurify";
+import parse from "html-react-parser";
 import { DataProps } from "@/_lib/utils/data-props";
 import Heading, { headingVariant } from "../../ui/heading";
 
@@ -37,10 +37,9 @@ const About = ({
               ? content.map((p) => `<p>${p}</p>`).join("")
               : content;
             return (
-              <article
-                className="[&_p]:mb-4 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-4 [&_li]:mb-0 [&_li]:leading-3 [&_ol]:list-decimal [&_ol]:ml-6 [&_ol]:mb-4"
-                dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(html) }}
-              />
+              <article className="[&_p]:mb-4 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-4 [&_li]:mb-0 [&_li]:leading-3 [&_ol]:list-decimal [&_ol]:ml-6 [&_ol]:mb-4">
+                {parse(html)}
+              </article>
             );
           })()}
           <Image
@@ -59,10 +58,9 @@ const About = ({
           </Heading>
         </article>
         <div className="grid gap-10">
-          <article
-            className="desktop:columns-2 [&_p]:mb-4 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-4 [&_li]:mb-0 [&_li]:leading-3 [&_li]:break-inside-avoid [&_ul]:break-inside-avoid [&_ol]:list-decimal [&_ol]:ml-6 [&_ol]:mb-4"
-            dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(offerings) }}
-          />
+          <article className="desktop:columns-2 [&_p]:mb-4 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-4 [&_li]:mb-0 [&_li]:leading-3 [&_li]:break-inside-avoid [&_ul]:break-inside-avoid [&_ol]:list-decimal [&_ol]:ml-6 [&_ol]:mb-4">
+            {parse(offerings)}
+          </article>
           <Image
             src={image}
             alt={`${facilityName} - What we offer`}

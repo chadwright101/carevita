@@ -1,4 +1,4 @@
-import DOMPurify from "isomorphic-dompurify";
+import parse from "html-react-parser";
 import { DataProps } from "@/_lib/utils/data-props";
 import Heading, { headingVariant } from "../../ui/heading";
 import About from "./about";
@@ -86,12 +86,9 @@ const PageItem = ({ data }: DataProps) => {
             Location
           </Heading>
           {location.description && (
-            <article
-              className="[&_p]:mb-4 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-4 [&_li]:mb-0 [&_li]:leading-3 [&_ol]:list-decimal [&_ol]:ml-6 [&_ol]:mb-4"
-              dangerouslySetInnerHTML={{
-                __html: DOMPurify.sanitize(location.description),
-              }}
-            />
+            <article className="[&_p]:mb-4 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-4 [&_li]:mb-0 [&_li]:leading-3 [&_ol]:list-decimal [&_ol]:ml-6 [&_ol]:mb-4">
+              {parse(location.description)}
+            </article>
           )}
         </section>
       </PageWrapper>

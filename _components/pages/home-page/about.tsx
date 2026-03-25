@@ -1,5 +1,5 @@
 import Image from "next/image";
-import DOMPurify from "isomorphic-dompurify";
+import parse from "html-react-parser";
 import { GeneralDataProps } from "@/_lib/utils/data-props";
 import Heading, { headingVariant } from "../../ui/heading";
 import classNames from "classnames";
@@ -30,10 +30,9 @@ const About = ({
         >
           About
         </Heading>
-        <div
-          className="[&_p]:mb-4 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-4 [&_li]:mb-0 [&_li]:leading-3 [&_ol]:list-decimal [&_ol]:ml-6 [&_ol]:mb-4"
-          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(content) }}
-        />
+        <div className="[&_p]:mb-4 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-4 [&_li]:mb-0 [&_li]:leading-3 [&_ol]:list-decimal [&_ol]:ml-6 [&_ol]:mb-4">
+          {parse(content)}
+        </div>
       </div>
       <div className="grid gap-10 mt-6 min-[800px]:grid-cols-2 desktop:grid-cols-1 desktop:grid-rows-[300px_300px]">
         <Image

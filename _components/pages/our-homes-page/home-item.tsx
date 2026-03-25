@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import classNames from "classnames";
-import DOMPurify from "isomorphic-dompurify";
+import parse from "html-react-parser";
 import ButtonLink from "../../ui/button-link";
 import Heading, { headingVariant } from "../../ui/heading";
 import { FacilityNavigation } from "@/_types/facility-types";
@@ -59,9 +59,7 @@ const HomeItem = ({
             sizes="(max-width: 425px) 90vw, (max-width: 900px) 80vw, 40vw"
           />
         </Link>
-        <p
-          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(description) }}
-        />
+        <p>{parse(description)}</p>
       </div>
       <ButtonLink href={`/our-homes/${slug}`} backgroundColor="green" />
     </article>
