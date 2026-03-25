@@ -14,7 +14,12 @@ const PropertySelector = ({
   onPropertySelect,
 }: PropertySelectorProps) => {
   return (
-    <div className="grid grid-cols-5 gap-x-10 gap-y-5 justify-between pb-7 border-b border-white">
+    <div
+      className={classNames(
+        "grid grid-cols-5 gap-x-10 gap-y-5 justify-between border-white",
+        selectedPropertyId && "pb-7 border-b",
+      )}
+    >
       {properties.map((facility) => {
         const isSelected = selectedPropertyId === facility.slug;
 
