@@ -280,18 +280,6 @@ export default function FacilityAddForm() {
         error={sectionErrors.general}
       />
 
-      <AboutSection
-        ref={aboutRef}
-        facilitySlug={slug}
-        aboutContent={aboutContent}
-        setAboutContent={setAboutContent}
-        aboutImage={aboutImage}
-        setAboutImage={setAboutImage}
-        activeSection={activeSection}
-        toggleSection={toggleSection}
-        error={sectionErrors.about}
-      />
-
       <HeroSection
         ref={heroRef}
         facilitySlug={slug}
@@ -312,6 +300,18 @@ export default function FacilityAddForm() {
         activeSection={activeSection}
         toggleSection={toggleSection}
         error={sectionErrors.hero}
+      />
+
+      <AboutSection
+        ref={aboutRef}
+        facilitySlug={slug}
+        aboutContent={aboutContent}
+        setAboutContent={setAboutContent}
+        aboutImage={aboutImage}
+        setAboutImage={setAboutImage}
+        activeSection={activeSection}
+        toggleSection={toggleSection}
+        error={sectionErrors.about}
       />
 
       <WhatWeOfferSection

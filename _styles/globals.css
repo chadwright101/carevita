@@ -203,21 +203,5 @@ html {
     }
   }
 
-  @keyframes growDown {
-    from {
-      transform: scaleY(0);
-      opacity: 0;
-    }
-
-    to {
-      transform: scaleY(1);
-      opacity: 1;
-    }
-  }
-
-  .animate-grow-down {
-    animation: growDown 0.3s ease-out forwards;
-    transform-origin: top;
-  }
 
 }

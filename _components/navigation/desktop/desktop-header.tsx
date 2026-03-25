@@ -57,15 +57,32 @@ const DesktopHeader = ({
     ? [
         ...(isLoggedIn ? [dashboardItem, signOutItem] : []),
         { title: "Home", url: "/" },
-        { title: "About", url: `${`/our-homes/${currentFacility.slug}`}#about` },
+        {
+          title: "About",
+          url: `${`/our-homes/${currentFacility.slug}`}#about`,
+        },
         ...(currentFacility.hasStaff
-          ? [{ title: "Staff", url: `${`/our-homes/${currentFacility.slug}`}#staff` }]
+          ? [
+              {
+                title: "Staff",
+                url: `${`/our-homes/${currentFacility.slug}`}#staff`,
+              },
+            ]
           : []),
-        { title: "Gallery", url: `${`/our-homes/${currentFacility.slug}`}#gallery` },
-        { title: "Location", url: `${`/our-homes/${currentFacility.slug}`}#location` },
+        {
+          title: "Gallery",
+          url: `${`/our-homes/${currentFacility.slug}`}#gallery`,
+        },
+        {
+          title: "Location",
+          url: `${`/our-homes/${currentFacility.slug}`}#location`,
+        },
         { title: "Our Homes", url: "/our-homes" },
         { title: "Blog", url: "/blog" },
-        { title: "Contact", url: `${`/our-homes/${currentFacility.slug}`}#contact` },
+        {
+          title: "Contact",
+          url: `${`/our-homes/${currentFacility.slug}`}#contact`,
+        },
       ]
     : [
         ...(isLoggedIn ? [dashboardItem, signOutItem] : []),
@@ -136,8 +153,13 @@ const DesktopHeader = ({
                     {title}
                   </Link>
 
-                  {title === "Our Homes" && toggleHomeSubmenu && (
-                    <ul className="absolute bg-white px-6 py-3 border border-t-0 border-black -translate-x-[55px] rounded-b-xl flex flex-col gap-2 animate-grow-down">
+                  {title === "Our Homes" && (
+                    <ul
+                      className={classNames(
+                        "absolute bg-white px-6 py-3 border border-t-0 border-black -translate-x-[55px] rounded-b-xl flex flex-col gap-2",
+                        toggleHomeSubmenu ? "visible" : "invisible",
+                      )}
+                    >
                       <div className="absolute top-0 w-[102%] -left-[2px] h-4 bg-white" />
                       {homeSubmenu.map(({ title, url, location }, index) => (
                         <li key={index} className="flex flex-col gap-0.5">
