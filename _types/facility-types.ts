@@ -5,6 +5,7 @@ export interface FacilityGeneral {
   extendedLocation: string;
   province: "EC" | "FS" | "GP" | "KZN" | "LP" | "MP" | "NC" | "NW" | "WC";
   facilityEmail: string;
+  facilityEmailCC?: string;
   facilityPhone: string;
   slug: string;
 }

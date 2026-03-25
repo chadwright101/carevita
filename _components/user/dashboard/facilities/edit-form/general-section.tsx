@@ -16,6 +16,8 @@ interface Props {
   ) => void;
   email: string;
   setEmail: (v: string) => void;
+  ccEmail: string;
+  setCcEmail: (v: string) => void;
   phone: string;
   setPhone: (v: string) => void;
   activeSection: string;
@@ -36,6 +38,8 @@ const GeneralSection = forwardRef<HTMLDivElement, Props>(
       setRegion,
       email,
       setEmail,
+      ccEmail,
+      setCcEmail,
       phone,
       setPhone,
       activeSection,
@@ -72,6 +76,10 @@ const GeneralSection = forwardRef<HTMLDivElement, Props>(
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 className="border border-black rounded p-2"
+                autoComplete="off"
+                data-bwignore
+                data-1p-ignore
+                data-lpignore="true"
               />
             </label>
             <label className="flex flex-col gap-1">
@@ -80,6 +88,10 @@ const GeneralSection = forwardRef<HTMLDivElement, Props>(
                 value={extendedTitle}
                 onChange={(e) => setExtendedTitle(e.target.value)}
                 className="border border-black rounded p-2"
+                autoComplete="off"
+                data-bwignore
+                data-1p-ignore
+                data-lpignore="true"
               />
             </label>
             <label className="flex flex-col gap-1">
@@ -88,6 +100,10 @@ const GeneralSection = forwardRef<HTMLDivElement, Props>(
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
                 className="border border-black rounded p-2"
+                autoComplete="off"
+                data-bwignore
+                data-1p-ignore
+                data-lpignore="true"
               />
             </label>
             <label className="flex flex-col gap-1">
@@ -131,6 +147,22 @@ const GeneralSection = forwardRef<HTMLDivElement, Props>(
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="border border-black rounded p-2"
+                autoComplete="off"
+                data-bwignore
+                data-1p-ignore
+                data-lpignore="true"
+              />
+            </label>
+            <label className="flex flex-col gap-1">
+              CC Email (optional)
+              <input
+                value={ccEmail}
+                onChange={(e) => setCcEmail(e.target.value)}
+                className="border border-black rounded p-2"
+                autoComplete="off"
+                data-bwignore
+                data-1p-ignore
+                data-lpignore="true"
               />
             </label>
             <label className="flex flex-col gap-1">
@@ -139,6 +171,10 @@ const GeneralSection = forwardRef<HTMLDivElement, Props>(
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 className="border border-black rounded p-2"
+                autoComplete="off"
+                data-bwignore
+                data-1p-ignore
+                data-lpignore="true"
               />
             </label>
           </div>
@@ -152,6 +188,7 @@ const GeneralSection = forwardRef<HTMLDivElement, Props>(
         <input type="hidden" name="city" value={city} />
         <input type="hidden" name="region" value={region} />
         <input type="hidden" name="facilityEmail" value={email} />
+        <input type="hidden" name="facilityEmailCC" value={ccEmail} />
         <input type="hidden" name="facilityPhone" value={phone} />
       </div>
     );

@@ -7,6 +7,7 @@ export const facilityGeneralSchema = z.object({
   extendedLocation: z.string().min(1),
   province: z.enum(["WC", "GP", "EC", "KZN", "LP", "MP", "NW", "FS", "NC"]),
   facilityEmail: z.string().email(),
+  facilityEmailCC: z.string().email().optional().or(z.literal("")),
   facilityPhone: z.string().min(1),
   slug: z.string().min(1),
 });

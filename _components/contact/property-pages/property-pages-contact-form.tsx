@@ -103,6 +103,13 @@ const PropertyPagesContactForm = ({
                 readOnly
                 className="hidden"
               />
+              <input
+                type="text"
+                name="propertySlug"
+                value={slug}
+                readOnly
+                className="hidden"
+              />
               <input type="text" name="_honey" className="hidden" />
               <div className="flex flex-col gap-3">
                 <label

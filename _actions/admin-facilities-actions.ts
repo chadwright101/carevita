@@ -46,6 +46,7 @@ export async function createFacility(
     const slug = formData.get("slug") as string;
     const city = formData.get("city") as string;
     const region = formData.get("region") as string;
+    const facilityEmailCC = (formData.get("facilityEmailCC") as string) || "";
 
     const facilityData: Facility = {
       general: {
@@ -55,6 +56,7 @@ export async function createFacility(
         extendedLocation: `${city}, ${regionFullName[region]}`,
         province: region as FacilityGeneral["province"],
         facilityEmail: formData.get("facilityEmail") as string,
+        ...(facilityEmailCC && { facilityEmailCC }),
         facilityPhone: (() => { const p = formData.get("facilityPhone") as string; return p.startsWith("+270") ? "+27" + p.slice(4) : p; })(),
         slug,
       },
@@ -149,6 +151,7 @@ export async function updateFacility(
     const slug = formData.get("slug") as string;
     const city = formData.get("city") as string;
     const region = formData.get("region") as string;
+    const facilityEmailCC = (formData.get("facilityEmailCC") as string) || "";
 
     const facilityData: Facility = {
       general: {
@@ -158,6 +161,7 @@ export async function updateFacility(
         extendedLocation: `${city}, ${regionFullName[region]}`,
         province: region as FacilityGeneral["province"],
         facilityEmail: formData.get("facilityEmail") as string,
+        ...(facilityEmailCC && { facilityEmailCC }),
         facilityPhone: (() => { const p = formData.get("facilityPhone") as string; return p.startsWith("+270") ? "+27" + p.slice(4) : p; })(),
         slug,
       },

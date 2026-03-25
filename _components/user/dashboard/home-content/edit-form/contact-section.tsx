@@ -54,6 +54,10 @@ const ContactSection = forwardRef<HTMLDivElement, Props>(
                 value={contactGeneral}
                 onChange={(e) => setContactGeneral(e.target.value)}
                 className="border border-black rounded p-2"
+                autoComplete="off"
+                data-bwignore
+                data-1p-ignore
+                data-lpignore="true"
               />
             </label>
             <label className="flex flex-col gap-1">
@@ -62,6 +66,10 @@ const ContactSection = forwardRef<HTMLDivElement, Props>(
                 value={contactAccounts}
                 onChange={(e) => setContactAccounts(e.target.value)}
                 className="border border-black rounded p-2"
+                autoComplete="off"
+                data-bwignore
+                data-1p-ignore
+                data-lpignore="true"
               />
             </label>
           </div>

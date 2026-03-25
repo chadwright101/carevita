@@ -87,7 +87,7 @@ const PageItem = ({ data }: DataProps) => {
           </Heading>
           {location.description && (
             <article
-              className="[&_p]:mb-4 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-4 [&_li]:mb-1 [&_ol]:list-decimal [&_ol]:ml-6 [&_ol]:mb-4"
+              className="[&_p]:mb-4 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-4 [&_li]:mb-0 [&_li]:leading-3 [&_ol]:list-decimal [&_ol]:ml-6 [&_ol]:mb-4"
               dangerouslySetInnerHTML={{
                 __html: DOMPurify.sanitize(location.description),
               }}

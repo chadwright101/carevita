@@ -46,6 +46,7 @@ export default function FacilityAddForm() {
     "" | "EC" | "FS" | "GP" | "KZN" | "LP" | "MP" | "NC" | "NW" | "WC"
   >("");
   const [email, setEmail] = useState("");
+  const [ccEmail, setCcEmail] = useState("");
   const [phone, setPhone] = useState("+27");
   const [description, setDescription] = useState("");
   const [contactImage, setContactImage] = useState("");
@@ -259,6 +260,8 @@ export default function FacilityAddForm() {
         setRegion={setRegion}
         email={email}
         setEmail={setEmail}
+        ccEmail={ccEmail}
+        setCcEmail={setCcEmail}
         phone={phone}
         setPhone={setPhone}
         activeSection={activeSection}
@@ -276,28 +279,6 @@ export default function FacilityAddForm() {
         activeSection={activeSection}
         toggleSection={toggleSection}
         error={sectionErrors.about}
-      />
-
-      <WhatWeOfferSection
-        ref={offerRef}
-        facilitySlug={slug}
-        whatWeOfferList={whatWeOfferContent}
-        setWhatWeOfferList={setWhatWeOfferContent}
-        whatWeOfferImage={whatWeOfferImage}
-        setWhatWeOfferImage={setWhatWeOfferImage}
-        activeSection={activeSection}
-        toggleSection={toggleSection}
-        error={sectionErrors.whatWeOffer}
-      />
-
-      <MeetTheTeamSection
-        ref={meetTheTeamRef}
-        facilitySlug={slug}
-        teamMembers={teamMembers}
-        setTeamMembers={setTeamMembers}
-        activeSection={activeSection}
-        toggleSection={toggleSection}
-        error={sectionErrors.meetTheTeam}
       />
 
       <HeroSection
@@ -320,6 +301,28 @@ export default function FacilityAddForm() {
         activeSection={activeSection}
         toggleSection={toggleSection}
         error={sectionErrors.hero}
+      />
+
+      <WhatWeOfferSection
+        ref={offerRef}
+        facilitySlug={slug}
+        whatWeOfferList={whatWeOfferContent}
+        setWhatWeOfferList={setWhatWeOfferContent}
+        whatWeOfferImage={whatWeOfferImage}
+        setWhatWeOfferImage={setWhatWeOfferImage}
+        activeSection={activeSection}
+        toggleSection={toggleSection}
+        error={sectionErrors.whatWeOffer}
+      />
+
+      <MeetTheTeamSection
+        ref={meetTheTeamRef}
+        facilitySlug={slug}
+        teamMembers={teamMembers}
+        setTeamMembers={setTeamMembers}
+        activeSection={activeSection}
+        toggleSection={toggleSection}
+        error={sectionErrors.meetTheTeam}
       />
 
       <GallerySection

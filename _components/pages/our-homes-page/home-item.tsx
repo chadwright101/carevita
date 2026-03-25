@@ -14,13 +14,19 @@ interface Props {
 
 const HomeItem = ({
   cssClasses,
-  data: { facilityName, facilityExtendedName, extendedLocation, description, slug },
+  data: {
+    facilityName,
+    facilityExtendedName,
+    extendedLocation,
+    description,
+    slug,
+  },
   featuredImage,
 }: Props) => {
   return (
     <article
       className={classNames(
-        "flex flex-col h-full justify-between items-center gap-10",
+        "flex flex-col h-full justify-between items-center gap-5",
         cssClasses,
       )}
     >
@@ -53,7 +59,9 @@ const HomeItem = ({
             sizes="(max-width: 425px) 90vw, (max-width: 900px) 80vw, 40vw"
           />
         </Link>
-        <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(description) }} />
+        <p
+          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(description) }}
+        />
       </div>
       <ButtonLink href={`/our-homes/${slug}`} backgroundColor="green" />
     </article>

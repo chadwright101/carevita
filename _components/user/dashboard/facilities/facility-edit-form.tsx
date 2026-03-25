@@ -57,6 +57,7 @@ export default function FacilityEditForm({ facility }: Props) {
     "" | "EC" | "FS" | "GP" | "KZN" | "LP" | "MP" | "NC" | "NW" | "WC"
   >(general.province ?? "");
   const [email, setEmail] = useState(general.facilityEmail ?? "");
+  const [ccEmail, setCcEmail] = useState(general.facilityEmailCC ?? "");
   const [phone, setPhone] = useState(general.facilityPhone ?? "");
   const [description, setDescription] = useState(location.description ?? "");
   const [contactImage, setContactImage] = useState(
@@ -312,6 +313,8 @@ export default function FacilityEditForm({ facility }: Props) {
         setRegion={setRegion}
         email={email}
         setEmail={setEmail}
+        ccEmail={ccEmail}
+        setCcEmail={setCcEmail}
         phone={phone}
         setPhone={setPhone}
         activeSection={activeSection}

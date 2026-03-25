@@ -8,7 +8,6 @@ interface PropertySelectorButtonProps {
   location: string;
   onClick: () => void;
   cssClasses?: string;
-  arrowCssClasses?: string;
   mobile?: boolean;
 }
 
@@ -17,7 +16,6 @@ const PropertySelectorButton = ({
   location,
   onClick,
   cssClasses,
-  arrowCssClasses,
   mobile = false,
 }: PropertySelectorButtonProps) => {
   if (mobile) {
@@ -48,22 +46,9 @@ const PropertySelectorButton = ({
 
   return (
     <button className="text-larger flex flex-col" onClick={onClick}>
-      <div className="flex flex-col gap-2">
-        <div className={classNames("flex flex-col", cssClasses)}>
-          <h4 className="text-white text-larger">
-            {extendedTitle}
-          </h4>
-          <p className="text-white text-smaller font-extralight">
-            {location}
-          </p>
-        </div>
-        <Image
-          src="/assets/icons/arrow_drop_down.svg"
-          alt="Arrow icon"
-          width={23}
-          height={23}
-          className={classNames("place-self-center mt-3", arrowCssClasses)}
-        />
+      <div className={classNames("flex flex-col", cssClasses)}>
+        <h4 className="text-white text-larger">{extendedTitle}</h4>
+        <p className="text-white text-smaller font-extralight">{location}</p>
       </div>
     </button>
   );

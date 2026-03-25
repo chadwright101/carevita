@@ -14,7 +14,7 @@ const PropertySelector = ({
   onPropertySelect,
 }: PropertySelectorProps) => {
   return (
-    <div className="flex justify-between">
+    <div className="grid grid-cols-5 gap-x-10 gap-y-5 justify-between pb-7 border-b border-white">
       {properties.map((facility) => {
         const isSelected = selectedPropertyId === facility.slug;
 
@@ -27,13 +27,10 @@ const PropertySelector = ({
             cssClasses={classNames(
               "text-left transition-transform duration-300 delay-75 desktop:hover:cursor-pointer",
               {
-                "hover:scale-[102%] hover:-mb-2.5": !isSelected,
-                "border-b-2 border-white pb-2 -mb-2.5": isSelected,
+                "hover:scale-[102%]": !isSelected,
+                "border-b-2 border-white pb-2": isSelected,
               },
             )}
-            arrowCssClasses={classNames({
-              hidden: !isSelected,
-            })}
           />
         );
       })}
