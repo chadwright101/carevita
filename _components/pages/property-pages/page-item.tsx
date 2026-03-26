@@ -86,7 +86,7 @@ const PageItem = ({ data }: DataProps) => {
             Location
           </Heading>
           {location.description && (
-            <article className="[&_p]:mb-4 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-4 [&_li]:mb-0 [&_li]:leading-3 [&_ol]:list-decimal [&_ol]:ml-6 [&_ol]:mb-4">
+            <article className="[&_p]:mb-4 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-4 [&_li]:mb-0 [&_li:not(:first-child)]:-mt-4 [&_ol]:list-decimal [&_ol]:ml-6 [&_ol]:mb-4">
               {parse(location.description)}
             </article>
           )}

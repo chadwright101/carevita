@@ -41,7 +41,7 @@ export default function RichTextEditor({
     editorProps: {
       attributes: {
         class:
-          "prose prose-sm max-w-none p-3 outline-none [&_p]:mb-3 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-3 [&_li]:mb-0 [&_li]:leading-3 [&_ol]:list-decimal [&_ol]:ml-6 [&_ol]:mb-3",
+          "prose prose-sm max-w-none p-3 outline-none [&_p]:mb-3 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-3 [&_li]:mb-0 [&_li:not(:first-child)]:-mt-4 [&_ol]:list-decimal [&_ol]:ml-6 [&_ol]:mb-3",
       },
     },
   });
