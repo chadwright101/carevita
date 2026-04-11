@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
   },
   images: {
     deviceSizes: [425, 900, 1400],
-    minimumCacheTTL: 86400,
+    minimumCacheTTL: 31536000,
     remotePatterns: [
       {
         protocol: "http",
@@ -24,7 +24,6 @@ const nextConfig: NextConfig = {
         pathname: "/**",
       },
     ],
-    qualities: [30, 50, 75],
   },
 };
 

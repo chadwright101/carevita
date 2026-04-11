@@ -28,6 +28,7 @@ const MeetTheTeam = ({ meetTheTeam, homeName }: Props) => {
                 alt={`${homeName} ${position}`}
                 width={400}
                 height={400}
+                sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
                 className="object-cover mb-5 aspect-[3.5/4]"
               />
               <h4 className="text-larger text-center">{position}</h4>

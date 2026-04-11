@@ -56,7 +56,7 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                     alt={title}
                     width={1000}
                     height={1000}
-                    className="object-cover w-full h-full"
+                    className="object-contain object-top w-full h-full"
                     priority={index < 2 ? true : false}
                     sizes="(max-width: 900px) 90vw, 80vw"
                   />

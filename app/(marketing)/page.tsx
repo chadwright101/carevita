@@ -9,7 +9,7 @@ import {
   getFacilityNavigation,
 } from "@/_actions/facilities-actions";
 
-export const revalidate = 0;
+export const revalidate = 900;
 
 async function Home() {
   const homePageContent = await getHomePageContent();

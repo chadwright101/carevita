@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import classNames from "classnames";
 
 interface PropertySelectorButtonProps {
@@ -33,13 +32,9 @@ const PropertySelectorButton = ({
             {location}
           </span>
         </span>
-        <Image
-          src="/assets/icons/arrow_forward-blue.svg"
-          alt="Arrow icon"
-          width={32}
-          height={32}
-          className="min-w-[32px] h-auto"
-        />
+        <svg width="32" height="32" viewBox="0 0 16 16" fill="#134266" xmlns="http://www.w3.org/2000/svg" className="min-w-[32px]">
+          <path d="M8 16L6.575 14.6L12.175 9H0V7H12.175L6.575 1.4L8 0L16 8L8 16Z" />
+        </svg>
       </button>
     );
   }

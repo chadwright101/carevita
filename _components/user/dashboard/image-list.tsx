@@ -34,6 +34,7 @@ export default function ImageList({ urls, onRemove, onMove }: Props) {
                   src={url}
                   alt=""
                   fill
+                  sizes="(max-width: 600px) 160px, (max-width: 900px) 260px, 234px"
                   className="object-cover h-full w-full"
                 />
               </div>

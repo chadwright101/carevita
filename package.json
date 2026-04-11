@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "seed-firestore": "tsx scripts/seed-firestore.ts"
+    "lint": "next lint"
   },
   "dependencies": {
     "@apollo/client": "^4.0.10",

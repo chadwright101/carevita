@@ -47,7 +47,8 @@ const About = ({
             alt={`${facilityName}`}
             width={800}
             height={600}
-            className="object-cover aspect-video tablet:hidden"
+            className="object-cover aspect-video"
+            sizes="(max-width: 900px) 100vw, 50vw"
           />
         </div>
       </div>
@@ -66,24 +67,11 @@ const About = ({
             alt={`${facilityName} - What we offer`}
             width={800}
             height={600}
-            className="object-cover aspect-video tablet:hidden"
+            className="object-cover aspect-video"
+            sizes="(max-width: 900px) 100vw, 50vw"
           />
         </div>
       </div>
-      <Image
-        src={aboutImage}
-        alt={`${facilityName}`}
-        width={650}
-        height={450}
-        className="hidden object-cover aspect-video tablet:block"
-      />
-      <Image
-        src={image}
-        alt={`${facilityName} - What we offer`}
-        width={650}
-        height={450}
-        className="hidden object-cover aspect-video tablet:block"
-      />
     </div>
   );
 };

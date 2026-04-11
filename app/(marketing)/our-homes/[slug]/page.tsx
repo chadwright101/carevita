@@ -10,7 +10,7 @@ import {
   getAllFacilities,
 } from "@/_actions/facilities-actions";
 
-export const revalidate = 0;
+export const revalidate = 900;
 
 export async function generateStaticParams() {
   const facilities = await getAllFacilities();
