@@ -4,6 +4,38 @@ import Image from "next/image";
 import Link from "next/link";
 import { useId, useRef, useState } from "react";
 import { uploadImage } from "@/_actions/upload-image-action";
+
+async function compressImage(file: File): Promise<File> {
+  const bitmap = await createImageBitmap(file);
+  const maxWidth = 1280;
+  const scale = Math.min(1, maxWidth / bitmap.width);
+  const width = Math.round(bitmap.width * scale);
+  const height = Math.round(bitmap.height * scale);
+
+  const canvas = document.createElement("canvas");
+  canvas.width = width;
+  canvas.height = height;
+  const ctx = canvas.getContext("2d")!;
+  ctx.drawImage(bitmap, 0, 0, width, height);
+  bitmap.close();
+
+  const maxBytes = 4 * 1024 * 1024;
+  for (const quality of [0.82, 0.7, 0.6]) {
+    const blob = await new Promise<Blob>((resolve) =>
+      canvas.toBlob((b) => resolve(b!), "image/jpeg", quality),
+    );
+    if (blob.size <= maxBytes || quality === 0.6) {
+      return new File([blob], file.name, { type: "image/jpeg" });
+    }
+  }
+  return new File(
+    [await new Promise<Blob>((resolve) =>
+      canvas.toBlob((b) => resolve(b!), "image/jpeg", 0.6),
+    )],
+    file.name,
+    { type: "image/jpeg" },
+  );
+}
 import { uploadVideo } from "@/_actions/upload-video-action";
 import { deleteImage } from "@/_actions/delete-image-action";
 import ButtonType from "@/_components/ui/button-type";
@@ -140,7 +172,8 @@ export default function MediaUploader({
     setError("");
     setSuccess(false);
 
-    for (const file of fileArray) {
+    for (const rawFile of fileArray) {
+      const file = isVideo ? rawFile : await compressImage(rawFile);
       const formData = new FormData();
       formData.append("file", file);
       formData.append("storagePath", storagePath);

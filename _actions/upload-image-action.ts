@@ -6,7 +6,7 @@ import { getAdminStorage } from "@/_lib/firebase-admin";
 import { ActionResult } from "@/_types/general-types";
 
 const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp"];
-const MAX_SIZE_BYTES = 10 * 1024 * 1024;
+const MAX_SIZE_BYTES = 4.5 * 1024 * 1024;
 
 export async function uploadImage(
   prevState: any,
@@ -27,12 +27,12 @@ export async function uploadImage(
     }
 
     if (file.size > MAX_SIZE_BYTES) {
-      return { success: false, error: "File exceeds 10MB limit" };
+      return { success: false, error: "File exceeds 4.5MB limit" };
     }
 
     const rawBuffer = Buffer.from(await file.arrayBuffer());
     const processedBuffer = await sharp(rawBuffer)
-      .resize({ width: 1920, withoutEnlargement: true })
+      .resize({ width: 1280, withoutEnlargement: true })
       .webp()
       .toBuffer();
 
