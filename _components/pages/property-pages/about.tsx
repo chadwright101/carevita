@@ -23,7 +23,7 @@ const About = ({
   whatWeOffer: { offerings, image },
 }: Props) => {
   return (
-    <div className="grid gap-16 tablet:grid-cols-2 tablet:gap-10">
+    <div className="grid gap-10 tablet:grid-cols-2">
       <div id="about" className="scroll-mt-32">
         <Heading
           variant={headingVariant.subheading}
@@ -31,7 +31,7 @@ const About = ({
         >
           About us
         </Heading>
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col h-full gap-6">
           {(() => {
             const html = Array.isArray(content)
               ? content.map((p) => `<p>${p}</p>`).join("")
@@ -46,31 +46,29 @@ const About = ({
             src={aboutImage}
             alt={`${facilityName}`}
             width={800}
-            height={600}
+            height={800}
             className="object-cover aspect-video"
             sizes="(max-width: 900px) 100vw, 50vw"
           />
         </div>
       </div>
-      <div>
-        <article>
+      <div className="flex flex-col gap-6 h-full">
+        <div>
           <Heading variant={headingVariant.subheading} cssClasses="mb-5">
             What we offer
           </Heading>
-        </article>
-        <div className="grid gap-10">
           <article className="desktop:columns-2 [&_p]:mb-4 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:mb-4 [&_li]:mb-0 [&_li:not(:first-child)]:-mt-4 [&_li]:break-inside-avoid [&_ul]:break-inside-avoid [&_ol]:list-decimal [&_ol]:ml-6 [&_ol]:mb-4">
             {parse(offerings)}
           </article>
-          <Image
-            src={image}
-            alt={`${facilityName} - What we offer`}
-            width={800}
-            height={600}
-            className="object-cover aspect-video"
-            sizes="(max-width: 900px) 100vw, 50vw"
-          />
         </div>
+        <Image
+          src={image}
+          alt={`${facilityName} - What we offer`}
+          width={800}
+          height={800}
+          className="object-cover aspect-video h-full w-full tablet:aspect-auto"
+          sizes="(max-width: 900px) 100vw, 75vw"
+        />
       </div>
     </div>
   );

@@ -16,7 +16,7 @@ const PropertySelector = ({
   return (
     <div
       className={classNames(
-        "grid grid-cols-5 gap-x-10 gap-y-5 justify-between border-white",
+        "grid grid-cols-4 gap-x-10 gap-y-7 justify-between border-white",
         selectedPropertyId && "pb-7 border-b",
       )}
     >

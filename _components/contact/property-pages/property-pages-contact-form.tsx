@@ -35,7 +35,7 @@ const PropertyPagesContactForm = ({
 
   return (
     <div className={classNames(cssClasses)}>
-      <div className="mt-10 max-w-[1280px] mx-auto flex flex-col gap-8">
+      <div className="mt-10 max-w-[1280px] mx-auto flex flex-col gap-10">
         <ul className="flex flex-col gap-6 mt-4 tablet:gap-4 desktop:gap-2">
           <li className="grid grid-cols-[80px_1fr]">
             <p className="text-white text-larger font-light">Email:</p>
@@ -54,8 +54,8 @@ const PropertyPagesContactForm = ({
           <>
             <p className="text-white">
               Please fill out the form below, and our staff from{" "}
-              <span className="font-light text-white">{facilityName}</span> will be in
-              touch with you ASAP...
+              <span className="font-light text-white">{facilityName}</span> will
+              be in touch with you ASAP...
             </p>
             <form
               action={async (formData) => {
@@ -94,7 +94,7 @@ const PropertyPagesContactForm = ({
                   setFormSubmitting(false);
                 }
               }}
-              className="flex flex-col gap-10"
+              className="flex flex-col gap-4"
             >
               <input
                 type="text"
@@ -184,8 +184,12 @@ const PropertyPagesContactForm = ({
               )}
               {showMessage && (
                 <>
-                  <div className="flex flex-col gap-4">
-                    <ButtonType backgroundColor="green" iconArrow cssClasses="mr-auto">
+                  <div className="flex flex-col gap-4 mt-5">
+                    <ButtonType
+                      backgroundColor="green"
+                      iconArrow
+                      cssClasses="mr-auto"
+                    >
                       Submit
                     </ButtonType>
                     <RecaptchaNotice cssClasses="text-white" />
