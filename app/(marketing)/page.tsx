@@ -35,7 +35,10 @@ async function Home() {
           id="gallery"
           className="scroll-mt-12 tablet:scroll-mt-16 desktop:scroll-mt-12"
         ></div>
-        <OurHomes cssClasses="my-16" images={homePageContent.ourHomesSliderHomePage} />
+        <OurHomes
+          cssClasses="my-16"
+          images={homePageContent.ourHomesSliderHomePage}
+        />
       </PageWrapper>
       <div id="contact" className="scroll-mt-32">
         <ContactComponent facilities={facilities} />
