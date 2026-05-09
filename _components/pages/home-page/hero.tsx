@@ -62,7 +62,7 @@ const Hero = ({
         >
           <button
             onClick={() => setVisible(false)}
-            className="absolute top-2 right-2 tablet:top-3 tablet:right-3 desktop:top-4 desktop:right-4 desktop:hover:cursor-pointer desktop:hover:opacity-80 ease-in-out duration-300"
+            className="absolute top-2 right-2 tablet:top-3 tablet:right-3 desktop:top-4 desktop:right-4 desktop:hover:cursor-pointer desktop:hover:opacity-80 ease-in-out duration-300 z-10"
           >
             <X color="#134266" size={20} className="desktop:size-[16px]" />
           </button>
