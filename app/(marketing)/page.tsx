@@ -25,6 +25,7 @@ async function Home() {
         heroSmallMp4={homePageContent.heroSmallMp4}
         heroSmallWebm={homePageContent.heroSmallWebm}
         heroPosterImage={homePageContent.heroPosterImage}
+        heroOverlayLogo={homePageContent.heroOverlayLogo}
       />
       <PageWrapper>
         <About cssClasses="my-16" data={{ homePage: homePageContent }} />

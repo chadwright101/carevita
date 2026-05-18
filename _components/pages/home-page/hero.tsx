@@ -17,6 +17,7 @@ interface Props {
   heroSmallMp4: HomePage["heroSmallMp4"];
   heroSmallWebm: HomePage["heroSmallWebm"];
   heroPosterImage: HomePage["heroPosterImage"];
+  heroOverlayLogo: HomePage["heroOverlayLogo"];
 }
 
 const Hero = ({
@@ -28,6 +29,7 @@ const Hero = ({
   heroSmallMp4,
   heroSmallWebm,
   heroPosterImage,
+  heroOverlayLogo,
 }: Props) => {
   const [visible, setVisible] = useState(true);
   const [mounted, setMounted] = useState(true);
@@ -50,7 +52,7 @@ const Hero = ({
       ) : (
         <GeneralSlider imageList={heroSlider} homeName="Carevita" />
       )}
-      {mounted && (
+      {heroOverlayLogo && mounted && (
         <div
           onTransitionEnd={() => !visible && setMounted(false)}
           className={classNames(
@@ -67,8 +69,8 @@ const Hero = ({
             <X color="#134266" size={20} className="desktop:size-[16px]" />
           </button>
           <Image
-            src="/assets/media/carevita-mothers-day-logo.png"
-            alt="CareVita Mother's Day logo"
+            src={heroOverlayLogo}
+            alt="Hero overlay logo"
             width={230}
             height={230}
             className="w-[150px] h-auto phone:w-[230px] animate-pulse-scale"

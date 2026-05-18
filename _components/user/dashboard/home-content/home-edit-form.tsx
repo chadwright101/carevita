@@ -77,6 +77,9 @@ export default function HomeEditForm({ homeContent }: Props) {
   const [heroPosterImage, setHeroPosterImage] = useState(
     homeContent.heroPosterImage ?? "",
   );
+  const [heroOverlayLogo, setHeroOverlayLogo] = useState(
+    homeContent.heroOverlayLogo ?? "",
+  );
   const [contactGeneral, setContactGeneral] = useState(
     homeContent.contact.general ?? "",
   );
@@ -236,6 +239,8 @@ export default function HomeEditForm({ homeContent }: Props) {
         setHeroSmallWebm={setHeroSmallWebm}
         heroPosterImage={heroPosterImage}
         setHeroPosterImage={setHeroPosterImage}
+        heroOverlayLogo={heroOverlayLogo}
+        setHeroOverlayLogo={setHeroOverlayLogo}
         activeSection={activeSection}
         toggleSection={toggleSection}
         error={sectionErrors.hero}

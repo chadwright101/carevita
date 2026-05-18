@@ -22,6 +22,8 @@ interface Props {
   setHeroSmallWebm: (url: string) => void;
   heroPosterImage: string;
   setHeroPosterImage: (url: string) => void;
+  heroOverlayLogo: string;
+  setHeroOverlayLogo: (url: string) => void;
   activeSection: string;
   toggleSection: (id: string) => void;
   error?: string;
@@ -45,6 +47,8 @@ const HeroSection = forwardRef<HTMLDivElement, Props>(function HeroSection(
     setHeroSmallWebm,
     heroPosterImage,
     setHeroPosterImage,
+    heroOverlayLogo,
+    setHeroOverlayLogo,
     activeSection,
     toggleSection,
     error,
@@ -232,6 +236,49 @@ const HeroSection = forwardRef<HTMLDivElement, Props>(function HeroSection(
               </div>
             </div>
           </div>
+          <div className="flex flex-col gap-5 border-t border-black/25 pt-10">
+            <span className="font-semibold">Special Event Logo</span>
+            <p className="text-smallest">
+              This will show on the video/slideshow section at the top of the
+              home page. If you don't have a logo here, the white box on the
+              video/slideshow section will disappear.
+            </p>
+            <MediaUploader
+              storagePath="home/hero-overlay-logo"
+              onUploaded={(url) => {
+                onPendingAdd?.(url);
+                setHeroOverlayLogo(url);
+              }}
+              currentUrl={heroOverlayLogo}
+              showPreview
+              replaceMode={!!heroOverlayLogo}
+              onPendingAdd={onPendingAdd}
+              onPendingRemove={onPendingRemove}
+            />
+            {heroOverlayLogo && (
+              <button
+                type="button"
+                onClick={() => {
+                  deleteImage(heroOverlayLogo);
+                  onPendingRemove?.(heroOverlayLogo);
+                  setHeroOverlayLogo("");
+                }}
+                className={classNames(
+                  "w-full min-[500px]:w-auto min-[500px]:self-start",
+                  buttonStyles(
+                    undefined,
+                    false,
+                    false,
+                    undefined,
+                    undefined,
+                    "black",
+                  ),
+                )}
+              >
+                Remove Image
+              </button>
+            )}
+          </div>
         </div>
       )}
       <input
@@ -245,6 +292,7 @@ const HeroSection = forwardRef<HTMLDivElement, Props>(function HeroSection(
       <input type="hidden" name="heroSmallMp4" value={heroSmallMp4} />
       <input type="hidden" name="heroSmallWebm" value={heroSmallWebm} />
       <input type="hidden" name="heroPosterImage" value={heroPosterImage} />
+      <input type="hidden" name="heroOverlayLogo" value={heroOverlayLogo} />
     </div>
   );
 });

@@ -95,6 +95,7 @@ export async function updateHomeContent(
       heroSmallMp4: formData.get("heroSmallMp4") as string,
       heroSmallWebm: formData.get("heroSmallWebm") as string,
       heroPosterImage: formData.get("heroPosterImage") as string,
+      heroOverlayLogo: formData.get("heroOverlayLogo") as string,
       services: JSON.parse((formData.get("services") as string) || "[]"),
       contact: {
         general: formData.get("contactGeneral") as string,

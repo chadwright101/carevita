@@ -19,6 +19,13 @@ async function compressImage(file: File): Promise<File> {
   ctx.drawImage(bitmap, 0, 0, width, height);
   bitmap.close();
 
+  if (file.type === "image/png") {
+    const blob = await new Promise<Blob>((resolve) =>
+      canvas.toBlob((b) => resolve(b!), "image/png"),
+    );
+    return new File([blob], file.name, { type: "image/png" });
+  }
+
   const maxBytes = 4 * 1024 * 1024;
   for (const quality of [0.82, 0.7, 0.6]) {
     const blob = await new Promise<Blob>((resolve) =>
@@ -29,9 +36,11 @@ async function compressImage(file: File): Promise<File> {
     }
   }
   return new File(
-    [await new Promise<Blob>((resolve) =>
-      canvas.toBlob((b) => resolve(b!), "image/jpeg", 0.6),
-    )],
+    [
+      await new Promise<Blob>((resolve) =>
+        canvas.toBlob((b) => resolve(b!), "image/jpeg", 0.6),
+      ),
+    ],
     file.name,
     { type: "image/jpeg" },
   );
@@ -271,7 +280,9 @@ export default function MediaUploader({
           {loading ? "Uploading..." : "Upload"}
         </ButtonType>
       </div>
-      {error && <p className="text-white bg-error px-3 py-2 text-smallest">{error}</p>}
+      {error && (
+        <p className="text-white bg-error px-3 py-2 text-smallest">{error}</p>
+      )}
       {success && <p className="text-green">Successfully uploaded</p>}
       <p className="text-smallest text-error/70">{formatNote}</p>
       {dimensionNote && (

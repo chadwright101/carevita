@@ -15,6 +15,7 @@ export interface HomePage {
   heroSmallMp4: string;
   heroSmallWebm: string;
   heroPosterImage: string;
+  heroOverlayLogo: string;
   services: Service[];
   contact: { general: string; accounts: string };
 }
