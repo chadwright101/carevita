@@ -17,13 +17,17 @@ const BlogPost = ({ cssClasses, data }: Props) => {
       {data?.map(
         (
           {
-            blog: { title, paragraph1, image1, galleryList, videoUrl },
+            blog: {
+              title,
+              paragraph1,
+              image1,
+              galleryList,
+              videoUrl,
+              facility,
+            },
 
             id,
             date,
-            author: {
-              node: { name: postedBy },
-            },
           },
           index,
         ) => {
@@ -81,9 +85,11 @@ const BlogPost = ({ cssClasses, data }: Props) => {
                     Posted on {date.substring(8, 10)}/{date.substring(5, 7)}/
                     {date.substring(0, 4)}
                   </p>
-                  <p>
-                    by <span className="italic font-light">{postedBy}</span>
-                  </p>
+                  {facility !== "None" && (
+                    <p>
+                      by <span className="italic font-light">{facility}</span>
+                    </p>
+                  )}
                 </div>
                 <div className="flex-col gap-4 mt-10 hidden desktop:flex">
                   <p>{parse(`${paragraph1}`)}</p>

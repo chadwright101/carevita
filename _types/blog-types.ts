@@ -1,6 +1,7 @@
 export interface BlogData {
   paragraph1: string;
   title: string;
+  facility?: string;
   image1?: {
     mediaItemUrl: string;
   };
