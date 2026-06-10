@@ -14,9 +14,15 @@ import Footer from "@/_components/navigation/footer";
 import RecaptchaProvider from "@/_components/providers/recaptcha-provider";
 import { getFacilityNavigation } from "@/_actions/facilities-actions";
 import { getSessionUserId } from "@/_lib/auth-utils";
+import {
+  SITE_URL,
+  SITE_NAME,
+  SITE_LOGO,
+  SITE_DESCRIPTION,
+} from "@/_lib/utils/site-config";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.carevita.com"),
+  metadataBase: new URL(SITE_URL),
   title: "Home - CareVita",
   description:
     "CareVita was founded in 2018 with the main purpose of breathing new life into the Retirement Management Sector.",
@@ -52,9 +58,24 @@ export default async function RootLayout({
     getSessionUserId(),
   ]);
 
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: SITE_NAME,
+    url: SITE_URL,
+    logo: `${SITE_URL}${SITE_LOGO}`,
+    description: SITE_DESCRIPTION,
+  };
+
   return (
     <html lang="en">
       <body className={classNames(ralewaySansSerif.className, "antialiased")}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
         <RecaptchaProvider>
           <Header facilities={facilities} isLoggedIn={!!userId} />
           {children}

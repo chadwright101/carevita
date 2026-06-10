@@ -11,8 +11,10 @@ export interface BlogData {
 
 export interface BlogPostNode {
   blog: BlogData;
+  slug: string;
   id: string;
   date: string;
+  modified: string;
   author: {
     node: {
       name: string;

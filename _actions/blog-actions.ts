@@ -32,6 +32,7 @@ interface BlogPostsQueryResponse {
       };
       id: string;
       date: string;
+      modified?: string;
       author: {
         node: {
           name: string;
@@ -71,6 +72,7 @@ const BLOG_POSTS_QUERY = gql`
         }
         id
         date
+        modified
         author {
           node {
             name
@@ -81,6 +83,14 @@ const BLOG_POSTS_QUERY = gql`
   }
 `;
 
+function slugify(title: string) {
+  return title
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 export async function getBlogPosts() {
   const { data } = await blogClient.query<BlogPostsQueryResponse>({
     query: BLOG_POSTS_QUERY,
@@ -89,6 +99,8 @@ export async function getBlogPosts() {
   return (
     data?.posts.nodes.map((node) => ({
       ...node,
+      slug: slugify(node.blog.title),
+      modified: node.modified || node.date,
       blog: {
         ...node.blog,
         galleryList: [
@@ -96,8 +108,14 @@ export async function getBlogPosts() {
           node.blog.galleryImage2?.mediaItemUrl,
           node.blog.galleryImage3?.mediaItemUrl,
           node.blog.galleryImage4?.mediaItemUrl,
+          node.blog.galleryImage5?.mediaItemUrl,
         ].filter((item) => item !== undefined),
       },
     })) || []
   );
+}
+
+export async function getBlogPostBySlug(slug: string) {
+  const posts = await getBlogPosts();
+  return posts.find((post) => post.slug === slug);
 }

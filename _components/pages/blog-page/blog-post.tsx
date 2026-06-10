@@ -1,10 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 import classNames from "classnames";
 import Heading, { headingVariant } from "@/_components/ui/heading";
 import { BlogPostNode } from "@/_types/blog-types";
-import GeneralSlider from "@/_components/sliders/general-slider";
-
-import parse from "html-react-parser";
+import { getExcerpt } from "@/_lib/utils/blog-schema";
 
 interface Props {
   cssClasses?: string;
@@ -13,120 +12,76 @@ interface Props {
 
 const BlogPost = ({ cssClasses, data }: Props) => {
   return (
-    <article className={classNames(cssClasses)}>
+    <div
+      className={classNames(
+        "grid grid-cols-1 gap-10 tablet:grid-cols-2 desktop:grid-cols-3",
+        cssClasses,
+      )}
+    >
       {data?.map(
-        (
-          {
-            blog: {
-              title,
-              paragraph1,
-              image1,
-              galleryList,
-              videoUrl,
-              facility,
-            },
+        ({
+          blog: { title, paragraph1, image1, galleryList },
+          slug,
+          id,
+          date,
+          author,
+        }) => {
+          const imageUrl = image1?.mediaItemUrl || galleryList?.[0];
 
-            id,
-            date,
-          },
-          index,
-        ) => {
           return (
-            <div
+            <Link
               key={id}
-              className={classNames(
-                "flex flex-col gap-5 desktop:grid grid-cols-2 desktop:gap-10",
-                {
-                  "mb-10": index < data.length - 1,
-                  "border-b border-black/25 pb-10": index < data.length - 1,
-                },
-              )}
+              href={`/blog/${slug}`}
+              className="flex flex-col gap-4 desktop:hover:cursor-pointer"
             >
-              {/* Desktop view */}
               <div
                 className={classNames(
-                  "w-full aspect-square hidden desktop:block",
-                  {
-                    "desktop:order-2": index % 2,
-                  },
+                  "w-full aspect-[5/3] bg-white overflow-hidden flex items-center justify-center",
+                  !imageUrl
+                    ? "border border-black/25 desktop:hover:border-black desktop:hover:bg-green/5 delay-75 ease-in-out duration-500"
+                    : "",
                 )}
               >
-                {videoUrl && (
-                  <video src={videoUrl} className="w-auto h-full" controls />
-                )}
-                {image1 && (
+                {imageUrl ? (
                   <Image
-                    src={image1?.mediaItemUrl}
+                    src={imageUrl}
                     alt={title}
-                    width={1000}
-                    height={1000}
-                    className="object-contain object-top w-full h-full"
-                    priority={index < 2 ? true : false}
-                    sizes="(max-width: 900px) 90vw, 80vw"
+                    width={800}
+                    height={600}
+                    className="object-cover w-full h-full ease-in-out delay-75 duration-500 desktop:hover:scale-[102%]"
+                    sizes="(max-width: 900px) 90vw, 33vw"
+                  />
+                ) : (
+                  <Image
+                    src="/assets/media/carevita-logo.png"
+                    alt="CareVita"
+                    width={200}
+                    height={200}
+                    className="object-contain"
                   />
                 )}
-                {galleryList && !image1 && (
-                  <GeneralSlider
-                    blogSize
-                    imageList={galleryList}
-                    homeName={title}
-                  />
-                )}
               </div>
-              <div>
-                <div className="flex flex-col gap-2 items-center tablet:items-start">
-                  <Heading
-                    variant={headingVariant.subheading}
-                    cssClasses="mb-0 tablet:mb-0 desktop:mb-0"
-                  >
-                    {title}
-                  </Heading>
-                  <p>
-                    Posted on {date.substring(8, 10)}/{date.substring(5, 7)}/
-                    {date.substring(0, 4)}
-                  </p>
-                  {facility !== "None" && (
-                    <p>
-                      by <span className="italic font-light">{facility}</span>
-                    </p>
-                  )}
-                </div>
-                <div className="flex-col gap-4 mt-10 hidden desktop:flex">
-                  <p>{parse(`${paragraph1}`)}</p>
-                </div>
-                {/* Mobile view */}
-                <div className="w-full mt-10 [&_img]:aspect-[5/3] [&_video]:aspect-square desktop:hidden">
-                  {videoUrl && (
-                    <video
-                      src={videoUrl}
-                      className="w-auto h-full mx-auto tablet:mx-0"
-                      controls
-                    />
-                  )}
-                  {image1 && (
-                    <Image
-                      src={image1?.mediaItemUrl}
-                      alt={title}
-                      width={800}
-                      height={600}
-                      className="object-cover w-full h-full"
-                      priority={index < 1 ? true : false}
-                      sizes="(max-width: 900px) 90vw, 80vw"
-                    />
-                  )}
-                  {galleryList && !image1 && (
-                    <GeneralSlider imageList={galleryList} homeName={title} />
-                  )}
-                </div>
+              <div className="flex flex-col gap-2">
+                <Heading
+                  variant={headingVariant.subheading}
+                  cssClasses="line-clamp-2"
+                >
+                  {title}
+                </Heading>
+                <p className="flex flex-col text-[16px]">
+                  Posted on {date.substring(8, 10)}/{date.substring(5, 7)}/
+                  {date.substring(0, 4)}
+                  <span className="italic font-light">
+                    by {author.node.name}
+                  </span>
+                </p>
+                <p className="line-clamp-4">{getExcerpt(paragraph1)}</p>
               </div>
-              <div className="flex flex-col gap-4 desktop:hidden">
-                <p>{parse(`${paragraph1}`)}</p>
-              </div>
-            </div>
+            </Link>
           );
         },
       )}
-    </article>
+    </div>
   );
 };
 
