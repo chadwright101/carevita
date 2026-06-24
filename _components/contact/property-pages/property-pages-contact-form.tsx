@@ -7,6 +7,7 @@ import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import ButtonType from "@/_components/ui/button-type";
 import ShowEmailAddress from "@/_components/ui/contact/show-email-address";
 import ShowPhoneNumber from "@/_components/ui/contact/show-phone-number";
+import WhatsappButton from "@/_components/ui/contact/whatsapp-button";
 import RecaptchaNotice from "@/_components/ui/recaptcha-notice";
 import { sendEmail } from "@/_actions/send-email-action";
 
@@ -48,6 +49,9 @@ const PropertyPagesContactForm = ({
             <div className="place-items-start mr-auto">
               <ShowPhoneNumber property={slug} />
             </div>
+          </li>
+          <li className="place-items-start mr-auto">
+            <WhatsappButton colorWhite facilityName={facilityName} />
           </li>
         </ul>
         {!formSubmited ? (

@@ -43,7 +43,7 @@ const MobilePropertyContactForm = ({
           {property.extendedLocation}
         </p>
       </div>
-      <ContactInfoList propertyId={property.slug} />
+      <ContactInfoList propertyId={property.slug} facilityName={property.facilityExtendedName} />
       {!state.success ? (
         <form action={handleFormAction} className="flex flex-col gap-5">
           <input

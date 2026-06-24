@@ -33,7 +33,7 @@ const PropertyContactForm = ({ property }: PropertyContactFormProps) => {
   return (
     <div className="grid grid-cols-2 gap-10 mt-10">
       <div>
-        <ContactInfoList propertyId={property.slug} />
+        <ContactInfoList propertyId={property.slug} facilityName={property.facilityExtendedName} />
         {!state.success ? (
           <form action={handleFormAction} className="flex flex-col gap-4">
             <input
