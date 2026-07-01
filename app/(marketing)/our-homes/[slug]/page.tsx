@@ -5,6 +5,7 @@ import Heading, { headingVariant } from "@/_components/ui/heading";
 import PropertyPagesContactForm from "@/_components/contact/property-pages/property-pages-contact-form";
 import PageWrapper from "@/_lib/page-wrapper";
 import PropertyMap from "@/_components/contact/property-map";
+import WhatsappButton from "@/_components/ui/contact/whatsapp-button";
 import {
   getFacilityBySlug,
   getAllFacilities,
@@ -104,6 +105,9 @@ export default async function PropertyPage({
           <PropertyPagesContactForm data={facility} />
         </div>
       </section>
+      <div className="fixed bottom-5 z-50 right-6">
+        <WhatsappButton large facilityName={facilityName} />
+      </div>
     </>
   );
 }

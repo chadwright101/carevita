@@ -4,12 +4,14 @@ import classNames from "classnames";
 interface WhatsappButtonProps {
   facilityName: string;
   colorWhite?: boolean;
+  large?: boolean;
   cssClasses?: string;
 }
 
 const WhatsappButton = ({
   facilityName,
   colorWhite = false,
+  large = false,
   cssClasses,
 }: WhatsappButtonProps) => {
   const message = `Good day, I would like to enquire about ${facilityName}.`;
@@ -26,14 +28,22 @@ const WhatsappButton = ({
         cssClasses,
       )}
     >
-      <div className="p-1 -m-1 desktop:p-0 desktop:m-0">
+      <div
+        className={classNames(
+          !large
+            ? "p-1 -m-1 desktop:p-0 desktop:m-0"
+            : "p-2.5 bg-white/75 rounded-full",
+        )}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="40"
           height="40"
           viewBox="0 0 24 24"
           fill="none"
-          className="size-8 desktop:size-7"
+          className={classNames(
+            large ? "size-[40px] desktop:size-[50px]" : "size-8 desktop:size-7",
+          )}
         >
           <path
             d="M12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0ZM12.3955 4.39941C8.4625 4.39941 5.26142 7.59998 5.25977 11.5342C5.25923 12.7917 5.58754 14.0194 6.21191 15.1016L5.2002 18.7988L8.98242 17.8066C10.0246 18.3751 11.1983 18.6754 12.3926 18.6758H12.3955C16.3297 18.6741 19.5296 15.4734 19.5312 11.54C19.532 9.6336 18.7904 7.84086 17.4434 6.49219C16.0962 5.14345 14.3043 4.40027 12.3955 4.39941Z"
