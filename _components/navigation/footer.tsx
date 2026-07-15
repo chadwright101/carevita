@@ -7,11 +7,12 @@ import generalData from "@/_data/general-data.json";
 
 interface Props {
   cssClasses?: string;
+  isLoggedIn: boolean;
 }
 
 const currentYear = new Date().getFullYear();
 
-const Footer = ({ cssClasses }: Props) => {
+const Footer = ({ cssClasses, isLoggedIn }: Props) => {
   return (
     <footer className={classNames(cssClasses)}>
       <div className="w-full mx-auto max-w-[1280px] flex flex-col gap-6 items-center px-5 pt-15 mt-15 border-t border-black/25 pb-6 bg-white desktop:pt-10">
@@ -32,7 +33,7 @@ const Footer = ({ cssClasses }: Props) => {
               <li>
                 <Link
                   prefetch={false}
-                  href="/login"
+                  href={isLoggedIn ? "/dashboard" : "/login"}
                   className="font-normal hover:underline underline-offset-4 decoration-1"
                 >
                   Admin Login
